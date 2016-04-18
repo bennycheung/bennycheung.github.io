@@ -5,8 +5,8 @@ email: btscheung@gmail.com
 description: "Benny Cheung Mind Dump Site"
 keywords: "jekyll, theme, material, muicss"
 #url: "http://bitwiser.in/bitwiser-material" # the base hostname & protocol for your site
-url: "http://localhost:4000" # the base hostname & protocol for your site
-baseurl: "http://bennycheung.github.io" # the subpath of your site, e.g. /blog/
+url: "http://bennycheung.github.io" # the base hostname & protocol for your site
+baseurl: "" # the subpath of your site, e.g. /blog/
 gems: [jekyll-paginate]
 paginate: 5
 paginate_path: "page:num"
