@@ -5,8 +5,9 @@ color: indigo
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+Benny Cheung's personal and professional enthusiasm on the topics of computing and philosophy.
+This blog is dedicated to the satisfaction of professional excellency is important to the living;
+to understand the beauty of computation is the goal of the articles.
+Programming a computer to draw surely teaches us the most important lesson that creative spirit is in the details.
 
-You can find the source code for the Jekyll theme at: [github.com/brijeshb42/bitwiser-material](github.com/brijeshb42/bitwiser-material)
-
-You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
+Blog Specialties: Software Architecture; Spatial Reasoning, Modeling and Design; Computer Graphics, 2D/3D Mapping and Rendering; GIS; Onboard Navigation Systems; Rule-Based Engines; Computer Vision and Image Processing

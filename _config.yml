@@ -1,9 +1,9 @@
 # Site settings
 ## Change the values as needed.
-title: Benny Cheung Mind Pit
+title: Benny Mind Hack
 email: btscheung@gmail.com
-description: "Benny Cheung Mind Dump Site"
-keywords: "jekyll, theme, material, muicss"
+description: "A Site describing the Beauty of Computing"
+keywords: "blog, computational beauty, philosophy, programming"
 #url: "http://bitwiser.in/bitwiser-material" # the base hostname & protocol for your site
 url: "http://bennycheung.github.io" # the base hostname & protocol for your site
 baseurl: "" # the subpath of your site, e.g. /blog/
@@ -21,6 +21,7 @@ links:
   twitter: Benny_Cheung
   email: btscheung@gmail.com
   github: bennycheung
+  linkedin: becheung
 exclude:
   - bower_components
   - README.md
