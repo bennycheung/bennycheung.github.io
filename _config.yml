@@ -1,0 +1,34 @@
+# Site settings
+## Change the values as needed.
+title: Benny Cheung Mind Pit
+email: btscheung@gmail.com
+description: "Benny Cheung Blogging Site"
+keywords: "jekyll, theme, material, muicss"
+#url: "http://bitwiser.in/bitwiser-material" # the base hostname & protocol for your site
+url: "http://localhost:4000" # the base hostname & protocol for your site
+baseurl: "" # the subpath of your site, e.g. /blog/
+gems: [jekyll-paginate]
+paginate: 5
+paginate_path: "page:num"
+# Build settings
+markdown: kramdown
+highlighter: pygments
+sass:
+  sass_dir: _sass
+  style: :compressed
+links:
+  facebook: benny.cheung.9
+  twitter: Benny_Cheung
+  email: btscheung@gmail.com
+  github: bennycheung
+exclude:
+  - bower_components
+  - README.md
+full_name: Benny Cheung
+
+##set this to enable disqus commenting
+disqus: bennycheungblog
+
+##set this to enable google analytics
+#ga_id: analyticsID
+#ga_domain: bitwiser.in
