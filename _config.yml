@@ -15,7 +15,10 @@ markdown: kramdown
 highlighter: rouge
 sass:
   sass_dir: _sass
-  style: :compressed
+#  style: :compressed
+author:
+  name: Benny Cheung
+  image: BennyCheung_Profile.jpg
 links:
   facebook: benny.cheung.9
   twitter: Benny_Cheung

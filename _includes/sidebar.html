@@ -1,5 +1,12 @@
 <div class="mui-col-md-4">
   <div class="mui-panel">
+    <div class="author-info">
+      {% if site.author.image %}
+        <a href="/"><img style="border-radius: 50%" src="img/{{ site.author.image }}" alt="{{ site.author.name }}"></a>
+      {% endif %}
+      <h3>{{ site.author.name }}</h3>
+    </div>
+
     <h2>Links</h2>
     <ul class="about-links">
         <li><a href="{{ site.baseurl }}/about/" class="mui-btn">About</a></li>

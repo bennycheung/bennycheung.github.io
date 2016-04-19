@@ -6,7 +6,7 @@
 
 
 // Width of the content area
-$content-width:    700px;
+$content-width:    800px;
 
 
 
@@ -31,6 +31,7 @@ $content-width:    700px;
         "mui",
         "syntax-highlighting"
 ;
+
 
 body {
     padding-top: 93px;
@@ -310,6 +311,10 @@ article {
         padding: 20px 0;
         text-align: center;
     }
+}
+
+.author-info {
+  border-radius: 50%;
 }
 
 .paginator {
