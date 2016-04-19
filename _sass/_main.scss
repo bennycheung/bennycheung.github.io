@@ -1,0 +1,157 @@
+/* Blog posts */
+.post {
+  padding:50px;
+}
+.post h1 {
+  margin-bottom:20px;
+  font-family:'Domine', sans-serif;
+  font-weight:700;
+  font-size:2.5rem;
+}
+.post header p {
+  margin-bottom:20px;
+  color:#999;
+}
+.post header p a[rel="author"] {
+  color:inherit;
+  text-decoration: none;
+  border-bottom:1px dotted;
+}
+.post h1 a {
+  color:#555;
+  text-decoration: none;
+  border-bottom:2px solid #fff;
+  @include transition(.2s);
+}
+.post h1 a:hover {
+  color:#3097d1;
+  border-bottom:3px solid #eee;
+}
+.post > p {
+  line-height:1.8rem;
+}
+.post > p img {
+  max-width:100%;
+}
+blockquote {
+  border-left:4px solid #eee;
+  padding-left:20px;
+  margin:30px;
+  font-style:italic;
+}
+iframe {
+  max-width:100%;
+}
+.post ol, .post ul {
+  margin:5px 0;
+}
+.post > h1, .post > h2, .post > h3, .post > h4, .post > h5, .post > h6 {
+  margin:10px 0;
+}
+/* Comments */
+#disqus_thread {
+  margin:20px 0px;
+}
+/* Youtube, Vimeo, etc. videos */
+.video-container {
+  position:relative;
+  padding-bottom:56.25%;
+  padding-top:30px;
+  height:0;
+  overflow:hidden;
+}
+.video-container iframe, .video-container object, .video-container embed {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+}
+/* Facebook, Twitter, Google Plus share buttons */
+#social_buttons {
+  padding: 20px 0px;
+}
+@media (min-width:544px) {
+  #tweet-button {
+    text-align:center;
+  }
+  #gplus-button {
+    text-align:right;
+    padding-right:0;
+  }
+  #facebook-button {
+    padding-left:0;
+  }
+}
+/* Next post preview */
+#next_post {
+  text-align:center;
+  padding:0px 0px 20px 0px;
+}
+#next_post a {
+  text-decoration:none;
+}
+#next_post a h2, #next_post a p, #next_post a span {
+  color:#373a3c;
+}
+#next_post a h2 {
+  font-weight:700;
+}
+#next_post a span {
+  padding:5px 10px;
+  margin: 20px;
+  display:inline-block;
+  border-radius:10px;
+  font-size:0.8rem;
+  color: rgba(0,0,0,0.5);
+  border: 1px solid rgba(0,0,0,0.2);
+  @include transition(.2s);
+}
+#next_post a p {
+  font-weight:400;
+  color: rgba(0,0,0,0.5);
+}
+#next_post a:hover span {
+  color: rgba(0,0,0,0.6);
+  border: 1px solid rgba(0,0,0,0.4);
+}
+/* Subscribe button at bottom of post */
+.subscribe-button, .subscribe-button:focus, .subscribe-button:active {
+  border:0;
+  background:#9fbb58;
+  outline:none;
+  @include transition(.2s);
+}
+.subscribe-button:hover {
+  background:#8ba644;
+  border:0;
+  outline:none;
+}
+.subscribe-button-post {
+  padding:10px 0;
+  margin:30px auto;
+  min-width:175px;
+  max-width:50%;
+}
+/* Makes subscribe box pulsate */
+.glowing { 
+  @include animation(pulsate 1.5s ease-in-out infinite alternate);
+}
+@include keyframes(pulsate) {
+  from {
+    box-shadow: 0px 0px 20px 0px rgba(255,221,27,0.2);
+  }
+  to {
+    box-shadow: 0px 0px 40px 0px rgba(255,221,27,1);
+  }
+}
+/* Pagination next/prev buttons */
+.pager-next a, .pager-prev a {
+  border: 1px solid transparent !important;
+  border-radius: 4px !important;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+code {
+  display:block;
+}

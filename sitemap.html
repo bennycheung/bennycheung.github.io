@@ -1,0 +1,32 @@
+---
+layout: default
+---
+<article class="content-box post">
+    <header>
+        <h1>Sitemap</h1>
+    </header>
+    <p>
+        {% if site.posts %}
+            <h3>Posts</h3>
+            <ul>
+                {% for post in site.posts %}
+                    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        {% if site.pages %}
+            {% assign ignore = "404.html|index.html|feed.xml|sitemap.html|sitemap.xml|sent.html" | split: "|" %}
+            <h3>Pages</h3>
+            <ul>
+            {% for page in site.pages %}
+                {% assign ignore_pagination = page.path | split: "/" %}
+
+                {% unless ignore contains page.path or ignore_pagination contains "index.html" or ignore_pagination contains "css" %}
+                    <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+                {% endunless %}
+            {% endfor %}  
+            </ul>
+        {% endif %}
+    </p>
+</article>

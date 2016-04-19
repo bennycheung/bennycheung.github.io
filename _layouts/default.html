@@ -1,8 +1,13 @@
----
-layout: base
----
-<body>
-    {% include header.html %}
-    <div class="mui-container">
-    {{ content }}
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+    {% include head.html %}
+    <body>
+        <div class="container">
+            <div class="row">
+                {% if site.sidebar == 'left' %}{% include sidebar.html %}{% endif %}
+                <section id="main" class="col-md-9">{{ content }}</section>
+                {% if site.sidebar == 'right' %}{% include sidebar.html %}{% endif %}
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,38 +1,61 @@
 # Site settings
-## Change the values as needed.
 title: Benny Mind Hack
-email: btscheung@gmail.com
-description: "A Site describing the Beauty of Computing"
-keywords: "blog, computational beauty, philosophy, programming"
-#url: "http://bitwiser.in/bitwiser-material" # the base hostname & protocol for your site
-url: "http://bennycheung.github.io" # the base hostname & protocol for your site
-baseurl: "" # the subpath of your site, e.g. /blog/
+meta_description: Blog
+baseurl: "" # Subpath, e.g. /blog/
+url: "http://bennycheung.github.io" # Base protocol and hostname
+paginate: 5 # How many posts to show per page
+
+# External Pages
+#external_pages:
+# - title: Themeforest
+#   url: https://www.themeforest.net
+
+#gems
 gems: [jekyll-paginate]
-paginate: 5
-paginate_path: "page:num"
+
+# Google Analytics
+# google_analytics: UA-56071882-1
+
+# Author settings
+author_name: Benny Cheung
+author_description: Mind Hack Blog
+author_image: /images/avtar.jpg
+author_image_width: 128
+author_image_height: 128
+author_image_mime: image/jpg
+
+# Share settings
+share_buttons: on
+
+# Comments settings
+disqus_shortname: bennycheungblog
+
+# Sidebar settings
+sidebar: left # left|right
+social_widget: on
+subscribe_widget: off
+copyright_notice: on
+
+# Social settings
+github_username : bennycheung
+linkedin_username : becheung
+twitter_username : Benny_Cheung
+youtube_username : UC_y9pExhrufOEeucdHVi-Sw
+facebook_username : benny.cheung.9
+stackoverflow_username : 1256369/adorn
+
+# Mailchimp.com - Email subscribtion settings
+# Refer to http://kb.mailchimp.com/lists/signup-forms/advanced-form-customization
+# form_action: "//tylercubell.us11.list-manage.com/subscribe/post?u=25ec516894b013df92dca1a8d&amp;id=8906705de6"
+# list_id: "b_25ec516894b013df92dca1a8d_8906705de6"
+
+# Formspreee.io - Contact form settings
+# Note: submit form once to activate
+email: btscheung@gmail.com
+
 # Build settings
 markdown: kramdown
-highlighter: rouge
+
+# Sass settings
 sass:
-  sass_dir: _sass
-#  style: :compressed
-author:
-  name: Benny Cheung
-  image: BennyCheung_Profile.jpg
-links:
-  facebook: benny.cheung.9
-  twitter: Benny_Cheung
-  email: btscheung@gmail.com
-  github: bennycheung
-  linkedin: becheung
-exclude:
-  - bower_components
-  - README.md
-full_name: Benny Cheung
-
-##set this to enable disqus commenting
-disqus: bennycheungblog
-
-##set this to enable google analytics
-#ga_id: analyticsID
-#ga_domain: bitwiser.in
+    style: :compressed

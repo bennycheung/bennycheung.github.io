@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About
-color: indigo
+date: 2016-04-18 08:31:00
 permalink: /about/
 ---
 
