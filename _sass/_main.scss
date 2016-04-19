@@ -134,7 +134,7 @@ iframe {
   max-width:50%;
 }
 /* Makes subscribe box pulsate */
-.glowing { 
+.glowing {
   @include animation(pulsate 1.5s ease-in-out infinite alternate);
 }
 @include keyframes(pulsate) {
@@ -154,4 +154,17 @@ iframe {
 
 code {
   display:block;
+}
+
+table {
+  border-spacing: 5px;
+  border:2px solid #000000;
+}
+
+th {
+  border:2px solid #000000;
+}
+
+td {
+  border:2px solid #000000;
 }

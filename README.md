@@ -29,3 +29,12 @@ The tag `<!--excerpt.start-->` and `<!--excerpt.end-->` mark the beginning and t
 
 ### Image Location
 All images referenced in the post should be placed in `images` directory, and refers to the image prefixed by `{{ site.baseurl }}/images/`.
+
+## Local Testing
+You can install Jekyll locally, and serve the pages locally by running (--baseurl to override the configured site URL to nothing, make it able to run locally with all the links correctly points to localhost),
+
+```
+  jekyll server --baseurl ""
+```
+
+Now, you can navigate to `localhost:4000` to view your blog pages.
