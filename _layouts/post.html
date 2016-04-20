@@ -5,6 +5,9 @@ layout: default
     <header>
         <h1>{{ page.title }}</h1>
         <p>By {{ page.author }} on <time pubdate datetime="{{ page.date | date: "%Y-%b-%-d" }}">{{ page.date | date: "%b %-d, %Y" }}</time></p>
+
+        {% include post-tags.html %}
+
     </header>
     <p>{{ content }}</p>
     <footer>
@@ -52,12 +55,12 @@ layout: default
                   js.id = id;
                   js.src = "https://platform.twitter.com/widgets.js";
                   fjs.parentNode.insertBefore(js, fjs);
-                 
+
                   t._e = [];
                   t.ready = function(f) {
                     t._e.push(f);
                   };
-                 
+
                   return t;
                 }(document, "script", "twitter-wjs"));</script>
                 <a class="twitter-share-button" href="https://twitter.com/intent/tweet">Tweet</a>
@@ -69,13 +72,13 @@ layout: default
             </div>
         </aside>
         {% endif %}
-        
+
         {% if site.disqus_shortname %}
         <div id="disqus_thread"></div>
         <script type="text/javascript">
             /* * * CONFIGURATION VARIABLES * * */
             var disqus_shortname = '{{ site.disqus_shortname }}';
-            
+
             /* * * DON'T EDIT BELOW THIS LINE * * */
             (function() {
                 var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

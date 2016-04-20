@@ -2,7 +2,10 @@
 title: 'Using Pharo to Learn Smalltalk'
 author: Benny Cheung
 layout: post
-keywords: [Smalltalk, Pharo, RaspberryPi, Learning]
+tags:
+  - Smalltalk
+  - Pharo
+  - RaspberryPi
 categories:
   - Posts
 ---
