@@ -37,7 +37,7 @@ Pharo team produced an excellent free book, that you can download from here:
 (where AtomMorph demo are showing; this video is technical details)
 * [Manipulating Live Objects](https://vimeo.com/34810463)
 
-Pharo is the cool new kid on the object-oriented languages arena. It is Smalltalk-inspired. It is dynamic. It comes with a live programming environment in which objects are at the center. And, it is tiny. But, most of all, it makes serious programming fun by challenging almost everything that got to be popular. For example, imagine an environment in which you can extend Object, modify the compiler, customize object the inspector, or even build your own the domain-specific debugger. And, you do not even have to stop the system while doing that. In this talk, we show hands-on how live objects look like and we get to play with them in multiple scenarios.
+Pharo is the cool new kid on the object-oriented languages arena. It is Smalltalk-inspired. It is dynamic. It comes with a live programming environment in which objects are at the center. And, it is tiny. But, most of all, it makes serious programming fun by challenging almost everything that got to be popular. For example, imagine an environment in which you can extend Object, modify the compiler, customize object the inspector, or even build your own the domain-specific debugger. And, you do not even have to stop the system while doing that.
 
 ## Monticello
 Tons of packages can be found at:
