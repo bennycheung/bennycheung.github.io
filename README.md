@@ -15,13 +15,16 @@ This set of pages, with layout `pages`, will show up in the sidebar navigation a
 Put your blog pages into `_posts` directory, with the proper `YYYY-MM-DD-your-post-title.md` as the file name format. Within the post, you should have at least the following metadata,
 
 ```
-  ---
-  title: 'Learning About Something'
-  author: Author Name
-  layout: post
-  categories:
-    - Posts
-  --
+---
+title: 'Some Exciting Title'
+author: Author Name
+layout: post
+tags:
+  - Tag1
+  - Tag2
+categories:
+  - Posts
+---
 ```
 
 ### Post Excerpt
