@@ -53,12 +53,12 @@ After finding what you like, you can use *Monticello Browser* to add the package
 
 The repository can be added, for example
 
-```
+{% highlight smalltalk %}
 MCHttpRepository
 	location: 'http://smalltalkhub.com/mc/PharoExtras/MorphExamplesAndDemos/main'
 	user: ''
 	password: ''
-```
+{% endhighlight %}
 
 ### Demo with BouncingAtomsMorph
 
@@ -85,23 +85,23 @@ development environment.
 - browse senders of velocity: -> browse #bounceIn:
 - modify to beep after bounce:
 
-```
+{% highlight smalltalk %}
 bounced ifTrue: [self velocity: vx @ vy. Beeper beep ].
-```
+{% endhighlight %}
 
 - very noisy, so add test for color red
 
-```
+{% highlight smalltalk %}
 bounced ifTrue: [self velocity: vx @ vy.
 	self color = Color red ifTrue: [Beeper beep] ].
-```
+{% endhighlight %}
 
 Alternative:
 
 - create a subclass of AtomMorph with a different color that beeps
 - define BeepingAtomMorph
 
-```
+{% highlight smalltalk %}
 bounceIn: aRect
 	| bounced |
 	bounced := super bounceIn: aRect.
@@ -110,7 +110,7 @@ bounceIn: aRect
 
 defaultColor
 	^ Color red
-```
+{% endhighlight %}
 
 - BeepingAtomMorph new openInWorld
 - instantiate it and embed it
@@ -118,23 +118,23 @@ defaultColor
 - see BouncingAtomMorph>>step tests AtomMorph class
 - we can change BouncingAtomMorph>>step or BeepingAtomMorph as follows:
 
-```
+{% highlight smalltalk %}
 isMemberOf: aClass
 	^AtomMorph == aClass
-```
+{% endhighlight %}
 
 Show all Morph Instances
 
-```
+{% highlight smalltalk %}
 BouncingAtomsMorph allInstances.
-```
+{% endhighlight %}
 
 Remove all Morph
 Inspect BoundingAtomsMorph object and execute,
 
-```
+{% highlight smalltalk %}
 self removeAllMorphs
-```
+{% endhighlight %}
 
 ## Metacello
 Metacello is a package management system for Monticello (a versioning system used in Smalltalk). There is a chapter about Metacello in the "Deep into Pharo" book, and it gives a good in-depth knowledge about this system. On the other hand when I was starting to use Metacello, I needed something more simple and direct, like what I described here.
@@ -162,12 +162,12 @@ If you are hardcore Pi-er, you wanted to do it yourselves. You can explore this 
 [Compile Pharo by Hand](https://pharoweekly.wordpress.com/2014/02/19/raspberrypi/)
 
 After you have the compiled Pharo image, copy to a Raspberry Pi, let's say folder named *Pi_Pharo*.
-Here is a picture showing Pharo is running on Raspberry Pi via VNC virtual desktop.
+Here is a picture showing Pharo is running on Raspberry Pi via VNC viewer.
 
-```
+{% highlight shell %}
 % cd Pi_Pharo
 % ./PharoS Pharo.4.0.image
-```
+{% endhighlight %}
 
 ![Pharo 4 running on Raspberry Pi]({{ site.baseurl }}/images/using-pharo-to-learn-smalltalk/Pharo_on_Raspi2_sm.png)
 

@@ -12,7 +12,7 @@ This set of pages, with layout `pages`, will show up in the sidebar navigation a
   5. Resume - resume.md show your resume
 
 ## Write Blog Pages
-Put your blog pages into `_posts` directory, with the proper `YYYY-MM-DD-your-post-title.md` as the file name format. Within the post, you should have at least the following metadata,
+Put your blog pages into `_posts` directory, with the proper `YYYY-MM-DD-your-post-title.md` as the file name format. Within the post, you should have at least the following metadata, the layout `post` should be used.
 
 ```
 ---
