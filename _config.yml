@@ -14,7 +14,7 @@ paginate: 5 # How many posts to show per page
 gems: [jekyll-paginate]
 
 # Google Analytics
-# google_analytics: UA-56071882-1
+google_analytics: UA-76691604-1
 
 # Author settings
 author_name: Benny Cheung
