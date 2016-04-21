@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Blog
+date: 2016-04-18 08:31:00
 permalink: /blog/
 ---
 <section id="archive">
