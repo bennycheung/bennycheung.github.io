@@ -1,7 +1,8 @@
 ---
-title: 'Using Pharo to Learn Smalltalk'
-author: Benny Cheung
 layout: post
+title: 'Using Pharo to Learn Smalltalk'
+permalink: 'Using-Pharo-to-Learn-Smalltalk'
+author: Benny Cheung
 tags:
   - Smalltalk
   - Pharo
