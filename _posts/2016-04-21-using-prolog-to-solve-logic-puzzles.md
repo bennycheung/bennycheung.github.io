@@ -57,8 +57,6 @@ There is one professor in the world, [Mihaela Malita](http://www.anselm.edu/inte
 The famous `Zebra Puzzle` comes with 15 facts and 2 questions:
 *Who has a zebra and who drinks water?*
 
-![Zebra Puzzle Illustration]({{ site.baseurl }}/images/using-prolog-to-solve-logic-puzzles/the_zebra_logic_puzzle.png){:width="780px" width="682px"}
-
 The list of facts (or constraints):
 
 1. There are 5 colored houses in a row, each having an owner, which has an animal, a favorite cigarette, a favorite drink.
