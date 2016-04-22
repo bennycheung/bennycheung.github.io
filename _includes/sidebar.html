@@ -52,12 +52,22 @@
                 </span>
                 </a>
               {% endif %}
-		<br>
+
+<br>
               {% if site.youtube_username %}
 				        <a href="https://www.youtube.com/channel/{{ site.youtube_username }}">
 				        <span class="fa-stack fa-lg">
                 <i class="fa fa-square-o fa-stack-2x"></i>
                 <i class="fa fa-youtube fa-stack-1x"></i>
+                </span>
+                </a>
+              {% endif %}
+
+              {% if site.reddit_username %}
+                <a href="https://www.reddit.com/user/{{ site.reddit_username }}">
+                <span class="fa-stack fa-lg">
+                <i class="fa fa-square-o fa-stack-2x"></i>
+                <i class="fa fa-reddit fa-stack-1x"></i>
                 </span>
                 </a>
               {% endif %}
