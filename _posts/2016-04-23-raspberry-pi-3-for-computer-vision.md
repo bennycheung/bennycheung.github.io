@@ -61,7 +61,7 @@ OpenCV is a C++ library of programming functions mainly aimed at real-time compu
 Learning from this [Install Notes](http://simplecv.readthedocs.org/en/latest/HOWTO-Install%20on%20RaspberryPi.html),
 it describes a super easy and fast way to setup your Raspberry Pi with OpenCV with SimpleCV module, avoiding many painful steps described by others blogs.
 
-Simply run the following commands to install the OpenCV necessary dependancies:
+Simply run the following commands to install the OpenCV necessary dependencies:
 
 ```
 sudo apt-get install python-setuptools
@@ -69,7 +69,7 @@ sudo apt-get install python-pip
 sudo apt-get install ipython python-opencv python-scipy python-numpy python-pygame
 ```
 
-Aftr all OpenCV dependencies are installed,
+After all OpenCV dependencies are installed,
 we could proceed to install SimpleCV, a wrapper API that built on top of OpenCV and
 make computer vision really easy.
 Download SimpleCV from github and install from the source.
@@ -99,7 +99,7 @@ Checkout the result image `test.jpg` to see it captures correctly.
 You have confirmed that Raspberry Pi is now running SimpleCV and working with your USB camera.
 
 ## Install Orange - Machine Learning Tools
-Orange <http://orange.biolab.si> is a component-based data mining software. It includes a range of data visualization, exploration, preprocessing and modeling techniques. We shall discuss more about Orange in the future articles.
+Orange <http://orange.biolab.si> is a component-based data mining software. It includes a range of data visualization, exploration, preprocessing and modelling techniques. We shall discuss more about Orange in the future articles.
 
 *Due to the limitation of Raspberry Pi, we're having a hard time to get Orange framework compiled on Pi. We may want to run the machine learning component of your project on a Linux PC (Ubuntu 12.04) in this moment.*
 
