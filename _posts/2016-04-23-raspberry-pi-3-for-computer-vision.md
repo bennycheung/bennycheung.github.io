@@ -143,7 +143,12 @@ It uses the SimpleCV library and SVM machine learning to classify Lego pieces.
 
 <https://www.youtube.com/watch?v=yupShUY5WS4>
 
-### Militarizing Your Backyard with Python: Computer Vision and the Squirrel Hordes
-An excellent PyCon presentation shows us how to use Python and OpenCV to militarizing your backyard, to use a water gun to scare away those squirrels stealing your bird foods.
+### Facial Camera Tracking
+Using OpenCV Harr-like facial detection, we could connect a 2-axises camera to track the facial movement.
+
+<https://www.youtube.com/watch?v=GD8ArIM-5BQ>
+
+### Computer Vision and the Squirrel Hordes
+This excellent PyCon presentation shows us how to use Python and OpenCV to militarizing your backyard, to use a water gun to scare away those squirrels stealing your bird foods.
 
 <https://www.youtube.com/watch?v=QPgqfnKG_T4>
