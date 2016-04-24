@@ -14,9 +14,9 @@ categories:
   - Posts
 ---
 <!--excerpt.start-->
-With the advent of Raspberry Pi 3, developing a computer vision project is no longer difficult nor expensive. You could produce your IoT with computer vision components, to secure your home, to monitor beer in your fridge, to watch for company's snack table. Once you have an initial setup, the possibility is endless.
+With Raspberry Pi 3, developing a computer vision project is no longer difficult nor expensive. Computer vision is a method of image processing and recognition that is especially useful when applied to Raspberry Pi. You could produce your IoT with computer vision components, to secure your home, to monitor beer in your fridge, to watch your kids. Once you have an initial setup, the possibilities are endless!
 
-This article summaries how to setup your Raspberry Pi 3, how to install the useful computer vision libraries from OpenCV and SimpleCV, how to install the machine learning framework Orange. Equipping with this software tool suites, plus
+This article summarizes how to setup your Raspberry Pi 3, how to install the useful computer vision libraries from OpenCV and SimpleCV, how to install the machine learning framework Orange. Equipping with this software tool suites, plus
 Raspberry Pi 3 has Wifi, Bluetooth and optional OpenGL built-in,
 your vision project will be on it's way to reality.
 <!--excerpt.end-->
