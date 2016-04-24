@@ -101,7 +101,7 @@ You have confirmed that Raspberry Pi is now running SimpleCV and working with yo
 ## Install Orange - Machine Learning Tools
 Orange <http://orange.biolab.si> is a component-based data mining software. It includes a range of data visualization, exploration, preprocessing and modelling techniques. We shall discuss more about Orange in the future articles.
 
-*Due to the limitation of Raspberry Pi, we're having a hard time to get Orange framework compiled on Pi. We may want to run the machine learning component of your project on a Linux PC (Ubuntu 12.04) in this moment.*
+*Due to the limitation of Raspberry Pi, we're having a hard time to get Orange framework compiled on Pi. You may want to run the machine learning component of your project on a Linux PC (Ubuntu 12.04) in this moment.*
 
 You can clone from the [Orange Github Source](https://github.com/biolab/orange)
 
