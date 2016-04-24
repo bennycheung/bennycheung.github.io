@@ -52,7 +52,7 @@ If you want to setup Wifi, Bluetooth, this MakeUseOf guide on [How to Upgrade to
 will be invaluable resource.
 
 ### VNC Server
-If you want to setup remote desktop access to the Raspberry Pi, the following the an excellent guide:
+If you want to setup remote desktop access to the Raspberry Pi, the following is an excellent guide:
 [How to control your raspberry using mac on-board tools (VNC-Connection)](http://quaintproject.wordpress.com/2013/03/03/how-to-control-your-raspberry-using-mac-on-board-tools/)
 
 ## Install OpenCV and SimpleCV
