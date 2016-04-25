@@ -185,8 +185,12 @@ td {
 }
 
 // for postbar on top of a post
-.postbar-height {
+.postbar-image {
   height: 80px;
+  border-radius: 10px;
+  border:2px solid #ddd;
+  background: no-repeat center center;
+  background-size: cover
 }
 
 .postbar-container {

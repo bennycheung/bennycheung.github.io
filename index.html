@@ -6,8 +6,8 @@ layout: default
     <header>
       {% if post.cover %}
       <div
-        class="postbar-container postbar-height"
-        style="{% if post.cover %}background:url({{post.cover}}) no-repeat; background-size: cover{% endif %}">
+        class="postbar-container postbar-image"
+        style="{% if post.cover %}background-image:url({{post.cover}}){% endif %}">
       </div>
       {% endif %}
 
