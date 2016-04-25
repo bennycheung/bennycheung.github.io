@@ -184,6 +184,40 @@ td {
   }
 }
 
+// for postbar on top of a post
+.postbar-height {
+  height: 80px;
+}
+
+.postbar-container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.postbar-container:before,
+.postbar-container:after {
+  content: " ";
+  display: table;
+}
+
+.postbar-container:after {
+  clear: both;
+}
+
+.postbar-img-overlay {
+  bottom: 0;
+  background-color: #000;
+  display: block;
+  left: 0;
+  opacity: 0.5;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 2;
+}
+
 #archives {
   padding: 5px;
 }

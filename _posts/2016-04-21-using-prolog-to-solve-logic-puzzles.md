@@ -10,6 +10,7 @@ tags:
   - Puzzle
 categories:
   - Posts
+cover: images/background_5.png
 ---
 ## What is a logic puzzle?
 <!--excerpt.start-->

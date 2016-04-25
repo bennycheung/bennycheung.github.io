@@ -1,0 +1,7 @@
+{% if page.cover %}
+<div
+  class="postbar-container postbar-height"
+  style="{% if page.cover %}background:url({{page.cover}}) no-repeat; background-size: cover{% endif %}">
+  <!--{% if page.cover %}<div class="postbar-img-overlay"></div>{% endif %}-->
+</div>
+{% endif %}

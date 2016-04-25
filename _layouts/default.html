@@ -3,11 +3,21 @@
     {% include head.html %}
     <body>
         <div class="container">
+
             <div class="row">
                 {% if site.sidebar == 'left' %}{% include sidebar.html %}{% endif %}
-                <section id="main" class="col-md-9">{{ content }}</section>
+                <section id="main" class="col-md-9">
+                  {{ content }}
+                </section>
                 {% if site.sidebar == 'right' %}{% include sidebar.html %}{% endif %}
             </div>
+
+            <div class="row">
+              {% if site.copyright_notice %}
+                {% include site-footer.html %}
+              {% endif %}
+            </div>
         </div>
-    </body>
+
+  </body>
 </html>

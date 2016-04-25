@@ -4,6 +4,13 @@ layout: default
 {% for post in paginator.posts %}
   <article class="content-box post">
     <header>
+      {% if post.cover %}
+      <div
+        class="postbar-container postbar-height"
+        style="{% if post.cover %}background:url({{post.cover}}) no-repeat; background-size: cover{% endif %}">
+      </div>
+      {% endif %}
+
       <h1><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
       <p>By {{ post.author }} on <time pubdate datetime="{{ post.date | date: "%Y-%b-%-d" }}">{{ post.date | date: "%b %-d, %Y" }}</time></p>
     </header>
@@ -13,15 +20,15 @@ layout: default
 		{% else %}
 			{{ post.content | strip_html | truncatewords: 5 }}
 		{% endif %}
-		
-		{% capture content_words %} 
-			{{ post.content | number_of_words }} 
-		{% endcapture %} 
-		
-		{% capture excerpt_words %} 
-		  {{ post.excerpt | number_of_words }} 
-		{% endcapture %} 
-		
+
+		{% capture content_words %}
+			{{ post.content | number_of_words }}
+		{% endcapture %}
+
+		{% capture excerpt_words %}
+		  {{ post.excerpt | number_of_words }}
+		{% endcapture %}
+
 		{% if excerpt_words != content_words %}
 		<p><a class="btn btn-sm btn-primary" href="{{ post.url }}#read-more" role="button" style="float: right;">Read more <i class="fa fa-arrow-circle-right"></i></a>
 		</p>
