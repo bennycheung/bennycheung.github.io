@@ -16,16 +16,20 @@ Put your blog pages into `_posts` directory, with the proper `YYYY-MM-DD-your-po
 
 ```
 ---
-title: 'Some Exciting Title'
-author: Author Name
 layout: post
+title: 'Some Exciting Title'
+permalink: 'some-exciting-title'
+author: Author Name
 tags:
   - Tag1
   - Tag2
 categories:
   - Posts
+cover: images/some-exciting-title/cover.jpg
 ---
 ```
+
+The `cover` metadata key is for the post's head image (assumed to be 800x80). You can find the samples in the `_posts` directory.
 
 ### Post Excerpt
 The tag `<!--excerpt.start-->` and `<!--excerpt.end-->` mark the beginning and the end of the excerpt in the post, that would be put on the post's summary block in the front page.
