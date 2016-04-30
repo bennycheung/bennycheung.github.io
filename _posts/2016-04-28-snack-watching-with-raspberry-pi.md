@@ -76,3 +76,26 @@ The images and operations can also be accessed via RESTful API. The available UR
 | /snacks/last | GET | Get last image. This call returns the latest image by date_created DESC. If none exist, null is returned.
 | /snacks/last/{int:n} | GET | Get last n images. This call returns a list of the latest images by date_created DESC.
 | /snacks/last/summary | GET | Get lastest summary. This call returns a summary of the latest processed images including the new, duplicate and removed blobs. If no images exist, it returns null.
+
+### Snapshot Naming Convention
+
+When a camera snapshot is taken, The images will be written into a creation  folder according to the snapshot's date-time,
+
+```
+snack-{{year}_{month}_{day}}-{{hour}_{minute}_{second}}
+```
+
+e.g. `snack-2015_06_17-13_14_58` is created at date `2015-06-17` and time `13:14:58`.
+
+
+The result JSON for an image, for example, requests for the last image using `curl` command.
+
+```
+curl http://snack-web:8000/api/snacks/last
+```
+
+For a list of images, for example, requests for all snack images using `curl` command.
+
+```
+curl http://snack-web:8000/api/snacks/
+```
