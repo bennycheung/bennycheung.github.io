@@ -82,7 +82,7 @@ The images and operations can also be accessed via RESTful API. The available UR
 When a camera snapshot is taken, The images will be written into a creation  folder according to the snapshot's date-time,
 
 ```
-snack-{{year}_{month}_{day}}-{{hour}_{minute}_{second}}
+snack-{year}_{month}_{day}-{hour}_{minute}_{second}
 ```
 
 e.g. `snack-2015_06_17-13_14_58` is created at date `2015-06-17` and time `13:14:58`.
