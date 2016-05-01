@@ -1,9 +1,19 @@
 ---
 layout: page
-title: About
-date: 2016-04-18 08:31:00
+title: About me
 permalink: /about/
+main: true
+crumbs: false
 ---
+
+<ul class="nav nav-tabs" role="tablist">
+	<li role="presentation" class="active"><a href="/about/">About me</a></li>
+	<li role="presentation"><a href="/research/">Research</a></li>
+</ul>
+
+<br />
+
+<img src="" style="width:100%; border:2px solid black;">
 
 Benny Cheung's personal and professional enthusiasm on the topics of computing and philosophy.
 This blog is dedicated to the living computer scientist;

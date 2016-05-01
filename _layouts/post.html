@@ -1,93 +1,30 @@
 ---
 layout: default
+comments: true
 ---
-<article class="content-box post">
-  <header>
-    {% include post-bar.html %}
+<br />
+<br />
+<br />
+<br />
+<div class="container theme-showcase" role="main" style="font-size:16px; font-family: Helvetica; width:750px;">
 
-    <h1>{{ page.title }}</h1>
-    <p>By {{ page.author }} on <time pubdate datetime="{{ page.date | date: "%Y-%b-%-d" }}">{{ page.date | date: "%b %-d, %Y" }}</time></p>
+	<header class="post-header">
+		<h1 class="post-title">{{ page.title }}</h1>
+		<p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+	</header>
 
-    {% include post-tags.html %}
-  </header>
+	{% include post-tags.html %}
 
-    <p>{{ content }}</p>
-    <footer>
-        {% if page.next.url %}
-        <aside id="next_post">
-            <a href="{{page.next.url}}">
-                <div>
-                  <span>Read This Next</span>
-                  <h2>{{ page.next.title }}</h2>
-                  <p>{{ page.next.content | markdownify | strip_html | strip_newlines | truncate: 160 }}</p>
-                </div>
-            </a>
-        </aside>
-        {% endif %}
+	<article class="post-content">
+		{{ content }}
+	</article>
 
-        {% if site.subscribe_widget %}
-        <button class="btn btn-primary btn-block subscribe-button subscribe-button-post">Subscribe to posts</button>
-        {% endif %}
+	{% if page.comments == true %}
+		{% include comments.html %}
+	{% endif %}
+</div>
 
-        {% if site.share_buttons %}
-        <aside id="social_buttons">
-            <div class="col-sm-4" id="facebook-button">
-                <div id="fb-root"></div>
-                <script>(function(d, s, id) {
-                  var js, fjs = d.getElementsByTagName(s)[0];
-                  if (d.getElementById(id)) return;
-                  js = d.createElement(s); js.id = id;
-                  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
-                  fjs.parentNode.insertBefore(js, fjs);
-                }(document, 'script', 'facebook-jssdk'));</script>
-                <style>
-                .fb-like.fb_iframe_widget span{
-                  vertical-align: top !important;
-                }
-                </style>
-                <div class="fb-like" data-href="{{ post.url | prepend: site.baseurl | prepend: site.url }}" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
-            </div>
 
-            <div class="col-sm-4" id="tweet-button">
-                <script>window.twttr = (function(d, s, id) {
-                  var js, fjs = d.getElementsByTagName(s)[0],
-                    t = window.twttr || {};
-                  if (d.getElementById(id)) return t;
-                  js = d.createElement(s);
-                  js.id = id;
-                  js.src = "https://platform.twitter.com/widgets.js";
-                  fjs.parentNode.insertBefore(js, fjs);
-
-                  t._e = [];
-                  t.ready = function(f) {
-                    t._e.push(f);
-                  };
-
-                  return t;
-                }(document, "script", "twitter-wjs"));</script>
-                <a class="twitter-share-button" href="https://twitter.com/intent/tweet">Tweet</a>
-            </div>
-
-            <div class="col-sm-4" id="gplus-button">
-                <script src="https://apis.google.com/js/platform.js" async defer></script>
-                <div class="g-plusone" data-size="medium"></div>
-            </div>
-        </aside>
-        {% endif %}
-
-        {% if site.disqus_shortname %}
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-            /* * * CONFIGURATION VARIABLES * * */
-            var disqus_shortname = '{{ site.disqus_shortname }}';
-
-            /* * * DON'T EDIT BELOW THIS LINE * * */
-            (function() {
-                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-            })();
-        </script>
-        {% endif %}
-    </footer>
-</article>
+<script type="text/javascript"
+src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>

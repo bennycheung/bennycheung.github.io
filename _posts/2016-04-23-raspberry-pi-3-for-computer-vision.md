@@ -1,7 +1,8 @@
 ---
 layout: post
-title: 'Raspberry Pi 3 for Computer Vision'
-permalink: 'Raspberry-Pi-3-for-Computer-Vision'
+title: Raspberry Pi 3 for Computer Vision
+date: 2016-04-23 12:00:00.000000000 -05:00
+permalink: raspberry-pi-3-for-computer-vision
 author: Benny Cheung
 tags:
   - AI
@@ -10,9 +11,10 @@ tags:
   - OpenCV
   - SimpleCV
   - Python
-categories:
-  - Posts
-cover: images/raspberry-pi-3-for-computer-vision/cover.jpg
+category: post
+comments: true
+image:
+  teaser: images/raspberry-pi-3-for-computer-vision/cover.jpg
 ---
 <!--excerpt.start-->
 With Raspberry Pi 3, developing a computer vision project is no longer difficult nor expensive. Computer vision is a method of image processing and recognition that is especially useful when applied to Raspberry Pi. You could produce your IoT with computer vision components, to secure your home, to monitor beer in your fridge, to watch your kids. Once you have an initial setup, the possibilities are endless!

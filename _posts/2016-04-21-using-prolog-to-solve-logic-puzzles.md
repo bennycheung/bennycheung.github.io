@@ -1,16 +1,18 @@
 ---
 layout: post
-title: 'Using Prolog to Solve Logic Puzzles'
-permalink: Using-Prolog-to-Solve-Logic-Puzzles
+title: Using Prolog to Solve Logic Puzzles
+date: 2016-04-21 12:00:00.000000000 -05:00
+permalink: using-prolog-to-solve-logic-puzzles
 author: Benny Cheung
 tags:
   - AI
   - Prolog
   - Logic
   - Puzzle
-categories:
-  - Posts
-cover: images/background_5.png
+category: post
+comments: true
+image:
+  teaser: images/using-prolog-to-solve-logic-puzzles/cover.jpg
 ---
 ## What is a logic puzzle?
 <!--excerpt.start-->

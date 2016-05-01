@@ -1,23 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
-    {% include head.html %}
-    <body>
-        <div class="container">
+<html>
 
-            <div class="row">
-                {% if site.sidebar == 'left' %}{% include sidebar.html %}{% endif %}
-                <section id="main" class="col-md-9">
-                  {{ content }}
-                </section>
-                {% if site.sidebar == 'right' %}{% include sidebar.html %}{% endif %}
-            </div>
+{% include head.html %}
 
-            <div class="row">
-              {% if site.copyright_notice %}
-                {% include site-footer.html %}
-              {% endif %}
-            </div>
-        </div>
+<body role="document">
 
-  </body>
+	{% include header.html %}
+
+	<div class="page-content">
+		<div class="wrapper">
+			{{ content }}
+		</div>
+	</div>
+
+	{% include footer.html %}
+	{% include google_analytics.html %}
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+</body>
 </html>

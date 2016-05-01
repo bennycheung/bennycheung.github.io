@@ -1,19 +1,17 @@
 ---
 layout: post
-title: 'Snack Watching with Raspberry Pi'
-permalink: 'snack-watching-with-raspberry-pi'
+title: Snack Watching with Raspberry Pi
+date: 2016-04-28 12:00:00.000000000 -05:00
+permalink: snack-watching-with-raspberry-pi
 author: Benny Cheung
 tags:
   - SnackWatcher
-  - Computer Vision
   - RaspberryPi
-  - OpenCV
-  - SimpleCV
   - Python
-  - RESTful API
-categories:
-  - Posts
-cover: images/snack-watching-with-raspberry-pi/cover.jpg
+category: post
+comments: true
+image:
+  teaser: images/snack-watching-with-raspberry-pi/cover.jpg
 ---
 <!--excerpt.start-->
 Starting as a [Jonah Group](http://www.jonahgroup.com) fun project,

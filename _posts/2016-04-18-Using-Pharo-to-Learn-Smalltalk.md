@@ -1,15 +1,17 @@
 ---
 layout: post
-title: 'Using Pharo to Learn Smalltalk'
-permalink: 'Using-Pharo-to-Learn-Smalltalk'
+title: Using Pharo to Learn Smalltalk
+date: 2016-04-18 12:00:00.000000000 -05:00
+permalink: using-pharo-to-learn-smalltalk
 author: Benny Cheung
 tags:
   - Smalltalk
   - Pharo
   - RaspberryPi
-categories:
-  - Posts
-cover: images/using-pharo-to-learn-smalltalk/cover.jpg
+category: post
+comments: true
+image:
+  teaser: images/using-pharo-to-learn-smalltalk/cover.jpg
 ---
 <!--excerpt.start-->Pharo is an open source implementation of the programming language and environment Smalltalk. Pharo emerged as a fork of Squeak, an open source Smalltalk environment created by the Smalltalk-80 team. This article explores how to use Pharo to learn Smalltalk, using Pharo unique package management tools and running Pharo on Raspberry Pi.
 <!--excerpt.end-->

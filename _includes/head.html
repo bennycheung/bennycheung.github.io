@@ -1,50 +1,18 @@
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width initial-scale=1">
+	<meta name="description" content="{{ site.description }}">
+	<meta name="author" content="{{ site.author }}">
 
-    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+	<title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
 
-    <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.meta_description }}{% endif %}">
-    <meta name="author" content="{{ site.author_name }}">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
+	<!-- Bootstrap core CSS -->
+	<link href="/css/bootstrap.css" rel="stylesheet">
+	<!-- Bootstrap theme -->
+	<link href="/css/bootstrap-theme.css" rel="stylesheet">
 
-    <!--[if lt IE 9]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha/css/bootstrap.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
-    <script src="https://cdn.rawgit.com/garand/sticky/master/jquery.sticky.js"></script>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,300" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Domine:400,700' rel='stylesheet' type='text/css'>
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
-
-    <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
-    <script src="{{ "/js/main.js" | prepend: site.baseurl }}"></script>
-
-    <meta property="og:site_name" value="{{ site.title }}">
-    <meta property="og:title" content="{% if post.title %}{{ post.title }}{% elsif page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
-    <meta property="og:url" content="{% if page.url %}{{ page.url | prepend: site.baseurl | prepend: site.url }}{% elsif post.url %}{{ post.url | prepend: site.baseurl | prepend: site.url }}{% endif %}">
-    <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.meta_description }}{% endif %}">
-    <meta property="og:image" content="{{ site.author_image }}">
-    <meta property="og:image:url" content="{{ site.author_image }}">
-    <meta property="og:image:width" content="{{ site.author_image_width }}">
-    <meta property="og:image:height" content="{{ site.author_image_height }}">
-    <meta property="og:image:type" content="{{ site.author_image_mime }}">
-
-    {% if site.google_analytics %}
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-      ga('create', '{{ site.google_analytics }}', 'auto');
-      ga('send', 'pageview');
-    </script>
-    {% endif %}
+	<!-- Custom styles for this template -->
+	<link href="/css/blog.css" rel="stylesheet">
+	<link rel="stylesheet" href="/css/pygments.css">
 </head>
