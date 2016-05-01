@@ -10,6 +10,9 @@ url: "http://bennycheung.github.io" # the base hostname & protocol for your site
 # Google Analytics
 google_analytics: UA-76691604-1
 
+# Comments settings
+disqus_shortname: bennycheungmindhackblog
+
 # Social settings
 avatar: /assets/avtar.jpg
 twitter_username: Benny_Cheung
