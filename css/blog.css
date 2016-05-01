@@ -166,6 +166,22 @@ h6, .h6 {
 }
 
 /**
+ * table format
+ */
+table {
+  border-spacing: 5px;
+  border:2px solid #000000;
+}
+
+th {
+  border:2px solid #000000;
+}
+
+td {
+  border:2px solid #000000;
+}
+
+/**
  * tag cloud and archives
  */
 .tag-cloud {
