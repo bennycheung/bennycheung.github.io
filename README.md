@@ -16,22 +16,23 @@ For example,
 ```
 ---
 layout: post
-title: Using Pharo to Learn Smalltalk
-date: 2016-04-18 12:00:00.000000000 -05:00
-permalink: using-pharo-to-learn-smalltalk
+title: Snack Watching with Raspberry Pi
+date: 2016-04-28 12:00:00.000000000 -05:00
+permalink: snack-watching-with-raspberry-pi
 author: Benny Cheung
 tags:
-  - Smalltalk
-  - Pharo
+  - SnackWatcher
   - RaspberryPi
+  - Python
 category: post
 comments: true
 image:
-  teaser: images/using-pharo-to-learn-smalltalk/cover.jpg
+  cover: images/snack-watching-with-raspberry-pi/cover.jpg
+  header: images/snack-watching-with-raspberry-pi/header.jpg
 ---
 ```
 
-The `image.teaser` metadata key is for the post's head image (assumed to be 800x600). You can find the samples in the `_posts` directory.
+The `image.cover` metadata key is for the post's teaser image (assumed to be 400x300). The `image.header` metadata key is for the post's header image (assumed to be 800x160). You can find the samples in the `_posts` directory.
 
 ### Post Excerpt
 The tag `<!--excerpt.start-->` and `<!--excerpt.end-->` mark the beginning and the end of the excerpt in the post, that would be put on the post's summary block in the front page.

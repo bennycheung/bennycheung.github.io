@@ -11,7 +11,8 @@ tags:
 category: post
 comments: true
 image:
-  teaser: images/snack-watching-with-raspberry-pi/cover.jpg
+  cover: images/snack-watching-with-raspberry-pi/cover.jpg
+  header: images/snack-watching-with-raspberry-pi/header.jpg
 ---
 <!--excerpt.start-->
 Starting as a [Jonah Group](http://www.jonahgroup.com) fun project,
