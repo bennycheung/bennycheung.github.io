@@ -15,6 +15,7 @@ comments: true
 image:
   cover: images/learning-and-classifying-snacks-using-python-simplecv/cover.jpg
   header: images/learning-and-classifying-snacks-using-python-simplecv/header.jpg
+published: false
 ---
 The [Snack Watcher](https://github.com/jonahgroup/SnackWatcher)
 detects if any snack has been put on the snack table. After we obtained
