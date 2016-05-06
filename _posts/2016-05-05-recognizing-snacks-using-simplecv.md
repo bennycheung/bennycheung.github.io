@@ -23,13 +23,13 @@ This article aims to provide the basic knowledge of how to recognize snacks by
 using Python and SimpleCV. Readers will gain practical programming knowledge via
 experimentation with the Python scripts included in
 the [Snack Classifier](https://github.com/jonahgroup/SnackClassifier) open source project.
-<!--excerpt.end-->
 
 To illustrate with a snacks recognition app, the [Snack Watcher](https://github.com/jonahgroup/SnackWatcher)
 watches any snacks present on the snack table.
 For Snack Watcher to determine if there was an interesting event,
 it needs to process the image into a set of image "Blobs". For each "Blob", Snack Watcher
 compares the "Blob" with it's previous state to determine if the "Blob" was added, removed or stationary.
+<!--excerpt.end-->
 
 More interestingly, the Snack Watcher can be configured to recognize
 if that "Blob" looks like a particular kind of snack (e.g. cookie or candy).
