@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Spatial Reasoning Explained
-date: 2016-06-01 12:00:00.000000000 -05:00
+date: 2016-06-08 12:00:00.000000000 -05:00
 permalink: spatial-reasoning-explained
 author: Benny Cheung
 tags:
@@ -14,51 +14,47 @@ comments: true
 image:
   cover: images/spatial-reasoning-explained/cover.jpg
   header: images/spatial-reasoning-explained/header.jpg
-published: false
+published: true
 ---
 <!--excerpt.start-->
-Spatial Reasoning is a logical reasoning system that assumed entities located in space,
-and such entities have spatial structure. This is always a dream to make a machine which can perceive
-and understand space. With machine's spatial intelligence, human daily life could be
-enhanced by receiving assistant, such as spatial orientation, planning and navigation from the machine.
+Spatial Reasoning is a logical reasoning system that assumed entities located in space and have a spatial structure.
+Making machines that can perceive and understand space has always been
+a researcher's dream. Our lives could be enhanced by their assistance;
+with the spatial intelligence of machines, we would have new methods of
+planning and navigation through spatial orientation.
 <!--excerpt.end-->
 
 ## Topics of Spatial Reasoning
-Computer science has a list of interesting topics that required spatial reasoning
-ability, such as artificial intelligence, spatial database, image processing and
-linguistic processing.
+Computer science involves a list of interesting topics that required spatial reasoning ability:
 
 * **Artificial Intelligence** -
-Our everyday concepts are populated with qualitative spatial description. Something
-is sitting next to something. The description is usually fuzzy and imprecise, but yet
-we can deduce some non-trivial conclusion, e.g. a train is going west, if the station
-exit is closer to the south, where would be sit on the train in order to exit fast.
-This involved the spatial structure of the train and qualitative understanding of
-a train travelling direction.
+Our everyday concepts are populated with qualitative spatial description. Something is sitting next to something else.
+The description is usually fuzzy and imprecise, yet
+we can deduce some non-trivial conclusion.
+For example, a train is going west. If the station exit is closer
+to the south, where would we sit on the train in order to exit faster?
+This involved the spatial structure of the train and qualitative understanding of the direction that train is travelling.
 
 * **Spatial Database** -
-In addition to well-known numeric or character objects, spatial object is a popular
-extension to the collection of the database object. When the data has a spatial
-attribute, for example the street address or phone number, we could use
-the spatial proximity to calculate and deduce more info. We need to provide
-a finite geometric representation and operation on these spatial entities.
+In addition to well-known numeric or character objects, the "spatial object " is a popular extension to the collection of the "database objects".
+When the data has a spatial attribute, for example a street address or a phone number,
+we could use the spatial proximity to calculate and deduce more info.
+We are designating a finite geometric representation and operation to these spatial entities.
 
 * **Image Recognition** -
-The object appears in the visual field, is a great interest to image recognition
-application. The object usually occurred in a spatial context, for example, the book
-is sitting on top of a table. The object is described geometrically and spatially
-to precisely pin-point it's location and it's spatial occupation.
+When an object appears in the visual field, it's of great interest to image recognition application.
+The object usually occurred in a spatial context, for example, the snacks
+sitting on top of a table. The snacks are described geometrically and spatially to precisely pin-point their location and spatial occupation.
 
 * **Linguistic Processing** -
-In human activities, the stories are usually accompany with a spatial context. For
-example, the battlefield logistics are relied on the spatial optimization, to locate
-the most strategically advantage position. The method will be described both verbally
-and visually on a map. Another example, a person lost in the middle of no where;
-they usually can describe their spatial context in a fragmentary form. After listening
-to the description, we must reconstruct the context to spatially pin-point
-where the lose person is located.
+In communication, information is usually accompany with a spatial context.
+For example, battlefield logistics rely on spatial optimization to locate
+the most strategically advantageous position. The method is described both verbally and visually on a map.
+As another example, when a person is lost,
+they can usually describe their spatial context in a fragmentary form.
+After listening to the description, we are able to reconstruct the context to spatially pinpoint where the lose person is located.
 
-## Spatial Logics
+## Spatial Logic
 When we are looking at a logical system, we can evaluate formula $$A \land B$$ by evaluating
 the truth or falsity of the entities $$A$$ and $$B$$ separately. The $$\land$$ acting as
 an logical `AND` operator defined within the logical system, specified both
@@ -69,25 +65,29 @@ $$A \land B$$ in $$S$$ is possible. If it is possible, evaluate $$A \land B$$ ca
 Assume a set of spatial entities $$A=\{A_1, A_2, ..., A_n\}$$
 we can assert a spatial structure
 $$S$$ will be true for set $$A$$. We call this set $$A$$ as the possible spatial configuration of $$S$$.
-To put this definition into concrete example, if we need to navigate from a location X to
-location Y on land, we would assume there is a road network structure that could
-connect the location X and location Y.
+To put this definition into a concrete example; If we need to navigate from a location X to location Y on land,
+we would assume there is a road network structure that
+connects the two locations.
 We can see the set $$A=\{X, ..., Y\}$$ and
 the road network connecting all elements of $$A$$ will be $$S$$.
 
-Sometimes, the spatial context does not need to have a spatial entity occupied
-a location. For example, the most familiar 2D cartesian coordinate system is a
-spatial reference system. With a chosen origin, e.g. in 2D (0,0), all possibilities of location are layout explicitly. If there is a spatial entity
-posited in this 2D cartesian coordinate system, we shall refer such entity's
-location by measuring from the chosen origin. We shall come back to the difference
-between *implicit* spatial location (topological relations) and *explicit* spatial location (geometrical relations) in the future discussion. We shall assume implicit spatial location (topological relations) in this article.
+Sometimes, the spatial context does not need to involve a spatial entity
+occupying a location. For example, the most familiar 2D Cartesian coordinate system is a spatial reference system.
+With a chosen origin, e.g. in 2D (0,0), all possibilities of location are laid out explicitly. If there is a spatial entity
+positioned in this 2D Cartesian coordinate system, we refer to the entity's
+location by measuring from the chosen origin. We shall come back to the
+difference between *implicit* spatial location (topological relations)
+and *explicit* spatial location (geometrical relations) in future discussion.
+We shall assume we are referring to implicit spatial location (topological relations) in this article.
 
-## Puzzles that required Spatial Logics
-The question of how does a system looks like when it has spatial reasoning ability, is best answered by an example.
-We shall illustrate the possibility of solving the spatial logics puzzle automatically
-by writing a Prolog program. The following is a typical spatial logics puzzle that you can usually find in a puzzle book.
+## Puzzles that required Spatial Logic
+"What does a system look like when it has spatial reasoning ability?"
+This is best answered by an example.
+By writing a Prolog program, we will illustrate the possibility of
+solving spatial logic puzzles automatically.
+The following is a typical spatial logic puzzle that is often found in puzzle books.
 
-### Solving Spatial Logics Puzzle
+### Solving Spatial Logic Puzzle
 Five married couples live in houses shown on the map below.
 
 ![Spatial Reasoning House Puzzle]({{ site.baseurl }}images/spatial-reasoning-explained/house-spatial-puzzle-400.jpg)
@@ -97,7 +97,10 @@ Five married couples live in houses shown on the map below.
 3. Sandra lives further north than Katie, who lives further east than Adam.
 4. Lenny lives further north than Martin.
 
-Thanks to the one professor in the world, [Mihaela Malita](http://www.anselm.edu/internet/compsci/faculty_staff/mmalita/index.html) takes the logic puzzle seriously enough to supply an extremely useful [Prolog Puzzle Solving library](http://www.anselm.edu/internet/compsci/faculty_staff/mmalita/HOMEPAGE/logic/index.html). We shall build our spatial puzzle solver in Prolog on top of `bibmm.pl`. Once the library has been downloaded, the program can be imported as (assumed using [SWI Prolog](http://www.swi-prolog.org)):
+Thanks to [Mihaela Malita](http://www.anselm.edu/internet/compsci/faculty_staff/mmalita/index.html),
+we have the extremely useful
+[Prolog Puzzle Solving library](http://www.anselm.edu/internet/compsci/faculty_staff/mmalita/HOMEPAGE/logic/index.html).
+We shall build our spatial puzzle solver in Prolog on top of `bibmm.pl`. Once the library has been downloaded, the program can be imported as (using [SWI Prolog](http://www.swi-prolog.org)):
 
 ```prolog
 :-consult('bibmm.pl').
@@ -120,7 +123,7 @@ southof(1,7). southof(2,7). southof(3,7). southof(4,7).
 southof(3,1). southof(4,1). southof(3,2). southof(4,2).
 ```
 
-This is intentionally to enumerate all possible topological relations in this puzzle's spatial structure. We shall improve with the spatial logics system later.
+This is intentionally to enumerate all possible topological relations in this puzzle's spatial structure. We shall improve with the spatial logic system later.
 
 With the definition of the spatial structure, we can proceed to write the Prolog
 program to encode all the puzzle constraints, e.g. in our example, we have the list of 4 constraint statements.
@@ -191,7 +194,7 @@ In the example, we have encoded the spatial structure via
 their topological relations by enumerating all possible pairwise relationship.
 This is not a very intelligent encoding scheme, and downright exhaustive.
 Smart readers will immediately notice, with our spatial intelligence,
-we have a set of spatial logics that can be applied.
+we have a set of spatial logic that can be applied.
 
 For example,
 
@@ -256,19 +259,19 @@ northof(1,3). northof(1,4). northof(2,3). northof(2,4).
 
 ## Spatial Reasoning is a Logical System
 We have illustrated spatial reasoning with a topological language written in Prolog.
-The spatial entities are implicitly represented as a symbol, for example a house number.
-We can take the route of encoding the spatial entities explicitly by
-their geometric properties, then calculating their spatial relations
-according to the geometric rules of the compass directions. In this way, the set of
-topological relations can be generated instead of relying on hand-coded.
+The spatial entities are implicitly represented as a symbol, in this case, a house number.
+Alternatively, we can take the route of encoding the spatial entities explicitly by
+their geometric properties, and then calculating their spatial relations
+according to the geometric rules of the compass's cardinal directions.
+Through this method, the set of topological relations can be generated instead of relying solely on hand coding.
 
-Spatial reasoning is a strategy to deduce spatial truth in a logical system.
-We're entering the domain of classical logic reasoning, with a object is limited to spatial entity. The reasoning rules are governed by spatial logics, where the wealth of literatures can be referenced and studied. A good starting point is "The Handbook of Spatial Logics" by Marco Aiello et al..
+Spatial reasoning is a strategy meant to deduce spatial truth in a logical system.
+We're entering the domain of classical logic reasoning, where an object is limited to spatial entity. The rules of reasoning are governed by spatial logic; as a result, a wealth of literatures can be referenced and studied in this area. A good starting point is "The Handbook of Spatial Logics" by Marco Aiello et al..
 
-The spatial logics overlay a structure of possibilities, where many non-logical
-spatial situation could be quickly eliminated. This structure is the working premise of spatial validity.
-We need to follow the strict logical rules of spatial formula, such as the symmetric and transitive spatial rules as illustrated.
+The spatial logic overlay a structure of possibilities, in which
+many non-logical spatial situation can quickly be eliminated. This structure is the working premise of spatial validity.
+We need to follow the strict logical rules of spatial formulas, including the symmetric and transitive spatial rules as illustrated in this article.
 The indirect spatial relations can be deduced logically.
-The spatial relation is not necessary just a simple compass rule, only describing direction;
-spatial relation can be generated by any computational geometry, such as convex hull or intersections, to have a wider range of spatial reasoning abilities.
-Understanding this foundation, you may find spatial reasoning is applicable in many life applications; then you will build interests in spatial reasoning.
+The spatial relation is not necessarily just a simple "compass" rule in which only direction is described.
+Spatial relation can be generated by any computational geometry, such as convex hull or intersections, allowing for a wider range of spatial reasoning abilities.
+By understanding this foundation, you may find spatial reasoning to be applicable in many areas of your life, building up a newfound interest in this topic.
