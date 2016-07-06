@@ -17,17 +17,16 @@ image:
 published: true
 ---
 <!--excerpt.start-->
-The heart of a spatial reasoning system is utilizing
-a set of spatial knowledge.
-With a properly represented spatial knowledge, the task of spatial
+The heart of a spatial reasoning system is utilization of spatial knowledge.
+With proper represented spatial knowledge, the task of spatial
 reasoning is made intuitive, flexible and practical.
-This article introducing the concepts of spatial construction, which
-is the theory for deriving the spatial knowledge.
+This article introducing the concept of *Spatial Construction*,
+which is the theory of deriving the spatial knowledge.
 The strength of the theory is it's intuitive foundation
 that allows flexible and practical algorithmic construction
-of spatial knowledge. We shall concentrates on setting up
+of spatial knowledge. We shall concentrate on setting up
 the foundation of spatial construction.
-The other concern for spatial reasoning, which is how to utilize the spatial knowledge effectively and efficiently, we shall explore in another time.
+The other concern for spatial reasoning, which is how to utilize the spatial knowledge effectively and efficiently, we leave that until another article to elaborate.
 <!--excerpt.end-->
 
 Towards the end, we shall introduce
@@ -294,10 +293,13 @@ because many other important neighbourhood structures, such as,
 and *Minimal Spanning Tree*,
 can be derived from it.
 
-[PyDelaunay](https://github.com/bennycheung/PyDelaunay) is a Python implementation of an incremental algorithm for the construction of Delaunay Tessellation, based on the work of [Guibas & Stolfi 85].
-The main algorithm is implemented in `TinAlgo.py`. We has supplied a convenience `TinBuild.py` to run the algorithm easily via the commandline input.
+[PyDelaunay](https://github.com/bennycheung/PyDelaunay) is a Python implementation of an incremental algorithm, for the construction of Delaunay Tessellation. The algorithm is
+based on the work of [Guibas & Stolfi 85].
+The main algorithm is presented in `TinAlgo.py`.
+We have supplied a convenience `TinBuild.py` to run
+the algorithm easily via the commandline input.
 
-You can get help from `TinBuild.py` by using the `--help` parameter.
+`python TinBuild.py --help` will show the usage.
 
 ```
 TinBuild - compute Voronoi diagram or Delaunay triangulation
@@ -321,7 +323,7 @@ d    Output textually
 p    Plot graphically
 ```
 
-You can execute the `TinBuild.py` by plotting both Voronoi and Delaunay tessellation interactively.
+You can execute `TinBuild.py`, plotting both Voronoi and Delaunay tessellation interactively with the following commandline and options.
 
 ```
 python TinBuild.py -v -t -p test.pts
@@ -329,10 +331,10 @@ python TinBuild.py -v -t -p test.pts
 
 ![Vorontoi/Delaunay Tessellation Plot Output]({{ site.baseurl }}images/model-of-spatial-construction/PyDelaunay_TinBuild_Plot.jpg)
 
-Another test program `TinAlgoTest.py` can be used for experiment.
-It randomly generates 100 points to construct both Voronoi and Delaunay tessellation. Then, it plots the output to interactive matplotlib window.
+Another test program is `TinAlgoTest.py`.
+It generates 100 random points to construct both Voronoi and Delaunay tessellation. Then, it plots the output to the matplotlib window.
 
-* Note: The `TinAlgo.py` only requires the standard Python library. However, if you want to use the plot function provided by `TinAlgoTest.py` or `TinBuild.py`, you need to install NumPy and mathplotlib.
+* Note: `TinAlgo.py` only requires the standard Python library. However, if you want to use the plotting function provided by `TinAlgoTest.py` or `TinBuild.py`, NumPy and mathplotlib modules are needed.
 
 ## References
 * [Guibas & Stolfi 85] Leonidas Guibas and Jorge Stolfi, *Primitives for the Manipulation of General Subdivisions and the Computation of Voronoi Diagrams*, ACM Trans. on Graphics, Vol 4. no.2, April 1985, pp 75-123.
