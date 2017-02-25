@@ -27,11 +27,20 @@ Unfortunately, the Deep Learning tools are usually friendly to Unix-like environ
 When you are trying to start consolidating your tools chain on Windows, you will encounter many difficulties.
 I spent days to settle with a Deep Learning tools chain that can run successfully on Windows 10.
 Here is the summary of my selection and installation procedure. If you have the endurance to complete, towards the end of this article, you can run neural style transfer to create "deep" and impressive image
-(The original paper can be found at <https://arxiv.org/abs/1508.06576>)
+(The original paper "A Neural Algorithm of Artistic Style" can be found at <https://arxiv.org/abs/1508.06576>)
 
 ![Grid of Artistic Style Transfer Results]({{ site.baseurl }}images/deep-learning-on-windows-10/Benny_DeepArt_Grid.jpg)
 
 *Figure. Grid of sample results after running neural style transfer algorithm on a self-portrait*
+
+Just a quick overview, the pre-requisite dependencies that we shall install,
+* Scipy + PIL (install via Anaconda Python)
+* Numpy (install via Anaconda Python)
+* CUDA (GPU) (install via NVidia package)
+* CUDNN (GPU) (optional, install via NVidia package)
+* PyCUDA (install via prebuilt binaries)
+* Theano (install via pip)
+* Keras (install via pip)
 
 ## Install Theano under Anaconda Python (Windows 10)
 <http://deeplearning.net/software/theano/>
@@ -160,17 +169,9 @@ In my case, I want `theano` as my backend.
 <https://github.com/titu1994/Neural-Style-Transfer-Windows>
 
 Up to this point, we have installed a full Deep Learning tools chain, which is capable of performing interesting things.
-We shall try to run an algorithm for combining the content of one image with the style of another image using pre-trained convolutional neural networks. Here's an example that maps the artistic style of Vangogh's "The Starry Night" onto a self portrait to create an unique artistic image. Obviously, my hair style is destined to harmonize with Vangogh's curvy strokes.
+We shall try to run an algorithm for combining the content of one image with the style of another image using pre-trained convolutional neural networks. Here's an example that maps the artistic style of Vangogh's "The Starry Night" onto a self portrait to create an unique artistic image. Obviously, that hair style is destined to harmonize with Vangogh's curvy strokes.
 
 ![Sample Artistic Style Transfer Algorithm]({{ site.baseurl }}images/deep-learning-on-windows-10/Benny_StarryNight_DeepArt.jpg)
-
-Just a quick review, this is the pre-requisite dependencies that we have installed
-* Scipy + PIL (install via Anaconda Python)
-* Numpy (install via Anaconda Python)
-* CUDA (GPU) (install via NVidia package)
-* CUDNN (GPU) (optional, install via NVidia package)
-* Theano (install via pip)
-* Keras (install via pip)
 
 Ensure starting the `theano` virtual environment with all the setups
 ```bash
