@@ -20,7 +20,7 @@ published: true
 You just got your latest NVidia GPU on your Windows 10 machine.
 Other than playing the latest games with ultra-high settings to enjoy your new investment,
 we should pause to realize that we are actually having a supercomputer able to do some serious computation.
-A Deep Learning algorithm is one of the hungry beast to eat up those GPU computing power.
+A Deep Learning algorithm is one of the hungry beast which can eat up those GPU computing power.
 <!--excerpt.end-->
 
 Unfortunately, the Deep Learning tools are usually friendly to Unix-like environment.
