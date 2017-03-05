@@ -166,7 +166,7 @@ In my case, I want `theano` as my backend.
 ```
 
 ### Running Neural-Style-Transfer Windows
-<https://github.com/titu1994/Neural-Style-Transfer-Windows>
+<https://github.com/bennycheung/PyDeepStyle>
 
 Up to this point, we have installed a full Deep Learning tools chain, which is capable of performing interesting things.
 We shall try to run an algorithm for combining the content of one image with the style of another image using pre-trained convolutional neural networks. Here's an example that maps the artistic style of Vangogh's "The Starry Night" onto a self portrait to create an unique artistic image. Obviously, that hair style is destined to harmonize with Vangogh's curvy strokes.
@@ -178,12 +178,12 @@ Ensure starting the `theano` virtual environment with all the setups
 source activate theano
 ```
 
-The python script located in `Neural-Style-Transfer-Windows/Neural Dream/Script` directory. The script `Network.py` is the Keras implementation of the neural style transfer algorithm, using a pre-trained convolutional neural network (VGG16).
+The python script `deepstyle.py` is the Keras implementation of the neural style transfer algorithm, using a pre-trained convolutional neural network (VGG16).
 If you comfortable with `bash` shell scripting, here is a script for taking your input {content_image}, {style_image} and {output_directory} for generating the results.
 
 
 ```bash
-# Shell script to drive Network.py
+# Shell script to drive deepstyle.py
 # Usage: ./run.sh <content_image> <style_image> <output_dir>
 
 if [ "$#" -ne 3 ]; then
@@ -198,7 +198,7 @@ IMAGE_PATH=/Users/my/images
 mkdir -p ${IMAGE_PATH}/$3
 
 # run the neural network algorithm written in Keras (Theano backend)
-python Network.py "${IMAGE_PATH}/$1" "${IMAGE_PATH}/$2" "${IMAGE_PATH}/$3/$3" \
+python deepstyle.py "${IMAGE_PATH}/$1" "${IMAGE_PATH}/$2" "${IMAGE_PATH}/$3/$3" \
   --image 512 \
   --num_iter 25 \
   --content_weight 0.025 --style_weight 1.0 \
