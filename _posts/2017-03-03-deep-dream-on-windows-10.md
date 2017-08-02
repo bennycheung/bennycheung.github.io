@@ -118,8 +118,9 @@ You can clone the Deep Dream script from GitHub repository
 <https://github.com/bennycheung/PyDeepDream>
 
 ```bash
-git clone https://github.com/bennycheung/PyDeepDream
+git clone https://github.com/bennycheung/PyDeepDream.git
 ```
+*([2017/08/02] make correction to the git repository path to `PyDeepDream.git`)*
 
 Then install of the Deep Dream script's dependencies from `requirements.txt` list
 
