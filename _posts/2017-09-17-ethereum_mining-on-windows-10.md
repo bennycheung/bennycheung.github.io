@@ -18,7 +18,7 @@ published: true
 ---
 <!--excerpt.start-->
 The value of dedicated GPU is going beyond the needs of gaming, it is proven to fulfill the professional needs for Deep Learning researches.
-As it turns out the modern graphics cards are very good at achieving the framerate requirements for virtual-reality. To our biggest surprise, GPU is profitable at mining crypto-currency again, such as Ethereum, so we can profit from my current hardware setup. This article will run through the basic mining knowledge, and guides how to setup a Windows 10's machine with a GPU to do Ethereum mining.
+As it turns out the modern graphics cards are very good at achieving the framerate requirements for virtual-reality. To our biggest surprise, GPU is profitable at mining crypto-currency again, such as Ethereum, so we can profit from our current hardware setup. This article will run through the basic mining knowledge, and guides how to setup a Windows 10's machine with a GPU to do Ethereum mining.
 <!--excerpt.end-->
 
 ## Bitcoin Mining History
