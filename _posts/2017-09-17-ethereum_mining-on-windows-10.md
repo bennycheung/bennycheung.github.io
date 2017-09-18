@@ -131,7 +131,7 @@ For example, GTX 1070 hashrate is 30 MH/s, with 110 Watt power draw and average 
 
 The estimated dollar earning is affected by the current Ethereum trading price. It is easier to measure by ETHs that have been mined.
 
-**(9) Repeat (6)-(8)**: Visit Nanpool and search for the Ethereum public address. It will display the mining statistics of mining.
+**(9) Repeat (6)-(8)**: Visit Nanpool and search for the Ethereum public address. It will display the mining statistics.
 
 **(10) Increase Mining Operation**: If one's mining appetite grows, then it is time to learn how to build an [Ethereum Mining Rig](https://www.youtube.com/watch?v=mYgd33zaNc8). This video introduces how to build a 6x GTX 1070 GPUs mining rig has a hashrate of 180 MH/s, please have a look. Another article should be written on how to build this dedicated hardware.
 
