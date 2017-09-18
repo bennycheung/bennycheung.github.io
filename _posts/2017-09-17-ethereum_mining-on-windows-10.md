@@ -14,7 +14,7 @@ comments: true
 image:
   cover: images/ethereum-mining-on-windows-10/cover.jpg
   header: images/ethereum-mining-on-windows-10/header.jpg
-published: true
+published: false
 ---
 <!--excerpt.start-->
 The value of my Nvidia's GPU is not only great on Deep Learning researches, to fulfill my professional ambitions; it also allows me to experience virtual-reality with an Oculus Rift. As it turns out the modern graphics cards are very good at mining crypto-currency, such as Ethereum, so I can profit from my current hardware setup.
