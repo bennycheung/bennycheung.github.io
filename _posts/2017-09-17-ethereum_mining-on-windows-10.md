@@ -14,18 +14,19 @@ comments: true
 image:
   cover: images/ethereum-mining-on-windows-10/cover.jpg
   header: images/ethereum-mining-on-windows-10/header.jpg
-published: false
+published: true
 ---
 <!--excerpt.start-->
-The value of my Nvidia's GPU is not only great on Deep Learning researches, to fulfill my professional ambitions; it also allows me to experience virtual-reality with an Oculus Rift. As it turns out the modern graphics cards are very good at mining crypto-currency, such as Ethereum, so I can profit from my current hardware setup.
+The value of dedicated GPU is going beyond the needs of gaming, it is proven to fulfill the professional needs for Deep Learning researches.
+As it turns out the modern graphics cards are very good at achieving the framerate requirements for virtual-reality. To our biggest surprise, GPU is profitable at mining crypto-currency again, such as Ethereum, so we can profit from my current hardware setup. This article will run through the basic mining knowledge, and guides how to setup a Windows 10's machine with a GPU to do Ethereum mining.
 <!--excerpt.end-->
 
 ## Bitcoin Mining History
-A few years ago, after reading the paper by pseudonym author "Satoshi Nakamoto" on [Bitcoin: A Peer-to-Peer Electronic Cash System](https://bitcoin.org/bitcoin.pdf) describing a distributed trust solution to the open network, I felt the chill of computational beauty on it's concepts and solutions. I decided to try out mining the Bitcoin purely for the purpose of understanding the technology. The value of Bitcoin is approximately $120 USD at 2013, which is impressive for it's growth from no value within a short time.
+A few years ago, after reading the paper by pseudonym author "Satoshi Nakamoto" on [Bitcoin: A Peer-to-Peer Electronic Cash System](https://bitcoin.org/bitcoin.pdf) describing a distributed trust solution to the open network, the sense of computational beauty about it's concepts and solutions propelled my interest to try out Bitcoin mining. The value of Bitcoin is approximately $120 USD at 2013, which is impressive for it's growth from zero value within a short few years of Bitcoin invention.
 
 To reduce the risk of the adventure, like everyone at that time, we started out by utilizing the gaming GPU to reach a profitable hashrate (to be explained later).
 The profitability is measured by how much coin value that you generated against how much electricity that you paid. If the coin value is higher then the cost of electricity, you are in a profitable mining business, excluding the initial equipment cost.
-The original Bitcoin hashing algorithm (SHA256), performing a complex but fixed sequence of operation can be replaced by ASIC (Application Specific Integrated Circuit) dedicated hardware. The computation speed and power efficiency of ASIC essentially killed the profitability of using GPU based mining quickly. In order to stay in the Bitcoin mining game, I follow Adafruit instruction to build a [Raspberry Pi Bitcoin Miner](https://learn.adafruit.com/piminer-raspberry-pi-bitcoin-miner/initial-setup-and-assembly), which can hash at 2 GH/s with extremely low power consumption (see the following picture).
+The original Bitcoin hashing algorithm (SHA256), performing a complex but fixed sequence of operation can be replaced by ASIC (Application Specific Integrated Circuit) dedicated hardware. The computation speed and power efficiency of ASIC essentially killed the profitability of using GPU based mining quickly. In order to stay in the Bitcoin mining game, Adafruit's instruction to build a [Raspberry Pi Bitcoin Miner](https://learn.adafruit.com/piminer-raspberry-pi-bitcoin-miner/initial-setup-and-assembly), which can hash at 2 GH/s with extremely low power consumption (see the following picture), will keep mining alive for a little longer.
 
 ![Raspberry Pi Mining Rig running at 2 GH/s]({{ site.baseurl }}images/ethereum-mining-on-windows-10/Bitcoin_RaspberryPi_Mining_Rig.jpg)
 
@@ -59,15 +60,15 @@ The original funding of $$C$$ is the reward of mining. The miner provides the co
 Many popular opinion doubts about the value of Bitcoin or Ethereum. The computational power in the form of electricity consumption is the value of the coin. Currently, generating 1 Bitcoin will cost approximately $1000 USD electricity, where the intrinsic value of Bitcoin is stored. While you are receiving the printed $100 USD bill, that bill has no intrinsic value other than a piece of paper promise. The $100 bill does not have any backing stored to retain it's value (no equivalent gold value is stored along with USD anymore). But the Bitcoin or Ethereum has the value stored by the difficulty of their generation.
 
 ### Difficulty for Timeliness
-You may wonder what is the significant of the network difficulty. Imagine a random number between 1 to 10, the difficulty that you can guess it right is the chance of 1/10. We say the equivalent of 1 hash is equal 1 roll, e.g. rolling a 10 faces dice, the difficult is 10. In average, you need to roll 5 times before you can randomly hit the right number. However, if this guessing game is having too many guesses happening in a short time, the correct guess happened too fast. The game maker (the whole network) will automatically adjust the difficulty, for example adjusted from 10 to 100, to reduce the correct guess happening too soon. This is the essence of using the network difficulty to control how fast a correct guess can happen.
+The remaining question is the significance of the network difficulty. Imagine the guessing game of between 1 to 10, the difficulty that one can guess it right is the chance of 1/10. We say the equivalent of 1 guess is equal 1 hash, the difficult is 10. In average, a player needs to guess 5 times before a guess is hitting the correct number. However, if this guessing game is having too many guesses happening in a short time, the correct guess may happen too fast. The guessing game's maker (the whole network) will automatically adjust the difficulty, adjusting from 10 to 100, to reduce the correct guess happening too fast. This is the essence of using the network difficulty to control how fast a correct guess can happen.
 
 ![Explaining Hash Difficulty]({{ site.baseurl }}images/ethereum-mining-on-windows-10/Explain_Hash_Difficulty.jpg)
 
 *Figure. This picture explain the input of the hash function $$f()$$ must be manipulated to generate a hash result of specified difficulty. The difficulty is a pattern of easy comparison, in this case, the hash result is less than 100.*
 
-In **NO** scenario that the miner should modify the transaction, to manipulate the hash result, miner can only modify the "nonce" section to generate a hash result and check if it meets the target requirements. For each "nonce" change, recompute the hash result and compare against the target requirements, is exactly **ONE** hash. The speed of Ethereum mining is currently measured by MH/s (1,000,000 hashes per second) by using GPU. For Nvidia GTX 1070 without overclocking, this GPU can produce 25 MH/s.
+In **NO** scenario that a miner should modify the transactional content, in order to manipulate the hash result, miner can only modify the "nonce" section to generate a hash result and check if the hash result meets the target requirements. For each "nonce" change, recompute the hash result and compare against the target requirements, is exactly **ONE** hash. The speed of Ethereum hash is currently measured by MH/s (1,000,000 hashes per second) by using a GPU. For instance, Nvidia GTX 1070 can compute 25 MH/s without overclock (after overclock, it gains 20% speed and reaches 30 MH/s).
 
-Different cryptocurrency has different hash algorithm and requirements, but the essence of a hash has been described here. If you are lucky, you are the first one who compute the hash result matched the requirements against the whole network; then you will be reward with the coins! That's the goal of mining. Obviously, only your hardware winning against the whole network is very difficult; that's why the [Mining Pool](https://en.wikipedia.org/wiki/Mining_pool) concept should be applied.
+Different cryptocurrency has different hash algorithm and requirements, but the essence of a hash is the same. If a miner be the first who compute the hash result matched the requirements against the whole network; then that winning miner will be reward with the coins! That's exactly the goal of mining. Obviously, only using a small computing resources winning against the whole network is very difficult; that's why the [Mining Pool](https://en.wikipedia.org/wiki/Mining_pool) concept can be applied to join force to win.
 
 ## Road to Mining
 The prerequisite to mining is having a machine installed with a modern GPU. For a typical gamer or a Deep Learning researcher, you would probably have a Windows 10 machine ready to be deployed for Ethereum mining.
@@ -80,15 +81,15 @@ Here is a quick run down on the 10 steps.
 
 **(1) Setup the GPU on Windows 10**
 
-**(2) Setup an Ethereum Wallet**: [Jaxx](https://jaxx.io) is a multipurpose cryptocurrency wallet that can run on any platform. You need to get the public address of the Ethereum wallet; we shall use that public address to store the mining rewards.
+**(2) Setup an Ethereum Wallet**: [Jaxx](https://jaxx.io) is a multipurpose cryptocurrency wallet that can run on any platform. Miner needs to get the public address of the Ethereum wallet; that public address is used to store the mining rewards.
 
 ![Jaxx Ethereum Wallet's Public Address]({{ site.baseurl }}images/ethereum-mining-on-windows-10/Jaxx_Ethereum_Wallet_public_address.jpg)
 
-**(3) Ethereum Mining Software**: Download and install [Claymore-Ethereum-Miner](https://github.com/nanopool/Claymore-Dual-Miner/releases) that works with Nvidia GPU optimally. Please follow the [Mining Clients - Claymore - Windows](https://eth.nanopool.org/help) instructions from Nanapool help page, I shall repeat some important setup in the next few steps.
+**(3) Ethereum Mining Software**: Download and install [Claymore-Ethereum-Miner](https://github.com/nanopool/Claymore-Dual-Miner/releases) that works with Nvidia GPU optimally. Please follow the [Mining Clients - Claymore - Windows](https://eth.nanopool.org/help) instructions from Nanapool help page, the next few steps repeat the important info.
 
-For this article, I am using `Claymore's Dual Ethereum AMD GPU Miner v9.8 (Windows/Linux)` for Windows 10.
+For this article, the `Claymore's Dual Ethereum AMD GPU Miner v9.8 (Windows/Linux)` for Windows 10 is used.
 
-**(4) Choose a Mining Pool to join**: Claymore Ethereum Miner's default is [Nanopool](https://nanopool.org/) which has a great API and Web UI. You don't need to register with Nanapool. As soon as your Ethereum public address using Nanapool received some reward, your account (using that public address) will be automatically setup.
+**(4) Choose a Mining Pool to join**: Claymore Ethereum Miner's default is [Nanopool](https://nanopool.org/) which has a great API and Web UI. Miner doesn't need to register with Nanapool. As soon as a Ethereum's public address using Nanapool to receive some reward, the account will be automatically setup with that public address.
 
 **(5) Install Overclock Tool**: [MSI Afterburner](https://www.msi.com/page/afterburner) as the overclock setup and monitor.
 The following shows an optimal overclock settings for Nvidia GTX 1070 GPU, which produce 30 MH/s, 100 Watt power draw, 61C temperature with 40% fan speed.
@@ -99,7 +100,7 @@ Since `Ethash` (Ethereum Hash function) is essentially GPU memory bounded, overc
 
 **(6) Setup and run the Miner Script**: The Claymore miner comes with many batch scripts to do mining. For simplicity, starting with the Ethereum only mining script, follows the instructions to modify with your Ethereum wallet's public address.
 
-This is what the `start_only_eth.bat` file should look like after modification:
+This is how the `start_only_eth.bat` file should look after modification to miner's information:
 
 ```dos
 setx GPU_FORCE_64BIT_PTR 0
@@ -108,36 +109,36 @@ setx GPU_USE_SYNC_OBJECTS 1
 setx GPU_MAX_ALLOC_PERCENT 100
 setx GPU_SINGLE_ALLOC_PERCENT 100
 
-EthDcrMiner64.exe -epool eth-us-east1.nanopool.org:9999 -ewal 0xf1cfc50567acf36c55ba75540b7f1c3f1aaa9869/miner_name/my_email@gmail.com -epsw x -mode 1 -ftime 10
+EthDcrMiner64.exe -epool eth-us-east1.nanopool.org:9999 -ewal 0xf1cfc50567acf36c55ba75540b7f1c3f1aaa9869/mining_name/my_email@gmail.com -epsw x -mode 1 -ftime 10
 ```
 
-It is using Nanapool in US east cost address `eth-us-east1.nanopool.org:9999` as the mining pool. As a general rule of thumb, choose a pool address that is closest to your geographic location. **Important** to change `0xf1cfc50567acf36c55ba75540b7f1c3f1aaa986` to your Ethereum wallet's public address; otherwise, you are contributing to my wallet `:)`.
-After the next `/`, gives a name to your miner. The next `/` is optional, you can provide your email address for notifications and ability to update Nanopool payout amount, i.e. this is good to provide an email.
+It is using Nanapool in US east cost address `eth-us-east1.nanopool.org:9999` as the mining pool. As a general rule of thumb, choose a pool address that is closest to your geographic location. **Important** don't forget to change `0xf1cfc50567acf36c55ba75540b7f1c3f1aaa986` to your Ethereum wallet's public address; otherwise, you are contributing to my wallet `:)`.
+After the next `/`, gives a name to the mining machine. The next `/` is optional, you can provide your email address for notifications and enabled the ability to update Nanopool's payout schedule, i.e. this is good to provide an email.
 
 **(7) Monitor the Mining Operation**: You can observe the hashrate measured in MH/s (1,000,000 hashes per second). The following screen output shows a typical Claymore Miner's log report.
 
 ![Claymore Miner Output Window Readings]({{ site.baseurl }}images/ethereum-mining-on-windows-10/Claymore_Miner_readings.jpg)
 
-From the illustrated output, Ethereum mining logs are prefixed with `ETH:`. We can see the miner is fetching jobs from `eth-us-east1.nanopool.org:9999` that we have setup in the miner script, which confirmed that we are joining the Nanopool mining. The observed `GPU0`, the only GTX 1070 on the PC, hashing at 30 MH/s. When the mining pool is lucky and win, the `SHARE FOUND` will be reported. Our shared computation effort will be awarded relative to the overall pool contribution to the winning Block!
+From the illustrated output, Ethereum mining logs are prefixed with `ETH:`. We can see the miner is fetching jobs from `eth-us-east1.nanopool.org:9999` that we have setup in the miner script, which confirmed that we are joining the Nanopool mining. The observed `GPU0`, the only GTX 1070 on the PC, hashing at 30 MH/s. When the mining pool is lucky and win, the `SHARE FOUND` will be reported. The shared computation effort will be awarded relative to the overall pool contribution to the winning Block!
 
-**(8) Keep your room cool and pay your electricity bill**: You need to understand how to keep your mining profitable by using a Ethereum calculator to estimate earnings. Here is one calculator that you can input your hashrate, power consumption and power cost per kiloWatt to estimate the profit [https://www.cryptocompare.com/mining/calculator/eth](https://www.cryptocompare.com/mining/calculator/eth)
+**(8) Keep Cool and Pay Electricity Bill**: We need to understand how to keep our mining profitable by using a Ethereum calculator to estimate earnings. Here is one calculator by inputing the hashrate, power consumption and power cost per kiloWatt to estimate the profit [https://www.cryptocompare.com/mining/calculator/eth](https://www.cryptocompare.com/mining/calculator/eth)
 
 For example, GTX 1070 hashrate is 30 MH/s, with 110 Watt power draw and average electricity cost of $0.12 KW/h.
 
 ![Ethereum Calculator Sample]({{ site.baseurl }}images/ethereum-mining-on-windows-10/Ethereum_Calculator_Sample_20170917.jpg)
 
-*Figure. Screen Capture of Ethereum profit calcuation on 17 Sep, 2017, where 1 ETH is traded at $263.89 USD*
+*Figure. Screen Capture of Ethereum profit calcuation on `17 Sep, 2017`, where 1 ETH is traded at $263.89 USD*
 
-The estimated dollar earning is affected by the current Ethereum trading price. It is easier to measure by the number of ETH that you've mined.
+The estimated dollar earning is affected by the current Ethereum trading price. It is easier to measure by ETHs that have been mined.
 
-**(9) Repeat (6)-(8)**: You can go to Nanpool and search for your Ethereum public address. It will display the mining statistics of your miner.
+**(9) Repeat (6)-(8)**: Visit Nanpool and search for the Ethereum public address. It will display the mining statistics of mining.
 
-**(10) Increase Mining Operation**: If you have a bigger appetite for mining, then it is time to learn how to build an [Ethereum Mining Rig](https://www.youtube.com/watch?v=mYgd33zaNc8). This video introduces how to build a 6x GTX 1070 GPUs mining rig has a hashrate of 180 MH/s, please have a look. I may follow-up with another article on how to build one.
+**(10) Increase Mining Operation**: If one's mining appetite grows, then it is time to learn how to build an [Ethereum Mining Rig](https://www.youtube.com/watch?v=mYgd33zaNc8). This video introduces how to build a 6x GTX 1070 GPUs mining rig has a hashrate of 180 MH/s, please have a look. Another article should be written on how to build this dedicated hardware.
 
 {% include youtubePlayer.html id="mYgd33zaNc8" %}
 
 
-If you find this article helpful, any donation is welcome! Happy Ethereum mining!
+If you find this article helpful, any donation is appreciated. Happy Ethereum mining!
 
 ### Donations
 
