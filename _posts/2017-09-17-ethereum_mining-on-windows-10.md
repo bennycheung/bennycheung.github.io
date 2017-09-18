@@ -70,7 +70,7 @@ In **NO** scenario that the miner should modify the transaction, to manipulate t
 Different cryptocurrency has different hash algorithm and requirements, but the essence of a hash has been described here. If you are lucky, you are the first one who compute the hash result matched the requirements against the whole network; then you will be reward with the coins! That's the goal of mining. Obviously, only your hardware winning against the whole network is very difficult; that's why the [Mining Pool](https://en.wikipedia.org/wiki/Mining_pool) concept should be applied.
 
 ## Road to Mining
-The prerequisite to mining is you have a machine installed with a modern GPU. For a typical gamer or a Deep Learning researcher, you would probably have a Windows 10 machine ready to be deployed for Ethereum mining.
+The prerequisite to mining is having a machine installed with a modern GPU. For a typical gamer or a Deep Learning researcher, you would probably have a Windows 10 machine ready to be deployed for Ethereum mining.
 
 ![Display Claymore Miner Hashrate and MSI After Burner GPU Settings]({{ site.baseurl }}images/ethereum-mining-on-windows-10/DX4_Ehtererum_1070_Overclock.jpg)
 
