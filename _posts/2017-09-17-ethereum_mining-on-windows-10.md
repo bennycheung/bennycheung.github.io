@@ -138,7 +138,7 @@ The estimated dollar earning is affected by the current Ethereum trading price. 
 {% include youtubePlayer.html id="mYgd33zaNc8" %}
 
 
-If you find this article helpful, any donation is appreciated. Happy Ethereum mining!
+Happy Ethereum mining!
 
 ### Donations
 
