@@ -4,6 +4,9 @@ title: Ethereum Mining on Windows 10
 date: 2017-09-17 01:00:00.000000000 -05:00
 permalink: ethereum-mining-on-windows-10
 author: Benny Cheung
+artwork:
+  author: Clara Cheung
+  url: https://www.instagram.com/pk_clara/
 tags:
   - Mining
   - Ethereum

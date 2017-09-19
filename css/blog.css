@@ -219,6 +219,11 @@ td {
   text-align: right;
 }
 
+.artwork-credit {
+  font-size: 12px;
+  text-align: right;
+}
+
 .PageNavigation {
   font-size: 14px;
   display: block;
