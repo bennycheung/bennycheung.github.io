@@ -6,6 +6,7 @@ permalink: raspberry-pi-3-for-computer-vision
 author: Benny Cheung
 artwork:
   author: David Cheung
+  url: https://cryotube.deviantart.com
 tags:
   - AI
   - Computer Vision
