@@ -12,7 +12,15 @@ comments: true
 		<div class="blog-image"
 			style="{% if page.image.header %}background-image:url({{page.image.header}}){% endif %}">
 		</div>
-		<p class="artwork-credit">{% if page.artwork.author %}artwork by <a href="{{ page.artwork.url }}">{{ page.artwork.author }}</a>{% endif %}</p>
+		<p class="artwork-credit">
+			{% if page.artwork.author %}artwork by
+				{% if page.artwork.url %}
+					<a href="{{ page.artwork.url }}">{{ page.artwork.author }}</a>
+				{% else %}
+					{{ page.artwork.author }}
+				{% endif %}
+			{% endif %}
+		</p>
 		<h1 class="post-title">{{ page.title }}</h1>
 		<p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
 

@@ -4,6 +4,8 @@ title: Raspberry Pi 3 for Computer Vision
 date: 2016-04-23 12:00:00.000000000 -05:00
 permalink: raspberry-pi-3-for-computer-vision
 author: Benny Cheung
+artwork:
+  author: David Cheung
 tags:
   - AI
   - Computer Vision
