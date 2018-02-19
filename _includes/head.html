@@ -6,24 +6,31 @@
 	<meta name="author" content="{{ site.author }}">
 	<meta name="google-site-verification" content="Q8ugHabWc9ghHIgttC6uXjdB40F3tpW2ar6lQ-CWTNo" />
 
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@{{ site.twitter.username |
-    replace:'@','' }}">
-    {% if page.date %}
-      <meta name="twitter:creator" content="@{{ site.author.twitter |
-      replace:'@','' }}">
-    {% endif %}
-    <meta name="twitter:title" content="{% if page.title %}{{ page.title |
-      smartify | strip_html | strip_newlines | escape_once }}{% else %}{{
-      site.name }}{% endif %}">
-    <meta name="twitter:description" content="{% if page.excerpt %}{{
-      page.excerpt | markdownify | strip_html | strip_newlines | truncate: 160
-      | escape_once }}{% else %}{{ site.description }}{% endif %}">
-    <meta name="twitter:image" content="{% if page.image %}{{ page.image |
-      prepend: site.baseurl | prepend: site.url }}{% else %}{{ site.logo |
-      prepend: site.baseurl | prepend: site.url }}{% endif %}">
-    <meta name="twitter:url" content="{{ page.url | replace:'/index.html','/'
-      | prepend: site.baseurl | prepend: site.url }}">
+	<!-- Twitter card -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@Benny_Cheung">
+	<meta name="twitter:title" content="{{ page.title }}">
+
+	{% if page.description %}
+		<meta name="twitter:description" content="{{ page.meta_description }}">
+	{% else %}
+		<meta name="twitter:description" content="{{ page.content | strip_html | xml_escape | truncate: 200 }}">
+	{% endif %}
+
+	{% if page.image.thumb %}
+		<meta name="twitter:image" content="{{ site.baseurl }}/{{ page.image.thumb }}">
+	{% else %}
+		<meta name="twitter:image" content="{{ site.baseurl }}/{{ page.image }}">
+	{% endif %}
+
+	<!-- Facebook share -->
+	{% if page.header-img %}
+    <meta property="og:image" content="{{ site.baseurl }}/{{ page.image }}" />
+	{% endif %}
+
+	<meta property="og:description" content="{{ page.content | strip_html | xml_escape | truncate: 200 }" />
+
+	<!-- page title -->
 	<title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
 
 	<!-- Bootstrap core CSS -->
