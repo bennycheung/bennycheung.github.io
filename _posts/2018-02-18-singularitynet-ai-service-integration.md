@@ -13,7 +13,7 @@ tags:
   - Machine Learning
 category: post
 comments: true
-image: images/singularitynet-ai-service-integration/cover.jpg
+image: images/singularitynet-ai-service-integration/cover2x.jpg
 images:
   cover: images/singularitynet-ai-service-integration/cover.jpg
   header: images/singularitynet-ai-service-integration/header.jpg
