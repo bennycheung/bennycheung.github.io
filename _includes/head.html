@@ -28,7 +28,7 @@
     <meta property="og:image" content="{{ site.baseurl }}/{{ page.image }}" />
 	{% endif %}
 
-	<meta property="og:description" content="{{ page.content | strip_html | xml_escape | truncate: 200 }" />
+	<meta property="og:description" content="{{ page.content | strip_html | xml_escape | truncate: 200 }}" />
 
 	<!-- page title -->
 	<title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
