@@ -7,7 +7,7 @@
 	<meta name="google-site-verification" content="Q8ugHabWc9ghHIgttC6uXjdB40F3tpW2ar6lQ-CWTNo" />
 
 	<!-- Twitter card -->
-	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:card" content="summary">
 	<meta name="twitter:site" content="@Benny_Cheung">
 	<meta name="twitter:title" content="{{ page.title }}">
 
@@ -20,13 +20,14 @@
 	{% if page.image.thumb %}
 		<meta name="twitter:image" content="{{ page.image.thumb }}">
 	{% else %}
-		<meta name="twitter:image" content="{{ page.image }}">
+		<meta name="twitter:image" content="{{ site.url }}/{{ page.image }}">
 	{% endif %}
 
 	<!-- Facebook Open Graph share -->
+	<meta property="og:type" content="article" />
   <meta property="og:title" content="{{ page.title }}" />
-  <meta property="og:image" content="{{ page.image }}" />
 	<meta property="og:description" content="{{ page.content | strip_html | xml_escape | truncate: 200 }}" />
+  <meta property="og:image" content="{{ site.url }}/{{ page.image }}" />
 	{% if page.tags %}
   {% for tag in page.tags %}
   	<meta content="{{ tag }}" property="article:tag">
