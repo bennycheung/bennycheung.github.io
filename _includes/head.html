@@ -23,9 +23,15 @@
 		<meta name="twitter:image" content="{{ page.image }}">
 	{% endif %}
 
-	<!-- Facebook share -->
+	<!-- Facebook Open Graph share -->
+  <meta property="og:title" content="{{ page.title }}" />
   <meta property="og:image" content="{{ page.image }}" />
 	<meta property="og:description" content="{{ page.content | strip_html | xml_escape | truncate: 200 }}" />
+	{% if page.tags %}
+  {% for tag in page.tags %}
+  	<meta content="{{ tag }}" property="article:tag">
+  {% endfor %}
+	{% endif %}
 
 	<!-- page title -->
 	<title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
