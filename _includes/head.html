@@ -24,10 +24,7 @@
 	{% endif %}
 
 	<!-- Facebook share -->
-	{% if page.image %}
-    <meta property="og:image" content="{{ page.image }}" />
-	{% endif %}
-
+  <meta property="og:image" content="{{ page.image }}" />
 	<meta property="og:description" content="{{ page.content | strip_html | xml_escape | truncate: 200 }}" />
 
 	<!-- page title -->
