@@ -13,7 +13,8 @@ tags:
   - GPU
 category: post
 comments: true
-image:
+image: images/deep-learning-on-windows-10/cover2x.jpg
+images:
   cover: images/deep-learning-on-windows-10/cover.jpg
   header: images/deep-learning-on-windows-10/header.jpg
 published: true

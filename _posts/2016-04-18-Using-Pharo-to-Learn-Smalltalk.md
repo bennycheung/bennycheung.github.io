@@ -10,7 +10,8 @@ tags:
   - RaspberryPi
 category: post
 comments: true
-image:
+image: images/using-pharo-to-learn-smalltalk/cover2x.jpg
+images:
   cover: images/using-pharo-to-learn-smalltalk/cover.jpg
   header: images/using-pharo-to-learn-smalltalk/header.jpg
 ---

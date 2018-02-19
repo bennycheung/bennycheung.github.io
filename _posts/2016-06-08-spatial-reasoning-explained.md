@@ -11,7 +11,8 @@ tags:
   - Logic
 category: post
 comments: true
-image:
+image: images/spatial-reasoning-explained/cover2x.jpg
+images:
   cover: images/spatial-reasoning-explained/cover.jpg
   header: images/spatial-reasoning-explained/header.jpg
 published: true

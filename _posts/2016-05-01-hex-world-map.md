@@ -10,7 +10,8 @@ tags:
   - Mapping
 category: post
 comments: true
-image:
+image: images/interactive-hex-world-map-using-d3/cover2x.jpg
+images:
   cover: images/interactive-hex-world-map-using-d3/cover.jpg
   header: images/interactive-hex-world-map-using-d3/header.jpg
 published: false

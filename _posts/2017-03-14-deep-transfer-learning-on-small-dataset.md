@@ -11,7 +11,8 @@ tags:
   - Keras
 category: post
 comments: true
-image:
+image: images/deep-transfer-learning-on-small-dataset/cover2x.jpg
+images:
   cover: images/deep-transfer-learning-on-small-dataset/cover.jpg
   header: images/deep-transfer-learning-on-small-dataset/header.jpg
 published: true

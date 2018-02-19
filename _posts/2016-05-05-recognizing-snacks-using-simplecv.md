@@ -13,7 +13,8 @@ tags:
   - Machine Learning
 category: post
 comments: true
-image:
+image: images/recognizing-snacks-using-simplecv/cover2x.jpg
+images:
   cover: images/recognizing-snacks-using-simplecv/cover.jpg
   header: images/recognizing-snacks-using-simplecv/header.jpg
 published: true

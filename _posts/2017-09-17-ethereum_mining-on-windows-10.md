@@ -14,7 +14,8 @@ tags:
   - GPU
 category: post
 comments: true
-image:
+image: images/ethereum-mining-on-windows-10/cover2x.jpg
+images:
   cover: images/ethereum-mining-on-windows-10/cover.jpg
   header: images/ethereum-mining-on-windows-10/header.jpg
 published: true

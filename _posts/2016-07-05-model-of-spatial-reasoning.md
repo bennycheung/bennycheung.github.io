@@ -11,7 +11,8 @@ tags:
   - Tessellation
 category: post
 comments: true
-image:
+image: images/model-of-spatial-construction/cover2x.jpg
+images:
   cover: images/model-of-spatial-construction/cover.jpg
   header: images/model-of-spatial-construction/header.jpg
 published: true

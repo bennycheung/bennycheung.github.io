@@ -10,7 +10,8 @@ tags:
   - Python
 category: post
 comments: true
-image:
+image: images/snack-watching-with-raspberry-pi/cover2x.jpg
+images:
   cover: images/snack-watching-with-raspberry-pi/cover.jpg
   header: images/snack-watching-with-raspberry-pi/header.jpg
 ---

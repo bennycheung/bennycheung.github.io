@@ -16,7 +16,8 @@ tags:
   - Python
 category: post
 comments: true
-image:
+image: images/raspberry-pi-3-for-computer-vision/cover2x.jpg
+images:
   cover: images/raspberry-pi-3-for-computer-vision/cover.jpg
   header: images/raspberry-pi-3-for-computer-vision/header.jpg
 ---
