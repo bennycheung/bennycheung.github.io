@@ -41,6 +41,8 @@ This article will go through the following steps to experiment with Sinagularity
 
 Obviously, there are many more SingularityNET topics, which must be explored by other articles.
 
+> <div style="color:red">SingularityNET is moving forward with another alpha release. This article is out-dated as of 2018-05-03; however the information can still be useful to understand the functional and implementational views of cooperating AI agents. For the latest SingularityNET development, reader can refer to Wiki at <https://github.com/singnet/wiki/wiki>.</div>
+
 ### <a name="virtualenv"></a>Create a virtual environment
 Virtual environments make it easy to separate different projects and avoid problems with different dependencies and version requirements across components. In the terminal client enter the following where `envname` is the name you want to call your environment, and replace `x.x` with the Python version you wish to use.
 
