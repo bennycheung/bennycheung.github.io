@@ -181,37 +181,31 @@ Ensure starting the `theano` virtual environment with all the setups
 source activate theano
 ```
 
-The python script `deepstyle.py` is the Keras implementation of the neural style transfer algorithm, using a pre-trained convolutional neural network (VGG16).
-If you comfortable with `bash` shell scripting, here is a script for taking your input {content_image}, {style_image} and {output_directory} for generating the results.
+> The script has been updated to work with latest Keras 2.1.6 [2018/05/08]
+
+The python script is `deepstyle.py` is the Keras implementation of the neural style transfer algorithm, using a pre-trained convolutional neural network (VGG19).
+
+The `run.sh` bash script takes your input {content_image}, {style_image} and {output_directory} for generating the results.
 
 
 ```bash
-# Shell script to drive deepstyle.py
+# Shell scrhipt to drive deepstyle.py
 # Usage: ./run.sh <content_image> <style_image> <output_dir>
+#
 
 if [ "$#" -ne 3 ]; then
-  echo "$0 need to specify <content_image> <style_image> <output_dir> as parameters"
+  echo "need to specify <content_image> <style_image> <output_dir>"
   exit
 fi
 
-# specify where all of your images are located
-IMAGE_PATH=/Users/my/images
+mkdir -p $3
 
-# check if the output directory existed, if not, create it
-mkdir -p ${IMAGE_PATH}/$3
-
-# run the neural network algorithm written in Keras (Theano backend)
-python deepstyle.py "${IMAGE_PATH}/$1" "${IMAGE_PATH}/$2" "${IMAGE_PATH}/$3/$3" \
-  --image 512 \
-  --num_iter 25 \
-  --content_weight 0.025 --style_weight 1.0 \
-  --total_variation_weight 8.5E-05 --style_scale 1 \
-  --rescale_image "False" --rescale_method "bicubic" \
-  --maintain_aspect_ratio "True" --content_layer "conv5_2" \
-  --init_image "content" --pool_type "max" \
-  --preserve_color "False" --min_improvement 0 \
-  --model "vgg16" --content_loss_type 0
-
+python deepstyle.py "$1" "$2" "$3/$3" \
+  --image_size 600 \
+  --tv_weight 8.5E-05 \
+  --iter 25 \
+  --content_layer "block5_conv2" \
+  --min_improvement 0
 ```
 
 for example, to run the script `run.sh`
@@ -235,19 +229,10 @@ Most of the style seems to be converged after 25 epoch. You can try a higher num
 
 For reader's convenience, the script input parameters are repeated here:
 
-* *--image_size* : Allows to set the Gram Matrix size. Default is 400 x 400, since it produces good results fast.
-* *--num_iter* : Number of iterations. Default is 10. Test the output with 10 iterations, and increase to improve results.
-* *--init_image* : Can be "content" or "noise". Default is "content", since it reduces reproduction noise.
-* *--pool_type* : Pooling type. AveragePooling ("ave") is default, but smoothens the image too much. For sharper images, use MaxPooling ("max").
-* *--preserve_color* : Preserves the original color space of the content image, while applying style. Post processing technique on final image.
-* *--min_improvement* : Sets the minimum improvement required to continue training. Default is 0.0, indicating no minimum threshold. Advised values are 0.05 or 0.01.
-* *--content_weight* : Weightage given to content in relation to style. Default if 0.025
-* *--style_weight* : Weightage given to style in relation to content. Default is 1.
-* *--style_scale* : Scales the style_weight. Default is 1.
-* *--total_variation_weight* : Regularization factor. Smaller values tend to produce crisp images, but 0 is not useful. Default = 1E-5
-* *--rescale_image* : Rescale image to original dimensions after each iteration. (Bilinear upscaling)
-* *--rescale_method* : Rescaling algorithm. Default is bilinear. Options are nearest, bilinear, bicubic and cubic.
-* *--maintain_aspect_ratio* : Rescale the image just to the original aspect ratio. Size will be (gram_matrix_size, gram_matrix_size * aspect_ratio). Default is True
-* *--content_layer* : Selects the content layer. Paper suggests conv4_2, but better results can be obtained from conv5_2. Default is conv5_2.
+* *--image_size* : Allows to set the Gram Matrix size. Default is 400 (width), since it produces good results fast.
+* *--iter* : Number of iterations. Default is 10. Test the output with 10 iterations, and increase to improve results.
+* *--tv_weight* : Regularization factor. Smaller values tend to produce crisp images, but 0 is not useful. Default = 1E-5
+* *--content_layer* : Selects the content layer. Paper suggests block4_conv2, but better results can be obtained from block5_conv2. Default is block5_conv2.
+* *--min_improvement* : Defines minimum improvement required to continue script. Default is 0.0
 
 We are ready to dive *deeper* into Deep Learning for another blog post!
