@@ -22,10 +22,6 @@ published: true
 The obsession of recognizing snacks and foods has been a fun theme for experimenting the latest machine learning techniques. The highest goal will be a computer vision system that can do real-time common foods classification and localization, which an IoT device can be deployed at the AI edge for many food applications.
 <!--excerpt.end-->
 
-## Food is Human Nature
-
-Confucius appreciated the human nature, as comment in the _The Book of Rites_, "Food and drink and the sexual relation between men and women compose the major human desires." In another word, AI has to show some sense of appreciation in food culture before it can truly understand the intelligent biological life. To this goal, my natural desire to make AI recognizes and understands food that is well grounded. :)
-
 The `Snack Watcher` in the previous post [Snack Watcher using Raspberry Pi 3](http://bennycheung.github.io/snack-watching-with-raspberry-pi),
 which is using the classical machine learning techniques on the extracted image features, the recognition results are far from impressive. Due to the difficulty of hand-crafted features are affected by background objects, lightings, object position in space and object category variations. In order to reduce the error rate, the environment is required to be fine-tuned; subsequently, the environment assumptions become unrealistic that cannot be deployed in real-life settings.
 
