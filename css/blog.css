@@ -182,10 +182,14 @@ table {
 
 th {
   border:2px solid #000000;
+  margin-left:2px;
+  margin-right:2px;
 }
 
 td {
   border:2px solid #000000;
+  margin-left:2px;
+  margin-right:2px;
 }
 
 /**
