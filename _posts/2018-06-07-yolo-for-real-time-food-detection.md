@@ -74,7 +74,7 @@ In addition to object detection, the ultimate challenge is how fast the detectio
 ### Hello, Darknet's YOLO 
 For the longest time, the detection systems repurpose classifiers or localizers to perform object detection. They apply the model to an image at multiple locations and scales. High scoring regions of the image are considered detections.
 
-Thanks to Joseph Redmon's Darknet implementation <https://pjreddie.com/darknet/yolo/>, **YOLO** uses a totally different approach. It applies a single neural network to the full image. This network divides the image into regions and predicts bounding boxes and probabilities for each region. These bounding boxes are weighted by the predicted probabilities. Interest reader should study the original _"You Only Look Once: Unified, Real-Time Object Detection"_ paper <https://arxiv.org/abs/1506.02640>.
+Thanks to Joseph Redmon's Darknet implementation <https://pjreddie.com/darknet/yolo/>, **YOLO** uses a totally different approach. It applies a single neural network to the full image. This network divides the image into regions and predicts bounding boxes and probabilities for each region. These bounding boxes are weighted by the predicted probabilities. Interest reader should study the original _"You Only Look Once: Unified, Real-Time Object Detection"_ paper <https://arxiv.org/abs/1506.02640>. This is definitely refreshing to see the implementataion written in C language, still the performance king.
 
 ![Yolo How it Works]({{ site.baseurl }}images/yolo-for-real-time-food-detection/Yolo_How_it_Works2_700.jpg)
 
