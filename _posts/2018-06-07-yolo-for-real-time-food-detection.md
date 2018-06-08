@@ -78,7 +78,7 @@ Thanks to Joseph Redmon's Darknet implementation <https://pjreddie.com/darknet/y
 
 ![Yolo How it Works]({{ site.baseurl }}images/yolo-for-real-time-food-detection/Yolo_How_it_Works2_700.jpg)
 
-YOLO model takes the whole image at test time so its predictions are informed by global context in the image. It also makes predictions with a single network evaluation unlike systems like R-CNN which require thousands evaluation for a single image. This makes YOLO extremely fast, running in real-time of ~70fps with a 720p video stream on a Nvidia GTX TitanX.
+YOLO model takes the whole image at test time so its predictions are informed by global context in the image. It also makes predictions with a single network evaluation unlike systems like R-CNN which require thousands evaluation for a single image. This makes YOLO extremely fast, running in real-time with a capable GPU.
 
 ## Real-Time Food Detection
 We shall train a customized YOLO Neural Network using Darknet with the Japanese Food100 dataset! The `Food Watcher` will become the most advanced AI which can recognize the common food in real-time. Hopefully, AI will show more sympathy with human needs of these beautiful carbohydrate compounds (aka. food).
@@ -360,3 +360,15 @@ That's all for now, AI does enjoy the food watching! ...
 ![AI is Dangerous]({{ site.baseurl }}images/yolo-for-real-time-food-detection/AI_is_dangerous.jpg)
 
 But I did not realize AI is dangerous until it thinks that I'm "food". :)
+
+## References
+* Joseph Redmon, his very fast Darknet implementation in C language
+  * <https://pjreddie.com/darknet/>
+* Nils Tijtgat, his detail instructions on YOLO v2 training helps greatly
+  * <https://timebutt.github.io/static/how-to-train-yolov2-to-detect-custom-objects/>
+* Adrain Rosebrock, his excellent tutorials on many Python computer vision projects
+  * <https://www.pyimagesearch.com/2018/05/14/a-gentle-guide-to-deep-learning-object-detection/>
+* Food Recognition Research Group at The University of Electro-Communications, their hardwork of collecting all the food images and bounding boxes
+  * <http://foodcam.mobi/dataset100.html>
+* Jonah Group, their supportive culture on AI innovations and hardwares
+  * <http://www.jonahgroup.com>
