@@ -34,7 +34,7 @@ and spiritual food for enriching life. **Spatial Tessellation** belongs to the s
 because spatial representation and reasoning are my on-going research thesis.
 I sense the pure fun of the spatial computing and try to bring my understanding closer to nature.
 
-This article will take on the follwoing investigation path,
+This article will take on the following investigation path,
 
 * Understanding the hexagonal coordinate system
 * Creating the hexagonal grid to cover the world 
