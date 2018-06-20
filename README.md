@@ -16,29 +16,42 @@ For example,
 ```
 ---
 layout: post
-title: Snack Watching with Raspberry Pi
-date: 2016-04-28 12:00:00.000000000 -05:00
-permalink: snack-watching-with-raspberry-pi
+title: YOLO for Real-Time Food Detection
+date: 2018-06-07 01:00:00.000000000 -05:00
+permalink: yolo-for-real-time-food-detection
 author: Benny Cheung
+artwork:
+  author: Style of Kandinsky's TransverseLine transfer to food images
 tags:
-  - SnackWatcher
-  - RaspberryPi
-  - Python
+  - Deep Neural Network
+  - Object Detection
+  - YOLO
 category: post
 comments: true
-image:
-  cover: images/snack-watching-with-raspberry-pi/cover.jpg
-  header: images/snack-watching-with-raspberry-pi/header.jpg
+image: images/yolo-for-real-time-food-detection/cover2x.jpg
+images:
+  cover: images/yolo-for-real-time-food-detection/cover.jpg
+  header: images/yolo-for-real-time-food-detection/header.jpg
+published: true
 ---
 ```
 
-The `image.cover` metadata key is for the post's teaser image (assumed to be 400x300). The `image.header` metadata key is for the post's header image (assumed to be 800x160). You can find the samples in the `_posts` directory.
+The `image.cover` metadata key is for the post's teaser image (assumed to be 400x300). The `image.header` metadata key is for the post's header image (assumed to be 800x160). You can find the samples in the `_posts` directory. For the social media site, define `image` will be appeared for the referred link from your social media post.
+
 
 ### Post Excerpt
 The tag `<!--excerpt.start-->` and `<!--excerpt.end-->` mark the beginning and the end of the excerpt in the post, that would be put on the post's summary block in the front page.
 
+For example,
+
+```
+<!--excerpt.start-->
+The obsession of recognizing snacks and foods has been a fun theme ...
+<!--excerpt.end-->
+```
+
 ### Image Location
-All images referenced in the post should be placed in `images` directory, and refers to the image prefixed by `{{ site.baseurl }}/images/`.
+My site's organizational convention, all images referenced in the post should be placed in `images` directory, and refers to the image prefixed by `{{ site.baseurl }}/images/`.
 
 ## Local Testing
 You can install Jekyll locally, and serve the pages locally by running (--baseurl to override the configured site URL to nothing, make it able to run locally with all the links correctly points to localhost),
