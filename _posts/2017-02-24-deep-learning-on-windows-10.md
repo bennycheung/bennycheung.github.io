@@ -231,9 +231,26 @@ For reader's convenience, the script input parameters are repeated here:
 
 * *--image_size* : Allows to set the Gram Matrix size. Default is 400 (width), since it produces good results fast.
 * *--iter* : Number of iterations. Default is 10. Test the output with 10 iterations, and increase to improve results.
+* *--content_weight*: The weight given to the content loss (Default is 0.025)
+* *--style_weight*: The weight given to the style loss (Default is 1.0)
 * *--tv_weight* : Regularization factor. Smaller values tend to produce crisp images, but 0 is not useful. Default = 1E-5
 * *--content_layer* : Selects the content layer. Paper suggests block4_conv2, but better results can be obtained from block5_conv2. Default is block5_conv2.
 * *--min_improvement* : Defines minimum improvement required to continue script. Default is 0.0
+
+To replicate the results in the video, try to use the following input parameters
+(tested on the NVidia GTX TitanX):
+
+```
+...
+python deepstyle.py "$1" "$2" "$3/$3" \
+  --image_size 600 \
+  --content_weight 1E-05 \
+  --style_weight 1.0 \
+  --tv_weight 8.5E-05 \
+  --iter 300 \
+  --content_layer "block5_conv1" \
+  --min_improvement 0
+```
 
 ## Neural Style Transfer from Abstract Art
 You can watch [Neural Style Transfer from Abstract Art](https://www.youtube.com/watch?v=TLwqG5kh8Wc). This video captured the deep neural style transfer process from a picture to the matching artist's abstract style. This is fascinating to watch how the machine think - the artificial art process!
