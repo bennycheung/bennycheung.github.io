@@ -235,4 +235,9 @@ For reader's convenience, the script input parameters are repeated here:
 * *--content_layer* : Selects the content layer. Paper suggests block4_conv2, but better results can be obtained from block5_conv2. Default is block5_conv2.
 * *--min_improvement* : Defines minimum improvement required to continue script. Default is 0.0
 
+## Neural Style Transfer from Abstract Art
+You can watch [Neural Style Transfer from Abstract Art](https://www.youtube.com/watch?v=TLwqG5kh8Wc). This video captured the deep neural style transfer process from a picture to the matching artist's abstract style. This is fascinating to watch how the machine think - the artificial art process!
+
+{% include youtubePlayer.html id="TLwqG5kh8Wc" %}
+
 We are ready to dive *deeper* into Deep Learning for another blog post!
