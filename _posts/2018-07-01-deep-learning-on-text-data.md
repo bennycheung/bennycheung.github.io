@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Deep Learning with Text Data
+title: Deep Learning on Text Data
 date: 2018-07-01 00:00:00.000000000 -00:00
 permalink: deep-learning-on-text-data
 author: Benny Cheung
@@ -518,7 +518,8 @@ that it automatically embeds several features that normally have to be handcraft
 Since word2vec relies on deep neural network to detect patterns,
 we can also rely on word2vec to detect multiple features on different levels of abstractions.
 
-> notice the funny thing about "man" is most similar to "robber" and "Robbery_suspect". This must be influenced by the original set of news source which the word2vec is constructed.
+> notice the funny thing about "man" is most similar to "robber" and "Robbery_suspect". This must be influenced by the set of news sources
+> where the word2vec is constructed.
 
 For each word index, the corresponding word2vec vector is assigned into `embbeding_weights` matrix.
 This matrix will be used for converting word into word2vec representation later.
