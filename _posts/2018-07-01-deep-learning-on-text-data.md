@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Deep Learning on Text Data
+title: Deep Learning with Text Data
 date: 2018-07-01 00:00:00.000000000 -00:00
 permalink: deep-learning-on-text-data
 author: Benny Cheung
