@@ -521,6 +521,7 @@ we can also rely on word2vec to detect multiple features on different levels of 
 > notice the funny thing about "man" is most similar to "robber" and "Robbery_suspect". This must be influenced by the original set of news source which the word2vec is constructed.
 
 For each word index, the corresponding word2vec vector is assigned into `embbeding_weights` matrix.
+This matrix will be used for converting word into word2vec representation later.
 
 ```python
 import numpy as np
@@ -539,10 +540,10 @@ then the vectorized word `man` is represented by `embbedding_weights[123]`.
 ## <a name="train_model"></a>Train Model with Keras
 
 To keep focus, we shall not divert to explain keras deep learning framework. Interested reader should consult
-the book by Antonio Gulli & Sujit Pal, *Deep Learning with Keras*.
+the book by Antonio Gulli & Sujit Pal, [Deep Learning with Keras](https://www.packtpub.com/big-data-and-business-intelligence/deep-learning-keras).
 
 ### Prepare Data Set
-Even more data preparation! we need to reformat the tweets into the suitable for keras layers.
+Even more data preparation! we need to reformat the tweets into the suitable vector format for the keras layers to consume.
 
 The following vectors are constructed,
 
