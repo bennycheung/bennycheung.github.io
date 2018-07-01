@@ -311,7 +311,7 @@ It's a numerical statistic intended to reflect how important a word is to a docu
 To relate to this post, words correspond to tokens and documents correspond to descriptions.
 A corpus is therefore a collection of descriptions.
 
-The tf-idf a of a term t in a document d is proportional to the number of times the word t appears in the document d but is also offset by the frequency of the term t in the collection of the documents of the corpus. This helps adjusting the fact that some words appear more frequently in general and don't especially carry a meaning.
+The tf-idf of a term t in a document d is proportional to the number of times the word t appears in the document d but is also offset by the frequency of the term t in the collection of the documents of the corpus. This helps adjusting the fact that some words appear more frequently in general and don't especially carry a meaning.
 
 tf-idf acts therefore as a weighting scheme to extract relevant words in a document.
 
@@ -517,6 +517,8 @@ What we find interesting about the vector representation of words is
 that it automatically embeds several features that normally have to be handcrafted.
 Since word2vec relies on deep neural network to detect patterns,
 we can also rely on word2vec to detect multiple features on different levels of abstractions.
+
+> notice the funny thing about "man" is most similar to "robber" and "Robbery_suspect". This must be influenced by the original set of news source which the word2vec is constructed.
 
 For each word index, the corresponding word2vec vector is assigned into `embbeding_weights` matrix.
 
