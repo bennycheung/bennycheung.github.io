@@ -27,7 +27,7 @@ this new form of design intention.
 This article points to one of the design intension is rapid development of data-oriented services.
 After understanding the basic of Docker deployment, this article offers a [Starter Framework using Flask/PostgreSQL/Docker](https://github.com/bennycheung/Flask-DB-Docker)
 can be used to rapidly construct any data-oriented service with a database backend.
-From a greater background scheme, this article prepares the reader for a greater architectural composition of the future system.
+From a larger background scheme, this article prepares the reader for a greater architectural composition of the future system.
 <!--excerpt.end-->
 
 ![Personal Identity]({{ site.baseurl }}images/existential-crisis-with-microservices-using-docker/Personal_Identity.jpg)
@@ -422,7 +422,7 @@ docker run --rm -t \
 We can get the medical procedural data from the `starter-api` that we have loaded.
 
 ```bash
-http --auth admin:admin http://localhost:5000/api/v1.0/pxcodes/
+http --auth admin:admin GET http://localhost:5000/api/v1.0/pxcodes/
 ```
 
 You should see the paged JSON response of 100 medical procedure codes.
