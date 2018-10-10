@@ -184,7 +184,7 @@ The technologies used by the starter framework composed of,
 * Dockerize API service written in Python/Flask <http://flask.pocoo.org/> that can communicate with the PostgreSQL
 * Orchestrate the Dockerized containers by docker-compose <https://docs.docker.com/compose/> and established a link from the deployed service to the container running PostgreSQL
 
-With this starter framework, we can eaily built up a realistic Microservices architecture.
+With this starter framework, we can easily built up a realistic Microservices architecture.
 I recommend to read the Martin Fowler and James Lewis's white paper on Microservice architecture.
 Their white paper goes much more in-depth for the drivers behind the [Microservice Architecture](http://martinfowler.com/articles/microservices.html)
 
