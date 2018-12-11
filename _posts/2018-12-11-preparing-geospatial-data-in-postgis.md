@@ -48,7 +48,7 @@ But positively, the spatial perspective does help us to see.
 
 ## Outlines
 In this article, you can expect to begin with the concepts of geospatial data.
-As always the concepts is supplimented by practical experimentations.
+As always the concepts are supplimented by practical experimentations.
 Using Docker to quickly spin up a PostGIS instance, you can load the OpenStreetMap (OSM) data into the database. 
 Subsequently, using QGIS to connect with this PostGIS instance, the spatial data can be analyzed and visualized interactively.
 By the end, you are equipped with a firm perspective of how to prepare geospatial data for the future geospatial analysis.
@@ -256,7 +256,7 @@ gis=#
 
 ###  2.4. <a name='2ExecutepsqlinthePostGISContainer'></a>(2) Execute psql in the PostGIS Container
 To enter into the PostGIS container database, run the following command in the terminal.
-Make sure to replace the <PASSWORD>, <DBNAME> and <USERNAME> parameters with the ones you used when you created the container.
+Make sure to replace the PASSWORD, DBNAME and USERNAME parameters with the ones you used when you created the container.
 
 ```bash
 docker exec -it postgis /bin/bash \
