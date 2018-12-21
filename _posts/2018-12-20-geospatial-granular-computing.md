@@ -54,7 +54,7 @@ Explaining the theory of *geospatial granular computing*, we shall explore the f
 		* [Table of spatial operator class:](#Tableofspatialoperatorclass:)
 		* [Table of composite operator class:](#Tableofcompositeoperatorclass:)
 * [Geocoding Query](#GeocodingQuery)
-* [Preview of Goespatial Analytics](#PreviewofGeospatialAnalytics)
+* [Preview of Geospatial Analytics](#PreviewofGeospatialAnalytics)
 * [Final Notes](#FinalNotes)
 * [References](#References)
 
