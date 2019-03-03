@@ -98,9 +98,9 @@ Five married couples live in houses shown on the map below.
 3. Sandra lives further north than Katie, who lives further east than Adam.
 4. Lenny lives further north than Martin.
 
-Thanks to [Mihaela Malita](http://www.anselm.edu/internet/compsci/faculty_staff/mmalita/index.html),
+Thanks to [Mihaela Malita](https://www.anselm.edu/faculty-directory/mihaela-malita),
 we have the extremely useful
-[Prolog Puzzle Solving library](http://www.anselm.edu/internet/compsci/faculty_staff/mmalita/HOMEPAGE/logic/index.html).
+[Prolog Puzzle Solving library](https://ypologist.com/mmalita17/HOMEPAGE/logic/index.html).
 We shall build our spatial puzzle solver in Prolog on top of `bibmm.pl`. Once the library has been downloaded, the program can be imported as (using [SWI Prolog](http://www.swi-prolog.org)):
 
 ```prolog

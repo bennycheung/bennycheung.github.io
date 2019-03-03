@@ -56,7 +56,7 @@ did you actually try to do it. The problem is encoding a logic puzzle is more di
 solving it. Luckily, the consequence of spending infinite amount of time to code is the expectation
 to solve the later problems faster. Under the amortization principle, we are coming out with a gain.
 
-There is one professor in the world, [Mihaela Malita](http://www.anselm.edu/internet/compsci/faculty_staff/mmalita/index.html) takes it seriously enough to supply an extremely useful [Prolog Puzzle Solving library](http://www.anselm.edu/internet/compsci/faculty_staff/mmalita/HOMEPAGE/logic/index.html). I am really thankful to her because it proves that automated puzzle solving is an interesting and a programming skills to have.
+There is one professor in the world, [Mihaela Malita](https://www.anselm.edu/faculty-directory/mihaela-malita) takes it seriously enough to supply an extremely useful [Prolog Puzzle Solving library](https://ypologist.com/mmalita17/HOMEPAGE/logic/index.html). I am really thankful to her because it proves that automated puzzle solving is an interesting and a programming skills to have.
 
 ## The Zebra Puzzle
 The famous `Zebra Puzzle` comes with 15 facts and 2 questions:
