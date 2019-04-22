@@ -277,7 +277,7 @@ Region Avg IOU: 0.767684, Class: 0.285230, Obj: 0.376508, No Obj: 0.003249, Avg 
 ...
 ```
 
-Usually the network requires 2000 iterations for each class (object), i.e. 100 food classes will need 100 x 2000 = 20000 iterations.
+Usually the network requires 2000 iterations for each class (object), i.e. 100 food classes will need 100 x 2000 = 200000 iterations.
 But for a more precise definition when you should stop training, use the following heuristics (rule of thumbs):
 
 During training, you will see varying indicators of error, and you should stop when no longer decreases 0.XXXXXXX avg:
