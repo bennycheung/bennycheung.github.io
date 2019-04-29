@@ -21,24 +21,24 @@ images:
 published: true
 ---
 <!--excerpt.start-->
-There is no surprise that one of the biggest concern for the enterprise, such as healthcare provider, is data security. One can argue that the data ownership is the most important asset in the internet age. The consumer awares of their personal information value.
-In particular, the healthcare provider requires to transform from the centralized patient's data ownership to a distributed ownership. The patient has the full control of their health data while the healthcare provider is only permissioned to access to the patient's data as needed.
+There is no surprise that one of the biggest concern for the healthcare provider is data security. One can argue that the data ownership is the most important asset in this internet age. The patients aware of their personal information value.
+Consequently, the healthcare provider requires to transform from the centralized patient's data ownership to a distributed ownership. The patient has the full control of his health data while the healthcare provider is only permissioned to access to the patient's data as needed.
 <!--excerpt.end-->
-The patient is further incentivized to share part of their health data for the greater social good in medical research, provided by part of their private data is obscured.
-To make this decentralized data ownership and sharing require a new technique to protect the data privacy and security to the system.
+The patient is further incentivized to share part of their health data for the greater social good in medical research, providing that a part of their private data is obscured before usage.
+To make this decentralized data ownership and sharing work, it requires a new technique to protect the data privacy and security to the system.
 
 ![Healthcare Blockchain ]({{ site.baseurl }}images/attribute-based-encryption-for-healthcare-blockchain/Medical_Blockchain_StyleArt.jpg) 
 
 *Figure. Artistic style of Kandinsky transfer to a healthcare blockchain image*
 
 Our previous article on ["Why Blockchain for Healthcare?"](https://www.jonahgroup.com/blog/why_blockchain_for_healthcare) explained how to use blockchain to share the data with the permissioned parties.
-In this article, we shall extend into the health data sharing,
-focusing on the data privacy by using *Attribute-based Encryption*.
-When the patient decided to share part of their health data, the health data is logged into the blockchain confidentially. Only the permissioned parties can decrypt the shared data.
+In this article, we shall expand the discussion on the health data sharing,
+focusing on the data privacy by *Attribute-based Encryption*.
+When a patient decided to share part of his/her health data, the health data is recorded into a blockchain confidentially. Only the permissioned parties can decrypt the shared data.
 
 Exploring the concept and practice of *attribute-based encryption for healthcare blockchain*,
-we shall explain the following topics from system perspectives, with minimal mathematics required.
-Of course, for mathematically inclined readers, the original papers are listed in the [References](#References).
+we shall explain the following topics from a system perspective, with minimal requirements on mathematics.
+Of course, for the mathematically inclined readers, the original papers are listed in the [References](#References) section for deeper understanding.
 
 * [Personal Health Record (PHR) Security](#PHRSecurity)
 * [Attribute-based Encryption](#ABE)
@@ -52,8 +52,9 @@ Of course, for mathematically inclined readers, the original papers are listed i
 * [References](#References)
 
 ## <a name='PHRSecurity'></a> Personal Health Record (PHR) Security
-To start our journey into this new sharing economy,
-Fast Healthcare Interoperability Resources (FHIR) is the standard for fast and efficient storage/retrieval of health data.
+To start our journey into this new sharing motive,
+Fast Healthcare Interoperability Resources (FHIR) is the industry standard
+for fast and efficient storage/retrieval of health data.
 Units of health data in FHIR are referred to as "Resources". FHIR defines multiple such resources, such as Patient, Practitioner, Observation, MedicalRequest, etc. where each resource can be linked to multiple other resources.
 In the previous post on [FHIR Server Up and Running](http://bennycheung.github.io/fhir-server-up-and-running), we have provided a practical tutorial to setup a FHIR RESTful API service with the simulated patient health data. As always, our philosophy of balance between theory and practice is always helpful when we need to comprehend a new concept.
 
@@ -123,6 +124,7 @@ CP-ABE thus allows to realize implicit authorization, i.e., authorization is inc
 ### <a name='CP-ABE-Algo'></a> CP-ABE Algorithms
 What we really want is to be able to define that the access is based on other things, such as his location, or whether he is the practitioner associated with a patient. These are defined as attributes for his access rights, and define attributed-based security, where we can define fine-grained control on the decryption process. For example, we might define that some sensitive health information is only accessible when the patient and the practitioner have both authenticated themselves, and are in a provable location.
 
+#### CP-ABE Encryption Process
 We have several stages for the encryption process [[BSW07]](#BSW07):
 
 * **Setup**. The setup algorithm takes no input other than the implicit security parameter. It outputs the public parameters $$(PK)$$ and a master key $$(MK)$$.
@@ -131,14 +133,23 @@ We have several stages for the encryption process [[BSW07]](#BSW07):
 * **Decrypt(PK, CT, SK)**. The decryption algorithm takes as input the public parameters $$(PK)$$, a ciphertext $$(CT)$$, which contains an access policy $$(A)$$, and a private key $$(SK)$$, which is a private key for a set $$(S)$$ of attributes. If the set $$(S)$$ of attributes satisfies the access structure $$(A)$$ then the algorithm will decrypt the ciphertext and return a message $$(M)$$.
 * **Delegate(SK, S˜)**. The delegate algorithm takes as input a secret key $$(SK)$$ for some set of attributes $$(S)$$ and a set $$S˜ \subset S$$. It output a secret key $$(S˜K)$$ for the set of attributes $$(S˜)$$. [Note: this function is not used in this article]
 
-The following sequence diagram depicts the CP-ABE encryption process:
+#### CP-ABE Encryption Sequence
+To digest how to apply this suite of CP-ABE algorithms,
+the following sequence diagram depicts the CP-ABE encryption process:
+
+> The Python implementation is shown in the later section [ABE with Python](#ABE-Python)
+
+* *Phase 1*: Issue Certificates - both patient and practitioner are participating in the network, must be registered and enrolled. The certificate authority (CA) will issue the corresponding X.509 certificate to the participants. Each certificate contains the identity and attributes that described the participant precisely.
+* *Phase 2*: Prepare Public Key - system uses the `Setup` algorithm to prepare the master key (MK) and public key (PK). The MK is only known to the attribute-based access control system for this is used to generate each participant's secret keys. The PK is distributed to each participant for encrypting their data. 
+* *Phase 3*: Patient Encrypt Data - patient authenticated and retrieved his health record (M) from FHIR server. Using patient's certificate, the system use `Key_Generation` to generate a patient's secret key. An access policy (A) is used to encrypt the health record (M) by `Encrypt` using the public key (PK). The ciphertext (CT) can be put on the blockchain (or other storage system) for data sharing.
+* *Phase 4*: Practitioner Decrypt Data - Using practitioner's certificate, the system use `Key_Generation` to generate a practitioner's secret key. After the practitioner requests for the ciphertext (CT) from the blockchain, `Decrypt` can be used to decrypt the ciphertext with the practitioner's secret key. If practitioner's secret key has satisfied the ciphertext policy (A), the health data (M) is returned; otherwise, the decryption failed with error.
 
 ![Attribute-based Encryption Sequence]({{ site.baseurl }}images/attribute-based-encryption-for-healthcare-blockchain/ABAC_Cryptography_Seq.jpg)
 
 *Figure. The CP-ABE encryption process (1) patient and practitioner receives their credentials (2) ABAC prepared sharing keys according to respective participant credentials (3) patient encrpyted data with a policy (4) practitioner decrypted data if his secret key matched the policy*
 
 ### <a name='ABE-FHIR'></a> ABE on FHIR Patient Resource
-For instance, the "Patient" resource for `smart-1032702` can be retrieved from the FHIR server.
+For example, the "Patient" resource for `smart-1032702` can be retrieved from the FHIR server.
 
 ```
 GET http://localhost:8080/hapi-fhir/baseDstu3/Patient/smart-1032702
@@ -152,9 +163,6 @@ The FHIR server responses with the following result for `smart-1032702`,
     "resource": {
         "resourceType": "Patient",
         "id": "smart-1032702",
-
-        ...
-
         "name": [
             {
             "use": "official",
@@ -195,6 +203,7 @@ The FHIR server responses with the following result for `smart-1032702`,
             "reference": "Practitioner/smart-Practitioner-72004454"
             }
         ]
+        ...
     }
 }
 ```
