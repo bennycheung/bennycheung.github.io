@@ -52,7 +52,7 @@ Of course, for the mathematically inclined readers, the original papers are list
 * [References](#References)
 
 ## <a name='PHRSecurity'></a> Personal Health Record (PHR) Security
-To start our journey into this new sharing motive,
+To start our journey into this new sharing convention,
 Fast Healthcare Interoperability Resources (FHIR) is the industry standard
 for fast and efficient storage/retrieval of health data.
 Units of health data in FHIR are referred to as "Resources". FHIR defines multiple such resources, such as Patient, Practitioner, Observation, MedicalRequest, etc. where each resource can be linked to multiple other resources.
