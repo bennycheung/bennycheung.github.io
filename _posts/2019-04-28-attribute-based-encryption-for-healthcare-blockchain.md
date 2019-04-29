@@ -21,24 +21,24 @@ images:
 published: true
 ---
 <!--excerpt.start-->
-There is no surprise that one of the biggest concern for the healthcare provider is data security. One can argue that the data ownership is the most important asset in this internet age. The patients aware of their personal information value.
-Consequently, the healthcare provider requires to transform from the centralized patient's data ownership to a distributed ownership. The patient has the full control of his health data while the healthcare provider is only permissioned to access to the patient's data as needed.
+It's no surprise that one of the biggest concern for a healthcare provider is data security. One can argue that the data ownership is the most important asset in this information age. Healthcare patients are aware of the value of their personal information.
+As a result, a healthcare provider required to switch from a centralized ownership to a distributed ownership. The patient now has the full control of his health data while the provider only has permission to access to the data when necessary.
 <!--excerpt.end-->
-The patient is further incentivized to share part of their health data for the greater social good in medical research, providing that a part of their private data is obscured before usage.
-To make this decentralized data ownership and sharing work, it requires a new technique to protect the data privacy and security to the system.
+Provided that a section of the private data is obscured before usage, a patient could be incentivized to share part of their health related data for the advancement of medical research.
+In order to make this decentralized data ownership and sharing work, it requires a new technique to protect the data privacy and provide a secure system.
 
 ![Healthcare Blockchain ]({{ site.baseurl }}images/attribute-based-encryption-for-healthcare-blockchain/Medical_Blockchain_StyleArt.jpg) 
 
 *Figure. Artistic style of Kandinsky transfer to a healthcare blockchain image*
 
-Our previous article on ["Why Blockchain for Healthcare?"](https://www.jonahgroup.com/blog/why_blockchain_for_healthcare) explained how to use blockchain to share the data with the permissioned parties.
-In this article, we shall expand the discussion on the health data sharing,
-focusing on the data privacy by *Attribute-based Encryption*.
-When a patient decided to share part of his/her health data, the health data is recorded into a blockchain confidentially. Only the permissioned parties can decrypt the shared data.
+Our previous article on ["Why Blockchain for Healthcare?"](https://www.jonahgroup.com/blog/why_blockchain_for_healthcare) explained how to use blockchain to share data with the permissioned parties.
+In this article, we'll expand on the discussion of healthcare data sharing,
+with a focuse on the data privacy through *Attribute-based Encryption*.
+When a patient decided to share part of his/her health data, the data is recorded into a blockchain confidentially. Only the permissioned parties can decrypt the shared data.
 
-Exploring the concept and practice of *attribute-based encryption for healthcare blockchain*,
-we shall explain the following topics from a system perspective, with minimal requirements on mathematics.
-Of course, for the mathematically inclined readers, the original papers are listed in the [References](#References) section for deeper understanding.
+As we explore the concept and practice of *attribute-based encryption for healthcare blockchain*,
+we'll go through the following topics from a system perspective, simplifying the mathematical aspects.
+Of course, for the mathematically inclined readers, the original papers are listed in the [References](#References) section for a deeper understanding.
 
 * [Personal Health Record (PHR) Security](#PHRSecurity)
 * [Attribute-based Encryption](#ABE)
