@@ -354,8 +354,8 @@ Policy not satisfied.
 Decryption as a Practitioner#2 failed..
 ```
 
-After this experiment, we gained sufficient confidence to add the CP-ABE into an existing healthcare system.
-The patient's data confidentiality can be guaranteed, even logged into the immutable blockchain.
+After this experiment, we understand the practical CP-ABE techniques to ensure he patient's data confidentiality.
+With sufficient integration skills and blockchain knowledge, we can even record the health data into the Hyperledger Fabric for real-life usage.
 
 ## <a name='References'></a> References
 
