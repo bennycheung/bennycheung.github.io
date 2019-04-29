@@ -354,7 +354,7 @@ Policy not satisfied.
 Decryption as a Practitioner#2 failed..
 ```
 
-After this experiment, we understand the practical CP-ABE techniques to ensure he patient's data confidentiality.
+After this experiment, we understand the practical CP-ABE techniques to ensure the patient's data confidentiality.
 With sufficient integration skills and blockchain knowledge, we can even record the health data into the Hyperledger Fabric for real-life usage.
 
 ## <a name='References'></a> References
