@@ -33,7 +33,7 @@ In order to make this decentralized data ownership and sharing work, it requires
 
 Our previous article on ["Why Blockchain for Healthcare?"](https://www.jonahgroup.com/blog/why_blockchain_for_healthcare) explained how to use blockchain to share data with the permissioned parties.
 In this article, we'll expand on the discussion of healthcare data sharing,
-with a focuse on the data privacy through *Attribute-based Encryption*.
+with a focus on the data privacy through *Attribute-based Encryption*.
 When a patient decided to share part of his/her health data, the data is recorded into a blockchain confidentially. Only the permissioned parties can decrypt the shared data.
 
 As we explore the concept and practice of *attribute-based encryption for healthcare blockchain*,
