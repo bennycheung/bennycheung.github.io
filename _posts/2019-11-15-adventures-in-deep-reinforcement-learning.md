@@ -198,7 +198,7 @@ mini_games = [  ## This mini-games names should alredy been in your list
 
 We can copy the sample from `Starcraft_pysc2_minigames/Agents/scripted_agent.py` to `pysc2/agents/scripted_agent_test.py`. Subsequently, we can test the scripted sample bot agents with the new mini-games. You should see something like the following.
 
-![Mini-game HallucinIce]({{ site.baseurl }}images/adventures-in-deep-reinforcement-learning/Mini_game_RL_HallucinationArchon.gif)
+![Mini-game HallucinIce]({{ site.baseurl }}images/adventures-in-deep-reinforcement-learning/mini_game_RL_HallucinationArchon.gif)
 
 *Figure. excrept from Gema Parreño's blog, StarCraft II Learning environment - running the Hallucination Archon scripted agent*
 
