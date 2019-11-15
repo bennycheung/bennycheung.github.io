@@ -160,7 +160,7 @@ In the following shows the plot for the score over episodes.
 * Ref: Gema Parreño, Startcraft Pysc2 Deepmind mini games creation <https://github.com/SoyGema/Startcraft_pysc2_minigames/tree/master/docs>
 
 ### Minigame task description
-Minigames come as controlled environments that might be useful to exploit game features in StarCraft II. General purpose learning system for StartCraft 2 can be a daunting task. So there is a logical option in splitting this tasks into minitask in order to advance in research. Mini-games focus on different elements of StarCraft II Gameplay .
+Minigames come as controlled environments that might be useful to exploit game features in StarCraft II. General purpose learning system for StarCraft II can be a daunting task. So there is a logical option in splitting this tasks into minitask in order to advance in research. Mini-games focus on different elements of StarCraft II Gameplay .
 
 To investigate elements of the game in isolation, and to provide further fine-grained steps towards playing the full game, Deepmind has built several mini-games. These are focused scenarios on small maps that have been constructed with the purpose of testing a subset of actions and/or game mechanics with a clear reward structure. Unlike the full game where the reward is just win/lose/tie, the reward structure for mini-games can reward particular behaviours (as defined in a corresponding .SC2Map file).
 
