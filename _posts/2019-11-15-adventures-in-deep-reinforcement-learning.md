@@ -250,6 +250,10 @@ python -m pysc2.bin.agent --map HallucinIce --agent pysc2.agents.scripted_agent_
 
 While learners focusing on using the SC2LE to understand smaller scale minigame reinforcement learning, the DeepMind AlphaStar Team has successfully scale-up to train an AI to defeat a top professional StarCraft II player. In a series of test matches held on December 2018, AlphaStar decisively beat Team Liquid’s Grzegorz "MaNa" Komincz, one of the world’s strongest professional StarCraft players, 5-0.
 
+Watch the "AlphaStar: The inside story"
+{% include youtubePlayer.html id="UuhECwm31dM" %}
+
+
 AlphaStar uses a novel multi-agent learning algorithm. The neural network was initially trained by supervised learning from anonymised human games [released by Blizzard](https://github.com/Blizzard/s2client-proto/tree/master/samples/replay-api). This allowed AlphaStar to learn, by imitation, the basic micro and macro-strategies used by players on the StarCraft ladder.
 
 ![Agent Training Method]({{ site.baseurl }}images/adventures-in-deep-reinforcement-learning/SCII-BlogPost-Fig03.width-700.jpg)
