@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Adventures in Deep Reinforcement Learning using StarCarft II
+title: Adventures in Deep Reinforcement Learning using StarCraft II
 date: 2019-11-15 00:00:00.000000000 -00:00
 permalink: adventures-in-deep-reinforcement-learning
 author: Benny Cheung
