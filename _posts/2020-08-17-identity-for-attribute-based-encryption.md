@@ -261,7 +261,7 @@ Using `openssl` to print out a text version of the `my.crt` - X.509 certificate 
 openssl x509 -text -noout -in my.crt
 ```
 
-The text output of the given X.509 certificate should look like, please notice the `Subject` section that defines the standard attributes for the certificate holder.
+The text output of the given X.509 certificate should look like, see the `Subject` section that defines the standard attributes for the certificate holder.
 
 ```
 Certificate:
@@ -387,7 +387,7 @@ with open("my_self.crt", "wb") as f:
 
 
 Using `openssl` to print out text version of the `my_self.crt` - a self-signed X.509 certificate file,
-please notices the `Issuer` and `Subject` are the same entity.
+see the `Issuer` and `Subject` are the same entity.
 
 
 ```
