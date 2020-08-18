@@ -191,12 +191,12 @@ csr = x509.CertificateSigningRequestBuilder().subject_name(x509.Name([
   x509.NameAttribute(NameOID.COUNTRY_NAME, u"CA"),
   x509.NameAttribute(NameOID.STATE_OR_PROVINCE_NAME, u"Ontario"),
   x509.NameAttribute(NameOID.LOCALITY_NAME, u"Toronto"),
-  x509.NameAttribute(NameOID.ORGANIZATION_NAME, u"Medicare Record Company"),
-  x509.NameAttribute(NameOID.COMMON_NAME, u"medicare.com"),
+  x509.NameAttribute(NameOID.ORGANIZATION_NAME, u"Medical Record Company"),
+  x509.NameAttribute(NameOID.COMMON_NAME, u"medicalrecord.com"),
   ])).add_extension(
     x509.SubjectAlternativeName([
       # Describe what sites we want this certificate for.
-      x509.DNSName(u"www.medicare.com"),
+      x509.DNSName(u"www.medicalrecord.com"),
     ]),
   critical=False,
   # Sign the CSR with our private key.
@@ -268,13 +268,13 @@ Certificate:
     Data:
         Version: 3 (0x2)
         Serial Number:
-            d9:db:d3:30:67:b0:4a:f6:be:c7:94:30:22:2d:02:c9
+            e1:99:7e:e7:1d:6d:48:b9:90:a4:f0:9f:8e:60:cc:e1
     Signature Algorithm: sha256WithRSAEncryption
         Issuer: C=CA, ST=Ontario, O=Jonah Group Ltd., OU=Consulting, CN=Jonah Group CA/emailAddress=bcheung@jonahgroup.com
         Validity
-            Not Before: Aug 17 10:29:36 2020 GMT
-            Not After : Sep 16 10:29:36 2020 GMT
-        Subject: C=CA, ST=Ontario, L=Toronto, O=Medicare Record Company, CN=medicare.com
+            Not Before: Aug 18 09:35:58 2020 GMT
+            Not After : Sep 17 09:35:58 2020 GMT
+        Subject: C=CA, ST=Ontario, L=Toronto, O=Medical Record Company, CN=medicalrecord.com
         Subject Public Key Info:
             Public Key Algorithm: rsaEncryption
                 Public-Key: (2048 bit)
@@ -300,23 +300,23 @@ Certificate:
                 Exponent: 65537 (0x10001)
         X509v3 extensions:
             X509v3 Subject Alternative Name: 
-                DNS:www.medicare.com
+                DNS:www.medicalrecord.com
     Signature Algorithm: sha256WithRSAEncryption
-         09:21:b2:93:66:16:1c:cc:fe:b0:90:a4:19:27:0c:a7:f1:d6:
-         ae:df:46:38:f9:8c:65:d6:3d:c8:36:42:03:4d:fa:40:10:c1:
-         05:a6:6d:e6:be:60:1d:a7:ac:7d:11:c4:bb:e0:dc:7d:06:58:
-         05:1c:60:0f:22:f3:02:d7:87:2c:e3:88:12:ef:d7:3b:f5:cf:
-         6a:84:8d:a6:4a:78:e3:ae:73:1e:1b:fe:6c:50:00:0d:79:7d:
-         ac:0d:00:f7:52:e0:a7:91:94:e8:c2:28:0c:6e:db:57:94:8b:
-         8c:3d:ab:82:27:a4:ad:6f:99:29:e7:49:95:d7:52:2e:50:c7:
-         97:e0:d5:fd:d5:2f:04:83:6d:51:ba:c6:31:4b:b7:53:8a:d8:
-         5d:ac:d6:11:f6:35:c2:7a:d9:40:b7:07:6d:2e:d6:84:9b:2f:
-         c5:3d:68:9e:75:9e:f1:9a:7d:7b:33:5e:ee:dc:21:02:70:31:
-         28:98:3e:6e:55:52:48:2e:1b:02:12:28:c9:cb:1d:0a:75:7d:
-         68:1d:fa:21:0d:82:da:24:fa:03:2f:41:27:f0:61:39:bd:e2:
-         ec:32:82:68:2f:cb:b4:08:2e:a3:27:68:5b:6f:48:38:3c:b9:
-         91:6b:6c:33:bb:7b:b4:e6:d8:02:64:11:d1:67:9d:50:25:e2:
-         65:11:90:14
+         7a:cc:9e:75:74:aa:fb:8f:4c:16:70:bf:f2:61:1c:40:6c:9f:
+         44:82:33:be:76:b0:eb:b2:74:61:04:36:ed:ce:a1:c8:d0:e6:
+         51:cb:14:4a:50:a2:f7:f7:3f:97:ef:25:8c:39:e9:1e:7a:8a:
+         10:06:49:05:6c:70:e6:cb:61:cd:f4:91:5b:7b:cb:4a:71:f9:
+         11:49:e2:da:55:c7:17:89:65:29:9e:d0:2a:79:34:e7:79:02:
+         9e:c4:70:88:5a:f4:d8:53:aa:d5:67:47:45:32:2e:0b:c7:45:
+         d1:b3:08:f7:0d:2c:33:94:65:5a:91:43:e9:b1:4a:6a:8e:b7:
+         6d:b4:8b:b8:53:c9:fb:e1:fd:88:1c:85:00:3b:db:eb:5a:96:
+         06:a0:fa:89:70:ff:c6:27:29:1b:5d:e0:8e:93:05:47:9e:3e:
+         c6:2a:51:f9:d0:10:a4:26:d4:84:96:1a:6a:bd:9f:f7:a5:f2:
+         3f:17:5d:58:4c:79:87:b4:0c:9a:a5:43:72:cb:9a:e1:40:07:
+         4d:f7:42:c0:36:e9:b4:e9:2f:6e:f2:6b:52:93:54:28:7e:0f:
+         67:bc:f0:98:30:c1:44:32:9f:1f:d2:81:43:41:30:9c:4e:57:
+         48:8a:e2:8a:0b:c9:7a:95:55:7d:a1:fc:15:39:33:c2:a1:8a:
+         c7:91:3c:77
 ```
 
 ## <a name='SelfSigned'></a> Self-Signed Certificate with Custom Attributes
