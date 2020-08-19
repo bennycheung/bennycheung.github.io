@@ -550,11 +550,11 @@ patient attributes: ['PATIENT', '123456']
 b'Personal Secret: high blood pressure and diabetic'
 ```
 
-Amy has successfully decrypted her own medical record using her X.509 identity!
+Amy has successfully decrypted her own medical record using her X.509 identity! Amy medical condition is secured that only herself and potentially a practitioner who has `{"Role":"PRACTITIONER", "ID":"9876543"}` attributes in the certificate can decrypt.
 
 ## <a name='References'></a> References
 
-* <a name="">[[CRYPTO]](https://cryptography.io/en/latest/x509/)</a> Cryptography online documentation - X.509 module
+* <a name="CRYPTO">[[CRYPTO]](https://cryptography.io/en/latest/x509/)</a> Cryptography online documentation - X.509 module
 * <a name="BSW07">[[BSW07]](https://www.cs.utexas.edu/~bwaters/publications/papers/cp-abe.pdf)</a> John Bethencourt, Amit Sahai, and Brent Waters. "Ciphertext-policy attribute-based encryption." In Security and Privacy, 2007. SP'07. IEEE Symposium on, pp. 321-334. IEEE, 2007.
-* <a name="">[[AGM13]](https://www.cs.purdue.edu/homes/clg/files/Charm.pdf)</a> Akinyele, J.A., Garman, C., Miers, I. et al. Charm: a framework for rapidly prototyping cryptosystems. J Cryptogr Eng 3, 111–128 (2013).
+* <a name="AGM13">[[AGM13]](https://www.cs.purdue.edu/homes/clg/files/Charm.pdf)</a> Akinyele, J.A., Garman, C., Miers, I. et al. Charm: a framework for rapidly prototyping cryptosystems. J Cryptogr Eng 3, 111–128 (2013).
 * <a name="MD16">[[MD16]](https://www.youtube.com/watch?v=x_OWvcC8YY0>)</a> Marlon Dutra, Empowering X.509 Certificate Management with Python, PyCon Austrialia 2016.
