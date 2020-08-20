@@ -103,7 +103,7 @@ Device;
 ...
 ```
 
-Interested reader should refer to the Hyperledger Fabric introduction to [Identity](https://hyperledger-fabric.readthedocs.io/en/release-1.4/identity/identity.html), which provide an excellent explanation on the concepts of the public key infrastructure (PKI), digital certificates and certificate authorities.
+**UPDATE 2020/08/17** Interested reader should refer to our latest article on [X.509 Identity for Attribute-based Encryption](http://bennycheung.github.io/identity-for-attribute-based-encryption), describes the practical approach to demonstrate how to use Python cryptography to generate X.509 certificate with custom atributes; subsequently, we use charm-crypto framework’s hybrid adapter to perform CP-ABE (ciphertext-policy) with the X.509 custom attributes.  
 
 ### <a name='CP-ABE'></a> Ciphertext-Policy ABE
 In ciphertext-policy attribute-based encryption (CP-ABE) a user’s private-key is associated with a set of attributes
