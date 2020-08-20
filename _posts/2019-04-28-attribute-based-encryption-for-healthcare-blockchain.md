@@ -357,6 +357,11 @@ Decryption as a Practitioner#2 failed..
 After this experiment, we understand the practical CP-ABE techniques to ensure the patient's data confidentiality.
 With sufficient integration skills and blockchain knowledge, we can even record the health data into the Hyperledger Fabric for real-life usage.
 
+**UPDATE 2020/08/17**
+The reader expected to encrypt any plain text message with CP-ABE. We shall provide an extended example in
+[X.509 Identity for Attribute-based Encryption](http://bennycheung.github.io/identity-for-attribute-based-encryption), 
+to illustrate how to encrypt any plain text message and to decrypt with the certificate attributes 
+
 ## <a name='References'></a> References
 
 *  <a name="SW05">[[SW05]](https://pdfs.semanticscholar.org/267c/eba2ccc0f0b8872b24ac48c5e8680a04cb89.pdf)</a> Sahai, Amit, and Brent Waters. "Fuzzy identity-based encryption." In Eurocrypt, vol. 3494, pp. 457-473. 2005.
