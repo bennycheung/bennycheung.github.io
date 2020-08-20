@@ -103,7 +103,7 @@ Device;
 ...
 ```
 
-**UPDATE 2020/08/17** Interested reader should refer to our latest article on [X.509 Identity for Attribute-based Encryption](http://bennycheung.github.io/identity-for-attribute-based-encryption), describes the practical approach to demonstrate how to use Python cryptography to generate X.509 certificate with custom atributes; subsequently, we use charm-crypto framework’s hybrid adapter to perform CP-ABE (ciphertext-policy) with the X.509 custom attributes.  
+Interested reader should refer to our latest article on [X.509 Identity for Attribute-based Encryption](http://bennycheung.github.io/identity-for-attribute-based-encryption), describes the practical approach to demonstrate how to use Python cryptography to generate X.509 certificate with custom atributes; subsequently, we use charm-crypto framework’s hybrid adapter to perform CP-ABE (ciphertext-policy) with the X.509 custom attributes.  
 
 ### <a name='CP-ABE'></a> Ciphertext-Policy ABE
 In ciphertext-policy attribute-based encryption (CP-ABE) a user’s private-key is associated with a set of attributes
@@ -357,10 +357,10 @@ Decryption as a Practitioner#2 failed..
 After this experiment, we understand the practical CP-ABE techniques to ensure the patient's data confidentiality.
 With sufficient integration skills and blockchain knowledge, we can even record the health data into the Hyperledger Fabric for real-life usage.
 
-**UPDATE 2020/08/17**
-The reader expected to encrypt any plain text message with CP-ABE. We shall provide an extended example in
-[X.509 Identity for Attribute-based Encryption](http://bennycheung.github.io/identity-for-attribute-based-encryption), 
-to illustrate how to encrypt any plain text message and to decrypt with the certificate attributes 
+> **UPDATE 2020/08/17**
+> The reader expected to encrypt any plain text message with CP-ABE. We shall provide an extended example in
+> [X.509 Identity for Attribute-based Encryption](http://bennycheung.github.io/identity-for-attribute-based-encryption), 
+> to illustrate how to encrypt any plain text message and to decrypt with the certificate attributes 
 
 ## <a name='References'></a> References
 
