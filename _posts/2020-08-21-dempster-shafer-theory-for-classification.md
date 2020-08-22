@@ -347,7 +347,7 @@ the classification can be expressed as a series of steps:
 4. **Design DRC strategy**: Design a DRC combination strategy based on the data structure. A single application of DRC combines the mass values of each attribute for each data item, but many applications can be used, and DRC can also be used to combine the results of previous applications.
 5. **Classify data**: Following combination, select a rule that converts the result to a decision. Several may be used on different steps, but the final one ultimately classifies the data.
 
-The [[QAUC14]](#QAUC14) does not provide any implementation. We shall follow their research direction to implement in Python to test.
+The [[QAUC14]](#QAUC14) does not provide any implementation. We shall follow their research direction to implement a solution in Python to test.
 
 ### 1. Define the frame of discernment
 The IPD frame of discernment ($$\Theta$$) is coming from all the unique `Class` values in the DataFrame `df`.
