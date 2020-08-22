@@ -5,7 +5,7 @@ date: 2020-08-21 00:00:00.000000000 -00:00
 permalink: dempster-shafer-theory-for-classification
 author: Benny Cheung
 artwork:
-  author: Unknown
+  author: Gijs Van Vaerenbergh
 tags:
   - Dempster-Shafer Theory
   - Machine Learning
