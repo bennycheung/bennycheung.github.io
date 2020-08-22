@@ -245,3 +245,7 @@ td {
 .PageNavigation .next {
   text-align: right;
 }
+
+.MathJax_Display {
+  text-align: left !important;
+}
