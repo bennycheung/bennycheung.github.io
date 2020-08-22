@@ -22,7 +22,7 @@ published: true
 <!--excerpt.start-->
 Machine Learning is dominated by ANN (Automated Neural Network), it requires a large training data set of labelled data to learn a classification model.
 When only a small data set is available, decision tree & its variant random forests dominated the classification.
-In this article, we shall explore the Dempster-Shafer Theory as the theoretical basis for classifiers, where classification is operated on the principle of combining evidences.
+In this article, we shall explore the Dempster-Shafer Theory as the theoretical basis for classifiers on a small data set, where classification is operated on the principle of combining evidences.
 <!--excerpt.end-->
 
 ![Flower Image Samples]({{ site.baseurl }}images/dempster-shafer-theory-for-classification/iris_collage_images.jpg) 
