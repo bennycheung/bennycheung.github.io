@@ -167,7 +167,6 @@ print("m2: bpa of {'b'}=", m2['b'])
 print("m2: belief of {'b'}=", m2.bel('b'))
 print("m2: plausibility of {'b'}=", m2.pl('b'))
 print("m2: commonality of {'b'}=", m2.q('b'))
-print("m2: plausibility of {'b'}=", m2.pl('b')))
 ```
 
 The results are,
