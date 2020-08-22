@@ -9,7 +9,7 @@ artwork:
 tags:
   - Dempster-Shafer Theory
   - Machine Learning
-  - Evidence Theory
+  - Classification
   - Python
 category: post
 comments: true
