@@ -43,7 +43,7 @@ The motivation for selecting D-S theory can be characterized by the following re
 * The versatility of the Dempster-Shafer theory to represent and combine different types of evidence obtained from multiple sources.
 
 Using our philosophy of learning by doing, we shall take the practical approach to demonstrate how to use Python `pyds` Dempster-Shafer module.
-Starting with some experiment with Dempster-Shafer belief functions, then we shall progress into classification on the "Iris Plant Dataset" [[IPD]](#IPD) using D-S theory. The result is achieving 96% accuracy, which is comparable with other ML models.
+Starting with some experiment with Dempster-Shafer belief functions, then we shall progress into classification on the "Iris Plant Dataset" [[IPD]](#IPD) using D-S theory. The result is achieving 96% accuracy, which is comparable to other ML models.
 
 * [Python Installation](#Installation)
   * [Virtual Environment](#VirtualEnv)
