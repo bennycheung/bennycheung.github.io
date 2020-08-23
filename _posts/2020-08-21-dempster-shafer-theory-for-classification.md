@@ -27,7 +27,7 @@ In this article, we shall explore the Dempster-Shafer Theory as the theoretical 
 
 ![Flower Image Samples]({{ site.baseurl }}images/dempster-shafer-theory-for-classification/iris_collage_images.jpg) 
 
-*Figure. Images of Iris spieces. We shall attempt to use the petal width, petal height, sepal width, sepal height measurements to preform classification for the classes of Iris Setosa, Iris Versicolour, or Iris Virginica in this article.* 
+*Figure. Images of Iris spieces. We shall attempt to use the petal width, petal height, sepal width, sepal height measurements to perform classification for the classes of Iris Setosa, Iris Versicolour, or Iris Virginica in this article.* 
 
 Dempster-Shafer Theory [[DST]](#DST)[[GS76]](#76)[[GS90]](#GS90) is a mathematical theory of evidence,
 offers an alternative to traditional probabilistic theory for the mathematical representation of uncertainty.
