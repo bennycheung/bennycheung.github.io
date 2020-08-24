@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Dempster-Shafer Theory for Classification
+title: Dempster-Shafer Theory for Classification using Python
 date: 2020-08-21 00:00:00.000000000 -00:00
 permalink: dempster-shafer-theory-for-classification
 author: Benny Cheung
