@@ -48,7 +48,7 @@ As a learning exercise, we have converted 3 types of commonly known logic puzzle
 
 These can be elegantly and efficiently solved with Prolog and constraints.
 The first 2 types of puzzles (1) *Cryptoarithemetic Puzzle* and (2) *Logic Puzzle* can be very directly modeled and solved as combinatorial tasks.
-The third type (3) *Spatial Logic Puzzle* needs more effort to find a suitable formulation as such tasks. After stating the all of these puzzles as integers, Prolog constraints can search over the different states efficiently.
+The third type (3) *Spatial Logic Puzzle* needs more effort to find a suitable formulation as such tasks. After encoding all of these puzzles as integers, Prolog constraints can search over the different states efficiently.
 
 ## <a name='CryptoarithemeticPuzzle'></a> Cryptoarithemetic Puzzle - Summation Problem
 The classical `SEND + MORE = MONEY` cryptoarithemetic puzzle constrained the assignment of letters between the digits 0 thru 9. They spell out "SEND MORE MONEY" and when read as base 10 numbers create a true mathematical formula. Additional constraint is the leading letter is not permitted to be zero.
