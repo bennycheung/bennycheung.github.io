@@ -235,3 +235,10 @@ To know more about how Prolog could be used in real world problem, here are more
 
 * http://stackoverflow.com/questions/130097/real-world-prolog-usage
 * http://www.drdobbs.com/parallel/the-practical-application-of-prolog/184405220
+
+## References
+
+> **UPDATE 2020/09/04**
+> I finally woke up and discovered how to use the amazing [clp(fd) - Constraint Logic Programming (Finite Domain)](https://www.swi-prolog.org/man/clpfd.html) module. Interested reader should continue explore
+> "[Solving Puzzles using Constraint Logic Programming in Prolog](http://bennycheung.github.io/solving-puzzles-using-clp)", 
+> which explains how to use clp(fd) to solve the three types of puzzles, (1) *Cryptarithmetic Puzzle*, (2) *Logic Puzzle* and (3) *Spatial Logic Puzzle*.
