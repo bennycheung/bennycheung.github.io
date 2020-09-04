@@ -47,7 +47,7 @@ As a learning exercise, we have converted 3 types of commonly known logic puzzle
 * [Spatial Logic Puzzle](#SpatialLogicPuzzle)
 
 These can be elegantly and efficiently solved with Prolog and constraints.
-The first 2 types of puzzles (1) *Cryptarithemetic Puzzle* and (2) *Logic Puzzle* can be very directly modeled and solved as combinatorial tasks.
+The first 2 types of puzzles (1) *Cryptarithmetic Puzzle* and (2) *Logic Puzzle* can be very directly modeled and solved as combinatorial tasks.
 The third type (3) *Spatial Logic Puzzle* needs more effort to find a suitable formulation as such tasks. After encoding all of these puzzles as integers, Prolog constraints can search over the different states efficiently.
 
 ## <a name='CryptarithmeticPuzzle'></a> Cryptarithmetic Puzzle - Summation Problem
