@@ -83,7 +83,7 @@ Plato is a student of Socrates.
 Plato wrote books and put words into Socrates mouth.
 ```
 
-> NOTE: We shall use a more intense HIPAA compliance document after this starter example.
+> NOTE: We shall use a more intense HIPAA regulations document after this starter example.
 
 The following sections will describe each step of the workflow shown in the DeepRank system architecture diagram,
 * (0) Starting Stanford CoreNLP Server
