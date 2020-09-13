@@ -21,8 +21,8 @@ published: true
 ---
 <!--excerpt.start-->
 Machine Learning is dominated by ANN (Automated Neural Network), it requires a large training data set of labelled data to learn a classification model.
-When only a small data set is available, decision tree & its variant random forests dominated the classification.
-In this article, we shall explore the Dempster-Shafer Theory as the theoretical basis for classifiers on a small data set, where classification is operated on the principle of combining evidences.
+When only a small data set is available, the decision tree & its variant random forests dominated the classification.
+In this article, we shall explore the Dempster-Shafer Theory as the theoretical basis for classifiers on a small data set, where classification is operated on the principle of combining pieces of evidence.
 <!--excerpt.end-->
 
 ![Flower Image Samples]({{ site.baseurl }}images/dempster-shafer-theory-for-classification/iris_collage_images.jpg) 
@@ -33,7 +33,7 @@ Dempster-Shafer Theory [[DST]](#DST)[[GS76]](#76)[[GS90]](#GS90) is a mathematic
 offers an alternative to traditional probabilistic theory for the mathematical representation of uncertainty.
 The significant innovation of this framework is that it allows for the allocation of a probability mass to sets or intervals
 as opposed to mutually exclusive singletons. In contrast, Bayesian inference requires some a priori knowledge and is unable to assign a probability to ignorance. D-S is a potentially valuable tool for the evaluation of risk and reliability in engineering applications when it is not possible to obtain a precise measurement from experiments, or when knowledge is obtained from expert elicitation.
-An important aspect of D-S theory is the combination of evidence obtained from multiple sources and the modeling of conflict between them.
+An important aspect of D-S theory is the combination of evidence obtained from multiple sources and the modelling of conflict between them.
 
 The motivation for selecting D-S theory can be characterized by the following reasons [[SF02]](#SF02):
 
@@ -578,7 +578,7 @@ In particular, we can decide how the mass functions should be constructed or how
 One can build mass functions that are as simple or as complex as desired, and Dempster's rule of Combination can be applied many times using different strategies.
 This is a distinct advantage in that it allows the creation of systems tailored towards a given problem domain, but it may be argued that it is also a disadvantage, since it does not permit the generalization of results to all domains.
 
-Both theoretical and practical advantage of D-S have been reiterated in many D-S applications. D-S does not require a priori knowledge (data labels), making it suitable for unsupervised classification - possibly classifying previously unseen information, for example, if the aim is to detect previously unseen network attacks in computer systems. Furthermore, a value for ignorance can be modelled, providing information on the uncertainty of an observation.
+Both theoretical and practical advantages of D-S has been reiterated in many D-S applications. D-S does not require a priori knowledge (data labels), making it suitable for unsupervised classification - possibly classifying previously unseen information, for example, if the aim is to detect previously unseen network attacks in computer systems. Furthermore, a value for ignorance can be modelled, providing information on the uncertainty of an observation.
 
 ## <a name='References'></a> References
 ### Video Tutorial
