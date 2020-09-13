@@ -47,11 +47,11 @@ As a learning exercise, we have converted 3 types of commonly known logic puzzle
 * [Spatial Logic Puzzle](#SpatialLogicPuzzle)
 
 These can be elegantly and efficiently solved with Prolog and constraints.
-The first 2 types of puzzles (1) *Cryptarithmetic Puzzle* and (2) *Logic Puzzle* can be very directly modeled and solved as combinatorial tasks.
+The first 2 types of puzzles (1) *Cryptarithmetic Puzzle* and (2) *Logic Puzzle* can be very directly modelled and solved as combinatorial tasks.
 The third type (3) *Spatial Logic Puzzle* needs more effort to find a suitable formulation as such tasks. After encoding all of these puzzles as integers, Prolog constraints can search over the different states efficiently.
 
 ## <a name='CryptarithmeticPuzzle'></a> Cryptarithmetic Puzzle - Summation Problem
-The classical `SEND + MORE = MONEY` cryptarithmetic puzzle constrained the assignment of letters between the digits 0 thru 9. They spell out "SEND MORE MONEY" and when read as base 10 numbers create a true mathematical formula. Additional constraint is the leading letter is not permitted to be zero.
+The classical `SEND + MORE = MONEY` cryptarithmetic puzzle constrained the assignment of letters between the digits 0 thru 9. They spell out "SEND MORE MONEY" and when read as base 10 numbers create a true mathematical formula. An additional constraint is the leading letter is not permitted to be zero.
 
 Here is another similar cryptarithmetic puzzle of `FORTY + TEN + TEN = SIXTY` that we shall solve here.
 
@@ -194,7 +194,7 @@ next_to(H, N) :- abs(H-N) #= 1.
 ```
 
 After studying Markus's solution using clp(fd), I immediately fall in love with the directness of translating the puzzle hints into the constraint relations.
-Although clp(fd) allows the domain to be expressed as the house label directly, mapping the house labels to integer will enhance the ability for clp to optimize the search efficiently. Each house will be mapped as a integer in {1,2,3,4,5}. Also, I want to point out the elegant way of representing H neighboring house N relation by using the constraint such that the absolute positional difference must be 1.
+Although clp(fd) allows the domain to be expressed as the house label directly, mapping the house labels to an integer will enhance the ability for clp to optimize the search efficiently. Each house will be mapped as an integer in {1,2,3,4,5}. Also, I want to point out the elegant way of representing H neighbouring house N relation by using the constraint such that the absolute positional difference must be 1.
 
 ```prolog
 abs(H-N) #= 1
