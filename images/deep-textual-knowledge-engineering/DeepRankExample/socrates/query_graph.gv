@@ -1,0 +1,11 @@
+digraph {
+	Plato -> 0 [label=NNP_first_in_SENT]
+	teacher -> Plato [label="NN_nmod:poss_NNP"]
+	be -> 0 [label=VBZ_recommends_SENT]
+	who -> teacher [label=WP_nsubj_NN]
+	be -> who [label=VBZ_cop_WP]
+	"'s" -> 0 [label=POS_recommends_SENT]
+	"'s" -> Plato [label=POS_case_NNP]
+	teacher -> 0 [label=NN_first_in_SENT]
+	0 -> who [label=SENT_predicate_WP]
+}
