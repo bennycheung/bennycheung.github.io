@@ -18,7 +18,7 @@ image: images/deep-textual-knowledge-engineering/cover2x.jpg
 images:
   cover: images/deep-textual-knowledge-engineering/cover.jpg
   header: images/deep-textual-knowledge-engineering/header.jpg
-published: true
+published: false 
 ---
 <!--excerpt.start-->
 Much of human knowledge is collected in the written language. Extracting knowledge directly from the textual form of natural language has been one of the lofty goals of Natural Language Processing (NLP) since the beginning of AI research. The recent advance in NLP, using deep neural networks, has effectively automated the parsing and understanding of the natural language. The NLP using deep neural networks is successful because of the DNN adaptive learning ability to handle
