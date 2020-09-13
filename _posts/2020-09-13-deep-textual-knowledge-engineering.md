@@ -43,7 +43,7 @@ This may look like an AI pipe dream but we shall take a practical engineering st
 
 * [Automated Knowledge Engineering](#KE)
   * [Using DeepRank](#DeepRank)
-    * [0. Starting Stanford CoreNLP Serve](#Step0)
+    * [0. Starting Stanford CoreNLP Server](#Step0)
     * [1. DeepRank Text Parsing](#Step1)
     * [2. Generate the Prolog Facts](#Step2)
     * [3. Loading Facts & Rules into Prolog](#Step3)
@@ -86,7 +86,7 @@ Plato wrote books and put words into Socrates mouth.
 > NOTE: We shall use a more intense HIPAA compliance document after this starter example.
 
 The following sections will describe each step of the workflow shown in the DeepRank system architecture diagram,
-* (0) Starting Stanford CoreNLP Serve
+* (0) Starting Stanford CoreNLP Server
 * (1) DeepRank Text Parsing
 * (2) Generate the Prolog Facts
 * (3) Loading Facts & Rules into Prolog
