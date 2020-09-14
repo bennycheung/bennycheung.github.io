@@ -30,7 +30,7 @@ Our past exploration on "[Deep Learning on Text Data](http://bennycheung.github.
 In this article, we shall take another leap into the next stage of NLP. After the NLP accurately parsed the text, a dependency graph can be computed.
 To improve human-level understanding, we can use the traditional symbolic reasoning.
 
-The combination of symbolic AI and emerging NLP tools that recently evolved from deep neural network research is started to mature.
+The combination of symbolic AI and emerging NLP tools that recently evolved from deep neural network researches start to mature.
 We believe that this high-level symbolic reasoning and low-level statistical learning are complementary according to AI experts [[Launchbury17]](#Launchbury17).
 By working them together, they will take significant forward steps in natural language *understanding*.
 Subsequently, humans can use the symbolic explanation to understand the AI model’s reasoning and to improve the human-machine interactions.
