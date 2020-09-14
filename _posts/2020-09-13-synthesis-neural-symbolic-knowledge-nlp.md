@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Synthesis of Neural-Symbolic Knowledge for NLP System
+title: Synthesis of Neural to Symbolic Knowledge for NLP System
 date: 2020-09-13 12:00:00.000000000 -00:00
 permalink: synthesis-neural-symbolic-knowledge-nlp
 author: Benny Cheung
@@ -35,14 +35,14 @@ We believe that this high-level symbolic reasoning and low-level statistical lea
 By working them together, they will take significant forward steps in natural language *understanding*.
 Subsequently, humans can use the symbolic explanation to understand the AI model’s reasoning and to improve the human-machine interactions.
 
-![Neural-Symbolic NLP System Architecture]({{ site.baseurl }}images/synthesis-neural-symbolic-knowledge-nlp/Neural_Symbolic_NLP_System_Architecture.png)
-*Figure. Neural-Symbolic NLP system architecture shows the synergies between low-level NLP and high-level symbolic processor. By encoding the low-level parsed text into symbolic representations, human interaction can be improved by the traceable questions and answers in symbolic reasoning.*
+![Neural to Symbolic NLP System Architecture]({{ site.baseurl }}images/synthesis-neural-symbolic-knowledge-nlp/Neural_Symbolic_NLP_System_Architecture.png)
+*Figure. Neural to Symbolic NLP system architecture shows the synergies between low-level NLP and high-level symbolic processor. By encoding the low-level parsed text into symbolic representations, human interaction can be improved by the traceable questions and answers in symbolic reasoning.*
 
-In the Neural-Symbolic NLP system architecture diagram, the future of NLP is componentized into the *Natural Language Processor* which has the dedicated responsibility of parsing the text accurately and flexibly with deep neural networks. The text collection is transformed into facts and rules such that the *Symbolic Processor* can apply high-level reasoning to the *Knowledge Base* of the transformed facts and rules. Furthermore, tapping into the wealth of Data Mining and Knowledge-Based Management System (KBMS), we understand how to make a large number of facts usable in AI reasoning tasks. If the human level of symbolic facts is fed into the rule-based system, the reasoning engine can search either backward-chaining or forward-chaining through a set of domain-specific rules [[GiarratanoRiley04]](#GiarratanoRiley04). The most important business value is to ensure that the reasoning steps are traceable and explainable based on the original truthful observation from the human context.
+In the Neural to Symbolic NLP system architecture diagram, the future of NLP is componentized into the *Natural Language Processor* which has the dedicated responsibility of parsing the text accurately and flexibly with deep neural networks. The text collection is transformed into facts and rules such that the *Symbolic Processor* can apply high-level reasoning to the *Knowledge Base* of the transformed facts and rules. Furthermore, tapping into the wealth of Data Mining and Knowledge-Based Management System (KBMS), we understand how to make a large number of facts usable in AI reasoning tasks. If the human level of symbolic facts is fed into the rule-based system, the reasoning engine can search either backward-chaining or forward-chaining through a set of domain-specific rules [[GiarratanoRiley04]](#GiarratanoRiley04). The most important business value is to ensure that the reasoning steps are traceable and explainable based on the original truthful observation from the human context.
 
-This may look like another AI pipe dream but we shall take a practical engineering step using [DeepRank [TarauBlanco20]](#TarauBlanco20) to demonstrate the possibility. We start with the synthesis of neural-symbolic knowledge from a simple document to perform question and answer; subsequently, we shall synthesize knowledge from a complex HIPAA regulations document to illustrate the greater system capabilities.
+This may look like another AI pipe dream but we shall take a practical engineering step using [DeepRank [TarauBlanco20]](#TarauBlanco20) to demonstrate the possibility. We start with the synthesis of neural to symbolic knowledge from a simple document to perform question and answer; subsequently, we shall synthesize knowledge from a complex HIPAA regulations document to illustrate the greater system capabilities.
 
-* [Synthesis of Neural-Symbolic Knowledge](#KE)
+* [Synthesis of Neural to Symbolic Knowledge](#KE)
   * [Using DeepRank](#DeepRank)
     * [0. Starting Stanford CoreNLP Server](#Step0)
     * [1. DeepRank Text Parsing](#Step1)
@@ -56,7 +56,7 @@ This may look like another AI pipe dream but we shall take a practical engineeri
 * [References](#References)
 
 
-# <a name='KE'></a> Synthesis of Neural-Symbolic Knowledge
+# <a name='KE'></a> Synthesis of Neural to Symbolic Knowledge
 Knowledge engineering is the process of creating both facts and rules that apply to data to imitate the way a human thinks and approaches problems. A task and its solution are broken down into their structure and based on that information, the reasoning engine determines how the solution was reached. Traditionally, the knowledge engineering process requires a domain expert working with a knowledge engineer to manually encode the domain facts and rules into the knowledge base. The process is usually very expensive and slow.
 
 Luckily, in the domain of text documents, we can rely on the implicit textual data to state the facts about its content, i.e. the content is the domain expert by itself. All we need to do is to find the best knowledge representation to state the collection of implicit facts. The rules are more tricky; however, we can always start with the generic textual understanding by the language grammar and the statement context.
@@ -479,7 +479,7 @@ Finally, the answers are all appropriate and good, surrounding the requirement t
 
 ## <a name='Conclusion'></a> Concluding Remarks
 
-This is exciting to use DeepRank, demonstrating the synthesis of neural-symbolic knowledge from any document. We can see the strategy of combining both deep neural network NLP and symbolic reasoning is effective even it has limitations. To move towards the greater AI natural language understanding goals, the system needs to improve on,
+This is exciting to use DeepRank, demonstrating the synthesis of neural to symbolic knowledge from any document. We can see the strategy of combining both deep neural network NLP and symbolic reasoning is effective even it has limitations. To move towards the greater AI natural language understanding goals, the system needs to improve on,
 
 * Abilities for understanding and using inter-sentential relationship.
 * Abilities for elaborating from a situation using common sense knowledge.
