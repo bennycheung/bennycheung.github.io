@@ -134,6 +134,7 @@ For example, the card designs are (Type 1) is world, and (Type 2) is development
 #### Type 1 (World) Examples
 
 For example of Type 1 (World) card, the "New Vinland" is designed to be,
+* `N` code of `name` is "New Vinland"
 * `T` code of `type` 1 (World) of `cost` 2 and `value (vp)` 1
 * `E` code of `expansion` 0 and `repeat` 1
 * `G` code of `good type` of NOVELTY
@@ -144,7 +145,8 @@ For example of Type 1 (World) card, the "New Vinland" is designed to be,
 
 #### Type 2 (Development) Examples
 For example of Type 2 (Development) card, the "Replicant Robots" is designed to be,
-* `T` code of `type` 2 (Development) of `cose` 4 and `value (vp)` 2
+* `N` code of `name` is "Replicant Robots"
+* `T` code of `type` 2 (Development) of `cost` 4 and `value (vp)` 2
 * `E` code of `expansion` 0 and `repeat` 2 (i.e. 2 cards in a deck)
 * `P` code of power applicable in `phase` 3 that `settle` world by REDUCE of 2 cost
 
