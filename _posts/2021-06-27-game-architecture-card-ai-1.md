@@ -20,7 +20,7 @@ images:
 published: true
 ---
 <!--excerpt.start-->
-As professional software architects, we always interest to know how a software system is built.
+Being a software architects, we always interest to know how a software system is built.
 At the same time, if one is a gamer, you would meditate on how a game is being designed and constructed;
 especially, when you are toasted by the card game's AI that makes you "angry".
 Such an emotional response is pushing forward positively, becomes the driving force for a personal month-long investigation into studying the game architecture and how to construct a game. Consequently, I can study the smart AI that gets me kicked.
