@@ -531,4 +531,4 @@ We have explored (3) Game Engine and (4) Game Interface development. The game st
   * Source code <https://github.com/los-cocos/cocos
 * <a name="pyglet">[[pyglet]](https://pyglet.readthedocs.io/en/latest/)</a> pyglet Documentation
   * cocos2d uses The pyglet Event Framework to handle events, <https://pyglet.readthedocs.io/en/latest/programming_guide/events.html>
-  * pyglet.window events <https://pyglet.readthedocs.io/en/latest/modules/window.html
+  * pyglet.window events <https://pyglet.readthedocs.io/en/latest/modules/window.html>
