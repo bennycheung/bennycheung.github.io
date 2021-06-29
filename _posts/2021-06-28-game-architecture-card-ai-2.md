@@ -38,13 +38,13 @@ In part 2, we shall continue to describe the game architecture using [Race for t
   * [Create a Game](#CreateGame)
   * [Deck Operations](#DeckOperations)
     * [Pick Start Worlds](#StartWorlds)
-    * [Draw 6 Ramdom Cards](#RandomCards)
+    * [Draw 6 Random Cards](#RandomCards)
   * [Decisions](#Decisions)
     * [Decide on the Start World](#DecideStartWorld)
     * [Decide on the Action](#DecideAction)
     * [Discard Cards](#DiscardCards)
   * [Start Game](#StartGame)
-* [RFTG Game Interface](#GameInterface)]
+* [RFTG Game Interface](#GameInterface)
   * [Install Cocos2d](#InstallCocos2d)
   * [Read and Display the Cards](#ReadDisplayCards)
   * [Load Card Library and Define Game](#LoadCardGame)
@@ -150,7 +150,7 @@ game.resource.display.show()
 
 ![Pick Start Worlds from the Deck]({{ site.baseurl }}images/game-architecture-card-ai-2/RFTG_Game_Deck_Start_World.png)
 
-#### <a name="RandomCards"></a> Draw 6 Ramdom Cards
+#### <a name="RandomCards"></a> Draw 6 Random Cards
 The remaining cards will be shuffled by `shuffle_cards`. Subsequently, we use `draw_cards` to draw 6 cards from the deck. The `card.location` will be changed from `Location.DECK` to `Location.HAND`. The drawn cards are assigned to a player, for example, player_index=0.
 
 ```python
