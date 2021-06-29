@@ -523,7 +523,7 @@ We have explored (3) Game Engine and (4) Game Interface development. The game st
 * <a name="Tesauro95">[[Tesauro95]](https://bkgm.com/articles/tesauro/tdl.html)</a> Gerald Tesauro, Temporal Difference Learning and TD-Gammon, Communications of the ACM, March 1995 / Vol. 38, No. 3
 * <a name="TempleGates17">[[TemplateGates17]](https://www.templegatesgames.com/race-for-the-galaxy-ai/)</a> Race for the Galaxy AI, Temple Gates, Dec 2017
   * Temple Gates is the game developer for the App version that using Keldon Jone's AI engine
-* <a name="Cheung21">[[Cheung21]](https://github.com/bennycheung/RaceGalaxyAI-Python)</a> Benny Cheung, Game Architecture for AI (Part 1) - Jupyter Notebook, Jun 2021
+* <a name="Cheung21">[[Cheung21]](https://github.com/bennycheung/RaceGalaxyAI-Python)</a> Benny Cheung, Game Architecture for AI (Part 2) - Jupyter Notebook, Jun 2021
 
 ### Interface Development
 * <a name="Cocos2d">[[Cocos2d]](http://python.cocos2d.org/doc/index.html#:~:text=cocos2d%20is%20a%20framework%20for,written%20in%20the%20python%20language)</a> cocos2d 0.6.5 Documentation
