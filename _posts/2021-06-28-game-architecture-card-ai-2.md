@@ -281,7 +281,7 @@ The plot of the player's "Blue" `Location.ACTIVE` and `Location.HAND` cards.
 
 The plot of the player's "Red" `Location.ACTIVE` and `Location.HAND` cards.
 
-![Game Demo Player's Red Hand]({{ site.baseurl }}images/game-architecture-card-ai-2/RFTG_Game_Demo_Blue_Hand.png)
+![Game Demo Player's Red Hand]({{ site.baseurl }}images/game-architecture-card-ai-2/RFTG_Game_Demo_Red_Hand.png)
 
 ## <a name="GameInterface"></a> Game Interface
 So far, we are using `matplotlib` to display the game graphics and provide user interaction. The Jupyter notebook approach is purely for experimentation purposes, far from a satisfactory game interface. In this section, we shall start to convert the game interface using a better game framework.
