@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Game Architecture for Card AI (Part 1)
+title: Game Architecture for Cards (Part 1)
 date: 2021-06-27 12:00:00.000000000 -00:00
 permalink: game-architecture-card-ai-1
 author: Benny Cheung
@@ -497,11 +497,11 @@ game = Game(resource=resource, session_id='testing', deck=deck, players=players)
 Finally, the RFTG game information model is completed!
 
 ## <a name="Conclusion"></a> Concluding Remarks
-We need to show respect to the game development community. This is a long road, even only to cover (1) Game Model and (2) Game Assets for a well-designed card game. In the process, we have gained critical insights into a card game information system; even though we are focus on a particular card game RFTG. For an avid reader and experienced developer, the card game model can be generalized and applied to a different type of card game. Looking forward to the next article, we shall continue to explore (3) Game Engine and (4) Game Interface development. These are the pre-requisites before we can develop, train and visualize the (5) game AI in the future.
+We need to show respect to the game development community. This is a long road, even only to cover (1) Game Model and (2) Game Assets for a well-designed card game. In the process, we have gained critical insights into a card game information system; even though we are focus on a particular card game RFTG. For an avid reader and experienced developer, the card game model can be generalized and applied to a different type of card game. Looking forward to the next article, we shall continue to explore (3) Game Engine and (4) Game Interface development. These are the pre-requisites before we can develop, train and visualize the (5) Game AI in the future.
 
-* **>>** [Game Architecture for AI (Part 1)](http://bennycheung.github.io/game-architecture-card-ai-2)
-* [Game Architecture for AI (Part 2)](http://bennycheung.github.io/game-architecture-card-ai-2)
-* [Game Architecture for AI (part 3) ... coming soon]()
+* **>>** [Game Architecture for Cards (Part 1)](http://bennycheung.github.io/game-architecture-card-ai-2)
+* [Game Architecture for Cards (Part 2)](http://bennycheung.github.io/game-architecture-card-ai-2)
+* [Game Architecture for Cards (part 3) ... coming soon]()
 
 ## <a name="References"></a> References
 

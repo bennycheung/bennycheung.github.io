@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Game Architecture for Card AI (Part 2)
+title: Game Architecture for Cards (Part 2)
 date: 2021-06-28 12:00:00.000000000 -00:00
 permalink: game-architecture-card-ai-2
 author: Benny Cheung
@@ -20,7 +20,7 @@ images:
 published: true
 ---
 <!--excerpt.start-->
-Continue from the previous [Game Architecture for AI (Part 1)](http://bennycheung.github.io/game-architecture-card-ai-1), we defined a game architecture as a reference to study a card game AI. This article focus on the components of (3) **Game Engine** and (4) **Game Interface**.
+Continue from the previous [Game Architecture for Cards (Part 1)](http://bennycheung.github.io/game-architecture-card-ai-1), we defined a game architecture as a reference to study the "Race for the Galaxy" card game. This article focus on the components of (3) **Game Engine** and (4) **Game Interface**.
 <!--excerpt.end-->
 
 ![Game Architecture Overview]({{ site.baseurl }}images/game-architecture-card-ai-2/Game_Architecture_Part2.png)
@@ -509,11 +509,11 @@ The game interface looks much better using cocos2d framework.
 *Figure. Showing the card game is designed and rewritten in Python. The game UI and animation are done using Cocos2d - Python edition. (credits: Rio Grande Games holds the copyrights for the images)*
 
 ## <a name="Conclusion"></a> Concluding Remarks
-We have explored (3) Game Engine and (4) Game Interface development. The game states are presented to an actor, either human or AI, to make a decision. This part shows the `UIDecision` for a human actor, to illustrate the usage of the abstract `Decision` class. The AI agent will drive the `AIDecision` implementation in the next article (Part 3). Towards the end, we converted the Game Interface to use cocos2d - Python edition. The AI experiment starts to look a lot more interesting.
+We have explored (3) Game Engine and (4) Game Interface development. The game states are presented to an actor, either human or AI, to make a decision. This part shows the `UIDecision` for a human actor, to illustrate the usage of the abstract `Decision` class. The AI agent will drive the `AIDecision` implementation in the next article (Part 3). Towards the end, we converted the Game Interface to use cocos2d - Python edition. The card game experiment starts to look a lot more interesting.
 
-* [Game Architecture for AI (Part 1)](http://bennycheung.github.io/game-architecture-card-ai-2)
-* **>>** [Game Architecture for AI (Part 2)](http://bennycheung.github.io/game-architecture-card-ai-2)
-* [Game Architecture for AI (part 3) ... coming soon]()
+* [Game Architecture for Cards (Part 1)](http://bennycheung.github.io/game-architecture-card-ai-2)
+* **>>** [Game Architecture for Cards (Part 2)](http://bennycheung.github.io/game-architecture-card-ai-2)
+* [Game Architecture for Cards (part 3) ... coming soon]()
 
 ## <a name="References"></a> References
 
