@@ -17,7 +17,7 @@ image: images/game-architecture-card-ai-2/cover2x.jpg
 images:
   cover: images/game-architecture-card-ai-2/cover.jpg
   header: images/game-architecture-card-ai-2/header.jpg
-published: true
+published: false
 ---
 <!--excerpt.start-->
 Continue from the previous [Game Architecture for Card Games (Part 1)](http://bennycheung.github.io/game-architecture-card-ai-1), we defined a game architecture as a reference to study the "Race for the Galaxy" card game. This article focus on the components of (3) **Game Engine** and (4) **Game Interface**.
