@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Game Architecture for Card Games  (Part 2)
+title: Game Architecture for Card Game Action (Part 2)
 date: 2021-06-28 12:00:00.000000000 -00:00
 permalink: game-architecture-card-ai-2
 author: Benny Cheung
@@ -17,14 +17,14 @@ image: images/game-architecture-card-ai-2/cover2x.jpg
 images:
   cover: images/game-architecture-card-ai-2/cover.jpg
   header: images/game-architecture-card-ai-2/header.jpg
-published: false
+published: true
 ---
 <!--excerpt.start-->
-Continue from the previous [Game Architecture for Card Games (Part 1)](http://bennycheung.github.io/game-architecture-card-ai-1), we defined a game architecture as a reference to study the "Race for the Galaxy" card game. This article focus on the components of (3) **Game Engine** and (4) **Game Interface**.
+Continue from the previous [Game Architecture for Card Game Model (Part 1)](http://bennycheung.github.io/game-architecture-card-ai-1), we defined a game architecture as a reference to study the "Race for the Galaxy" card game. This article focus on the components of (3) **Game Engine** and (4) **Game Interface**.
 <!--excerpt.end-->
 
 ![Game Architecture Overview]({{ site.baseurl }}images/game-architecture-card-ai-2/Game_Architecture_Part2.png)
-*Figure. Game Architecture Overview - The components are grouped according to their functional roles in the system. The functional roles are (1) Game Story and Game Asset, (2) Game Model, (3) Game Engine, (4) Game Interface, (5) Game AI, (6) Game Physics (only for physics based game), and (7) Hardware Abstraction.  When studying any game source code, this architecture will help to classify their functional roles*
+*Figure. Game Architecture Overview - The components are grouped according to their functional roles in the system. The functional roles are (1) Game Story and Game Asset, (2) Game Model, **(3) Game Engine**, **(4) Game Interface**, (5) Game AI, (6) Game Physics (only for physics based game), and (7) Hardware Abstraction.  When studying any game source code, this architecture will help to classify their functional roles*
 
 (3) **Game Engine** - the rules and rendering of a game. The game states and operations are projected on a display. All legal operations are checked and animated on-screen.
 
@@ -511,9 +511,9 @@ The game interface looks much better using cocos2d framework.
 ## <a name="Conclusion"></a> Concluding Remarks
 We have explored (3) Game Engine and (4) Game Interface development. The game states are presented to an actor, either human or AI, to make a decision. This part shows the `UIDecision` for a human actor, to illustrate the usage of the abstract `Decision` class. The AI agent will drive the `AIDecision` implementation in the next article (Part 3). Towards the end, we converted the Game Interface to use cocos2d - Python edition. The card game experiment starts to look a lot more interesting.
 
-* [Game Architecture for Card Games (Part 1)](http://bennycheung.github.io/game-architecture-card-ai-2)
-* **>>** [Game Architecture for Card Games (Part 2)](http://bennycheung.github.io/game-architecture-card-ai-2)
-* [Game Architecture for Playing Card Games (part 3) ... coming soon]()
+* [Game Architecture for Card Game Model (Part 1)](http://bennycheung.github.io/game-architecture-card-ai-1)
+* **>>** [Game Architecture for Card Game Action (Part 2)](http://bennycheung.github.io/game-architecture-card-ai-2)
+* [Game Architecture for Card Game AI (part 3)](http://bennycheung.github.io/game-architecture-card-ai-3)
 
 ## <a name="References"></a> References
 

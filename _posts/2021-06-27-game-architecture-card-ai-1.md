@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Game Architecture for Card Games (Part 1)
+title: Game Architecture for Card Game Model (Part 1)
 date: 2021-06-27 12:00:00.000000000 -00:00
 permalink: game-architecture-card-ai-1
 author: Benny Cheung
@@ -17,7 +17,7 @@ image: images/game-architecture-card-ai-1/cover2x.jpg
 images:
   cover: images/game-architecture-card-ai-1/cover.jpg
   header: images/game-architecture-card-ai-1/header.jpg
-published: false
+published: true
 ---
 <!--excerpt.start-->
 Being software architects, we always interest to know how a software system is built.
@@ -74,7 +74,7 @@ This is a great start for studying game architecture. The definition layouts the
 Although the success of a game is not determined by the architecture alone - gameplay does, I cannot emphasize enough that the reasons to have a good architecture. Most importantly, the architecture will clarify the various game components' roles that must be cooperatively decided and designed. Lacking architectural clarity will make the game brittle; subsequently, hurting the game's construction and extension.
 
 ![Game Architecture Overview]({{ site.baseurl }}images/game-architecture-card-ai-1/Game_Architecture_Part1.png)
-*Figure. Game Architecture Overview - The components are grouped according to their functional roles in the system. The functional roles are (1) Game Story and Game Asset, (2) Game Model, (3) Game Engine, (4) Game Interface, (5) Game AI, (6) Game Physics (only for physics based game), and (7) Hardware Abstraction.  When studying any game source code, this architecture will help to classify their functional roles*
+*Figure. Game Architecture Overview - The components are grouped according to their functional roles in the system. The functional roles are **(1) Game Story and Game Asset**, **(2) Game Model**, (3) Game Engine, (4) Game Interface, (5) Game AI, (6) Game Physics (only for physics based game), and (7) Hardware Abstraction.  When studying any game source code, this architecture will help to classify their functional roles*
 
 The game architecture is a combination of these great books on:
 * game architecture [[RollingsMorris04]](#RollingsMorris04)
@@ -499,9 +499,9 @@ Finally, the RFTG game information model is completed!
 ## <a name="Conclusion"></a> Concluding Remarks
 We need to show respect to the game development community. This is a long road, even only to cover (1) Game Model and (2) Game Assets for a well-designed card game. In the process, we have gained critical insights into a card game information system; even though we are focus on a particular card game RFTG. For an avid reader and experienced developer, the card game model can be generalized and applied to a different type of card game. Looking forward to the next article, we shall continue to explore (3) Game Engine and (4) Game Interface development. These are the pre-requisites before we can develop, train and visualize the (5) Game AI in the future.
 
-* **>>** [Game Architecture for Card Games (Part 1)](http://bennycheung.github.io/game-architecture-card-ai-2)
-* [Game Architecture for Card Games (Part 2)](http://bennycheung.github.io/game-architecture-card-ai-2)
-* [Game Architecture for Card Games (part 3) ... coming soon]()
+* **>>** [Game Architecture for Card Game Model (Part 1)](http://bennycheung.github.io/game-architecture-card-ai-1)
+* [Game Architecture for Card Game Action (Part 2)](http://bennycheung.github.io/game-architecture-card-ai-2)
+* [Game Architecture for Card Game AI (part 3)](http://bennycheung.github.io/game-architecture-card-ai-3)
 
 ## <a name="References"></a> References
 
