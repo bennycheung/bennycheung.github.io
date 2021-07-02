@@ -101,7 +101,7 @@ Both network weights file format are the same; the contents are varying with,
 The `eval` network output can be thought of each player's chances to win. Each row corresponds to computing the eval network from the point of view of that player because certain things are known only to a given player, such as cards in hand. For example, the following `eval` network is for 2 players, i.e. the output layer has 2 output for each player winning scores.
 
 ![RFTG Eval Neural Network]({{ site.baseurl }}images/game-architecture-card-ai-3/RFTG_Eval_NN.png)
-*Figure. Showing the fully connected `eval` network layers. (note: not all connections are drawn for less lines). The input layer nodes are the designed game states and the output layer nodes are the winning scores for each player (in this example, 2 nodes for 2 players.*
+*Figure. Showing the fully connected `eval` network layers. (note: not all connections are drawn for less lines). The input layer nodes are the designed game states and the output layer nodes are the winning scores for each player (in this example, 2 nodes for 2 players).*
 
 #### <a name="RoleNetwork"></a> Role Network
 There is another important decision is choosing which action at the beginning of each turn. This is handled a bit differently. First, the AI predicts what each opponent is likely to do. This is done with a second `role` network. This network is very similar to the eval network, except that it has an output for each possible 7 types of action choice a player may make.
