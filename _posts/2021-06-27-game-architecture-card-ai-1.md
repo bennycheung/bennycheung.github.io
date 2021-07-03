@@ -42,9 +42,7 @@ Continue to quote from the game play:
 ### Game AI and Source Code
 We are fortunate that Keldon Jones, who is the AI developer of the card game, described in his [post](https://boardgamegeek.com/thread/438698/article/3878167?fbclid=IwAR1KXYI1li66vhPBPwzwNfr8Tvg2Giz5zN5eXpVaugtCQe8DLUbILjzBMUE#3878167) how the game AI is being designed. Even though this is back in 2009, it was using neural networks and reinforcement learning to train the game AI. The game AI [source code, written in C,](https://github.com/bnordli/rftg) is released under the GNU General Public License, version 2 (GPLv2). This is an excellent opportunity to learn how the game and the game's AI are developed. In the process, the game is rewritten in Python for my better understanding so that I can run and visualize experiments with the AI code more conveniently.
 
-![Race for the Galaxy Python]({{ site.baseurl }}images/game-architecture-card-ai-1/RFTG_Cocos_Python_12fps.gif)
-*Figure. Showing the card game is designed and rewritten in Python. The game UI and animation are done using Cocos2d - Python edition. (credits: Rio Grande Games holds the copyrights for the images)*
-
+### Outline
 This article starts with the general game architecture to identify the important components of a game. The architecture will provide a layout of how to read a game source code. Then we shall show how to analyze and design Keldon's RFTG C code, such that we can rewrite the game components in an object-oriented Python code.
 
 In part 1, we shall lay out the groundwork by describing a game architecture. Since the architecture components are numerous, this article will focus only on the RFTG's (1) Game Model and (2) Game Assets. As always, a balance between theory and practice, we set up the Python development to illustrate the object-oriented conversion process of the game. These are the necessary groundwork to support the game engine. The game AI will need to wait for later articles.
