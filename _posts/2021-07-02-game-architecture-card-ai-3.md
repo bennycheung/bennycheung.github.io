@@ -17,7 +17,7 @@ image: images/game-architecture-card-ai-3/cover2x.jpg
 images:
   cover: images/game-architecture-card-ai-3/cover.jpg
   header: images/game-architecture-card-ai-3/header.jpg
-published: true
+published: false
 ---
 <!--excerpt.start-->
 The last article on the topics of "Game Architecture for Card Game" series will focus on the amazing "Race for the Galaxy" AI. Even though Keldon Jones released his RFTG AI source code back in 2009 [[Jones09]](#Jones09), it was using neural networks and reinforcement learning to train the game AI, way before DeepMind's Alpha Go success that drew the world's attention to reinforcement learning.
