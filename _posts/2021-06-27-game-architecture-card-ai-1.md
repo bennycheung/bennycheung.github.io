@@ -30,7 +30,13 @@ Such an emotional response is pushing forward positively, becomes the driving fo
 The card game in focus is [Race for the Galaxy](https://boardgamegeek.com/boardgame/28143/race-galaxy) (RFTG). For reader convenience, I quoted from the official game description here:
 
 > In the card game Race for the Galaxy, players build galactic civilizations by playing game cards in front of them that represent worlds or technical and social developments. Some worlds allow players to produce goods, which can be consumed later to gain either card draws or victory points when the appropriate technologies are available to them. These are mainly provided by the developments and worlds that are not able to produce, but the fancier production worlds also give these bonuses.
->
+
+![Race for the Galaxy Card Game]({{ site.baseurl }}images/game-architecture-card-ai-1/RaceForTheGalaxy.gif)
+
+*Figure. Tom Lehmann’s Race for the Galaxy has made an incredible impact on the board game world since its 2007 release by Rio Grande Games, spawning six expansions and supporting up to 5 players. This has led to the recent Race for the Galaxy app by Theresa Duringer and Temple Gates Games, available on [iOS](https://apps.apple.com/ca/app/race-for-the-galaxy/id1190675052)/[Andriod](https://play.google.com/store/apps/details?id=com.templegatesgames.RaceAndroid&hl=en_CA&gl=US)/[Steam](https://store.steampowered.com/app/579940/Race_for_the_Galaxy/) with high rating. (credit: the image shows the app version of the game where the player can play online or play against one of the best card game AI.)*
+
+Continue to quote from the game play:
+
 > At the beginning of each round, players each select, secretly and simultaneously, one of the seven roles which correspond to the phases in which the round progresses. By selecting a role, players activate that phase for this round, giving each player the opportunity to perform that phase's action. For example, if one player chooses the settle role, each player has the opportunity to settle one of the planets from their hand. The player who has chosen the role, however, gets a bonus that applies only to them. But bonuses may also be acquired through developments, so you must be aware when another player also takes advantage of your choice of role.
 
 ### Game AI and Source Code
