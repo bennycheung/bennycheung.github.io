@@ -234,7 +234,7 @@ Once the game state is scored by both networks, the scores represent the chance 
 
 As we have examined the `Decision` is an abstract superclass that defines all the decision operations that are implemented as `UIDecision` for human actors and are implemented by `AIDecision` for a computer AI actor. The cards, that the AI agent decides to play, represent the actions it is taking.
 
-The list `choice_actions` is part of the `make_choice` type to run the associative functions.
+There are more logic to make a choice that we shall not drill into the details. The AI `make_choice` function `choice_actions` will map the `Choice` enum to the associative action function.
 
 ```python
   def make_choice(self, who, type, **kwargs):
