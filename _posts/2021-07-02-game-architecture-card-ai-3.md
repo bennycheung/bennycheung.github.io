@@ -352,7 +352,15 @@ array([[0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0,
         1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0]])
 ```
 
-We actually don't know what this random game state vector meant. This is just to illustrate how to use the DNN model weights to score the output predictions (aka. `role` choices).
+We actually don't know what this random game state vector meant. Mostly likely a random game state will make no sense. Just for interest, we can print the network input names to check. Those input names are loaded from the RFTG's network file.
+
+```python
+for i in range(0, len(random_input)):
+  if random_input[i] == 1:
+    print('{}'.format(network.input_names[i]))
+```
+
+This is just to illustrate how to use the DNN model weights to score the output predictions (aka. `role` choices).
 
 ```python
 predictions = model.predict(x_input)
