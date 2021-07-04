@@ -236,7 +236,7 @@ The list `choice_actions` is part of the `make_choice` type to run the associati
 ```
 
 ## <a name="Keras"></a> Deep Neural Network using Keras
-In this section, we proceed to use [Keras: the Python Deep Learning API](https://keras.io/) to rewrite the RFTG's Neural Network. Although it felt overkill, the purpose is to illustrate using this powerful toolkit to achive greater network flexibility; Subsequently, we can potential extend the network abilities. To learn Keras, we greatly recommend reader to learn from the excellent book by Keras designer, Francois Chollet [[Chollet18]](#Chollet18).
+In this section, we proceed to use [Keras: the Python Deep Learning API](https://keras.io/) to rewrite the RFTG's Neural Network. Although it felt overkill, the purpose is to illustrate using this powerful toolkit to achive greater network flexibility; Subsequently, we can potentially extend the network abilities, e.g. using LSTM (long short term memory) network. To learn Keras, we recommend the book by Keras designer, Francois Chollet [[Chollet18]](#Chollet18).
 
 ### <a name="KerasLayers"></a> Define Keras Layers
 Keras layer that will only accept as input 2D tensors where the first dimension is the network input size, e.g. 605 (axis 0, the batch dimension, is unspecified, and thus any value would be accepted). This layer will return a tensor where the first dimension has been transformed to be 50. Thus this layer can only be connected to a downstream layer that expects 50-dimensional vectors as its input.
@@ -296,7 +296,7 @@ plot_model(model, to_file=plot_filename, show_shapes=True, show_layer_names=True
 ### <a name="LoadingNetworkWeights"></a> Loading Network Weights into Layers
 We have load the RFTG `role` network weights. After defining the Keras model, we can assign the weights into the corresponding model's layers
 * loaded network.hidden -> hidden_layer
-* loadad network.output -> output_laye
+* loadad network.output -> output_layer
 
 ```python
 # find the DNN layer by name
