@@ -5,7 +5,7 @@ date: 2021-07-03 12:00:00.000000000 -00:00
 permalink: game-architecture-card-ai-3
 author: Benny Cheung
 artwork:
-  author: David Cheung - Race for the Galaxy Power
+  author: David Cheung - Race for the Galaxy's Power Gauntlet
 tags:
 - Game Architecture
 - Card Game
