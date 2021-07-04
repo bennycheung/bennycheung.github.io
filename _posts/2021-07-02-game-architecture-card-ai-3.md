@@ -35,6 +35,7 @@ However, the RFTG card game's rule complexity is difficult to express in a well-
 
 * [RFTG Python Development](#PythonDevelopment)
   * [Jupyter Notebook Experiments (Part 3)](#Notebook)
+  * [Installation for AI Notebook](#AINotebook)
 * [Temporal Difference - Reinforcement Learning](#TDLearning)
   * [Game State](#GameState)
   * [Neural Network](#NeuralNetwork)
@@ -57,6 +58,26 @@ The development experiments on (Part 3) are recorded in the Jupyter Notebook `rf
 Inside Visual Studio code, install the Microsoft's "Jupyter" extension. When activate the `rftg_ai.ipynb` inside VScode, change the Python kernel to use `rftg` that has been setup from the code `README.md` instructions.
 
 ![Running VSCode Jupyter Notebook]({{ site.baseurl }}images/game-architecture-card-ai-3/RFTG_VScode_Jupyter_Notebook-annotated.png)
+
+### <a name="AINotebook"></a> Installation for AI Notebook
+The following Python modules are required to run this AI notebook `rftg_ai.ipynb`.
+
+```
+pip install keras==2.4.3
+pip install tensorflow==2.5.0
+pip install pydot
+```
+
+In addition, we need to define the `.keras/keras.json` to use the tensorflow backend.
+
+```json
+ {
+  "image_data_format": "channels_last",
+  "epsilon": 1e-07,
+  "floatx": "float32",
+  "backend": "tensorflow"
+}
+```
 
 ## <a name="TDLearning"></a> Temporal Difference - Reinforcement Learning
 Collecting the information provide by both [Keldon's post](#Jones09) and [Temple Gate's blog post](#TempleGates17), we learned that RFTG AI follows [Tesauro's TD-Gammon](#Tesauro95) ideas using Temporal Difference (TD) neural network. And yes, neural network and reinforcement learning techniques are applied to games since the '90s.
