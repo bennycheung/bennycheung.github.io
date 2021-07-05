@@ -381,7 +381,17 @@ for i in range(0, len(random_input)):
     print('{}'.format(network.input_names[i]))
 ```
 
-This is just to illustrate how to use the DNN model weights to score the output predictions (aka. `role` choices).
+This is just to illustrate how to use the Keras model to score the output predictions (aka. `role` choices). The output predictions (aka. roles) are the following,
+
+| role index | role name |
+|-------|------|
+| 0 | Explore +5
+| 1 | Explore +1,+1
+| 2 | Develop
+| 3 | Settle
+| 4 | Consume-Trade
+| 5 | Consume-x2
+| 6 | Produce
 
 ```python
 predictions = model.predict(x_input)
@@ -397,7 +407,7 @@ array([[0.15077034, 0.22324738, 0.38111785, 0.03640797, 0.09331292,
 For the predictions,
 * Output shape is 7
 * Total probability should be summed to 1
-* Maximum score is choice index 2 (which is choice 3 - DEVELOP with score of ~0.38).
+* Maximum score is choice index 2 (which is `Develop` with score of ~0.38).
 
 ```python
 predictions[0].shape
