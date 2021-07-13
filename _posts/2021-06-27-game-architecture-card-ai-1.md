@@ -159,7 +159,7 @@ For example of Type 2 (Development) card, the "Replicant Robots" is designed to 
 This is not a complete tutorial on all the RFTG card's design possbility here but to serve as illustration of how RFTG card design complexity that contribute to the strategic nature. Subsequently, the game complexity will make the game AI more interesting to develop, to train and to execute.
 
 ## <a name="PythonDevelopment"></a> RFTG Python Development
-Interest reader can find the full development set up instruction, Python source code and Jupyter notebook experiments described in this article from [[Cheung21]](#Cheung21).
+Interest reader can find the full development set up instruction, Python source code and Jupyter notebook experiments described in this article from [[Cheung21]](https://github.com/bennycheung/RaceGalaxyAI-Python).
 
 ### <a name="Notebook"></a> Jupyter Notebook Experiments
 The development experiments are recorded in the Jupyter Notebook `rftg_cards.ipynb` to quickly run the code samples.

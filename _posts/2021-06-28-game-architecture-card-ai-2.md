@@ -53,7 +53,7 @@ In part 2, we shall continue to describe the game architecture using [Race for t
 * [References](#References)
 
 ## <a name="PythonDevelopment"></a> RFTG Python Development
-Interest reader can find the full development set up instruction, Python source code and Jupyter notebook experiments described in this article from [[Cheung21]](#Cheung21).
+Interest reader can find the full development set up instruction, Python source code and Jupyter notebook experiments described in this article from [[Cheung21]](https://github.com/bennycheung/RaceGalaxyAI-Python).
 
 ### <a name="Notebook"></a> Jupyter Notebook Experiments (Part 2)
 The development experiments on (Part 2) are recorded in the Jupyter Notebook `rftg_game.ipynb` to quickly run the code samples.

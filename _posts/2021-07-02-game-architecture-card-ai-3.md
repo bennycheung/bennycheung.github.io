@@ -51,7 +51,7 @@ However, the RFTG card game's rule complexity is difficult to express in a well-
 * [References](#References)
 
 ## <a name="PythonDevelopment"></a> RFTG Python Development
-Interest reader can find the full development set up instruction, Python source code and Jupyter notebook experiments described in this article from [[Cheung21]](#Cheung21).
+Interest reader can find the full development set up instruction, Python source code and Jupyter notebook experiments described in this article from [[Cheung21]](https://github.com/bennycheung/RaceGalaxyAI-Python).
 
 ### <a name="Notebook"></a> Jupyter Notebook Experiments (Part 3)
 The development experiments on (Part 3) are recorded in the Jupyter Notebook `rftg_ai.ipynb` to quickly run the code samples.
