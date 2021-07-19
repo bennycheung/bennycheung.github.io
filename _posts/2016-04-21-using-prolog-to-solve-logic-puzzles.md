@@ -15,6 +15,7 @@ image: images/using-prolog-to-solve-logic-puzzles/cover2x.jpg
 images:
   cover: images/using-prolog-to-solve-logic-puzzles/cover.jpg
   header: images/using-prolog-to-solve-logic-puzzles/header.jpg
+published: false
 ---
 ## What is a logic puzzle?
 <!--excerpt.start-->

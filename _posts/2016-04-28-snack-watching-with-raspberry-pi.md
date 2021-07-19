@@ -14,6 +14,7 @@ image: images/snack-watching-with-raspberry-pi/cover2x.jpg
 images:
   cover: images/snack-watching-with-raspberry-pi/cover.jpg
   header: images/snack-watching-with-raspberry-pi/header.jpg
+published: false
 ---
 <!--excerpt.start-->
 Starting as a fun [Jonah Group](http://www.jonahgroup.com) project,

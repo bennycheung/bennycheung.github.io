@@ -17,7 +17,7 @@ image: images/game-architecture-card-ai-1/cover2x.jpg
 images:
   cover: images/game-architecture-card-ai-1/cover.jpg
   header: images/game-architecture-card-ai-1/header.jpg
-published: false
+published: true
 ---
 <!--excerpt.start-->
 Being software architects, we always interest to know how a software system is built.
