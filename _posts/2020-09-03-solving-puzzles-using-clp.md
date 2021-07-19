@@ -17,7 +17,7 @@ image: images/solving-puzzles-using-clp/cover2x.jpg
 images:
   cover: images/solving-puzzles-using-clp/cover.jpg
   header: images/solving-puzzles-using-clp/header.jpg
-published: true
+published: false 
 ---
 <!--excerpt.start-->
 Since the last article on "[Using Prolog to Solve Logic Puzzles](http://bennycheung.github.io/using-prolog-to-solve-logic-puzzles)" 4 years ago,

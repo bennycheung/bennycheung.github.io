@@ -15,7 +15,7 @@ image: images/deep-transfer-learning-on-small-dataset/cover2x.jpg
 images:
   cover: images/deep-transfer-learning-on-small-dataset/cover.jpg
   header: images/deep-transfer-learning-on-small-dataset/header.jpg
-published: true
+published: false
 ---
 <!--excerpt.start-->
 The success of Convolutional Neural Network (ConvNet) application on image classification relies on two factors (1) having a lot of data (2) having a lot of computing power; where *(1) having data* seems to be a harder issue. Data acquisition is generally the major costs of any realistic project. But if we only can afford a small dataset, can we still use ConvNet effectively?

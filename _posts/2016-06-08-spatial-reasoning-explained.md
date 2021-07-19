@@ -15,7 +15,7 @@ image: images/spatial-reasoning-explained/cover2x.jpg
 images:
   cover: images/spatial-reasoning-explained/cover.jpg
   header: images/spatial-reasoning-explained/header.jpg
-published: true
+published: false
 ---
 <!--excerpt.start-->
 Spatial Reasoning is a logical reasoning system that assumed entities located in space and have a spatial structure.

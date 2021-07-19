@@ -17,7 +17,7 @@ image: images/preparing-geospatial-data-in-postgis/cover2x.jpg
 images:
   cover: images/preparing-geospatial-data-in-postgis/cover.jpg
   header: images/preparing-geospatial-data-in-postgis/header.jpg
-published: true
+published: false
 ---
 <!--excerpt.start-->
 The **Spatial** is a popular extension to the traditional database systems.

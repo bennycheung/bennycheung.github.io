@@ -17,7 +17,7 @@ image: images/geospatial-granular-computing/cover2x.jpg
 images:
   cover: images/geospatial-granular-computing/cover.jpg
   header: images/geospatial-granular-computing/header.jpg
-published: true
+published: false
 ---
 <!--excerpt.start-->
 [Granular Computing](https://en.wikipedia.org/wiki/Granular_computing) can be conceived

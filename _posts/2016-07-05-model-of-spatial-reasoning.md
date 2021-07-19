@@ -15,7 +15,7 @@ image: images/model-of-spatial-construction/cover2x.jpg
 images:
   cover: images/model-of-spatial-construction/cover.jpg
   header: images/model-of-spatial-construction/header.jpg
-published: true
+published: false
 ---
 <!--excerpt.start-->
 The heart of a spatial reasoning system is utilization of spatial knowledge.

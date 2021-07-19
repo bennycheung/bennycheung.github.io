@@ -18,7 +18,7 @@ image: images/fhir-server-up-and-running/cover2x.jpg
 images:
   cover: images/fhir-server-up-and-running/cover.jpg
   header: images/fhir-server-up-and-running/header.jpg
-published: true
+published: false
 ---
 <!--excerpt.start-->
 Blockchain is a hot topic for making patient's Electronic Health Record both accessible and safe, talking about the dream of patients finally own their complete medical history, drugs list, lab test results, doctor notes etc. But there is a fundamental problem - *Where is the data coming from?* Even the medical providers are digitizing the patient's data deligently, the data remains inaccessible beyond their database boundary.
