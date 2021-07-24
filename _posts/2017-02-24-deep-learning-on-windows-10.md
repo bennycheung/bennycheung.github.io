@@ -17,7 +17,7 @@ image: images/deep-learning-on-windows-10/cover2x.jpg
 images:
   cover: images/deep-learning-on-windows-10/cover.jpg
   header: images/deep-learning-on-windows-10/header.jpg
-published: false
+published: true
 ---
 <!--excerpt.start-->
 You just got your latest NVidia GPU on your Windows 10 machine.

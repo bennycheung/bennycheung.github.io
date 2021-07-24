@@ -16,7 +16,7 @@ image: images/deep-learning-on-text-data/cover2x.jpg
 images:
   cover: images/deep-learning-on-text-data/cover.jpg
   header: images/deep-learning-on-text-data/header.jpg
-published: false
+published: true
 ---
 <!--excerpt.start-->
 Large quantity of human communication is composed in the form of text written in natural language. The recent advance in the field of Machine Learning confirms that meaningful knowledge can be extracted effectively. Once the general techniques of natural language processing in combination of machine learning, a wide-range of practical enterprise application can be imagined.

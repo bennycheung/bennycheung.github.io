@@ -18,7 +18,7 @@ image: images/ethereum-mining-on-windows-10/cover2x.jpg
 images:
   cover: images/ethereum-mining-on-windows-10/cover.jpg
   header: images/ethereum-mining-on-windows-10/header.jpg
-published: false
+published: true
 ---
 <!--excerpt.start-->
 The value of dedicated GPU is going beyond the needs of gaming, it is proven to fulfill the professional needs for Deep Learning researches.

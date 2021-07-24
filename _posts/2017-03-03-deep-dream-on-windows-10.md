@@ -17,7 +17,7 @@ image: images/deep-dream-on-windows-10/cover2x.jpg
 images:
   cover: images/deep-dream-on-windows-10/cover.jpg
   header: images/deep-dream-on-windows-10/header.jpg
-published: false
+published: true
 ---
 <!--excerpt.start-->
 Deep Dream is an algorithm that makes an pattern detection algorithm over-interpret patterns. The Deep Dream algorithm is a modified neural network. Instead of identifying objects in an input image, it changes the image into the direction of its training data set, which produces impressive surrealistic, dream-like images.

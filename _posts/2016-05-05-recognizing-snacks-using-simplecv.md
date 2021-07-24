@@ -17,7 +17,7 @@ image: images/recognizing-snacks-using-simplecv/cover2x.jpg
 images:
   cover: images/recognizing-snacks-using-simplecv/cover.jpg
   header: images/recognizing-snacks-using-simplecv/header.jpg
-published: false
+published: true
 ---
 <!--excerpt.start-->
 This article aims to provide the basic knowledge of how to recognize snacks by

@@ -17,7 +17,7 @@ image: images/adventures-in-deep-reinforcement-learning/cover2x.jpg
 images:
   cover: images/adventures-in-deep-reinforcement-learning/cover.jpg
   header: images/adventures-in-deep-reinforcement-learning/header.jpg
-published: false
+published: true
 ---
 <!--excerpt.start-->
 The paradigm of learning by trial-and-error, exclusively from rewards is known as **Reinforcement Learning** (RL). The essence of RL is learning through interaction, mimicking the human way of learning with an interaction with environment and has its roots in behaviourist psychology. The positive rewards will reinforce the behaviour that leads to it.
