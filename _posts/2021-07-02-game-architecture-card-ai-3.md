@@ -31,7 +31,7 @@ At the heart of the card game architecture is the AI that keeps the human player
 To train a Reinforcement Learning (RL) agent how to play a card game intelligently,
 a full-fledged game environment has been put in place and needs to capture all the mechanics and rules so that the agent can interact with the game like a real human player would do. The hardest part is to develop the game that can play intelligently against itself. With that thought, researches using RL in card games are gaining a lot of popularity, such as the card games of Easy21 [[Amrouche20]](#Amrouche20), UNO [[Pfann21]](#Pfann21). The RLCard Toolkit [[Daochen19]](#Daochen19), goes even one step further by providing a general RL framework for researching card games. In this article, we shall continue focus on "Race for the Galaxy" card game.
 
-However, the RFTG card game's rule complexity is difficult to express in a well-defined game state representation, like Easy21 or UNO, we must raise the level of abstraction in order to describe RFTG AI. Following this outline, we are hoping to guide readers in the right direction.
+However, the RFTG card game's rule complexity is difficult to express in a well-defined game state representation, unlike Easy21 or UNO simplicity. We must raise the level of abstraction in order to describe RFTG AI. We are hoping to guide readers in the right direction with the following outline.
 
 * [RFTG Python Development](#PythonDevelopment)
   * [Jupyter Notebook Experiments (Part 3)](#Notebook)
