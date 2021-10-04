@@ -5,7 +5,7 @@ date: 2021-07-03 12:00:00.000000000 -00:00
 permalink: game-architecture-card-ai-3
 author: Benny Cheung
 artwork:
-  author: Temporal Difference (TD) Neural Network
+  author: Board Game Arena, Race for the Galaxy Board Game
 tags:
 - Game Architecture
 - Card Game
