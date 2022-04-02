@@ -52,10 +52,25 @@ comments: true
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
+		extensions: [
+			"MathMenu.js",
+			"MathZoom.js",
+			"AssistiveMML.js",
+			"a11y/accessibility-menu.js"
+		],
+		jax: ["input/TeX", "output/CommonHTML"],
     tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+		TeX: {
+      extensions: [
+        "AMSmath.js",
+        "AMSsymbols.js",
+        "noErrors.js",
+        "noUndefined.js",
+      ]
     }
 });
 
@@ -67,6 +82,6 @@ MathJax.Hub.Queue(function() {
 });
 </script>
 
-<script type="text/javascript"
-src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
