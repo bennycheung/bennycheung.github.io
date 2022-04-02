@@ -17,7 +17,7 @@ image: images/dempster-shafer-theory-for-classification/cover2x.jpg
 images:
   cover: images/dempster-shafer-theory-for-classification/cover.jpg
   header: images/dempster-shafer-theory-for-classification/header.jpg
-published: true
+published: false
 ---
 <!--excerpt.start-->
 Machine Learning is dominated by ANN (Automated Neural Network), it requires a large training data set of labelled data to learn a classification model.
