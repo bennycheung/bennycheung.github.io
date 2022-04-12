@@ -26,7 +26,7 @@ published: true
 
 ![Structure Data]({{ site.baseurl }}images/firesql-in-python/structure-data.png)
 
-There is no formal query language to Cloud Firestore - NoSQL collection/document structure. For many instances, we need to use the cranky Firestore UI to navigate, scroll and filter through the endless records. With the UI, we have no way to extract the found documents. Even though we attempted to extract and update by writing a unique program for the specific task, we felt many scripts are almost the same that something must be done to limit the endless program writing. What if we can use SQL-like statements to perform the data extraction, which is both formal and reusable? - This idea will be the motivation for the FireSQL language!
+There is no formal query language to Cloud Firestore - NoSQL collection/document structure. For many instances, we need to use the useful but clunky Firestore UI to navigate, scroll and filter through the endless records. With the UI, we have no way to extract the found documents. Even though we attempted to extract and update by writing a unique program for the specific task, we felt many scripts are almost the same that something must be done to limit the endless program writing. What if we can use SQL-like statements to perform the data extraction, which is both formal and reusable? - This idea will be the motivation for the FireSQL language!
 
 Even though we see no relational data model of (table, row, column), we can easily see the equivalent between table -> collection,  row -> document and column -> field in the Firestore data model. The SQL-like statement can be transformed accordingly.
 
@@ -49,7 +49,7 @@ SELECT id, date, email
 This is delightful to use `lark` due to its design philosophy, which clearly separate the grammar specification from processing. The processing is applied to the parse tree by the Visitor or Transformer components.
 
 ### Visitor and Transformer
-Transformers & Visitors provide a convenient interface to process the parse-trees that Lark returns. Lark document defines,
+Visitors and Transformer provide a convenient interface to process the parse-trees that Lark returns. `lark` documentation defines,
 
 * **Visitors** - visit each node of the tree, and run the appropriate method on it according to the node’s data. They work bottom-up, starting with the leaves and ending at the root of the tree.
 * **Transformers** -  work bottom-up (or depth-first), starting with visiting the leaves and working their way up until ending at the root of the tree.
@@ -74,22 +74,31 @@ SQL_Select(
 )
 ```
 
-## Just Enough SQL for FireSQL
-We don't need the full SQL parser and transformer. We can define ONLY the `SELECT` statement, just enough for Firestore collections query.
+With this transformed data structure, we can write the processor walking through the components and produce a execution plan to the corresponding Firestore queries.
 
-### Grammar
-A grammar is a formal description of a language that can be used to recognize its structure. The most used format to describe grammars is the **Extended Backus-Naur Form** (EBNF). A typical rule in a Backus-Naur grammar looks like this:
+## Just Enough SQL for FireSQL
+To get going, we don't need the full SQL parser and transformer for the DML (Data Manipulation Language). We define ONLY the `SELECT` statement, just enough for Firestore collections query to serve our immediate needs.
+
+### FireSQL Grammar
+A grammar is a formal description of a language that can be used to recognize its structure. The most used format to describe grammars is the **Extended Backus-Naur Form** (EBNF). A typical rules in a Backus-Naur grammar looks like this:
 
 ```
   where_clause ::= bool_expression
+  bool_expression ::= bool_parentheses
+                      | bool_expression "AND" bool_parentheses
+                      | bool_expression "OR" bool_parentheses
+  bool_parentheses ::= comparison_type
+                       | "(" bool_expression "AND" comparison_type ")"
+                       | "(" bool_expression "OR" comparison_type ")"
   ...
   CNAME ::= ("_"|"/"|LETTER) ("_"|"/"|LETTER|DIGIT)*
+  ...
 ```
 
-The `where_clause` is usually nonterminal, which means that it can be replaced by the group of elements on the right, `bool_expression`. The element `bool_expression` could contains other nonterminal symbols or terminal ones. Terminal symbols are simply the ones that do not appear as a `<symbol>` anywhere in the grammar and capitalized. A typical example of a terminal symbol is a string of characters, like “CNAME”.
+The `where_clause` is usually nonterminal, which means that it can be replaced by the group of elements on the right, `bool_expression`. The element `bool_expression` could contains other nonterminal symbols or terminal ones. Terminal symbols are simply the ones that do not appear as a `<symbol>` anywhere in the grammar and capitalized. A typical example of a terminal symbol is a string of characters, like "(", ")", "AND", "OR", “CNAME”.
 
 ### SELECT Statement
-By using [Lark](https://lark-parser.readthedocs.io/en/latest/) - [EBNF-like grammar](https://github.com/bennycheung/PyFireSQL/blob/main/firesql/sql/grammar/firesql.lark),
+By using `lark` [EBNF-like grammar](https://github.com/bennycheung/PyFireSQL/blob/main/firesql/sql/grammar/firesql.lark),
 we have encoded the core `SELECT` statement, which is subsequently transformed into Firestore collection queries to be executed.
 
 - SELECT columns for collection field's projection
@@ -102,17 +111,17 @@ we have encoded the core `SELECT` statement, which is subsequently transformed i
   - array contains expressions: CONTAIN, ANY CONTAIN
   - filter expressions: LIKE, NOT LIKE
   - null expressions: IS NULL
-- All keywords are case insensitive. All whitespaces are ignored.
 
-But the processor has the following limitations:
+But the processor has the following limitations, which we can provide post-processing on the query results set.
 - No ORDER BY sub-clause
 - No GROUP BY/HAVING sub-clause
 - No WINDOW sub-clause
 
 #### Examples
 For example, the following statements can be expressed,
+> All keywords are case insensitive. All whitespaces are ignored by the parser.
 
-> docid is a special field name to extract the selected Document Id
+> `docid` is a special field name to extract the selected document's Id
 ```sql
   SELECT docid, email, state
     FROM
@@ -121,7 +130,7 @@ For example, the following statements can be expressed,
       state = 'ACTIVE'
 ```
 
-> The '*' will select all fields, boolean operator 'AND' to specify multiple query criteria.
+> The `*` will select all fields, boolean operator 'AND' to specify multiple query criteria.
 ```sql
   SELECT *
     FROM
@@ -159,27 +168,32 @@ SELECT u.email, u.state, b.date, b.state
 ### Collection Path
 The Firestore collection has a set of documents. Each document can be nested with more collections. Firestore identifies a collection by a path, looks like `Companies/bennycorp/Users` means `Companies` collection has a document `bennycorp`, which has `Users` collection.
 
-If we want to query a nested collection, we can specify the collection name as a path. The paths can be long but we can use `AS` alias names.
+If we want to query a nested collection, we can specify the collection name as a path.
+The paths can be long but we can use `AS` keyword to define their alias names.
 
 For example, the subcollection `Users` and `Bookings` are specified with `Companies/bennycorp` document.
 
 ```sql
 SELECT u.email, u.state, b.date, b.state
   FROM
-    Companies/bennycorp/Users AS u JOIN Companies/bennycorp/Bookings AS b
+    Companies/bennycorp/Users as u JOIN Companies/bennycorp/Bookings as b
     ON u.email = b.email
   WHERE 
       u.state = 'ACTIVE' AND
       b.date >= '2022-03-18T04:00:00'
 ```
 
-> Firestore Theorem: Collection path must have odd number of parts.
+> Interesting Firestore Fact: collection path must have odd number of parts.
 
 ### DateTime Type
-We are using [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601) to express the date-time as a string. Firestore stores the date-time as `Timestamp` data type in UTC.
-For example, if writing "March 18, 2022, at time 4 Hours in UTC" date-time string, it is "2022-03-18T04:00:00".
+Consistent description of date-time is a big topic the we made a practical design choice.
+We are using [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601) to express the date-time as a string,
+while Firestore stores the date-time as `Timestamp` data type in UTC.
+For example,
+- writing "March 18, 2022, at time 4 Hours in UTC" date-time string, is "2022-03-18T04:00:00".
+- writing "March 18, 2022, at time 0 Hours in Toronto Time EDT (-4 hours)" date-time string, is "2022-03-18T00:00:00-04".
 
-If in doubt, we are using the following to render and match the ISO-8601 date-time string.
+If in doubt, we are using the following to convert, match and render to the ISO-8601 string for date-time values.
 
 ```python
 DATETIME_ISO_FORMAT = "%Y-%m-%dT%H:%M:%S"
@@ -187,7 +201,8 @@ DATETIME_ISO_FORMAT_REGEX = r'^(-?(?:[1-9][0-9]*)?[0-9]{4})-(1[0-2]|0[1-9])-(3[0
 ```
 
 ## FireSQL to Firebase Query
-We provided a simple firebase SQL interface class that can be easily applied to a SQL statement to fetch from Firebase collections
+We provided a simple firebase SQL interface class that can be accept a FireSQL statement to query Firestore collections.
+
 
 ### How to install
 To install PyFireSQL from PyPi,
@@ -197,13 +212,19 @@ pip install pyfiresql
 ```
 
 To install from [PyFireSQL source](https://github.com/bennycheung/PyFireSQL), checkout the project
-```
+```sh
 cd PyFireSQL
+# install require packages
+pip install -r requirements.txt
+# install (optional) development require packages
+pip install -r requirements_dev.txt
+
 python setup.py install
 ```
 
 ### Programming Interface
 In PyFireSQL, we offer a simple programming interface to parse and execute firebase SQL.
+Please consult [Firebase Admin SDK Documentation](https://firebase.google.com/docs/admin/setup) to generate the project's service account `credentials.json` file.
 
 ```python
 from firesql.firebase import FirebaseClient
@@ -341,18 +362,24 @@ After the Firebase query, the pattern matching is used as the filtering expressi
 If you've read up to this point, means that you're having the same pain with Cloud Firestore query. We hope this article motivates you
 to try out PyFireSQL. It can be your preferred programming interface to Firestore using Python!
 
-There is much work that remains to improve FireSQL. Just to mention a few important future improvements, 
+FireSQL has many improvements to be implemented. Just to name a few future improvements, 
 - multiple JOIN statements in the FROM clause
 - allow OR boolean expression in the WHERE clause
 - optimize the query plan before sending queries to Firestore
+- support sub-query in SELECT clause
+
+Please join me on the [PyFireSQL](https://github.com/bennycheung/PyFireSQL) open source project, or provide feedbacks to improve FireSQL utilities!
 
 ## <a name="References"></a> References
+
+### FireSQL
 - PyFireSQL <https://github.com/bennycheung/PyFireSQL>
   - PyPi <https://pypi.org/project/pyfiresql/>
 
 ### Firebase Python
 - Google Cloud Firestore <https://firebase.google.com/products/firestore>
 - Google Cloud Firestore Python Client SDK <https://googleapis.dev/python/firestore/latest/client.html>
+- Firebase Admin SDK Documentation <https://firebase.google.com/docs/admin/setup>
 
 ### Language Parsing
 - Gabriele Tomassetti, Parsing In Python: Tools And Libraries, <https://tomassetti.me/parsing-in-python/>
