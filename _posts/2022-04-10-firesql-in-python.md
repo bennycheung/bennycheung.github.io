@@ -186,7 +186,7 @@ SELECT u.email, u.state, b.date, b.state
 > Interesting Firestore Fact: collection path must have odd number of parts.
 
 ### DateTime Type
-Consistent description of date-time is a big topic the we made a practical design choice.
+Consistent description of date-time is a big topic that we made a practical design choice.
 We are using [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601) to express the date-time as a string,
 while Firestore stores the date-time as `Timestamp` data type in UTC.
 For example,
