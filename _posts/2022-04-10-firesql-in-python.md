@@ -5,7 +5,7 @@ date: 2022-04-10 12:00:00.000000000 -00:00
 permalink: firesql-in-python
 author: Benny Cheung
 artwork:
-  author: Cole Blaq's Lego Flame
+  author: Unknown
 tags:
 - Python
 - Parsing
