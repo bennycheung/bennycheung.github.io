@@ -111,6 +111,9 @@ we have encoded the core `SELECT` statement, which is subsequently transformed i
   - array contains expressions: CONTAIN, ANY CONTAIN
   - filter expressions: LIKE, NOT LIKE
   - null expressions: IS NULL
+- Aggregation functions applied to the result set
+  - COUNT for any field
+  - SUM, AVG, MIN, MAX for numeric field
 
 But the processor has the following limitations, which we can provide post-processing on the query results set.
 - No ORDER BY sub-clause
@@ -153,6 +156,20 @@ For example, the following statements can be expressed,
 > The `JOIN` expression to join 2 collections together
 ```sql
 SELECT u.email, u.state, b.date, b.state
+  FROM
+    Users as u JOIN Bookings as b
+    ON u.email = b.email
+  WHERE 
+      u.state = 'ACTIVE' AND
+      u.email LIKE '%benny%' AND
+      b.state IN ('CHECKED_IN', 'CHECKED_OUT') AND
+      b.date >= '2022-03-18T04:00:00'
+```
+
+> The `COUNT`, `MIN`, `MAX`, `SUM`, `AVG` are the aggregation functions computed against the result set.
+> Only numeric field (e.g. `cost` here) is numeric to have a valid value for `MIN`, `MAX`, `SUM`, `AVG` computation.
+```sql
+SELECT COUNT(*), MIN(b.cost), MAX(b.cost), SUM(b.cost), AVG(b.cost)
   FROM
     Users as u JOIN Bookings as b
     ON u.email = b.email
