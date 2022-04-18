@@ -245,16 +245,19 @@ Please consult [Firebase Admin SDK Documentation](https://firebase.google.com/do
 
 ```python
 from firesql.firebase import FirebaseClient
+from firesql.sql.sql_fire_client import FireSQLClient
 from firesql.sql import FireSQL
 
 # make connection to Cloud Firestore
 client = FirebaseClient()
 client.connect(credentials_json='credentials.json')
+# wrapped as FireSQL client interface
+sqlClient = FireSQLClient(client)
 
 # query via the FireSQL interface - the results are in list of docs (Dict)
 query = "SELECT * FROM Users WHERE state = 'ACTIVE'"
 fireSQL = FireSQL()
-docs = fireSQL.sql(client, query)
+docs = fireSQL.sql(sqlClient, query)
 ```
 
 After `fireSQL.sql()` query completed, the results are a list of docs (as Dict) that satisfied the query.
