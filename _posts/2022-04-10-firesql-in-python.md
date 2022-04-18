@@ -392,6 +392,7 @@ Please join me on the [PyFireSQL](https://github.com/bennycheung/PyFireSQL) open
 ### FireSQL
 - PyFireSQL <https://github.com/bennycheung/PyFireSQL>
   - PyPi <https://pypi.org/project/pyfiresql/>
+  - Documentation @readthedocs <https://pyfiresql.readthedocs.io/en/latest/>
 
 ### Firebase Python
 - Google Cloud Firestore <https://firebase.google.com/products/firestore>
