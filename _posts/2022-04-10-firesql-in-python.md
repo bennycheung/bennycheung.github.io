@@ -24,9 +24,9 @@ published: true
 [PyFireSQL](https://github.com/bennycheung/PyFireSQL) is a SQL-like programming interface to query [Cloud Firestore](https://firebase.google.com/products/firestore) collections using Python. Cloud Firestore is a NoSQL, document-oriented database. Unlike a SQL database, there are no tables or rows. Instead, you store data in documents, which are organized into collections.
 <!--excerpt.end-->
 
-![Structure Data]({{ site.baseurl }}images/firesql-in-python/structure-data.png)
-
 There is no formal query language to Cloud Firestore - NoSQL collection/document structure. For many instances, we need to use the useful but clunky Firestore UI to navigate, scroll and filter through the endless records. With the UI, we have no way to extract the found documents. Even though we attempted to extract and update by writing a unique program for the specific task, we felt many scripts are almost the same that something must be done to limit the endless program writing. What if we can use SQL-like statements to perform the data extraction, which is both formal and reusable? - This idea will be the motivation for the FireSQL language!
+
+![Structure Data]({{ site.baseurl }}images/firesql-in-python/structure-data.png)
 
 Even though we see no relational data model of (table, row, column), we can easily see the equivalent between table -> collection,  row -> document and column -> field in the Firestore data model. The SQL-like statement can be transformed accordingly.
 
