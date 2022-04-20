@@ -110,7 +110,7 @@ we have encoded the core `SELECT` statement, which is subsequently transformed i
   - container expressions: IN, NOT IN
   - array contains expressions: CONTAIN, ANY CONTAIN
   - filter expressions: LIKE, NOT LIKE
-  - null expressions: IS NULL
+  - null expressions: IS NULL, IS NOT NULL
 - Aggregation functions applied to the result set
   - COUNT for any field
   - SUM, AVG, MIN, MAX for numeric field
