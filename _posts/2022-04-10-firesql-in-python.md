@@ -401,24 +401,6 @@ The result will be,
 ...
 ```
 
-### Pattern Matching by LIKE
-The SQL expression `LIKE` or `NOT LIKE` can be used for matching string data.
-
-```sql
-SELECT docid, email, state
-  FROM
-    Users
-  WHERE
-    state IN ('ACTIVE') AND
-    email LIKE '%benny%'
-```
-
-After the Firebase query, the pattern matching is used as the filtering expression. The SQL processor supports pattern for:
-- prefix match `pattern%`
-- suffix match `%pattern`
-- infix match `%pattern%`
-
-
 ## Concluding Remarks
 If you've read up to this point, means that you're having the same pain with Cloud Firestore query. We hope this article motivates you
 to try out PyFireSQL. It can be your preferred programming interface to Firestore using Python!
