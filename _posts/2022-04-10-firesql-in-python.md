@@ -217,6 +217,47 @@ DATETIME_ISO_FORMAT = "%Y-%m-%dT%H:%M:%S"
 DATETIME_ISO_FORMAT_REGEX = r'^(-?(?:[1-9][0-9]*)?[0-9]{4})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(\.[0-9]+)?(Z|[+-](?:2[0-3]|[01][0-9]):[0-5][0-9])?$'
 ```
 
+### Pattern Matching by LIKE
+The SQL expression `LIKE` or `NOT LIKE` can be used for matching string data.
+
+```sql
+SELECT docid, email, state
+  FROM
+    Users
+  WHERE
+    state IN ('ACTIVE') AND
+    email LIKE '%benny%'
+```
+
+After the Firebase query, the pattern matching is used as the filtering expression. The SQL processor supports pattern for:
+- prefix match `pattern%`
+- suffix match `%pattern`
+- infix match `%pattern%`
+
+## FireSQL Statements
+The set of implemented SQL-like DML (Data Manipulation Language) statements are,
+
+| FireSQL Statement | Description |
+|---------------|-------------|
+| SELECT | select documents from a collection
+| INSERT | insert new document in a collection
+| UPDATE | modify the existing documents in a collection
+| DELETE | delete existing documents in a collection
+
+Please read the details in the corresponding [FireSQL Documentation @readthedocs](https://pyfiresql.readthedocs.io/en/latest/).
+
+### Multiple Statements
+The `FireSQL.execute()` function can take one or more FireSQL statements. Sequence of statements must be separated by semi-colon ';'.
+
+For example,
+
+```sql
+INSERT INTO Users (email, name) VALUES ('btscheung+oneone@gmail.com', 'Benny OneOne');
+INSERT INTO Users (email, name) VALUES ('btscheung+twotwo@gmail.com', 'Benny TwoTwo');
+INSERT INTO Users (email, name) VALUES ('btscheung+threethree@gmail.com', 'Benny ThreeThree')
+
+```
+
 ## FireSQL to Firebase Query
 We provided a simple firebase SQL interface class that can be accept a FireSQL statement to query Firestore collections.
 
@@ -257,10 +298,10 @@ sqlClient = FireSQLClient(client)
 # query via the FireSQL interface - the results are in list of docs (Dict)
 query = "SELECT * FROM Users WHERE state = 'ACTIVE'"
 fireSQL = FireSQL()
-docs = fireSQL.sql(sqlClient, query)
+docs = fireSQL.execute(sqlClient, query)
 ```
 
-After `fireSQL.sql()` query completed, the results are a list of docs (as Dict) that satisfied the query.
+After `fireSQL.execute()` query completed, the results are a list of docs (as Dict) that satisfied the query.
 Then we can pass the list of docs to render into any output format, in our case, the `DocPrinter` object can output `csv` or `json` with the select fields.
 
 ```python
