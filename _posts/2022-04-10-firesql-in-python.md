@@ -97,6 +97,18 @@ A grammar is a formal description of a language that can be used to recognize it
 
 The `where_clause` is usually nonterminal, which means that it can be replaced by the group of elements on the right, `bool_expression`. The element `bool_expression` could contains other nonterminal symbols or terminal ones. Terminal symbols are simply the ones that do not appear as a `<symbol>` anywhere in the grammar and capitalized. A typical example of a terminal symbol is a string of characters, like "(", ")", "AND", "OR", “CNAME”.
 
+## FireSQL Statements
+The set of implemented SQL-like DML (Data Manipulation Language) statements are,
+
+| FireSQL Statement | Description |
+|---------------|-------------|
+| SELECT | select documents from a collection
+| INSERT | insert new document in a collection
+| UPDATE | modify the existing documents in a collection
+| DELETE | delete existing documents in a collection
+
+Please read the details in the corresponding [FireSQL Documentation @readthedocs](https://pyfiresql.readthedocs.io/en/latest/).
+
 ### SELECT Statement
 By using `lark` [EBNF-like grammar](https://github.com/bennycheung/PyFireSQL/blob/main/firesql/sql/grammar/firesql.lark),
 we have encoded the core `SELECT` statement, which is subsequently transformed into Firestore collection queries to be executed.
@@ -234,29 +246,6 @@ After the Firebase query, the pattern matching is used as the filtering expressi
 - suffix match `%pattern`
 - infix match `%pattern%`
 
-## FireSQL Statements
-The set of implemented SQL-like DML (Data Manipulation Language) statements are,
-
-| FireSQL Statement | Description |
-|---------------|-------------|
-| SELECT | select documents from a collection
-| INSERT | insert new document in a collection
-| UPDATE | modify the existing documents in a collection
-| DELETE | delete existing documents in a collection
-
-Please read the details in the corresponding [FireSQL Documentation @readthedocs](https://pyfiresql.readthedocs.io/en/latest/).
-
-### Multiple Statements
-The `FireSQL.execute()` function can take one or more FireSQL statements. Sequence of statements must be separated by semi-colon ';'.
-
-For example,
-
-```sql
-INSERT INTO Users (email, name) VALUES ('btscheung+oneone@gmail.com', 'Benny OneOne');
-INSERT INTO Users (email, name) VALUES ('btscheung+twotwo@gmail.com', 'Benny TwoTwo');
-INSERT INTO Users (email, name) VALUES ('btscheung+threethree@gmail.com', 'Benny ThreeThree')
-
-```
 
 ## FireSQL to Firebase Query
 We provided a simple firebase SQL interface class that can be accept a FireSQL statement to query Firestore collections.
