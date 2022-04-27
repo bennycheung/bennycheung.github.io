@@ -32,6 +32,19 @@ Even though we see no relational data model of (table, row, column), we can easi
 
 There is a similar project [FireSQL](https://github.com/jsayol/firesql), which is written in Typescript and [pegis](https://pegjs.org/) parser generator to use SQL-like language to interface Firestore. We felt strongly that the combination of Python and [lark](https://lark-parser.readthedocs.io/en/latest/) parser generator is more appropriate for backend processing and analysis toolchain. In particular, the extracted data can be directly imported into downstream Pandas's Dataframe post-processing will be an extremely valuable prospect.
 
+## FireSQL Statements
+The set of implemented SQL-like DML (Data Manipulation Language) statements are,
+
+| FireSQL Statement | Description |
+|---------------|-------------|
+| SELECT | select documents from a collection
+| INSERT | insert new document in a collection
+| UPDATE | modify the existing documents in a collection
+| DELETE | delete existing documents in a collection
+
+In this article, we shall focus on the FireSQL's `SELECT` statement. For the interested reader to know the details,
+please read in the corresponding [PyFireSQL Documentation @readthedocs](https://pyfiresql.readthedocs.io/en/latest/).
+
 ## FireSQL Parser Explained
 The FireSQL parser consists of two parts: the lexical scanner and the grammar rule module. Python parser generator [Lark](https://lark-parser.readthedocs.io/en/latest/) is used to provide the lexical scanner and grammar rule to parse the FireSQL statement. In the end, the parser execution generates the parse tree, aka. AST (Abstract Syntax Tree). The complexity of the FireSQL syntax requires an equally complex structure that efficiently stores the information needed for executing every possible FireSQL statement.
 
@@ -96,18 +109,6 @@ A grammar is a formal description of a language that can be used to recognize it
 ```
 
 The `where_clause` is usually nonterminal, which means that it can be replaced by the group of elements on the right, `bool_expression`. The element `bool_expression` could contains other nonterminal symbols or terminal ones. Terminal symbols are simply the ones that do not appear as a `<symbol>` anywhere in the grammar and capitalized. A typical example of a terminal symbol is a string of characters, like "(", ")", "AND", "OR", “CNAME”.
-
-## FireSQL Statements
-The set of implemented SQL-like DML (Data Manipulation Language) statements are,
-
-| FireSQL Statement | Description |
-|---------------|-------------|
-| SELECT | select documents from a collection
-| INSERT | insert new document in a collection
-| UPDATE | modify the existing documents in a collection
-| DELETE | delete existing documents in a collection
-
-Please read the details in the corresponding [FireSQL Documentation @readthedocs](https://pyfiresql.readthedocs.io/en/latest/).
 
 ### SELECT Statement
 By using `lark` [EBNF-like grammar](https://github.com/bennycheung/PyFireSQL/blob/main/firesql/sql/grammar/firesql.lark),
@@ -214,6 +215,46 @@ SELECT u.email, u.state, b.date, b.state
 
 > Interesting Firestore Fact: collection path must have odd number of parts.
 
+### Document Field and Sub-field
+Since Firestore document field can have nested sub-field, FireSQL statement column reference can reach the document sub-fields by quoted string, using the `"` to escape the field name with `.` in it. The quoted string can be used anywhere that a column reference is allowed.
+
+For example, the `Users` document's `location` field, which has a sub-field `displayName`. The sub-field can be reached by `"location.displayName"`
+
+```sql
+  SELECT email, "location.displayName"
+  FROM Users
+  WHERE "location.displayName" = 'Work From Home'
+```
+
+### Document ID
+Firestore has a unique "document ID" that associated with each document. The document ID is not part of the document fields that we need to provide special handling to access. FireSQL introduced a special field `docid` to let any statement to reference to the unique "document ID".
+
+For example, we can select where the document equals to a specific `docid` in the `Users` collection. Even though the document does not have `docid` field, we can also project the `docid` value in the output.
+
+```sql
+  SELECT docid, email
+  FROM Users
+  WHERE docid = '4LLlLw6tZicB40HrjhDJNmvaTYw1'
+```
+
+Due to Firestore admin API limitations, we can ONLY express `=` equal or `IN` operators with `docid`.
+For example, the following statement will find documents that in the specified array of `docid`.
+
+```sql
+  SELECT docid, email
+  FROM Users
+  WHERE docid IN ('4LLlLw6tZicB40HrjhDJNmvaTYw1', '74uWntZuVPeYcLVcoS0pFApGPdr2')
+```
+
+More interesting, if we want to project all the fields, including the `docid`. We can do the select statement like,
+`docid` and `*` are projected in the output.
+
+```sql
+  SELECT docid, *
+  FROM Users
+  WHERE "location.displayName" = 'Work From Home'
+```
+
 ### DateTime Type
 Consistent description of date-time is a big topic that we made a practical design choice.
 We are using [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601) to express the date-time as a string,
@@ -246,10 +287,54 @@ After the Firebase query, the pattern matching is used as the filtering expressi
 - suffix match `%pattern`
 - infix match `%pattern%`
 
+### JSON Data
+PyFireSQL provides JSON data supports, in particular, for the `INSERT` and `UPDATE` statements that must take complex data types.
+When the field value needs to take the complex data types, such as array or map (aka. Python dict),
+these complex data types must be encoded within a JSON enclosure. The JSON enclosure can interpret any valid JSON object;
+subsequently translates into the corresponding Firestore supported data types.
+
+For example,
+
+```sql
+INSERT INTO Companies/bennycorp/Visits
+  ( email, event )
+  VALUES
+    ( 'btscheung+test1@gmail.com', JSON(["event1","event2","event3"]) )
+```
+
+When the collection `Visits` has a field `event` which takes an array of event names,
+we assign `event` field by using the `JSON` enclosure to encode the array `["event1","event2","event3"]` as a JSON string.
+
+Since we are dealing with Firestore as a document structure without a schema,
+we can insert all the key pairs from a JSON map into the collection.
+
+For example, the following insert statement - column specification uses `*` to indicate all fields.
+We are inserting a list of
+`email`, `firstName`, `lastName`, `groups` (as array), `roles` (as array), `vaccination`, `access` (as map).
+
+```sql
+INSERT INTO Companies/bennycorp/Users
+  ( * )
+  VALUES (
+    JSON(
+      {
+        "email": "btscheung+twotwo@gmail.com",
+        "name": "Benny TwoTwo",
+        "groups": [],
+        "roles": [
+            "ADMIN"
+        ],
+        "vaccination": null,
+        "access": {
+          "hasAccess": true
+        }
+      }
+    )
+  )
+```
 
 ## FireSQL to Firebase Query
-We provided a simple firebase SQL interface class that can be accept a FireSQL statement to query Firestore collections.
-
+We provided a simple FireSQL interface class that can be accept a FireSQL statement to query Firestore collections.
 
 ### How to install
 To install PyFireSQL from PyPi,
