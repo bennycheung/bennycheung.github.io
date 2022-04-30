@@ -1,7 +1,7 @@
 ---
 layout: post
 title: FireSQL in Python
-date: 2022-04-10 12:00:00.000000000 -00:00
+date: 2022-04-29 12:00:00.000000000 -00:00
 permalink: firesql-in-python
 author: Benny Cheung
 artwork:
