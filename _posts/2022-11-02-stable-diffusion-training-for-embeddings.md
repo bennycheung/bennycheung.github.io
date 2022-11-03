@@ -32,7 +32,7 @@ The sample prompt to generate most of the following portraits is
 ```
 
 ![Endless Profile Pictures]({{ site.baseurl }}images/stable-diffusion-training-for-embeddings/endless-profile-pictures-from-embeddings.jpg)
-*Figure. Exmples of Stable Diffusion AI generated portraits using the trained personal embeddings with the given input prompt. We have many controls in Stable Diffusion to instruct the direction of the AI creativity.*
+*Figure. Examples of Stable Diffusion AI generated portraits using the trained personal embeddings with the given input prompt. We have many controls in Stable Diffusion to instruct the direction of the AI creativity.*
 
 If you are interested in learning how to use Stable Diffusion to generate personal profile images from text prompts, after reading this article, you will be able to train a personal embeddings model for Stability Diffusion AI!
 
