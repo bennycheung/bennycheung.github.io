@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Stable Diffusion Training for Embeddings
+title: Stable Diffusion Training for Personal Embeddings
 date: 2022-11-02 12:00:00.000000000 -00:00
 permalink: stable-diffusion-training-for-embeddings
 author: Benny Cheung
