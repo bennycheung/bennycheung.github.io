@@ -38,7 +38,7 @@ The sample prompt to generate most of the following portraits is
 If you are interested in learning how to use Stable Diffusion to generate personal profile images from text prompts, after reading this article, you will be able to train a personal embeddings model for Stability Diffusion AI!
 
 ## Installing Stable Diffusion
-The official Stable Diffusion repository named [AUTOMATIC1111](https://github.com/AUTOMATIC1111/stable-diffusion-webui) provides step by step instructions for installing on Linux, Windows, and Mac. We won't go through those here, but we will leave some tips if you decide to install on a Mac with an M1 Pro chip. 
+The official Stable Diffusion repository named [AUTOMATIC1111](https://github.com/AUTOMATIC1111/stable-diffusion-webui) provides step by step instructions for installing on Linux, Windows, and Mac. We won't go through those here, but we will leave some tips if you decide to install on a Mac with an M1 Pro chip. If you are not using M1 Pro, you can safely skip this section.
 
 ### Installation on Mac M1 Pro
 > If Xcode is not fully installed. Run this to complete the install:
@@ -48,7 +48,27 @@ The official Stable Diffusion repository named [AUTOMATIC1111](https://github.co
 
 While the web UI runs fine, there are still certain issues when running this fork on Apple Silicon.  All samplers  seems to be working now except for "DPM fast" (which returns random noise), and DDIM and PLMS (both of which fail immediately with the following error: "AssertionError: Torch not compiled with CUDA enabled"). 
 
+### Install HomeBrew
 First, you need to install the required dependencies using [Homebrew](https://brew.sh/).
+
+```
+xcode-select --install
+
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/benny.cheung/.bash_profile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+brew -v
+```
+
+### Install Rosetta 2
+The magic behind translating intel_64 bits code to arm64 automatically!
+
+```
+sudo softwareupdate --install-rosetta --agree-to-license
+```
+
+### Install Stable Diffusion Requirements
+The script can be downloaded from [here](https://github.com/dylancl/stable-diffusion-webui-mps/blob/master/setup_mac.sh), or follow the instructions below.
 
 ```
 brew install cmake protobuf rust python git wget
