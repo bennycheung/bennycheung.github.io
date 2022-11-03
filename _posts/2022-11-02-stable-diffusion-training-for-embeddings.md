@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Stable Diffusion Training for Personal Embeddings
+title: Stable Diffusion Training for Personal Embedding
 date: 2022-11-02 12:00:00.000000000 -00:00
 permalink: stable-diffusion-training-for-embeddings
 author: Benny Cheung
@@ -33,7 +33,7 @@ The sample prompt to generate most of the following portraits is
 
 ![Endless Profile Pictures]({{ site.baseurl }}images/stable-diffusion-training-for-embeddings/endless-profile-pictures-from-embeddings.jpg)
 
-*Figure. Examples of Stable Diffusion AI generated portraits using the trained personal embeddings with the given input prompt. We have many controls in Stable Diffusion to instruct the direction of the AI creativity.*
+*Figure. Examples of Stable Diffusion AI generated portraits using the trained personal embedding with the given input prompt. We have many controls in Stable Diffusion to instruct the direction of the AI creativity.*
 
 If you are interested in learning how to use Stable Diffusion to generate personal profile images from text prompts, after reading this article, you will be able to train a personal embeddings model for Stability Diffusion AI!
 
@@ -106,13 +106,13 @@ art by artgerm and greg rutkowski and alphonse mucha
 ```
 Steps: 30, Sampler: LMS, CFG scale: 7, Seed: 3711471449, Size: 512x512, Model hash: 7460a6fa, Denoising strength: 0.75, Mask blur: 4
 
-- combination of `realbenny-t1` a self-trained embeddings and `yoda` from the default network, displayed as a person.
+- combination of `realbenny-t1` a self-trained embedding and `yoda` from the default network, displayed as a person.
 - background and theme as in `star war`
 - combination of art styles from `artgrem`, `greg rutkowski` and `alphonse mucha`
 
 It output an image (512x512) as output like this, who looks like myself and yoda hybrid creature!
 
-![Personal Embeddings Mixture Example]({{ site.baseurl }}images/stable-diffusion-training-for-embeddings/personal_embeddings_mixture_example.png)
+![Personal Embedding Mixture Example]({{ site.baseurl }}images/stable-diffusion-training-for-embeddings/personal_embeddings_mixture_example.png)
 
 
 ### High-level view
@@ -126,7 +126,7 @@ There are three parts to the system:
 *Figure. The language model creates an embedding of the text prompt. It’s fed into the diffusion model together with some random noise. The diffusion model denoises it towards the embedding. This is repeated several times. Then in the end the decoder scales the image up to a larger size.*
 
 #### From Noise to Realistic Image
-All the parts of the Stable Diffusion architecture have been trained on a massive amount of images and text to create embeddings that cover most of our human semantic space. When concepts are combined together in a new text prompt, the concepts get combined together into a new representation that covers the input concepts. The latent diffusion model is trained to uncover an image out of noise, but guided by the embeddings from the autoencoder and text model, the image ends up being a combination of the concepts that were input in the prompt. The decoder then helps to scale up and create a high-resolution image from the image creation process.
+All the parts of the Stable Diffusion architecture have been trained on a massive amount of images and text to create embedding that cover most of our human semantic space. When concepts are combined together in a new text prompt, the concepts get combined together into a new representation that covers the input concepts. The latent diffusion model is trained to uncover an image out of noise, but guided by the embedding from the autoencoder and text model, the image ends up being a combination of the concepts that were input in the prompt. The decoder then helps to scale up and create a high-resolution image from the image creation process.
 
 The random images are created using "noise". Noise is a type of data that doesn't contain any useful information. The model uses a process called "diffusion" to generate the output images. In diffusion, data flows through several layers of noise, which are randomly generated images that contain no information. When the model is initially presented with a text prompt, it has no prior knowledge of what the target image should look like. As a result, it starts by randomly generating an image that contains no visual elements at all.
 
@@ -134,7 +134,7 @@ That's mean, when the initial image is just "noise". The algorithm picks up some
 
 The magic is that the Stable Diffusion architecture has learned overlapping visual concepts during its training. It is able to combine concepts like the "half man / half yoda," and create a full image because it learned both individual pieces of that concept during training. The architecture was also able
 - to use the specific concepts, like Star Wars or Yoda, by training on a large amount of images of those concepts
-- to use a additional trained embeddings from `realbenny-t1` on top as a new concept
+- to use a additional trained embedding from `realbenny-t1` on top as a new concept
 
 As the data flows through each layer, it picks up on more and more patterns from its surroundings, resulting in a more detailed image. As the models learns more and more patterns from its surroundings, it slowly starts to add in more details. This continues until it reaches the end of the diffusion process, at which point it is able to produce a hyper-realistic image that perfectly matches the user's input.
 
@@ -158,7 +158,7 @@ In Stable Diffusion, the hypernetwork is responsible for retaining memory of ima
 ### Advantages and Disadvantages
 Advantage and disadvantage are basically the same: Every image containing something that describes your training data, will look like your training data. If you trained a specific cat, you will have a very hard time trying to get any other cat using the hypernetwork. It however seems to rely on keywords already known to the model.
 
-For our use case is generating self portrait from text prompts. We found that training with personal embeddings resulted in faster and better results when compared to hypernetworks. We noticed less errors from the AI when trying to generate realistic images, and our test subjects found that the resulting images were more desirable. 
+For our use case is generating self portrait from text prompts. We found that training with personal embedding resulted in faster and better results when compared to hypernetworks. We noticed less errors from the AI when trying to generate realistic images, and our test subjects found that the resulting images were more desirable. 
 
 ## Training Embedding (Textual Inversion) Process
 To ensure that your neural network gets trained properly, it is imperative to provide adequate amounts of images that represent you in a variety of looks, poses and backgrounds. If you only give the AI pictures of you making one pose or wearing one outfit it will only be able to generate images matching this input. Giving your AI a diverse set of images to learn from will ensure a more wide range of options and images.
@@ -190,15 +190,15 @@ Subsequently, we are using the `txt2img`'s prompt to take a sample during traini
 *Figure. Enter a test prompt in txt2img page; subsequently, it will be used for training sample results. You can use the training sample to monitor the training progress.*
 
 ## Stable Diffusion Train Embedding
-We found that training with embeddings is easier than training with a hypernetwork for generating self-portraits. Our training yielded good results which we are satisfied with.
+We found that training with embedding is easier than training with a hypernetwork for generating self-portraits. Our training yielded good results which we are satisfied with.
 
 ### Important Notes on Hardware Requirements
 It is important to note that you will require a GPU with at least 8GB of VRAM in order to train a personal embedding model. This is a hardware requirement that is essential for generating quality images, and the lack of a sufficient GPU could result in poor image quality or low performance.
 
-If you don't have a video card that is compatible, you should consider using cloud infrastructure for training. You can create your own embeddings model using Runpod.Io, Google Colab, or another platform that provides cloud access to GPU-enabled hardware required for training.
+If you don't have a video card that is compatible, you should consider using cloud infrastructure for training. You can create your own embedding model using Runpod.Io, Google Colab, or another platform that provides cloud access to GPU-enabled hardware required for training.
 
 ### Step 1 - Create a new Embedding
--   Give it a name - this name is also what you will use in your prompts, e.g. `realbenny-t1` for 1 token and `realbenny-t2` for 2 tokens embeddings. The name must be unique enough so that the textual inversion process will not confuse your personal embeddings with something else.
+-   Give it a name - this name is also what you will use in your prompts, e.g. `realbenny-t1` for 1 token and `realbenny-t2` for 2 tokens embeddings. The name must be unique enough so that the textual inversion process will not confuse your personal embedding with something else.
 -   Set some initialization - I like to use "face" or "person" as it gives me a decent variety of results and is simple to remember when writing prompts.
 -   Set the number of vectors per token (recommend using 1 or 2, as it to be well balanced between edibility and accuracy for faces but it is ultimately up to your preferences).
     - More vectors tends to need more images so be prepared to generate more with this many vectors
@@ -212,9 +212,9 @@ This step basically makes images 512x512 and can rename them
 
 ### Step 3 - Train
 
-![Stable Diffusion Training Embeddings Setting Annotated]({{ site.baseurl }}images/stable-diffusion-training-for-embeddings/Stable_Diffusion_05_Training_Embeddings_Setting_annotated.png)
+![Stable Diffusion Training Embedding Setting Annotated]({{ site.baseurl }}images/stable-diffusion-training-for-embeddings/Stable_Diffusion_05_Training_Embeddings_Setting_annotated.png)
 
-*Figure. Showing a example screen of Stable Diffusion settings - training for embeddings*
+*Figure. Showing a example screen of Stable Diffusion settings - training for embedding*
 
 - paste the destination directory from step 2. into the "Dataset directory" box (e.g. `/home/data/my_images/preprocess`)
 - set the learning rate is very important, this will affect the neural network training
@@ -244,7 +244,7 @@ If you want to use any of the literal `()[]` characters in the prompt, use the
 
 
 ## Concluding Remarks
-Hopefully, the information provided about Stable Diffusion in this article will give you enough insight into the architecture to create your own personal embeddings model. In addition to its use for profile pictures, you may find other practical use cases for generating images based on text prompts!
+Hopefully, the information provided about Stable Diffusion in this article will give you enough insight into the architecture to create your own personal embedding model. In addition to its use for profile pictures, you may find other practical use cases for generating images based on text prompts!
 
 This is just the beginning. Go forth, and train your embedding!
 
@@ -272,7 +272,7 @@ This is just the beginning. Go forth, and train your embedding!
   - He got the full instruction on how to install stable diffusion on Windows
   
 - Nerdy Rodent, [Textual Inversion - Make Anything In Stable Diffusion](https://www.youtube.com/watch?v=7Lxdk89W2K0&t=151s&ab_channel=NerdyRodent), Youtube video, Oct 2022
-  - This video is a little bit long but it explains the latest Training with Embeddings well. In addition, it use an illustrative example of how to define the number of tokens 1, 2, 4, 16, affecting the generated image edibility. Essentially, more token will generate more accurate image resembling the embedding image; less token will provide higher edibility for the generated image.
+  - This video is a little bit long but it explains the latest Training with Embedding well. In addition, it use an illustrative example of how to define the number of tokens 1, 2, 4, 16, affecting the generated image edibility. Essentially, more token will generate more accurate image resembling the embedding image; less token will provide higher edibility for the generated image.
 
 ### Supporting Tools
 - Play with [Lexica](https://lexica.art/) to see many example prompts that generating beautiful Stable Diffusion artworks.
