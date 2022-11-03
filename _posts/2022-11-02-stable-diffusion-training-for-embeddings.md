@@ -125,6 +125,8 @@ There are three parts to the system:
 
 *Figure. The language model creates an embedding of the text prompt. It’s fed into the diffusion model together with some random noise. The diffusion model denoises it towards the embedding. This is repeated several times. Then in the end the decoder scales the image up to a larger size.*
 
+> See [Marc Päpper's post](https://www.paepper.com/blog/posts/how-and-why-stable-diffusion-works-for-text-to-image-generation/) has a great explanation on the technical training concepts, which is not covered in this article.
+
 #### From Noise to Realistic Image
 All the parts of the Stable Diffusion architecture have been trained on a massive amount of images and text to create embedding that cover most of our human semantic space. When concepts are combined together in a new text prompt, the concepts get combined together into a new representation that covers the input concepts. The latent diffusion model is trained to uncover an image out of noise, but guided by the embedding from the autoencoder and text model, the image ends up being a combination of the concepts that were input in the prompt. The decoder then helps to scale up and create a high-resolution image from the image creation process.
 
