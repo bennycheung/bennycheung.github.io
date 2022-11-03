@@ -152,6 +152,7 @@ The training process expects the images you provide are of dimension 512x512. If
 > BIRME ‘Resize any image to 512x512 for free; of course you can use Photoshop if you have the license.
 
 ![Self Portrait Embedding Training Photos Set]({{ site.baseurl }}images/stable-diffusion-training-for-embeddings/Stable_Diffusion_00_SelfPortrait_Capture20_01.png)
+*Figure. Just for demonstration of various personal portrait posts of a no so handsome faces.*
 
 We recommend to follow the style of [Greg Rutkowski](https://www.artstation.com/rutkowski)
   - use the following prompt to prime the hypernetwork training process, to following the style variations
@@ -162,6 +163,7 @@ A portrait of a man, trending on artstation, greg rutkowski, 4k
 Subsequently, we are using the `txt2img`'s prompt to take a sample during training. That's why we are entering a prompt here first, just in case we forget.
 
 ![Stable Diffusion txt2img prompt for Training Samples]({{ site.baseurl }}images/stable-diffusion-training-for-embeddings/Stable_Diffusion_04_txt2img_prompt_01.png)
+*Figure. Enter a test prompt in txt2img page; subsequently, it will be used for training sample results. You can use the training sample to monitor the training progress.*
 
 ## Stable Diffusion Train Embedding
 We found that training with embeddings is easier than training with a hypernetwork for generating self-portraits. Our training yielded good results which we are satisfied with.
