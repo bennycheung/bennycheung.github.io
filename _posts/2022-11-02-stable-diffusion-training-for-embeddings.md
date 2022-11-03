@@ -166,22 +166,28 @@ Subsequently, we are using the `txt2img`'s prompt to take a sample during traini
 ## Stable Diffusion Train Embedding
 We found that training with embeddings is easier than training with a hypernetwork for generating self-portraits. Our training yielded good results which we are satisfied with.
 
+### Important Notes on Hardware Requirements
+It is important to note that you will require a GPU with at least 8GB of VRAM in order to train a personal embedding model. This is a hardware requirement that is essential for generating quality images, and the lack of a sufficient GPU could result in poor image quality or low performance.
+
+If you don't have a video card that is compatible, you should consider using cloud infrastructure for training. You can create your own embeddings model using Runpod.Io, Google Colab, or another platform that provides cloud access to GPU-enabled hardware required for training.
+
 ### Step 1 - Create a new Embedding
--   Give it a name - this name is also what you will use in your prompts
--   Set some initialization - I like to use "face" or "person" as it gives me a decent variety of results and is simple to remember when writing prompts
--   Set the number of vectors per token (recommend using 1 or 2, as it to be well balanced between edibility and accuracy for faces but it is ultimately up to your preferences)
+-   Give it a name - this name is also what you will use in your prompts, e.g. `realbenny-t1` for 1 token and `realbenny-t2` for 2 tokens embeddings. The name must be unique enough so that the textual inversion process will not confuse your personal embeddings with something else.
+-   Set some initialization - I like to use "face" or "person" as it gives me a decent variety of results and is simple to remember when writing prompts.
+-   Set the number of vectors per token (recommend using 1 or 2, as it to be well balanced between edibility and accuracy for faces but it is ultimately up to your preferences).
     - More vectors tends to need more images so be prepared to generate more with this many vectors
 
 ### Step 2 - Process Images
 This step basically makes images 512x512 and can rename them
 - select a source directory of images (e.g. `/home/data/my_images`)
 - select a destination of images (e.g. `/home/data/my_images/preprocess`)
-- optionally select flip and add caption. When we are training a person face, flipping the face is not a good idea.
-- click preprocess
+- optionally select flip and add caption (using BLIP to automatically generate caption for the image). When we are training a person face, flipping the face is not a good idea.
+- click "Preprocess"
 
 ### Step 3 - Train
 
 ![Stable Diffusion Training Embeddings Setting Annotated]({{ site.baseurl }}images/stable-diffusion-training-for-embeddings/Stable_Diffusion_05_Training_Embeddings_Setting_annotated.png)
+*Figure. Showing a example screen of Stable Diffusion settings - training for embeddings*
 
 - paste the destination directory from step 2. into the "Dataset directory" box (e.g. `/home/data/my_images/preprocess`)
 - set the learning rate is very important, this will affect the neural network training
