@@ -130,7 +130,7 @@ All the parts of the Stable Diffusion architecture have been trained on a massiv
 
 The random images are created using "noise". Noise is a type of data that doesn't contain any useful information. The model uses a process called "diffusion" to generate the output images. In diffusion, data flows through several layers of noise, which are randomly generated images that contain no information. When the model is initially presented with a text prompt, it has no prior knowledge of what the target image should look like. As a result, it starts by randomly generating an image that contains no visual elements at all.
 
-That's mean, when the initial image is just "noise". The algorithm picks up some images that matched the prompt's keywords. It is trying to fit the images into the "noise". The algorithm starts by picking up on broad patterns in the input images. For example, it might learn that certain colors are more commonly associated with certain types of images. It then uses these broad patterns to create detailed images that have the appropriate colors. After generating a few images, the algorithm will start to pick up on more specific patterns, and it will continue to refine the images
+That means, when the initial image is just "noise". The algorithm picks up some images that matched the prompt's keywords. It is trying to fit the images into the "noise". The algorithm starts by picking up on broad patterns in the input images. For example, it might learn that certain colors are more commonly associated with certain types of images. It then uses these broad patterns to create detailed images that have the appropriate colors. After generating a few images, the algorithm will start to pick up on more specific patterns, and it will continue to refine the images
 
 The magic is that the Stable Diffusion architecture has learned overlapping visual concepts during its training. It is able to combine concepts like the "half man / half yoda," and create a full image because it learned both individual pieces of that concept during training. The architecture was also able
 - to use the specific concepts, like Star Wars or Yoda, by training on a large amount of images of those concepts
@@ -175,7 +175,7 @@ The training process expects the images you provide are of dimension 512x512. If
 
 ![Self Portrait Embedding Training Photos Set]({{ site.baseurl }}images/stable-diffusion-training-for-embeddings/Stable_Diffusion_00_SelfPortrait_Capture20_01.png)
 
-*Figure. Just for demonstration of various personal portrait posts of a no so handsome faces.*
+*Figure. Just for demonstration of various personal portrait posts of a not so handsome faces.*
 
 We recommend to follow the style of [Greg Rutkowski](https://www.artstation.com/rutkowski)
   - use the following prompt to prime the hypernetwork training process, to following the style variations
