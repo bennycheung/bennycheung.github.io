@@ -61,3 +61,5 @@ You can install Jekyll locally, and serve the pages locally by running (--baseur
 ```
 
 Now, you can navigate to `localhost:4000` to view your blog pages.
+
+> alias jekyllserve='bundle exec jekyll serve --livereload'
