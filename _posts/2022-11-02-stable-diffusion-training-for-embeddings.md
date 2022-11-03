@@ -32,6 +32,7 @@ The sample prompt to generate most of the following portraits is
 ```
 
 ![Endless Profile Pictures]({{ site.baseurl }}images/stable-diffusion-training-for-embeddings/endless-profile-pictures-from-embeddings.jpg)
+
 *Figure. Examples of Stable Diffusion AI generated portraits using the trained personal embeddings with the given input prompt. We have many controls in Stable Diffusion to instruct the direction of the AI creativity.*
 
 If you are interested in learning how to use Stable Diffusion to generate personal profile images from text prompts, after reading this article, you will be able to train a personal embeddings model for Stability Diffusion AI!
@@ -153,6 +154,7 @@ The training process expects the images you provide are of dimension 512x512. If
 > BIRME ‘Resize any image to 512x512 for free; of course you can use Photoshop if you have the license.
 
 ![Self Portrait Embedding Training Photos Set]({{ site.baseurl }}images/stable-diffusion-training-for-embeddings/Stable_Diffusion_00_SelfPortrait_Capture20_01.png)
+
 *Figure. Just for demonstration of various personal portrait posts of a no so handsome faces.*
 
 We recommend to follow the style of [Greg Rutkowski](https://www.artstation.com/rutkowski)
@@ -164,6 +166,7 @@ A portrait of a man, trending on artstation, greg rutkowski, 4k
 Subsequently, we are using the `txt2img`'s prompt to take a sample during training. That's why we are entering a prompt here first, just in case we forget.
 
 ![Stable Diffusion txt2img prompt for Training Samples]({{ site.baseurl }}images/stable-diffusion-training-for-embeddings/Stable_Diffusion_04_txt2img_prompt_01.png)
+
 *Figure. Enter a test prompt in txt2img page; subsequently, it will be used for training sample results. You can use the training sample to monitor the training progress.*
 
 ## Stable Diffusion Train Embedding
@@ -190,6 +193,7 @@ This step basically makes images 512x512 and can rename them
 ### Step 3 - Train
 
 ![Stable Diffusion Training Embeddings Setting Annotated]({{ site.baseurl }}images/stable-diffusion-training-for-embeddings/Stable_Diffusion_05_Training_Embeddings_Setting_annotated.png)
+
 *Figure. Showing a example screen of Stable Diffusion settings - training for embeddings*
 
 - paste the destination directory from step 2. into the "Dataset directory" box (e.g. `/home/data/my_images/preprocess`)
