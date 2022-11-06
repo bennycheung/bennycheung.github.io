@@ -229,6 +229,22 @@ This step basically makes images 512x512 and can rename them
 - reduce the max steps - because 100000 takes many hours. Above 30000 steps make very little difference. Also, it doesn't matter if the number of steps is too big, we can interrupt the training at any time.
 - press "Train" - check your log directory for images & embeddings.
 
+### Step 4 - Put Embedding to Use
+After the trained embedding is completed, we found the results in the `textual_inversion/<date>/embeddings` folder. We can review the sample images and find the one that is the best fit for the type of image that you want to generate. Once you find an embedding file that you are happy with, you will want to create a copy of it and put it in your `embeddings` model folder.
+
+For example, we observed the best is `textual_inversion/<date>/embeddings/realbenny-t2-30000.pt`
+- copy the best trained `.pt` embedding file to the top-level folder `embeddings` and rename it to `realbenny-t2.pt`
+- restart Stable Diffusion UI. You can see the embeddings are automatically loaded,
+
+```
+...
+Loaded a total of 2 textual inversion embeddings.
+Embeddings: realbenny-t2, realbenny-t1
+...
+```
+
+- The embedding keyword `realbenny-t2` is ready to put into use. In our case, we also trained an additional embedding `realbenny-t1` with 1 token so taht we can use different embeddings for different generation parameters.
+
 ## Bonus Notes: Prompt Attention/Emphasis
 There is a recent addition to Stable Diffusion. We can use `()` in the prompt increases the model's attention to enclosed words, and `[]` decreases it. You can combine multiple modifiers:
 Cheat sheet:
