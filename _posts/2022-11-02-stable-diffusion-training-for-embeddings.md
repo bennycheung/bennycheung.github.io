@@ -243,7 +243,7 @@ Embeddings: realbenny-t2, realbenny-t1
 ...
 ```
 
-- The embedding keyword `realbenny-t2` is ready to put into use. In our case, we also trained an additional embedding `realbenny-t1` with 1 token so taht we can use different embeddings for different generation parameters.
+- The embedding keyword `realbenny-t2` is ready to put into use. In our case, we also trained an additional embedding `realbenny-t1` with 1 token so that we can use different embeddings for different generation parameters.
 
 ## Bonus Notes: Prompt Attention/Emphasis
 There is a recent addition to Stable Diffusion. We can use `()` in the prompt increases the model's attention to enclosed words, and `[]` decreases it. You can combine multiple modifiers:
