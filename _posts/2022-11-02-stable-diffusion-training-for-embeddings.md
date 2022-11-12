@@ -264,6 +264,8 @@ If you want to use any of the literal `()[]` characters in the prompt, use the
 ## Concluding Remarks
 Hopefully, the information provided about Stable Diffusion in this article will give you enough insight into the architecture to create your own personal embedding model. In addition to its use for profile pictures, you may find other practical use cases for generating images based on text prompts!
 
+Interested reader can continue studying the next article on [Dreambooth Training for Personal Embedding]({{ site.baseurl }}dreambooth-training-for-personal-embedding), which will describe how to train a Stable Diffusion's hypernetwork embedding.
+
 This is just the beginning. Go forth, and train your embedding!
 
 ## <a name="References"></a> References

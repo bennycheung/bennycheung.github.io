@@ -110,7 +110,7 @@ The notebooks cell requires us to put the each file as a URL location. But actua
 
 > We don't need to run the following notebook cell. It is using a list of urls, which are manually entered, to download the images from the web.
 
-![RunPod Dreambooth Training notebook 01 progress]({{ site.baseurl }}images/dreambooth-training-for-personal-embedding/RunPod_Dreambooth_Training_notebook_01_progress.jpg)
+![RunPod Dreambooth Training notebook 01 progress]({{ site.baseurl }}images/dreambooth-training-for-personal-embedding/Training_notebook_01_progress.jpg)
 
 *Figure. the displayed notebook cell that is going through the urls list and download the images into the "./training_images" folder. Once we understsand this cell, we can directly put the training images into the "./training_image" folder instead. This is nice to see the images that are going to be used in training as the cell execution output.*
 
