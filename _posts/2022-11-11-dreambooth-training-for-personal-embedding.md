@@ -59,7 +59,7 @@ Now for the meat of the training details, training a hypernetwork is the process
 
 Training with Dreambooth only requires a limited amount of training data. For example: 20 images is enough to create an embedding, and the data doesn't have to be high-quality. It will still work fine with poorly lit or incomplete images. The training time is typically around an hour on an RTX3090 with 24G GPU RAM.
 
-![RunPod_Dreambooth_Training_notebook_03_progress_notes]({{ site.baseurl }}images/dreambooth-training-for-personal-embedding/RunPod_Dreambooth_Training_notebook_03_progress_notes.jpg)
+![RunPod Dreambooth Training notebook 03 progress notes]({{ site.baseurl }}images/dreambooth-training-for-personal-embedding/RunPod_Dreambooth_Training_notebook_03_progress_notes.jpg)
 
 *Figure. Shows the reference to the steps in order to successfully running the training notebook on RunPod.io. For each training step description, we can come back to this picture for reference.*
 
@@ -95,7 +95,7 @@ Instead of generating a set of regularization images, we can skip over to the no
 
 Regularization images are a type of data that helps neural networks detect patterns and improve their accuracy. Regularization images can be created by taking a set of data points (such as pixel or vector images) and randomly modifying them to add noise. These images are then used during training to prevent overfitting, which is where a neural network starts to see patterns that aren't there in the data. Overfitting can cause a neural network to become excessively accurate on a specific training set, without being able to use its knowledge to make accurate predictions on new data.
 
-![RunPod_Dreambooth_Training_notebook_03_reg_images]({{ site.baseurl }}images/dreambooth-training-for-personal-embedding/RunPod_Dreambooth_Training_notebook_03_reg_images.jpg)
+![RunPod DreamboothTraining notebook 03 reg images]({{ site.baseurl }}images/dreambooth-training-for-personal-embedding/RunPod_Dreambooth_Training_notebook_03_reg_images.jpg)
 
 *Figure. showing the notebook cell that download the regularization images for the given class.*
 
@@ -110,7 +110,7 @@ The notebooks cell requires us to put the each file as a URL location. But actua
 
 > We don't need to run the following notebook cell. It is using a list of urls, which are manually entered, to download the images from the web.
 
-![RunPod_Dreambooth_Training_notebook_01_progress]({{ site.baseurl }}images/dreambooth-training-for-personal-embedding/RunPod_Dreambooth_Training_notebook_01_progress.jpg)
+![RunPod Dreambooth Training notebook 01 progress]({{ site.baseurl }}images/dreambooth-training-for-personal-embedding/RunPod_Dreambooth_Training_notebook_01_progress.jpg)
 
 *Figure. the displayed notebook cell that is going through the urls list and download the images into the "./training_images" folder. Once we understsand this cell, we can directly put the training images into the "./training_image" folder instead. This is nice to see the images that are going to be used in training as the cell execution output.*
 
@@ -124,7 +124,7 @@ After all the setup configuration, uploading the regularization and training ima
 - define a unique token, e.g. `bennycheung` , and a class word `person`. This is important to remember  that the combination of "token class", e.g. "bennycheung person", will be used to trigger the custom embedding in the hypernetwork.
 - define the number of `max_training_steps`, we should have 100 steps per training image, in this case, we are using 30 training images - that's mean we need 3000 steps.
 
-![RunPod_Dreambooth_Training_notebook_04_training-annotated]({{ site.baseurl }}images/dreambooth-training-for-personal-embedding/RunPod_Dreambooth_Training_notebook_04_training-annotated.jpg)
+![RunPod DreamboothTraining notebook 04 training annotated]({{ site.baseurl }}images/dreambooth-training-for-personal-embedding/RunPod_Dreambooth_Training_notebook_04_training-annotated.jpg)
 
 *Figure. Illustrated the notebook's training cell. We need to make the modifications to the highlighted parameters, that is described in this section.*
 
@@ -138,7 +138,7 @@ When the training completed, run the cell to copy the final checkpoint model int
 
 We recommend to rename it to a shorter name, for example, `bennycheung-v1-3000.ckpt`.
 
-![RunPod_Dreambooth_Training_notebook_05_checkpoint_model]({{ site.baseurl }}images/dreambooth-training-for-personal-embedding/RunPod_Dreambooth_Training_notebook_05_checkpoint_model.jpg)
+![RunPod Dreambooth Training notebook 05 checkpoint model]({{ site.baseurl }}images/dreambooth-training-for-personal-embedding/RunPod_Dreambooth_Training_notebook_05_checkpoint_model.jpg)
 
 *Figure. Illustrated the notebook's cell that save the last checkpoint model into the "trained_models" folder.*
 
@@ -155,7 +155,7 @@ bennycheung person as a Warhammer 40K Space Marine, movie still,
 
 Here are a few example results, a very accurate, high fidelity embedding into the generated images according to the text prompt.
 
-![Stable_Diffusion_Dreambooth_bennycheung_model_generated_space_marine]({{ site.baseurl }}images/dreambooth-training-for-personal-embedding/Stable_Diffusion_Dreambooth_bennycheung_model_generated_space_marine.jpg)
+![Stable Diffusion Dreambooth bennycheung model generated space marine]({{ site.baseurl }}images/dreambooth-training-for-personal-embedding/Stable_Diffusion_Dreambooth_bennycheung_model_generated_space_marine.jpg)
 
 *Figure. Dream of visualizing oneself as Warhammer 40k's Astartes finally comes true!*
 
@@ -177,9 +177,9 @@ bennycheung person, anime, warhammer 40k, space marine, meditative look,
 ```
 - using various Sampler and CFG scale, Seed: 769704955
 
-![SD_Benny_SpaceMarine_Watercolor_01]({{ site.baseurl }}images/dreambooth-training-for-personal-embedding/SD_Benny_SpaceMarine_Watercolor_01.jpg)
+![SD Benny SpaceMarine Watercolor 01]({{ site.baseurl }}images/dreambooth-training-for-personal-embedding/SD_Benny_SpaceMarine_Watercolor_01.jpg)
 
-![SD_Benny_SpaceMarine_Watercolor_03]({{ site.baseurl }}images/dreambooth-training-for-personal-embedding/SD_Benny_SpaceMarine_Watercolor_03.jpg)
+![SD Benny SpaceMarine Watercolor 03]({{ site.baseurl }}images/dreambooth-training-for-personal-embedding/SD_Benny_SpaceMarine_Watercolor_03.jpg)
 
 *Figure. These AI creative works illustrate the numerous varieties and styles created through the custom trained model. Stable Diffusion is able to produce a variety of images from a singular prompt, each work being unique in style and detail.*
 
@@ -198,12 +198,12 @@ We can send the image into `img2img` (Image to Image) tab's `Inpaint` subtab fea
 - use the pen tool (which can be resize) to paint out (black out) the part of the image that we want to regenerate the image. In this case, we want to paint out the eyes that we want to `Inpaint` to replace those pixels.
 - We usually generate a few more images, depends on luck (pure random chance), the algorithm will produce the perfect eyes that we like. Then, we can keep that image. For the other pixels, which are not paint out, they shall remain the same - no pixels are regenerated.
 
-![Stable_Diffusion_img2img_Inpaint_Fixing_Eyes]({{ site.baseurl }}images/dreambooth-training-for-personal-embedding/Stable_Diffusion_img2img_Inpaint_Fixing_Eyes.jpg)
+![Stable Diffusion img2img Inpaint Fixing Eyes]({{ site.baseurl }}images/dreambooth-training-for-personal-embedding/Stable_Diffusion_img2img_Inpaint_Fixing_Eyes.jpg)
 
 The eyes are improved to a satisfactory level. That's what we choose.
 The images showing the before the after the `Inpaint` eyes fixing operation.
 
-![Stable_Diffusion_img2img_Inpaint_Fixing_Eyes_Compare_01_annotated]({{ site.baseurl }}images/dreambooth-training-for-personal-embedding/Stable_Diffusion_img2img_Inpaint_Fixing_Eyes_Compare_01_annotated.jpg)
+![Stable Diffusion img2img Inpaint Fixing Eyes Compare 01 annotated]({{ site.baseurl }}images/dreambooth-training-for-personal-embedding/Stable_Diffusion_img2img_Inpaint_Fixing_Eyes_Compare_01_annotated.jpg)
 
 *Figure. showing the eyes are "impainted" to generate better balanced and realistic eyes of myself, I know.*
 
