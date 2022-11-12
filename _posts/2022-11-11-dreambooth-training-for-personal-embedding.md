@@ -49,7 +49,7 @@ One of our biggest obstacles in training with the Dreambooth algorithm is the ha
 
 After searching for suitable servers with the needed hardware, we resolved to use [RunPod.io](https://www.runpod.io/). It offers the option to rent a secure cloud-based machine which includes an RTX A5000 with 24GB of VRAM. This rental costs only $0.49 USD an hour, much more affordable than buying the NVidia RTX 3090!
 
-![RunPod Dreambooth Training allocate pod with GPU 24GB]({{ site.baseurl }}images/dreambooth-training-for-personal-embedding/RunPod_Dreambooth_Training_allocate_pod_with_GPU_24G.jpg)
+![RunPod Dreambooth Training allocate pod with GPU 24GB]({{ site.baseurl }}images/dreambooth-training-for-personal-embedding/Training_allocate_pod_with_GPU_24G.jpg)
 
 ### Which Dreambooth-Stable-Diffusion?
 There are hundreds of forks on the [Google's original Dreambooth-Stable-Diffusion](https://github.com/XavierXiao/Dreambooth-Stable-Diffusion). However, "Aitrepreneur" video points out that the [Joe Penna branch of Dreambooth-Stable-Diffusion](https://github.com/JoePenna/Dreambooth-Stable-Diffusion/) contains special jupyter notebooks designed to help training your personal embedding. It has the notebook designed to run on Google Colab or RunPod.io. This allows us to train an hypernetwork model that will work with Stable Diffusion. The goal is to create a checkpoint model that can be used as a personal profile images based on text prompts.
@@ -59,7 +59,7 @@ Now for the meat of the training details, training a hypernetwork is the process
 
 Training with Dreambooth only requires a limited amount of training data. For example: 20 images is enough to create an embedding, and the data doesn't have to be high-quality. It will still work fine with poorly lit or incomplete images. The training time is typically around an hour on an RTX3090 with 24G GPU RAM.
 
-![RunPod Dreambooth Training notebook 03 progress notes]({{ site.baseurl }}images/dreambooth-training-for-personal-embedding/RunPod_Dreambooth_Training_notebook_03_progress_notes.jpg)
+![RunPod Dreambooth Training notebook 03 progress notes]({{ site.baseurl }}images/dreambooth-training-for-personal-embedding/Training_notebook_03_progress_notes.jpg)
 
 *Figure. Shows the reference to the steps in order to successfully running the training notebook on RunPod.io. For each training step description, we can come back to this picture for reference.*
 
@@ -95,7 +95,7 @@ Instead of generating a set of regularization images, we can skip over to the no
 
 Regularization images are a type of data that helps neural networks detect patterns and improve their accuracy. Regularization images can be created by taking a set of data points (such as pixel or vector images) and randomly modifying them to add noise. These images are then used during training to prevent overfitting, which is where a neural network starts to see patterns that aren't there in the data. Overfitting can cause a neural network to become excessively accurate on a specific training set, without being able to use its knowledge to make accurate predictions on new data.
 
-![RunPod DreamboothTraining notebook 03 reg images]({{ site.baseurl }}images/dreambooth-training-for-personal-embedding/RunPod_Dreambooth_Training_notebook_03_reg_images.jpg)
+![RunPod DreamboothTraining notebook 03 reg images]({{ site.baseurl }}images/dreambooth-training-for-personal-embedding/Training_notebook_03_reg_images.jpg)
 
 *Figure. showing the notebook cell that download the regularization images for the given class.*
 
@@ -124,7 +124,7 @@ After all the setup configuration, uploading the regularization and training ima
 - define a unique token, e.g. `bennycheung` , and a class word `person`. This is important to remember  that the combination of "token class", e.g. "bennycheung person", will be used to trigger the custom embedding in the hypernetwork.
 - define the number of `max_training_steps`, we should have 100 steps per training image, in this case, we are using 30 training images - that's mean we need 3000 steps.
 
-![RunPod DreamboothTraining notebook 04 training annotated]({{ site.baseurl }}images/dreambooth-training-for-personal-embedding/RunPod_Dreambooth_Training_notebook_04_training-annotated.jpg)
+![RunPod DreamboothTraining notebook 04 training annotated]({{ site.baseurl }}images/dreambooth-training-for-personal-embedding/Training_notebook_04_training-annotated.jpg)
 
 *Figure. Illustrated the notebook's training cell. We need to make the modifications to the highlighted parameters, that is described in this section.*
 
@@ -138,7 +138,7 @@ When the training completed, run the cell to copy the final checkpoint model int
 
 We recommend to rename it to a shorter name, for example, `bennycheung-v1-3000.ckpt`.
 
-![RunPod Dreambooth Training notebook 05 checkpoint model]({{ site.baseurl }}images/dreambooth-training-for-personal-embedding/RunPod_Dreambooth_Training_notebook_05_checkpoint_model.jpg)
+![RunPod Dreambooth Training notebook 05 checkpoint model]({{ site.baseurl }}images/dreambooth-training-for-personal-embedding/Training_notebook_05_checkpoint_model.jpg)
 
 *Figure. Illustrated the notebook's cell that save the last checkpoint model into the "trained_models" folder.*
 
@@ -155,7 +155,7 @@ bennycheung person as a Warhammer 40K Space Marine, movie still,
 
 Here are a few example results, a very accurate, high fidelity embedding into the generated images according to the text prompt.
 
-![Stable Diffusion Dreambooth bennycheung model generated space marine]({{ site.baseurl }}images/dreambooth-training-for-personal-embedding/Stable_Diffusion_Dreambooth_bennycheung_model_generated_space_marine.jpg)
+![Stable Diffusion Dreambooth bennycheung model generated space marine]({{ site.baseurl }}images/dreambooth-training-for-personal-embedding/bennycheung_model_generated_space_marine.jpg)
 
 *Figure. Dream of visualizing oneself as Warhammer 40k's Astartes finally comes true!*
 
