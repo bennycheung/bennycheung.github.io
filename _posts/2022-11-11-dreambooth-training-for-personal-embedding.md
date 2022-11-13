@@ -29,7 +29,7 @@ Training this more generalized checkpoint model will be via the use of the Dream
 
 *Figure. AI creative artwork of combining, cubism style and vibrate color with the personal embedding.*
 
-After learning how to use Dreambooth training a personal embedding, we shall also explore the topics on AI creativity and learn how to improve the generated images by img2img's impainting.
+After learning how to use Dreambooth training a personal embedding, we shall also explore the topics on AI creativity and learn how to improve the generated images by img2img's inpainting.
 
 ### Using Dreambooth
 Dreambooth and Stable Diffusion are capable of producing great works of art. The key differences are that Dreambooth is more targeted toward users who want to create images that look like a specific person, whereas Stable Diffusion is a more general image generation.
@@ -205,7 +205,7 @@ The images showing the before the after the `Inpaint` eyes fixing operation.
 
 ![Stable Diffusion img2img Inpaint Fixing Eyes Compare 01 annotated]({{ site.baseurl }}images/dreambooth-training-for-personal-embedding/Stable_Diffusion_img2img_Inpaint_Fixing_Eyes_Compare_01_annotated.jpg)
 
-*Figure. showing the eyes are "impainted" to generate better balanced and realistic eyes of myself, I know.*
+*Figure. showing the eyes are "inpainted" to generate better balanced and realistic eyes of myself, I know.*
 
 ### Fixing the Hands
 Another weakness of Stable Diffusion image generation, depending on luck, the hands will be messed up too. We can apply the similar `Inpaint` technique to regenerate hands, with the prompt "correct hands" to emphasize to the algorithm paying attention to the "correct hands" generation.
