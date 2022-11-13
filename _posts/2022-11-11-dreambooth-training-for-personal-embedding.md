@@ -51,6 +51,10 @@ After searching for suitable servers with the needed hardware, we resolved to us
 
 ![RunPod Dreambooth Training allocate pod with GPU 24GB]({{ site.baseurl }}images/dreambooth-training-for-personal-embedding/Training_allocate_pod_with_GPU_24G.jpg)
 
+> **Important Note!!! When starting the Pod, make sure there is more disk spaces are allocated. In our case, change from 20 to 40 GB for both container disk and volume disk spaces; otherwise, we may risk running out of disk space.
+
+![RunPod Dreambooth Training change disk spaces]({{ site.baseurl }}images/dreambooth-training-for-personal-embedding/Training_disk_sizes.jpg)
+
 ### Which Dreambooth-Stable-Diffusion?
 There are hundreds of forks on the [Google's original Dreambooth-Stable-Diffusion](https://github.com/XavierXiao/Dreambooth-Stable-Diffusion). However, "Aitrepreneur" video points out that the [Joe Penna branch of Dreambooth-Stable-Diffusion](https://github.com/JoePenna/Dreambooth-Stable-Diffusion/) contains special jupyter notebooks designed to help training your personal embedding. It has the notebook designed to run on Google Colab or RunPod.io. This allows us to train an hypernetwork model that will work with Stable Diffusion. The goal is to create a checkpoint model that can be used as a personal profile images based on text prompts.
 
