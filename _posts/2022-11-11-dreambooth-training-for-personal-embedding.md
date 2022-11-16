@@ -25,7 +25,7 @@ This article will focus on training an embedding that is deeper and is able to g
 
 Training this more generalized checkpoint model will be via the use of the Dreambooth's hypernetwork training technique. This will combine the personal image and embedding inside of it, which leads to new artwork that will be much higher quality and accurate than previous art that is just created from a basic Stable Diffusion embedding model. This is the next step and will improve the fidelity and accuracy of this art and the AI's understanding of the given prompts.
 
-![The AI Generated Artwork based on Cubism and Personal Embedding]({{ site.baseurl }}images/dreambooth-training-for-personal-embedding/Stable_Diffusion_generated_artwork_cubism_many_faces.jpg)
+![The AI Generated Artwork based on Cubism and Personal Embedding]({{ site.baseurl }}images/dreambooth-training-for-personal-embedding/original_cover.png)
 
 *Figure. AI creative artwork of combining, cubism style and vibrate color with the personal embedding.*
 
