@@ -25,9 +25,9 @@ This article will focus on training an embedding that is deeper and is able to g
 
 Training this more generalized checkpoint model will be via the use of the Dreambooth's hypernetwork training technique. This will combine the personal image and embedding inside of it, which leads to new artwork that will be much higher quality and accurate than previous art that is just created from a basic Stable Diffusion embedding model. This is the next step and will improve the fidelity and accuracy of this art and the AI's understanding of the given prompts.
 
-![The AI Generated Artwork based on Cubism and Personal Embedding]({{ site.baseurl }}images/dreambooth-training-for-personal-embedding/original_cover.png)
+![Dreambooth Stable Diffusion Personal Embedding Examples]({{ site.baseurl }}images/dreambooth-training-for-personal-embedding/Benny_SD_Profile_Gridx16_02.jpg)
 
-*Figure. AI creative artwork of combining, cubism style and vibrate color with the personal embedding.*
+*Figure. All of the creative imaginations of personal embedding into the toy and materials! From top-left, action figure, potato head, plush doll, simpson, play-doh, lego minifigure, garfield cat, disney, low-poly, funko-pop, pixar, plastic, video game, dog, yarn doll, lego blocks.*
 
 After learning how to use Dreambooth training a personal embedding, we shall also explore the topics on AI creativity and learn how to improve the generated images by img2img's inpainting.
 
@@ -38,9 +38,9 @@ Dreambooth and Stable Diffusion are capable of producing great works of art. The
 
 Dreambooth is able to generate more precise results but can only generate specific individuals. Stable Diffusion can generate a variety of images, but the results may be less precise. For general use, Stable Diffusion is a better choice - although for precise individual use, Dreambooth is a superior choice.
 
-![Dreambooth Stable Diffusion Training Personal Images]({{ site.baseurl }}images/dreambooth-training-for-personal-embedding/Benny_SD_Profile_Gridx16_02.jpg)
+![Dreambooth Stable Diffusion Training Personal Images]({{ site.baseurl }}images/dreambooth-training-for-personal-embedding/Dreambooth_Stable_Diffusion_Training_Personal_Images.jpg)
 
-*Figure. All of the creative imaginations of my embedding into the toy and materials! From top-left, action figure, potato head, plush doll, simpson, play-doh, lego minifigure, garfield cat, disney, low-poly, funko-pop, pixar, plastic, video game, dog, yarn doll, lego blocks. See the original paper by Nataniel Ruiz, et. al., [DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation](https://arxiv.org/abs/2208.12242)*
+*Figure. By input a set of personal images, Dreambooth training will produce a Stable Diffusion hypernetwork model that can be used in various context. See the original paper by Nataniel Ruiz, et. al., [DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation](https://arxiv.org/abs/2208.12242)*
 
 Following "Aitrepreneur" [video](https://www.youtube.com/watch?v=7m__xadX0z0&ab_channel=Aitrepreneur) on YouTube, detailing how to use Dreambooth training a custom Stable Diffusion model on RunPod.io or Google's Colab environment, has explained the process step by step, and even includes the necessary code references in his video description. We see the trained custom model performing so well that motivate us to try out the technique ourselves!
 
