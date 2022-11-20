@@ -38,9 +38,9 @@ Dreambooth and Stable Diffusion are capable of producing great works of art. The
 
 Dreambooth is able to generate more precise results but can only generate specific individuals. Stable Diffusion can generate a variety of images, but the results may be less precise. For general use, Stable Diffusion is a better choice - although for precise individual use, Dreambooth is a superior choice.
 
-![Dreambooth Stable Diffusion Training Personal Images]({{ site.baseurl }}images/dreambooth-training-for-personal-embedding/Dreambooth_Stable_Diffusion_Training_Personal_Images.jpg)
+![Dreambooth Stable Diffusion Training Personal Images]({{ site.baseurl }}images/dreambooth-training-for-personal-embedding/Benny_SD_Profile_Gridx16_02.jpg)
 
-*Figure. Dreambooth training with a small number of personal images in various portraits and postures, the trained model can be used to generate in variety of contexts. See the original paper by Nataniel Ruiz, et. al., [DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation](https://arxiv.org/abs/2208.12242)*
+*Figure. All of the creative imaginations of my embedding into the toy and materials! From top-left, action figure, potato head, plush doll, simpson, play-doh, lego minifigure, garfield cat, disney, low-poly, funko-pop, pixar, plastic, video game, dog, yarn doll, lego blocks. See the original paper by Nataniel Ruiz, et. al., [DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation](https://arxiv.org/abs/2208.12242)*
 
 Following "Aitrepreneur" [video](https://www.youtube.com/watch?v=7m__xadX0z0&ab_channel=Aitrepreneur) on YouTube, detailing how to use Dreambooth training a custom Stable Diffusion model on RunPod.io or Google's Colab environment, has explained the process step by step, and even includes the necessary code references in his video description. We see the trained custom model performing so well that motivate us to try out the technique ourselves!
 
