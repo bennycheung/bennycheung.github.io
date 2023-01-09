@@ -79,7 +79,9 @@ To reiterate, [Joe Penna branch of Dreambooth-Stable-Diffusion](https://github.c
 ```
 
 > **Important Note!!! as of [2023/01/09], the JeoPenna's RunPod.io Jupyter notebook is missing some Python module to run successfully. Please add the following into the `BUILD DEV` cell that doing `pip install` with the following missing modules:
+>
 > !pip install taming-transformers-rom1504
+>
 > !pip install clip
 >
 
