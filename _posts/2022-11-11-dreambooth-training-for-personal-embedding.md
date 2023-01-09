@@ -78,6 +78,12 @@ To reiterate, [Joe Penna branch of Dreambooth-Stable-Diffusion](https://github.c
 !git clone https://github.com/JoePenna/Dreambooth-Stable-Diffusion/
 ```
 
+> **Important Note!!! as of [2023/01/09], the JeoPenna's RunPod.io Jupyter notebook is missing some Python module to run successfully. Please add the following into the `BUILD DEV` cell that doing `pip install` with the following missing modules:
+> !pip install taming-transformers-rom1504
+> !pip install clip
+>
+
+
 ### 2. upload the sd-v1-4.ckpt to the pod's workspace
 To speedup the Stable Diffusion's model upload speed (too slow to directly use RunPod upload). We recommend to use the Google Drive. In the notebook, do this install
 ```
