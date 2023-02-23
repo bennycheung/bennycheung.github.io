@@ -92,7 +92,7 @@ To generate the voice for your AI avatar, start by providing ElevenLabs with the
 
 *Figure. Use ElevenLabs to set the voice and the input script, to generate a MP3 audio file*
 
-### Process of Voice Generation Explained
+#### Process of Voice Generation Explained
 ElevenLabs is a cutting-edge AI tool that uses deep learning techniques to generate realistic voices from input text. The process of generating a realistic voice involves several technical steps:
 
 **Step 1: Text analysis** - The input text is first analyzed using natural language processing (NLP) algorithms to extract key features such as syntax, semantics, and prosody. This analysis helps to understand the structure and content of the text, including the tone, style, and intended emotion.
@@ -115,7 +115,7 @@ To create a personal AI avatar, start by providing D-ID with your personal avata
 
 *Figure. Use D-ID to upload the generated audio file, and add the custom avatar image to generate video*
 
-### Process of Video Generation Explained
+#### Process of Video Generation Explained
 The process of combining an image with a voice to create a realistic video involves several technical steps:
 
 **Step 1: Face detection and alignment** - D-ID first detects the face in the input image and aligns it with a neutral position. The tool uses facial landmark detection algorithms to accurately identify and locate key facial features, such as the eyes, nose, and mouth, which are essential for generating realistic facial movements during speech.
