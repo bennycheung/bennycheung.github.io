@@ -28,7 +28,7 @@ The potential reasons why we might want to create an AI avatar include:
 - Social media: An AI avatar can serve as a unique and eye-catching profile picture on social media platforms.
 - Virtual assistants: We could create an avatar to serve as a virtual assistant, which could respond to voice commands and help user with tasks such as scheduling appointments or customer supports.
 
-In this article, we will walk through the process of creating a personal AI avatar using bleeding edge AI tools, such as Stable Diffusion, ChatGPT, ElevenLabs, and D-ID.
+In this article, we will walk through the process of creating a personal AI avatar using bleeding edge AI tools, such as Stable Diffusion, ChatGPT, ElevenLabs, and D-ID. Subsequently, we also looked at the data models and class structures required to create an animated chatbot system, and how user input is processed and classified to generate appropriate responses.
 
 ![Animated AI Avartar Creation Process]({{ site.baseurl }}images/create-personal-animated-ai-avatar/Avatar_AI_Animation_Process.jpg)
 *Figure. Illustrated the animated AI avatar creation workflow. (1) Generating avatar picture using Stable Diffusion (2) Generating text using ChatGPT (3) Generating a voice using ElevenLabs (4) Combining your avatar picture and generated voice using D-ID.*
