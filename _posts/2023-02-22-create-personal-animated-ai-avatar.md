@@ -92,17 +92,7 @@ To generate the voice for your AI avatar, start by providing ElevenLabs with the
 
 *Figure. Use ElevenLabs to set the voice and the input script, to generate a MP3 audio file*
 
-### Step 4: Combining your avatar picture and generated voice using D-ID
-
-[D-ID](https://studio.d-id.com/) is a sophisticated AI tool that can be used to combine an image with a voice to create a realistic video of a person speaking. To use D-ID, we need to provide it with an image and a voice, and it will generate a video of the person in the image speaking with the given voice. We can rely on D-ID providing some free credits to get started.
-
-To create a personal AI avatar, start by providing D-ID with your personal avatar picture and the voice that we generated using ElevenLabs. D-ID will use advanced computer vision and NLP techniques to create a video of our AI avatar speaking with a realistic voice.
-
-![D-ID Create Video _Example]({{ site.baseurl }}images/create-personal-animated-ai-avatar/D-ID_Create_Video_Example.jpg)
-
-*Figure. Use D-ID to upload the generated audio file, and add the custom avatar image to generate video*
-
-## Process of Voice Generation Explained
+### Process of Voice Generation Explained
 ElevenLabs is a cutting-edge AI tool that uses deep learning techniques to generate realistic voices from input text. The process of generating a realistic voice involves several technical steps:
 
 **Step 1: Text analysis** - The input text is first analyzed using natural language processing (NLP) algorithms to extract key features such as syntax, semantics, and prosody. This analysis helps to understand the structure and content of the text, including the tone, style, and intended emotion.
@@ -115,7 +105,17 @@ ElevenLabs is a cutting-edge AI tool that uses deep learning techniques to gener
 
 ElevenLabs uses a combination of advanced NLP algorithms, deep learning techniques, and signal processing to generate high-quality, realistic voices from input text. This tool has a wide range of applications, including virtual assistants, audiobook narration, voiceovers for videos, and more.
 
-## Process of Video Generation Explained
+### Step 4: Combining your avatar picture and generated voice using D-ID
+
+[D-ID](https://studio.d-id.com/) is a sophisticated AI tool that can be used to combine an image with a voice to create a realistic video of a person speaking. To use D-ID, we need to provide it with an image and a voice, and it will generate a video of the person in the image speaking with the given voice. We can rely on D-ID providing some free credits to get started.
+
+To create a personal AI avatar, start by providing D-ID with your personal avatar picture and the voice that we generated using ElevenLabs. D-ID will use advanced computer vision and NLP techniques to create a video of our AI avatar speaking with a realistic voice.
+
+![D-ID Create Video _Example]({{ site.baseurl }}images/create-personal-animated-ai-avatar/D-ID_Create_Video_Example.jpg)
+
+*Figure. Use D-ID to upload the generated audio file, and add the custom avatar image to generate video*
+
+### Process of Video Generation Explained
 The process of combining an image with a voice to create a realistic video involves several technical steps:
 
 **Step 1: Face detection and alignment** - D-ID first detects the face in the input image and aligns it with a neutral position. The tool uses facial landmark detection algorithms to accurately identify and locate key facial features, such as the eyes, nose, and mouth, which are essential for generating realistic facial movements during speech.
@@ -128,6 +128,7 @@ The process of combining an image with a voice to create a realistic video invol
 
 D-ID uses a combination of sophisticated AI algorithms and techniques to generate realistic videos of people speaking based on images and voices. The tool can be used for a wide range of applications, such as creating personalized video messages, generating avatars for virtual assistants, or enhancing video conferencing experiences.
 
+--------------
 ## Animated Chat Bot Design
 
 If we want to design a Chat Bot that combines the techniques of generating an avatar and a voice to interact with users can be achieved through a system design that includes the following components:
