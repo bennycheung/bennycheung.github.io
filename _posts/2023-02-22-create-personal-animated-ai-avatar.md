@@ -49,11 +49,38 @@ To learn how to train a personal model for Stable Diffusion, read our previous p
 
 To generate your personal avatar picture, start by building a personal embedding described in our previous post on [Dreambooth Training for Personal Embedding](https://bennycheung.github.io/dreambooth-training-for-personal-embedding). You can choose any combination of parameters that you like, depending on the kind of avatar that you want to create. Once you have chosen your parameters, run Stable Diffusion to generate your avatar picture.
 
+Prompt: `bennycheung` person is the token of our personal embedding model
+```
+bennycheung person as a fantasy character, ultra realistic, intricate, elegant,
+highly detailed, 8k, digital painting, detailed background, trending on artstation,
+smooth, sharp focus, illustration, in the style of wlop, greg rutkowski
+```
+
+Negative Prompt: that's right, we need to tell a lot to Stable Diffusion NOT to do!
+```
+(((wrinkle))), bread, hat, disfigured, kitsch, ugly, oversaturated, grain,
+low-res, Deformed, burry, bad anatomy, disfigured, poorly drawn face, mutation,
+mutated, extra limb, ugly, poorly drawn hands, missing limb, blurry, floating limbs,
+disconnected limbs, malformed hands, bur, out of focus, long neck, long body, ugly,
+disgusting, poorly drawn, childish, mutilated, mangled, old, surreal, text, blurry,
+b&w, monochrome, conjoined twins, multiple heads, extra legs, extra arms,
+fashion photos (collage:1.25), meme, deformed, elongated, twisted, fingers,
+strabismus, heterochromia, closed eyes, blurred, watermark, wedding, group
+```
+
+![Stable Diffusion Create Avatar Example]({{ site.baseurl }}images/create-personal-animated-ai-avatar/Stable_Diffusion_Generate_Avatar_Example_x700.jpg)
+
+*Figure. Use Stable Diffusion (via AUTOMATIC1111 Web UI) to generate the avatar image from a prompt.*
+
 ### Step 2: Generating text using ChatGPT
 
 [ChatGPT](https://chat.openai.com/chat) is a powerful natural language processing (NLP) tool that can be used to generate text based on a given prompt. To use ChatGPT, you need to provide it with a prompt, and it will generate a piece of text that follows from that prompt.
 
 To generate the script for your AI avatar, start by choosing a prompt that will help you to create the kind of dialogue that you want your avatar to have. For example, you might choose a prompt like "Introduce yourself" or "Tell me about your interests." Once you have chosen your prompt, run ChatGPT to generate the script.
+
+![ChatGTP Write Script Example]({{ site.baseurl }}images/create-personal-animated-ai-avatar/ChatGTP_Write_Script_Example.jpg)
+
+*Figure. Use ChatGTP to write a script for the avatar speech.*
 
 ### Step 3: Generating a voice using ElevenLabs
 
@@ -61,12 +88,19 @@ To generate the script for your AI avatar, start by choosing a prompt that will 
 
 To generate the voice for your AI avatar, start by providing ElevenLabs with the script that we generated using ChatGPT. ElevenLabs will use advanced deep learning techniques to generate a voice that matches the script.
 
+![ElevenLabs Speech Synthesis Example]({{ site.baseurl }}images/create-personal-animated-ai-avatar/ElevenLabs_Speech_Synthesis_Example.jpg)
+
+*Figure. Use ElevenLabs to set the voice and the input script, to generate a MP3 audio file*
+
 ### Step 4: Combining your avatar picture and generated voice using D-ID
 
 [D-ID](https://studio.d-id.com/) is a sophisticated AI tool that can be used to combine an image with a voice to create a realistic video of a person speaking. To use D-ID, we need to provide it with an image and a voice, and it will generate a video of the person in the image speaking with the given voice. We can rely on D-ID providing some free credits to get started.
 
 To create a personal AI avatar, start by providing D-ID with your personal avatar picture and the voice that we generated using ElevenLabs. D-ID will use advanced computer vision and NLP techniques to create a video of our AI avatar speaking with a realistic voice.
 
+![D-ID Create Video _Example]({{ site.baseurl }}images/create-personal-animated-ai-avatar/D-ID_Create_Video_Example.jpg)
+
+*Figure. Use D-ID to upload the generated audio file, and add the custom avatar image to generate video*
 
 ## Process of Voice Generation Explained
 ElevenLabs is a cutting-edge AI tool that uses deep learning techniques to generate realistic voices from input text. The process of generating a realistic voice involves several technical steps:
