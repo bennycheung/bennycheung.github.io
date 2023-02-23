@@ -28,17 +28,20 @@ The potential reasons why we might want to create an AI avatar include:
 - Social media: An AI avatar can serve as a unique and eye-catching profile picture on social media platforms.
 - Virtual assistants: We could create an avatar to serve as a virtual assistant, which could respond to voice commands and help user with tasks such as scheduling appointments or customer supports.
 
-![Imaginery AI Avatar]({{ site.baseurl }}images/create-personal-animated-ai-avatar/AI_Avatar.jpg)
-    
 In this article, we will walk through the process of creating a personal AI avatar using bleeding edge AI tools, such as Stable Diffusion, ChatGPT, ElevenLabs, and D-ID.
 
 ![Animated AI Avartar Creation Process]({{ site.baseurl }}images/create-personal-animated-ai-avatar/Avatar_AI_Animation_Process.jpg)
 *Figure. Illustrated the animated AI avatar creation workflow. (1) Generating avatar picture using Stable Diffusion (2) Generating text using ChatGPT (3) Generating a voice using ElevenLabs (4) Combining your avatar picture and generated voice using D-ID.*
 
-
 > For example, See my personal AI avatar in action: [Animated Personal AI Avatar Demo](https://youtube.com/shorts/OVKUMkwTTdI)
 
 {% include youtubePlayer.html id="OVKUMkwTTdI" %}
+
+*Figure. Demo of an animated personal AI avatar.*
+
+To learn how to train a personal model for Stable Diffusion, read our previous posts on the topics:
+- [Stable Diffusion Training for Personal Embedding](https://bennycheung.github.io/stable-diffusion-training-for-embeddings)
+- [Dreambooth Training for Personal Embedding](https://bennycheung.github.io/dreambooth-training-for-personal-embedding) 
 
 ### Step 1: Generating an avatar picture using Stable Diffusion
 
@@ -179,7 +182,13 @@ We have seen that AI avatars and chatbots have enormous potential to revolutioni
 - Prompt Engineering, [Create Your Own AI Animated Avatar: A Step-by-Step Guide](https://www.youtube.com/watch?v=V2efVSXSlqc&ab_channel=PromptEngineering), Youtube, Feb 2023
   - we learned how to create AI avatar with cutting-edge AI tools and techniques here. The AI avatar was created using MidJourney, ChatGPT, ElevenLabs, and D-ID.
 
+### Other Blog Posts
+
+- Benny Cheung, [Stable Diffusion Training for Personal Embedding](https://bennycheung.github.io/stable-diffusion-training-for-embeddings), Benny's Mind Hack, Nov 2022.
+- Benny Cheung, [Dreambooth Training for Personal Embedding](https://bennycheung.github.io/dreambooth-training-for-personal-embedding), Benny's Mind Hack, Nov 2022.
+
 ### AI Tools
+
 - ChatGPT for script creation: [ChatGPT](https://chat.openai.com/chat)
 - Stable Diffusion for image generation using Automatic1111: [Stable Diffusion](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
 - Elevenlabs for audio generation: [Elevenlabs](https://beta.elevenlabs.io)
