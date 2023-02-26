@@ -93,7 +93,7 @@ To generate the voice for your AI avatar, start by providing ElevenLabs with the
 *Figure. Use ElevenLabs to set the voice and the input script, to generate a MP3 audio file*
 
 #### Process of Voice Generation Explained
-ElevenLabs is a cutting-edge AI tool that uses deep learning techniques to generate realistic voices from input text. The process of generating a realistic voice involves several technical steps:
+The process of generating a realistic voice involves several technical steps:
 
 **Step 1: Text analysis** - The input text is first analyzed using natural language processing (NLP) algorithms to extract key features such as syntax, semantics, and prosody. This analysis helps to understand the structure and content of the text, including the tone, style, and intended emotion.
 
