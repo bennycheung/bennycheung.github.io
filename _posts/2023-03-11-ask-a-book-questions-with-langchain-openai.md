@@ -28,15 +28,15 @@ A very important observation by Tim Ferriss in [The Art of Asking the Right Ques
 
 > "_Very often the dumb question that is sitting right there that no one seems to be asking is the smartest question you can ask, ... not only is it the smartest, most incisive, but if you want to ask it and you're reasonably smart, I guarantee you there are other people who want to ask it but are just embarrassed to do so._"
 
-Imagine that we are having a non-judgmental AI to assist in the question and answer process can be incredibly helpful, especially when it comes to exploring and applying the ideas presented in a book. An AI can provide unbiased and objective insights into the book's themes and concepts, and help you to understand the author's perspective on the subject matter. With an AI's assistance, you can ask deeper and more meaningful questions, and receive thoughtful and informative responses that can help you to connect the ideas in the book to your own experiences and beliefs. This can lead to a more enriching before and after the reading experience.
+Imagine that we are having a non-judgmental AI tutor to assist in the question and answer process can be incredibly helpful, especially when it comes to exploring and applying the ideas presented in a book. An AI can provide unbiased and objective insights into the book's themes and concepts, and help you to understand the author's perspective on the subject matter. With an AI's assistance, you can ask deeper and more meaningful questions, and receive thoughtful and informative responses that can help you to connect the ideas in the book to your own experiences and beliefs. This can lead to a more enriching before and after the reading experience.
 
 ![Ask a Book Questions AI Tutor]({{ site.baseurl }}images/ask-a-book-questions-with-langchain-openai/Ask_Book_Questions_Steampunk_Tutor.jpg)
 
-*Figure. Imagine that we are having a non-judgemental tutor to assist in the question and answer to a book. (credit: artwork by Stable Diffusion)*
+*Figure. Imagine that we are having a non-judgemental AI tutor to assist in the question and answer to a book. (credit: artwork by Stable Diffusion)*
 
 Our previous attempts on ["Synthesis of Neural to Symbolic Knowledge for NLP System"](https://bennycheung.github.io/synthesis-neural-symbolic-knowledge-nlp) (in 2020) have been surpassed by this work, which was previously used NLP with deep neural network, demonstrated the ability to synthesize neural to symbolic knowledge from any document.
 
-As the $4^{th}$ industry revolutionary AI has arrived, we are indeed fortunate to live in a time when AI technologies, such as the [Large Language Model (LLM) provided by OpenAI](https://openai.com/product) and the [open-source LLM tools by LangChain](https://langchain.readthedocs.io/en/latest/), have advanced to a point where we can easily construct a system that is capable of answering questions and engaging in discussions about books and other forms of literature. AI systems today are designed to understand natural language, interpret and analyze text, and provide intelligent and insightful responses to questions.
+As the $4^{th}$ industry revolution AI has arrived, we live in a time when AI technologies, such as the [Large Language Model (LLM) provided by OpenAI](https://openai.com/product) and the [open-source LLM tools by LangChain](https://langchain.readthedocs.io/en/latest/), have advanced to a point where we can easily construct a system that is capable of answering questions and engaging in discussions about books and other forms of literature. AI systems today are designed to understand natural language, interpret and analyze text, and provide intelligent and insightful responses to questions with minimal cost.
 
 
 ## How to Build a AI Question and Answering System?
@@ -44,7 +44,7 @@ In this article, we take the practical approach by building a question and answe
 
 ![Ask a Book Questions Workflow]({{ site.baseurl }}images/ask-a-book-questions-with-langchain-openai/Ask_Book_Questions_Workflow.jpg)
 
-*Figure. In this article, we shall walkthrough the process of (1) Extract the Book Content, (2) Split Book into Smaller Chunks, (3) Build Semantic Index and (4) Ask a Book Questions.*
+*Figure. In this article, we shall walkthrough the process of (1) Extract the Book Content, (2) Split Book into Smaller Chunks, (3) Build Semantic Index and (4) Ask a Book Questions (the red arrows show the questioning flow and the green arrows show the answering flow).*
 
 ### Selected the Book
 We are using an interesting and free online book: [60 Leaders on Artificial Intelligence](https://www.60leaders.com/_files/ugd/e7ba2f_e965e98b5ab3423f8b131d1a120dc1bf.pdf?index=true), to illustrate the whole process. This is a book in PDF format and contains 236 pages including plenty of graphics. If we can automatically extract the unstructed text and build an index, subsequently to query and summarize from the content.
@@ -221,7 +221,7 @@ chain.run(input_documents=docs, question=query)
 
 We shall ask our question,
 
-> How to explain AI to a 5 years old?
+> _How to explain AI to a 5 years old?_
 
 The QA chain will take the ranked result documents, and pass it to OpenAI to summarize exactly from _the book content only_! Finally, we can get the answer that is easy to comprehend without reading the whole book.
 
@@ -234,7 +234,7 @@ For example, AI can help a computer recognize people, objects, animals, or place
 
 More summarization questions on the book,
 
-> Who are the AI leaders in the book?
+> _Who are the AI leaders in the book?_
 
 ```
 The book features 60 leaders from a variety of backgrounds and standpoints,
@@ -244,7 +244,7 @@ Harry Mamangakis, Agnis Stibe, Richard Benjamins, Jair Ribeiro, Jordi Guitart, P
 Dr. Sunil Kumar Vuppala, and John Thompson.
 ```
 
-> What is the most unusal ideas that can disrupt the society?
+> _What is the most unusal ideas that can disrupt the society?_
 
 ```
 The idea of digitally modified citizens and intelligently-controlled societies,
