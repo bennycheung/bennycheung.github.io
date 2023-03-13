@@ -36,7 +36,7 @@ Imagine that we are having a non-judgmental AI tutor to assist in the question a
 
 Our previous attempts on ["Synthesis of Neural to Symbolic Knowledge for NLP System"](https://bennycheung.github.io/synthesis-neural-symbolic-knowledge-nlp) (in 2020) have been surpassed by this work, which was previously used NLP with deep neural network, demonstrated the ability to synthesize neural to symbolic knowledge from any document.
 
-As the $4^{th}$ industry revolution AI has arrived, we live in a time when AI technologies, such as the [Large Language Model (LLM) provided by OpenAI](https://openai.com/product) and the [open-source LLM tools by LangChain](https://langchain.readthedocs.io/en/latest/), have advanced to a point where we can easily construct a system that is capable of answering questions and engaging in discussions about books and other forms of literature. AI systems today are designed to understand natural language, interpret and analyze text, and provide intelligent and insightful responses to questions with minimal cost.
+As the _4th Industrial Revolution_ has arrived, we live in a time when AI technologies, such as the [Large Language Model (LLM) provided by OpenAI](https://openai.com/product) and the [open-source LLM tools by LangChain](https://langchain.readthedocs.io/en/latest/), have advanced to a point where we can easily construct a system that is capable of answering questions and engaging in discussions about books and other forms of literature. AI systems today are designed to understand natural language, interpret and analyze text, and provide intelligent and insightful responses to questions with minimal cost.
 
 
 ## How to Build a AI Question and Answering System?
