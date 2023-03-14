@@ -24,23 +24,18 @@ published: true
 Reading a book can be a fulfilling experience, transporting you to new worlds, introducing you to new characters, and exposing you to new concepts and ideas. However, once you've finished reading, you might find yourself with a lot of questions that you'd like to discuss. Perhaps you don't have anyone nearby who has read the book or is interested in discussing it, or maybe you simply want to explore the book on your own terms. In this situation, you might be left wondering how long it will take to fully digest the book and answer your own questions. Without a tutor or friends around to provide guidance and discussion, you may need to take a more thoughtful and introspective approach to your reading.
 <!--excerpt.end-->
 
-A very important observation by Tim Ferriss in [The Art of Asking the Right Questions](https://www.youtube.com/watch?v=tYnGiWlwcj4),
+Mortimer Adler famously advised in his classic book ["How to Read a Book"](https://www.amazon.ca/How-Read-Book-Mortimer-Adler/dp/0671212095),
 
-> "_Very often the dumb question that is sitting right there that no one seems to be asking is the smartest question you can ask, ... not only is it the smartest, most incisive, but if you want to ask it and you're reasonably smart, I guarantee you there are other people who want to ask it but are just embarrassed to do so._"
-
-Imagine that we are having a non-judgmental AI tutor to assist in the question and answer process can be incredibly helpful, especially when it comes to exploring and applying the ideas presented in a book. An AI can provide unbiased and objective insights into the book's themes and concepts, and help you to understand the author's perspective on the subject matter. With an AI's assistance, you can ask deeper and more meaningful questions, and receive thoughtful and informative responses that can help you to connect the ideas in the book to your own experiences and beliefs. This can lead to a more enriching before and after the reading experience.
+> "_Reading a book should be a conversation between you and the author._"
 
 ![Ask a Book Questions AI Tutor]({{ site.baseurl }}images/ask-a-book-questions-with-langchain-openai/Ask_Book_Questions_Steampunk_Tutor.jpg)
 
 *Figure. Imagine that we are having a non-judgemental AI tutor to assist in the question and answer to a book. (credit: artwork by Stable Diffusion)*
 
-Our previous attempts on ["Synthesis of Neural to Symbolic Knowledge for NLP System"](https://bennycheung.github.io/synthesis-neural-symbolic-knowledge-nlp) (in 2020) have been surpassed by this work, which was previously used NLP with deep neural network, demonstrated the ability to synthesize neural to symbolic knowledge from any document.
-
-As the _4th Industrial Revolution_ has arrived, we live in a time when AI technologies, such as the [Large Language Model (LLM) provided by OpenAI](https://openai.com/product) and the [open-source LLM tools by LangChain](https://langchain.readthedocs.io/en/latest/), have advanced to a point where we can easily construct a system that is capable of answering questions and engaging in discussions about books and other forms of literature. AI systems today are designed to understand natural language, interpret and analyze text, and provide intelligent and insightful responses to questions with minimal cost.
-
+Imagine that we are having a non-judgmental AI tutor to assist in the question and answer process can be incredibly helpful, especially when it comes to exploring and applying the ideas presented in a book. An AI can provide unbiased and objective insights into the book's themes and concepts, and help you to understand the author's perspective on the subject matter. With an AI's assistance, you can ask deeper and more meaningful questions, and receive thoughtful and informative responses that can help you to connect the ideas in the book to your own experiences and beliefs. This can lead to a more enriching before and after the reading experience.
 
 ## How to Build a AI Question and Answering System?
-In this article, we take the practical approach by building a question and answering system. In the process, we explain how to perform semantic search and query on a book using [OpenAI](https://github.com/openai/openai-python), [LangChain](https://langchain.readthedocs.io/en/latest/), and [Pinecone](https://www.pinecone.io/) - an external vector store. The book is broken down into smaller documents, and OpenAI embeddings are used to convert them into vectors, which are then stored externally using Pinecone.
+In this article, we take the practical approach of building a question and answering system. In the process, we explain how to perform semantic search and query on a book using [OpenAI](https://github.com/openai/openai-python), [LangChain](https://langchain.readthedocs.io/en/latest/), and [Pinecone](https://www.pinecone.io/) - an external vector store. The book is broken down into smaller documents, and OpenAI embeddings are used to convert them into vectors, which are then stored externally using Pinecone.
 
 ![Ask a Book Questions Workflow]({{ site.baseurl }}images/ask-a-book-questions-with-langchain-openai/Ask_Book_Questions_Workflow.jpg)
 
@@ -279,11 +274,10 @@ With our extensive knowledge and experience in this domain, we provide tailored 
 - Matthew MacFarquhar, [A.I. Wonderland: SparkNotes.ai with Langchain and OpenAI](https://blog.devgenius.io/a-i-wonderland-sparknotes-ai-with-langchain-and-openai-b4d3799d0173), Medium, Mar 2023.
   - Creating an automatic SparkNotes bot which will answer our questions using only the text provided and will not make up things not found in the text. Alternatively, it used an in-memory Chroma DB for the index; that's mean it was not persisted and needed to rebuild everytime.
 
+- Adler Mortimer and Charles Van Doren, [How to Read a Book](https://www.amazon.ca/How-Read-Book-Mortimer-Adler/dp/0671212095), Touchstone, Revised and Updated edition, Aug 1972, isbn: 978-0671212094.
+
 - Big Think, [The art of asking the right questions](https://www.youtube.com/watch?v=tYnGiWlwcj4), video, Sep 2020.
   - The difference between the right and wrong questions is not simply in the level of difficulty. In this video, geobiologist Hope Jahren, journalist Warren Berger, experimental philosopher Jonathon Keats, and investor Tim Ferriss discuss the power of creativity and the merit in asking naive and even "dumb" questions.
-
-- Klaus Schwab, [The Fourth Industrial Revolution](https://www.amazon.ca/Fourth-Industrial-Revolution-Klaus-Schwab/dp/1524758868), World Economic Forum, 2017, isbn: 978-1-944835-01-9.
-  - World-renowned economist Klaus Schwab, Founder and Executive Chairman of the World Economic Forum, explains that we have an opportunity to shape the fourth industrial revolu­tion, which will fundamentally alter how we live and work.
 
 - Online Book, [60 Leaders on Artificial Intelligence](https://www.60leaders.com/_files/ugd/e7ba2f_e965e98b5ab3423f8b131d1a120dc1bf.pdf?index=true), 2022.
 
