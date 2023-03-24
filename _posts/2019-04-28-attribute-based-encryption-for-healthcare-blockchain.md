@@ -18,7 +18,7 @@ image: images/attribute-based-encryption-for-healthcare-blockchain/cover2x.jpg
 images:
   cover: images/attribute-based-encryption-for-healthcare-blockchain/cover.jpg
   header: images/attribute-based-encryption-for-healthcare-blockchain/header.jpg
-published: false
+published: true
 ---
 <!--excerpt.start-->
 It's no surprise that one of the greatest concerns for a healthcare provider is data security. One can argue that the data ownership is the most important asset in this information age. Healthcare patients are aware of the value of their personal information.
@@ -40,16 +40,20 @@ As we explore the concept and practice of *attribute-based encryption for health
 we'll go through the following topics from a system perspective, simplifying the mathematical aspects.
 Of course, for the mathematically inclined readers, the original papers are listed in the [References](#References) section for a deeper understanding.
 
-* [Personal Health Record (PHR) Security](#PHRSecurity)
-* [Attribute-based Encryption](#ABE)
-    * [Identity and Attributes](#Identity)
-    * [Ciphertext-Policy ABE](#CP-ABE)
-    * [CP-ABE Algorithms](#CP-ABE-Algo)
-    * [ABE on FHIR Patient Resource](#ABE-FHIR)
-* [ABE Experiment with Python](#ABE-Experiment)
-    * [Install Pre-requisites](#Pre-requisites)
-    * [ABE with Python](#ABE-Python)
-* [References](#References)
+- [ Personal Health Record (PHR) Security](#-personal-health-record-phr-security)
+- [ Attribute-based Encryption (ABE)](#-attribute-based-encryption-abe)
+  - [ Identity and Attributes](#-identity-and-attributes)
+  - [ Ciphertext-Policy ABE](#-ciphertext-policy-abe)
+  - [ CP-ABE Algorithms](#-cp-abe-algorithms)
+    - [CP-ABE Encryption Process](#cp-abe-encryption-process)
+    - [CP-ABE Encryption Sequence](#cp-abe-encryption-sequence)
+  - [ ABE on FHIR Patient Resource](#-abe-on-fhir-patient-resource)
+- [ ABE Experiment with Python](#-abe-experiment-with-python)
+  - [ Install Pre-requisites](#-install-pre-requisites)
+    - [PBC](#pbc)
+    - [Charm](#charm)
+  - [ ABE with Python](#-abe-with-python)
+- [ References](#-references)
 
 ## <a name='PHRSecurity'></a> Personal Health Record (PHR) Security
 To start our journey into this new sharing convention,
