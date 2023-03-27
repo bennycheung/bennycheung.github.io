@@ -24,7 +24,7 @@ Spatial understanding is indeed an important aspect of achieving Artificial Gene
 
 ![AGI_Spatial_Understanding_SD_Illustration_01]({{ site.baseurl }}images/spatial-reasoning-in-agi/AGI_Spatial_Understanding_SD_Illustration_01.jpg)
 
-_Figure. Create an illustration inspired by the artistic styles of M.C. Escher, Salvador Dalí, and Wassily Kandinsky that represents the concept of AGI (Artificial General Intelligence) requiring spatial reasoning and cognitive abilities. (image credit: Stable Diffusion)._
+_Figure. An illustration inspired by the artistic styles of M.C. Escher, Salvador Dalí, and Wassily Kandinsky that represents the concept of AGI (Artificial General Intelligence) requiring spatial reasoning and cognitive abilities. (image credit: Stable Diffusion)._
 
 ### Why Spatial Reasoning?
 
@@ -48,7 +48,7 @@ As we progress towards achieving Artificial General Intelligence (AGI) using Lar
 
 ![AGI_Spatial_Understanding_SD_Illustration_02]({{ site.baseurl }}images/spatial-reasoning-in-agi/AGI_Spatial_Understanding_SD_Illustration_02.jpg)
 
-_Figure. Depict an advanced AI system engaging with a dynamic environment filled with spatial challenges inspired by M.C. Escher, Salvador Dalí, and Wassily Kandinsky's styles, like fragmented landscapes, impossible structures, and dreamlike scenes. Include elements that demonstrate cognitive processes, such as problem-solving, learning, and adaptation, while integrating the visual languages of these famous artists (image credit: Stable Diffusion)._
+_Figure. Depict an advanced AI system engaging with a dynamic environment filled with spatial challenges inspired by M.C. Escher, Salvador Dalí, and Wassily Kandinsky's styles, like fragmented landscapes, impossible structures, and dreamlike scenes (image credit: Stable Diffusion)._
 
 ### Philosopher Thoughts on Spatial Cognition & Reasoning
 
@@ -103,7 +103,7 @@ AGI experts emphasize the importance of spatial reasoning for achieving Artifici
 
 ![AGI_Spatial_Cognitive_Transfer_SD_Illustration_01]({{ site.baseurl }}images/spatial-reasoning-in-agi/AGI_Spatial_Cognitive_Transfer_SD_Illustration_01.jpg)
 
-_Figure. Depict the spatial cognitive and spatial reasoning abilities transfer from human to AI, inspired by M.C. Escher, Salvador Dalí, and Wassily Kandinsky's styles, without spatial ability AGI will not be completed (image credit: Stable Diffusion)._
+_Figure. Illustrated the spatial cognitive and spatial reasoning abilities transfer from human to AI, inspired by M.C. Escher, Salvador Dalí, and Wassily Kandinsky's styles, without spatial ability AGI will not be completed (image credit: Stable Diffusion)._
 
 While there is no existing AI system that perfectly embodies all the principles outlined from the philosophical works on spatial reasoning, there are several AI projects and systems that incorporate some of these principles to varying degrees. Some examples include:
 
