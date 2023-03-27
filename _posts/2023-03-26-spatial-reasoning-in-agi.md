@@ -160,11 +160,11 @@ One of the advantages of fine-tuning is that it can improve the model's performa
 
 A model architecture that combines language processing with visual attention mechanisms could better integrate verbal and visual inputs.
 
-One example of a novel architecture that combines language processing with visual attention mechanisms is the VisualBERT model. VisualBERT is based on the BERT architecture, which is a popular pre-trained language model that is trained on a large corpus of text data. VisualBERT extends the BERT architecture to incorporate visual attention mechanisms, allowing the model to selectively attend to relevant parts of the input image.
+One example of a novel architecture that combines language processing with visual attention mechanisms is the [VisualBERT](https://arxiv.org/abs/1908.03557) model. VisualBERT is based on the BERT architecture, which is a popular pre-trained language model that is trained on a large corpus of text data. VisualBERT extends the BERT architecture to incorporate visual attention mechanisms, allowing the model to selectively attend to relevant parts of the input image.
 
 The visual attention mechanisms in VisualBERT operate at different levels of granularity, allowing the model to attend to both high-level features of the image, such as the overall scene, as well as lower-level features, such as specific objects or regions of interest. This enables the model to reason about spatial relationships between objects at different scales. 
 
-Another example of a novel architecture that combines language processing with visual attention mechanisms is the Visual Question Answering (VQA) model. The VQA model is designed to answer questions about an image by attending to relevant parts of the image and generating natural language descriptions of those parts.
+Another example of a novel architecture that combines language processing with visual attention mechanisms is the [Visual Question Answering (VQA)](https://arxiv.org/abs/1903.00366) model. The VQA model is designed to answer questions about an image by attending to relevant parts of the image and generating natural language descriptions of those parts.
 
 ### Concluding Remarks
 
