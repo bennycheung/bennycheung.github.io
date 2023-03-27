@@ -114,6 +114,8 @@ While there is no existing AI system that perfectly embodies all the principles 
 
 Although these AI systems and projects incorporate some of the outlined principles and have made significant progress, they’re still specialized and limited in their capabilities.
 
+Alternatively, one might wonder why not focus on directly enhancing the spatial reasoning abilities on LLMs. We will delve into the specifics of this approach in the subsequent section.
+
 ### Enhancing Spatial Reasoning Capabilities in LLMs
 
 Here are some possible strategies of AGI’s spatial reasoning capabilities being attained through enhancing the proficiency of large language models:
