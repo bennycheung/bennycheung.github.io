@@ -3,7 +3,7 @@ layout: post
 title: Enhancing Biblical Study with ChatGPT
 date: 2023-03-28 12:00:00.000000000 -00:00
 permalink: enhancing-biblical-study-with-chatgpt
-author: Benny Cheung
+author: Benny Cheung & Clara Cheung
 artwork:
   author: Stable Diffusion AI
 tags:
