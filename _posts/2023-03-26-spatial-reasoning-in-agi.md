@@ -29,25 +29,27 @@ LLMs excel at processing and generating text on a vast scale; however, they can 
 
 _Figure. An illustration inspired by the artistic styles of M.C. Escher, Salvador Dalí, and Wassily Kandinsky that represents the concept of AGI (Artificial General Intelligence) requiring spatial reasoning and cognitive abilities. (image credit: Stable Diffusion)._
 
+In this article, we express our dissatisfaction with existing AI systems' limitations in AGI and propose a broader perspective that incorporates philosophical ideas. By examining the works of philosophers who have studied human cognition and spatial reasoning, we aim to explore new research directions that may bring us closer to the AGI goal. We argue that understanding the underlying principles of human intelligence and incorporating these insights into AI systems could lead to models with improved versatility, adaptability, and spatial reasoning capabilities, ultimately advancing the pursuit of AGI.
+
 ### Why Spatial Reasoning?
 
-Spatial reasoning is a subfield of artificial intelligence that enables a computer to comprehend its surroundings based on its position. This involves identifying objects within the environment and then skillfully manipulating them in a practical manner. Applications of spatial reasoning include navigation, object manipulation, and environmental interpretation. It’s currently employed in areas such as robotics and gaming.
+Spatial reasoning is a subfield of artificial intelligence that enables a computer to comprehend its surroundings based on its position. This involves identifying objects within the environment and then skillfully manipulating them in a practical manner. Applications of spatial reasoning include navigation, object manipulation, and environmental interpretation. It’s currently employed in areas such as GIS, robotics and gaming.
 
-A puzzle that requires spatial reasoning skills might be easily solvable for humans but pose a significant challenge for machines. This type of puzzle could involve manipulating objects, visualizing rotations or transformations, or navigating through a complex environment, all of which rely on our innate ability to comprehend spatial relationships. While humans can often intuitively grasp these concepts, machines may struggle to find an effective approach to tackle these problems without specifically designed algorithms or methods that can handle spatial information.
+To understand personally, imaging a simple puzzle (in the illustration) that requires spatial reasoning skills might be easily solvable by us. We are able to answer the questions of (1) is there a solution to fit all the loose pieces in the space? and (2) how can we pack all the pieces in the space optimally?
+
+Without a human-like innate ability to comprehend spatial relationship, the puzzle poses a significant challenge for machines. This type of puzzle could involve manipulating objects, visualizing rotations or transformations, or navigating through a complex environment. While humans can often intuitively grasp these concepts, machines may struggle to find an effective approach to tackle these problems without specifically designed representation, algorithms or methods that can handle spatial information.
 
 ![Spatial_Reasoning_Experimental_Universe]({{ site.baseurl }}images/spatial-reasoning-in-agi/Spatial_Reasoning_Experimental_Universe.jpg)
 
 *Figure. Illustrated an example spatial reasoning domain. Questions to be answered (1) is there a solution? (2) how can we pack the space?*
 
-Developing spatial reasoning algorithms presents several challenges, such as managing high-dimensional data, dealing with noisy sensor inputs, and achieving real-time performance. Furthermore, as spatial reasoning is an emerging field, substantial research is required to devise more reliable and efficient algorithms.
+To engineering, when we are developing spatial reasoning algorithms presents several challenges, such as managing high-dimensional data, dealing with noisy sensor inputs, and achieving real-time performance. The spatial reasoning research is required to devise more reliable and efficient representation and algorithms that is suitable to be used by the machine.
 
-Spatial data enables us to comprehend our surroundings and make informed predictions about future outcomes. This data can be classified into various types, including positional data, attribute data, and topology. Features serve as the foundation for spatial analysis and can be transformed into data through feature extraction. The most prevalent feature types are points, lines, and polygons. Spatial data has a wide range of applications, encompassing spatial analysis and data science, among others.
-
-Before addressing the technical challenges of developing a spatial reasoning system, it's crucial to explore the philosophical insights that can inform its design. In the next section, we'll examine the various philosophers whose work sheds light on the nature of human spatial reasoning and cognition. By understanding the philosophical underpinnings of spatial reasoning, we can better identify the key considerations that should inform the development of effective AGI systems.
+The development of AI systems with enhanced spatial reasoning capabilities is important to comprehend their surroundings and make informed predictions about future outcomes. However, before diving into the technical challenges associated with the engineering of such a spatial reasoning system, it is essential to explore the philosophical insights that can inform its design. In the next section, we will investigate the contributions of various philosophers, whose work contributed to the nature of human spatial reasoning and cognition. By standing on the philosophical foundations of spatial reasoning, we can more effectively identify the key considerations that should guide the development of advanced AGI systems.
 
 ## Philosophy and Spatial Reasoning
 
-It’s essential to understand our cognitive abilities, which allow us to perceive, process, and act upon spatial information. Although philosophy may not directly involve engineering, its transformative ideas can significantly influence the development principles of AGI systems that exhibit human-like spatial reasoning capabilities.
+It’s essential to understand our cognitive abilities, which allow us to perceive, process, and act upon spatial information. Although philosophy may not directly involve engineering, its transformative ideas can influence the development principles of AGI systems that exhibit human-like spatial reasoning capabilities.
 
 ![AGI_Spatial_Understanding_SD_Illustration_02]({{ site.baseurl }}images/spatial-reasoning-in-agi/AGI_Spatial_Understanding_SD_Illustration_02.jpg)
 
@@ -56,7 +58,7 @@ _Figure. Inspired by M.C. Escher, Salvador Dalí, and Wassily Kandinsky’s styl
 ### Philosopher Thoughts on Spatial Cognition & Reasoning
 
 Here’s some examples of notable philosophers that have written about spatial cognition and reasoning:
-> see References for the philosopher works.
+> see References for their philosopher works.
 
 ![Philosopher_on_Spatial_Cognition_and_Reasoning_annotated]({{ site.baseurl }}images/spatial-reasoning-in-agi/Philosopher_on_Spatial_Cognition_and_Reasoning_annotated.jpg)
 
@@ -112,9 +114,7 @@ While there is no existing AI system that perfectly embodies all the principles 
 
 - Multimodal perception: AI systems that incorporate multimodal perception are designed to process and integrate sensory information from different sources, such as vision, audition, and touch. These systems can fuse information from multiple modalities to create a more comprehensive understanding of the environment. Examples include AI systems for autonomous vehicles that combine visual data from cameras with data from LIDAR and other sensors.
 
-Although these AI systems and projects incorporate some of the outlined principles and have made significant progress, they’re still specialized and limited in their capabilities.
-
-Alternatively, one might wonder why not focus on directly enhancing the spatial reasoning abilities on LLMs. We will delve into the specifics of this approach in the subsequent section.
+Although these AI systems and projects incorporate some of the outlined principles and have made significant progress, they’re still specialized and limited in their capabilities. Alternatively, we might wonder why not focus on directly enhancing the spatial reasoning abilities on LLMs. We will delve into the specifics of this approach in the subsequent section.
 
 ### Enhancing Spatial Reasoning Capabilities in LLMs
 
@@ -178,7 +178,7 @@ Drawing from the insights of philosophers who have contributed to our understand
 4.  Incorporate perception and experience by designing AGI systems that can process and integrate sensory information from various sources, enabling a comprehensive understanding of the environment.
 5.  Foster adaptability and dynamism, equipping AGI systems to handle changing environments and evolving spatial relationships.
 
-Although no current AI system, including LLM, fully encompasses all of these principles, numerous projects and systems have advanced by adopting some of them. These endeavours showcase the promise of integrating spatial reasoning abilities into AI systems, ultimately moving us nearer to the objective of artificial general intelligence. In the future, we shall be developing more articles that delve into the technical aspects of building such a system.
+Although no current AI system, including LLM, fully encompasses all of these principles, numerous projects and systems have advanced by adopting some of them. These researches showcase the promise of integrating spatial reasoning abilities into AI systems, ultimately moving us nearer to the objective of artificial general intelligence. In the future, we shall be developing more articles that delve into the technical aspects of building such a system.
 
 ## References
 
