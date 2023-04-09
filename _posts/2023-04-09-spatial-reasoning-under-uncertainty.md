@@ -24,7 +24,7 @@ Spatial reasoning is a critical aspect of many real-world applications, includin
 
 ![Spatial_Reasoning_under_Uncertainty_Abstract_02]({{ site.baseurl }}images/spatial-reasoning-under-uncertainty/Spatial_Reasoning_under_Uncertainty_Abstract_02.jpg)
 
-_Figure. Abstract art that captured the emotional of spatial reasoning under uncertainty. (image credit: Stable Diffusion AI)_
+_Figure. Abstract art that captured the emotion of spatial reasoning under uncertainty. (image credit: Stable Diffusion AI)_
 
 Throughout the post, we will provide imaginary town of "Sensorville" as the examples to illustrate the importance of accounting for uncertainty in spatial decision-making processes. By the end of this article, you will have gained valuable insights into the methods and techniques used to navigate spatial reasoning under uncertainty and their potential applications in various domains.
 
