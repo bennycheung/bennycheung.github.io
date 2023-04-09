@@ -22,9 +22,9 @@ published: true
 Spatial reasoning is a critical aspect of many real-world applications, including urban planning, environmental monitoring, and transportation logistics. It involves the processing and interpretation of spatial data to understand and analyze the relationships between objects in a given space. Traditional GIS systems and geometric processing algorithms often assume that spatial data is precise and accurate. However, real-world spatial data is often imprecise, and incorporating this uncertainty into spatial reasoning can lead to more robust and reliable results. The ability to handle imprecise spatial data, much like human cognitive abilities, is a valuable asset in the field of spatial reasoning and analysis.
 <!--excerpt.end-->
 
-![Spatial_Reasoning_under_Uncertainty_02]({{ site.baseurl }}images/spatial-reasoning-under-uncertainty/Spatial_Reasoning_under_Uncertainty_02.jpg)
+![Spatial_Reasoning_under_Uncertainty_Abstract_02]({{ site.baseurl }}images/spatial-reasoning-under-uncertainty/Spatial_Reasoning_under_Uncertainty_Abstract_02.jpg)
 
-_Figure. Abstract art that captured the emotional stress of spatial reasoning under uncertainty. (image credit: Stable Diffusion AI)_
+_Figure. Abstract art that captured the emotional of spatial reasoning under uncertainty. (image credit: Stable Diffusion AI)_
 
 Throughout the post, we will provide imaginary town of "Sensorville" as the examples to illustrate the importance of accounting for uncertainty in spatial decision-making processes. By the end of this article, you will have gained valuable insights into the methods and techniques used to navigate spatial reasoning under uncertainty and their potential applications in various domains.
 
