@@ -7,9 +7,11 @@ author: Benny Cheung
 artwork:
   author: Stable Diffusion AI
 tags:
-- AI
-- Philosophy
 - Spatial Reasoning
+- Philosophy
+- Mereology
+- Mereotopology
+- AI
 category: post
 comments: true
 image: images/spatial-reasoning-under-uncertainty/cover.jpg
