@@ -16,10 +16,10 @@ crumbs: false
 
 <img src="" style="width:100%; border:2px solid black;">
 
-Benny is a full stack architect and software engineer with more than 30 years of programming and application development experience. Don't hesitate to [contact us](btscheung@gmail.com). Remember, asking questions is always important and welcome.
+Benny is an accomplished full-stack architect and software engineer with over three decades of experience in programming and application development. He has a proven track record of delivering profitable commercial products and leading web, API, and data analytics projects across various sectors, including medical, software, geographic, and financial services.
 
-Building from the experience of many profitable commercial products and led numerous developments on web, API, and data analytics projects in the medical, software, geographic, and financial services sectors. Benny is a strong believer of architectural-driven development, with the emphasis of balance between theory and practice will generate deeper understanding; subsequently can develop a practical and resilient system.
+Benny firmly believes in architectural-driven development, which emphasizes a balance between theory and practice to achieve a deeper understanding and develop practical and resilient systems.
 
-While performing his senior software architect roles in the 3Pillar Global, Benny helps to establish the AI Lab to expand into machine learning and AI business. Fully aware of the Blockchain impact on business, Benny has established a strong technical knowledge on Hyperledger and Ethereum by successfully designed and built systems for the medical health records and tokens exchange.
+As a senior software architect at 3Pillar Global, Benny played a key role in establishing the AI Lab and expanding into machine learning and AI business. He is also well-versed in blockchain technology, having designed and built successful systems for medical health records and token exchange using Hyperledger and Ethereum.
 
-Benny has a B.Sc. and M. Sc in Computer Science from the University of Guelph, where his master thesis is on AI's expert system & spatial reasoning technologies.
+Benny holds a B.Sc. and M. Sc in Computer Science from the University of Guelph, where he completed his master's thesis on AI's expert system and spatial reasoning technologies. Do not hesitate to [contact Benny](btscheung@gmail.com) for any inquiries as he welcomes and values questions.
