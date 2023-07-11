@@ -20,7 +20,7 @@ images:
 published: true
 ---
 <!--excerpt.start-->
-Diving into the immersive world of modelling and miniatures, one finds the ability to freeze history in time, captured within a meticulously crafted diorama. A fascinating blend of history and craftsmanship awaits we in the creation of a scale model diorama. Though it may seem like a challenging task, a systematic approach can turn our imagined WWII scene into a tangible reality.
+Diving into the immersive world of modelling and miniatures, one finds the ability to freeze history in time, captured within a meticulously crafted diorama. A fascinating blend of history and craftsmanship await us in the creation of a scale model diorama. Though it may seem like a challenging task, a systematic approach can turn our imagined WWII scene into a tangible reality.
 <!--excerpt.end-->
 
 Let us embark on this journey to create an evocative diorama of a Flakvierling 20mm anti-aircraft gun system mounted on an Opel Blitz. This scene, set against the backdrop of an Eastern Front stone barn house during WWII, tells a riveting tale of its own. The figures, a mixture from D-Day Miniatures and Evolution at 1/35 scale, are carefully painted in acrylic to breathe life into this historic moment. Follow this guide, step-by-step, to learn the way of building this piece of history.
