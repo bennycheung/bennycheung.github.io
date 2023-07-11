@@ -90,7 +90,7 @@ Once we've built our models, proceed with a dry fitting of the primary elements.
 
 During this process, we may find that certain elements could be tweaked to better tell the story. In our case, we decided to replace one of the initial figures with an Evolution figure, depicted as pointing towards a specific direction, adding a dynamic aspect to the scene. Similarly, we modified a motorcycle to remove its sidecar, further tailoring our diorama to align with our narrative. Such changes highlight the flexibility and creativity involved in building a diorama.
 
-## Painting, Painting, Weathering
+## Painting, Brushing, Weathering
 
 ### Figures
 
