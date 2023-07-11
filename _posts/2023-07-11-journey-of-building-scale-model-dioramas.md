@@ -25,7 +25,7 @@ Diving into the immersive world of modelling and miniatures, one finds the abili
 
 Let us embark on this journey to create an evocative diorama of a Flakvierling 20mm anti-aircraft gun system mounted on an Opel Blitz. This scene, set against the backdrop of an Eastern Front stone barn house during WWII, tells a riveting tale of its own. The figures, a mixture from D-Day Miniatures and Evolution at 1/35 scale, are carefully painted in acrylic to breathe life into this historic moment. Follow this guide, step-by-step, to learn the way of building this piece of history.
 
-![]({{ site.baseurl }}images/journey-of-building-scale-model-dioramas/Model_OpelBlitz_Flakvierling_Making_11.png)
+![Model_OpelBlitz_Flakvierling_Making_11]({{ site.baseurl }}images/journey-of-building-scale-model-dioramas/Post_Thrumbnail_Pic_01.jpg)
 
 *Figure. Here is the final presentation of our meticulous work - a scene set on the Eastern Front during World War II. The centrepiece is the rugged Opel Blitz truck equipped with the formidable Flakvierling 38 anti-aircraft guns. Completing the scene is a motorcyclist pausing in his journey, asking for directions. The details in the setting and the figures bring to life the struggles and the mundane moments experienced even amidst the chaos of war.*
 
@@ -33,7 +33,7 @@ Let us embark on this journey to create an evocative diorama of a Flakvierling 2
 
 Creating a scale model diorama begins with planning our scene, deciding on its scale and size, and selecting appropriate model kits, figures, and components. After conducting necessary research, we build the components and test their fit with a dry fitting. we then paint all elements according to our chosen theme before fitting them onto the base again. Following this, we design and paint the base itself. The final steps involve arranging all the components on the base, blending them into the environment, and fixing them into place.
 
-![]({{ site.baseurl }}images/journey-of-building-scale-model-dioramas/Journey_of_Building_Scale_Model_Process.png)
+![Journey_of_Building_Scale_Model_Process]({{ site.baseurl }}images/journey-of-building-scale-model-dioramas/Journey_of_Building_Scale_Model_Process.png)
 
 *Figure. The presented diagram is a comprehensive visualization of our diorama building journey. From the initial sparks of imagination through to the tangible reality, this chart guides us through each stage of the creative process.*
 
@@ -49,11 +49,11 @@ The Flak 30 (Flugzeugabwehrkanone 30) and improved Flak 38 were 20 mm anti-aircr
 
 The term Vierling literally translates to "quadruplet" and refers to the four 20 mm autocannon constituting the design.
 
-![]({{ site.baseurl }}images/journey-of-building-scale-model-dioramas/WW2_Ref_Flakvierling-38_p07.jpeg)
+![WW2_Ref_Flakvierling]({{ site.baseurl }}images/journey-of-building-scale-model-dioramas/WW2_Ref_Flakvierling-38_p07.jpeg)
 
 The Flakvierling four-autocannon anti-aircraft ordnance system, when not mounted into any self-propelled mount, was normally transported Sd. Ah. 52 trailer, and could be towed behind a variety of half-tracks or trucks, such as the Opel Blitz and the armoured Sd.Kfz. 251 and unarmored Sd.Kfz. 7/1 and Sd.Kfz. 11 artillery-towing half-track vehicles. 
 
-![]({{ site.baseurl }}images/journey-of-building-scale-model-dioramas/WW2_Ref_German-Opel-Blitz-Truck-with-20mm-Flak38-07.jpeg)
+![WW2_Ref_German]({{ site.baseurl }}images/journey-of-building-scale-model-dioramas/WW2_Ref_German-Opel-Blitz-Truck-with-20mm-Flak38-07.jpeg)
 
 ### Scale, Vehicles and Equipments
 
@@ -62,7 +62,7 @@ Next, determine the scale, size, and base of our diorama. The scale should be pr
 Now comes an exciting phase - the selection of model kits and figures. For this project, we're specifically looking at 1/35 scale models to maintain a consistent level of detail and realism across the diorama. The world of model kits offers numerous choices that can cater to our specific requirements.
 
 
-![]({{ site.baseurl }}images/journey-of-building-scale-model-dioramas/Model_OpelBlitz_Flakvierling_Making_01.jpg)
+![Model_OpelBlitz_Flakvierling_Making_01]({{ site.baseurl }}images/journey-of-building-scale-model-dioramas/Model_OpelBlitz_Flakvierling_Making_01.jpg)
 
 For the centerpiece of our diorama, we're selecting the Opel Blitz German Truck Type S model kit made by Italeri. This will serve as the mobile platform for our anti-aircraft system.
 
@@ -74,7 +74,7 @@ Keep in mind that we'll be modifying the Opel Blitz vehicle model to accommodate
 
 To populate our diorama and add human elements to the scene, we'll be incorporating model figures at 1/35 scale from D-Day Miniatures and Evolution. These figures will interact with our vehicles and breathe life into our WWII Eastern Front setting.
 
-![]({{ site.baseurl }}images/journey-of-building-scale-model-dioramas/Model_OpelBlitz_Flakvierling_Making_02.jpg)
+![Model_OpelBlitz_Flakvierling_Making_02]({{ site.baseurl }}images/journey-of-building-scale-model-dioramas/Model_OpelBlitz_Flakvierling_Making_02.jpg)
 
 Once we've chosen the vehicles and figures, it's time to consider the backdrop and surrounding elements. Think about the elements that will fill out the scene, like the background structures (in our case, the stone barn house), vegetation, and the general landscape. These components provide context and enhance the overall believability of our diorama.
 
@@ -86,7 +86,7 @@ With preparations complete, it's time to immerse ourselves in the construction p
 
 Once we've built our models, proceed with a dry fitting of the primary elements. This is an essential step to visualize how the assembled pieces integrate within the diorama, comparing it with our original vision. This fitting gives we the opportunity to make any necessary alterations to ensure that everything fits together perfectly.
 
-![]({{ site.baseurl }}images/journey-of-building-scale-model-dioramas/Model_OpelBlitz_Flakvierling_Making_03.jpeg)
+![Model_OpelBlitz_Flakvierling_Making_03]({{ site.baseurl }}images/journey-of-building-scale-model-dioramas/Model_OpelBlitz_Flakvierling_Making_03.jpeg)
 
 During this process, we may find that certain elements could be tweaked to better tell the story. In our case, we decided to replace one of the initial figures with an Evolution figure, depicted as pointing towards a specific direction, adding a dynamic aspect to the scene. Similarly, we modified a motorcycle to remove its sidecar, further tailoring our diorama to align with our narrative. Such changes highlight the flexibility and creativity involved in building a diorama.
 
@@ -98,7 +98,7 @@ With our diorama components assembled and properly fitted, we now introduce the 
 
 For instance, one of our figures is designed as the driver of the Opel Blitz, standing next to his vehicle. He's participating in an interaction with a motorcyclist, providing him directions. This scene is carefully painted to capture the subtlety of his facial expression, as he's trying to verbally convey directions while another figure is visually pointing towards the destination. These details, brought out through thoughtful painting, add depth to our diorama, turning static figures into characters with a story to tell.
 
-![]({{ site.baseurl }}images/journey-of-building-scale-model-dioramas/Model_OpelBlitz_Flakvierling_Making_04.jpg)
+![Model_OpelBlitz_Flakvierling_Making_04]({{ site.baseurl }}images/journey-of-building-scale-model-dioramas/Model_OpelBlitz_Flakvierling_Making_04.jpg)
 
 ### Vehicles
 
@@ -106,25 +106,25 @@ While a comprehensive guide on various painting techniques and vehicle modelling
 
 In our scenario, we envision the Opel Blitz as a vehicle that's seen extensive use. This vision will be represented through visible scratches, signs of rust, and the faded original green camouflage on the vehicle's body. To create this effect, we'll employ chipping techniques, allowing the worn-out appearance to naturally reveal itself. Such attention to detail underscores the historical context and gives our diorama an authentic, lived-in look.
 
-![]({{ site.baseurl }}images/journey-of-building-scale-model-dioramas/Model_OpelBlitz_Flakvierling_Making_05.jpg)
+![Model_OpelBlitz_Flakvierling_Making_05]({{ site.baseurl }}images/journey-of-building-scale-model-dioramas/Model_OpelBlitz_Flakvierling_Making_05.jpg)
 
 ### Building and Accessories
 
 Don't forget to paint the major diorama components like houses, accessories, and other elements that make up the scene. Painting not only brings the diorama to life, but it also adds a touch of realism.
 
-![]({{ site.baseurl }}images/journey-of-building-scale-model-dioramas/Model_OpelBlitz_Flakvierling_Making_06.jpg)
+![Model_OpelBlitz_Flakvierling_Making_06]({{ site.baseurl }}images/journey-of-building-scale-model-dioramas/Model_OpelBlitz_Flakvierling_Making_06.jpg)
 ## Diorama Base
 
 Moving forward, our attention shifts to the base of the diorama. At this stage, conduct another round of dry fitting, this time focusing on the base. This ensures all our carefully constructed and painted components will perfectly sit on the base, harmoniously creating the scene we've envisioned.
 
 In our case, we're picturing a soggy, mud-slicked terrain, interspersed with clumps of grass and weeds. This terrain has been further detailed by tire tracks imprinted by the passage of heavy vehicles, highlighting the wet, malleable nature of the ground. These meticulous details lend an additional layer of realism to our WWII Eastern Front scene, and emphasize the conditions under which the events are unfolding.
 
-![]({{ site.baseurl }}images/journey-of-building-scale-model-dioramas/Model_OpelBlitz_Flakvierling_Making_07.jpg)
+![Model_OpelBlitz_Flakvierling_Making_07]({{ site.baseurl }}images/journey-of-building-scale-model-dioramas/Model_OpelBlitz_Flakvierling_Making_07.jpg)
 
 Following the dry fitting, it's time to bring our base to life with design and paint. This step involves more than just applying color; it's about considering the color scheme of our diorama, the prevailing weather conditions, and the type of ground cover and special effects that can add depth and realism to our scene.
 
 
-![]({{ site.baseurl }}images/journey-of-building-scale-model-dioramas/Model_OpelBlitz_Flakvierling_Making_08.png)
+![Model_OpelBlitz_Flakvierling_Making_08]({{ site.baseurl }}images/journey-of-building-scale-model-dioramas/Model_OpelBlitz_Flakvierling_Making_08.png)
 
 For our diorama, we picture the old stone barn bearing the marks of time and weather. It has a crumbling, aged feel, the signs of dampness and the passage of time represented by patches of moss growing around the door rims and on the roof. These weathering details, skillfully applied through paint and design, which enrich the scene atmosphere.
 
@@ -136,7 +136,7 @@ With all the components skillfully built and vibrantly painted, the stage is set
 
 In our diorama, for instance, we consider the impact of the environment on the vehicles. The Opel Blitz, having navigated the muddy terrain, will naturally have bits of grass and splashes of mud on its body. Such minor details might seem insignificant, but they add a touch of realism and continuity that connects all the elements in the diorama.
 
-![]({{ site.baseurl }}images/journey-of-building-scale-model-dioramas/Model_OpelBlitz_Flakvierling_Making_09.png)
+![Model_OpelBlitz_Flakvierling_Making_09]({{ site.baseurl }}images/journey-of-building-scale-model-dioramas/Model_OpelBlitz_Flakvierling_Making_09.png)
 
 ### Fixing Components in Place
 
@@ -144,20 +144,19 @@ Once our diorama composition is arranged to our satisfaction, the next step is t
 
 For instance, if we're affixing natural materials such as moss or small bits of wood, Mod Podge might be our adhesive of choice due to its flexible and clear-drying properties. However, for heavier materials, especially metal components, a stronger bond is required. In such cases, super glue could be our go-to option. Each element's secure placement contributes to the diorama's durability, ensuring our creative masterpiece stands the test of time.
 
-![]({{ site.baseurl }}images/journey-of-building-scale-model-dioramas/Model_OpelBlitz_Flakvierling_Making_10.jpg)
+![Model_OpelBlitz_Flakvierling_Making_10]({{ site.baseurl }}images/journey-of-building-scale-model-dioramas/Model_OpelBlitz_Flakvierling_Making_10.jpg)
 
 ## Concluding Remarks
 
 In conclusion, once everything is securely placed and our diorama is complete, take a moment to step back and admire our work. we've journeyed from a simple concept to a tangible, three-dimensional miniature scene, capturing a specific moment in time. This diorama is a concrete representation of our creativity, diligence, and dedication.
 
-![]({{ site.baseurl }}images/journey-of-building-scale-model-dioramas/Model_OpelBlitz_Flakvierling_Making_12.jpg)
+![Model_OpelBlitz_Flakvierling_Making_12]({{ site.baseurl }}images/journey-of-building-scale-model-dioramas/Model_OpelBlitz_Flakvierling_Making_12.jpg)
 
 And with that, we've explored the entire scale model diorama process. Remember, it's a journey that demands patience and appreciation of each step. The most important part is not just the final product, but also the enjoyment derived from the creative process itself. So, continue to embrace our artistic side and happy modelling!
 
-![]({{ site.baseurl }}images/journey-of-building-scale-model-dioramas/Model_OpelBlitz_Flakvierling_Making_13.png)
+![Model_OpelBlitz_Flakvierling_Making_13]({{ site.baseurl }}images/journey-of-building-scale-model-dioramas/Model_OpelBlitz_Flakvierling_Making_13.png)
 
 *Figure. Presenting the completed diorama featuring the Flakvierling 20mm anti-aircraft guns mounted on an Opel Blitz, showcased within the historic setting of a WW2 stone barn house. The figures, combined from D-Day Miniatures and Evolution 1/35 scale, bring life and realism to the scene. Each painted with acrylic, capturing the anti-aircraft crews friendly directing the motorists route.*
 
-Happy Modelling!
 
  
