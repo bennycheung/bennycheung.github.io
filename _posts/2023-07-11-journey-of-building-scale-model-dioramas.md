@@ -152,11 +152,27 @@ In conclusion, once everything is securely placed and our diorama is complete, t
 
 ![Model_OpelBlitz_Flakvierling_Making_12]({{ site.baseurl }}images/journey-of-building-scale-model-dioramas/Model_OpelBlitz_Flakvierling_Making_12.jpg)
 
-And with that, we've explored the entire scale model diorama process. Spanning a full year of my free time partially, I have now successfully completed this scale model diorama. Witnessing its evolution from inception to completion has been an exceptionally fulfilling journey. Remember, it's a journey that demands patience and appreciation of each step. The most important part is not just the final product, but also the enjoyment derived from the creative process itself. So, continue to embrace our artistic side and happy modelling!
+And with that, we've explored the entire scale model diorama process. Witnessing its evolution from inception to completion has been an exceptionally fulfilling journey. Remember, it's a journey that demands patience and appreciation of each step spanning a full year. The most important part is not just the final product, but also the enjoyment derived from the creative process itself. So, continue to embrace our artistic side and happy modelling!
 
 ![Model_OpelBlitz_Flakvierling_Making_13]({{ site.baseurl }}images/journey-of-building-scale-model-dioramas/Model_OpelBlitz_Flakvierling_Making_13.png)
 
 *Figure. Presenting the completed diorama featuring the Flakvierling 20mm anti-aircraft guns mounted on an Opel Blitz, showcased within the historic setting of a WW2 stone barn house. The figures, combined from D-Day Miniatures and Evolution 1/35 scale, bring life and realism to the scene. Each painted with acrylic, capturing the anti-aircraft crews friendly directing the motorists route.*
 
 
- 
+## References 
+
+### History
+
+- Wikipedia, [2 cm Flak 30, Flak 38 and Flakvierling 38](https://en.wikipedia.org/wiki/2_cm_Flak_30,_Flak_38_and_Flakvierling_38)
+
+### Movies
+
+- Johny Johnson, [2 cm Flak 30/38 - In The Movies](https://www.youtube.com/watch?v=yK823d9W_Cw), video, 29 May 2022.
+  - A brief overview of the 2cm Flak as seen in movies and video games.
+
+### Books
+
+- Kirill Kanaev, [Figure Painting Techniques F. A. Q. - The Complete Guide for Figure Scale Modellers](https://www.amazon.ca/AK630-Scale-Figures-Pages-English/dp/B092GQWF7L), AK-Interactive, Nov 2021. ASIN: B092GQWF7L
+- Mig Jiménez, [F.A.Q. 2 Limited Edition](https://www.sunwardhobbies.ca/faq-2-afv-painting-techniques-book-ak-interactive-aki-038/), AK-Interactive, May 2015. ISBN: 978-8461548149
+- Adóba, László, [Let’s Build Diorama, Vol.1 Urban Scenes](https://www.amazon.co.uk/Lets-Build-Diorama-Urban-Scenes/dp/9630685159), Sep 2014.
+-  Adóba, László, [Let's Build Diorama II. Terrain and Vegetation](https://www.scalemates.com/books/lets-build-a-diorama-ii-lets-build-a-diorama-2-laszlo-adoba--105258), 2010. ISBN: 978-9630805148
