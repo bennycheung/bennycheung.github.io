@@ -25,7 +25,7 @@ Diving into the immersive world of modelling and miniatures, one finds the abili
 
 Let us embark on this journey to create an evocative diorama of a Flakvierling 20mm anti-aircraft gun system mounted on an Opel Blitz. This scene, set against the backdrop of an Eastern Front stone barn house during WWII, tells a riveting tale of its own. The figures, a mixture from D-Day Miniatures and Evolution at 1/35 scale, are carefully painted in acrylic to breathe life into this historic moment. Follow this guide, step-by-step, to learn the way of building this piece of history.
 
-![Model_OpelBlitz_Flakvierling_Making_11]({{ site.baseurl }}images/journey-of-building-scale-model-dioramas/Post_Thrumbnail_Pic_01.jpg)
+![Model_OpelBlitz_Flakvierling_Making_11]({{ site.baseurl }}images/journey-of-building-scale-model-dioramas/Model_OpelBlitz_Flakvierling_Making_11.png)
 
 *Figure. Here is the final presentation of our meticulous work - a scene set on the Eastern Front during World War II. The centrepiece is the rugged Opel Blitz truck equipped with the formidable Flakvierling 38 anti-aircraft guns. Completing the scene is a motorcyclist pausing in his journey, asking for directions. The details in the setting and the figures bring to life the struggles and the mundane moments experienced even amidst the chaos of war.*
 
@@ -144,7 +144,7 @@ Once our diorama composition is arranged to our satisfaction, the next step is t
 
 For instance, if we're affixing natural materials such as moss or small bits of wood, Mod Podge might be our adhesive of choice due to its flexible and clear-drying properties. However, for heavier materials, especially metal components, a stronger bond is required. In such cases, super glue could be our go-to option. Each element's secure placement contributes to the diorama's durability, ensuring our creative masterpiece stands the test of time.
 
-![Model_OpelBlitz_Flakvierling_Making_10]({{ site.baseurl }}images/journey-of-building-scale-model-dioramas/Model_OpelBlitz_Flakvierling_Making_10.jpg)
+![Post_Thrumbnail_Pic_01]({{ site.baseurl }}images/journey-of-building-scale-model-dioramas/Post_Thrumbnail_Pic_01.jpg)
 
 ## Concluding Remarks
 
