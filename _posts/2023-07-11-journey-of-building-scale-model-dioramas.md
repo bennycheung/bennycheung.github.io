@@ -126,7 +126,7 @@ Following the dry fitting, it's time to bring our base to life with design and p
 
 ![]({{ site.baseurl }}images/journey-of-building-scale-model-dioramas/Model_OpelBlitz_Flakvierling_Making_08.png)
 
-For our diorama, we picture the old stone barn bearing the marks of time and weather. It has a crumbling, aged feel, the signs of dampness and the passage of time represented by patches of moss growing around the door rims and on the roof. These weathering details, skillfully applied through paint and design, elevate the realism of our diorama and enrich the scene atmosphere.
+For our diorama, we picture the old stone barn bearing the marks of time and weather. It has a crumbling, aged feel, the signs of dampness and the passage of time represented by patches of moss growing around the door rims and on the roof. These weathering details, skillfully applied through paint and design, which enrich the scene atmosphere.
 
 ## Composition
 
@@ -134,7 +134,7 @@ For our diorama, we picture the old stone barn bearing the marks of time and wea
 
 With all the components skillfully built and vibrantly painted, the stage is set to assemble everything. Begin the composition by carefully arranging all the elements on the diorama base. The aim is to integrate the vehicles and figures into the environment seamlessly, thereby creating a cohesive and realistic scene.
 
-In our diorama, for instance, we consider the impact of the environment on the vehicles. The Opel Blitz, having navigated the muddy terrain, will naturally have bits of grass and splashes of mud on its body. Such minor details might seem insignificant, but they add a touch of realism and continuity that connects all the elements in the diorama, making the scene much more believable.
+In our diorama, for instance, we consider the impact of the environment on the vehicles. The Opel Blitz, having navigated the muddy terrain, will naturally have bits of grass and splashes of mud on its body. Such minor details might seem insignificant, but they add a touch of realism and continuity that connects all the elements in the diorama.
 
 ![]({{ site.baseurl }}images/journey-of-building-scale-model-dioramas/Model_OpelBlitz_Flakvierling_Making_09.png)
 
