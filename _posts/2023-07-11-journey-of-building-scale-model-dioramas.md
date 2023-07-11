@@ -152,7 +152,7 @@ In conclusion, once everything is securely placed and our diorama is complete, t
 
 ![Model_OpelBlitz_Flakvierling_Making_12]({{ site.baseurl }}images/journey-of-building-scale-model-dioramas/Model_OpelBlitz_Flakvierling_Making_12.jpg)
 
-And with that, we've explored the entire scale model diorama process. Remember, it's a journey that demands patience and appreciation of each step. The most important part is not just the final product, but also the enjoyment derived from the creative process itself. So, continue to embrace our artistic side and happy modelling!
+And with that, we've explored the entire scale model diorama process. Spanning a full year of my free time partially, I have now successfully completed this scale model diorama. Witnessing its evolution from inception to completion has been an exceptionally fulfilling journey. Remember, it's a journey that demands patience and appreciation of each step. The most important part is not just the final product, but also the enjoyment derived from the creative process itself. So, continue to embrace our artistic side and happy modelling!
 
 ![Model_OpelBlitz_Flakvierling_Making_13]({{ site.baseurl }}images/journey-of-building-scale-model-dioramas/Model_OpelBlitz_Flakvierling_Making_13.png)
 
