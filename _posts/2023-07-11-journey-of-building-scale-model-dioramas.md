@@ -41,11 +41,11 @@ As depicted in the diagram, the diorama building process, much like software arc
 
 ## Preparations
 
-Preparation is key when starting a new project. A diorama starts as an idea, a scene that we'd like to capture. This can come from our imagination, historical photos, or even a favourite movie scene.
+Preparation is key when starting a new project. A diorama starts as an idea, a scene that we'd like to capture. This can come from our imagination, historical photos, or even a favourite [movie scene](https://www.youtube.com/watch?v=yK823d9W_Cw).
 
 ### Historical Background
 
-The Flak 30 (Flugzeugabwehrkanone 30) and improved Flak 38 were 20 mm anti-aircraft guns used by various German forces throughout World War II. It was not only the primary German light anti-aircraft gun but by far the most numerously produced German artillery piece throughout the war. It was produced in a variety of models, notably the Flakvierling 38 which combined four Flak 38 autocannons onto a single carriage.
+The Flak 30 (Flugzeugabwehrkanone 30) and improved [Flak 38 were 20 mm anti-aircraft guns](https://en.wikipedia.org/wiki/2_cm_Flak_30,_Flak_38_and_Flakvierling_38) used by various German forces throughout World War II. It was not only the primary German light anti-aircraft gun but by far the most numerously produced German artillery piece throughout the war. It was produced in a variety of models, notably the Flakvierling 38 which combined four Flak 38 autocannons onto a single carriage.
 
 The term Vierling literally translates to "quadruplet" and refers to the four 20 mm autocannon constituting the design.
 
@@ -94,7 +94,7 @@ During this process, we may find that certain elements could be tweaked to bette
 
 ### Figures
 
-With our diorama components assembled and properly fitted, we now introduce the vibrant element of color. Begin by painting the figures, taking into consideration the historical context, weather, and conditions we've researched and decided upon. This step brings a layer of realism to our diorama, as the colors should reflect the time and place being depicted.
+With our diorama components assembled and properly fitted, we now introduce the vibrant element of color. Begin by [painting the figures](https://www.amazon.ca/AK630-Scale-Figures-Pages-English/dp/B092GQWF7L), taking into consideration the historical context, weather, and conditions we've researched and decided upon. This step brings a layer of realism to our diorama, as the colors should reflect the time and place being depicted.
 
 For instance, one of our figures is designed as the driver of the Opel Blitz, standing next to his vehicle. He's participating in an interaction with a motorcyclist, providing him directions. This scene is carefully painted to capture the subtlety of his facial expression, as he's trying to verbally convey directions while another figure is visually pointing towards the destination. These details, brought out through thoughtful painting, add depth to our diorama, turning static figures into characters with a story to tell.
 
@@ -102,7 +102,7 @@ For instance, one of our figures is designed as the driver of the Opel Blitz, st
 
 ### Vehicles
 
-While a comprehensive guide on various painting techniques and vehicle modelling is beyond the scope of this article, we'll proceed with the basics. Following the painting of figures, it's time to bring color and texture to the vehicles in our diorama. Utilize the correct color scheme along with weathering effects to enhance the authenticity of our scene.
+While a comprehensive guide on [various painting techniques and vehicle modelling](https://www.sunwardhobbies.ca/faq-2-afv-painting-techniques-book-ak-interactive-aki-038/) is beyond the scope of this article, we'll proceed with the basics. Following the painting of figures, it's time to bring color and texture to the vehicles in our diorama. Utilize the correct color scheme along with weathering effects to enhance the authenticity of our scene.
 
 In our scenario, we envision the Opel Blitz as a vehicle that's seen extensive use. This vision will be represented through visible scratches, signs of rust, and the faded original green camouflage on the vehicle's body. To create this effect, we'll employ chipping techniques, allowing the worn-out appearance to naturally reveal itself. Such attention to detail underscores the historical context and gives our diorama an authentic, lived-in look.
 
