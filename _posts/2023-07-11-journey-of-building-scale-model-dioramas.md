@@ -13,7 +13,7 @@ tags:
 - Process
 category: post
 comments: true
-image: images/journey-of-building-scale-model-dioramas/cover.jpg
+image: images/journey-of-building-scale-model-dioramas/Ask_Book_Questions_Steampunk_Tutor_cover.jpg
 images:
   cover: images/journey-of-building-scale-model-dioramas/cover2x.jpg
   header: images/journey-of-building-scale-model-dioramas/header.jpg
