@@ -13,9 +13,9 @@ tags:
 - Python
 category: post
 comments: true
-image: images/dreambooth-training-for-personal-embedding/cover.jpg
+image: images/dreambooth-training-for-personal-embedding/cover2x.jpg
 images:
-  cover: images/dreambooth-training-for-personal-embedding/cover2x.jpg
+  cover: images/dreambooth-training-for-personal-embedding/cover.jpg
   header: images/dreambooth-training-for-personal-embedding/header.jpg
 published: true
 ---

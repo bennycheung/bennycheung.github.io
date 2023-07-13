@@ -12,9 +12,9 @@ tags:
 - AI Avatar
 category: post
 comments: true
-image: images/create-personal-animated-ai-avatar/cover.jpg
+image: images/create-personal-animated-ai-avatar/cover2x.jpg
 images:
-  cover: images/create-personal-animated-ai-avatar/cover2x.jpg
+  cover: images/create-personal-animated-ai-avatar/cover.jpg
   header: images/create-personal-animated-ai-avatar/header.jpg
 published: true
 ---

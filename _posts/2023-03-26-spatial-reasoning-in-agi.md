@@ -13,9 +13,9 @@ tags:
 - Spatial Reasoning
 category: post
 comments: true
-image: images/spatial-reasoning-in-agi/cover.jpg
+image: images/spatial-reasoning-in-agi/cover2x.jpg
 images:
-  cover: images/spatial-reasoning-in-agi/cover2x.jpg
+  cover: images/spatial-reasoning-in-agi/cover.jpg
   header: images/spatial-reasoning-in-agi/header.jpg
 published: true
 ---

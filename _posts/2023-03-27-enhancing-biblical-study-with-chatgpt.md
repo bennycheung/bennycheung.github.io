@@ -12,9 +12,9 @@ tags:
 - AI
 category: post
 comments: true
-image: images/enhancing-biblical-study-with-chatgpt/cover.jpg
+image: images/enhancing-biblical-study-with-chatgpt/cover2x.jpg
 images:
-  cover: images/enhancing-biblical-study-with-chatgpt/cover2x.jpg
+  cover: images/enhancing-biblical-study-with-chatgpt/cover.jpg
   header: images/enhancing-biblical-study-with-chatgpt/header.jpg
 published: true
 ---

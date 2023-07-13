@@ -14,9 +14,9 @@ tags:
 - AI
 category: post
 comments: true
-image: images/spatial-reasoning-under-uncertainty/cover.jpg
+image: images/spatial-reasoning-under-uncertainty/cover2x.jpg
 images:
-  cover: images/spatial-reasoning-under-uncertainty/cover2x.jpg
+  cover: images/spatial-reasoning-under-uncertainty/cover.jpg
   header: images/spatial-reasoning-under-uncertainty/header.jpg
 published: false
 ---
