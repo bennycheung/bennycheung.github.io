@@ -14,7 +14,7 @@ tags:
 - Python
 category: post
 comments: true
-image: images/ask-a-book-questions-with-langchain-openai/cover.jpg
+image: images/ask-a-book-questions-with-langchain-openai/post_cover.jpg
 images:
   cover: images/ask-a-book-questions-with-langchain-openai/cover2x.jpg
   header: images/ask-a-book-questions-with-langchain-openai/header.jpg
