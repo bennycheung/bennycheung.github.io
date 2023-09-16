@@ -138,7 +138,7 @@ As the AI operates, it fabricates a variety of images, each offering a slightly 
 
 _Figure. A preliminary glimpse into the process of utilizing Stable Diffusion to craft the background image, without describing the intricate details._
 
-Once the generation phase reaches completion, individuals are presented with the opportunity to peruse through the diverse array of generated images. This step is crucial as it empowers users to critically evaluate each option, considering factors such as color balance, thematic consistency, and visual appeal. Consequently, users can pinpoint and select the rendition that most resonates with their vision, ensuring the final output is not only aesthetically pleasing but also cohesively integrated with the initial image.
+Once the generation phase reaches completion, individuals are presented with the opportunity to peruse through the diverse array of generated images. This step is crucial as it empowers users to critically evaluate each option, considering factors such as color balance, thematic consistency, perspective and visual appeal. One of the most challenging aspects is locating a background image that aligns seamlessly with the specific photographic perspective of the model, particularly when the viewpoint is from a higher or lower angle. Consequently, users can pinpoint and select the rendition that most resonates with their vision, ensuring the final output is not only aesthetically pleasing but also cohesively integrated with the initial image.
 
 Here is the final selected result,
 
