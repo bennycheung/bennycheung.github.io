@@ -123,7 +123,7 @@ Adding stowage (extra items and equipment that a tank might carry into battle) c
 
 _Figure. Beyond merely featuring stowage, this scene is enriched with a human element, depicting a heartfelt farewell between comrades on the battlefield._
 
-This endeavor serves as a canvas for artistic expression, enabling us to craft our model into a genuine piece. In these picture, alongside the personalized stowage adorning the tank's rear, we are incorporating two figures engaged in a heartfelt farewell, encapsulating the poignant bond of friendship amidst turbulent times.
+This endeavor serves as a canvas for artistic expression, enabling us to craft our model into a genuine piece. In these picture, alongside the personalized stowage adorning the tank's rear, we are incorporating two figures engaged in a heartfelt farewell, encapsulating the strong bond of friendship amidst turbulent times.
 
 ![StuGIII_Tank_Crews_Post_03.jpg]({{ site.baseurl }}images/building-stug-iii-winter-camouflage-model/StuGIII_Tank_Crews_Post_03.jpg)
 
