@@ -140,7 +140,7 @@ As the AI operates, it fabricates a variety of images, each offering a slightly 
 
 ![Stable_Diffusion_Img2Img_Inpaint_with_Mask_01_annotated]({{ site.baseurl }}images/building-stug-iii-winter-camouflage-model/Stable_Diffusion_Img2Img_Inpaint_with_Mask_01_annotated.jpg)
 
-_Figure. A preliminary glimpse into the process of utilizing Stable Diffusion to craft the background image, without delving into intricate details._
+_Figure. A preliminary glimpse into the process of utilizing Stable Diffusion to craft the background image, without describing the intricate details._
 
 Once the generation phase reaches completion, individuals are presented with the opportunity to peruse through the diverse array of generated images. This step is crucial as it empowers users to critically evaluate each option, considering factors such as color balance, thematic consistency, and visual appeal. Consequently, users can pinpoint and select the rendition that most resonates with their vision, ensuring the final output is not only aesthetically pleasing but also cohesively integrated with the initial image.
 
