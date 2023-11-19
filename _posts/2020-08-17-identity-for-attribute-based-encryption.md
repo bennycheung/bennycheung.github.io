@@ -18,7 +18,7 @@ image: images/identity-for-attribute-based-encryption/cover2x.jpg
 images:
   cover: images/identity-for-attribute-based-encryption/cover.jpg
   header: images/identity-for-attribute-based-encryption/header.jpg
-published: false
+published: true
 ---
 <!--excerpt.start-->
 In the physical world, we trust the identity cards issued by a well known organization, including the government.
@@ -39,17 +39,17 @@ The participant's identity and attributes are fully secured and authenticated, i
 
 To continue our explorations, we shall take the practical approach to demonstrate how to use Python `cryptography` to generate X.509 certificate with custom atributes; subsequently, we use `charm-crypto` framework's hybrid adapter to perform CP-ABE (ciphertext-policy) with the X.509 custom attributes.
 
-* [Python Installation](#Installation)
-  * [Virtual Environment](#VirtualEnv)
-  * [cryptography Module](#Cryptography)
-  * [Charm Framework](#Charm)
-* [Public Key Infrastructure](#PKI)
-  * [Authentication, Public keys, and Private Keys](#PublicKey)
-  * [Certificate Authorities](#CA)
-  * [Digital Certificate - X.509](#Certificate)
-* [Self-Signed Certificate with Custom Attributes](#SelfSigned)
-* [CP-ABE using Charm's Hybrid Adapter](#CPABE)
-* [References](#References)
+- [ Python Installation](#-python-installation)
+  - [ Virtual Environment](#-virtual-environment)
+  - [ cryptography Module](#-cryptography-module)
+  - [ Charm Framework](#-charm-framework)
+- [ Public Key Infrastructure](#-public-key-infrastructure)
+  - [ Authentication, Public keys, and Private Keys](#-authentication-public-keys-and-private-keys)
+  - [ Certificate Authorities](#-certificate-authorities)
+  - [ Digital Certificate - X.509](#-digital-certificate---x509)
+- [ Self-Signed Certificate with Custom Attributes](#-self-signed-certificate-with-custom-attributes)
+- [ CP-ABE using Charm's Hybrid Adapter](#-cp-abe-using-charms-hybrid-adapter)
+- [ References](#-references)
 
 ## <a name='Installation'></a> Python Installation
 
