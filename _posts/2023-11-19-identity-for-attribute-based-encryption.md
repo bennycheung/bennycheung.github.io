@@ -1,7 +1,7 @@
 ---
 layout: post
 title: X.509 Identity for Attribute-based Encryption
-date: 2020-08-17 00:00:00.000000000 -00:00
+date: 2023-11-19 00:00:00.000000000 -00:00
 permalink: identity-for-attribute-based-encryption
 author: Benny Cheung
 artwork:
