@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Spatial Reasoning Under Uncertainty
-date: 2023-04-09 12:00:00.000000000 -00:00
+date: 2023-11-25 12:00:00.000000000 -00:00
 permalink: spatial-reasoning-under-uncertainty
 author: Benny Cheung
 artwork:
@@ -18,17 +18,20 @@ image: images/spatial-reasoning-under-uncertainty/cover2x.jpg
 images:
   cover: images/spatial-reasoning-under-uncertainty/cover.jpg
   header: images/spatial-reasoning-under-uncertainty/header.jpg
-published: false
+published: true
 ---
 <!--excerpt.start-->
 Spatial reasoning is a critical aspect of many real-world applications, including urban planning, environmental monitoring, and transportation logistics. It involves the processing and interpretation of spatial data to understand and analyze the relationships between objects in a given space. Traditional GIS systems and geometric processing algorithms often assume that spatial data is precise and accurate. However, real-world spatial data is often imprecise, and incorporating this uncertainty into spatial reasoning can lead to more robust and reliable results. The ability to handle imprecise spatial data, much like human cognitive abilities, is a valuable asset in the field of spatial reasoning and analysis.
 <!--excerpt.end-->
 
-![Spatial_Reasoning_under_Uncertainty_Abstract_02]({{ site.baseurl }}images/spatial-reasoning-under-uncertainty/Spatial_Reasoning_under_Uncertainty_Abstract_02.jpg)
+![Spatial_Reasoning_under_Uncertainty_Abstract]({{ site.baseurl }}images/spatial-reasoning-under-uncertainty/Spatial_Reasoning_under_Uncertainty_Abstract.jpg)
 
-_Figure. Abstract art that captured the emotion of spatial reasoning under uncertainty. (image credit: Stable Diffusion AI)_
+_Figure. Illustraing the complexity of spatial reasoning under uncertainty. (image credit: Stable Diffusion AI)_
 
 Throughout the post, we will provide imaginary town of "Sensorville" as the examples to illustrate the importance of accounting for uncertainty in spatial decision-making processes. By the end of this article, you will have gained valuable insights into the methods and techniques used to navigate spatial reasoning under uncertainty and their potential applications in various domains.
+
+> In our previous discussion titled [Spatial Reasoning in AGI - Insights from Philosophical Perspectives](https://bennycheung.github.io/spatial-reasoning-in-agi), we highlighted the critical role of spatial reasoning abilities for achieving Artificial General Intelligence (AGI). It has become evident that current Large Language Models (LLMs) fall short in spatial comprehension, which is essential for tackling numerous practical challenges. The trend is now shifting towards the incorporation of Knowledge Graph techniques to enhance LLMs with a more concrete connection to the real world. For those who are keenly following this development, the article provides valuable insights on constructing Knowledge Graphs that incorporate spatial relationships amidst uncertainty. 
+
 
 ### Outline
 
@@ -96,7 +99,7 @@ These additional predicates help describe more complex relationships between ent
 
 ![Merelogy_Basic_Principles]({{ site.baseurl }}images/spatial-reasoning-under-uncertainty/Merelogy_Basic_Principles.jpg)
 
-_Figure. An intuitive model for these relations, with Parthood $P$ interpreted as spatial inclusion. To read the diagram table, $y$ is assumed to be $x_4$ , then the mereological relation between $x_n$ to $y$ are displayed as $+$ True or as $-$ False (image credit: Mereology, Stanford Encyclopedia of Philosophy._
+_Figure. An intuitive model for these relations, with Parthood $P$ interpreted as spatial inclusion. To read the diagram table, $y$ is assumed to be $x_4$ , then the mereological relation between $x_n$ to $y$ are displayed as $+$ True or as $-$ False (image credit: Mereology, Stanford Encyclopedia of Philosophy)._
 
 Mereological principles provide a solid foundation for understanding and formalizing part-whole relationships in the spatial domain. By applying these principles, we can develop a rigorous approach to spatial reasoning that accounts for the complexities of real-world spatial data.
 
