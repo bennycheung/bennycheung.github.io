@@ -21,8 +21,10 @@ images:
 published: true
 ---
 <!--excerpt.start-->
-In the dynamic and ever-changing landscape of AI and computational problem-solving, there arises a new speculative yet intriguing proposal: **Q\*** (pronounced as "Q-Star") - This conceptual framework is imagined to position itself at the intersection of three diverse yet interrelated technologies: the A* algorithm, Q-learning, and Large Language Models (LLMs) as systems of compressed knowledge. Although still theoretical, this amalgamation of Q* suggests a synergy that could potentially push the boundaries of AI's problem solving efficiency and effectiveness, offering a novel approach to tackling complex challenges.
+In the dynamic and ever-changing landscape of AI and computational problem-solving, there arises a new speculative yet intriguing proposal: **Q\*** (pronounced "Q-star") - This conceptual framework is imagined to position itself at the intersection of three diverse yet interrelated technologies: the A* algorithm, Q-learning, and Large Language Models (LLMs) as systems of compressed knowledge. Although still theoretical, this amalgamation of Q* suggests a synergy that could potentially push the boundaries of AI's problem solving efficiency and effectiveness, offering a novel approach to tackling complex challenges.
 <!--excerpt.end-->
+
+> Disclaimer: While it's probable that our interpretation of the Q* concept doesn't align with the breakthrough by OpenAI mentioned in recent [news articles]((https://www.reuters.com/technology/sam-altmans-ouster-openai-was-precipitated-by-letter-board-about-ai-breakthrough-2023-11-22/),), this investigation presented in this article has been a great inspiration to our business problem solving challenges.
 
 ![Q-Star_intersection_of_technologies]({{ site.baseurl }}images/q-star-new-method-in-problem-solving/Q-Star_intersection_of_technologies.jpg)
 
