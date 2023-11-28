@@ -131,6 +131,9 @@ The fusion of A\*, Q-learning, and LLMs in Q* represents an innovative integrati
 
 The Tree of Thoughts (ToT) framework represents a significant advancement in the use of Large Language Models (LLMs) for complex problem-solving. At its core, ToT is a structured approach that enables language models to generate, evaluate, and iterate over a series of "thoughts" or ideas, each leading towards a potential solution to a given problem. This process is akin to building a tree, where each branch represents a different line of reasoning or a pathway of exploration.
 
+> Interestingly, the [Tree of Thoughts: Deliberate Problem Solving with Large Language Models]([arXiv:2305.10601](https://arxiv.org/abs/2305.10601)) paper's "Related Work" section has mentioned that ToT is a modern rendition of A* algorithm, in which the heuristic at each search node is provided by the LLM's self-assessment.
+
+
 ![Tree_of_Thoughts_paper]({{ site.baseurl }}images/q-star-new-method-in-problem-solving/Tree_of_Thoughts_paper.jpg)
 
 _Figure. Schematic illustrating various approaches to problem solving with LLMs. Each rectangle box represents a thought, which is a coherent language sequence that serves as an intermediate step toward problem solving. (image credit: Yao, L., et al., Tree of Thoughts: Deliberate Problem Solving with Large Language Models, 2023)_
