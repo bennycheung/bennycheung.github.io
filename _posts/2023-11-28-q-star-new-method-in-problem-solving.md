@@ -36,7 +36,7 @@ The third pillar of Q\*, LLMs as compressed knowledge systems, introduces a new 
 
 The potential impact of Q* in advanced computational problem-solving is immense. From navigating complex data landscapes to solving intricate real-world problems, Q* stands poised to redefine the boundaries of what is possible in AI. Its ability to combine efficient search, adaptive learning, and deep, compressed knowledge opens up new avenues for exploration and innovation.
 
-As we continue in this article, we will explore the individual components of Q\*, how they synergistically interact, and the practical applications of this new approach. Join us on this journey into the heart of Q*, a beacon of the future of problem-solving in the digital age.
+As we continue in this article, we will explore the individual components of Q\*, how they synergistically interact, and the practical applications of this new approach. Join us on this journey into the heart of Q*, a beacon of the future of problem-solving in the age of intelligent agents.
 
 > Why denoted the method as Q\*?
 >
@@ -99,7 +99,8 @@ Compressed Knowledge and Probabilistic Predictions:
 
 - **Probability-Based Predictions**: LLMs use probabilistic models to make predictions. When generating text, for instance, an LLM predicts the next word based on the likelihood of its occurrence in the given context. This approach allows LLMs to generate coherent and contextually appropriate responses despite the lossy nature of their knowledge compression.
 
-This foundational understanding of A\*, Q-learning, and LLMs as compressed knowledge systems sets the stage for exploring their synergistic integration in Q\*. As we will see, the combination of these technologies in Q* creates a powerful tool for advanced problem-solving.
+This foundational understanding of A\*, Q-learning, and LLMs as compressed knowledge systems sets the stage for exploring their synergistic integration in Q\*.
+
 
 ## The Fusion of A\*, Q-Learning, and LLMs
 
@@ -123,7 +124,8 @@ In another scenario, consider a healthcare AI using Q* for medical diagnosis. A*
 
 The role of LLMs in Q* is akin to a sophisticated memory system. Unlike traditional memory storage that retains static information, LLMs offer dynamic and contextually rich knowledge. This attribute of LLMs allows Q* to go beyond mere data retrieval; it can generate insights, predict outcomes, and even propose creative solutions. In essence, LLMs give Q* the ability to understand and interact with information in a nuanced and human-like manner, greatly expanding its problem-solving capabilities.
 
-The fusion of A\*, Q-learning, and LLMs in Q* represents an innovative integration of search precision, adaptive learning, and deep knowledge. This powerful combination opens up new possibilities for tackling complex, dynamic problems across various domains.
+Next, we shall look at how to integrate Q* into the Tree of Thoughts planning framework.
+
 
 ## Q* within the Tree of Thoughts (ToT) Framework
 
