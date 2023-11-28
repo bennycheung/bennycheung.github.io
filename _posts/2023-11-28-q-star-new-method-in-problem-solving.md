@@ -36,9 +36,9 @@ The third pillar of Q\*, LLMs as compressed knowledge systems, introduces a new 
 
 The potential impact of Q* in advanced computational problem-solving is immense. From navigating complex data landscapes to solving intricate real-world problems, Q* stands poised to redefine the boundaries of what is possible in AI. Its ability to combine efficient search, adaptive learning, and deep, compressed knowledge opens up new avenues for exploration and innovation.
 
-As we continue in this article, we will explore the individual components of Q\*, how they synergistically interact, and the practical applications of this groundbreaking approach. Join us on this journey into the heart of Q*, a beacon of the future of problem-solving in the digital age.
+As we continue in this article, we will explore the individual components of Q\*, how they synergistically interact, and the practical applications of this new approach. Join us on this journey into the heart of Q*, a beacon of the future of problem-solving in the digital age.
 
-> Why we denoted the method as Q\*?
+> Why denoted the method as Q\*?
 >
 > In the method of Q-learning, "Q" represents "quality," denoting the effectiveness or value of a specific action within a particular state. Fundamentally, it serves as an indicator of the desirability or suitability of undertaking a given action in a certain context. Additionally, "Q\*" carries a symbolic significance, representing the highest Q value achievable across all possible search policies, signifying the most optimal action to be taken. Alternatively, the "\*" can come from A\* algorithm which is providing the optimal search policy for the solution space. 
 
@@ -188,7 +188,7 @@ The Q* framework, with its integration of A\*, Q-learning, and LLMs, offers intr
 
 _Figure. The illustration showcases the application of Q* in environmental management and climate modelling, featuring a futuristic control center with advanced data processing systems, climate models, and environmental data visualizations._
 
-### Case Studies and Examples of Q* Application
+### Examples of Q* Application
 
 1. **Urban Planning and Smart Cities**: In urban planning, Q* could be used to optimize traffic flow, public transport routing, and emergency response strategies. For instance, Q* could analyze traffic patterns, predict congestion points, and suggest optimal rerouting in real-time, accounting for ongoing events, weather conditions, and urban dynamics.
     
