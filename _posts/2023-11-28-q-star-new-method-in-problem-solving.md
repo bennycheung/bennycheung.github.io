@@ -26,7 +26,7 @@ In the dynamic and ever-changing landscape of AI and computational problem-solvi
 
 ![Q-Star_intersection_of_technologies]({{ site.baseurl }}images/q-star-new-method-in-problem-solving/Q-Star_intersection_of_technologies.jpg)
 
-_Figure. An abstract representation of the concept Q\* incorporating the elements of A* routing, LLM memory, and Q-learning method in reinforcement learning_
+_Figure. An abstract representation of the concept Q\* incorporating the elements of A* search, LLM memory, and Q-learning method in reinforcement learning_
 
 The A* algorithm, renowned for its search capabilities, has long been the go-to method in navigating through complex spaces, whether in gaming environments or robotic path planning. Its heuristic-based approach enables it to make informed guesses about the most efficient paths, dramatically reducing the time and computational resources required to reach a destination. However, the static nature of A* limits its ability to adapt to dynamic environments or learn from past experiences.
 
@@ -58,7 +58,7 @@ To understand A*, let start with the key features in the algorithm:
 
 - **Cost Calculation**: A* calculates two types of costs - the $g$ cost, which is the known cost from the starting point to the current point, and the $h$ cost, the estimated cost from the current point to the goal as provided by the heuristic. The total cost, $f$, is the sum of these ($f = g + h$). This calculation ensures that A* keeps track of both the ground covered and the journey ahead.
 
-- **Path Prioritization**: A* continuously keeps track of multiple paths and prioritizes them based on their $f$ cost. The path with the lowest $f$ cost is explored first (very similar to BFS or beam search), ensuring that the algorithm always follows the most promising route towards the goal.
+- **Path Prioritization**: A* continuously keeps track of multiple paths and prioritizes them based on their $f$ cost. The path with the lowest $f$ cost is explored first (very similar to BFS or beam search), ensuring that the algorithm always follows the most promising path towards the goal.
 
 ### Q-Learning Explained
 
@@ -107,7 +107,7 @@ The integration of A\*, Q-learning, and Large Language Models (LLMs) as compress
 
 ### Synergistic Contribution to Q*
 
-- **A\* for Efficient Search**: A* brings to Q* its unparalleled efficiency in navigating through complex paths. Its heuristic approach quickly identifies the most promising routes, significantly reducing computational overhead.
+- **A\* for Efficient Search**: A* brings to Q* its unparalleled efficiency in navigating through complex paths. Its heuristic approach quickly identifies the most promising paths, significantly reducing computational overhead.
 
 - **Q-Learning for Dynamic Adaptation**: Q-learning adds a layer of adaptability and learning from experience. As conditions change or new information becomes available, Q-learning enables Q* to adjust its strategies, optimizing for better outcomes over time.
 
