@@ -34,7 +34,7 @@ Enter Q-learning, a form of reinforcement learning that excels in environments w
 
 The third pillar of Q\*, LLMs as compressed knowledge systems, introduces a new dimension to this equation. These models, epitomized by systems like GPT-4, represent a paradigm shift in handling and processing vast amounts of information. By compressing global knowledge into a probabilistic model, LLMs offer a unique form of memory system that Q* can exploit. This integration allows Q* to not only navigate and learn from its environment but also to tap into a wealth of knowledge that can inform and enhance its decision-making processes.
 
-The potential impact of Q* in advanced computational problem-solving is immense. From navigating complex data landscapes to solving intricate real-world problems, Q* stands poised to redefine the boundaries of what is possible in AI. Its ability to combine efficient search, adaptive learning, and deep, compressed knowledge opens up new avenues for exploration and innovation.
+The potential impact of Q* in advanced computational problem-solving is immense. From navigating complex data landscapes to solving intricate real-world problems, Q* stands poised to redefine the boundaries of what is possible in AI. Its ability to combine efficient search, adaptive learning, and deep, compressed knowledge opens up new avenues for exploration (on search) and exploitation (on knowledge).
 
 As we continue in this article, we will explore the individual components of Q\*, how they synergistically interact, and the practical applications of this new approach. Join us on this journey into the heart of Q*, a beacon of the future of problem-solving in the age of intelligent agents.
 
@@ -87,7 +87,7 @@ The goal is for the robot to end up with a Q-table that tells it the best action
 
 ### LLMs as Compressed Knowledge Systems
 
-The third component of Q* is the use of [Large Language Models (LLMs) as compressed knowledge systems](https://www.youtube.com/watch?v=zjkBMFhNj_g&ab_channel=AndrejKarpathy). LLMs, such as GPT-4, represent a breakthrough in how machines can handle vast amounts of information.
+The third component of Q* is the use of [Large Language Models (LLMs)](https://www.youtube.com/watch?v=zjkBMFhNj_g&ab_channel=AndrejKarpathy). LLMs, such as GPT-4, represent a breakthrough in how machines can handle vast amounts of information.
 
 ![LLM_Neural_Network_predict_next_word_explained]({{ site.baseurl }}images/q-star-new-method-in-problem-solving/LLM_Neural_Network_predict_next_word_explained.jpg)
 
@@ -99,12 +99,12 @@ Compressed Knowledge and Probabilistic Predictions:
 
 - **Probability-Based Predictions**: LLMs use probabilistic models to make predictions. When generating text, for instance, an LLM predicts the next word based on the likelihood of its occurrence in the given context. This approach allows LLMs to generate coherent and contextually appropriate responses despite the lossy nature of their knowledge compression.
 
-This foundational understanding of A\*, Q-learning, and LLMs as compressed knowledge systems sets the stage for exploring their synergistic integration in Q\*.
+This foundational understanding of A\*, Q-learning, and LLMs as knowledge systems sets the stage for exploring their synergistic integration in Q\*.
 
 
 ## The Fusion of A\*, Q-Learning, and LLMs
 
-The integration of A\*, Q-learning, and Large Language Models (LLMs) as compressed knowledge systems in the Q* approach marks a significant leap in computational problem-solving. This section explains how these three components work in harmony, creating a system that is greater than the sum of its parts.
+The integration of A\*, Q-learning, and Large Language Models (LLMs) in the Q* approach marks a significant leap in computational problem-solving. This section explains how these three components work in harmony, creating a system that is greater than the sum of its parts.
 
 ### Synergistic Contribution to Q*
 
@@ -112,7 +112,7 @@ The integration of A\*, Q-learning, and Large Language Models (LLMs) as compress
 
 - **Q-Learning for Dynamic Adaptation**: Q-learning adds a layer of adaptability and learning from experience. As conditions change or new information becomes available, Q-learning enables Q* to adjust its strategies, optimizing for better outcomes over time.
 
-- **LLMs as a Knowledge Repository**: LLMs serve as a vast reservoir of compressed knowledge. They provide Q* with a broad understanding of the world, offering context and insights that are not explicitly encoded in the algorithm's immediate environment.
+- **LLMs as a Knowledge Repository**: LLMs serve as a vast reservoir of knowledge. They provide Q* with a broad understanding of the world, offering context and insights that are not explicitly encoded in the algorithm's immediate environment.
 
 ### Enhancing Problem-Solving Efficiency: Hypothetical Examples
 
@@ -146,7 +146,7 @@ Key Aspects of ToT:
 
 - **Search Algorithms**: To navigate this tree, search algorithms like Depth-First Search (DFS), Breadth-First Search (BFS), and beam search are employed. These algorithms help in systematically exploring different pathways, allowing the model to consider various possibilities before arriving at a solution.
 
-- **Role of LLMs**: LLMs, with their vast repository of compressed knowledge, play a crucial role in generating the content of each thought. They provide the necessary context and information that guide the exploration and evaluation process within the ToT framework.
+- **Role of LLMs**: LLMs, with their vast repository of knowledge, play a crucial role in generating the content of each thought. They provide the necessary context and information that guide the exploration and evaluation process within the ToT framework.
 
 ### Integrating Q* into ToT
 
@@ -201,13 +201,13 @@ _Figure. The illustration showcases the application of Q* in environmental manag
 The implementation of Q\* has the potential to significantly impact various fields. Its ability to efficiently solve complex problems and adapt to new information can lead to more effective decision-making and problem-solving strategies. While challenges and limitations exist, the ongoing development and refinement of Q\* and its components promise to usher in a new era of AI capabilities, transforming how we approach and solve complex problems.
 
 
-## Final Remarks
+## Final Remark
 
-As we have explored throughout this article, Q\*, with its innovative amalgamation of the A* algorithm, Q-learning, and Large Language Models (LLMs) as compressed knowledge systems, represents a significant leap forward in the field of computational problem-solving. This framework has the potential to redefine the boundaries of what artificial intelligence can achieve, offering new solutions to complex, dynamic challenges across various domains.
+As we have explored throughout this article, Q\*, with its innovative amalgamation of the A* algorithm, Q-learning, and Large Language Models (LLMs), represents a significant leap forward in the field of computational problem-solving. This framework has the potential to redefine the boundaries of what artificial intelligence can achieve, offering new solutions to complex, dynamic challenges across various domains.
 
 The integration of efficient search, adaptive learning, and a vast repository of knowledge allows Q* to tackle problems with a level of sophistication and effectiveness previously unattainable. From urban planning to healthcare, from environmental management to the methods of scientific research, the applications of Q* are expected as diverse as they are impactful.
 
-In closing, Q\* stands not just as a speculative step forward towards on top of the recent AI achievements but also as a beacon of what is possible in the future. It invites us to imagine a world where complex problems are met with equally sophisticated solutions, where AI not only supports but enhances human decision-making, and where the boundaries of what we can solve expand beyond what we currently perceive. Subsequently, we will proceed with a more technically assessment of the Q* method. Subsequently, should our speculative understanding prove accurate, we intend to design and implement the system as the next natural progression.
+In closing, Q\* stands not just as a speculative step forward towards on top of the recent AI achievements but also as a beacon of what is possible in the future. It invites us to imagine a world where complex problems are met with equally sophisticated solutions, where AI not only supports but enhances human decision-making, and where the boundaries of what we can solve expand beyond what we currently perceive. Subsequently, we will proceed with a more technically assessment of the Q* method. If our speculative understanding prove accurate, we intend to design and implement the system as the next progression.
 
 ## Resources
 
