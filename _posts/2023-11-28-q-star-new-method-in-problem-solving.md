@@ -185,9 +185,9 @@ From the diagram, the system receives an input and generates a ToT. The A\* Heur
 By integrating the efficiency of A\* in search the ToT, the dynamic learning capabilities of Q-learning, and the expansive knowledge of LLMs, the Q\* method within ToT presents a formidable approach to addressing complex, adaptive challenges in various domains. It combines the structured exploration of ToT with the adaptive, knowledge-rich capabilities  for tackling complex and dynamic challenges. This integration not only enhances the efficiency and effectiveness of the ToT framework but also vastly expands its potential applications in various domains.
 
 
-## Practical Applications and Theoretical Considerations
+## Practical Applications
 
-The Q* framework, with its integration of A\*, Q-learning, and LLMs, offers intriguing possibilities for a wide range of applications. This section explores potential case studies, discusses the challenges in implementation, and assesses the impacts and benefits across various domains.
+The Q* framework, while offering a promising suite of capabilities through the convergence of A*, Q-learning, and LLMs, also brings with it considerable complexity. It's important to recognize that not all problems require such an intricate solution—sometimes a simpler tool will suffice. However, for significant and intricate challenges that lack satisfactory existing solutions, the Q* framework could be a formidable asset. This section will explore some potential practical applications of the Q* framework.
 
 ![Q-Star_Application_to_Environment_Management]({{ site.baseurl }}images/q-star-new-method-in-problem-solving/Q-Star_Application_to_Environment_Management.jpg)
 
