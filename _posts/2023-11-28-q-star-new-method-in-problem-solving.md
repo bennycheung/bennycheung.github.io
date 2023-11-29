@@ -256,6 +256,5 @@ For those interested in studying deeper into the concepts and technologies discu
 
     - Benny Cheung, [Adventures in Deep Reinforcement Learning using StarCraft II](https://bennycheung.github.io/adventures-in-deep-reinforcement-learning), Benny's Mind Hack, 15 Nov 2019.
 
-    - Benny Cheung, [Spatial Reasoning Explained](https://bennycheung.github.io/spatial-reasoning-explained), Benny's Mind Hack, Dec 2016.
 
 These resources provide a starting point for anyone looking to expand their understanding of these complex and fascinating topics. Whether you're a student, a professional, or just an AI enthusiast, these materials offer valuable insights into the world of advanced computational problem-solving.
