@@ -187,30 +187,31 @@ By integrating the efficiency of A\* in search the ToT, the dynamic learning cap
 
 ## Practical Applications
 
-The Q* framework, while offering a promising suite of capabilities through the convergence of A*, Q-learning, and LLMs, also brings with it considerable complexity. It's important to recognize that not all problems require such an intricate solution—sometimes a simpler tool will suffice. However, for significant and intricate challenges that lack satisfactory existing solutions, the Q* framework could be a formidable asset. This section will explore some potential practical applications of the Q* framework.
+The Q\* framework, while offering a promising suite of capabilities through the convergence of A\*, Q-learning, and LLMs, also brings with it considerable complexity. It's important to recognize that not all problems require such an intricate solution—sometimes a simpler tool will suffice. However, for significant and intricate challenges that lack satisfactory existing solutions, the Q\* framework could be a formidable asset. This section will explore some potential practical applications of the Q\* framework.
 
 ![Q-Star_Application_to_Environment_Management]({{ site.baseurl }}images/q-star-new-method-in-problem-solving/Q-Star_Application_to_Environment_Management.jpg)
 
-_Figure. The illustration showcases the application of Q* in environmental management and climate modelling, featuring a futuristic control center with advanced data processing systems, climate models, and environmental data visualizations._
+_Figure. The illustration showcases the application of Q\* in environmental management and climate modelling, featuring a futuristic control center with advanced data processing systems, climate models, and environmental data visualizations._
 
-### Examples of Q* Application
+### Examples of Q\* Application
 
-1. **Urban Planning and Smart Cities**: In urban planning, Q* could be used to optimize traffic flow, public transport routing, and emergency response strategies. For instance, Q* could analyze traffic patterns, predict congestion points, and suggest optimal rerouting in real-time, accounting for ongoing events, weather conditions, and urban dynamics.
+1. **Urban Planning and Smart Cities**: Q\* has the potential to transform urban planning by enhancing traffic flow, public transport logistics, and emergency response protocols. Leveraging its ability to analyze and predict traffic patterns, Q* could suggest dynamic rerouting strategies that respond to real-time conditions like ongoing events, weather changes, and the unique pulse of city life.
     
-2. **Healthcare Diagnostics and Treatment Planning**: In healthcare, Q* could revolutionize diagnostics and personalized treatment plans. By combining patient data, medical histories, and the latest research, Q* could suggest tailored treatment strategies, predict potential complications, and adapt recommendations as new information becomes available.
+2. **Healthcare Diagnostics and Treatment Planning**: The healthcare sector could see a paradigm shift with Q\*'s capacity to personalize diagnostics and treatment plans. Integrating individual health records with cutting-edge medical research, Q\* might offer bespoke treatment options, foresee complications, and seamlessly adjust health recommendations as fresh data emerges.
     
-3. **Environmental Management**: In environmental science, Q* could assist in climate modelling and ecosystem management. Its ability to process vast data sets and adapt to new information could be pivotal in predicting climate change effects and suggesting mitigation strategies.
+3. **Environmental Management**: In environmental science, Q\* could assist in climate modelling and ecosystem management. Its ability to process vast data sets and adapt to new information could be pivotal in predicting climate change effects and suggesting mitigation strategies.
     
-The implementation of Q\* has the potential to significantly impact various fields. Its ability to efficiently solve complex problems and adapt to new information can lead to more effective decision-making and problem-solving strategies. While challenges and limitations exist, the ongoing development and refinement of Q\* and its components promise to usher in a new era of AI capabilities, transforming how we approach and solve complex problems.
+The deployment of Q* is poised to create ripples across various industries, enhancing the way we tackle and solve complex issues. Despite the hurdles and constraints that may arise, the continuous evolution of the Q* framework could signal a new chapter in AI development, redefining our approaches to complex problem-solving.
 
 
 ## Final Remark
 
-As we have explored throughout this article, Q\*, with its innovative amalgamation of the A* algorithm, Q-learning, and Large Language Models (LLMs), represents a significant leap forward in the field of computational problem-solving. This framework has the potential to redefine the boundaries of what artificial intelligence can achieve, offering new solutions to complex, dynamic challenges across various domains.
+As we have explored throughout this article, Q\*, with its innovative amalgamation of the A\* algorithm, Q-learning, and Large Language Models (LLMs), represents a significant leap forward in the field of computational problem-solving. This framework has the potential to redefine the boundaries of what artificial intelligence can achieve, offering new solutions to complex, dynamic challenges across various domains.
 
 The integration of efficient search, adaptive learning, and a vast repository of knowledge allows Q* to tackle problems with a level of sophistication and effectiveness previously unattainable. From urban planning to healthcare, from environmental management to the methods of scientific research, the applications of Q* are expected as diverse as they are impactful.
 
-In closing, Q\* stands not just as a speculative step forward towards on top of the recent AI achievements but also as a beacon of what is possible in the future. It invites us to imagine a world where complex problems are met with equally sophisticated solutions, where AI not only supports but enhances human decision-making, and where the boundaries of what we can solve expand beyond what we currently perceive. Subsequently, we will proceed with a more technically assessment of the Q* method. If our speculative understanding prove accurate, we intend to design and implement the system as the next progression.
+In closing, Q\* stands not just as a speculative step forward towards on top of the recent AI achievements but also as a beacon of what is possible in the future. It invites us to imagine a world where complex problems are met with equally sophisticated solutions, where AI not only supports but enhances human decision-making, and where the boundaries of what we can solve expand beyond what we currently perceive. Subsequently, we will proceed with a more technically assessment of the Q\* method. If our speculative understanding prove accurate, we intend to design and implement the system as the next progression.
+
 
 ## Resources
 
