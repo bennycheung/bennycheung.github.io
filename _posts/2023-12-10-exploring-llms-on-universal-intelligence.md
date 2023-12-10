@@ -135,6 +135,12 @@ _Figure. The illustration from Byte magazine's original article elegantly captur
 
 - Wittgenstein, Ludwig, and Gertrude Elizabeth Margaret Anscombe. _Philosophical Investigations: The English Text of the Third Edition_. Vol. 1. Prentice Hall, 1973.
 
+- Jobst Landgrebe & Barry Smith, [Why Machines Will Never Rule the World: Artificial Intelligence without Fear](https://www.amazon.ca/Machines-Will-Never-Rule-World/dp/1032309938), Routledge, 12 Aug 2022. ISBN: 978-1032309934
+  - The book’s core argument is that an artificial intelligence that could equal or exceed human intelligence―sometimes called artificial general intelligence (AGI)―is for mathematical reasons impossible. It offers two specific reasons for this claim:
+    - Human intelligence is a capability of a complex dynamic system―the human brain and central nervous system.
+    - Systems of this sort cannot be modelled mathematically in a way that allows them to operate inside a computer.
+
+
 ### Conferences
 
 - World Science Festival, [AI: Grappling with a New Kind of Intelligence](https://www.youtube.com/watch?v=EGDG3hgPNp8), video, 24 Nov 2023.
