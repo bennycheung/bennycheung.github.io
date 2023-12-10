@@ -102,7 +102,7 @@ The concept of using clause-structures in human language, which allows us to bui
 
 Another critical point is about holistic perception versus analytical breakdown into components challenges us to think about the nature of intelligence and cognition beyond our human-centric viewpoint. It raises the question of whether our tendency to see the world in parts, which LLMs also mimic, is truly the most effective way of processing information. Perhaps, in the vastness of all conceivable ideas, there are forms of intelligence, be they alien or artificial, that perceive and understand in ways that are fundamentally different from ours and from the capabilities of our current AI systems. This notion broadens the scope of what we consider when developing and interacting with LLMs, pushing us to explore beyond our conventional frameworks and potentially paving the way for revolutionary advancements in AI.
 
-### Possibly Like a Lion Speaking
+### Roar of AI: Understanding Beyond Language
 
 While it is true that LLM plays a significant role in explaining itself, it is important to note that explainability is not limited to language alone. In the context of AI, explainability refers to the ability to understand and interpret the decisions made by the AI system. This can be achieved through a variety of techniques, including visualizations, feature importance analysis, not just limited by generating human-readable explanations.
 
