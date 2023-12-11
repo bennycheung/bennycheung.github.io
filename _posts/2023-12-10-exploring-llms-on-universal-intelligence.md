@@ -17,7 +17,7 @@ image: images/exploring-llms-on-universal-intelligence/cover2x.jpg
 images:
   cover: images/exploring-llms-on-universal-intelligence/cover.jpg
   header: images/exploring-llms-on-universal-intelligence/header.jpg
-published: false
+published: true
 ---
 <!--excerpt.start-->
 At the recent World Science Festival, the discussion titled "[AI: Grappling with a New Kind of Intelligence](https://www.youtube.com/watch?v=EGDG3hgPNp8)" proposed the idea that AI could be seen as an evolving “being”, rather than merely a tool. This thought bought me back to a mesmerizing read from April 1985's Byte magazine. The piece, ["Communication with Alien Intelligence"](https://web.media.mit.edu/~minsky/papers/AlienIntelligence.html), written by the AI visionary [Marvin Minsky](https://en.wikipedia.org/wiki/Marvin_Minsky), exploring the possibility of reaching out to minds from beyond our world.
@@ -43,7 +43,7 @@ Specifically, the concept of universal problem-solving in AI, particularly in th
 
 These examples draw parallels between artificial and natural forms of problem-solving.
 
-## LLMs and the Economics of Resource Management
+### LLMs and the Economics of Resource Management
 
 Expanding on Minsky’s discussion, LLMs can be viewed as systems that manage computational resources in order to optimize problem-solving. This involves balancing the allocation of computational power, memory, and data processing capabilities to efficiently process and generate language. Understanding the strategies LLMs use for resource management is key to understanding their operational mechanics and efficiency.
 
@@ -52,11 +52,11 @@ This involves making informed decisions about the allocation and utilization of 
 For instance, when an LLM processes a complex sentence, it must understand the context, maintain the flow of the conversation, and generate a relevant response. This requires a delicate balance of using enough resources to perform these tasks effectively, but not so much that it becomes inefficient. Another example is in training LLMs, where resource management involves using datasets and computational power effectively to train the model without overfitting or underfitting.
 
 
-## The Sparseness of Unique Ideas
+### The Sparseness of Unique Ideas
 
 “The Sparseness Principle” provides a framework for understanding the nature of intelligence as it pertains to the generation of unique ideas. This principle posits that the universe of possible computational structures is vast, yet the processes that yield significant outputs are few, leading to a natural scarcity of truly unique ideas. 
 
-### Minsky's Experiment on the Sparseness Principle
+#### Minsky's Experiment on the Sparseness Principle
 
 > The Sparseness Principle: When relatively simple processes produce two similar things, those things will tend to be identical!
 
