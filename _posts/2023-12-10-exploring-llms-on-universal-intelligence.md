@@ -20,7 +20,7 @@ images:
 published: true
 ---
 <!--excerpt.start-->
-At the recent World Science Festival, the discussion titled "[AI: Grappling with a New Kind of Intelligence](https://www.youtube.com/watch?v=EGDG3hgPNp8)" proposed the idea that AI could be seen as an evolving “being”, rather than merely a tool. This thought bought me back to a mesmerizing read from April 1985's Byte magazine. The piece, ["Communication with Alien Intelligence"](https://web.media.mit.edu/~minsky/papers/AlienIntelligence.html), written by the AI visionary [Marvin Minsky](https://en.wikipedia.org/wiki/Marvin_Minsky), exploring the possibility of reaching out to minds from beyond our world.
+At the recent World Science Festival, the discussion titled "[AI: Grappling with a New Kind of Intelligence](https://www.youtube.com/watch?v=EGDG3hgPNp8)" proposed the idea that AI could be seen as an evolving “being”, rather than merely a tool. This thought brought me back to a mesmerizing read from April 1985's Byte magazine. The piece, ["Communication with Alien Intelligence"](https://web.media.mit.edu/~minsky/papers/AlienIntelligence.html), written by the AI visionary [Marvin Minsky](https://en.wikipedia.org/wiki/Marvin_Minsky), exploring the possibility of reaching out to minds from beyond our world.
 <!--excerpt.end-->
 
 Minsky argues that intelligent beings, regardless of their origin, face similar constraints and would develop comparable concepts and problem-solving methods. He discusses principles like the economics of resource management and the sparseness of unique ideas, suggesting these are universal. Minsky also addresses potential limitations in understanding vastly different intelligences and emphasizes the importance of basic problem-solving elements in intelligent communication.
@@ -49,8 +49,7 @@ Expanding on Minsky’s discussion, LLMs can be viewed as systems that manage co
 
 This involves making informed decisions about the allocation and utilization of limited assets to achieve specific goals efficiently and effectively. Intelligent systems, whether biological or artificial, must often operate within constraints - be it energy, time, materials, or computational power. This ability is not just about conserving resources but also about maximizing their potential impact, a crucial aspect of both human and artificial intelligence.
 
-For instance, when an LLM processes a complex sentence, it must understand the context, maintain the flow of the conversation, and generate a relevant response. This requires a delicate balance of using enough resources to perform these tasks effectively, but not so much that it becomes inefficient. Another example is in training LLMs, where resource management involves using datasets and computational power effectively to train the model without overfitting or underfitting.
-
+For instance, when an LLM processes a complex sentence, it must understand the context, maintain the flow of the conversation, and generate a relevant response. This requires a delicate balance of using enough resources to perform these tasks effectively, but not so much that it becomes inefficient. In the context of training LLMs, resource management involves effectively utilizing datasets and computational power. Adequate computational resources are critical for processing extensive datasets and experimenting with various model architectures. However, it is essential to note that avoiding overfitting or underfitting in these models primarily hinges on the quality and diversity of the training data, as well as the appropriate complexity of the model and the implementation of effective regularization techniques.
 
 ### The Sparseness of Unique Ideas
 
