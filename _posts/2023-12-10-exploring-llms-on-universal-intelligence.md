@@ -17,46 +17,44 @@ image: images/exploring-llms-on-universal-intelligence/cover2x.jpg
 images:
   cover: images/exploring-llms-on-universal-intelligence/cover.jpg
   header: images/exploring-llms-on-universal-intelligence/header.jpg
-published: true
+published: false
 ---
 <!--excerpt.start-->
-At the recent World Science Festival, a compelling discussion titled "[AI: Grappling with a New Kind of Intelligence](https://www.youtube.com/watch?v=EGDG3hgPNp8)" proposed the captivating idea that AI is not just a tool but an evolving 'being'. This provocative thought whisked me back to a mesmerizing read from April 1985's Byte magazine. The piece, ["Communication with Alien Intelligence"](https://web.media.mit.edu/~minsky/papers/AlienIntelligence.html), written by the pioneering AI visionary [Marvin Minsky](https://en.wikipedia.org/wiki/Marvin_Minsky), venture into the tantalizing possibility of reaching out to minds from beyond our world. Imagine, for a moment, the challenge of exchanging ideas with an alien intellect - a scenario Minsky's work vividly brings to life.
+At the recent World Science Festival, the discussion titled "[AI: Grappling with a New Kind of Intelligence](https://www.youtube.com/watch?v=EGDG3hgPNp8)" proposed the idea that AI could be seen as an evolving “being”, rather than merely a tool. This thought bought me back to a mesmerizing read from April 1985's Byte magazine. The piece, ["Communication with Alien Intelligence"](https://web.media.mit.edu/~minsky/papers/AlienIntelligence.html), written by the AI visionary [Marvin Minsky](https://en.wikipedia.org/wiki/Marvin_Minsky), exploring the possibility of reaching out to minds from beyond our world.
 <!--excerpt.end-->
 
-Minsky argues that intelligent beings, regardless of their origin, face similar constraints and would develop comparable concepts and problem-solving methods. He discusses principles like the economics of resource management and the sparseness of unique ideas, suggesting these are universal. Minsky also addresses potential limitations in understanding vastly different intelligences and emphasizes the importance of basic problem-solving elements in intelligent communication. His perspective is speculative yet grounded in computational and evolutionary principles.
+Minsky argues that intelligent beings, regardless of their origin, face similar constraints and would develop comparable concepts and problem-solving methods. He discusses principles like the economics of resource management and the sparseness of unique ideas, suggesting these are universal. Minsky also addresses potential limitations in understanding vastly different intelligences and emphasizes the importance of basic problem-solving elements in intelligent communication.
 
 ![Conversation_between_Intelligence]({{ site.baseurl }}images/exploring-llms-on-universal-intelligence/Conversation_between_Intelligence.jpg)
 
 _Figure. An illustration that metaphorically represents a conversation between human intelligence and artificial intelligence._
 
-These insightful observations open a window to rethinking the capabilities of current Large Language Models (LLMs). His thoughts on the universal traits of intelligence lay the groundwork for a thought-provoking analysis of how LLMs operate and how they intersect with the wider canvas of cognitive processes and problem-solving techniques. Exploring these connections is the essence of our discussion in the following sections.
+This perspective allows us to rethink the capabilities of Large Language Models (LLMs) and how problem solving techniques could be applied to current constraints.
 
 ## Universal Problem-Solving in AI
 
-In the realm of AI as a form of intelligence, encounters similar constraints and evolves parallel problem-solving strategies. When applied to LLMs, this implies that these models might be operating under a set of fundamental cognitive principles that are universal to all intelligent entities. This idea elevates LLMs from merely sophisticated algorithms to entities functioning within a broader intelligence framework, potentially analogous to other intelligent beings, including humans and hypothetical extraterrestrial intelligences. This theory encourages us to view LLMs as more than data processing tools; they might be manifestations of a broader, underlying structure of intelligence that spans across different forms of life and technology.
+AI as a form of intelligence has the potential to compete with humans, by developing its current capabilities through principles of universal problem-solving.
 
-Some examples that illustrate the concept of universal problem-solving in AI, particularly in the context of LLMs, could include:
+Specifically, the concept of universal problem-solving in AI, particularly in the context of LLMs, could include:
 
-1. **Pattern Recognition**: demonstrate a proficiency akin to human intelligence in identifying patterns within datasets. This critical ability to detect and assimilate patterns represents a core attribute of intelligence, one that LLMs and humans hold in common. Naturally, effective pattern recognition is contingent upon a robust memory architecture.
-    
-2. **Language Understanding**: comprehend and generate language can be seen as parallel to human language processing, albeit with different underlying mechanisms. Both involve interpreting symbols (words) and constructing meaningful responses.
-    
-3. **Adaptation and Learning**: through machine learning, adapt to new information and change their responses accordingly. This mirrors the learning and adaptation processes in human cognition, albeit in a more data-driven and algorithmic manner.
+- **Pattern Recognition**: This ability to detect and assimilate patterns is a core attribute of human intelligence. Its effectiveness is dependent on a robust memory architecture.
+- **Language Understanding**: Comprehension of language involves the interpretation of words and symbols, allowing an AI or human to construct meaningful responses.
+- **Adaptation and Learning**: In machine learning, adapting to new information through changes in behaviour is a data-driven and algorithmic way of progression.
 
-These examples highlight how LLMs might be operating under similar universal principles of intelligence, drawing parallels between artificial and natural forms of problem-solving.
+These examples draw parallels between artificial and natural forms of problem-solving.
 
 ## LLMs and the Economics of Resource Management
 
-In the context of Minsky's discussion on the economics of resource management in intelligence, LLMs can be viewed as systems that manage computational resources to optimize problem-solving. This involves balancing the allocation of computational power, memory, and data processing capabilities to efficiently process and generate language. Understanding the strategies LLMs use for resource management is key to understanding their operational mechanics and efficiency.
+Expanding on Minsky’s discussion, LLMs can be viewed as systems that manage computational resources in order to optimize problem-solving. This involves balancing the allocation of computational power, memory, and data processing capabilities to efficiently process and generate language. Understanding the strategies LLMs use for resource management is key to understanding their operational mechanics and efficiency.
 
-The ability to cleverly manage resources is considered a display of intelligence because it involves making informed decisions about the allocation and utilization of limited assets to achieve specific goals efficiently and effectively. Intelligent systems, whether biological or artificial, must often operate within constraints - be it energy, time, materials, or computational power. The skillful navigation of these constraints to optimize outcomes demonstrates an understanding of priorities, strategic planning, and adaptability, all of which are hallmarks of intelligent behavior. This ability is not just about conserving resources but also about maximizing their potential impact, a crucial aspect of both human and artificial intelligence.
+This involves making informed decisions about the allocation and utilization of limited assets to achieve specific goals efficiently and effectively. Intelligent systems, whether biological or artificial, must often operate within constraints - be it energy, time, materials, or computational power. This ability is not just about conserving resources but also about maximizing their potential impact, a crucial aspect of both human and artificial intelligence.
 
-For instance, when an LLM processes a complex sentence, it must allocate its computational resources to understand the context, maintain the flow of the conversation, and generate a coherent and relevant response. This requires a delicate balance of using enough resources to perform these tasks effectively, but not so much that it becomes inefficient or slow. Another example is in training LLMs, where resource management involves using datasets and computational power effectively to train the model without overfitting or underfitting.
+For instance, when an LLM processes a complex sentence, it must understand the context, maintain the flow of the conversation, and generate a relevant response. This requires a delicate balance of using enough resources to perform these tasks effectively, but not so much that it becomes inefficient. Another example is in training LLMs, where resource management involves using datasets and computational power effectively to train the model without overfitting or underfitting.
 
 
 ## The Sparseness of Unique Ideas
 
-Understanding "The Sparseness Principle" provides a compelling framework for understanding the nature of intelligence as it pertains to the generation of unique ideas—a topic of particular relevance when discussing the capabilities and limitations of LLMs. This principle posits that the universe of possible computational structures is vast, yet the processes that yield significant outputs are few, leading to a natural scarcity of truly unique ideas. This scarcity, or sparseness, is not just a characteristic of human thought processes, but is also inherent to computational models like LLMs.
+“The Sparseness Principle” provides a framework for understanding the nature of intelligence as it pertains to the generation of unique ideas. This principle posits that the universe of possible computational structures is vast, yet the processes that yield significant outputs are few, leading to a natural scarcity of truly unique ideas. 
 
 ### Minsky's Experiment on the Sparseness Principle
 
@@ -76,11 +74,11 @@ In the diagram:
 
 Minsky's experiment reveals that among the vast number of possible computational processes, most are unproductive or trivial (the 'X's), but a sparse few (the 'A's) tend to exhibit identical or similar useful behaviors. This consistency among the A-machines despite the diversity of the starting rules suggests an inherent efficiency in certain computational paths which lead to the development of basic arithmetic-like functions.
 
-The illustration metaphorically suggests that in the early stages of computational (or cognitive) development, simpler and more efficient processes are more likely to emerge and be replicated. This mirrors natural evolution, where simple biological processes evolve into more complex structures over time. Just as simple chemical reactions led to the formation of complex molecules and eventually to life, simple computational processes may lead to the development of complex cognitive functions.
+The illustration metaphorically suggests that in the early stages of computational (or cognitive) development, simpler and more efficient processes are more likely to emerge and be replicated.
 
 This experiment underscores a foundational concept in both computer science and cognitive science: despite an astronomical number of possible processes or ideas, functional and efficient ones are rare but tend to be similar across different systems. These efficient processes form the building blocks of more complex operations, whether in computational machines or in the human mind, leading to the advanced forms of intelligence that we strive to understand.
 
-### The Sparseness Principle Explains the Limit of LLMs
+### The Limitations of LLMs
 
 When we consider the generation of language and concepts by LLMs, we often find that these models produce outputs that seem familiar or derivative of existing ideas. This is because LLMs operate by parsing and recombining vast datasets of human language. They do not create in a vacuum but instead draw upon the collective pool of human knowledge encoded in their training data. As Minsky suggests, the rarity of unique ideas is due to the limited number of simple processes that can lead to significant and distinct outcomes. In the context of LLMs, this means that the apparent creativity of these models is often the result of remixing or repurposing existing information rather than creating something entirely new from scratch.
 
@@ -90,7 +88,7 @@ In both examples, the Sparseness Principle is at play. The LLMs reach into their
 
 This understanding is crucial when considering the potential and boundaries of artificial intelligence. It highlights a fundamental truth about LLMs: they are powerful tools that can mimic human-like creativity and problem-solving, but they operate within a bounded set of possibilities defined by their human creators. The Sparseness Principle thus serves as a reminder of the inherent limitations of artificial systems in replicating the depth and originality of human thought and the extraordinary nature of true creativity and innovation.
 
-## Understanding and Limitations
+## Causes and Clauses
 
 Marvin Minsky's contemplations about CAUSES and CLAUSES, relating to the potential communication with alien intelligence, provide a fascinating parallel to understanding the intricacies of LLMs. Minsky suggests that our method of attributing causes to effects and compartmentalizing experiences into object-symbols, difference-symbols, and cause-symbols is not merely an evolutionary coincidence but a likely path of cognitive development. This implies that if alien intelligence evolved cognitively, they might share similar fundamental structures in their communication and thinking processes, potentially enabling us to find a common ground.
 
@@ -100,13 +98,13 @@ The concept of using clause-structures in human language, which allows us to bui
 
 ## Explaining in the Cultural Context
 
-Another critical point is about holistic perception versus analytical breakdown into components challenges us to think about the nature of intelligence and cognition beyond our human-centric viewpoint. It raises the question of whether our tendency to see the world in parts, which LLMs also mimic, is truly the most effective way of processing information. Perhaps, in the vastness of all conceivable ideas, there are forms of intelligence, be they alien or artificial, that perceive and understand in ways that are fundamentally different from ours and from the capabilities of our current AI systems. This notion broadens the scope of what we consider when developing and interacting with LLMs, pushing us to explore beyond our conventional frameworks and potentially paving the way for revolutionary advancements in AI.
+Comparing an analytical breakdown into components, versus a more holistic perspective, can challenge us to think about the nature of intelligence and cognition beyond our human-centric viewpoint. It raises the question of whether our tendency to see the world in parts, which LLMs also mimic, is truly the most effective way of processing information. Perhaps, in the vastness of all conceivable ideas, there are forms of intelligence, be they alien or artificial, that perceive and understand in ways that are fundamentally different from ours and from the capabilities of our current AI systems. This notion broadens the scope of what we consider when developing and interacting with LLMs, pushing us to explore beyond our conventional frameworks and potentially paving the way for revolutionary advancements in AI.
 
 ### Roar of AI: Understanding Beyond Language
 
 While it is true that LLM plays a significant role in explaining itself, it is important to note that explainability is not limited to language alone. In the context of AI, explainability refers to the ability to understand and interpret the decisions made by the AI system. This can be achieved through a variety of techniques, including visualizations, feature importance analysis, not just limited by generating human-readable explanations.
 
-While language can be a powerful tool for explaining things, it is not always necessary or sufficient for achieving explainability in AI. In some cases, visualizations or other non-linguistic techniques may be more effective in helping users understand how the AI system arrived at its decisions.
+Language can be a powerful tool for explaining things; it is not always necessary or sufficient for achieving explainability in AI. In some cases, visualizations or other non-linguistic techniques may be more effective in helping users understand how the AI system arrived at its decisions.
 
 
 ![Analogy_to_If_Lion_Can_Speak]({{ site.baseurl }}images/exploring-llms-on-universal-intelligence/Analogy_to_If_Lion_Can_Speak_02.jpg)
