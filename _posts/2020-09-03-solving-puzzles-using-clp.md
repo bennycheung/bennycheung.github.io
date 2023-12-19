@@ -19,6 +19,7 @@ images:
   header: images/solving-puzzles-using-clp/header.jpg
 published: true 
 ---
+
 <!--excerpt.start-->
 Since the last article on "[Using Prolog to Solve Logic Puzzles](http://bennycheung.github.io/using-prolog-to-solve-logic-puzzles)" 4 years ago,
 I finally woke up and discovered how to use the amazing [clp(fd) - Constraint Logic Programming (Finite Domain)](https://www.swi-prolog.org/man/clpfd.html) module.

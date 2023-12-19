@@ -19,6 +19,7 @@ images:
   header: images/building-stug-iii-winter-camouflage-model/header.jpg
 published: false
 ---
+
 <!--excerpt.start-->
 As we set forth on another exhilarating modeling journey, this time exploring into the realm of the World War 2 German StuG III anti-tank vehicle. This endeavor not only guarantees a captivating building experience but also offers an exploration of a pivotal fragment of history. I am looking forward to the delight and fulfillment that accompanies the creation of this scale model piece, eager to adopt the techniques showcased by fellow enthusiasts. As we reach the culmination of this project, I apply the power of Generative AI techniques to enhance the final photographic outcomes, adding a modern twist to this historical recreation.
 <!--excerpt.end-->

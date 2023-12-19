@@ -19,6 +19,7 @@ images:
   header: images/game-architecture-card-ai-1/header.jpg
 published: true
 ---
+
 <!--excerpt.start-->
 Being software architects, we always interest to know how a software system is built.
 At the same time, if one is a gamer, you would meditate on how a game is being designed and constructed;
@@ -47,22 +48,32 @@ This article starts with the general game architecture to identify the important
 
 In part 1, we shall lay out the groundwork by describing a game architecture. Since the architecture components are numerous, this article will focus only on the RFTG's (1) Game Model and (2) Game Assets. As always, a balance between theory and practice, we set up the Python development to illustrate the object-oriented conversion process of the game. These are the necessary groundwork to support the game engine. The game AI will need to wait for later articles.
 
-* [Game Architecture](#GameArchitecture)
-  * [Game Architecture Overview](#GameArchitectureOverview)
-* [RFTG Game Model](#GameModel)
-* [RFTG Game Assets](#GameAssets)
-* [RFTG Python Development](#PythonDevelopment)
-  * [Jupyter Notebook Experiments](#Notebook)
-  * [Enum](#Enum)
-  * [Class](#Class)
-  * [Loading Library](#LoadingLibrary)
-    * [Inspect Card Designs](#InspectCardDesigns)
-    * [Plot Cards](#PlotCards)
-  * [Player](#Player)
-  * [Game Resource](#GameResource)
-  * [Game](#Game)
-* [Concluding Remarks](#Conclusion)
-* [References](#References)
+- [ Card Game - Race for the Galaxy](#-card-game---race-for-the-galaxy)
+  - [Game AI and Source Code](#game-ai-and-source-code)
+  - [Outline](#outline)
+- [ Game Architecture](#-game-architecture)
+  - [ Game Architecture Overview](#-game-architecture-overview)
+- [ RFTG Game Model](#-rftg-game-model)
+- [ RFTG Game Assets](#-rftg-game-assets)
+  - [ Card Design](#-card-design)
+    - [Type 1 (World) Examples](#type-1-world-examples)
+    - [Type 2 (Development) Examples](#type-2-development-examples)
+- [ RFTG Python Development](#-rftg-python-development)
+  - [ Jupyter Notebook Experiments](#-jupyter-notebook-experiments)
+  - [ Enums](#-enums)
+  - [ Class](#-class)
+  - [ Loading Library](#-loading-library)
+    - [ Inspect Card Designs](#-inspect-card-designs)
+    - [Plot Card Design](#plot-card-design)
+  - [Deck](#deck)
+    - [ Plot Deck of Cards](#-plot-deck-of-cards)
+  - [ Player](#-player)
+  - [ Game Resource](#-game-resource)
+  - [ Game](#-game)
+- [ Concluding Remarks](#-concluding-remarks)
+- [ References](#-references)
+  - [Game Architecture](#game-architecture)
+  - [Race for the Galaxy](#race-for-the-galaxy)
 
 ## <a name="GameArchitecture"></a> Game Architecture
 A game is an information system that keeping track of the states in a *game universe*, such that the player(s), both human or AI, can interact with the game through a series of legal actions according to the game rules. The following is a succulent definition of a computer game that is memorable,

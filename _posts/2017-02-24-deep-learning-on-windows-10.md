@@ -19,6 +19,7 @@ images:
   header: images/deep-learning-on-windows-10/header.jpg
 published: true
 ---
+
 <!--excerpt.start-->
 You just got your latest NVidia GPU on your Windows 10 machine.
 Other than playing the latest games with ultra-high settings to enjoy your new investment,

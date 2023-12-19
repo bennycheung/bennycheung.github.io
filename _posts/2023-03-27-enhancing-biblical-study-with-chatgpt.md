@@ -18,6 +18,7 @@ images:
   header: images/enhancing-biblical-study-with-chatgpt/header.jpg
 published: true
 ---
+
 <!--excerpt.start-->
 The study of the Bible is an enriching and transformative journey, offering profound insights into our faith, personal growth, and understanding of the world. While traditional methods of biblical study, such as personal reading, attending classes, and consulting commentaries, remain essential, modern technology has opened up new possibilities for engaging with the sacred text. One such tool is ChatGPT, a powerful AI language model developed by OpenAI, capable of providing valuable assistance and insights for biblical studies.
 <!--excerpt.end-->

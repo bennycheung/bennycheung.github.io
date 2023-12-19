@@ -18,6 +18,7 @@ images:
   header: images/yolo-for-real-time-food-detection/header.jpg
 published: true
 ---
+
 <!--excerpt.start-->
 The obsession of recognizing snacks and foods has been a fun theme for experimenting the latest machine learning techniques. The highest goal will be a computer vision system that can do real-time common foods classification and localization, which an IoT device can be deployed at the AI edge for many food applications.
 <!--excerpt.end-->

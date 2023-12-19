@@ -20,6 +20,7 @@ images:
   header: images/q-star-new-method-in-problem-solving/header.jpg
 published: true
 ---
+
 <!--excerpt.start-->
 In the dynamic and ever-changing landscape of AI and computational problem-solving, there arises a new speculative yet intriguing proposal: **Q\*** (pronounced "Q-star") - This conceptual framework is imagined to position itself at the intersection of three diverse yet interrelated technologies: the A* algorithm, Q-learning, and Large Language Models (LLMs) as systems of compressed knowledge. Although still theoretical, this amalgamation of Q* suggests a synergy that could potentially push the boundaries of AI's problem solving efficiency and effectiveness, offering a novel approach to tackling complex challenges.
 <!--excerpt.end-->

@@ -19,6 +19,7 @@ images:
   header: images/singularitynet-ai-service-integration/header.jpg
 published: true
 ---
+
 <!--excerpt.start-->
 With the advent of **AI** and **Blockchain** technology and its exponential impact on business, a recently released open-source project **SingularityNET** <https://singularitynet.io/> is truly revolutionary by combining both technologies into a decentralized market of coordinated AI services being backed by Blockchain's smart contracts. Within the SingularityNET platform, the benefits of AI become a global commons infrastructure for the benefit of all; anyone can access AI tech or become a stakeholder in its development. Anyone can add an AI/machine learning service to SingularityNET for use by the network, and receive network payment tokens in exchange.
 <!--excerpt.end-->

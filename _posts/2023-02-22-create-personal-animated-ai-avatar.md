@@ -18,6 +18,7 @@ images:
   header: images/create-personal-animated-ai-avatar/header.jpg
 published: true
 ---
+
 <!--excerpt.start-->
 Creating your personal AI avatar can be a fun and exciting way to explore the capabilities of cutting-edge AI technologies. An AI avatar is a digital representation of a person that is created using artificial intelligence (AI) tools and techniques. It can take many forms, such as a 3D model, an animated character, or a virtual assistant. AI avatars are becoming increasingly popular in areas such as gaming, entertainment, virtual assistants, and social media.
 <!--excerpt.end-->

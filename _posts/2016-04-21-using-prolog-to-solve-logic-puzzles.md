@@ -17,6 +17,7 @@ images:
   header: images/using-prolog-to-solve-logic-puzzles/header.jpg
 published: true
 ---
+
 ## What is a logic puzzle?
 <!--excerpt.start-->
 Logic Puzzle is a very funny thing. We are all very interest to read and try our brains to solve

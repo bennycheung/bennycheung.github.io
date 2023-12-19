@@ -19,6 +19,7 @@ images:
   header: images/existential-crisis-with-microservices-using-docker/header.jpg
 published: true
 ---
+
 <!--excerpt.start-->
 As software architects, we have no doubt that both Microservices architecture and Docker deployment help to bring
 flexibility and scalability in system design. However, the blurring existence of a system identity, due to

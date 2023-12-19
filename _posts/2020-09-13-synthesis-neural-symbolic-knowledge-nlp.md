@@ -21,6 +21,7 @@ images:
   header: images/synthesis-neural-symbolic-knowledge-nlp/header.jpg
 published: true
 ---
+
 <!--excerpt.start-->
 Much of human knowledge is collected in the written language. Extracting knowledge directly from the textual form of natural language has been one of the lofty goals of Natural Language Processing (NLP) since the beginning of AI research. The recent advance in NLP, using deep neural networks, has effectively automated the parsing and understanding of the natural language. The NLP using deep neural networks is successful because of the DNN adaptive learning ability to handle
 real-world data when the processing is not readily describable in the traditional symbolic rules.
@@ -42,18 +43,21 @@ In the Neural to Symbolic NLP system architecture diagram, the future of NLP is 
 
 This may look like another AI pipe dream but we shall take a practical engineering step using [DeepRank [TarauBlanco20]](#TarauBlanco20) to demonstrate the possibility. We start with the synthesis of neural to symbolic knowledge from a simple document to perform question and answer; subsequently, we shall synthesize knowledge from a complex HIPAA regulations document to illustrate the greater system capabilities.
 
-* [Synthesis of Neural to Symbolic Knowledge](#KE)
-  * [Using DeepRank](#DeepRank)
-    * [0. Starting Stanford CoreNLP Server](#Step0)
-    * [1. DeepRank Text Parsing](#Step1)
-    * [2. Generate the Prolog Facts](#Step2)
-    * [3. Loading Facts & Rules into Prolog](#Step3)
-    * [4. DeepRank Query Processing](#Step4)
-    * [5. Reasoning in Prolog to Provide Answers](#Step5)
-  * [HIPAA Regulations](#HIPAA)
-    * [Example HIPAA Rule - 164.508](#HIPAAExample)
-* [Concluding Remarks](#Conclusion)
-* [References](#References)
+- [ Synthesis of Neural to Symbolic Knowledge](#-synthesis-of-neural-to-symbolic-knowledge)
+  - [ Using DeepRank](#-using-deeprank)
+    - [ 0. Starting Stanford CoreNLP Server](#-0-starting-stanford-corenlp-server)
+    - [ 1. DeepRank Text Parsing](#-1-deeprank-text-parsing)
+      - [Word Cloud for Keywords Ranking](#word-cloud-for-keywords-ranking)
+      - [Ranked Dependency Graph](#ranked-dependency-graph)
+    - [ 2. Generate the Prolog Facts](#-2-generate-the-prolog-facts)
+    - [ 3. Loading Facts \& Rules into Prolog](#-3-loading-facts--rules-into-prolog)
+      - [Installation on Mac](#installation-on-mac)
+    - [ 4. DeepRank Query Processing](#-4-deeprank-query-processing)
+    - [ 5. Reasoning in Prolog to Provide Answers](#-5-reasoning-in-prolog-to-provide-answers)
+  - [ HIPAA Regulations](#-hipaa-regulations)
+    - [ Example: HIPAA Rule - 164.508](#-example-hipaa-rule---164508)
+  - [ Concluding Remarks](#-concluding-remarks)
+  - [ References](#-references)
 
 
 # <a name='KE'></a> Synthesis of Neural to Symbolic Knowledge

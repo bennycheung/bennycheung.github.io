@@ -19,6 +19,7 @@ images:
   header: images/interactive-hex-world-map-using-d3/header.jpg
 published: true
 ---
+
 <!--excerpt.start-->
 How does the nature inspires us about the optimal geometry?
 The bees create their honeycombs with precision engineering, an array of prism-shaped cells with a perfectly hexagonal cross-section.

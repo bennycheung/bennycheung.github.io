@@ -16,6 +16,7 @@ images:
   header: images/snack-watching-with-raspberry-pi/header.jpg
 published: true
 ---
+
 <!--excerpt.start-->
 Starting as a fun [Jonah Group](http://www.jonahgroup.com) project,
 the **Snack Watcher** is designed to watch the company's "Snack Table". If there are

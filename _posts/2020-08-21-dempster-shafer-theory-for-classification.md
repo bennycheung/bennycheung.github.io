@@ -19,6 +19,7 @@ images:
   header: images/dempster-shafer-theory-for-classification/header.jpg
 published: true
 ---
+
 <!--excerpt.start-->
 Machine Learning is dominated by ANN (Automated Neural Network), it requires a large training data set of labelled data to learn a classification model.
 When only a small data set is available, the decision tree & its variant random forests dominated the classification.
@@ -45,16 +46,24 @@ The motivation for selecting D-S theory can be characterized by the following re
 Using our philosophy of learning by doing, we shall take the practical approach to demonstrate how to use Python `pyds` Dempster-Shafer module.
 Starting with some experiment with Dempster-Shafer belief functions, then we shall progress into classification on the "Iris Plant Dataset" [[IPD]](#IPD) using D-S theory. The result is achieving 96% accuracy, which is comparable to other ML models.
 
-* [Python Installation](#Installation)
-  * [Virtual Environment](#VirtualEnv)
-  * [pyds Module](#pyds)
-* [Dempster-Shafer Evidence Theory](#DSEvidence)
-  * [Dempster's Rule of Combination](#DempsterRule)
-* [Dempster-Shafer Classifier](#DSClassifier)
-  * [Iris Plant Dataset](#IPDExplain)
-  * [Using Dempster-Shafer as Classifier](#UsingDS)
-* [Concluding Remarks](#Conclusion)
-* [References](#References)
+- [ Python Installation](#-python-installation)
+  - [ Virtual Environment](#-virtual-environment)
+  - [ pyds Module](#-pyds-module)
+  - [ Other Modules](#-other-modules)
+- [ Dempster-Shafer Evidence Theory](#-dempster-shafer-evidence-theory)
+- [ Dempster's Rule of Combination](#-dempsters-rule-of-combination)
+- [ Dempster-Shafer Classifier](#-dempster-shafer-classifier)
+  - [ Iris Plant Dataset](#-iris-plant-dataset)
+  - [ Using Dempster-Shafer as Classifier](#-using-dempster-shafer-as-classifier)
+  - [1. Define the frame of discernment](#1-define-the-frame-of-discernment)
+  - [2. Determine class membership](#2-determine-class-membership)
+  - [3. Assign mass functions](#3-assign-mass-functions)
+  - [4. Design DRC strategy](#4-design-drc-strategy)
+  - [5. Classify data](#5-classify-data)
+- [ Concluding Remarks](#-concluding-remarks)
+- [ References](#-references)
+  - [Video Tutorial](#video-tutorial)
+  - [Technical References](#technical-references)
 
 ## <a name='Installation'></a> Python Installation
 

@@ -19,6 +19,7 @@ images:
   header: images/game-architecture-card-ai-3/header.jpg
 published: true
 ---
+
 <!--excerpt.start-->
 The last article on the topics of "Game Architecture for Card Game" series will focus on the amazing "Race for the Galaxy" AI. Even though Keldon Jones released his RFTG AI source code back in 2009 [[Jones09]](#Jones09), it was using neural networks and reinforcement learning to train the game AI, way before DeepMind's Alpha Go success that drew the world's attention to reinforcement learning.
 <!--excerpt.end-->
@@ -33,22 +34,27 @@ a full-fledged game environment has been put in place and needs to capture all t
 
 However, the RFTG card game's rule complexity is difficult to express in a well-defined game state representation, unlike Easy21 or UNO simplicity. We must raise the level of abstraction in order to describe RFTG AI. We are hoping to guide readers in the right direction with the following outline.
 
-* [RFTG Python Development](#PythonDevelopment)
-  * [Jupyter Notebook Experiments (Part 3)](#Notebook)
-  * [Installation for AI Notebook](#AINotebook)
-* [Temporal Difference - Reinforcement Learning](#TDLearning)
-  * [Game State](#GameState)
-  * [Neural Network](#NeuralNetwork)
-    * [Eval Network](#EvalNetwork)
-    * [Role Network](#RoleNetwork)
-  * [Decisions](#Decisions)
-* [Deep Neural Network using Keras](#Keras)
-  * [Define Keras Layers](#KerasLayers)
-  * [Visualize Model](#VisualizeModel)
-  * [Loading Network Weights into Layers](#LoadingNetworkWeights)
-  * [Using Neural Network for Predictions (Scores)](#UsingNeuralNetworkPredictions)
-* [Concluding Remarks](#Conclusion)
-* [References](#References)
+- [ RFTG Python Development](#-rftg-python-development)
+  - [ Jupyter Notebook Experiments (Part 3)](#-jupyter-notebook-experiments-part-3)
+  - [ Installation for AI Notebook](#-installation-for-ai-notebook)
+- [ Temporal Difference - Reinforcement Learning](#-temporal-difference---reinforcement-learning)
+  - [ Game State](#-game-state)
+  - [ Neural Networks](#-neural-networks)
+    - [ Eval Network](#-eval-network)
+    - [ Role Network](#-role-network)
+  - [ Decisions](#-decisions)
+- [ Deep Neural Network using Keras](#-deep-neural-network-using-keras)
+  - [ Define Keras Layers](#-define-keras-layers)
+  - [ Visualize Model](#-visualize-model)
+  - [ Loading Network Weights into Layers](#-loading-network-weights-into-layers)
+  - [ Using Neural Network for Predictions (Scores)](#-using-neural-network-for-predictions-scores)
+- [ Concluding Remarks](#-concluding-remarks)
+- [ References](#-references)
+  - [Game AI](#game-ai)
+  - [Race for the Galaxy AI](#race-for-the-galaxy-ai)
+  - [Reinforcement Learning](#reinforcement-learning)
+  - [Reinforcement Learning for Card Game AI](#reinforcement-learning-for-card-game-ai)
+  - [Deep Learning using Python](#deep-learning-using-python)
 
 ## <a name="PythonDevelopment"></a> RFTG Python Development
 Interest reader can find the full development set up instruction, Python source code and Jupyter notebook experiments described in this article from [[Cheung21]](https://github.com/bennycheung/RaceGalaxyAI-Python).

@@ -19,6 +19,7 @@ images:
   header: images/spatial-reasoning-in-agi/header.jpg
 published: true
 ---
+
 <!--excerpt.start-->
 Spatial understanding is indeed an important aspect of achieving Artificial General Intelligence (AGI), which refers to machines possessing human-level intelligence across a wide range of tasks and domains. Despite the belief that advanced Large Language Models (LLMs), such as [GPT-4, demonstrate some AGI capabilities](https://arxiv.org/abs/2303.12712), these models may encounter difficulties when explaining concepts requiring spatial reasoning skills.
 <!--excerpt.end-->

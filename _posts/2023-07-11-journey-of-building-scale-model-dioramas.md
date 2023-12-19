@@ -19,6 +19,7 @@ images:
   header: images/journey-of-building-scale-model-dioramas/header.jpg
 published: true
 ---
+
 <!--excerpt.start-->
 Diving into the immersive world of modelling and miniatures, one finds the ability to freeze history in time, captured within a meticulously crafted diorama. A fascinating blend of history and craftsmanship await us in the creation of a scale model diorama. Though it may seem like a challenging task, a systematic approach can turn our imagined WWII scene into a tangible reality.
 <!--excerpt.end-->

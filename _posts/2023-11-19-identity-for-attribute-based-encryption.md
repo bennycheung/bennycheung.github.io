@@ -20,6 +20,7 @@ images:
   header: images/identity-for-attribute-based-encryption/header.jpg
 published: true
 ---
+
 <!--excerpt.start-->
 In the physical world, we trust the identity cards issued by a well known organization, including the government.
 The verification process is a visual inspection of the card authenticity. Advancing into the digital realm, we are relying on the Public Key Infrastructure (PKI) to securely identify the participants. This is the key cryptographic technology that enables our internet commerce today! Coupling with the advanced attribute-based encryption, we shall see how to use PKI identity to support a flexible access control to the protected records.

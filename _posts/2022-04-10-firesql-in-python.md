@@ -20,6 +20,7 @@ images:
   header: images/firesql-in-python/header.jpg
 published: true
 ---
+
 <!--excerpt.start-->
 [PyFireSQL](https://github.com/bennycheung/PyFireSQL) is a SQL-like programming interface to query [Cloud Firestore](https://firebase.google.com/products/firestore) collections using Python. Cloud Firestore is a NoSQL, document-oriented database. Unlike a SQL database, there are no tables or rows. Instead, you store data in documents, which are organized into collections.
 <!--excerpt.end-->

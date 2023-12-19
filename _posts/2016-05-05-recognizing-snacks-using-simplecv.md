@@ -19,6 +19,7 @@ images:
   header: images/recognizing-snacks-using-simplecv/header.jpg
 published: true
 ---
+
 <!--excerpt.start-->
 This article aims to provide the basic knowledge of how to recognize snacks by
 using Python and SimpleCV. Readers will gain practical programming knowledge via

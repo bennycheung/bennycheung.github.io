@@ -20,6 +20,7 @@ images:
   header: images/attribute-based-encryption-for-healthcare-blockchain/header.jpg
 published: true
 ---
+
 <!--excerpt.start-->
 It's no surprise that one of the greatest concerns for a healthcare provider is data security. One can argue that the data ownership is the most important asset in this information age. Healthcare patients are aware of the value of their personal information.
 As a result, a healthcare provider required to switch from a centralized ownership to a distributed ownership. The patient now has the full control of his health data while the provider only has permission to access to the data when necessary.

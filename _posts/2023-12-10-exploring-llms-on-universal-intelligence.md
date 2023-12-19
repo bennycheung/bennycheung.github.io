@@ -19,6 +19,7 @@ images:
   header: images/exploring-llms-on-universal-intelligence/header.jpg
 published: true
 ---
+
 <!--excerpt.start-->
 At the recent World Science Festival, the discussion titled "[AI: Grappling with a New Kind of Intelligence](https://www.youtube.com/watch?v=EGDG3hgPNp8)" proposed the idea that AI could be seen as an evolving “being”, rather than merely a tool. This thought brought me back to a mesmerizing read from April 1985's Byte magazine. The piece, ["Communication with Alien Intelligence"](https://web.media.mit.edu/~minsky/papers/AlienIntelligence.html), written by the AI visionary [Marvin Minsky](https://en.wikipedia.org/wiki/Marvin_Minsky), exploring the possibility of reaching out to minds from beyond our world.
 <!--excerpt.end-->

@@ -19,6 +19,7 @@ images:
   header: images/preparing-geospatial-data-in-postgis/header.jpg
 published: true
 ---
+
 <!--excerpt.start-->
 The **Spatial** is a popular extension to the traditional database systems.
 When the data has some spatial attributes, for example a street address or a phone number,
@@ -53,22 +54,24 @@ Using Docker to quickly spin up a PostGIS instance, you can load the OpenStreetM
 Subsequently, using QGIS to connect with this PostGIS instance, the spatial data can be analyzed and visualized interactively.
 By the end, you are equipped with a firm perspective of how to prepare geospatial data for the future geospatial analysis.
 
-1. [What is Geospatial?](#WhatisGeospatial)
-	* [Representations](#Representations)
-	* [Coordinate Systems](#CoordinateSystems)
-	* [Map Projections](#MapProjections)
-2. [Running Dockerized PostGIS](#RunningDockerizedPostGIS)
-	* [Persisting Postgres Data](#PersistingPostgresData)
-	* [Creating the Database Container](#CreatingtheDatabaseContainer)
-	* [(1) Execute psql from localhost](#1Executepsqlfromlocalhost)
-	* [(2) Execute psql in the PostGIS Container](#2ExecutepsqlinthePostGISContainer)
-3. [Loading OSM Data into PostGIS](#LoadingOSMDataintoPostGIS)
-	* [Install Osm2pgsql](#InstallOsm2pgsql)
-        * [From source](#Fromsource)
-        * [For Debian or Ubuntu](#ForDebianorUbuntu)
-        * [For Mac OS X](#ForMacOSX)
-    * [Loading Toronto OSM Data](#LoadingTorontoOSMData)
-4. [Displaying PostGIS Data with QGIS](#DisplayingPostGISDatawithQGIS)
+- [The World as Unified One?](#the-world-as-unified-one)
+- [Outlines](#outlines)
+- [1. What is Geospatial?](#1-what-is-geospatial)
+  - [1.1. Representations](#11-representations)
+  - [1.2. Coordinate Systems](#12-coordinate-systems)
+  - [1.3. Map Projections](#13-map-projections)
+- [2. Running Dockerized PostGIS](#2-running-dockerized-postgis)
+  - [2.1. Persisting Postgres Data](#21-persisting-postgres-data)
+  - [2.2. Creating the Database Container](#22-creating-the-database-container)
+  - [2.3. (1) Execute psql from localhost](#23-1-execute-psql-from-localhost)
+  - [2.4. (2) Execute psql in the PostGIS Container](#24-2-execute-psql-in-the-postgis-container)
+- [3. Loading OSM Data into PostGIS](#3-loading-osm-data-into-postgis)
+  - [3.1. Install Osm2pgsql](#31-install-osm2pgsql)
+    - [3.1.1. From source](#311-from-source)
+    - [3.1.2. For Debian or Ubuntu](#312-for-debian-or-ubuntu)
+    - [3.1.3. For Mac OS X](#313-for-mac-os-x)
+  - [3.2. Loading Toronto OSM Data](#32-loading-toronto-osm-data)
+- [4. Displaying PostGIS Data with QGIS](#4-displaying-postgis-data-with-qgis)
 
 ------------------
 ##  1. <a name='WhatisGeospatial'></a>What is Geospatial?

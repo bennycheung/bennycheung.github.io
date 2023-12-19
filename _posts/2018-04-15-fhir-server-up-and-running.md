@@ -20,6 +20,7 @@ images:
   header: images/fhir-server-up-and-running/header.jpg
 published: true
 ---
+
 <!--excerpt.start-->
 Blockchain is a hot topic for making patient's Electronic Health Record both accessible and safe, talking about the dream of patients finally own their complete medical history, drugs list, lab test results, doctor notes etc. But there is a fundamental problem - *Where is the data coming from?* Even the medical providers are digitizing the patient's data deligently, the data remains inaccessible beyond their database boundary.
 <!--excerpt.end-->
@@ -46,12 +47,15 @@ The suite of tools are used and their links:
 ### Steps Overview
 The following steps will guide you through the server installation, data generation and UI testing. The instructions are proven to work on a Mac (OS X El Capitan).
 
-1. [Compile Hapi FHIR Packages](#compile)
-1. [Setup Hapi FHIR JPA Server](#setup)
-1. [Start Hapi FHIR JPA Server](#start)
-1. [Generate Sample Data Set](#generate)
-1. [Upload Sample Data Set to Server](#upload)
-1. [Use Patient-Browser to Visualize the Sample Data](#use)
+- [FHIR Me Up!](#fhir-me-up)
+  - [Quick Links](#quick-links)
+  - [Steps Overview](#steps-overview)
+- [Compile Hapi FHIR Packages](#compile-hapi-fhir-packages)
+- [Setup Hapi FHIR JPA Server](#setup-hapi-fhir-jpa-server)
+- [Start Hapi FHIR JPA Server](#start-hapi-fhir-jpa-server)
+- [Generate Sample Data Set](#generate-sample-data-set)
+- [Upload Sample Data Set to Server](#upload-sample-data-set-to-server)
+- [Use Patient-Browser to Visualize the Sample Data](#use-patient-browser-to-visualize-the-sample-data)
 
 ## <a name="compile"></a>Compile Hapi FHIR Packages
 Go download Hapi FHIR Server <http://hapifhir.io/download.html>. At the time of this writing, the latest **DSTU3** (Draft Standard for Trial Use 3) is stable.

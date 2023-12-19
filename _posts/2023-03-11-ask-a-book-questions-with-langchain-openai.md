@@ -20,6 +20,7 @@ images:
   header: images/ask-a-book-questions-with-langchain-openai/header.jpg
 published: true
 ---
+
 <!--excerpt.start-->
 Reading a book can be a fulfilling experience, transporting you to new worlds, introducing you to new characters, and exposing you to new concepts and ideas. However, once you've finished reading, you might find yourself with a lot of questions that you'd like to discuss. Perhaps you don't have anyone nearby who has read the book or is interested in discussing it, or maybe you simply want to explore the book on your own terms. In this situation, you might be left wondering how long it will take to fully digest the book and answer your own questions. Without a tutor or friends around to provide guidance and discussion, you may need to take a more thoughtful and introspective approach to your reading.
 <!--excerpt.end-->

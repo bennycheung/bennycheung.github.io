@@ -19,6 +19,7 @@ images:
   header: images/geospatial-granular-computing/header.jpg
 published: true
 ---
+
 <!--excerpt.start-->
 [Granular Computing](https://en.wikipedia.org/wiki/Granular_computing) can be conceived
 as a framework of theories, methodologies, techniques, and tools
@@ -44,19 +45,19 @@ Additionally, the theory formulated in this article, can be extended to other ge
 
 Explaining the theory of *geospatial granular computing*, we shall explore the following topics.
 
-* [Thinking in Granular Computing?](#ThinkinginGranularComputing)
-* [Spatial Granule](#SpatialGranule)
-	* [Geospatial Granular Structure](#GeospatialGranularStructure)
-	* [Geospatial Granule](#GeospatialGranule)
-	* [Granular Relation](#GranularRelation)
-	* [Granular Algebra](#GranularAlgebra)
-		* [Table of relational operator class:](#Tableofrelationaloperatorclass:)
-		* [Table of spatial operator class:](#Tableofspatialoperatorclass:)
-		* [Table of composite operator class:](#Tableofcompositeoperatorclass:)
-* [Geocoding Query](#GeocodingQuery)
-* [Preview of Geospatial Analytics](#PreviewofGeospatialAnalytics)
-* [Final Notes](#FinalNotes)
-* [References](#References)
+- [Thinking in Granular Computing?](#thinking-in-granular-computing)
+- [Spatial Granule](#spatial-granule)
+  - [Geospatial Granular Structure](#geospatial-granular-structure)
+  - [Geospatial Granule](#geospatial-granule)
+  - [Granular Relation](#granular-relation)
+  - [Granular Algebra](#granular-algebra)
+    - [Table of relational operator class:](#table-of-relational-operator-class)
+    - [Table of spatial operator class:](#table-of-spatial-operator-class)
+    - [Table of composite operator class:](#table-of-composite-operator-class)
+- [Geocoding Query](#geocoding-query)
+- [Preview of Geospatial Analytics](#preview-of-geospatial-analytics)
+- [Final Notes](#final-notes)
+- [References](#references)
 
 As a side note, another unification effort is the theory based on Geospatial Semantic Web [[ZhZhLi15]](#ZhZhLi15).
 Geospatial semantic web is using RDF representation of spatial data and GeoSPARQL as query language.

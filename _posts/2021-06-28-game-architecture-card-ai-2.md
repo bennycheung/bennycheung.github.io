@@ -19,6 +19,7 @@ images:
   header: images/game-architecture-card-ai-2/header.jpg
 published: true
 ---
+
 <!--excerpt.start-->
 Continue from the previous [Game Architecture for Card Game Model (Part 1)](http://bennycheung.github.io/game-architecture-card-ai-1), we defined a game architecture as a reference to study the "Race for the Galaxy" card game. This article focus on the components of (3) **Game Engine** and (4) **Game Interface**.
 <!--excerpt.end-->
@@ -32,25 +33,29 @@ Continue from the previous [Game Architecture for Card Game Model (Part 1)](http
 
 In part 2, we shall continue to describe the game architecture using [Race for the Galaxy](https://boardgamegeek.com/boardgame/28143/race-galaxy) (RFTG) for our study. As usual, a balance between theory and practice, we set up the Python development to illustrate the object-oriented game engine.
 
-* [RFTG Python Development](#PythonDevelopment)
-  * [Jupyter Notebook Experiments (Part 2)](#Notebook)
-* [RFTG Game Engine](#GameEngine)
-  * [Create a Game](#CreateGame)
-  * [Deck Operations](#DeckOperations)
-    * [Pick Start Worlds](#StartWorlds)
-    * [Draw 6 Random Cards](#RandomCards)
-  * [Decisions](#Decisions)
-    * [Decide on the Start World](#DecideStartWorld)
-    * [Decide on the Action](#DecideAction)
-    * [Discard Cards](#DiscardCards)
-  * [Start Game](#StartGame)
-* [RFTG Game Interface](#GameInterface)
-  * [Install Cocos2d](#InstallCocos2d)
-  * [Read and Display the Cards](#ReadDisplayCards)
-  * [Load Card Library and Define Game](#LoadCardGame)
-  * [Display Card Sprite and Animation](#DisplayCardAnimation)
-* [Concluding Remarks](#Conclusion)
-* [References](#References)
+- [ RFTG Python Development](#-rftg-python-development)
+  - [ Jupyter Notebook Experiments (Part 2)](#-jupyter-notebook-experiments-part-2)
+- [ RFTG Game Engine](#-rftg-game-engine)
+  - [ Create a Game](#-create-a-game)
+  - [ Deck Operations](#-deck-operations)
+    - [ Pick Start Worlds](#-pick-start-worlds)
+    - [ Draw 6 Random Cards](#-draw-6-random-cards)
+  - [ Decisions](#-decisions)
+    - [ Decide on the Start World](#-decide-on-the-start-world)
+    - [ Decide on the Action](#-decide-on-the-action)
+    - [ Discard Cards](#-discard-cards)
+- [ Start Game](#-start-game)
+- [ Game Interface](#-game-interface)
+  - [ Install Cocos2d](#-install-cocos2d)
+    - [Patch on the Mac](#patch-on-the-mac)
+  - [ Read and Display the Cards](#-read-and-display-the-cards)
+    - [Read Card Images as pyglet Images](#read-card-images-as-pyglet-images)
+  - [ Load Card Library and Define Game](#-load-card-library-and-define-game)
+  - [ Display Card Sprite and Animation](#-display-card-sprite-and-animation)
+- [ Concluding Remarks](#-concluding-remarks)
+- [ References](#-references)
+  - [Race for the Galaxy](#race-for-the-galaxy)
+  - [Interface Development](#interface-development)
 
 ## <a name="PythonDevelopment"></a> RFTG Python Development
 Interest reader can find the full development set up instruction, Python source code and Jupyter notebook experiments described in this article from [[Cheung21]](https://github.com/bennycheung/RaceGalaxyAI-Python).

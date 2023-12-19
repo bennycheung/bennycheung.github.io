@@ -19,6 +19,7 @@ images:
   header: images/dreambooth-training-for-personal-embedding/header.jpg
 published: true
 ---
+
 <!--excerpt.start-->
 This article will focus on training an embedding that is deeper and is able to go farther than the original Stable Diffusion software that we described in the previous post - [Stable Diffusion Training for Personal Embedding]({{ site.baseurl }}stable-diffusion-training-for-embeddings), which already has a solid embedding to use to generate art. We want to train it to be even more customized, in a way that goes through larger and more complex contexts.
 <!--excerpt.end-->
