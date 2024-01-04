@@ -5,7 +5,7 @@ description: >
   Programming a computer to draw surely teaches us the most important lesson that creative spirit is in the details.
 baseurl: # the subpath of your site, e.g. /blog/
 # paginate: 10
-url: "https://bennycheung.github.io" # the base hostname & protocol for your site
+url: "http://bennycheung.github.io" # the base hostname & protocol for your site
 
 # Google Analytics
 google_analytics: UA-76691604-1
