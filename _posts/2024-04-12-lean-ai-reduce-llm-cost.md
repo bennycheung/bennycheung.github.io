@@ -30,7 +30,29 @@ _Figure. In 2023, North America alone boasted an impressive tally of over 7,000 
 
 We cannot predict which ventures will survive for the next two years, it is clear that a few startups will stand out flawlessly by aligning crucial business elements. These trailblazers are poised for remarkable growth in the foreseeable future, their success underpinned by distinctive product innovations that effectively address significant challenges within niche markets, coupled with their capability to manage operational costs and secure profitable outcomes.
 
-We often focus on the biggest, fastest, and most capable LLMs. However, when it comes to business, cost savings are almost always at the forefront of business leaders' minds. The concern is how we can reap the benefits of AI while keeping costs reasonable for an organization. This is what we shall discuss in this article.
+We often focus on the biggest, fastest, and most capable LLMs. However, when it comes to business, cost savings are almost always at the forefront of business leaders' minds. The concern is how we can reap the benefits of AI while keeping costs reasonable for an organization. This is what we shall discuss in this article. Whether you're a tech leader aiming to streamline operations or a developer interested in the economical aspects of AI, this article is well worth your time. Dive in and explore how to make AI work for you—financially and functionally.
+
+- [Evolving LLM Features](#evolving-llm-features)
+- [Cost Awareness](#cost-awareness)
+- [Cost Estimation](#cost-estimation)
+  - [Tokenization - the Unit of Measurement](#tokenization---the-unit-of-measurement)
+  - [Cost Observability](#cost-observability)
+- [Cost Optimization](#cost-optimization)
+  - [1. Fine-tuning - for specialized task](#1-fine-tuning---for-specialized-task)
+  - [2. Cascade models - for efficiency](#2-cascade-models---for-efficiency)
+  - [3. Model Router - for task distribution](#3-model-router---for-task-distribution)
+  - [4. Input Compression - for processing input data](#4-input-compression---for-processing-input-data)
+  - [5. Memory Optimization - for conversation](#5-memory-optimization---for-conversation)
+  - [6. Model Quantization - for lower GPU cost](#6-model-quantization---for-lower-gpu-cost)
+  - [7. Agent-call Cache - for cost reduction](#7-agent-call-cache---for-cost-reduction)
+  - [8. Lean Components - for optimized input/output tokens](#8-lean-components---for-optimized-inputoutput-tokens)
+  - [Methods Adoption](#methods-adoption)
+- [GenAI Service Platform](#genai-service-platform)
+- [Concluding Remarks](#concluding-remarks)
+- [References](#references)
+  - [Resources](#resources)
+  - [Tools](#tools)
+
 
 ## Evolving LLM Features
 
