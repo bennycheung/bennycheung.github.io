@@ -17,7 +17,7 @@ image: images/lean-ai-reduce-llm-cost/cover2x.jpg
 images:
   cover: images/lean-ai-reduce-llm-cost/cover.jpg
   header: images/lean-ai-reduce-llm-cost/header.jpg
-published: false
+published: true
 ---
 
 <!--excerpt.start-->
