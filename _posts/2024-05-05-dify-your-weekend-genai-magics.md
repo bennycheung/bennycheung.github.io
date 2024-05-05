@@ -81,7 +81,7 @@ The following illustrates a simple RAG pipeline by using Dify workflow component
 
 ![Dify_Workflow_Knowledge_Retrieval_Chatbot]({{ site.baseurl }}images/dify-your-weekend-genai-magics/Dify_Workflow_Knowledge_Retrieval_Chatbot.jpg)
 
-_Figure. Using Dify's Knowledge Retrieval + Chatbot template, it illustrates a RAG pipeline that can be implemented in 5 minutes. _
+_Figure. Using Dify's Knowledge Retrieval + Chatbot template, it illustrates a RAG pipeline that can be implemented in 5 minutes._
 
 We can start with Dify's Knowledge Retrieval + Chatbot template to get started. Let's explore how this workflow template functions using the components of Dify, specifically focusing on the simplest form of RAG as depicted:
 
@@ -153,7 +153,7 @@ This is important for an environment to support testing and validating hypothese
 
 Dify offers a suite of tutorials that guide users through the creation of popular generative AI applications. These tutorials are designed to harness the capabilities of LLMs in practical, user-friendly applications.
 
-- [Agent Assitant](https://docs.dify.ai/user-guide/creating-dify-apps/prompt-engineering/agent-assistant)
+- [Agent Assistant](https://docs.dify.ai/user-guide/creating-dify-apps/prompt-engineering/agent-assistant)
   - This tool taps into the reasoning power of LLMs to autonomously set goals, break down complex tasks, navigate tools, and refine processes to achieve tasks independently. It's a leap towards making AI an active participant in problem-solving.
 - [Chat App](https://docs.dify.ai/user-guide/creating-dify-apps/prompt-engineering/conversation-application)
   - This application facilitates a seamless conversation with users, operating on a straightforward question-and-answer basis. It's designed to engage users in continuous dialogue, making interactions with AI more natural and intuitive.
@@ -169,7 +169,7 @@ As an agent platform, Dify is at the forefront of teaching users how to construc
 
 ![Dify_Assistant_Agent_UI]({{ site.baseurl }}images/dify-your-weekend-genai-magics/Dify_Assistant_Agent_UI.jpg)
 
-_Figure. Example of a assistant agent application constructed completely in the Dify Studio with UI, the only pre-requisite is idea and high-level understanding of GenAI, no coding experience needed. _
+_Figure. Example of a assistant agent application constructed completely in the Dify Studio with UI, the only pre-requisite is idea and high-level understanding of GenAI, no coding experience needed._
 
 The Dify's agent interface is specifically tailored for creating assistant agent, for example an Investment Analysis Copilot, which is a specialized AI agent designed to provide expert data analysis on stocks. Here's a detailed breakdown of the various components and functionalities depicted in the interface:
 
