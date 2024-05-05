@@ -284,13 +284,33 @@ Finally, with everything in place, `docker compose up -d` breathes life into the
 The use of Docker for deployment architecture exemplifies Dify’s commitment to providing a scalable, manageable, and efficient production environment. This setup allows for easy scaling, robust data persistence, and separation of concerns—key components for modern, reliable web applications. Moreover, Dify’s open-source foundation encourages ongoing community contributions, ensuring the platform evolves in line with the latest developments in technology and user requirements.
 
 ### Expanding Dify Reaches - HTTP Request and Tools
+
+Dify presents a straightforward interface. A prominent "Create Custom Tool" button invites crafting something unique. This could be anything, but let's consider a healthcare API tool designed for querying member benefit coverage. It's a specific task, yet one that illustrates the platform's capability to cater to niche requirements with ease.
+
+The essence of Dify's user experience is encapsulated in how it handles tool descriptions and schema. For instance, the healthcare tool mentioned doesn't just float in the digital ether; it's grounded by a clear purpose—enabling users to find member benefit coverage. The schema, adhering to the OpenAPI-Swagger Specification, outlines the structure of API calls in a language that's both standardized and accessible. This means that even those not versed in the intricacies of API development can grasp the tool's workings.
+
+![Dify_Create_Custom_Tool_via_OpenAPI_Spec]({{ site.baseurl }}images/dify-your-weekend-genai-magics/Dify_Create_Custom_Tool_via_OpenAPI_Spec.jpg)
+
+_Figure. The "Create Custom Tool" is specifically showcasing the interface for creating and editing custom tools through the integration of APIs._
+
+Endpoint configuration further demystifies the process, showing exactly how data is received and processed. And with server configurations pointing to a local dev environment, users get a sandbox for experimentation and testing—crucial steps before any rollout.
+
 #### Little known facts about connecting to local dev
 
 When working with Dify in a local development environment, the challenge often lies in making sure it can communicate with services running on the host machine. This is crucial for testing purposes. The process begins with identifying the host's IP address, which acts as a bridge between Dify, running inside a Docker container, and the local service. By executing `ifconfig`, one might discover their IP to be something like `192.168.50.197`.
 
-With this information, configuring HTTP requests becomes straightforward. For instance, to interact with a service, one would direct requests to `http://192.168.50.197:8001/answer`. Similarly, to obtain the OpenAPI specification, which is essential for understanding the service's capabilities, URLs like `http://192.168.50.197:8001/docs` or `http://192.168.50.197:8001/openapi.json` are used.
+With this information, configuring HTTP requests becomes straightforward. For instance, to interact with a service, one would direct requests to local dev server endpoint at `http://192.168.50.197:8001/answer`.
 
-An elegant enhancement to this setup involves the `/etc/hosts` file. By adding an entry such as `192.168.50.197 test.me.com`, one can simplify access to the local service. This not only makes the URLs more readable but also mimics real-world DNS configurations, providing a more realistic environment for testing and development. This approach underscores the importance of seamless interaction between development tools and services, ensuring that testing is both efficient and reflective of actual deployment scenarios.
+Similarly, to obtain the OpenAPI specification, which is essential for understanding the service's capabilities, URLs like:
+- `http://192.168.50.197:8001/docs` for interactive Swagger-UI.
+- `http://192.168.50.197:8001/openapi.json` for specification in JSON format are used.
+
+An elegant enhancement to this setup involves the `/etc/hosts` file. By adding an entry such as
+```
+192.168.50.197 test.me.com
+```
+
+One can simplify access to the local service. This not only makes the URLs more readable but also mimics real-world DNS configurations, providing a more realistic environment for testing and development. This approach underscores the importance of seamless interaction between development tools and services, ensuring that testing is both efficient and reflective of actual deployment scenarios.
 
 ### Concluding Remarks
 
