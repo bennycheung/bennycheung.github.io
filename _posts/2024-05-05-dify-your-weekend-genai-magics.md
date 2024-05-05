@@ -330,6 +330,7 @@ The beauty of Dify lies in its accessibility. It doesn't matter if we're a seaso
   - [Quick Tool Integration](https://docs.dify.ai/tutorials/quick-tool-integration)
   - [Developing with APIs](https://docs.dify.ai/user-guide/launching-dify-apps/developing-with-apis)
   - [Maintain Knowledge Via Api](https://docs.dify.ai/features/datasets/maintain-dataset-via-api)
+  - [Technical Features](https://docs.dify.ai/getting-started/readme/specifications-and-technical-features)
 
 - Dify.ai, [Introducing Dify Workflow](https://dify.ai/blog/dify-ai-workflow), Dify Insights Blog, 8 Apr 2024. 
 - Dify.ai, [Easy-to-Use LLMOps Platform for Visually Creating and Operating Your AI Native Applications](https://dify.ai/blog/open-source-llmops-platform-define-your-ai-native-apps), Dify Insights Blog, 10 May 2023.
