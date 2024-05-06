@@ -88,7 +88,7 @@ We can start with Dify's Knowledge Retrieval + Chatbot template to get started. 
 2. **Knowledge Retrieval**:
     - This component is key to the RAG setup. It allows the system to query a vast database or knowledge base to retrieve text content that is relevant to the user's question. The purpose of this step is to gather all necessary information that might help in generating a well-informed response. It ensures that the AI has access to a broader set of data beyond its pre-trained model's knowledge.
 3. **LLM**:
-    - Here, the workflow invokes a powerful language model, in this case, gpt-3.5-turbo. Dify has many other LLMs connectivity available in the settings. This model uses the information retrieved in the previous step to understand the context and generate an appropriate response. The model processes natural language inputs and synthesizes information to formulate responses that are not only relevant but also contextually enriched by the retrieved knowledge.
+    - Here, the workflow invokes a powerful language model, in this case, `gpt-3.5-turbo`. Dify has many other LLMs connectivity available in the settings. This model uses the information retrieved in the previous step to understand the context and generate an appropriate response. The model processes natural language inputs and synthesizes information to formulate responses that are not only relevant but also contextually enriched by the retrieved knowledge.
 4. **Answer**:
     - The final output of the workflow is generated in this step. The answer module takes the response from the LLM and delivers it as text to the end user. This can be a direct answer to a user's query, a completion of a task, or any other type of response that the application is designed to provide.
 
@@ -103,7 +103,7 @@ _Figure. Dify has many other LLMs connectivity available in the settings. Usuall
 How Dify workflow helps in an educational or learning context? This RAG pipeline facilitates a deeper understanding of how AI can dynamically utilize extensive databases to improve the relevance and accuracy of its responses. This setup demonstrates advanced AI functionalities in action, such as:
 
 - **Dynamic Data Retrieval:** The ability to pull in data as needed from a vast repository enhances the AI's responses, making them more aligned with the current context or specific user queries.
-- **Contextual Understanding and Response Generation:** By using a state-of-the-art LLM like gpt-3.5-turbo, the system can understand nuances and generate responses that are not only factually accurate but also contextually appropriate.
+- **Contextual Understanding and Response Generation:** By using a state-of-the-art LLM, the system can understand nuances and generate responses that are not only factually accurate but also contextually appropriate.
 - **Real-time Learning and Adaptation:** The workflow illustrates how AI can effectively use retrieved information to adapt its responses to new information or evolving contexts.
 
 ### Dify Prompt IDE
@@ -114,12 +114,12 @@ Additionally, Dify's Prompt IDE shines as a tool for mastering prompt engineerin
 
 _Figure. Expanding the LLM workflow component, we can interactively craft the prompt to summarize the retrieved context._
 
-The picture showcases a detailed view of a LLM component within the Dify workflow, specifically focusing on the configuration of a LLM, `gpt-3.5-turbo`, to process and respond to natural language queries. This example is particularly insightful for understanding how to use Dify's Prompt IDE to enhance prompt engineering techniques. Here’s a breakdown and elaboration of the features and functionalities shown in the image:
+The picture showcases a detailed view of a LLM component within the Dify workflow, specifically focusing on the configuration of a LLM, to process and respond to natural language queries. This example is particularly insightful for understanding how to use Dify's Prompt IDE to enhance prompt engineering techniques. Here’s a breakdown and elaboration of the features and functionalities shown in the image:
 
 #### Overview of the LLM Component
 
 - **Model Selection:**
-  - The component is set to use `gpt-3.5-turbo`, which is a powerful version of OpenAI's generative pre-trained transformers. Dify comes with wide selection of both proprietary and open source LLM models. Usually each model will require a API key to access the service.
+  - The component is set to use `gpt-3.5-turbo`, which is a powerful version of OpenAI's generative pre-trained transformers. We can choose another model provider that has been configured in the setting.
 - **Invocation Method:**
   - The model is invoked in a chat setting, which means it is optimized for conversational use, processing input and generating responses that are suitable for a dialogue format.
   
@@ -127,7 +127,7 @@ The picture showcases a detailed view of a LLM component within the Dify workflo
 
 - **Context Variable:**
    - The "Set variable" feature allows the workflow to store and pass contextual information that the LLM can use while generating responses. This is crucial for maintaining context across interactions in a conversation.
-- . **System Instructions:**
+- **System Instructions:**
    - A detailed prompt instructions provided in the system configuration guides how the LLM should handle the information:
     - It mentions using learned knowledge encapsulated within `<context></context>` XML tags. The model can reference dynamically provided context to enhance its responses.
     - The instructions specify behaviors such as admitting lack of knowledge or asking for clarifications, which are essential for creating realistic and reliable AI interactions.
@@ -180,11 +180,11 @@ The Dify's agent interface is specifically tailored for creating assistant agent
 - **Instructions Section:**
   - Here, a detailed job description and the character of the agent are defined. The agent is described as a data analysis copilot with expertise in various analytical areas, such as fundamental, technical, and market sentiment analysis.
   - Skills are clearly defined, which helps in structuring the agent's capabilities. For example, the ability to search for stock information using a 'Ticker' from Yahoo Finance or searching for recent news about the target company.
-- . **Variables:**
+- **Variables:**
   - Variables like 'company' are defined here, which can be used to capture user input and influence the agent's behavior and responses based on dynamic input.
-- . **Context:**
+- **Context:**
   - The section hints at the ability to import knowledge as context, which would provide the AI with additional information to base its analyses and responses on, enhancing the accuracy and relevance of its output.
--  **Tools:**
+- **Tools:**
   - Tools such as Yahoo's "Analytics", "News" and "Ticker" are shown, showing what built-in capabilities the agent can leverage to perform its tasks. These tools are designed to connect to data sources and APIs to fetch the required information.
 - **Debug and Preview Pane:**
   - This area on the right shows a preview of the user interface as it would appear to end-users. It provides sample interactions that potential users might have with the AI, such as analyzing specific stocks, asking for recent developments on a company, or conducting fundamental analysis. This is crucial for testing and refining how the agent interacts with users.
