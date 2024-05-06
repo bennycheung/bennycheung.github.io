@@ -57,7 +57,7 @@ Fortunately, this challenge is not unique and has been recognized by many. After
   - [Upgrade Dify](#upgrade-dify)
 - [Expanding Dify Reaches - HTTP Request and Tools](#expanding-dify-reaches---http-request-and-tools)
   - [Technique to connect local API server](#technique-to-connect-local-api-server)
-    - [Connecting Dify to Local LLM](#connecting-dify-to-local-llm)
+  - [Connecting Dify to Local LLM](#connecting-dify-to-local-llm)
 - [Concluding Remarks](#concluding-remarks)
 - [References](#references)
 
@@ -317,7 +317,7 @@ An elegant enhancement to this setup involves the `/etc/hosts` file. By adding a
 
 One can simplify access to the local service. This not only makes the URLs more readable but also mimics real-world DNS configurations, providing a more realistic environment for testing and development. This approach underscores the importance of seamless interaction between development tools and services, ensuring that testing is both efficient and reflective of actual deployment scenarios.
 
-#### Connecting Dify to Local LLM
+### Connecting Dify to Local LLM
 
 Integrating Dify with a local LLM through [Ollama]((https://github.com/ollama/ollama)) offers a streamlined approach to leveraging GPU acceleration for your models. Ollama, accessible via a straightforward CLI or a REST API, simplifies the interaction between your applications and the model. Starting is as easy as [downloading and installing Ollama]((https://ollama.ai/download)) from their website.
 
