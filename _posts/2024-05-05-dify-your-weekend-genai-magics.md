@@ -319,13 +319,15 @@ One can simplify access to the local service. This not only makes the URLs more 
 
 ### Connecting Dify to Local LLM
 
-Integrating Dify with a local LLM through [Ollama]((https://github.com/ollama/ollama)) offers a streamlined approach to leveraging GPU acceleration for your models. Ollama, accessible via a straightforward CLI or a REST API, simplifies the interaction between your applications and the model. Starting is as easy as [downloading and installing Ollama]((https://ollama.ai/download)) from their website.
+Integrating Dify with a local LLM through [Ollama]((https://github.com/ollama/ollama)) offers a streamlined approach to leveraging GPU acceleration for our models. Ollama, accessible via a straightforward CLI or a REST API, simplifies the interaction between our applications and the model. Starting is as easy as [downloading and installing Ollama]((https://ollama.ai/download)) from their website.
 
-For those utilizing macOS, pairing Ollama with Docker Desktop enhances the GPU acceleration capabilities. Launching a model, such as `llama3`, is done with a simple command. Ollama takes care of the rest, including downloading the model if it's your first time using it. The `llama3-8b` model, for instance, is efficiently compressed to around 4GB for local use.
+For those utilizing macOS, pairing Ollama with Docker Desktop enhances the GPU acceleration capabilities. Launching a model, such as `llama3`, is done with a simple command. Ollama takes care of the rest, including downloading the model if it's our first time using it. The `llama3-8b` model, for instance, is efficiently compressed to around 4GB for local use.
 
 ```
 ollama run llama3
 ```
+
+> Refer to Ollama official site, it supports numerous open-source LLM models.
 
 [Dify's integration with Ollama](https://docs.dify.ai/tutorials/model-configuration/ollama) is seamless, designed to recognize Ollama as a model provider. When running Ollama on macOS, setting environment variables through `launchctl` is necessary for smooth operation. A quick restart of the Ollama application applies these settings.
 
