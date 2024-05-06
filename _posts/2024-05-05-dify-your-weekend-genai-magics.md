@@ -57,6 +57,7 @@ Fortunately, this challenge is not unique and has been recognized by many. After
   - [Upgrade Dify](#upgrade-dify)
 - [Expanding Dify Reaches - HTTP Request and Tools](#expanding-dify-reaches---http-request-and-tools)
   - [Technique to connect local API server](#technique-to-connect-local-api-server)
+    - [Connecting Dify to Local LLM](#connecting-dify-to-local-llm)
 - [Concluding Remarks](#concluding-remarks)
 - [References](#references)
 
@@ -316,6 +317,29 @@ An elegant enhancement to this setup involves the `/etc/hosts` file. By adding a
 
 One can simplify access to the local service. This not only makes the URLs more readable but also mimics real-world DNS configurations, providing a more realistic environment for testing and development. This approach underscores the importance of seamless interaction between development tools and services, ensuring that testing is both efficient and reflective of actual deployment scenarios.
 
+#### Connecting Dify to Local LLM
+
+Integrating Dify with a local LLM through [Ollama]((https://github.com/ollama/ollama)) offers a streamlined approach to leveraging GPU acceleration for your models. Ollama, accessible via a straightforward CLI or a REST API, simplifies the interaction between your applications and the model. Starting is as easy as [downloading and installing Ollama]((https://ollama.ai/download)) from their website.
+
+For those utilizing macOS, pairing Ollama with Docker Desktop enhances the GPU acceleration capabilities. Launching a model, such as `llama3`, is done with a simple command. Ollama takes care of the rest, including downloading the model if it's your first time using it. The `llama3-8b` model, for instance, is efficiently compressed to around 4GB for local use.
+
+```
+ollama run llama3
+```
+
+[Dify's integration with Ollama](https://docs.dify.ai/tutorials/model-configuration/ollama) is seamless, designed to recognize Ollama as a model provider. When running Ollama on macOS, setting environment variables through `launchctl` is necessary for smooth operation. A quick restart of the Ollama application applies these settings.
+
+```
+launchctl setenv OLLAMA_HOST "0.0.0.0"
+```
+
+Finally, configuring Ollama within Dify completes the setup, making it ready for use. This integration not only simplifies the process but also optimizes the performance of local models through GPU acceleration.
+
+![Dify_Model_Provider_Ollama_Llama3_Setup]({{ site.baseurl }}images/dify-your-weekend-genai-magics/Dify_Model_Provider_Ollama_Llama3_Setup.jpg)
+
+_Figure. Configure Dify Ollama as one of the model provider, which interface with the local IP address and port._
+
+
 ## Concluding Remarks
 
 When we encounter Dify, we're not just stumbling upon another platform. We're diving into an ecosystem that's been professionally designed to support every phase of our journey with generative AI technologies. From the initial spark of learning to the final stages of production deployment, Dify stands as a beacon, guiding users through the often murky waters of AI development.
@@ -330,6 +354,7 @@ The beauty of Dify lies in its accessibility. It doesn't matter if we're a seaso
   - [Quick Tool Integration](https://docs.dify.ai/tutorials/quick-tool-integration)
   - [Developing with APIs](https://docs.dify.ai/user-guide/launching-dify-apps/developing-with-apis)
   - [Maintain Knowledge Via Api](https://docs.dify.ai/features/datasets/maintain-dataset-via-api)
+  - [Dify's integration with Ollama](https://docs.dify.ai/tutorials/model-configuration/ollama)
   - [Technical Features](https://docs.dify.ai/getting-started/readme/specifications-and-technical-features)
 
 - Dify.ai, [Introducing Dify Workflow](https://dify.ai/blog/dify-ai-workflow), Dify Insights Blog, 8 Apr 2024. 
