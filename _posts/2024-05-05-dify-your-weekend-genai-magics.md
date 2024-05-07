@@ -342,6 +342,7 @@ Finally, configuring Ollama within Dify completes the setup, making it ready for
 _Figure. Configure Dify Ollama as one of the model provider, which interface with the local IP address and port._
 
 
+
 ## Concluding Remarks
 
 When we encounter Dify, we're not just stumbling upon another platform. We're diving into an ecosystem that's been professionally designed to support every phase of our journey with generative AI technologies. From the initial spark of learning to the final stages of production deployment, Dify stands as a beacon, guiding users through the often murky waters of AI development.
