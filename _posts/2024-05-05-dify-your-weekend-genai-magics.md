@@ -55,6 +55,7 @@ Fortunately, this challenge is not unique and has been recognized by many. After
     - [Volume Mapping:](#volume-mapping)
     - [Service Interactions:](#service-interactions)
   - [Upgrade Dify](#upgrade-dify)
+    - [OpenAI GPT4-o Model](#openai-gpt4-o-model)
 - [Expanding Dify Reaches - HTTP Request and Tools](#expanding-dify-reaches---http-request-and-tools)
   - [Technique to connect local API server](#technique-to-connect-local-api-server)
   - [Connecting Dify to Local LLM](#connecting-dify-to-local-llm)
@@ -287,6 +288,23 @@ docker compose up -d
 Finally, with everything in place, `docker compose up -d` breathes life into the updated version of Dify. It's a command that sets everything in motion, quietly working in the background (`-d` for detached mode), allowing us to continue our work uninterrupted while the new version takes its place.
 
 The use of Docker for deployment architecture exemplifies Dify’s commitment to providing a scalable, manageable, and efficient production environment. This setup allows for easy scaling, robust data persistence, and separation of concerns—key components for modern, reliable web applications. Moreover, Dify’s open-source foundation encourages ongoing community contributions, ensuring the platform evolves in line with the latest developments in technology and user requirements.
+
+#### OpenAI GPT4-o Model
+
+As of (2024-05-13), doing the Dify docker refresh and restart,
+
+```
+...
+create mode 100644 api/core/model_runtime/model_providers/openai/llm/gpt-4o-2024-05-13.yaml
+create mode 100644 api/core/model_runtime/model_providers/openai/llm/gpt-4o.yaml
+...
+```
+
+![[Dify_OpenAI_gpt4o_is_here.png]]
+![Dify_OpenAI_gpt4o_is_here]({{ site.baseurl }}images/dify-your-weekend-genai-magics/Dify_OpenAI_gpt4o_is_here.jpg)
+
+_Figure. The latest GPT4-o is available as one of the OpenAI models to use._
+
 
 ## Expanding Dify Reaches - HTTP Request and Tools
 
