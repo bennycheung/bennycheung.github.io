@@ -300,7 +300,6 @@ create mode 100644 api/core/model_runtime/model_providers/openai/llm/gpt-4o.yaml
 ...
 ```
 
-![[Dify_OpenAI_gpt4o_is_here.png]]
 ![Dify_OpenAI_gpt4o_is_here]({{ site.baseurl }}images/dify-your-weekend-genai-magics/Dify_OpenAI_gpt4o_is_here.jpg)
 
 _Figure. The latest GPT4-o is available as one of the OpenAI models to use._
