@@ -14,11 +14,12 @@ crumbs: false
 
 <br />
 
-Benny is an accomplished full-stack architect and software engineer with over three decades of experience in programming and application development. He has a proven track record of delivering profitable commercial products and leading web, API, and data analytics projects across various sectors, including medical, software, geographic, and financial services.
+Benny Cheung is a Principal AI/ML Research Scientist with a rich, three-decade career marked predominantly by his exceptional skills in artificial intelligence (AI) and a dedicated product-oriented mindset. His extensive background in AI is evident in his influential role in creating and developing the AI Lab at 3Pillar, where he led the charge in exploring and expanding into machine learning and generative AI technologies.
+
+Benny has a proven career as a practicing software architect, delivering profitable commercial products and leading web, API, and data analytics projects across various sectors, including medical, software, geographic, and financial services.
 
 Benny firmly believes in architectural-driven development, which emphasizes a balance between theory and practice to achieve a deeper understanding and develop practical and resilient systems.
 
-As a senior software architect at 3Pillar Global, Benny played a key role in establishing the AI Lab and expanding into machine learning and AI business. He is also well-versed in blockchain technology, having designed and built successful systems for medical health records and token exchange using Hyperledger and Ethereum.
 
 <img src="{{ site.baseurl }}/images/dreambooth-training-for-personal-embedding/Benny_SD_Profile_Gridx16_02.jpg" style="width:100%; border:2px solid black;">
 
