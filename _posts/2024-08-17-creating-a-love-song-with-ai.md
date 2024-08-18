@@ -36,7 +36,29 @@ _Figure. **AI-Powered Love Song Creation Workflow:** This diagram illustrates th
 
 With a final touch of video editing, I managed to weave all these elements into a seamless and touching music video. This project is truly a dream come true, made possible by the incredible capabilities of AI technology. 
 
-Here is the result of [四季的情话 - Creating a Love Song with AI](https://www.youtube.com/watch?v=vrKwaheRz2k)
+Here is the result of [四季的情话 (Love in All Seasons) - Creating a Love Song with AI](https://www.youtube.com/watch?v=vrKwaheRz2k)
+
+> I wrote a love poetry in Chinese, which becomes the input lyrics to Suno.
+
+```
+[Verse 1]
+春雨綿綿情如畫， | Spring rain, tender like a painting,
+夏夜星空閃無暇。 | Summer night, stars twinkle without flaw.
+秋葉紅遍庭芳秀， | Autumn leaves, red and vibrant in the garden,
+冬雪飄飄暖如霞。 | Winter snow, warm and floating like rosy clouds.
+
+[Chorus]
+光陰流逝歲無憂， | Time passes without worry through the years,
+共渡晨曦共牽手。 | Together, we greet the dawn, hand in hand.
+風雨同舟不曾變， | Through storm and wind, our bond unchanged,
+地老天荒情深厚。 | As the earth ages, our love remains deep.
+
+[Verse 2]
+佳人如玉美若花， | My beloved, as pure as jade, as beautiful as a flower,
+傾心細訴枕邊話。 | Whispering sweet words by the pillow.
+千言萬語送安康， | Thousands of words wish you peace,
+願君笑顏伴芳華。 | May your smile accompany the blooming of youth.
+```
 
 {% include youtubePlayer.html id="vrKwaheRz2k" %}
 
@@ -49,7 +71,7 @@ Let's explore each components in the workflow, may be you can replicate the proc
 - [FaceFusion - AI Video Face Swapping](#facefusion---ai-video-face-swapping)
 - [iMovie - Video Composition](#imovie---video-composition)
   - [Video/Audio Sync](#videoaudio-sync)
-- [HandBrake - Video Recompression](#handbrake---video-recompression)
+- [HandBrake - Video Recompression (Optional)](#handbrake---video-recompression-optional)
 - [Youtube - Video Publishing](#youtube---video-publishing)
 - [Concluding Remarks](#concluding-remarks)
 
@@ -58,36 +80,11 @@ Let's explore each components in the workflow, may be you can replicate the proc
 
 [Stable Diffusion](https://github.com/AUTOMATIC1111/stable-diffusion-webui) is a free AI tool that can be used to generate high-quality images of faces. To use Stable Diffusion, you need to provide it with some starting parameters, such as gender, age, and hairstyle, and it will generate a realistic image of a face that matches those parameters.
 
-To generate your personal avatar picture, start by building a personal embedding described in our previous post on [Dreambooth Training for Personal Embedding](https://bennycheung.github.io/dreambooth-training-for-personal-embedding). You can choose any combination of parameters that you like, depending on the kind of avatar that you want to create. Once you have chosen your parameters, run Stable Diffusion to generate your avatar picture.
-
-Prompt: `maylau` person is the token of our personal embedding model
-
-```
-maylau chest-high close-up frontal portrait as a beautiful maylau face,
-smiling, woman wearing a beautiful fur coat,  sexy, in a winter wonderland,
-digital painting, high resolution, perfect anatomy, highly detailed painting,
-masterclass, high dynamic range, detailed brushwork, vibrant colors,
-stunning atmosphere, vibrant, stunning contrast, breathtaking, gorgeous,
-masterclass, delicate brushwork, elegant, high quality, detailed painting,
-professional, breathtaking, detailed background, detailed art by Greg Rutkowski,
-Ruan Jia and Jean Baptiste Monge and Ismail Inceoglu and Brian Kesinger and Don Bluth
-```
-
-Negative prompt
-```
-hat, disfigured, kitsch, ugly, oversaturated, grain, low-res, Deformed, burry,
-bad anatomy, disfigured, poorly drawn face, mutation, mutated, extra limb, ugly,
-poorly drawn hands, missing limb, blurry, floating limbs, disconnected limbs,
-malformed hands, bur, out of focus, long neck, long body, ugly, disgusting,
-poorly drawn, childish, mutilated, mangled, old, surreal, text, blurry, b&w,
-monochrome, conjoined twins, multiple heads, extra legs, extra arms,
-fashion photos (collage:1.25), meme, deformed, elongated, twisted, fingers,
-strabismus, heterochromia, closed eyes, blurred, watermark, wedding, group
-```
+To generate your personal avatar picture, start by building a personal embedding described in our previous post on [Dreambooth Training for Personal Embedding](https://bennycheung.github.io/dreambooth-training-for-personal-embedding). You can choose any combination of parameters that you like, depending on the kind of avatar that you want to create. Once you have chosen your parameters, run [Stable Diffusion to generate your avatar picture](https://bennycheung.github.io/create-personal-animated-ai-avatar).
 
 ![AI_Song_StableDiffusion_Generate_May_Avatar]({{ site.baseurl }}images/creating-a-love-song-with-ai/AI_Song_StableDiffusion_Generate_May_Avatar.jpg)
 
-*Figure. Use Stable Diffusion (via AUTOMATIC1111 Web UI) to generate the avatar image from a prompt.*
+*Figure. Use Stable Diffusion (via AUTOMATIC1111 Web UI) to generate the personal avatar image from a prompt.*
 
 ## Suno - AI Music Generation
 
@@ -95,25 +92,9 @@ strabismus, heterochromia, closed eyes, blurred, watermark, wedding, group
 
 What’s impressive is the level of customization available. You can specify the mood, instruments, and style, guiding the AI to create something that resonates with your vision. If you’re not satisfied with the first version, you can generate multiple iterations, tweaking and refining until it feels just right. The vocal synthesis feature adds another layer, enabling the AI to sing or rap your lyrics.
 
-Despite its strengths, Suno isn’t without limitations. Some users have noted issues with song structure and repetitive lyrics. But these are growing pains for a technology that’s still evolving. With a recent $125 million investment, it’s clear there’s confidence in its potential.
+Despite its strengths, Suno isn’t without limitations. Some users have noted issues with song structure and repetitive lyrics. That's why we can give Suno our lyrics instead of the auto-generated one.
 
 Suno represents a significant leap in AI music generation. It democratizes music creation, making it accessible to both seasoned musicians and casual users. If you’ve ever wanted to turn your words into a love song, Suno might just be the tool you need.
-
-I wrote a love poetry in Chinese, which becomes the input lyrics to Suno.
-
-```
-[Verse 1]
-春雨綿綿情如畫， 夏夜星空閃無暇。
-秋葉紅遍庭芳秀， 冬雪飄飄暖如霞。
-
-[Chorus]
-光陰流逝歲無憂， 共渡晨曦共牽手。
-風雨同舟不曾變， 地老天荒情深厚。
-
-[Verse 1]
-佳人如玉美若花， 傾心細訴枕邊話。
-千言萬語送安康， 願君笑顏伴芳華。
-```
 
 Specify the style of musics that you desire, then it output the love song accordingly!
 
@@ -137,16 +118,15 @@ Hedra is designed for creators, filmmakers, and storytellers who are looking for
 
 _Figure. **Creating a Lifelike Singing Avatar with Hedra:** This image demonstrates the process of using Hedra to generate a virtual character capable of expressing a wide range of emotions. By uploading or generating audio, you can synchronize it with the character’s expressions to create realistic video content, allowing for the creation of immersive, emotionally engaging avatars._
 
-Hedra's Character-1 is a game changer for video generation. It lets you create lifelike virtual characters that can express a wide range of emotions. This isn’t just about making a character look good; it’s about making them feel real. You can generate videos of any length, which means you’re not limited by time constraints.
+Hedra lets our avatar to express a wide range of emotions. This isn’t just about making a avatar character look good; it’s about making them feel real. We can generate videos of any length (options to extend the default 30 seconds limit), which means we’re not limited by time constraints.
 
-The quality of the output is impressive, making your content visually appealing. Whether you want your character to speak, sing, or rap, Character-1 has you covered. It even converts text into lifelike audio, so you can choose a voice that fits your character’s personality perfectly.
+The quality of the output is impressive, making our content visually appealing. Whether we want our avatar to speak, sing, or rap, Character-1 has you covered. It even converts text into lifelike audio, so we can choose a voice that fits our character’s personality perfectly.
 
 
 ![AI_Song_May_Avatar_Snapshot_Grid]({{ site.baseurl }}images/creating-a-love-song-with-ai/AI_Song_May_Avatar_Snapshot_Grid.jpg)
 
 _Figure. This grid showcases a virtual character generated by Hedra, displaying a variety of expressions and movements. The diverse range of facial expressions and dynamic movements contribute to a lifelike, engaging avatar that enhances the realism and emotional depth of the character._
 
-This tool opens up new possibilities for creators, educators, marketers, and storytellers. You don’t need advanced technical skills or expensive software to produce high-quality video content anymore. Character-1 democratizes the process, making it accessible to anyone with a story to tell.
 
 ## FaceFusion - AI Video Face Swapping
 
@@ -155,8 +135,6 @@ This tool opens up new possibilities for creators, educators, marketers, and sto
 What sets FaceFusion apart is its open-source nature. Available on GitHub, it invites community contributions, which means it’s constantly evolving. The project is actively maintained, with the latest version, 2.6.1, released in July 2024. This commitment to continuous development ensures that users benefit from regular updates and new features.
 
 Among its advanced features are frame enhancers for video quality, colorization tools for black and white footage, and lip-syncing capabilities using the wave2lip model. It also supports multiple face detection options, enhancing accuracy in face swapping.
-
-FaceFusion is versatile in execution, running on various hardware setups, including NVIDIA and AMD GPUs, as well as Intel Arc with OpenVINO. Its user-friendly design caters to both tech-savvy users and those less familiar with command-line interfaces.
 
 Importantly, the developers have taken ethical considerations seriously, implementing moderation systems to encourage responsible use. FaceFusion stands out as a significant advancement in AI-driven face manipulation, offering high-quality results for both casual users and professionals.
 
@@ -172,11 +150,12 @@ Creating a video composition using iMovie is a relatively straightforward proces
 
 _Figure. The movie clips and elements are combined and edited in iMovie._
 
-When you look at a timeline layout for video editing, it’s like peering into the skeleton of a story. The top portion of the timeline is where the video clips live. These clips, usually around 4 to 6 seconds each, are arranged in a linear sequence. They vary in scenes and subjects, creating a mosaic of visual content. Between some of these clips, you’ll notice small rectangular markers labeled with durations like "2.0s." These are transitions. They’re not just there for show; they smooth out the changes from one scene to the next, maintaining the flow and continuity of the video.
+When you look at a timeline layout for video editing, it’s like peering into the skeleton of a story. The top portion of the timeline is where the video clips live. These clips are arranged in a linear sequence. They vary in scenes and subjects, creating a mosaic of visual content.
 
 Below the video clips, there’s a green audio track that runs the length of the timeline. This track is continuous, where the AI-generated music that play throughout the video. The waveform in the audio track shows variations in volume and intensity, adding another layer to the storytelling.
 
 The entire composition is about 2:03 minutes long. It’s a mix of different scenes and elements to build a narrative. The thoughtful editing, with its balanced mix of clips and smooth transitions, reflects an effort to create an engaging musical love story.
+
 
 ### Video/Audio Sync
 
@@ -185,8 +164,8 @@ Syncing video and audio to match vocals in singing tracks can indeed be challeng
 ![AI_Song_iMovie_AV_Sync_01]({{ site.baseurl }}images/creating-a-love-song-with-ai/AI_Song_iMovie_AV_Sync_01.jpg)
 
 Example in the Provided Screenshot:
-- The screenshot shows video clips ranging from 4.0s to 6.1s with an audio track at the bottom.
-- Align the recognizable peaks in the audio waveform (the green track) with the corresponding points in the video clip’s visible waveform.
+- The screenshot shows video clips with an audio track at the bottom.
+- Align the pattern of peaks and troughs in the audio waveform (the green track) with the corresponding points in the video clip’s visible waveform.
 - Use the playhead to precisely line up the starting points of both the video and the audio.
 
 ![AI_Song_iMovie_AV_Sync_02]({{ site.baseurl }}images/creating-a-love-song-with-ai/AI_Song_iMovie_AV_Sync_02.jpg)
@@ -196,7 +175,7 @@ Tips:
 - You can **mute the original audio track** from the video clips to concentrate on the added vocal track.
 - Regularly **save your project** to prevent loss of your edits.
 
-## HandBrake - Video Recompression
+## HandBrake - Video Recompression (Optional)
 
 Recompressing a video using [HandBrake](https://handbrake.fr/) can significantly reduce the file size of an MP4 video without sacrificing too much quality. Here’s a step-by-step guide on how to do this:
 
@@ -225,27 +204,17 @@ The YouTube Studio layout ensures that all necessary information about the video
 
 The YouTube video publishing process depicted in the screenshot illustrates the "Video details" section within YouTube Studio. 
 
-![AI_Song_Youtube_Video_Publishing]({{ site.baseurl }}images/creating-a-love-song-with-ai/AI_Song_Youtube_Video_Publishing.jpg)
-
-_Figure. This screenshot showcases the ‘Video details’ section within YouTube Studio, where the user can optimize and manage their video content. It highlights the easy accessibility of key information, including the video title, description, visibility settings, and editing options, all crucial for effectively publishing and promoting content on YouTube._
-
 - **Video Details Section:**
   - Title: The video is titled "四季的情话 - Creating a Love Song with AI."
   - Description:
     - The description provides an overview of the video's content. It describes the creator’s dream of writing a song, leveraging AI technologies to achieve this goal, and lists various tools and methodologies used in creating the music video.
-- **Video Information:**
-  - Thumbnail: The video’s thumbnail.
-  - Video Link: A direct link to the video is provided.
-  - Filename: The uploaded file is named "四季的情话 AI Song Fx.mp4."
-  - Video Quality: The quality of the video is marked as SD (Standard Definition).
 - **Visibility and Restrictions:**
   - Visibility: The video is marked as "Public," meaning it’s accessible to anyone on YouTube.
-  - Restrictions:No restrictions are applied to the video content.
-- **Additional Features:**
-  - Undo Changes: Button available to revert any recent changes.
-  - Save: Save button to apply changes made to the video entry.
-  - Create: Button at the top right for creating new videos or live streams.
-  - Channel Content: Section showing the video currently being edited or updated.
+  - Restrictions: No restrictions are applied to the video content.
+
+![AI_Song_Youtube_Video_Publishing]({{ site.baseurl }}images/creating-a-love-song-with-ai/AI_Song_Youtube_Video_Publishing.jpg)
+
+_Figure. This screenshot showcases the ‘Video details’ section within YouTube Studio, where the user can optimize and manage their video content. It highlights the easy accessibility of key information, including the video title, description, visibility settings, and editing options, all crucial for effectively publishing and promoting content on YouTube._
 
 
 ## Concluding Remarks
