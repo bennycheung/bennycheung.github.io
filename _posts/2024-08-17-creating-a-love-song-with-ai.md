@@ -21,7 +21,7 @@ published: true
 ---
 
 <!--excerpt.start-->
-I've always dreamed of writing a song for my loved one, but my musical skills are somewhat limited. However, I do have a knack for crafting beautiful love poetry. Thanks to advancements in AI, my dream is now achievable using several innovative tools.
+I've always dreamed of writing a song for my love one, but my musical skills are somewhat limited. However, I do have a knack for crafting beautiful love poetry. Thanks to advancements in AI, my dream is now achievable using several innovative tools.
 In this article, I'll show you how I combined various AI technologies to create a heartfelt music video:
 <!--excerpt.end-->
 
