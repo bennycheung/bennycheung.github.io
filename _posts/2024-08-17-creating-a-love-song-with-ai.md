@@ -63,7 +63,7 @@ View the result of this project [四季的情话 (Love in All Seasons) - Creatin
 {% include youtubePlayer.html id="vrKwaheRz2k" %}
 
 
-If you’re interested in how this was accomplished, let’s explore each component of the workflow. You might even be able to replicate the process to create a song for your loved one.
+If you’re interested in how this was accomplished, let’s explore each component of the workflow. You might even be able to replicate the process to create a song for your love one.
 
 - [Stable Diffusion - AI Generated Avatar](#stable-diffusion---ai-generated-avatar)
 - [Suno - AI Music Generation](#suno---ai-music-generation)
@@ -140,7 +140,7 @@ Importantly, the developers have taken ethical considerations seriously, impleme
 
 ![AI_Song_FaceFusion_May_Music_Video_Clip_Processing_02]({{ site.baseurl }}images/creating-a-love-song-with-ai/AI_Song_FaceFusion_May_Music_Video_Clip_Processing_02.jpg)
 
-_Figure. Employed FaceFusion for face swapping with the music video scenes to add a touch of magic to my loved one. (video clips credits: Vivian Chow 周慧敏 - 《天荒愛未老》)_
+_Figure. Employed FaceFusion for face swapping with the music video scenes to add a touch of magic to my love one. (video clips credits: Vivian Chow 周慧敏 - 《天荒愛未老》)_
 
 ## iMovie - Video Composition
 
