@@ -13,7 +13,7 @@ tags:
 - Movie Making
 category: post
 comments: true
-image: images/creating-a-love-song-with-ai/cover2x.jpg
+image: images/creating-a-love-song-with-ai/post_cover.jpg
 images:
   cover: images/creating-a-love-song-with-ai/cover.jpg
   header: images/creating-a-love-song-with-ai/header.jpg
