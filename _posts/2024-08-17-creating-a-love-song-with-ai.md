@@ -72,7 +72,7 @@ If you’re interested in how this was accomplished, let’s explore each compon
 - [iMovie - Video Composition](#imovie---video-composition)
   - [Video/Audio Sync](#videoaudio-sync)
 - [HandBrake - Video Recompression (Optional)](#handbrake---video-recompression-optional)
-- [Youtube - Video Publishing](#youtube---video-publishing)
+- [Youtube - Video Publishing (Optional)](#youtube---video-publishing-optional)
 - [Concluding Remarks](#concluding-remarks)
 
 
@@ -198,7 +198,7 @@ Tips for Effective Compression:
 - **Audio Settings:** Compress audio tracks by using a codec like AAC with a bitrate around 128 kbps, which is generally sufficient for most purposes.
 - **Passes:** Consider using “2-pass encoding” for better quality at lower bitrates. This option can be found under the “Video” tab.
 
-## Youtube - Video Publishing
+## Youtube - Video Publishing (Optional)
 
 The YouTube Studio layout ensures that all necessary information about the video, including title, description, visibility, and detailed editing options, is easily accessible for the user to optimize and manage their video content effectively.
 
