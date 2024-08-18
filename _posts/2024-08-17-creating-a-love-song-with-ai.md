@@ -36,7 +36,7 @@ _Figure. **AI-Powered Love Song Creation Workflow:** This diagram illustrates th
 
 With a final touch of video editing, I managed to weave all these elements into a seamless and touching music video. This project is truly a dream come true, made possible by the incredible capabilities of AI technology. 
 
-> Here is my Chinese poetry, which served as the input lyrics for Suno.
+> Here is my Chinese poem, which served as the input lyrics for Suno.
 
 ```
 [Verse 1]
