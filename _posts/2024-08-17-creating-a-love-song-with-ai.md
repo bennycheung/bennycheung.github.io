@@ -15,7 +15,7 @@ category: post
 comments: true
 image: images/creating-a-love-song-with-ai/post_cover.jpg
 images:
-  cover: images/creating-a-love-song-with-ai/cover.jpg
+  cover: images/creating-a-love-song-with-ai/cover2x.jpg
   header: images/creating-a-love-song-with-ai/header.jpg
 published: true
 ---
