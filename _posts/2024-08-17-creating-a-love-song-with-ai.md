@@ -36,9 +36,7 @@ _Figure. **AI-Powered Love Song Creation Workflow:** This diagram illustrates th
 
 With a final touch of video editing, I managed to weave all these elements into a seamless and touching music video. This project is truly a dream come true, made possible by the incredible capabilities of AI technology. 
 
-Here is the result of [四季的情话 (Love in All Seasons) - Creating a Love Song with AI](https://www.youtube.com/watch?v=vrKwaheRz2k)
-
-> I wrote a love poetry in Chinese, which becomes the input lyrics to Suno.
+> Here is my Chinese poetry, which served as the input lyrics for Suno.
 
 ```
 [Verse 1]
@@ -59,6 +57,8 @@ Here is the result of [四季的情话 (Love in All Seasons) - Creating a Love S
 千言萬語送安康， | Thousands of words wish you peace,
 願君笑顏伴芳華。 | May your smile accompany the blooming of youth.
 ```
+
+[四季的情话 (Love in All Seasons) - Creating a Love Song with AI](https://www.youtube.com/watch?v=vrKwaheRz2k)
 
 {% include youtubePlayer.html id="vrKwaheRz2k" %}
 
