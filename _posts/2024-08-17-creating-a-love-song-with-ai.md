@@ -58,12 +58,12 @@ With a final touch of video editing, I managed to weave all these elements into 
 願君笑顏伴芳華。 | May your smile accompany the blooming of youth.
 ```
 
-[四季的情话 (Love in All Seasons) - Creating a Love Song with AI](https://www.youtube.com/watch?v=vrKwaheRz2k)
+View the result of this project [四季的情话 (Love in All Seasons) - Creating a Love Song with AI](https://www.youtube.com/watch?v=vrKwaheRz2k)
 
 {% include youtubePlayer.html id="vrKwaheRz2k" %}
 
 
-Let's explore each components in the workflow, may be you can replicate the process with a song for your love one.
+If you’re interested in how this was accomplished, let’s explore each component of the workflow. You might even be able to replicate the process to create a song for your loved one.
 
 - [Stable Diffusion - AI Generated Avatar](#stable-diffusion---ai-generated-avatar)
 - [Suno - AI Music Generation](#suno---ai-music-generation)
