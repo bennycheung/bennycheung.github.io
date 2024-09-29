@@ -17,7 +17,7 @@ image: images/intelligence-age-how-to-thrive/post_cover.jpg
 images:
   cover: images/intelligence-age-how-to-thrive/cover2x.jpg
   header: images/intelligence-age-how-to-thrive/header.jpg
-published: true
+published: false
 ---
 
 <!--excerpt.start-->
