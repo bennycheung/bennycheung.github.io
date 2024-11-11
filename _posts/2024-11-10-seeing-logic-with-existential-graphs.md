@@ -119,7 +119,7 @@ Visual representations are effective tools for learning and comprehension across
 
 Similarly, explaining a family tree through a diagram enables immediate understanding of relationships that would be cumbersome to convey through text alone. Visual logic leverages this natural aptitude for visual processing, making abstract reasoning more concrete.
 
-The **Picture Superiority Effect** is a well-documented phenomenon in cognitive psychology, indicating that individuals remember images more effectively than words. Studies have shown that people can recall images with high accuracy even after brief exposure, highlighting the power of visual memory. In educational settings, visual aids such as diagrams and charts enhance learning by making complex information more accessible and engaging.
+The [Picture Superiority Effect](https://thevisualcommunicationguy.com/2018/11/06/use-pictures-always-why-the-picture-superiority-effect-pse-matters/) is a well-documented phenomenon in cognitive psychology, indicating that individuals remember images more effectively than words. Studies have shown that people can recall images with high accuracy even after brief exposure, highlighting the power of visual memory. In educational settings, visual aids such as diagrams and charts enhance learning by making complex information more accessible and engaging.
 
 ## Embracing the Complexity: The Messiness of Visual Logic
 
@@ -150,12 +150,11 @@ Similarly, when troubleshooting a computer network, visualizing the network's la
 
 One of the challenges of visual logic is establishing a common visual language. If individuals draw their existential graphs differently, the communication becomes less effective. However, this issue is solvable through standardization, allowing for shared understanding while preserving the benefits of visual thinking.
 
-Throughout history, various visual languages have been developed to represent logic, mathematical relationships, or complex systems. Here are some prominent examples:
+Throughout history, various visual languages have been developed to represent logic, mathematical relationships, or complex systems. Here are some prominent examples (see Historical References for more information):
 
 | Visual Language                     | Developer(s)                                         | Purpose                                                     | Common Usage                                                        |
 | ----------------------------------- | ---------------------------------------------------- | ----------------------------------------------------------- | ------------------------------------------------------------------- |
 | **Venn Diagrams**                   | John Venn (1880)                                     | Represent set theory and logical relationships              | Widely used in set theory, probability, and logic visualization     |
-| **Euler Diagrams**                  | Leonhard Euler (18th century)                        | Show subset relationships                                   | Visualize hierarchical data and relationships                       |
 | **Flowcharts and Block Diagrams**   | Engineers, programmers (1940s-50s)                   | Represent processes, workflows, or algorithms               | Modeling business processes, programming, engineering workflows     |
 | **Conceptual Graphs**               | John F. Sowa (1970s)                                 | Represent complex relationships in knowledge representation | Used in AI and knowledge representation                             |
 | **Unified Modeling Language (UML)** | Grady Booch, Ivar Jacobson, James Rumbaugh (1990s)   | Model object-oriented software                              | Software engineering to model system architecture and interactions  |
@@ -163,8 +162,6 @@ Throughout history, various visual languages have been developed to represent lo
 | **Semantic Networks**               | Various, psychology and computer science (1960s-70s) | Represent knowledge networks                                | Foundational in AI, linguistics, and knowledge representation       |
 | **Truth Tables and Karnaugh Maps**  | Various                                              | Display and simplify Boolean logic outcomes and expressions | Digital logic design, circuit minimization, and logic demonstration |
 | **Mind Maps and Concept Maps**      | Joseph D. Novak (1970s)                              | Organize associative and hierarchical ideas                 | Education, brainstorming, knowledge organization                    |
-| **System Dynamics Diagrams**        | Jay Forrester et al. (1960s)                         | Model feedback loops and accumulations in systems           | Economics, ecology, business for dynamic systems modeling           |
-| **Argument Maps**                   | Various, critical thinking educators                 | Visualize argument structures with premises and conclusions | Education, critical thinking, logical analysis                      |
 
 These visual languages illustrate humanity's ongoing effort to make complex systems understandable, each contributing to a richer landscape of visual representation. They are widely adopted across scientific, educational, and business contexts, demonstrating the effectiveness of visual tools in simplifying complexity and enhancing comprehension.
 
@@ -226,5 +223,18 @@ It is time to harness the power of visual logic to enhance understanding across 
 - Curtis Newbold, [Use Pictures. Always. Why the Picture Superiority Effect (PSE) Matters](https://thevisualcommunicationguy.com/2018/11/06/use-pictures-always-why-the-picture-superiority-effect-pse-matters/), The Visual Communication Guy, 6 Nov 2018.
 
 - Team Varthana, [Importance of Visual Aids in Teaching and Why it is Preferred](https://varthana.com/school/why-visual-aids-are-the-most-effective-teaching-tool-today/), Varthana, 29 Dec 2022.
+
+
+### Historical References
+
+- J. Venn M.A. (1880) I. [On the diagrammatic and mechanical representation of propositions and reasonings](https://www.cis.upenn.edu/~bhusnur4/cit592_fall2014/venn%20diagrams.pdf) , Philosophical Magazine Series 5, 10:59, 1-18, DOI: 10.1080/14786448008626877 To link to this article: http://dx.doi.org/10.1080/14786448008626877
+
+- John F. Sowa, [Conceptual Structures: Information Processing in Mind and Machine](https://www.amazon.ca/Conceptual-Structures-Information-Processing-Machine/dp/0201144727), Addison-Wesley, 1984. ISBN: 978-0201144727
+
+- Grady Booch, Ivar Jacobson, and James Rumbaugh, [The Unified Modeling Language User Guide](https://www.amazon.ca/Unified-Modeling-Language-User-Guide/dp/0321267974), Addison-Wesley, 2005. ISBN: 978-0321267979
+
+- M. Quillian, [Semantic Memory](https://www.jimdavies.org/summaries/quillian1968.html), in M. Minsky (ed.), Semantic Information Processing, pp 227-270, MIT Press, 1968.
+
+- Maurice Karnaugh, [The Map Method for Synthesis of Combinational Logic Circuits](https://web.archive.org/web/20170416232229/http://philectrosophy.com/documents/The%20Map%20Method%20For%20Synthesis%20of.pdf) (PDF). Transactions of the American Institute of Electrical Engineers, Part I: Communication and Electronics, 72 (5): 593–599. doi: [10.1109/TCE.1953.6371932](https://doi.org/10.1109%2FTCE.1953.6371932).
 
 
