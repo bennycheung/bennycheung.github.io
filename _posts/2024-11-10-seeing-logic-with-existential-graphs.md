@@ -40,7 +40,7 @@ Peirce's existential graphs provided a way to represent logical statements visua
 
 Although it may seem obvious in retrospect, Peirce's approach was innovative for his time. By representing logic visually, he demonstrated that abstract concepts could become more intuitive when made visible. His existential graphs transformed the invisible workings of logic into tangible diagrams that the brain could readily comprehend.
 
-Peirce emphasized the power of _iconic representations_, where the structure of a symbol resembles the concept it represents, making it intuitively easier to understand. Existential graphs embody this principle by structuring logical statements in a visual format, using different types of graphs to represent various levels of logic.
+Peirce emphasized the power of _iconic representations_, where the structure of a symbol resembles the concept it represents, making it intuitively easier to understand. Existential graphs embody this principle by structuring logical statements in a visual format, using different types of graphs to represent various levels of logic, namely Alpha Graphs and Beta Graphs.
 
 ### Alpha Graphs: Visualizing Propositional Logic
 
@@ -71,25 +71,21 @@ _Figure. source: John F. Sowa, [Existential Graphs - The simplest notation for l
 Here are some examples:
 
 1. **Basic Existence and Relationships**:
-
    - **Statement**: "A cat is on a mat."
    - **Representation**: The words "Cat," "On," and "Mat" are connected by lines, forming a simple diagram where "Cat" is linked to "Mat" through the relation "On."
    - **Explanation**: This visually represents the existence of a cat and its relation to the mat.
 
 2. **Existential Statement**:
-
    - **Statement**: "Something is under a mat."
    - **Representation**: A line connects "Under" to "Mat," without specifying what is under the mat.
    - **Explanation**: This denotes that there exists something under the mat, aligning with the existential quantifier in predicate logic.
 
 3. **Negation**:
-
    - **Statement**: "Some cat is not on a mat."
    - **Representation**: The relation "Cat On Mat" is enclosed within a cut to signify negation.
    - **Explanation**: This indicates that there exists a cat that is not on a mat.
 
 4. **Conditional Statements**:
-
    - **Statement**: "If a cat is on a mat, then it is a happy pet."
    - **Representation**: The antecedent "Cat On Mat" is enclosed within a cut, leading to the consequent "Pet Happy."
    - **Explanation**: The enclosing cut signifies that if the condition is met (a cat is on a mat), then the result or consequence (the cat is a happy pet) follows.
@@ -104,11 +100,10 @@ By using these visual conventions, Beta graphs enable the representation of comp
 
 Peirce's emphasis on interconnectedness in his graphs suggests that propositions are inherently relational and form a network of meanings. This approach mirrors the structure of modern knowledge graphs, where meaning is derived from the web of relationships between entities. Knowledge graphs, such as those used in search engines or AI applications, represent information through nodes and edges, much like Peirce's existential graphs.
 
-For example, platforms like **Neo4j** utilize graph databases to store and query data in a way that reflects relationships between entities. These tools employ visual logic to model complex data structures, making abstract concepts more tangible and accessible. By representing data visually, users can better understand and navigate complex networks of information.
+His influence reaches into fields like AI and cognitive psychology, inspiring early semantic networks and researchers such as John F. Sowa. Sowa’s conceptual graphs, a precursor to semantic networks, reflect Peirce’s visual logic. These early networks paved the way for today’s knowledge graphs, illustrating how Peirce’s ideas have influenced modern knowledge representation.
 
-Peirce's work has influenced fields like artificial intelligence and cognitive psychology, inspiring early semantic networks and researchers such as John F. Sowa. Sowa's conceptual graphs, a precursor to semantic networks, reflect Peirce's visual logic and have contributed to the development of knowledge representation in AI.
+Moreover, Peirce designed existential graphs to support logical inference visually. This idea is echoed in the reasoning capabilities of modern knowledge graphs, which use computational mechanisms to facilitate inference and deduction, rooted in Peirce’s vision. Peirce’s work, merging philosophy, logic, and semiotics, anticipated the interdisciplinary nature of modern knowledge graphs, which draw from linguistics, data science, and computer science to represent knowledge across various fields.
 
-By extending from Alpha graphs to Beta graphs, Peirce demonstrated how visual logic could represent increasingly complex logical structures. Together, these systems illustrate the power of visual logic in making abstract concepts more accessible and intuitive, laying the groundwork for modern applications in knowledge representation and artificial intelligence.
 
 ## The Human Brain: Wired for Visual Understanding
 
@@ -125,8 +120,6 @@ Visual representations are effective tools for learning and comprehension across
 Similarly, explaining a family tree through a diagram enables immediate understanding of relationships that would be cumbersome to convey through text alone. Visual logic leverages this natural aptitude for visual processing, making abstract reasoning more concrete.
 
 The **Picture Superiority Effect** is a well-documented phenomenon in cognitive psychology, indicating that individuals remember images more effectively than words. Studies have shown that people can recall images with high accuracy even after brief exposure, highlighting the power of visual memory. In educational settings, visual aids such as diagrams and charts enhance learning by making complex information more accessible and engaging.
-
-By applying visual logic, abstract concepts become tangible, bridging the gap between complex ideas and intuitive understanding. This approach aligns with how the human brain naturally processes information, facilitating better comprehension and retention.
 
 ## Embracing the Complexity: The Messiness of Visual Logic
 
@@ -152,7 +145,6 @@ For example, in computer science education, visual logic diagrams can help stude
 
 Similarly, when troubleshooting a computer network, visualizing the network's layout can help identify where connections are failing. Network diagrams display routers, switches, and connections, allowing technicians to see the relationships between components and isolate problems more efficiently.
 
-By integrating visual logic into education, abstract reasoning becomes more accessible, fostering critical thinking skills across disciplines.
 
 ## Standardizing Visual Language
 
@@ -178,9 +170,8 @@ These visual languages illustrate humanity's ongoing effort to make complex syst
 
 ![Expressing "A Cat Is on a Mat"]({{ site.baseurl }}images/seeing-logic-with-existential-graphs/EG_How_to_say_cat_is_on_a_mat.png)
 
-*Figure. Various methods developed over time to express the simple statement, “A cat is on a mat,” in formal logic. This shows representations from Gottlob Frege (1879), Charles Sanders Peirce (1885), Giuseppe Peano (1895), Peirce’s Existential Graph (1897), Conceptual Graphs (1976), and the CLIP dialect of Common Logic.*
+*Figure. Various methods developed over time to express the simple statement, “A cat is on a mat,” in formal logicjjkk. This shows representations from Gottlob Frege (1879), Charles Sanders Peirce (1885), Giuseppe Peano (1895), Peirce’s Existential Graph (1897), Conceptual Graphs (1976), and the CLIP dialect of Common Logic.*
 
-By adopting standardized visual languages, we enable clearer communication and collaboration across disciplines, much like how musical notation allows musicians to play the same piece despite different backgrounds.
 
 ## The Role of AI in Advancing Visual Logic
 
@@ -190,51 +181,31 @@ Artificial intelligence (AI), with its proficiency in pattern recognition and sy
 
 *Figure. Summarizes AI’s role in enhancing visual logic by supporting various aspects of learning and representation.*
 
-For example, modern AI tools like **Neo4j**, a graph database platform, enable users to visualize and query complex relationships in data. By representing data as nodes and edges in a graph, Neo4j allows for intuitive exploration of connections, facilitating tasks such as fraud detection, recommendation systems, and knowledge management.
+Think of a student trying to understand the relationship between different biological processes. An AI could generate a visual diagram showing how photosynthesis relates to respiration, highlighting dependencies and interactions. AI can take these complex relationships and make them visible, helping students understand what’s going on without getting lost in the terminology. That’s where visual logic could become really powerful—not just as a tool for understanding existing knowledge, but as a way to explore new ideas.
 
-Similarly, AI-powered visualization software can help professionals in various fields create interactive diagrams and models. Tools like Microsoft's **Power BI** or **Tableau** use AI to generate visualizations from data sets, helping users identify patterns and insights that might be overlooked in raw data.
+But the thing about AI is that it’s only as useful as the people using it. AI could help make visual logic more accessible, but only if we teach people how to think visually. This starts in schools, where logic is usually taught in the most abstract way possible. 
 
-In education, AI can support students in learning logic by providing interactive visualizations and adaptive learning experiences. AI tutors can guide students through logical problems, offering visual aids and personalized feedback to enhance understanding.
+What if, instead, we taught kids logic the same way we teach them to draw? Start simple, with basic shapes and connections, and build from there. Make it part of how they learn to think about the world. Imagine a classroom where kids are using colorful diagrams to map out logical arguments, almost like piecing together a story. This way, logic becomes as natural as building with blocks or playing with Legos. And not just kids—adults too. The more people can think visually, the more clearly they'll be able to see what's really happening.
 
-By integrating AI with visual logic, we can harness technology to bridge the gap between abstract reasoning and intuitive understanding, empowering individuals to navigate complex information more effectively.
 
 ## Visual Logic Beyond Education
 
-The applications of visual logic extend beyond education, offering significant benefits in various sectors such as business, technology, and everyday communication. Visual logic can transform how we present and interpret complex information, leading to improved understanding and decision-making.
+There's a lot of potential for visual logic beyond just education. It could change how we communicate in general. Most arguments are hard to follow because they're hard to see. If we could see the logic behind different arguments, we might have better conversations—less talking past each other, more understanding what the other person is actually saying.
 
 ![Visual Logic Beyond Education]({{ site.baseurl }}images/seeing-logic-with-existential-graphs/EG_05_Visual_Logic_Beyond_Education.png)
 
 *Figure. Explores how visual logic can extend beyond educational contexts to enhance various aspects of understanding and communication.*
 
-**Enhancing Business Processes**
+Visual logic can extend into our daily life. **Improved Understanding** allows individuals to see the structure of arguments, leading to better comprehension and reducing misunderstandings. **Visual Representation** uses diagrams and visuals to convey complex ideas, providing a holistic view. **Enhanced Communication** transforms the way complex information is shared, making it more accessible and clear. **Structured Arguments** enable the visualization of premises and logical connections, supporting more organized and persuasive reasoning.
 
-In a corporate setting, visual logic can streamline communication and strategy development. For instance, imagine a corporate meeting where complex strategies are visually mapped, enabling clearer understanding and quicker consensus. By illustrating processes, dependencies, and outcomes, team members can gain a clearer understanding of the proposed plans, facilitating more effective collaboration.
-
-Project management tools like **Asana** or **Trello** use visual boards to represent tasks, timelines, and responsibilities, enabling teams to see the progression of projects at a glance. This visual approach helps identify bottlenecks, allocate resources efficiently, and align team efforts toward common goals.
-
-**Improving Communication**
-
-Visual logic can also enhance public discourse by making arguments more transparent. By mapping out the logical structure of an argument, including premises and conclusions, we can better evaluate the validity of claims and identify logical fallacies. This clarity can lead to more productive discussions and a deeper understanding of complex issues.
-
-In fields like law or policy-making, visual representations of legal arguments or regulatory frameworks can aid in interpreting intricate information, ensuring that stakeholders grasp the implications of decisions.
-
-**Facilitating Everyday Problem-Solving**
-
-In daily life, visual logic can assist in planning and organizing personal tasks. Mind mapping apps help individuals brainstorm ideas, set goals, and plan activities by visually connecting related concepts. This approach leverages our natural visual processing abilities to manage information more effectively.
-
-By embracing visual logic across various contexts, we can enhance comprehension, foster better communication, and support more informed decision-making.
+Imagine a business meeting where someone presents an idea, and instead of just describing it, they draw it out—showing how the different parts of the project connect and what dependencies exist. Suddenly, everyone in the room can see the full picture, not just bits and pieces. Imagine a world where, instead of just hearing someone’s argument, you could see the structure of it—the premises, the connections, the leaps.
 
 ## Conclusion: Making the Invisible Visible
 
 Visual logic transforms abstract reasoning into tangible representations, bridging the gap between complex ideas and intuitive understanding. By making the invisible visible, it allows us to see the underlying structures of logic, facilitating better comprehension, communication, and innovation.
 
-The potential of visual logic is vast. In education, it can make learning more accessible and engaging. In business and technology, it can enhance collaboration and streamline complex processes. In daily life, it can aid in problem-solving and planning.
+It is time to harness the power of visual logic to enhance understanding across all sectors. By adopting visual approaches to logic and reasoning, we can empower individuals to think more clearly, communicate more effectively, and make more informed decisions. Let us embrace visual logic as a vital tool, fostering a culture of clarity and insight in an increasingly complex world.
 
-**Call to Action**
-
-As we navigate an increasingly complex world, embracing visual logic becomes ever more crucial. Educators can integrate visual tools into curricula to foster critical thinking skills. Technologists and software developers can create platforms that leverage visual logic for data analysis and knowledge representation. Policymakers can utilize visual logic to clarify regulations and enhance transparency.
-
-It is time to harness the power of visual logic to enhance understanding across all sectors. By adopting visual approaches to logic and reasoning, we can empower individuals to think more clearly, communicate more effectively, and make more informed decisions. Let us embrace visual logic as a vital tool for the 21st century, fostering a culture of clarity and insight in an increasingly complex world.
 
 ## References
 
