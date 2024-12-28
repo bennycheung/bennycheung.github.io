@@ -391,7 +391,7 @@ router = APIRouter()
 
 model_name_lookup = {
     "default": "black-forest-labs/flux-schnell",
-    "bennycheung": "bennycheung/flux-dev-bennycheung-lora:a8ea577d871d7682b4b71316158ade63dcc9482703b964e316562bd96f8d9d84"
+    "bennycheung": "bennycheung/flux-dev-bennycheung-lora"
 }
 
 class ModelInput(BaseModel):
