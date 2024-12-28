@@ -168,10 +168,20 @@ After fine-tuning, you can generate images programmatically:
 import replicate
  
 name = "bennycheung_SciFi"
-prompt = "bennycheung as Gordon Freeman in Half Life, wearing the hev suit , ultra realistic, intricate, elegant, highly detailed, digital painting, artstation, smooth, sharp focus, illustration, in the style of greg rutkowski"
-start_idx = 3
+prompt = """
+bennycheung as Gordon Freeman in Half Life, wearing the hev suit,
+ultra realistic, intricate, elegant, highly detailed, digital painting,
+artstation, smooth, sharp focus, illustration, in the style of greg rutkowski
+"""
+
+# change the following to generate multiple images
+# batch_size control how many images are generated per call, range from 1 to 4
+# n control how many iterations
+# Total number of generated images = n * batch_size
+#
+start_idx = 1
 batch_size = 1
-n = 4
+n = 1
 
 for k in range(0, n):
     print(f"Generating {batch_size} images for {name} {k}...")
@@ -300,6 +310,11 @@ ST1LLSU1T standing out as a critical element in this depiction. The person
 depicted in the image remains unidentified.
 """
 
+# change the following to generate multiple images
+# batch_size control how many images are generated per call, range from 1 to 4
+# n control how many iterations
+# Total number of generated images = n * batch_size
+#
 start_idx = 1
 batch_size = 1
 n = 4
@@ -308,7 +323,7 @@ for k in range(0, n):
     print(f"Generating {batch_size} images for {name} {k}...")
 
     output = replicate.run(
-        "bennycheung/flux-dev-bennycheung-lora:a8ea577d871d7682b4b71316158ade63dcc9482703b964e316562bd96f8d9d84",
+        "bennycheung/flux-dev-bennycheung-lora",
         input={
             "model": "dev",
             "extra_lora": "roadmaus/stillsuit",
@@ -338,7 +353,9 @@ for k in range(0, n):
 -----
 ## Replicate Image Generator Service
 
-For real-world applications, we approach the integration by using a microservice-based system that wraps around the Replicate API service to provide additional functionality for data management, image generation tracking, and guardrails implementation.
+If you’re exploring ways to utilize Replicate to bring your business ideas to life, the possibilities are vast. Whether you’re building applications that rely on AI-driven image generation, custom embeddings, or personalized content creation, Replicate provides a robust foundation.
+
+For businesses aiming to deliver real-world applications, you can adopt a microservice-based approach that integrates seamlessly with the Replicate API service. This system enhances functionality by incorporating features such as data management, image generation tracking, and guardrails for added reliability and control.
 
 ![Image_Generation_RESTful_API_Service]({{ site.baseurl }}images/personal-fine-tuning-with-flux/Image_Generation_RESTful_API_Service.jpg)
 
