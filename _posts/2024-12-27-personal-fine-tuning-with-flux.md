@@ -212,7 +212,7 @@ for k in range(0, n):
     start_idx += batch_size
 ```
 
-The FLUX model generated super realistic image, definitely looks like myself!
+The FLUX model generated super realistic image, definitely looks like myself as [Gordon Freeman](https://en.wikipedia.org/wiki/Gordon_Freeman) (Half-Life game's main character).
 
 ![bennycheung_SciFi_006]({{ site.baseurl }}images/personal-fine-tuning-with-flux/bennycheung_SciFi_006.png)
 
