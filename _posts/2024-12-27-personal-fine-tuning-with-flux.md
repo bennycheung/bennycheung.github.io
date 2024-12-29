@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Mastering Personal Embedding and Fine-Tuning with the FLUX Model on Replicate
+title: Personal Embedding and Fine-Tuning with the FLUX Model on Replicate
 date: 2024-12-27 12:00:00.000000000 -00:00
 permalink: personal-fine-tuning-with-flux
 author: Benny Cheung
