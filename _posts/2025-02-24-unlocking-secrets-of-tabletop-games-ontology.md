@@ -224,6 +224,8 @@ As you dive into your next game night, perhaps you’ll start to notice the hidd
 
 - [BGG - Board Game Geek](https://boardgamegeek.com/)
     - The **BoardGameGeek.com** website is a resource that contains a massive game database. It features images and rulebooks that can assist in further inquiry about the games. The website is mentioned as a good resource for learning more about the examples of game mechanisms that are included in the sources.
+    - Case Study: [Catan](https://boardgamegeek.com/boardgame/13/catan) (1995)
+    - Case Study: [Dune: Imperium](https://boardgamegeek.com/boardgame/316554/dune-imperium) (2020) 
 
 * Engelstein, Geoffrey, and Isaac Shalev. _Building Blocks of Tabletop Game Design: An Encyclopedia of Mechanisms_. Vol. 1. CRC Press / Taylor & Francis Group, 2020.
     - The key themes, concepts, and mechanisms discussed in the provided excerpts from Geoffrey Engelstein's "Building Blocks of Tabletop Game Design." The book aims to provide a comprehensive exploration of the various elements that comprise tabletop game design, offering a detailed look at individual mechanisms and how they interact within a game. It emphasizes the wide array of possibilities and complexities within game design, and does not present itself as a magic bullet for creating successful games.
