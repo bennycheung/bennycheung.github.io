@@ -155,7 +155,7 @@ Strategic thinking is essential, as players must decide where to build, which re
 
 ### Applying Tabletop Game Ontology: A Case Study of **Dune: Imperium**
 
-Using the simplified tabletop game ontology to analyze  [Dune: Imperium](https://boardgamegeek.com/boardgame/316554/dune-imperium) (2020) reveals how its game design intricately weaves together strategic mechanics, thematic components, and dynamic player interaction. By focusing on these essential elements—game framework, mechanics, components, and player engagement—designers can understand why **Dune: Imperium** offers a deeply immersive and strategically rewarding board game experience.
+Another ontology case study, [Dune: Imperium](https://boardgamegeek.com/boardgame/316554/dune-imperium) (2020) reveals how its game design intricately weaves together strategic mechanics, thematic components, and dynamic player interaction. By focusing on these essential elements—game framework, mechanics, components, and player engagement—designers can understand why **Dune: Imperium** offers a deeply immersive and strategically rewarding board game experience.
 
 ![BGG_Dune_Imperium_Illustration]({{ site.baseurl }}images/unlocking-secrets-of-tabletop-games-ontology/BGG_Dune_Imperium_Illustration.png)
 
@@ -163,7 +163,7 @@ _Figure. Influence, intrigue, and combat in the universe of Dune (credit: BoradG
 
 #### Visualize in OntoUML
 
-To further illustrate how the simplified tabletop game ontology can be applied, let’s analyze another popular board game **Dune: Imperium**.
+Let’s analyze **Dune: Imperium** in our simplified ontology.
 
 ![Tabletop_Game_Simplified_Ontology_Example_Dune]({{ site.baseurl }}images/unlocking-secrets-of-tabletop-games-ontology/Tabletop_Game_Simplified_Ontology_Example_Dune.png)
 
