@@ -242,4 +242,11 @@ As you dive into your next game night, perhaps you’ll start to notice the hidd
 
 - J. Kritz, E. Mangeli, G. Xexéo, [Building an Ontology of Boardgame Mechanics based on the BoardGameGeek Database and the MDA Framework](https://www.semanticscholar.org/paper/Building-an-Ontology-of-Boardgame-Mechanics-based-Kritz-Mangeli/373c770ab468bb06b29030c34427eafae399cc42), 2017. 
 
+### Ontology Business
+
+- Palantir, [Palantir Ontology Documentations](https://www.palantir.com/docs/foundry/ontology/overview/)
+  - The Palantir **Ontology** is an operational layer for the organization. The Ontology sits on top of the digital assets integrated into the Palantir platform (datasets and models) and connects them to their real-world counterparts, ranging from physical assets like plants, equipment, and products to concepts like customer orders or financial transactions. In many settings, the Ontology serves as a digital twin of the organization, containing both the semantic elements (objects, properties, links) and kinetic elements (actions, functions, dynamic security) needed to enable use cases of all types.
+
+- J. Neil Otte , John Beverley , and Alan Ruttenberg, [Basic Formal Ontology: Case Studies](https://philarchive.org/archive/OTTBBF), 11 Aug 2023.
+    - Basic Formal Ontology (BFO) is a top-level ontology consisting of thirty-eight classes, designed to support information integration, retrieval, and analysis across all domains of scientific investigation, presently employed in over 350 ontology projects around the world. BFO is a genuine top-level ontology, containing no terms particular to material domains, such as physics, medicine, or psychology. In this paper, we demonstrate how a series of cases illustrating common types of change may be represented by universals, defined classes, and relations employing the BFO framework. We provide discussion of these cases to provide a template for other ontologists using BFO, as well as to facilitate comparison with the strategies proposed by ontologists using different top-level ontologies.
 
