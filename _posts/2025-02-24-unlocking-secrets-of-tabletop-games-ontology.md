@@ -9,6 +9,7 @@ artwork:
 tags:
 - Ontology
 - Tabletop Games
+- Board Games
 - Game Design
 category: post
 comments: true
