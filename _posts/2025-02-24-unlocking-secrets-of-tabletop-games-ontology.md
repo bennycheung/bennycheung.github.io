@@ -230,8 +230,12 @@ The beauty of ontologies lies in their adaptability. As new games are created or
     - Case Study: [Catan](https://boardgamegeek.com/boardgame/13/catan) (1995)
     - Case Study: [Dune: Imperium](https://boardgamegeek.com/boardgame/316554/dune-imperium) (2020) 
 
-* Engelstein, Geoffrey, and Isaac Shalev. _Building Blocks of Tabletop Game Design: An Encyclopedia of Mechanisms_. Vol. 1. CRC Press / Taylor & Francis Group, 2020.
+- Engelstein, Geoffrey, and Isaac Shalev. _Building Blocks of Tabletop Game Design: An Encyclopedia of Mechanisms_. Vol. 1. CRC Press / Taylor & Francis Group, 2020.
     - The key themes, concepts, and mechanisms discussed in the provided excerpts from Geoffrey Engelstein's "Building Blocks of Tabletop Game Design." The book aims to provide a comprehensive exploration of the various elements that comprise tabletop game design, offering a detailed look at individual mechanisms and how they interact within a game. It emphasizes the wide array of possibilities and complexities within game design, and does not present itself as a magic bullet for creating successful games.
+
+- Domain of Science, [The Fascinating Map of Board Games](https://www.youtube.com/watch?v=fH4MaSJ8gXU), video, 14 Nov 2024.
+  - The video explores the fascinating world of board games, offering insight into their history, mechanics, and cultural significance. It provides an overview of how board games have evolved over time and highlights the various genres and themes that exist within the genre.
+
 
 ### Understanding Ontology Development
 
