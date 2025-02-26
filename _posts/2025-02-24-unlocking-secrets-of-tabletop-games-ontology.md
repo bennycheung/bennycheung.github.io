@@ -42,6 +42,8 @@ This approach is not just theoretical. Companies like  [Palantir](https://www.pa
 
 -----
 
+Are you ready to explore **ontology as a method for structuring knowledge** in tabletop games? This article goes beyond simply knowing the rules, and instead focuses on understanding the relationships between game elements such as game types, mechanics, components, and players. By employing a **simplified tabletop game ontology**, both designers and players can systematically analyze and design games. By using two popular tabletop games — **Catan** and **Dune: Imperium**, we illustrate how ontologies can help in understanding their underlying the deeper structures and mechanics.
+
 ## What is the Ontology of Games?
 
 > An ontology is a formal, explicit specification of a shared conceptualization.
