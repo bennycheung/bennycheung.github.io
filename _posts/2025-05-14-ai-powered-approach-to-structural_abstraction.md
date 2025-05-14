@@ -10,7 +10,7 @@ tags:
 - AI
 - Abstraction
 - Reverse Engineering
-- Information Modeling
+- Philosophy
 category: post
 comments: true
 image: images/ai-powered-approach-to-structural_abstraction/post_cover.jpg
