@@ -77,7 +77,7 @@ In essence, the P-Set is:
 *   **The observed data:** It's what you "perceive" from the system S.
 *   **An instance of the Description Frame (Γ):** While Γ defines the *potential* types, attributes, functions, and relations that *could* be observed, the P-Set contains the *actual observed* instances and values for a specific situation.
 *   **Linked to the Configuration Space (Ψ):** A P-Set is consistent with a subset of configurations in Ψ. If all observations are perfectly specified (no "UN" values), the P-Set corresponds to a single unique configuration. If there are "UN" values, it corresponds to a set of compatible configurations [1, p. 156-157].
-*   **The starting point for abstraction in KRA:** In the KRA model's bottom-up perspective, the P-Set (Pg) represents the "ground truth" and is the input to the methods associated with abstraction operators (like `meth[Pg, ω]`) to generate a more abstract P-Set (Pa) [1, p. 175, 204].
+*   **The starting point for abstraction in KRA:** In the KRA model's bottom-up perspective, the P-Set ($P_g$) represents the "ground truth" and is the input to the methods associated with abstraction operators (like `meth[Pg, ω]`) to generate a more abstract P-Set ($P_a$) [1, p. 175, 204].
 
 This P-Set is the granular ground truth upon which KRA abstraction operators act.
 
@@ -158,7 +158,7 @@ R = {
 
 ### KRA Abstraction Operators
 
-The KRA Abstraction Operators [1, p. 203+] are the tools for performing this transformation from a detailed P-Set (Pg) to a more abstract one (Pa). Defined conceptually at the level of the Description Frame (Γ), they have corresponding *methods* (`meth`) that apply the transformations to the actual data in the P-Set. These methods, structured to modify the O, A, F, and R components of the P-Set, perform the "distilling."
+The KRA Abstraction Operators [1, p. 203+] are the tools for performing this transformation from a detailed P-Set ($P_g$) to a more abstract one ($P_a$). Defined conceptually at the level of the Description Frame (Γ), they have corresponding *methods* (`meth`) that apply the transformations to the actual data in the P-Set. These methods, structured to modify the O, A, F, and R components of the P-Set, perform the "distilling."
 
 The operators are categorized by their mechanism [1, p. 204-209]:
 
