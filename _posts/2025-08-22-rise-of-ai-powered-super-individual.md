@@ -17,7 +17,7 @@ image: images/rise-of-the-ai-powered-super-individual/post_cover.jpg
 images:
   cover: images/rise-of-the-ai-powered-super-individual/cover2x.jpg
   header: images/rise-of-the-ai-powered-super-individual/header.jpg
-published: true
+published: false
 ---
 
 <!--excerpt.start-->
