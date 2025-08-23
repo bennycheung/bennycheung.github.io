@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Rise of the AI-Powered Super Individual
+title: The Rise of the AI-Powered Super Individual
 date: 2025-08-22 12:00:00.000000000 -00:00
 permalink: rise-of-the-ai-powered-super-individual
 author: Benny Cheung
@@ -9,6 +9,7 @@ artwork:
 tags:
 - AI
 - Philosophy
+- Cointelligence
 - Life Strategy
 category: post
 comments: true
