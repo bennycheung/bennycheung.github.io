@@ -7,9 +7,10 @@ author: Benny Cheung
 artwork:
   author: GPT-4o
 tags:
+- BMAD
 - AI Engineering
 - AI Agents
-- SDLC
+- Spec Coding
 category: post
 comments: true
 image: images/bmad-reclaiming-control-in-ai-dev/post_cover.jpg
@@ -23,7 +24,7 @@ published: true
 Enterprise leaders are pouring investment into AI-assisted development, but many are finding that the promised productivity gains come at a steep price: a loss of governance, traceability, and architectural integrity. Unstructured, prompt-driven AI use is creating "black box" codebases that are difficult to maintain, audit, and scale, introducing significant business risk. To move from ad-hoc experimentation to enterprise-grade AI integration, a new paradigm is required.
 <!--excerpt.end-->
 
-We applied **BMAD Method** (Breakthrough Method for Agile AI-Driven Development) as a strategic framework to ensure that AI-driven development is not only fast but also predictable, compliant, and aligned with long-term business objectives. Integrated with robust version control, this method offers a transformative paradigm for software consulting, enabling delivery teams to work with unparalleled precision and clarity. We are applying this method to the creation of our platform modernization strategy.
+We applied **BMAD Method** (Breakthrough Method for Agile AI-Driven Development) as a strategic framework to ensure that AI-driven development is not only fast but also predictable, compliant, and aligned with long-term business objectives. Integrated with robust version control, this method offers a transformative paradigm for AI engineering, enabling super individual to work with unparalleled precision and clarity.
 
 ![BMAD_From_Ad_Hoc_to_Enterprise_Ready_Dev]({{ site.baseurl }}images/bmad-reclaiming-control-in-ai-dev/BMAD_From_Ad_Hoc_to_Enterprise_Ready_Dev.png)
 _Figure. Visualizing the transformation from fragmented, high-risk AI experimentation to BMAD's structured, enterprise-ready development framework_
@@ -48,7 +49,7 @@ The BMAD Method provides the crucial framework to re-establish control. At its h
 
 Unlike traditional AI tools that merely assist an individual, BMAD agents collaboratively generate and refine critical project artifacts, ensuring an unprecedented level of precision from the project's inception.
 
-The true transformation, however, lies in overlaying this agentic process with robust **Git-based versioning**. Every artifact—from the Product Requirements Document (PRD) to the architecture and granular stories—is treated as a versioned asset. This crucial step ensures:
+The true transformation, however, lies in overlaying this agentic process with robust **Git-based versioning**. Every artifact, from the Product Requirements Document (PRD) to the architecture and granular stories, is treated as a versioned asset. This crucial step ensures:
 
 1. **Traceability and Accountability:** Every change, whether from a human or an AI agent, is thoroughly tracked. This eliminates the black-box effect, providing a clear audit trail that is crucial for regulated industries and internal governance standards.
     
@@ -80,7 +81,7 @@ _Figure. BMAD development process, a collaboration of human and AI in a consiste
 The following sections outline this disciplined, three-step process.
 ### Step 1: Laying the Foundation: From Product Brief to Versioned Architecture
 
-The process begins with a meticulous, AI-assisted planning phase. AI agents, guided by human stakeholders, generate the initial **Product Brief**, a detailed **Product Requirements Document (PRD)**, and a comprehensive **Full-stack Architecture Document**. These artifacts, detailing everything from multi-tenancy and vector database integration to API specifications, are immediately committed to a Git repository, creating an auditable blueprint for all subsequent work.
+The process begins with a deligent, AI-assisted planning phase. AI agents, guided by human stakeholders, generate the initial **Product Brief**, a detailed **Product Requirements Document (PRD)**, and a comprehensive **Full-stack Architecture Document**. These artifacts, detailing everything from multi-tenancy and vector database integration to API specifications, are immediately committed to a Git repository, creating an auditable blueprint for all subsequent work.
 
 ### Step 2: Parallel Development: Empowering Teams with AI-Assisted Coding in Git
 
