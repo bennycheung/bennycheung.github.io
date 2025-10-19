@@ -113,3 +113,13 @@ What chaotic problem in your own work could be tamed if you first **treated it n
 
 - [BMad Method](https://github.com/bmad-code-org/BMAD-METHOD/tree/main) - Foundations in Agentic Agile Driven Development, known as the Breakthrough Method of Agile AI-Driven Development
   - [BMad Method User Guide](https://github.com/bmad-code-org/BMAD-METHOD/blob/main/docs/user-guide.md)
+
+## Appendix
+
+### Claude Agent Skills
+
+- Anthropic, [introduced Claude Skills](https://www.anthropic.com/news/skills), Product Blog, 16 Oct 2025.
+  - Claude can now use _Skills_ to improve how it performs specific tasks. Skills are folders that include instructions, scripts, and resources that Claude can load when needed. Claude will only access a skill when it’s relevant to the task at hand. When used, skills make Claude better at specialized tasks like working with Excel or following your organization’s brand guidelines.
+
+Anthropic's "Claude Agent Skills" can integrate harmoniously with BMAD agents by providing the concrete mechanism to **codify and embody the specialized expertise and rigorous workflows** required by the BMAD framework. BMAD is built upon a team of specialized AI agents, where each agent embodies a specific role and a "personified philosophy of practice," such as an Architect or Developer. Claude's Skills function as a package of expertise and allow Claude to become a specialist in tasks, for example, working with Excel or following specific organizational guidelines. This specialization aligns directly with the need for BMAD agents to enforce disciplined thinking and rigorous, repeatable methodologies. Furthermore, Skills extend Claude Code with a team's agents and workflows, allowing for programmatic control over custom skills, supporting BMAD's core principles of enterprise-grade governance, traceability, and versioned accountability for all project artifacts.
+
