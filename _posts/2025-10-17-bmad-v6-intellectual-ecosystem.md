@@ -27,7 +27,10 @@ When we think about interacting with AI, the image that often comes to mind is a
 ![what-is-mental-model]({{ site.baseurl }}images/bmad-v6-intellectual-ecosystem/what-is-mental-model.png)
 _Figure. A mental model is more than a way of thinking — it’s the architecture of understanding itself._
 
-But what if we moved beyond simply prompting an AI? A framework called BMAD-V6 (Breakthrough Method for Agile AI-Driven Development - version 6) presents a more profound perspective. It frames AI not as a tool to be queried, but as a component within a complete intellectual ecosystem. It offers a philosophy of systematic problem-solving, one that redefines how humans and AI can collaborate to deconstruct, understand, and resolve intricate challenges. This article explores five impactful ideas from this philosophy that can change how you think about AI and problem-solving.
+But what if we moved beyond simply prompting an AI? A framework called **BMAD-V6** (Breakthrough Method for Agile AI-Driven Development - version 6) presents a more profound perspective. It frames AI not as a tool to be queried, but as a component within a complete intellectual ecosystem. It offers a philosophy of systematic problem-solving, one that redefines how humans and AI can collaborate to deconstruct, understand, and resolve intricate challenges. This article explores five impactful ideas from this philosophy that can change how you think about AI and problem-solving.
+
+> Why BMAD-V6 Matters? The BMAD-V6 framework (currently in alpha) represents a major evolution of the BMAD philosophy. Its most significant addition, the **BMAD Builder module**, enables users to _create new modules within the BMAD ecosystem itself._ This means we’re no longer limited to static components. With BMAD-V6, we can extend and customize the system dynamically, ensuring that new agents and workflows integrate seamlessly and operate cooperatively as part of a unified, intelligent ecosystem.
+
 
 ## 1. First, You Must Tame the Chaos
 
