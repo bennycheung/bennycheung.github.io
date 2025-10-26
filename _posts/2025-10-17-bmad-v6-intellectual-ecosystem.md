@@ -5,7 +5,7 @@ date: 2025-10-17 12:00:00.000000000 -00:00
 permalink: bmad-v6-intellectual-ecosystem
 author: Benny Cheung
 artwork:
-  author: Nanobanana
+  author: Nano Banana
 tags:
 - BMAD
 - AI Agents
