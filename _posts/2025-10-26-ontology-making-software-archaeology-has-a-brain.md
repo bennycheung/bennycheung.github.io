@@ -17,7 +17,7 @@ image: images/ontology-the-queryable-brain-of-software-archaeology/post_cover.jp
 images:
   cover: images/ontology-the-queryable-brain-of-software-archaeology/cover2x.jpg
   header: images/ontology-the-queryable-brain-of-software-archaeology/header.jpg
-published: true
+published: false
 ---
 
 <!--excerpt.start-->
