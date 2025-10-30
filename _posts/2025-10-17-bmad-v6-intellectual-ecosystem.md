@@ -17,7 +17,7 @@ image: images/bmad-v6-intellectual-ecosystem/post_cover.jpg
 images:
   cover: images/bmad-v6-intellectual-ecosystem/cover2x.jpg
   header: images/bmad-v6-intellectual-ecosystem/header.jpg
-published: false
+published: true
 ---
 
 <!--excerpt.start-->

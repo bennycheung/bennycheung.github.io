@@ -17,7 +17,7 @@ image: images/bmad-reclaiming-control-in-ai-dev/post_cover.jpg
 images:
   cover: images/bmad-reclaiming-control-in-ai-dev/cover2x.jpg
   header: images/bmad-reclaiming-control-in-ai-dev/header.jpg
-published: false
+published: true
 ---
 
 <!--excerpt.start-->
