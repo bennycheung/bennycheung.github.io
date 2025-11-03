@@ -17,12 +17,13 @@ image: images/ontology-the-queryable-brain-of-software-archaeology/post_cover.jp
 images:
   cover: images/ontology-the-queryable-brain-of-software-archaeology/cover2x.jpg
   header: images/ontology-the-queryable-brain-of-software-archaeology/header.jpg
-published: false
+published: true
 ---
 
 <!--excerpt.start-->
 Every seasoned developer knows the feeling. You inherit a complex, business-critical system where the original architects are long gone. There are multiple databases, a web of microservices, and the only documentation is a handful of outdated wiki pages. Your job is to add a new feature or fix a critical bug, but first, you have to answer a seemingly simple question: "If I change this, what breaks?"
 <!--excerpt.end-->
+
 
 ## The Legacy System Nightmare
 
