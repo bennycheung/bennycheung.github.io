@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Ontology - The Queryable Brain of Software Archaeology
-date: 2025-10-26 12:00:00.000000000 -00:00
+date: 2025-11-01 12:00:00.000000000 -00:00
 permalink: ontology-the-queryable-brain-of-software-archaeology
 author: Benny Cheung
 artwork:
