@@ -75,46 +75,129 @@ layout: default
     {% endif %}
   {% endif %}
 
-  <!-- Recent Posts Section -->
+  <!-- Recent Posts Section with Pagination -->
   <div class="recent-posts">
     <h2><i class="fa fa-clock-o"></i> Recent Posts</h2>
-    <div class="row">
+
+    <div class="posts-carousel">
       {% assign post_count = 0 %}
+      {% assign page_num = 1 %}
       {% for post in site.posts %}
         {% if post.category == "post" and post.featured != true %}
-          {% if post_count < 6 %}
-          <div class="col-sm-4">
-            <div class="post-card">
-              <a href="{{ post.url }}">
-                {% if post.images.cover %}
-                  <img class="card-img" src="/{{ post.images.cover }}" alt="{{ post.title }}">
-                {% elsif post.image %}
-                  <img class="card-img" src="/{{ post.image }}" alt="{{ post.title }}">
-                {% else %}
-                  <img class="card-img" src="{{ site.avatar }}" alt="{{ post.title }}">
-                {% endif %}
-              </a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="{{ post.url }}">{{ post.title }}</a>
-                </h4>
-                <p class="card-meta">
-                  {{ post.date | date: "%b %d, %Y" }}
-                  {% assign words = post.content | number_of_words %}
-                  {% assign reading_time = words | divided_by: 200 %}
-                  {% if reading_time < 1 %}{% assign reading_time = 1 %}{% endif %}
-                  &bull; {{ reading_time }} min read
-                </p>
-                <p class="card-excerpt">{{ post.excerpt | strip_html | truncate: 100 }}</p>
+          {% if post_count < 30 %}
+            {% assign position_in_page = post_count | modulo: 6 %}
+            {% if position_in_page == 0 %}
+              {% if post_count > 0 %}
+                </div></div>
+              {% endif %}
+              <div class="posts-page{% if post_count == 0 %} active{% endif %}" data-page="{{ page_num }}">
+              <div class="row">
+              {% assign page_num = page_num | plus: 1 %}
+            {% endif %}
+            <div class="col-sm-4">
+              <div class="post-card">
+                <a href="{{ post.url }}">
+                  {% if post.images.cover %}
+                    <img class="card-img" src="/{{ post.images.cover }}" alt="{{ post.title }}">
+                  {% elsif post.image %}
+                    <img class="card-img" src="/{{ post.image }}" alt="{{ post.title }}">
+                  {% else %}
+                    <img class="card-img" src="{{ site.avatar }}" alt="{{ post.title }}">
+                  {% endif %}
+                </a>
+                <div class="card-body">
+                  <h4 class="card-title">
+                    <a href="{{ post.url }}">{{ post.title }}</a>
+                  </h4>
+                  <p class="card-meta">
+                    {{ post.date | date: "%b %d, %Y" }}
+                    {% assign words = post.content | number_of_words %}
+                    {% assign reading_time = words | divided_by: 200 %}
+                    {% if reading_time < 1 %}{% assign reading_time = 1 %}{% endif %}
+                    &bull; {{ reading_time }} min read
+                  </p>
+                  <p class="card-excerpt">{{ post.excerpt | strip_html | truncate: 100 }}</p>
+                </div>
               </div>
             </div>
-          </div>
-          {% assign post_count = post_count | plus: 1 %}
+            {% assign post_count = post_count | plus: 1 %}
           {% endif %}
         {% endif %}
       {% endfor %}
+      {% if post_count > 0 %}
+        </div></div>
+      {% endif %}
+    </div>
+
+    <!-- Pagination Controls -->
+    <div class="posts-pagination">
+      <button class="page-btn prev-btn" disabled><i class="fa fa-chevron-left"></i></button>
+      <div class="page-dots">
+        {% assign total_pages = post_count | divided_by: 6 %}
+        {% assign remainder = post_count | modulo: 6 %}
+        {% if remainder > 0 %}{% assign total_pages = total_pages | plus: 1 %}{% endif %}
+        {% for i in (1..total_pages) %}
+          <span class="page-dot{% if i == 1 %} active{% endif %}" data-page="{{ i }}"></span>
+        {% endfor %}
+      </div>
+      <button class="page-btn next-btn"><i class="fa fa-chevron-right"></i></button>
     </div>
   </div>
+
+  <script>
+  $(document).ready(function() {
+    var currentPage = 1;
+    var totalPages = $('.posts-page').length;
+
+    function showPage(page) {
+      if (page < 1 || page > totalPages) return;
+      currentPage = page;
+
+      $('.posts-page').removeClass('active');
+      $('.posts-page[data-page="' + page + '"]').addClass('active');
+
+      $('.page-dot').removeClass('active');
+      $('.page-dot[data-page="' + page + '"]').addClass('active');
+
+      $('.prev-btn').prop('disabled', page === 1);
+      $('.next-btn').prop('disabled', page === totalPages);
+    }
+
+    $('.prev-btn').on('click', function() {
+      showPage(currentPage - 1);
+    });
+
+    $('.next-btn').on('click', function() {
+      showPage(currentPage + 1);
+    });
+
+    $('.page-dot').on('click', function() {
+      showPage($(this).data('page'));
+    });
+
+    // Swipe support
+    var startX, startY, distX, distY;
+    var carousel = $('.posts-carousel')[0];
+
+    carousel.addEventListener('touchstart', function(e) {
+      startX = e.touches[0].pageX;
+      startY = e.touches[0].pageY;
+    }, false);
+
+    carousel.addEventListener('touchend', function(e) {
+      distX = e.changedTouches[0].pageX - startX;
+      distY = e.changedTouches[0].pageY - startY;
+
+      if (Math.abs(distX) > Math.abs(distY) && Math.abs(distX) > 50) {
+        if (distX > 0) {
+          showPage(currentPage - 1);
+        } else {
+          showPage(currentPage + 1);
+        }
+      }
+    }, false);
+  });
+  </script>
 
   <!-- Topic Cloud Section -->
   <div class="topic-cloud">

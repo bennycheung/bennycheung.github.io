@@ -767,6 +767,79 @@ pre:hover .code-copy-btn {
 }
 
 /*
+ * Landing Page - Posts Carousel & Pagination
+ */
+.posts-carousel {
+  position: relative;
+  overflow: hidden;
+}
+
+.posts-page {
+  display: none;
+}
+
+.posts-page.active {
+  display: block;
+}
+
+.posts-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 30px;
+  padding: 15px 0;
+}
+
+.page-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid #428bca;
+  background: #fff;
+  color: #428bca;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-btn:hover:not(:disabled) {
+  background: #428bca;
+  color: #fff;
+}
+
+.page-btn:disabled {
+  border-color: #ccc;
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.page-dots {
+  display: flex;
+  gap: 10px;
+}
+
+.page-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ddd;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.page-dot:hover {
+  background: #aaa;
+}
+
+.page-dot.active {
+  background: #428bca;
+  transform: scale(1.2);
+}
+
+/*
  * Landing Page - Topic Cloud
  */
 .topic-cloud {
