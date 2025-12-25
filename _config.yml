@@ -14,6 +14,20 @@ google_analytics: UA-76691604-1
 # DISQUS removed 2025-12-25 - forced advertising
 # disqus_shortname: bennycheungmindhackblog
 
+# Giscus comments (GitHub Discussions)
+giscus:
+  repo: bennycheung/bennycheung.github.io
+  repo_id: R_kgDOAcxX0Q
+  category: Comments
+  category_id: DIC_kwDOAcxX0c4ClodK
+  mapping: pathname
+  strict: 0
+  reactions_enabled: 1
+  emit_metadata: 0
+  input_position: bottom
+  theme: preferred_color_scheme
+  lang: en
+
 # Social settings
 avatar: /assets/avtar.jpg
 twitter_username: Benny_Cheung
