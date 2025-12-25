@@ -18,6 +18,8 @@ images:
   cover: images/dempster-shafer-theory-for-classification/cover.jpg
   header: images/dempster-shafer-theory-for-classification/header.jpg
 published: true
+featured: true
+featured_order: 2
 ---
 
 <!--excerpt.start-->
