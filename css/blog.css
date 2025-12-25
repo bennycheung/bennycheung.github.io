@@ -820,8 +820,8 @@ pre:hover .code-copy-btn {
 }
 
 .archive-cover {
-  width: 180px;
-  height: auto;
+  width: 400px;
+  height: 300px;
   border-radius: 6px;
   object-fit: cover;
 }
@@ -858,10 +858,6 @@ pre:hover .code-copy-btn {
 }
 
 @media (max-width: 768px) {
-  .archive-cover {
-    width: 120px;
-  }
-
   .archive-post .media-left {
     display: block;
     margin-bottom: 15px;
@@ -869,7 +865,8 @@ pre:hover .code-copy-btn {
 
   .archive-cover {
     width: 100%;
-    max-width: 200px;
+    max-width: 400px;
+    height: auto;
   }
 }
 
