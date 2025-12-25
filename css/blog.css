@@ -713,8 +713,20 @@ pre:hover .code-copy-btn {
   padding-bottom: 10px;
 }
 
-.post-card {
+.posts-page .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.posts-page .row > [class*="col-"] {
+  display: flex;
   margin-bottom: 25px;
+}
+
+.post-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   border-radius: 8px;
   overflow: hidden;
   background: #fff;
@@ -735,6 +747,9 @@ pre:hover .code-copy-btn {
 
 .post-card .card-body {
   padding: 15px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .post-card .card-title {
@@ -764,6 +779,7 @@ pre:hover .code-copy-btn {
   color: #666;
   line-height: 1.4;
   margin: 0;
+  flex: 1;
 }
 
 /*
