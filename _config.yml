@@ -11,7 +11,8 @@ url: "https://bennycheung.github.io" # the base hostname & protocol for your sit
 google_analytics: UA-76691604-1
 
 # Comments settings
-disqus_shortname: bennycheungmindhackblog
+# DISQUS removed 2025-12-25 - forced advertising
+# disqus_shortname: bennycheungmindhackblog
 
 # Social settings
 avatar: /assets/avtar.jpg
@@ -25,10 +26,10 @@ stackoverflow_username : 6242759/benny-cheung
 youtube_username : UC_y9pExhrufOEeucdHVi-Sw
 email: btscheung@gmail.com
 
-comments:
-  provider: disqus
-  disqus:
-    short_name: bennycheungmindhackblog
+# comments:
+#   provider: disqus
+#   disqus:
+#     short_name: bennycheungmindhackblog
 
 gems:
   - jekyll-sitemap
