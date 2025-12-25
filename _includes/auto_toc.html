@@ -34,19 +34,18 @@ $(document).ready(function() {
 
   // Only show TOC if there are 3+ headings
   if (headingCount >= 3) {
-    // Insert TOC after the first image and its caption, inside post-content
-    var $firstImgP = $('.post-content > p > img, .post-content > p:has(img)').first().closest('p');
-    if ($firstImgP.length) {
-      // Check if next element is a figure caption (paragraph starting with <em>Figure or just <em>)
-      var $next = $firstImgP.next('p');
-      if ($next.length && $next.children('em').first().length &&
-          ($next.children().first().is('em') || $next.text().trim().match(/^Figure/i))) {
-        // Insert after the caption
-        $next.after($toc);
-      } else {
-        $firstImgP.after($toc);
+    // Find the <!--excerpt.end--> comment and insert TOC after it
+    var inserted = false;
+    $('.post-content').contents().each(function() {
+      if (this.nodeType === 8 && this.nodeValue.trim() === 'excerpt.end') {
+        $(this).after($toc);
+        inserted = true;
+        return false; // break the loop
       }
-    } else {
+    });
+
+    // Fallback: insert at the beginning if no excerpt marker found
+    if (!inserted) {
       $('.post-content').prepend($toc);
     }
   }
