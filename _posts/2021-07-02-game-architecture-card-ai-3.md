@@ -41,39 +41,16 @@ a full-fledged game environment has been put in place and needs to capture all t
 
 However, the RFTG card game's rule complexity is difficult to express in a well-defined game state representation, unlike Easy21 or UNO simplicity. We must raise the level of abstraction in order to describe RFTG AI. We are hoping to guide readers in the right direction with the following outline.
 
-- [{% include open-embed.html %}](#-include-open-embedhtml-)
-- [ RFTG Python Development](#-rftg-python-development)
-  - [ Jupyter Notebook Experiments (Part 3)](#-jupyter-notebook-experiments-part-3)
-  - [ Installation for AI Notebook](#-installation-for-ai-notebook)
-- [ Temporal Difference - Reinforcement Learning](#-temporal-difference---reinforcement-learning)
-  - [ Game State](#-game-state)
-  - [ Neural Networks](#-neural-networks)
-    - [ Eval Network](#-eval-network)
-    - [ Role Network](#-role-network)
-  - [ Decisions](#-decisions)
-- [ Deep Neural Network using Keras](#-deep-neural-network-using-keras)
-  - [ Define Keras Layers](#-define-keras-layers)
-  - [ Visualize Model](#-visualize-model)
-  - [ Loading Network Weights into Layers](#-loading-network-weights-into-layers)
-  - [ Using Neural Network for Predictions (Scores)](#-using-neural-network-for-predictions-scores)
-- [ Concluding Remarks](#-concluding-remarks)
-- [ References](#-references)
-  - [Game AI](#game-ai)
-  - [Race for the Galaxy AI](#race-for-the-galaxy-ai)
-  - [Reinforcement Learning](#reinforcement-learning)
-  - [Reinforcement Learning for Card Game AI](#reinforcement-learning-for-card-game-ai)
-  - [Deep Learning using Python](#deep-learning-using-python)
-
-## <a name="PythonDevelopment"></a> RFTG Python Development
+## RFTG Python Development
 Interest reader can find the full development set up instruction, Python source code and Jupyter notebook experiments described in this article from [[Cheung21]](https://github.com/bennycheung/RaceGalaxyAI-Python).
 
-### <a name="Notebook"></a> Jupyter Notebook Experiments (Part 3)
+### Jupyter Notebook Experiments (Part 3)
 The development experiments on (Part 3) are recorded in the Jupyter Notebook `rftg_ai.ipynb` to quickly run the code samples.
 Inside Visual Studio code, install the Microsoft's "Jupyter" extension. When activate the `rftg_ai.ipynb` inside VScode, change the Python kernel to use `rftg` that has been setup from the code `README.md` instructions.
 
 ![Running VSCode Jupyter Notebook]({{ site.baseurl }}images/game-architecture-card-ai-3/RFTG_VScode_Jupyter_Notebook-annotated.png)
 
-### <a name="AINotebook"></a> Installation for AI Notebook
+### Installation for AI Notebook
 The following Python modules are required to run this AI notebook `rftg_ai.ipynb`.
 
 ```
@@ -93,7 +70,7 @@ In addition, we need to define the `.keras/keras.json` to use the tensorflow bac
 }
 ```
 
-## <a name="TDLearning"></a> Temporal Difference - Reinforcement Learning
+## Temporal Difference - Reinforcement Learning
 Collecting the information provide by both [Keldon's post](#Jones09) and [Temple Gate's blog post](#TempleGates17), we learned that RFTG AI follows [Tesauro's TD-Gammon](#Tesauro95) ideas using Temporal Difference (TD) neural network. And yes, neural network and reinforcement learning techniques are applied to games since the '90s.
 
 One of the biggest attraction of reinforcement learning, it does not require a pre-defined model (aka. model-free) and no human input needed to generate the training data. The neural network learns by repeatedly playing with itself, for instance, RFTG AI was trained iteratively over 30,000 simulated games to find the weights for neural network nodes.
@@ -117,7 +94,7 @@ where:
 
 For more reinforcement learning, reader can consult the excellent tutorial by Tambet Matiisen [[Matiisen15]](#Matiisen15), DeepMind's RL lectures by David Silver [[Silver17]](Silver17) and the classic RL textbook by Sutton [[Sutton17]](Sutton17).
 
-### <a name="GameState"></a> Game State
+### Game State
 The game state can represent any information available to the decision-maker, that is useful to describe the current situation of the game.  This could be the type of cards a player holds, the number of cards the opponent holds, or information regarding cards that have already been played. Without a doubt, RFTG is a complex card game, due to its elaborate set of rules and phases of action.
 
 By reading the list of input node names, we can understand the game states are fed into the network. The game state can be,
@@ -133,7 +110,7 @@ By reading the list of input node names, we can understand the game states are f
 
 The list can go from *700s* for a game of 2 players up to *1,800s* for a game of 5 players (using expansion=6).
 
-### <a name="NeuralNetwork"></a> Neural Networks
+### Neural Networks
 These inputs don’t just feed into one neural network. According to Keldon's code, he got twelve unique models of neural networks each trained for a different set of expansions and player count. If we're running a two-player game, the AI is on a different network than a three-player game. For each game model, there are two flavours of neural networks at work, each with its main function.
 
 For example,
@@ -225,20 +202,20 @@ Hidden Layer:  (605, 50)
 Output Layer:  (50, 7)
 ```
 
-#### <a name="EvalNetwork"></a> Eval Network
+#### Eval Network
 The `eval` network output can be thought of each player's chances to win. Each row corresponds to computing the eval network from the point of view of that player because certain things are known only to a given player, such as cards in hand. For example, the following `eval` network is for 2 players, i.e. the output layer has 2 output for each player winning scores.
 
 ![RFTG Eval Neural Network]({{ site.baseurl }}images/game-architecture-card-ai-3/RFTG_Eval_NN.png)
 *Figure. Showing the fully connected `eval` network layers. (note: not all connections are drawn for less lines). The input layer nodes are the designed game states and the output layer nodes are the winning scores for each player (in this example, 2 nodes for 2 players).*
 
-#### <a name="RoleNetwork"></a> Role Network
+#### Role Network
 There is another important decision is choosing which action at the beginning of each turn. This is handled a bit differently. First, the AI predicts what each opponent is likely to do. This is done with a second `role` network. This network is very similar to the eval network, except that it has an output for each possible 7 types of action choice a player may make.
 
 ![RFTG Role Neural Network]({{ site.baseurl }}images/game-architecture-card-ai-3/RFTG_Role_NN.png)
 
 *Figure. Showing the fully connected `role` network layers. (note: not all connections are drawn for less lines). The input layer nodes are the designed game states and the output layer nodes are the 7 types of action choice.*
 
-### <a name="Decisions"></a> Decisions
+### Decisions
 Using the network is simple, gathering all the required game state as input to the network.
 Once the game state is scored by both networks, the scores represent the chance of player winning and the role of action choice, are handled by AI to make a decision for a action.
 
@@ -270,10 +247,10 @@ There are more logic to make a choice that we shall not drill into the details. 
     }
 ```
 
-## <a name="Keras"></a> Deep Neural Network using Keras
+## Deep Neural Network using Keras
 In this section, we proceed to use [Keras: the Python Deep Learning API](https://keras.io/) to rewrite the RFTG's Neural Network. Although it felt overkill, the purpose is to illustrate using this powerful toolkit to achive greater network flexibility; Subsequently, we can potentially extend the network abilities, e.g. using LSTM (long short term memory) network. To learn Keras, we recommend the book by Keras designer, Francois Chollet [[Chollet18]](#Chollet18).
 
-### <a name="KerasLayers"></a> Define Keras Layers
+### Define Keras Layers
 Keras layer that will only accept as input 2D tensors where the first dimension is the network input size, e.g. 605 (axis 0, the batch dimension, is unspecified, and thus any value would be accepted). This layer will return a tensor where the first dimension has been transformed to be 50. Thus this layer can only be connected to a downstream layer that expects 50-dimensional vectors as its input.
 
 The second layer didn’t receive an input shape argument—instead, it automatically inferred its input shape as being the output shape of the layer that came before.
@@ -292,7 +269,7 @@ model.add(layers.Dense(50, activation='relu', input_shape=(network.num_input,), 
 model.add(layers.Dense(7, activation='softmax', name='output') )
 ```
 
-### <a name="VisualizeModel"></a> Visualize Model
+### Visualize Model
 The summary can be created by calling the summary() function on the model that returns a string that in turn can be printed.
 
 ```python
@@ -328,7 +305,7 @@ plot_model(model, to_file=plot_filename, show_shapes=True, show_layer_names=True
 ![Plot Keras DNN Network]({{ site.baseurl }}images/game-architecture-card-ai-3/rftg.role.0.2.net.png)
 
 
-### <a name="LoadingNetworkWeights"></a> Loading Network Weights into Layers
+### Loading Network Weights into Layers
 We have load the RFTG `role` network weights. After defining the Keras model, we can assign the weights into the corresponding model's layers
 * loaded network.hidden -> hidden_layer
 * loadad network.output -> output_layer
@@ -367,7 +344,7 @@ hidden_layer.get_weights()
        dtype=float32)]
 ```
 
-### <a name="UsingNeuralNetworkPredictions"></a> Using Neural Network for Predictions (Scores)
+### Using Neural Network for Predictions (Scores)
 After the network weights are loaded into Keras model, we can verify with the `predict()` method of the model instance returns a probability distribution over all 7 topics.
 
 Let’s generate a random set of game state as the test input data.
@@ -441,7 +418,7 @@ np.argmax(predictions[0])
 2
 ```
 
-## <a name="Conclusion"></a> Concluding Remarks
+## Concluding Remarks
 In this last article, we have explored (5) Game AI in RFTG card games. We can see how reinforcement learning helps to train a neural network that can play by itself. After the neural network is trained, the game AI can decide intelligently and provide endless challenges to a human player.
 
 In addition, we have illustrated how to convert the network into Keras, redefine the RFTG layers and produce the predictions of some random game state. For experienced AI developer, the temporal difference, reinforcement learning and deep neural network techniques can be applied to train other types of card games. Hope this "Game Architecture for Card Game" series help to inspire better card game design and produce more powerful card game AIs!
@@ -450,7 +427,7 @@ In addition, we have illustrated how to convert the network into Keras, redefine
 * [Game Architecture for Card Game Action (Part 2)](http://bennycheung.github.io/game-architecture-card-ai-2)
 * **>>** [Game Architecture for Card Game AI (part 3)](http://bennycheung.github.io/game-architecture-card-ai-3)
 
-## <a name="References"></a> References
+## References
 
 ### Game AI
 * <a name="MillingtonFung06">[MillingtonFung06]</a> Ian Millington & John Funge, Artificial Intelligence for Games, 2006, Elsevier, Morgan Kaufmann Pub., ISBN: 978-0-12-497782-2

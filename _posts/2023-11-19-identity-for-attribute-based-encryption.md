@@ -47,22 +47,9 @@ The participant's identity and attributes are fully secured and authenticated, i
 
 To continue our explorations, we shall take the practical approach to demonstrate how to use Python `cryptography` to generate X.509 certificate with custom atributes; subsequently, we use `charm-crypto` framework's hybrid adapter to perform CP-ABE (ciphertext-policy) with the X.509 custom attributes.
 
-- [{% include open-embed.html %}](#-include-open-embedhtml-)
-- [ Python Installation](#-python-installation)
-  - [ Virtual Environment](#-virtual-environment)
-  - [ cryptography Module](#-cryptography-module)
-  - [ Charm Framework](#-charm-framework)
-- [ Public Key Infrastructure](#-public-key-infrastructure)
-  - [ Authentication, Public keys, and Private Keys](#-authentication-public-keys-and-private-keys)
-  - [ Certificate Authorities](#-certificate-authorities)
-  - [ Digital Certificate - X.509](#-digital-certificate---x509)
-- [ Self-Signed Certificate with Custom Attributes](#-self-signed-certificate-with-custom-attributes)
-- [ CP-ABE using Charm's Hybrid Adapter](#-cp-abe-using-charms-hybrid-adapter)
-- [ References](#-references)
+## Python Installation
 
-## <a name='Installation'></a> Python Installation
-
-### <a name='VirtualEnv'></a> Virtual Environment
+### Virtual Environment
 Using an isolated Python virtual environment will protect you from headaches and disaster of installations.
 `crypto` (or your choice of name) is the name of the virtual environment, and `python=3.5` is the Python version.
 
@@ -78,7 +65,7 @@ Then activate the virtual environment by,
 source activate crypto
 ```
 
-### <a name='Cryptography'></a> cryptography Module
+### cryptography Module
 Our experiment starts with [cryptography](https://cryptography.io/en/latest/) module,
 `cryptography` includes both high level recipes and low level interfaces to common cryptographic algorithms such as symmetric ciphers, message digests, and key derivation functions. We rely on many features from `cryptography` to illustrate the X509 certificate processing.
 
@@ -88,7 +75,7 @@ Make sure the `cryptography` installation is inside the virtualenv.
 pip install cryptography
 ```
 
-### <a name='Charm'></a> Charm Framework
+### Charm Framework
 Our experiment is using the Python implementation of Attribute-based Encrpytion based on the [charm-crypto](http://charm-crypto.io/) framework [[AGM13]](#AGM13).
 Charm is designed for rapidly prototyping advanced cryptosystems. It was a well engineered framework that uses a hybrid design: performance intensive mathematical operations are implemented in native C modules, while cryptosystems themselves are written in a readable, high-level language. Charm additionally provides a number of new components to facilitate the rapid development of new schemes and protocols. That's how we did the CP-ABE experiment.
 
@@ -111,7 +98,7 @@ To validate the installation is working,
 make test
 ```
 
-## <a name='PKI'></a> Public Key Infrastructure
+## Public Key Infrastructure
 Understanding the Public Key Infrastructure (PKI) standard will help us to design a secure communication between various network participants. The PKI enable us to provide identity to the participants and to ensure that messages on the system are properly authenticated.
 
 There are four key elements to PKI:
@@ -133,7 +120,7 @@ When obtaining a certificate from a Certificate Authority (CA), the usual flow i
 
 We shall try to understand each mentioned components with experimental Python code in the following sections.
 
-### <a name='PublicKey'></a> Authentication, Public keys, and Private Keys
+### Authentication, Public keys, and Private Keys
 Authentication and message integrity are important concepts in secure communications. Authentication requires that parties who exchange messages are assured of the identity that created a specific message. For a message to have “integrity” means that cannot have been modified during its transmission.
 
 The PKI authentication mechanisms rely on digital signatures allow a participant to digitally sign its messages. Digital signatures guarantees on the integrity of the signed message is coming from the specific participant instead of anyone else.
@@ -168,7 +155,7 @@ with open("key.pem", "wb") as f:
 
 The private key is saved into `key.pem` in PEM file format. We should keep this file safe and protected. This file should not be transmitted anywhere else. The next step is creating a request for a certificate (CSR), which is signed by private key. 
 
-### <a name='CA'></a> Certificate Authorities
+### Certificate Authorities
 As we've discussed, a participant is able to participate in the secured system, via the means of a digital identity issued by an authority trusted by the system. In the most common case, digital identities (or simply identities) have the form of cryptographically validated digital certificates that comply with X.509 standard and are issued by a Certificate Authority (CA).
 
 A Certificate Authority dispenses certificates to different participants. These certificates are digitally signed by the CA and bind together the participant's *public key* (and optionally with a list of attributes, we shall come back this later). As a result, if one trusts the CA (by knowing its public key), it can trust that the specific participant is bound to the public key included in the certificate, and owns the included attributes, by validating the CA’s signature on the participant’s certificate.
@@ -219,7 +206,7 @@ with open("csr.pem", "wb") as f:
 The CSR is saved into `csr.pem` in PEM file format. The next step is sending the CSR to a CA (but not the private key).
 The CA validates that the resource ownerhsip (e.g. domain and/or attributes) and signed and issued the request certificate.
 
-### <a name='Certificate'></a> Digital Certificate - X.509
+### Digital Certificate - X.509
 In a EHR setting, every participant who wishes to interact with the system needs an identity. One or more CAs can be used to define the participants from a digital perspective. It’s the CA that provides the basis for participant to have a verifiable digital certificate. A digital certificate is a document which contains a set of attributes relating to the participant. The most common type of certificate is the one compliant with the X.509 standard, which allows the encoding of a participant’s identity details in its structure.
 
 Certificates can be widely disseminated, as they do not include any private keys. As such they can be used as anchor of trusts for authenticating messages coming from different participants. CAs also have a certificate, which they make widely available. This allows the other verifier CA to verify a participant's certificate. The certificate alongs with all the attributes is digitally signed by CA so that tampering will invalidate the certificate. Think of X.509 certificate as a digital identity card that is impossible to change.
@@ -328,7 +315,7 @@ Certificate:
          c7:91:3c:77
 ```
 
-## <a name='SelfSigned'></a> Self-Signed Certificate with Custom Attributes
+## Self-Signed Certificate with Custom Attributes
 While most of the time we want a certificate that has been signed by CA, so that trust is established,
 sometimes we want to create a self-signed certificate. Self-signed certificates are not issued by a CA,
 but instead they are signed by the private key corresponding to the public key they embed, aka. self-signed.
@@ -498,7 +485,7 @@ Role: PATIENT
 ID: 123456
 ```
 
-## <a name='CPABE'></a> CP-ABE using Charm's Hybrid Adapter
+## CP-ABE using Charm's Hybrid Adapter
 There are a number of questions in our previous CP-ABE example from ["Attribute-based Encryption for Healthcare Blockchain"](http://bennycheung.github.io/attribute-based-encryption-for-healthcare-blockchain), which is concerning about the random $$GT$$ message. The reader expected to encrypt any plain text message with CP-ABE. We shall provide an extended example to illustrate how to encrypt any plain text message and to decrypt with the certificate attributes (reference to the [answer from crypto exchange](https://crypto.stackexchange.com/questions/19310/what-is-msg-group-randomgt-in-charm-encryption-schemes/19312)).
 
 In real world application, Attribute-based Encryption (ABE) is used in conjunction with a symmetric cipher,
@@ -561,7 +548,7 @@ b'Personal Secret: high blood pressure and diabetic'
 
 Amy has successfully decrypted her own medical record using her X.509 identity! Amy medical condition is secured that only herself and potentially a practitioner who has `{"Role":"PRACTITIONER", "ID":"9876543"}` attributes in the certificate can decrypt.
 
-## <a name='References'></a> References
+## References
 
 * <a name="CRYPTO">[[CRYPTO]](https://cryptography.io/en/latest/x509/)</a> Cryptography online documentation - X.509 module
 * <a name="BSW07">[[BSW07]](https://www.cs.utexas.edu/~bwaters/publications/papers/cp-abe.pdf)</a> John Bethencourt, Amit Sahai, and Brent Waters. "Ciphertext-policy attribute-based encryption." In Security and Privacy, 2007. SP'07. IEEE Symposium on, pp. 321-334. IEEE, 2007.

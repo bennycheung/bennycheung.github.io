@@ -41,41 +41,16 @@ Continue from the previous [Game Architecture for Card Game Model (Part 1)](http
 
 In part 2, we shall continue to describe the game architecture using [Race for the Galaxy](https://boardgamegeek.com/boardgame/28143/race-galaxy) (RFTG) for our study. As usual, a balance between theory and practice, we set up the Python development to illustrate the object-oriented game engine.
 
-- [{% include open-embed.html %}](#-include-open-embedhtml-)
-- [ RFTG Python Development](#-rftg-python-development)
-  - [ Jupyter Notebook Experiments (Part 2)](#-jupyter-notebook-experiments-part-2)
-- [ RFTG Game Engine](#-rftg-game-engine)
-  - [ Create a Game](#-create-a-game)
-  - [ Deck Operations](#-deck-operations)
-    - [ Pick Start Worlds](#-pick-start-worlds)
-    - [ Draw 6 Random Cards](#-draw-6-random-cards)
-  - [ Decisions](#-decisions)
-    - [ Decide on the Start World](#-decide-on-the-start-world)
-    - [ Decide on the Action](#-decide-on-the-action)
-    - [ Discard Cards](#-discard-cards)
-- [ Start Game](#-start-game)
-- [ Game Interface](#-game-interface)
-  - [ Install Cocos2d](#-install-cocos2d)
-    - [Patch on the Mac](#patch-on-the-mac)
-  - [ Read and Display the Cards](#-read-and-display-the-cards)
-    - [Read Card Images as pyglet Images](#read-card-images-as-pyglet-images)
-  - [ Load Card Library and Define Game](#-load-card-library-and-define-game)
-  - [ Display Card Sprite and Animation](#-display-card-sprite-and-animation)
-- [ Concluding Remarks](#-concluding-remarks)
-- [ References](#-references)
-  - [Race for the Galaxy](#race-for-the-galaxy)
-  - [Interface Development](#interface-development)
-
-## <a name="PythonDevelopment"></a> RFTG Python Development
+## RFTG Python Development
 Interest reader can find the full development set up instruction, Python source code and Jupyter notebook experiments described in this article from [[Cheung21]](https://github.com/bennycheung/RaceGalaxyAI-Python).
 
-### <a name="Notebook"></a> Jupyter Notebook Experiments (Part 2)
+### Jupyter Notebook Experiments (Part 2)
 The development experiments on (Part 2) are recorded in the Jupyter Notebook `rftg_game.ipynb` to quickly run the code samples.
 Inside Visual Studio code, install the Microsoft's "Jupyter" extension. When activate the `rftg_game.ipynb` inside VScode, change the Python kernel to use `rftg` that has been setup from the code `README.md` instructions.
 
 ![Running VSCode Jupyter Notebook]({{ site.baseurl }}images/game-architecture-card-ai-2/RFTG_VScode_Jupyter_Notebook-annotated.png)
 
-## <a name="GameEngine"></a> RFTG Game Engine
+## RFTG Game Engine
 The Game Engine defines a set of rules that players must follow. It also maintains the game states, by using the game information system that tracks the players and the game progress.  Extracting from the game data model, the following UML diagram highlights the classes that represent the game engine components.
 
 `Game` is a session that follows a definite set of rules, a set of players that interact with the game model. At the highest level, a game is a composition of a `Deck` of cards, a set of `Player` and the associated `GameResource`. The resources include the card design library as `Library` and the card display as `CardDisplay`.
@@ -89,7 +64,7 @@ The Game Engine defines a set of rules that players must follow. It also maintai
 
 The players are actors either as Human or Computer (AI). Each player must make decisions concerning about game process and rules. The `Decision` is the abstract class that can be implemented as interactive `UIDecision` that a human is called for any game actions, or implemented as automated `AIDecision` that a computer is called to act.
 
-### <a name="CreateGame"></a> Create a Game
+### Create a Game
 To create a game session, the initialization steps are shown as following:
 * create `Library` and load the card design and images
 * create `CardDisplay` to provide convenient card images display
@@ -139,10 +114,10 @@ game = Game(resource=resource, session_id='testing', deck=deck, players=players,
             start_seed=280966)
 ```
 
-### <a name="DeckOperations"></a> Deck Operations
+### Deck Operations
 After the game model has been constructed, we shall start with the game's deck operations, such as picking the start worlds and draw random cards from the deck.
 
-#### <a name="StartWorlds"></a> Pick Start Worlds
+#### Pick Start Worlds
 The RFTG's base game start world `Card` has the flag of `CardFlag.START`. The `get_cards_with_flag` can search the cards to find the start world cards. Once those cards are identified from the deck, we use `pick_cards` to extract those cards, i.e. removed from the deck. The `card.location` will be changed from `Location.DECK` to `Location.HAND`.
 
 ```python
@@ -164,7 +139,7 @@ game.resource.display.show()
 
 ![Pick Start Worlds from the Deck]({{ site.baseurl }}images/game-architecture-card-ai-2/RFTG_Game_Deck_Start_World.png)
 
-#### <a name="RandomCards"></a> Draw 6 Random Cards
+#### Draw 6 Random Cards
 The remaining cards will be shuffled by `shuffle_cards`. Subsequently, we use `draw_cards` to draw 6 cards from the deck. The `card.location` will be changed from `Location.DECK` to `Location.HAND`. The drawn cards are assigned to a player, for example, player_index=0.
 
 ```python
@@ -187,7 +162,7 @@ game.resource.display.show()
 
 ![Draw 6 Random Cards from Deck]({{ site.baseurl }}images/game-architecture-card-ai-2/RFTG_Game_Deck_Draw_6_Cards.png)
 
-### <a name="Decisions"></a> Decisions
+### Decisions
 We must present the game states to an actor, either human or AI, to make a decision. The `Decision` is an abstract super class that defines all the decision operations that is implemented as `UIDecision` for human actor and is implemented by `AIDecision` for a computer AI actor.
 
 ```python
@@ -199,7 +174,7 @@ decision = UIDecision(game)
 
 The decision object must initialize with the `Game` model. We shall start with some examples of the decision operations. Since we are using the `UIDecision` implementation, the game will show the cards for a human input.
 
-#### <a name="DecideStartWorld"></a> Decide on the Start World
+#### Decide on the Start World
 The game must present the list of start world cards to an actor, e.g. player 0, to choose a start world. This is just for illustration here. More realistically, the start world will be randomly assigned to the player.
 
 ```python
@@ -219,7 +194,7 @@ game.plot_player_cards(0, Location.HAND)
 
 ![Player Decision after Chosen a Start World and On Hand cards]({{ site.baseurl }}images/game-architecture-card-ai-2/RFTG_Decision_02_Show_Start_World_and_On_Hand.png)
 
-#### <a name="DecideAction"></a> Decide on the Action
+#### Decide on the Action
 The next important actor's decision is choosing an action. The game must display the list of actions, e.g. for player 0, to choose an action.
 
 ```python
@@ -238,7 +213,7 @@ game.plot_player_actions(0)
 
 ![Display Player Decision on the Chosen Action]({{ site.baseurl }}images/game-architecture-card-ai-2/RFTG_Decision_04_Chosen_Actions.png)
 
-#### <a name="DiscardCards"></a> Discard Cards
+#### Discard Cards
 Since cards are used as the main currency in the game, player must decide to discard a number of cards as payment for various causes.
 
 ```python
@@ -250,7 +225,7 @@ For example, the player has chosen to discard cards "1,4", where the "," separat
 
 ![Display Player Decision on the Discard Action]({{ site.baseurl }}images/game-architecture-card-ai-2/RFTG_Decision_05_Discard_Action.png)
 
-## <a name="StartGame"></a> Start Game
+## Start Game
 Finally, there are sufficient game functions to show how to construct a complete example of constructing a game model and starting of a game of 2 players.
 
 ```python
@@ -297,7 +272,7 @@ The plot of the player's "Red" `Location.ACTIVE` and `Location.HAND` cards.
 
 ![Game Demo Player's Red Hand]({{ site.baseurl }}images/game-architecture-card-ai-2/RFTG_Game_Demo_Red_Hand.png)
 
-## <a name="GameInterface"></a> Game Interface
+## Game Interface
 So far, we are using `matplotlib` to display the game graphics and provide user interaction. The Jupyter notebook approach is purely for experimentation purposes, far from a satisfactory game interface. In this section, we shall start to convert the game interface using a better game framework.
 
 [cocos2d](#Cocos2d) is a framework for building 2D games, demos, and other graphical/interactive applications.
@@ -305,7 +280,7 @@ It works on Windows, OS X and Linux and it is meant to be used by applications w
 
 cocos2d is built on top of [pyglet](#pyglet). pyglet is a cross-platform windowing and multimedia library for Python, intended for developing games and other visually rich applications. It supports windowing, user interface event handling, game controllers and joysticks, OpenGL graphics, loading images and videos, and playing sounds and music. pyglet works on Windows, OS X and Linux.
 
-### <a name="InstallCocos2d"></a> Install Cocos2d
+### Install Cocos2d
 Download and install `cocos2d` is very simple, which works on any platform.
 
 ```
@@ -350,7 +325,7 @@ index 516fb8b..34aad7e 100644
              # setting viewport geometry, not handling an event
 ```
 
-### <a name="ReadDisplayCards"></a> Read and Display the Cards
+### Read and Display the Cards
 
 #### Read Card Images as pyglet Images
 In the `Library`, we shall read the card image as pyglet image format so that it is ready to be used as a texture.
@@ -373,7 +348,7 @@ image = pyglet.image.ImageData(temp_image.width, temp_image.height,
                               'RGB', raw_image, pitch=-temp_image.width * 3)
 ```
 
-### <a name="LoadCardGame"></a> Load Card Library and Define Game
+### Load Card Library and Define Game
 We need to load the cards library and prepare the game deck.
 
 ```python
@@ -392,7 +367,7 @@ players = [player1, player2]
 game = Game(resource=resource, session_id='testing', expanded=0, players=players)
 ```
 
-### <a name="DisplayCardAnimation"></a> Display Card Sprite and Animation
+### Display Card Sprite and Animation
 To use `cocos2d`, the following classes are minimum requirements to construct
 * `Sprite` to represent a card image that can be animated on player areas
 * `Layer` to contain `Sprite`
@@ -522,14 +497,14 @@ The game interface looks much better using cocos2d framework.
 ![Race for the Galaxy Python]({{ site.baseurl }}images/game-architecture-card-ai-2/RFTG_Cocos_Python_12fps.gif)
 *Figure. Showing the card game is designed and rewritten in Python. The game UI and animation are done using Cocos2d - Python edition. (credits: Rio Grande Games holds the copyrights for the images)*
 
-## <a name="Conclusion"></a> Concluding Remarks
+## Concluding Remarks
 We have explored (3) Game Engine and (4) Game Interface development. The game states are presented to an actor, either human or AI, to make a decision. This part shows the `UIDecision` for a human actor, to illustrate the usage of the abstract `Decision` class. The AI agent will drive the `AIDecision` implementation in the next article (Part 3). Towards the end, we converted the Game Interface to use cocos2d - Python edition. The card game experiment starts to look a lot more interesting.
 
 * [Game Architecture for Card Game Model (Part 1)](http://bennycheung.github.io/game-architecture-card-ai-1)
 * **>>** [Game Architecture for Card Game Action (Part 2)](http://bennycheung.github.io/game-architecture-card-ai-2)
 * [Game Architecture for Card Game AI (part 3)](http://bennycheung.github.io/game-architecture-card-ai-3)
 
-## <a name="References"></a> References
+## References
 
 ### Race for the Galaxy
 * <a name="Jones09">[[Jones09]](https://boardgamegeek.com/thread/438698/article/3878167?fbclid=IwAR1KXYI1li66vhPBPwzwNfr8Tvg2Giz5zN5eXpVaugtCQe8DLUbILjzBMUE#3878167)</a> Keldon Jones, Talk a bit about how the AI works, Sep 2009

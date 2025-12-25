@@ -54,27 +54,8 @@ Using Docker to quickly spin up a PostGIS instance, you can load the OpenStreetM
 Subsequently, using QGIS to connect with this PostGIS instance, the spatial data can be analyzed and visualized interactively.
 By the end, you are equipped with a firm perspective of how to prepare geospatial data for the future geospatial analysis.
 
-- [The World as Unified One?](#the-world-as-unified-one)
-- [Outlines](#outlines)
-- [1. What is Geospatial?](#1-what-is-geospatial)
-  - [1.1. Representations](#11-representations)
-  - [1.2. Coordinate Systems](#12-coordinate-systems)
-  - [1.3. Map Projections](#13-map-projections)
-- [2. Running Dockerized PostGIS](#2-running-dockerized-postgis)
-  - [2.1. Persisting Postgres Data](#21-persisting-postgres-data)
-  - [2.2. Creating the Database Container](#22-creating-the-database-container)
-  - [2.3. (1) Execute psql from localhost](#23-1-execute-psql-from-localhost)
-  - [2.4. (2) Execute psql in the PostGIS Container](#24-2-execute-psql-in-the-postgis-container)
-- [3. Loading OSM Data into PostGIS](#3-loading-osm-data-into-postgis)
-  - [3.1. Install Osm2pgsql](#31-install-osm2pgsql)
-    - [3.1.1. From source](#311-from-source)
-    - [3.1.2. For Debian or Ubuntu](#312-for-debian-or-ubuntu)
-    - [3.1.3. For Mac OS X](#313-for-mac-os-x)
-  - [3.2. Loading Toronto OSM Data](#32-loading-toronto-osm-data)
-- [4. Displaying PostGIS Data with QGIS](#4-displaying-postgis-data-with-qgis)
-
 ------------------
-##  1. <a name='WhatisGeospatial'></a>What is Geospatial?
+## 1. What is Geospatial?
 The definition of **Geospatial** consisted of 2 closely related concepts,
 *Geo* as in geographic information and *Spatial* as in representation of objects arranged in space.
 The relation of a set of spatial coordinates that is reference to a concrete place on earth,
@@ -91,7 +72,7 @@ Information in the layers can be represented in two forms: raster and vector.
 
 *Figure. A typical example of map layers - composition of coastlines, borders and rivers*
 
-###  1.1. <a name='Representations'></a>Representations
+###  1.1. Representations
 The raster and vector representations are two different geospatial conceptions, used to model the real world.
 Vector data are graphics, commonly represented by three geometric types: points, lines and polygons.
 As conformed to geospatial, these graphic objects are situated in georeferenced space according to their coordinates.
@@ -120,7 +101,7 @@ Raster pixels may also be used to represent color values: satellite imagery is a
 Imagine zooming in on an area, allows you to see how each tiny square has a unique value;
 when put together these pixels make up an image.
 
-###  1.2. <a name='CoordinateSystems'></a>Coordinate Systems
+###  1.2. Coordinate Systems
 The geometric concept above also applies to geographic space:
 any point on earth can be described by its latitude, longitude, and (optionally) its elevation.
 The systems that are used to describe points on the earth's surface are called Geographic Coordinate Systems (GCS).
@@ -133,7 +114,7 @@ A GCS uses a mathematically-defined surface called an ellipsoid to represent the
 Complex computations based on that ellipsoid define the coordinates that can be used to reference a unique point.
 There are many coordinate systems, some more common than others: WGS 84 is the one you will see used most often.
 
-###  1.3. <a name='MapProjections'></a>Map Projections
+###  1.3. Map Projections
 Map Projections allow us to translate locations from a 3D surface (like a globe) onto a flat surface (like a map).
 The popular imagination to understand a globe projection is like peeling an orange,
 and then attempting to flatten the peel on a table: it will never perfectly lie flat,
@@ -155,7 +136,7 @@ EPSG 3857 is a projected coordinate system used for rendering maps in OpenStreet
 
 *Figure. Web Mercator (EPSG 3857) projection with Tissot‘s indicatrices showing the areal distortion: all disks are of equal area on the globe. (image credit: Wikimedia Commons. Author Stefan Kühn)*
 
-##  2. <a name='RunningDockerizedPostGIS'></a>Running Dockerized PostGIS
+##  2. Running Dockerized PostGIS
 PostGIS is the spatial extension to PostgreSQL.
 Both free open source projects combined conforms to many industry standard (Thanks a millions!).
 PostgreSQL supports many of the newer ANSI SQL features. PostGIS supports Open
@@ -172,7 +153,7 @@ To help quickly spin up a PostGIS database, we shall use by pre-built [PostGIS D
 The following sections summarized the essential steps of what we needs to run in this article. For further information,
 you can refer to the excellent tutorial by Alex Urquhart, [Setup PostGIS with Docker](https://alexurquhart.com/post/set-up-postgis-with-docker/).
 
-###  2.1. <a name='PersistingPostgresData'></a>Persisting Postgres Data
+###  2.1. Persisting Postgres Data
 Before we create the database we need to think about how our database info will be stored within Docker.
 Normally, we specify what’s called a volume in Docker so that database data will be saved outside of the container.
 With external persistent volume, we can perform backups or upgrades to the database software without losing all your data.
@@ -184,7 +165,7 @@ outside of the the container that runs the database process:
 docker volume create pg_data
 ```
 
-###  2.2. <a name='CreatingtheDatabaseContainer'></a>Creating the Database Container
+###  2.2. Creating the Database Container
 Next we’ll use `docker run` to create the PostGIS container:
 
 ```bash
@@ -242,7 +223,7 @@ psql -d <dbname> -f spatial_ref_sys.sql
 
 In order to use `psql`, you have 2 options (1) use `psql` from localhost (2) use `psql` in the PostGIS container.
 
-###  2.3. <a name='1Executepsqlfromlocalhost'></a>(1) Execute psql from localhost
+###  2.3. (1) Execute psql from localhost
 Once you spin up the `postgis` container, if you have `psql` client on your host, you can connect to `postgis` directly
 because we have exposed the default database port 5432 to the host's port 5432.
 
@@ -257,7 +238,7 @@ Type "help" for help.
 gis=#
 ```
 
-###  2.4. <a name='2ExecutepsqlinthePostGISContainer'></a>(2) Execute psql in the PostGIS Container
+###  2.4. (2) Execute psql in the PostGIS Container
 To enter into the PostGIS container database, run the following command in the terminal.
 Make sure to replace the PASSWORD, DBNAME and USERNAME parameters with the ones you used when you created the container.
 
@@ -278,32 +259,32 @@ Type "help" for help.
 gis=#
 ```
 
-##  3. <a name='LoadingOSMDataintoPostGIS'></a>Loading OSM Data into PostGIS
+##  3. Loading OSM Data into PostGIS
 [OpenStreetMap (OSM)](https://www.openstreetmap.org/) is a collaborative project to create a free editable geospatial data of the world.
 The OSM crowdsourced data is made available under the Open Database License, such that the data can be freely share, modify and use in a database. Thanks to this free data source, many social and humanitarian mapping projects are made possible.
 We shall use the OSM data in the following sections.
 
-###  3.1. <a name='InstallOsm2pgsql'></a>Install Osm2pgsql
+###  3.1. Install Osm2pgsql
 We need the `osm2pgsql` program installed to load OSM data into PostGIS.
 
-####  3.1.1. <a name='Fromsource'></a>From source
+####  3.1.1. From source
 Prerequisite lists are listed in the osm2pgsql README
 The main dependencies to be aware of for old distributions are a C++11 compiler and Boost 1.50 or later.
 
-####  3.1.2. <a name='ForDebianorUbuntu'></a>For Debian or Ubuntu
+####  3.1.2. For Debian or Ubuntu
 
 ```
 apt-get install osm2pgsql
 ```
 
-####  3.1.3. <a name='ForMacOSX'></a>For Mac OS X
+####  3.1.3. For Mac OS X
 With Homebrew
 
 ```
 brew install osm2pgsql
 ```
 
-###  3.2. <a name='LoadingTorontoOSMData'></a>Loading Toronto OSM Data
+###  3.2. Loading Toronto OSM Data
 OSM data can be downloaded freely from [Geofabrik Download Server](http://download.geofabrik.de/).
 However, for our experiementation only to cover Toronto area, we take an easier (much smaller in size) route to
 only download the `Toronto.osm.pbf` file from [OSM extracts for Toronto](https://download.bbbike.org/osm/bbbike/Toronto/).
@@ -344,7 +325,7 @@ For example, we are using `pgAdmin4` to look into the `gis` database `public` sc
 *Figure. Using pgAdmin4 to select from planet_osm_polygon table. We can see the planet_osm_polygon is a big collection of many types of polygons. We have noticed the `amenity` column can be used to select specific type of polygons, such as "parking".*
 
 
-##  4. <a name='DisplayingPostGISDatawithQGIS'></a>Displaying PostGIS Data with QGIS
+##  4. Displaying PostGIS Data with QGIS
 [QGIS](http://qgis.org/) is a free and open-source cross-platform desktop geographic information system (GIS) application that supports viewing, editing, and analysis of geospatial data. We shall use QGIS to display the Toronto OSM data loaded in PostGIS.
 
 We should be able to add the connection to PostGIS in the browser panel in QGIS. Right click the PostGIS icon and click “Create New Connection”, and enter the database connection parameters we used in the section 2 `docker run` command.

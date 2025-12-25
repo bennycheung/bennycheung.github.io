@@ -48,7 +48,7 @@ In this article, you can expect to learn:
 * Finally, conclude with [What's Next](#next)
 
 ------------------
-## <a name="philosophy"></a> Philosophical Musing on System Existence
+## Philosophical Musing on System Existence
 The expression “this system is my baby”, is a common analogy that a software system creator ascribe to his invention.
 The emotional attachment is the creator's design and his creative spirit are manifested in the system.
 Imagine if the software is the brain of the system, the body is the physical machine to run the software.
@@ -86,7 +86,7 @@ Let's first seek to understand what Docker can offer, then we are prepared to an
 new design form of rapid development.
 
 ----------------------
-## <a name="docker"></a> Understanding Docker
+## Understanding Docker
 In this section we shall define the basic Docker terminologies and learn how exactly a Docker image works.
 
 * *Docker image* -
@@ -175,7 +175,7 @@ Since Docker offers us a rapid container (virtual machine) with a completely iso
 we can build the data-oriented Microservices with a database backend rapidly with this deployment technology.
 
 ----------------------
-## <a name="rapid"></a> Rapid Microservices using Docker
+## Rapid Microservices using Docker
 
 The quick starter framework, please checkout from <https://github.com/bennycheung/Flask-DB-Docker>,
 illustrates how to use Docker to deploy a data-oriented Microservices API with a database backend.
@@ -190,7 +190,7 @@ I recommend to read the Martin Fowler and James Lewis's white paper on Microserv
 Their white paper goes much more in-depth for the drivers behind the [Microservice Architecture](http://martinfowler.com/articles/microservices.html)
 
 
-### <a name="orchestration"></a> Docker Orchestration
+### Docker Orchestration
 We need to bring Docker up and running on the host, see <https://www.docker.com/get-started> for your host installation.
 
 Here is the deployment diagram, which is using Docker containers to deploy all starter framework services.
@@ -229,7 +229,7 @@ the following sections provide detail instructions of how to build Docker images
 how to create the starter Microservices and their dependencies.
 
 ----------------
-### <a name="persistence"></a> Persistent Volumes with Docker - Data-only Container Pattern
+### Persistent Volumes with Docker - Data-only Container Pattern
 The main purpose of data container is to retain the `/var/lib/postgresql/data` persistent volume.
 Since you may have multiple data container running on the same host, the method to overcome
 docker recognized the image uniqueness is to give it an unique `README.md` file in the image.
@@ -268,7 +268,7 @@ We can now create as many `starter/postgres_datastore` instances as we can handl
 One thing that's really cool is that these data-only containers don't even need to be running, it just needs to exist.
 
 --------------------------
-### <a name="db"></a> Create Postgres DB Image
+### Create Postgres DB Image
 This is the creation of Posgres 10.2 docker images. Similar to the data-container image,
 we have copied an unique `README.md` into the image so that docker will recognize it's uniqueness.
 To prepare the image with `vim-tiny`, allows us to enter the container and perform some editing if needed.
@@ -314,7 +314,7 @@ psql -h localhost -U admin starter
 ```
 
 -----------------------
-### <a name="api"></a> Create API starter-api Image
+### Create API starter-api Image
 You can read the starter API Microservices in [Starter API Documentation](https://github.com/bennycheung/Flask-DB-Docker/blob/master/starter-api/README.md).
 This is a Python/Flask RESTful API implementation, with connection to the Postgres backend
 to illustrate full CRUD operation on persistent data. Instead of automatically starting the Python application (see the commented out `ENTRYPOINT` and `CMD`), we shall start by the commandline.
@@ -356,7 +356,7 @@ docker run -d -t \
 ```
 
 
-### <a name="data"></a> Import Sample (Medical Procedure Codes) into DB
+### Import Sample (Medical Procedure Codes) into DB
 For importing the sample medical procedure codes, we would like to start an `starter/starter-api` instance. However, this instance needs to be in the same Docker network as the current running network.
 When we started the stack, a network called `flask-db-docker_default` was created.
 To confirm this, we can run `docker network ls`.
@@ -464,7 +464,7 @@ Server: Werkzeug/0.9.6 Python/3.5.6
 
 ```
 
-## <a name="next"></a> What's Next
+## What's Next
 Even the machine's body and software's brain can only exist in a distributed and virtual form, the system identity
 is recognized as a new design form of rapid Microservices architectural style.
 We have exercised this new design style with the data-oriented API supported by a database backend,

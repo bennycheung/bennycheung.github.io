@@ -72,18 +72,6 @@ View the result of this project [四季的情话 (Love in All Seasons) - Creatin
 
 If you’re interested in how this was accomplished, let’s explore each component of the workflow. You might even be able to replicate the process to create a song for your love one.
 
-- [{% include open-embed.html %}](#-include-open-embedhtml-)
-- [Stable Diffusion - AI Generated Avatar](#stable-diffusion---ai-generated-avatar)
-- [Suno - AI Music Generation](#suno---ai-music-generation)
-- [Hedra - Audio to Avatar Video](#hedra---audio-to-avatar-video)
-- [FaceFusion - AI Video Face Swapping](#facefusion---ai-video-face-swapping)
-- [iMovie - Video Composition](#imovie---video-composition)
-  - [Video/Audio Sync](#videoaudio-sync)
-- [HandBrake - Video Recompression (Optional)](#handbrake---video-recompression-optional)
-- [Youtube - Video Publishing (Optional)](#youtube---video-publishing-optional)
-- [Concluding Remarks](#concluding-remarks)
-
-
 ## Stable Diffusion - AI Generated Avatar
 
 [Stable Diffusion](https://github.com/AUTOMATIC1111/stable-diffusion-webui) is a free AI tool that can be used to generate high-quality images of faces. To use Stable Diffusion, you need to provide it with some starting parameters, such as gender, age, and hairstyle, and it will generate a realistic image of a face that matches those parameters.

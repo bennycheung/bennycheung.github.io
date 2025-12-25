@@ -31,4 +31,4 @@ Some introduction text ...
     * Theory B
 
 --------------
-# <a name="theory"></a>Theory
+# Theory

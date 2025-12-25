@@ -45,32 +45,6 @@ Fortunately, this challenge is not unique and has been recognized by many. After
 
 > NOTE: The practicality and popularity of Dify are evidenced by the impressive milestone it achieved within just 36 hours of its launch, during which over 1,500 applications were created using this open-source project.
 
-- [{% include open-embed.html %}](#-include-open-embedhtml-)
-- [Dify as an Education Platform for Learning Hands-on Generative AI Technologies and Implementation Techniques](#dify-as-an-education-platform-for-learning-hands-on-generative-ai-technologies-and-implementation-techniques)
-  - [Building RAG in 5 minutes](#building-rag-in-5-minutes)
-  - [Enhanced Learning Experience with RAG:](#enhanced-learning-experience-with-rag)
-  - [Dify Prompt IDE](#dify-prompt-ide)
-    - [Overview of the LLM Component](#overview-of-the-llm-component)
-    - [Configuration Details](#configuration-details)
-    - [Utilizing the Prompt IDE](#utilizing-the-prompt-ide)
-- [Dify as a PoC Platform for Rapid Prototyping and Experimentation with Ideas](#dify-as-a-poc-platform-for-rapid-prototyping-and-experimentation-with-ideas)
-  - [Creating Dify Apps - User Guides](#creating-dify-apps---user-guides)
-- [Dify as an Agent Platform for Learning Agentic Component Construction and Prompt Engineering Techniques](#dify-as-an-agent-platform-for-learning-agentic-component-construction-and-prompt-engineering-techniques)
-  - [Agent Tools and Their Integration](#agent-tools-and-their-integration)
-- [Dify as a Production Platform for Deploying and Monitoring AI Products](#dify-as-a-production-platform-for-deploying-and-monitoring-ai-products)
-  - [Quick start](#quick-start)
-  - [Docker deployment architecture](#docker-deployment-architecture)
-    - [Volume Mapping:](#volume-mapping)
-    - [Service Interactions:](#service-interactions)
-  - [Upgrade Dify](#upgrade-dify)
-    - [OpenAI GPT4-o Model](#openai-gpt4-o-model)
-- [Expanding Dify Reaches - HTTP Request and Tools](#expanding-dify-reaches---http-request-and-tools)
-  - [Technique to connect local API server](#technique-to-connect-local-api-server)
-  - [Connecting Dify to Local LLM](#connecting-dify-to-local-llm)
-- [Concluding Remarks](#concluding-remarks)
-- [References](#references)
-
-
 [Dify](https://dify.ai/) (Do It For Yourselves) is carving out a unique development space. It's not just another tool in the vast digital toolbox; Dify is a transformative ecosystem that caters to a wide array of users—from those taking their first steps in AI to seasoned developers and large enterprises. This platform stands out for its versatility and robustness, offering solutions across education, prototyping, agent development, and production. Let's understand how Dify is making a significant impact in these areas.
 
 ![Dify_as_a_platform_for_many_aspects]({{ site.baseurl }}images/dify-your-weekend-genai-magics/Dify_as_a_platform_for_many_aspects.jpg)

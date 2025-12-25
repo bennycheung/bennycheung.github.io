@@ -99,7 +99,7 @@ Unfortunately, the 2D hex cylindrical map projecting onto a 3D spherical map is 
 The full demo source code can be checkout from the companion [D3HexMap github repo](https://github.com/bennycheung/D3HexMap).
 More explanation will come after the demonstration.
 
-### <a name="demo"></a>Demo Interactive Visualization
+### Demo Interactive Visualization
 Try to move your cursor over the hex grid to view the globe rotated to center (the red dot) on the highlighted hex cell.
 
 <link rel="stylesheet" href="css/hexmap/hexlib.css">
@@ -181,7 +181,7 @@ the `hexglobe.js` adds a set of convenience functions to build the interactive h
 
 The globe is constructed from `world-110m.json` topojson file, then the hex grid is projected onto the globe surface. A timer is setup to check if the globe's projection has been updated; consequently, the global will be rotated and redrawn to center at the given (lon, lat) location.
 
-### <a name="code"></a>Putting Together
+### Putting Together
 The main visualization `index.html` can be checkout from [here](https://github.com/bennycheung/D3HexMap/index.html).
 
 Here is the html code,

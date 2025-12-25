@@ -49,23 +49,7 @@ As we explore the concept and practice of *attribute-based encryption for health
 we'll go through the following topics from a system perspective, simplifying the mathematical aspects.
 Of course, for the mathematically inclined readers, the original papers are listed in the [References](#References) section for a deeper understanding.
 
-- [{% include open-embed.html %}](#-include-open-embedhtml-)
-- [ Personal Health Record (PHR) Security](#-personal-health-record-phr-security)
-- [ Attribute-based Encryption (ABE)](#-attribute-based-encryption-abe)
-  - [ Identity and Attributes](#-identity-and-attributes)
-  - [ Ciphertext-Policy ABE](#-ciphertext-policy-abe)
-  - [ CP-ABE Algorithms](#-cp-abe-algorithms)
-    - [CP-ABE Encryption Process](#cp-abe-encryption-process)
-    - [CP-ABE Encryption Sequence](#cp-abe-encryption-sequence)
-  - [ ABE on FHIR Patient Resource](#-abe-on-fhir-patient-resource)
-- [ ABE Experiment with Python](#-abe-experiment-with-python)
-  - [ Install Pre-requisites](#-install-pre-requisites)
-    - [PBC](#pbc)
-    - [Charm](#charm)
-  - [ ABE with Python](#-abe-with-python)
-- [ References](#-references)
-
-## <a name='PHRSecurity'></a> Personal Health Record (PHR) Security
+## Personal Health Record (PHR) Security
 To start our journey into this new sharing convention,
 Fast Healthcare Interoperability Resources (FHIR) is the industry standard
 for fast and efficient storage/retrieval of health data.
@@ -79,7 +63,7 @@ Thus, healthcare providers must comply with federal and state policies when they
 For example, the compliance policies, such [HIPAA and HITECH](https://www.hipaajournal.com/relationship-between-hitech-hipaa-electronic-health-medical-records/), must be carefully studied and enforced for auditing.
 Ensure data security is a definite first step towards compliance.
 
-## <a name='ABE'></a> Attribute-based Encryption (ABE)
+## Attribute-based Encryption (ABE)
 Attribute-based Encryption (ABE) is a relatively recent approach
 that reconsiders the concept of public-key cryptography
 [[SW05]](#SW05)[[GPSW06]](#GPSW06)[[BSW07]](#BSW07)[[Waters11]](#Waters11).
@@ -87,7 +71,7 @@ In traditional public-key cryptography, a message is encrypted for a specific re
 
 ABE goes one step further and defines the identity not atomic but as a set of attributes, e.g., roles and context, and messages can be encrypted with respect to subsets of attributes (key-policy ABE - KP-ABE) or policies defined over a set of attributes (ciphertext-policy ABE - CP-ABE). The key issue is, that someone should only be able to decrypt a ciphertext if the person holds a key for "matching attributes" where user keys are always issued by some trusted party.
 
-### <a name='Identity'></a> Identity and Attributes
+### Identity and Attributes
 At the time of registering a patient or a practitioner, attributes can be specified for them,
 which then are added to their X.509 certificates upon their enrollment to a Certificate Authority (CA).
 Examples of attributes include a role name such as an "Patient" or "Practitioner"
@@ -119,7 +103,7 @@ Device;
 
 Interested reader should refer to our latest article on [X.509 Identity for Attribute-based Encryption](http://bennycheung.github.io/identity-for-attribute-based-encryption), describes the practical approach to demonstrate how to use Python cryptography to generate X.509 certificate with custom atributes; subsequently, we use charm-crypto framework’s hybrid adapter to perform CP-ABE (ciphertext-policy) with the X.509 custom attributes.  
 
-### <a name='CP-ABE'></a> Ciphertext-Policy ABE
+### Ciphertext-Policy ABE
 In ciphertext-policy attribute-based encryption (CP-ABE) a user’s private-key is associated with a set of attributes
 and a ciphertext specifies an access policy over a defined universe of attributes within the system.
 A user will be able to decrypt a ciphertext, if and only if his attributes satisfy the policy of the respective ciphertext.
@@ -135,7 +119,7 @@ CP-ABE are not necessarily encrypted to one particular user as in traditional pu
 
 CP-ABE thus allows to realize implicit authorization, i.e., authorization is included into the encrypted data and only people who satisfy the associated policy can decrypt data. Another nice features is, that users can obtain their private keys after data has been encrypted with respect to policies. So data can be encrypted without knowledge of the actual set of users that will be able to decrypt, but only specifying the policy which allows to decrypt. Any future users that will be given a key with respect to attributes such that the policy can be satisfied will then be able to decrypt the data.
 
-### <a name='CP-ABE-Algo'></a> CP-ABE Algorithms
+### CP-ABE Algorithms
 What we really want is to be able to define that the access is based on other things, such as his location, or whether he is the practitioner associated with a patient. These are defined as attributes for his access rights, and define attributed-based security, where we can define fine-grained control on the decryption process. For example, we might define that some sensitive health information is only accessible when the patient and the practitioner have both authenticated themselves, and are in a provable location.
 
 #### CP-ABE Encryption Process
@@ -162,7 +146,7 @@ the following sequence diagram depicts the CP-ABE encryption process:
 
 *Figure. The CP-ABE encryption process (1) patient and practitioner receives their credentials (2) ABAC prepared sharing keys according to respective participant credentials (3) patient encrpyted data with a policy (4) practitioner decrypted data if his secret key matched the policy*
 
-### <a name='ABE-FHIR'></a> ABE on FHIR Patient Resource
+### ABE on FHIR Patient Resource
 For example, the "Patient" resource for `smart-1032702` can be retrieved from the FHIR server.
 
 ```
@@ -244,14 +228,14 @@ In this model, there is no limit to the complexity of the policy. Also, the encr
 
 For further reading, readers can refer to [[SM17]](#SM17) and [[TM17]](#TM17) for the application of attribute-based access control for healthcare resources.
 
-## <a name='ABE-Experiment'></a> ABE Experiment with Python
+## ABE Experiment with Python
 Implementing ABE from scratch is challenging, we resorted to use existing Python cryptographic library and system to construct our experiment.
 Our experiment is using the Python implementation of Attribute-based Encrpytion based on the `Charm` framework [[AC17]](#AC17), Github repo: <https://github.com/sagrawal87/ABE>
 
 The following steps will guide you through the installation and execution.
 The instructions are proven to work on a Mac (running OS X High Sierra).
 
-### <a name='Pre-requisites'></a> Install Pre-requisites
+### Install Pre-requisites
 #### PBC
 PBC (Pairing-based cryptography) is a cryptographc library, website: <https://formulae.brew.sh/formula/pbc>
 
@@ -288,7 +272,7 @@ Running the built-in test suite to ensure all crypto functions are working,
 make test
 ```
 
-### <a name='ABE-Python'></a> ABE with Python
+### ABE with Python
 The following `main.py` was modified to run [[BSW07]](#BSW07) CP-ABE scheme.
 The policy is using `((PATIENT and SMART-1032702) or (PRACTITIONER and SMART-PRACTITIONER-72004454))`
 
@@ -376,7 +360,7 @@ With sufficient integration skills and blockchain knowledge, we can even record 
 > [X.509 Identity for Attribute-based Encryption](http://bennycheung.github.io/identity-for-attribute-based-encryption), 
 > to illustrate how to encrypt any plain text message and to decrypt with the certificate attributes 
 
-## <a name='References'></a> References
+## References
 
 *  <a name="SW05">[[SW05]](https://pdfs.semanticscholar.org/267c/eba2ccc0f0b8872b24ac48c5e8680a04cb89.pdf)</a> Sahai, Amit, and Brent Waters. "Fuzzy identity-based encryption." In Eurocrypt, vol. 3494, pp. 457-473. 2005.
 * <a name="GPSW06">[[GPSW06]](https://eprint.iacr.org/2006/309.pdf)</a> Goyal, Vipul, Omkant Pandey, Amit Sahai, and Brent Waters. "Attribute-based encryption for fine-grained access control of encrypted data." In Proceedings of the 13th ACM conference on Computer and communications security, pp. 89-98. ACM, 2006.

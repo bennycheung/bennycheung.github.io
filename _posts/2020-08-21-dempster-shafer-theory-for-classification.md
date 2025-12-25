@@ -53,29 +53,9 @@ The motivation for selecting D-S theory can be characterized by the following re
 Using our philosophy of learning by doing, we shall take the practical approach to demonstrate how to use Python `pyds` Dempster-Shafer module.
 Starting with some experiment with Dempster-Shafer belief functions, then we shall progress into classification on the "Iris Plant Dataset" [[IPD]](#IPD) using D-S theory. The result is achieving 96% accuracy, which is comparable to other ML models.
 
-- [{% include open-embed.html %}](#-include-open-embedhtml-)
-- [ Python Installation](#-python-installation)
-  - [ Virtual Environment](#-virtual-environment)
-  - [ pyds Module](#-pyds-module)
-  - [ Other Modules](#-other-modules)
-- [ Dempster-Shafer Evidence Theory](#-dempster-shafer-evidence-theory)
-- [ Dempster's Rule of Combination](#-dempsters-rule-of-combination)
-- [ Dempster-Shafer Classifier](#-dempster-shafer-classifier)
-  - [ Iris Plant Dataset](#-iris-plant-dataset)
-  - [ Using Dempster-Shafer as Classifier](#-using-dempster-shafer-as-classifier)
-  - [1. Define the frame of discernment](#1-define-the-frame-of-discernment)
-  - [2. Determine class membership](#2-determine-class-membership)
-  - [3. Assign mass functions](#3-assign-mass-functions)
-  - [4. Design DRC strategy](#4-design-drc-strategy)
-  - [5. Classify data](#5-classify-data)
-- [ Concluding Remarks](#-concluding-remarks)
-- [ References](#-references)
-  - [Video Tutorial](#video-tutorial)
-  - [Technical References](#technical-references)
+## Python Installation
 
-## <a name='Installation'></a> Python Installation
-
-### <a name='VirtualEnv'></a> Virtual Environment
+### Virtual Environment
 Using an isolated Python virtual environment will protect you from headaches and disaster of installations.
 `dst` (or your choice of name) is the name of the virtual environment, and `python=3.5` is the Python version.
 
@@ -91,7 +71,7 @@ Then activate the virtual environment by,
 source activate dst
 ```
 
-### <a name='pyds'></a> pyds Module
+### pyds Module
 `pyds` is a Python library for performing calculations in the Dempster-Shafer theory of evidence. This is the best and most comprehensive in the following aspects,
 * Support for normalized as well as unnormalized belief functions
 * Different Monte-Carlo algorithms for combining belief functions
@@ -111,7 +91,7 @@ or it is as easy to install from the downloaded source <https://github.com/reine
 cd pyds; python setup.py install
 ```
 
-### <a name='other'></a> Other Modules
+### Other Modules
 The other modules are required to run our experiments,
 
 ```
@@ -123,7 +103,7 @@ pip install seaborn
 
 These modules are important but not described in details because of this article focus on D-S theory. We shall just use them as processing and displaying tools.
 
-## <a name='DSEvidence'></a> Dempster-Shafer Evidence Theory
+## Dempster-Shafer Evidence Theory
 When an expert made an observation on some evidence, he could say,
 > Expert: "I'm fairly sure that the evidence was either $$a$$ or $$b$$. Probably $$a$$, though it could have been $$b$$. I could be wrong though."
 
@@ -226,7 +206,7 @@ powerset of frame [frozenset(), frozenset({'c'}), frozenset({'a'}), frozenset({'
 
 We can see pyds `MassFunction` is using the `frozenset`, "frozen set" is just an immutable version of a Python set object. While elements of a set can be modified at any time, elements of the frozen set remain the same after creation. Due to this, frozen sets can be used as keys in Dictionary or as elements of another set. But like sets, it is not ordered (the elements can be set at any index).
 
-## <a name='DempsterRule'></a> Dempster's Rule of Combination
+## Dempster's Rule of Combination
 In order to solve inference problems, belief functions representing different pieces of evidence
 need to be combined in a meaningful way. This is why combination rules are a major building block
 of D-S evidence theory. Typically, each piece of evidence is represented by a separate belief function.
@@ -294,11 +274,11 @@ Combine m1 and m2: { {'b'}:0.5; {'a'}:0.24999999999999994; {'c', 'a'}:0.14999999
 Combine m1 and m2 using sampling: { {'b'}:0.5015825420622867; {'a'}:0.2518740629685215; {'c', 'a'}:0.14842578710645304; {'c'}:0.09811760786273886 }
 ```
 
-## <a name='DSClassifier'></a> Dempster-Shafer Classifier
+## Dempster-Shafer Classifier
 Equipped with the D-S theory knowledge, and the usage of pyds `MassFunction`,
 the following sections describe the classification on the "Iris Plant Dataset" [[IPD]](#IPD) using Dempster-Shafer theory.
 
-### <a name='IPDExplain'></a> Iris Plant Dataset
+### Iris Plant Dataset
 The Iris Plant Dataset [[IPD](#IPD)] is another standard benchmark problem of UCI datasets. It is a popular choice for testing with classification. The dataset has 150 data items with the following four numeric attributes; Sepal Length, Sepal Width, Petal Length, and Petal Width (all in cm). The classes are the plant types, namely; Iris Setosa, Iris Versicolour, or Iris Virginica, with each class containing 50 samples.
 
 ![Flower Petal and Sepal]({{ site.baseurl }}images/dempster-shafer-theory-for-classification/iris_petal_sepal.jpg)
@@ -353,7 +333,7 @@ for fd, ax in [('SepalLength',axes[0,0]), ('SepalWidth',axes[0,1]), ('PetalLengt
 
 From the distribution plots, we can conclude Setosa class is easily separatable by using PetalLength and/or PetalWidth attributes. However, we expected that Versicolor and Virginica classes, will create the most challenges for the classifier.
 
-### <a name='UsingDS'></a> Using Dempster-Shafer as Classifier
+### Using Dempster-Shafer as Classifier
 Following the strategy outlined by [[QAUC14]](#QAUC14), *Data Classification Using the Dempster-Shafer Method*,
 the classification can be expressed as a series of steps:
 
@@ -589,7 +569,7 @@ accuracy rate 0.96
 
 The results suggested that this particular D-S classifier is equivalent to other leading approaches in its ability to classify items with multiple classes and fewer attributes.
 
-## <a name='Conclusion'></a> Concluding Remarks
+## Concluding Remarks
 Dempster-Shafer based classifiers have the flexibility to be designed in solving any given problem.
 In particular, we can decide how the mass functions should be constructed or how the data combination should be organized.
 One can build mass functions that are as simple or as complex as desired, and Dempster's rule of Combination can be applied many times using different strategies.
@@ -597,7 +577,7 @@ This is a distinct advantage in that it allows the creation of systems tailored 
 
 Both theoretical and practical advantages of D-S has been reiterated in many D-S applications. D-S does not require a priori knowledge (data labels), making it suitable for unsupervised classification - possibly classifying previously unseen information, for example, if the aim is to detect previously unseen network attacks in computer systems. Furthermore, a value for ignorance can be modelled, providing information on the uncertainty of an observation.
 
-## <a name='References'></a> References
+## References
 ### Video Tutorial
 * Richard Bowles, *Dempster-Shafer Theory*, video at <https://www.youtube.com/watch?v=51ssBAp_i5Y>
     * This is the best explanation of D-S theory on the internet, with illustrative examples and sufficient mathematics to comprehend.

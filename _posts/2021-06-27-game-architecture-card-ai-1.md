@@ -34,7 +34,7 @@ Such an emotional response is pushing forward positively, becomes the driving fo
 {% include open-embed.html %}
 ----
 
-## <a name="RFTG"></a> Card Game - Race for the Galaxy
+## Card Game - Race for the Galaxy
 The card game in focus is [Race for the Galaxy](https://boardgamegeek.com/boardgame/28143/race-galaxy) (RFTG). For reader convenience, I quoted from the official game description here:
 
 > In the card game Race for the Galaxy, players build galactic civilizations by playing game cards in front of them that represent worlds or technical and social developments. Some worlds allow players to produce goods, which can be consumed later to gain either card draws or victory points when the appropriate technologies are available to them. These are mainly provided by the developments and worlds that are not able to produce, but the fancier production worlds also give these bonuses.
@@ -55,35 +55,7 @@ This article starts with the general game architecture to identify the important
 
 In part 1, we shall lay out the groundwork by describing a game architecture. Since the architecture components are numerous, this article will focus only on the RFTG's (1) Game Model and (2) Game Assets. As always, a balance between theory and practice, we set up the Python development to illustrate the object-oriented conversion process of the game. These are the necessary groundwork to support the game engine. The game AI will need to wait for later articles.
 
-- [{% include open-embed.html %}](#-include-open-embedhtml-)
-- [ Card Game - Race for the Galaxy](#-card-game---race-for-the-galaxy)
-  - [Game AI and Source Code](#game-ai-and-source-code)
-  - [Outline](#outline)
-- [ Game Architecture](#-game-architecture)
-  - [ Game Architecture Overview](#-game-architecture-overview)
-- [ RFTG Game Model](#-rftg-game-model)
-- [ RFTG Game Assets](#-rftg-game-assets)
-  - [ Card Design](#-card-design)
-    - [Type 1 (World) Examples](#type-1-world-examples)
-    - [Type 2 (Development) Examples](#type-2-development-examples)
-- [ RFTG Python Development](#-rftg-python-development)
-  - [ Jupyter Notebook Experiments](#-jupyter-notebook-experiments)
-  - [ Enums](#-enums)
-  - [ Class](#-class)
-  - [ Loading Library](#-loading-library)
-    - [ Inspect Card Designs](#-inspect-card-designs)
-    - [Plot Card Design](#plot-card-design)
-  - [Deck](#deck)
-    - [ Plot Deck of Cards](#-plot-deck-of-cards)
-  - [ Player](#-player)
-  - [ Game Resource](#-game-resource)
-  - [ Game](#-game)
-- [ Concluding Remarks](#-concluding-remarks)
-- [ References](#-references)
-  - [Game Architecture](#game-architecture)
-  - [Race for the Galaxy](#race-for-the-galaxy)
-
-## <a name="GameArchitecture"></a> Game Architecture
+## Game Architecture
 A game is an information system that keeping track of the states in a *game universe*, such that the player(s), both human or AI, can interact with the game through a series of legal actions according to the game rules. The following is a succulent definition of a computer game that is memorable,
 
 > Computer Game is a simulator of the subject of interest. The Game Engine is just a real-time database with a pretty front end and definite rules.
@@ -93,7 +65,7 @@ A game is an information system that keeping track of the states in a *game univ
 
 This is a great start for studying game architecture. The definition layouts the foundational components that a computer game engine must design and implement. This definition is just to set the stage for a more detailed description next.
 
-### <a name="GameArchitectureOverview"></a> Game Architecture Overview
+### Game Architecture Overview
 Although the success of a game is not determined by the architecture alone - gameplay does, I cannot emphasize enough that the reasons to have a good architecture. Most importantly, the architecture will clarify the various game components' roles that must be cooperatively decided and designed. Lacking architectural clarity will make the game brittle; subsequently, hurting the game's construction and extension.
 
 ![Game Architecture Overview]({{ site.baseurl }}images/game-architecture-card-ai-1/Game_Architecture_Part1.png)
@@ -116,7 +88,7 @@ If you are familiar with game development, you will immediately recognize and un
 
 In this article (Part 1), we shall focus on the first 2 components (1) *Game Model* and (2) *Game Assets*.
 
-## <a name="GameModel"></a> RFTG Game Model
+## RFTG Game Model
 Following the game architecture layout in the previous section, the first task to understand a game is its model - how the game information system is organized.
 
 By studying the main data structure described in `rftg.h`, even though it is written in C, the data model is, analyzed, extracted and re-designed as the following class diagram.
@@ -132,12 +104,12 @@ The unlinked Phase[1-5] enums are used by AI to describe what is the action bein
 These enums and objects are converted to Python for development.
 The highest priority is to load the assets - the cards design and image into the system.
 
-## <a name="GameAssets"></a> RFTG Game Assets
+## RFTG Game Assets
 The card game assets are usually coming from 2 main sources, (1) Card Designs and (2) Card Images (see Legal Notice for the RFTG card images). Depends on the card design complexity, player holds onto a card or the cards are currently on the table will drive the game logic. A game engine will constantly check for legal actions for a player turn. The card image is simply a graphical representation of a card design. An attractive or meaningful graphics will drive the game immersive story telling, and make the players understand the game states visually.
 
 > Legal Notice: Rio Grande Games holds the copyrights for the images. Permission to distribute the card and goal images has been granted by Rio Grande Games in the source code. But the image files may not be unpacked or redistributed without this notice, or used for any other purpose.
 
-### <a name="CardDesign"></a> Card Design
+### Card Design
 The card design is specified in `cards.txt` file. We must be able to load and represent the information.
 The file format is designed by each line is a command, driven by a single character code as following,
 
@@ -177,16 +149,16 @@ For example of Type 2 (Development) card, the "Replicant Robots" is designed to 
 
 This is not a complete tutorial on all the RFTG card's design possbility here but to serve as illustration of how RFTG card design complexity that contribute to the strategic nature. Subsequently, the game complexity will make the game AI more interesting to develop, to train and to execute.
 
-## <a name="PythonDevelopment"></a> RFTG Python Development
+## RFTG Python Development
 Interest reader can find the full development set up instruction, Python source code and Jupyter notebook experiments described in this article from [[Cheung21]](https://github.com/bennycheung/RaceGalaxyAI-Python).
 
-### <a name="Notebook"></a> Jupyter Notebook Experiments
+### Jupyter Notebook Experiments
 The development experiments are recorded in the Jupyter Notebook `rftg_cards.ipynb` to quickly run the code samples.
 Inside Visual Studio code, install the Microsoft's "Jupyter" extension. When activate the `rftg_cards.ipynb` inside VScode, change the Python kernel to use `rftg` that has been setup in the previous steps.
 
 ![Running VSCode Jupyter Notebook]({{ site.baseurl }}images/game-architecture-card-ai-1/RFTG_VScode_Jupyter_Notebook-annotated.png)
 
-### <a name="Enums"></a> Enums
+### Enums
 The `rftg/enums.py` implements all the enum definitions, for example `CardType` as following
 
 ```python
@@ -224,7 +196,7 @@ Using with IDE, the intellisense will help to show all possible enum values.
 
 ![Developing with Enum in IDE]({{ site.baseurl }}images/game-architecture-card-ai-1/Develop_with_Enums.png)
 
-### <a name="Class"></a> Class
+### Class
 The `rftg/cards.py` implements all the class definitions, for example class `Power` as following
 
 ```python
@@ -295,7 +267,7 @@ The output will look like as,
 }
 ```
 
-### <a name="LoadingLibrary"></a> Loading Library
+### Loading Library
 The `Library` class helps to parse the cards design file `cards.txt`, and create all the `Design` information of the cards. Since we dumped all the card's image into individual PNG file. We can use the `Library` to load all the card's design images.
 
 ```python
@@ -310,7 +282,7 @@ len(library.designs)
 
 The total number of card designs will be 280.
 
-#### <a name="InspectCardDesigns"></a> Inspect Card Designs
+#### Inspect Card Designs
 We can inspect a card `Design` by serializing into JSON, according to the class's `marshmallow` schema specification.
 
 ```python
@@ -371,7 +343,7 @@ deck.build_deck(0)
 
 The deck of the base game will have totally 114 cards (Note: some card design is repeated)
 
-#### <a name="PlotCards"></a> Plot Deck of Cards
+#### Plot Deck of Cards
 We have a convenience `CardDisplay.plot_cards` to help plotting the deck of cards easily. For example, the following will randomly sample 6 cards from deck.
 
 ```python
@@ -397,7 +369,7 @@ card_display.show()
 
 ![More Samples from Deck]({{ site.baseurl }}images/game-architecture-card-ai-1/RFTG_Desk_Card_Samples_2_Rows.png)
 
-### <a name="Player"></a> Player
+### Player
 The `Player` class keeps the record of an actor action states within a game.
 
 ```python
@@ -434,7 +406,7 @@ class Player:
     return self.__class__.__name__ + ':' + str(vars(self)))
 ```
 
-### <a name="GameResource"></a> Game Resource
+### Game Resource
 The `GameResource` class keeps the global resources required by a game, such as the `Library` and `CardDisplay`.
 
 ```python
@@ -448,7 +420,7 @@ class GameResource:
     return self.__class__.__name__ + ':' + str(vars(self))
 ```
 
-### <a name="Game"></a> Game
+### Game
 Last but not least, the `Game` class keeps the record of global states of a game.
 
 ```python
@@ -519,7 +491,7 @@ game = Game(resource=resource, session_id='testing', deck=deck, players=players)
 
 Finally, the RFTG game information model is completed!
 
-## <a name="Conclusion"></a> Concluding Remarks
+## Concluding Remarks
 We need to show respect to the game development community. This is a long road, even only to cover (1) Game Model and (2) Game Assets for a well-designed card game. In the process, we have gained critical insights into a card game information system; even though we are focus on a particular card game RFTG. For an avid reader and experienced developer, the card game model can be generalized and applied to a different type of card game.
 
 ![Mapping to Playing Cards Model]({{ site.baseurl }}images/game-architecture-card-ai-1/Map_to_Playing_Cards_Model.png)
@@ -532,7 +504,7 @@ Looking forward to the next article, we shall continue to explore (3) Game Engin
 * [Game Architecture for Card Game Action (Part 2)](http://bennycheung.github.io/game-architecture-card-ai-2)
 * [Game Architecture for Card Game AI (part 3)](http://bennycheung.github.io/game-architecture-card-ai-3)
 
-## <a name="References"></a> References
+## References
 
 ### Game Architecture
 * <a name="RollingsMorris04">[RollingsMorris04]</a> Andrew Rollings & Dave Morris, Game Architecture and Design: A New Edition, 2004, New Rider Publishing, ISBN: 0-7357-1363-4

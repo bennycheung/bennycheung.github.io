@@ -41,22 +41,7 @@ Throughout the post, we will provide imaginary town of "Sensorville" as the exam
 > In our previous discussion titled [Spatial Reasoning in AGI - Insights from Philosophical Perspectives](https://bennycheung.github.io/spatial-reasoning-in-agi), we highlighted the critical role of spatial reasoning abilities for achieving Artificial General Intelligence (AGI). It has become evident that current Large Language Models (LLMs) fall short in spatial comprehension, which is essential for tackling numerous practical challenges. The trend is now shifting towards the incorporation of Knowledge Graph techniques to enhance LLMs with a more concrete connection to the real world. For those who are keenly following this development, the article provides valuable insights on constructing Knowledge Graphs that incorporate spatial relationships amidst uncertainty. 
 
 
-### Outline
-
-- Introduction
-  - [Spatial Data Uncertainty](#Spatial-Data)
-  - [The Story of Imaginary Town - Sensorville](#Sensorville-1)
-- [Spatial Reasoning with Mereology and Mereotopology](#Spatial-Reasoning)
-  - [Mereology: The study of part-whole relationships](#Mereology)
-  - [Mereotopology: Combining Mereology with Topology](#Mereotopology)
-  - [Back to the Story of Sensorville](#Sensorville-2)
-- [Dempster-Shafer Theory for Uncertain Spatial Reasoning](#Spatial-Reasoning-Uncertainty)
-  - [Basic Concepts of Dempster-Shafer Theory](#Dempster-Shafer)
-  - [Continue to the Story of Sensorville](#Sensorville-3)
-- [Concluding Remarks](#Conclusion)
-- [References](#References)
-
-### <a name='Spatial-Data'></a>Spatial Data Uncertainty
+### Spatial Data Uncertainty
 
 Spatial data uncertainty is a critical aspect to consider when dealing with real-world applications like urban planning, land use decision-making, and infrastructure requirements. Unlike the textbook GIS and computational geometry, real-world data often contains uncertainties that can significantly impact analysis and decision-making processes. By understanding the sources of uncertainty, we can determine whether to address them upfront or incorporate spatial reasoning techniques to resolve them during processing.
 
@@ -64,7 +49,7 @@ The uncertainty can be arises from many sources, including measurement errors, a
 
 When spatial data cannot be resolved upfront by eliminating the causes of uncertainty, it is crucial for us to develop strategies to manage it. To understand the problem more initutively, let's tell the story of Sensorville.
 
-### <a name='Sensorville-1'></a>The Story of Imaginary Town - Sensorville
+### The Story of Imaginary Town - Sensorville
 
 Once upon a time, in a bustling city named Sensorville, a group of urban planners were faced with the challenge of installing a new network of emergency sensors to protect the residents from a variety of potential hazards such as earthquakes, floods, and fires. The city was divided into numerous distinct zones, each with its unique characteristics, risk levels, and spatial layouts.
 
@@ -76,11 +61,11 @@ The head of the planning team, Dr. Mereo, was an expert in spatial reasoning and
 
 We shall see how the story developed.
 
-## <a name='Spatial-Reasoning'></a>Spatial Reasoning with Mereology and Mereotopology
+## Spatial Reasoning with Mereology and Mereotopology
 
 Spatial reasoning is a broader concept that encompasses the ability to understand, manipulate, and draw conclusions about objects and their spatial relationships. Inherently, it does not have a built-in theoretical formulation. Through the field's historically development, we found [Mereology](https://plato.stanford.edu/entries/mereology/) and [Mereotopology](https://plato.stanford.edu/entries/location-mereology/) provide the necessary theoretical frameworks to represent and reason about spatial relationships and address the uncertainties in spatial data. In this section, we will introduce these concepts with minimum symbolic notations to discuss their potential applications in handling spatial uncertainty.
 
-### <a name='Mereology'></a>Mereology: The study of part-whole relationships
+### Mereology: The study of part-whole relationships
 
 Mereology is a branch of formal ontology that deals with the study of part-whole relationships. It offers a set of axioms and principles to describe and reason about the composition and decomposition of spatial objects. Some of the key principles in mereology include reflexivity, antisymmetry, transitivity, and supplementation.
 
@@ -117,7 +102,7 @@ The antisymmetry principle (P.3) ensures that two spatial objects can only be co
 
 By leveraging mereological principles in conjunction with other spatial reasoning techniques such as _topological relationships_, we can create a robust framework for analyzing complex spatial scenarios.
 
-### <a name='Mereotopology'></a>Mereotopology: Combining Mereology with Topology
+### Mereotopology: Combining Mereology with Topology
 
 Mereotopology, as a formal framework, offers a comprehensive approach to spatial reasoning by combining the strengths of mereology (part-whole relationships) with topology (the study of spatial properties preserved under continuous transformations). This integration allows for a more nuanced and expressive representation of spatial relationships between objects, enabling more accurate spatial analysis and decision-making.
 
@@ -209,7 +194,7 @@ With a robust theoretical foundation in place, we gain the ability to derive the
 These theorems, along with other concepts and principles in mereotopology, provide a foundation for reasoning about spatial relationships, such as parthood, connection, and overlap.
 
 
-### <a name='Sensorville-2'></a>Back to the Story of Sensorville
+### Back to the Story of Sensorville
 
 Dr. Mereo and his team began by using spatial reasoning to analyze the spatial properties of each zone. They considered factors such as the density of buildings, their types, and how they were interconnected. They also considered the city's infrastructure, such as roads, bridges, and tunnels, and how they impacted the movement of emergency vehicles.
 
@@ -224,11 +209,11 @@ The team then applied Mereolotopology to identify connections and relationships 
 As they were working on the problem, Dr. Shafer, a renowned expert in the Dempster-Shafer Theory, joined the team. He suggested that by using his theory, they could calculate the certainty of a zone being under emergency based on the available sensor data and other spatial factors. Dr. Shafer explained the concept of belief functions and how they could be used to fuse information from different sources, such as the partial coverage provided by the sensors and the spatial properties of the zones.
 
 
-## <a name='Spatial-Reasoning-Uncertainty'></a>Dempster-Shafer Theory for Uncertain Spatial Reasoning
+## Dempster-Shafer Theory for Uncertain Spatial Reasoning
 
 The [Dempster-Shafer theory](https://encyclopediaofmath.org/wiki/Dempster-Shafer_theory), also known as the theory of evidence, is a powerful mathematical framework for managing uncertainty and reasoning with incomplete or conflicting information. In this section, we will introduce the Dempster-Shafer theory and discuss how it can be applied to uncertain spatial reasoning.
 
-### <a name='Dempster-Shafer'></a>Basic Concepts of Dempster-Shafer Theory
+### Basic Concepts of Dempster-Shafer Theory
 
 The Dempster-Shafer theory represents uncertain information using belief functions, which are a generalization of probability functions. It uses the concept of mass functions to assign a measure of belief to different sets of possible outcomes. The key components of the Dempster-Shafer theory are:
 
@@ -240,7 +225,7 @@ The Dempster-Shafer theory represents uncertain information using belief functio
 
 One of the main strengths of the Dempster-Shafer theory is its ability to combine multiple pieces of evidence, even when they are conflicting or uncertain. The Dempster's rule of combination provides a mechanism for updating beliefs by merging multiple mass functions, resulting in a new mass function that represents the combined evidence.
 
-### <a name='Sensorville-3'></a>Continue to the Story of Sensorville
+### Continue to the Story of Sensorville
 
 The team collaborated and devised a strategy. They used spatial reasoning and mereology to determine the most critical areas within each zone and how they were related to one another. Then, they applied the Dempster-Shafer Theory to compute the certainty of each zone being under emergency, based on the sensor data from partially covered areas and the spatial properties of the zones.
 
@@ -259,7 +244,7 @@ With the addition of the Dempster-Shafer theory can be used to handle uncertaint
 As the sensors were installed, the team continuously analyzed the incoming data and updated the belief functions for each zone. They also used spatial reasoning to adapt their decisions in real-time, accounting for changes in the environment, such as construction or road closures. By doing so, they were able to make informed decisions and allocate resources efficiently during emergencies, keeping the residents of Sensorville safe and secure.
 
 
-## <a name='Conclusion'></a>Concluding Remarks
+## Concluding Remarks
 
 Spatial reasoning under uncertainty is a critical aspect of many real-world applications and decision-making processes. As we have seen throughout this article, several techniques, such as Mereology, Mereotopology, and Dempster-Shafer theory can help address the challenges posed by uncertain spatial data and relationships. By understanding and applying these methods, practitioners can effectively analyze and reason about complex spatial problems, even when faced with incomplete or imprecise information.
 
@@ -268,7 +253,7 @@ In practical applications like urban planning and environmental monitoring, the 
 In conclusion, spatial reasoning under uncertainty is an essential and evolving field, with promising potential for addressing complex problems in various domains. By continuing to explore and develop new techniques and methodologies, researchers and practitioners can enhance our understanding of spatial relationships and drive more effective decision-making in the face of uncertainty.
 
 
-## <a name='References'></a>References
+## References
 
 These references provide a solid foundation for readers. By studying these materials, readers can develop a deeper understanding of spatial reasoning under uncertainty and explore its applications across various fields.
 

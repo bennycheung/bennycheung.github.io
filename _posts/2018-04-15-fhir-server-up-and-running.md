@@ -47,17 +47,7 @@ The suite of tools are used and their links:
 ### Steps Overview
 The following steps will guide you through the server installation, data generation and UI testing. The instructions are proven to work on a Mac (OS X El Capitan).
 
-- [FHIR Me Up!](#fhir-me-up)
-  - [Quick Links](#quick-links)
-  - [Steps Overview](#steps-overview)
-- [Compile Hapi FHIR Packages](#compile-hapi-fhir-packages)
-- [Setup Hapi FHIR JPA Server](#setup-hapi-fhir-jpa-server)
-- [Start Hapi FHIR JPA Server](#start-hapi-fhir-jpa-server)
-- [Generate Sample Data Set](#generate-sample-data-set)
-- [Upload Sample Data Set to Server](#upload-sample-data-set-to-server)
-- [Use Patient-Browser to Visualize the Sample Data](#use-patient-browser-to-visualize-the-sample-data)
-
-## <a name="compile"></a>Compile Hapi FHIR Packages
+## Compile Hapi FHIR Packages
 Go download Hapi FHIR Server <http://hapifhir.io/download.html>. At the time of this writing, the latest **DSTU3** (Draft Standard for Trial Use 3) is stable.
 We shall build our server and data upon this latest released standard.
 
@@ -72,7 +62,7 @@ mvn install
 Note that this complete build takes a long time because of all of the unit tests being executed. At the end you should expect to see a screen resembling:
 ![Hapi FHIR Build Completed]({{ site.baseurl }}images/fhir-server-up-and-running/Hapi_FHIR_mvn_build_completed.jpg)
 
-## <a name="setup"></a>Setup Hapi FHIR JPA Server
+## Setup Hapi FHIR JPA Server
 After the Hapi FHIR Server has been compiled, we can setup the JPA Server example located in `hapi-fhir-jpasserver-example`.
 
 We shall edit the root URL context to a shorter name `hapi-fhir` (i.e. make the URL shorter).
@@ -101,7 +91,7 @@ In the section of Jetty server plug-in config, we shall change the `contextPath`
 </pluginManagement>
 ```
 
-## <a name="start"></a>Start Hapi FHIR JPA Server
+## Start Hapi FHIR JPA Server
 After editing the `pom.xml`, we are ready to start the Hapi FHIR Server by the embedded Jetty webserver,
 
 ```shell
@@ -128,7 +118,7 @@ We can use the Hapi FHIR Server UI for testing, for example, to retrieve a speci
 
 But wait, we need to populate with some sample data first. The following section will generate some fake (but realistic) data set.
 
-## <a name="generate"></a>Generate Sample Data Set
+## Generate Sample Data Set
 Running a server without health records is useless. In order to fiil the server with some realistically fake data, we shall use the Sample Patient Generator for STU3 <https://github.com/smart-on-fhir/sample-patients-stu3>
 
 The primary purpose of this tool is to generate FHIR STU3 transaction bundles as JSON files. Once generated these bundles can be inserted into any compatible FHIR server using it's API.
@@ -150,7 +140,7 @@ python generate.py --write-fhir ../out --id-prefix "smart"
 
 All sample data ID will be prefixed with `smart` for the set.
 
-## <a name="upload"></a>Upload Sample Data Set to Server
+## Upload Sample Data Set to Server
 We shall use the Tag Uploader <https://github.com/smart-on-fhir/tag-uploader>
 
 ```shell
@@ -181,7 +171,7 @@ node tag-uploader -d out -t "smart" -S http://localhost:8080/hapi-fhir/baseDstu3
 
 It will take a few minutes to upload all the sample data. The tag `smart` can be used to delinearate different data set.
 
-## <a name="use"></a>Use Patient-Browser to Visualize the Sample Data
+## Use Patient-Browser to Visualize the Sample Data
 We shall use the `SMART on FHIR`'s Patient Browser <https://github.com/smart-on-fhir/patient-browser>
 
 ```shell

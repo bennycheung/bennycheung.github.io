@@ -52,21 +52,6 @@ Additionally, the theory formulated in this article, can be extended to other ge
 
 Explaining the theory of *geospatial granular computing*, we shall explore the following topics.
 
-- [{% include open-embed.html %}](#-include-open-embedhtml-)
-- [Thinking in Granular Computing?](#thinking-in-granular-computing)
-- [Spatial Granule](#spatial-granule)
-  - [Geospatial Granular Structure](#geospatial-granular-structure)
-  - [Geospatial Granule](#geospatial-granule)
-  - [Granular Relation](#granular-relation)
-  - [Granular Algebra](#granular-algebra)
-    - [Table of relational operator class:](#table-of-relational-operator-class)
-    - [Table of spatial operator class:](#table-of-spatial-operator-class)
-    - [Table of composite operator class:](#table-of-composite-operator-class)
-- [Geocoding Query](#geocoding-query)
-- [Preview of Geospatial Analytics](#preview-of-geospatial-analytics)
-- [Final Notes](#final-notes)
-- [References](#references)
-
 As a side note, another unification effort is the theory based on Geospatial Semantic Web [[ZhZhLi15]](#ZhZhLi15).
 Geospatial semantic web is using RDF representation of spatial data and GeoSPARQL as query language.
 The semantic representation can provide infrastructure to a knowledge engine to support
@@ -74,7 +59,7 @@ powerful reasoning and information retrieving from heterogenous data sources.
 However, the downside of representing structured geospatial data in these languages
 can result in inefficient data access, which is the main reason that we stay away from this approach.
 
-## <a name='ThinkinginGranularComputing'></a>Thinking in Granular Computing?
+## Thinking in Granular Computing?
 In a philosophical sense, granular computing has been foundational to human ability to analyze the complex world,
 by abstracting into a connected and hierarchical levels of granularity.
 To help reasoning with a specific interest, we come to switch among different granularities.
@@ -106,7 +91,7 @@ By overlaying the granular computing concepts onto the geospatial domain,
 the former integration of the three perspectives on system thinking,
 results in a holistic understanding of geospatial processing that emphasizes structures embedded in a web of granules.
 
-## <a name='SpatialGranule'></a>Spatial Granule
+## Spatial Granule
 A complex spatial problem consists of interconnected and interacting spatial parts.
 Each spatial part can consist of other parts.
 For each spatial part or a group of parts may be considered as a spatial granule.
@@ -127,7 +112,7 @@ The geocoding system is not only concern about polygons,
 such as countries and regions. It also includes points and polylines,
 when the geocoding calculation is down to the street level address.
 
-### <a name='GeospatialGranularStructure'></a>Geospatial Granular Structure
+### Geospatial Granular Structure
 In a map, geographic data is usually organized into layers.
 Each layer represents some consistent concept about geographic features.
 Geographic features can be classified into three key geometric data types, namely point, polyline and polygon.
@@ -145,7 +130,7 @@ This is one of many possible methods to describe a concrete map model.
 But the world view in terms of granules and multiple levels of granularity represented by layers,
 forming a connected and hierarhical structure are the principles of granular computing.
 
-### <a name='GeospatialGranule'></a>Geospatial Granule
+### Geospatial Granule
 To qualify as a geospatial granule, the granule must be a georeferenced spatial entity.
 For the spatial entity to be computable, we need to represent the spatial property as geometric structure.
 We choose the vector representation of our spatial entities, a Point is represented by its tuple of coordinates.
@@ -172,7 +157,7 @@ In a textual context, we use the following notation to specify a spatial value:
 .
 
 
-### <a name='GranularRelation'></a>Granular Relation
+### Granular Relation
 The important step to formulate the theory, we need to model the *atomic* granule where the information processing originated. 
 A Granular Relation is the atomic represention of the spatial granule.
 Since this relational representation is the theoretical foundation to derive the theory,
@@ -243,7 +228,7 @@ The granular layers are,
 The map model is formed by,
 * Map = {City Layer, Street Layer}
 
-### <a name='GranularAlgebra'></a>Granular Algebra
+### Granular Algebra
 To continue with the computational perspective, a granular algebra is formally defined to enable granular processing
 via a set of well-defined operators.
 The definition of granular algebra is used to specify the operational semantics between the domains.
@@ -279,7 +264,7 @@ Our granular algebra begins with the following set of sorts:
 
 A sample list of operators in the granular algebra is given. The list is grouped into 3 classes of operators. The first class comprises all the usual operations of a relational database system plus some additional operators. The second class contain spatial operators. The remaining class contain composite operators.
 
-#### <a name='Tableofrelationaloperatorclass:'></a>Table of relational operator class:
+#### Table of relational operator class:
 
 | Operator Signature | Operator Symbol | Description                                    |
 |--------------------|-----------------|------------------------------------------------|
@@ -295,7 +280,7 @@ A sample list of operators in the granular algebra is given. The list is grouped
 
 .
 
-#### <a name='Tableofspatialoperatorclass:'></a>Table of spatial operator class:
+#### Table of spatial operator class:
 
 | Operator Signature | Operator Symbol | Description                                    |
 |--------------------|-----------------|------------------------------------------------|
@@ -308,7 +293,7 @@ A sample list of operators in the granular algebra is given. The list is grouped
 
 .
 
-#### <a name='Tableofcompositeoperatorclass:'></a>Table of composite operator class:
+#### Table of composite operator class:
 
 | Operator Signature | Operator Symbol | Description                                    |
 |--------------------|-----------------|------------------------------------------------|
@@ -316,7 +301,7 @@ A sample list of operators in the granular algebra is given. The list is grouped
 
 .
 
-## <a name='GeocodingQuery'></a>Geocoding Query
+## Geocoding Query
 After equipping with all the formulation with geospatial granular relation and algebra,
 we are finally ready to breathe live into the geocoding process.
 The layers are defined as:
@@ -351,7 +336,7 @@ However, the granular computing allows to define and process layers flexibily by
 As a result, the granular computing is shown to be a powerful conceptual framework
 to express a geospatial problem and formulate a solution.
 
-## <a name='PreviewofGeospatialAnalytics'></a>Preview of Geospatial Analytics
+## Preview of Geospatial Analytics
 To preview the full utility of the granular algebra, the queries can go beyond the geocoding process.
 We can perform geospatial analytics with the granular structure and processing.
 
@@ -397,7 +382,7 @@ can be expressed with our geospatial granular computing.
              (bound (center Place.Shape) 1000)))
 ```
 
-## <a name="FinalNotes"></a>Final Notes
+## Final Notes
 We have presented the essential concepts of granular computing applied to the geospatial domain.
 Although we avoided using any existing GIS technologies and standards in here, for those readers,
 who is well-versed with the state-of-the-art GIS, can easily draw the connections to the actual geospatial implementation.
@@ -405,7 +390,7 @@ By digesting the abstract discussion,
 we can concentrate on the high-level commonalities of the structural thinking in granular computing;
 subsequently, we can synthesize similar structural thinking to other domains to solve interesting spatial problems.
 
-## <a name='References'></a>References
+## References
 * <a name="AbBe95">[AbBe95]</a> S. Abiteboul and C. Beeri, “On the power of languages for the manipulation of complex objects”, The VLDB Journal, vol.4, no.4, pp. 727-794, 1995.
 * <a name="GuSc93a">[GuSc93a]</a> R.H. Guting and M. Schneider, “Realms: A Foundation for Spatial Data Types in Database Systems”, in Advance in Spatial Databases (SSD’93). Lecture Notes in Computer Science No. 692, 1993, Springer-Verlag, Berlin.
 * <a name="GuSc93b">[GuSc93b]</a> R.H. Guting and M. Schneider, “Realm-Based Spatial Data Types: The ROSE Algebra”, Tech. Report 141, Fern University, Hagen, Germany, 1993.

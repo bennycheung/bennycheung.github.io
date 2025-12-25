@@ -505,7 +505,7 @@ FireSQL has many improvements to be implemented. Just to name a few future impro
 
 Please join me on the [PyFireSQL](https://github.com/bennycheung/PyFireSQL) open source project, or provide feedbacks to improve FireSQL utilities!
 
-## <a name="References"></a> References
+## References
 
 ### FireSQL
 - PyFireSQL <https://github.com/bennycheung/PyFireSQL>

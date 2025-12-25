@@ -276,7 +276,7 @@ Interested reader can continue studying the next article on [Dreambooth Training
 
 This is just the beginning. Go forth, and train your embedding!
 
-## <a name="References"></a> References
+## References
 
 ### Formal Publications
 - Robin Rombach, et. al., [High-Resolution Image Synthesis with Latent Diffusion Models](https://arxiv.org/abs/2112.10752), arXiv:2112.10752v2 cs.CV, 13 Apr 2022

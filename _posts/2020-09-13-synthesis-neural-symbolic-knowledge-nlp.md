@@ -50,24 +50,7 @@ In the Neural to Symbolic NLP system architecture diagram, the future of NLP is 
 
 This may look like another AI pipe dream but we shall take a practical engineering step using [DeepRank [TarauBlanco20]](#TarauBlanco20) to demonstrate the possibility. We start with the synthesis of neural to symbolic knowledge from a simple document to perform question and answer; subsequently, we shall synthesize knowledge from a complex HIPAA regulations document to illustrate the greater system capabilities.
 
-- [ Synthesis of Neural to Symbolic Knowledge](#-synthesis-of-neural-to-symbolic-knowledge)
-  - [ Using DeepRank](#-using-deeprank)
-    - [ 0. Starting Stanford CoreNLP Server](#-0-starting-stanford-corenlp-server)
-    - [ 1. DeepRank Text Parsing](#-1-deeprank-text-parsing)
-      - [Word Cloud for Keywords Ranking](#word-cloud-for-keywords-ranking)
-      - [Ranked Dependency Graph](#ranked-dependency-graph)
-    - [ 2. Generate the Prolog Facts](#-2-generate-the-prolog-facts)
-    - [ 3. Loading Facts \& Rules into Prolog](#-3-loading-facts--rules-into-prolog)
-      - [Installation on Mac](#installation-on-mac)
-    - [ 4. DeepRank Query Processing](#-4-deeprank-query-processing)
-    - [ 5. Reasoning in Prolog to Provide Answers](#-5-reasoning-in-prolog-to-provide-answers)
-  - [ HIPAA Regulations](#-hipaa-regulations)
-    - [ Example: HIPAA Rule - 164.508](#-example-hipaa-rule---164508)
-  - [ Concluding Remarks](#-concluding-remarks)
-  - [ References](#-references)
-
-
-# <a name='KE'></a> Synthesis of Neural to Symbolic Knowledge
+# Synthesis of Neural to Symbolic Knowledge
 Knowledge engineering is the process of creating both facts and rules that apply to data to imitate the way a human thinks and approaches problems. A task and its solution are broken down into their structure and based on that information, the reasoning engine determines how the solution was reached. Traditionally, the knowledge engineering process requires a domain expert working with a knowledge engineer to manually encode the domain facts and rules into the knowledge base. The process is usually very expensive and slow.
 
 Luckily, in the domain of text documents, we can rely on the implicit textual data to state the facts about its content, i.e. the content is the domain expert by itself. All we need to do is to find the best knowledge representation to state the collection of implicit facts. The rules are more tricky; however, we can always start with the generic textual understanding by the language grammar and the statement context.
@@ -81,7 +64,7 @@ We recognize the limitations of the current proposed techniques [[CS224N]](#CS22
 
 The former list is not impossible to tackle but we are not covering them here.
 
-## <a name='DeepRank'></a> Using DeepRank
+## Using DeepRank
 We are utilizing the recent research by [DeepRank [TarauBlanco20]](#TarauBlanco20). The system uses a Python-based text graph processing algorithm together with the Prolog-based symbolic reasoning engine into a unified high-level text processor for human interface, capable of textual question and answer. DeepRank’s backend connects as a Python client to the Stanford CoreNLP server [[ChenManning14]](#ChenManning14) and uses it to provide the low-level text parsing result of dependency graphs. DeepRank can generate the summary, keyphrase and other relations as the extracted facts that constitute the logical model of the textual document, subsequently to be processed by the symbolic reasoning engine.
 
 ![DeepRank System Architecture]({{ site.baseurl }}images/synthesis-neural-symbolic-knowledge-nlp/DeepRank_System_Architecture.png)
@@ -103,7 +86,7 @@ The following sections will describe each step of the workflow shown in the Deep
 * (4) DeepRank Query Processing
 * (5) Reasoning in Prolog to Provide Answers
 
-### <a name='Step0'></a> 0. Starting Stanford CoreNLP Server
+### 0. Starting Stanford CoreNLP Server
 The Stanford CoreNLP dependency parser [[ChenManning14]](#ChenManning14) stands out, producing highly accurate dependency graphs.
 The vertices in these graphs are words and their part-of-speech tags, and labeled edges indicate the syntactic heads of words (e.g., subject, direct object).
 
@@ -126,7 +109,7 @@ Please noted that we have requested to preload the list of annotators for the pa
     -preload tokenize,ssplit,pos,lemma,ner,parse,depparse
 ```
 
-### <a name='Step1'></a> 1. DeepRank Text Parsing
+### 1. DeepRank Text Parsing
 We can start by importing the Python-based DeepRank main interface. The `params` will control the system configurations.
 
 ```python
@@ -234,7 +217,7 @@ The dependency graph's edges are annotated using the [Universal Dependencies Tre
 Stanford CoreNLP evolution towards the use of Universal Dependencies makes systems relying on it potentially
 portable to over 70 languages covered by the Universal Dependencies effort.
 
-### <a name='Step2'></a> 2. Generate the Prolog Facts
+### 2. Generate the Prolog Facts
 Collecting the dependency graph and annotations together,
 they can be translated into a Prolog facts representing the content of the document.
 
@@ -321,7 +304,7 @@ sent(2, ['Plato', 'wrote', 'books', 'and', 'put', 'words', 'into', 'Socrates', '
 
 These predicates provide a relational view of a document in the form of a fact database that will support the inference mechanisms built on top of it.
 
-### <a name='Step3'></a> 3. Loading Facts & Rules into Prolog
+### 3. Loading Facts & Rules into Prolog
 [PySwip](https://pypi.org/project/pyswip/) is a (Python - SWI-Prolog) bridge enabling to query SWI-Prolog in the Python programs.
 It features an SWI-Prolog foreign language interface,
 a utility class that makes it easy querying with Prolog and also a Pythonic interface.
@@ -367,7 +350,7 @@ sink(prolog.query("load('"+fNameNoSuf+"')"))
 
 After this executed, the facts and rules is loaded into SWI-Prolog.
 
-### <a name='Step4'></a> 4. DeepRank Query Processing
+### 4. DeepRank Query Processing
 We can formulate a question (aka. query) to the knowledge base. For example, the question:
 
 ```
@@ -409,7 +392,7 @@ ax.imshow(img)
 ![Socrates Document Query Dependency Graph after Ranking]({{ site.baseurl }}images/synthesis-neural-symbolic-knowledge-nlp/DeepRankExample/socrates/query_graph.gv.png)
 
 
-### <a name='Step5'></a> 5. Reasoning in Prolog to Provide Answers
+### 5. Reasoning in Prolog to Provide Answers
 It activates a Prolog process to which Python sends interactively queries about a selected document.
 Answers are computed by Prolog and then, if the `say` OS-level facility is available (on OS X and Linux machines), the system will actually speak the answers.
 
@@ -436,12 +419,12 @@ Finally, DeepRank will response with the top ranking answers. The results are se
 2 : Plato wrote books and put words into Socrates mouth . 
 ```
 
-## <a name='HIPAA'></a> HIPAA Regulations
+## HIPAA Regulations
 We will use the Health Insurance Portability and Accountability Act (HIPAA) in the US as a more intensive example. HIPAA regulates the transfer of patient medical information, depending on the type of disclosure and patient consent.
 Not only we shall see the knowledge engineering process is capable to handle a complex and intertwined regulation document,
 it is now possible to explain how the answer is derived.
 
-### <a name='HIPAAExample'></a> Example: HIPAA Rule - 164.508
+### Example: HIPAA Rule - 164.508
 To help the later description, let's read a small excerpt from HIPAA rule 164.508 - Uses and disclosures for which an authorization is required. We can see the full text at [Cornell19](https://www.law.cornell.edu/cfr/text/45/164.508).
 
 ```
@@ -488,7 +471,7 @@ Finally, the answers are all appropriate and good, surrounding the requirement t
 43 : ( iii ) The potential for information disclosed pursuant to the authorization to be subject to redisclosure by the recipient and no longer be protected by this subpart .
 ```
 
-## <a name='Conclusion'></a> Concluding Remarks
+## Concluding Remarks
 
 This is exciting to use DeepRank, demonstrating the synthesis of neural to symbolic knowledge from any document. We can see the strategy of combining both deep neural network NLP and symbolic reasoning is effective even it has limitations. To move towards the greater AI natural language understanding goals, the system needs to improve on,
 
@@ -498,7 +481,7 @@ This is exciting to use DeepRank, demonstrating the synthesis of neural to symbo
 The research team providing the [Stanford CoreNLP](https://stanfordnlp.github.io/CoreNLP/) is definitely improving on the inter-sentential relationship building with the latest neural network techniques. To build a better common sense into the knowledge base, which supports generalized concepts and a wider range of reasoning rules, we can look upon Douglas Lenat’s [Cyc](https://en.wikipedia.org/wiki/Cyc) project for the research insights.
 
 
-## <a name='References'></a> References
+## References
 
 * <a name="ChenManning14">[ChenManning14]</a> Danqi Chen and Christopher Manning, A Fast and Accurate Dependency Parser using Neural Networks, 2014, In Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing (EMNLP). Association for Computational Linguistics, 740–750.
   * paper at: <https://nlp.stanford.edu/pubs/emnlp2014-depparser.pdf>
