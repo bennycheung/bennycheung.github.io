@@ -182,6 +182,15 @@ html.dark-mode #cat-speech-bubble::after {
     hideTimeout = setTimeout(hideBubble, 1500);
   });
 
+  // Keep bubble alive when hovering over it (for clicking links)
+  bubble.addEventListener('mouseenter', function() {
+    clearTimeout(hideTimeout);
+  });
+
+  bubble.addEventListener('mouseleave', function() {
+    hideTimeout = setTimeout(hideBubble, 1500);
+  });
+
   // Click to show another tip
   hoverZone.addEventListener('click', function() {
     showBubble();
