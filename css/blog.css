@@ -630,6 +630,12 @@ pre:hover .code-copy-btn {
   color: #428bca;
 }
 
+.featured-hero .card-meta {
+  color: #888;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
 .featured-hero .card-text {
   color: #666;
   font-size: 16px;
@@ -678,6 +684,12 @@ pre:hover .code-copy-btn {
 
 .featured-secondary .card-title a:hover {
   color: #428bca;
+}
+
+.featured-secondary .card-meta {
+  color: #888;
+  font-size: 13px;
+  margin-bottom: 10px;
 }
 
 .featured-secondary .card-text {
