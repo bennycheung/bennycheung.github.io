@@ -1317,3 +1317,602 @@ pre:hover .code-copy-btn {
     margin: 10px 0;
   }
 }
+/*
+ * Dark Mode Toggle Button
+ */
+.dark-mode-btn {
+  background: transparent;
+  border: none;
+  color: #9d9d9d;
+  font-size: 18px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.dark-mode-btn:hover {
+  color: #fff;
+}
+
+.dark-mode-btn:focus {
+  outline: none;
+}
+
+/*
+ * Dark Mode Styles
+ */
+html.dark-mode {
+  /* Base colors */
+  --bg-primary: #1a1a2e;
+  --bg-secondary: #16213e;
+  --bg-card: #1f2940;
+  --text-primary: #e0e0e0;
+  --text-secondary: #a0a0a0;
+  --text-heading: #f0f0f0;
+  --border-color: #2d3748;
+  --link-color: #60a5fa;
+  --link-hover: #93c5fd;
+}
+
+html.dark-mode body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+html.dark-mode h1, html.dark-mode .h1,
+html.dark-mode h2, html.dark-mode .h2,
+html.dark-mode h3, html.dark-mode .h3,
+html.dark-mode h4, html.dark-mode .h4,
+html.dark-mode h5, html.dark-mode .h5,
+html.dark-mode h6, html.dark-mode .h6 {
+  color: var(--text-heading);
+}
+
+html.dark-mode a {
+  color: var(--link-color);
+}
+
+html.dark-mode a:hover {
+  color: var(--link-hover);
+}
+
+/* Navbar */
+html.dark-mode .navbar-inverse {
+  background-color: var(--bg-secondary);
+  border-color: var(--border-color);
+}
+
+/* Page content */
+html.dark-mode .page-content {
+  background-color: var(--bg-primary);
+}
+
+/* Post container */
+html.dark-mode .post-container {
+  background-color: var(--bg-primary);
+}
+
+/* Cards */
+html.dark-mode .card,
+html.dark-mode .post-card,
+html.dark-mode .related-post-card,
+html.dark-mode .post-nav-card {
+  background-color: var(--bg-card);
+  border-color: var(--border-color);
+}
+
+html.dark-mode .card-title a,
+html.dark-mode .post-card .card-title a,
+html.dark-mode .related-post-info h4,
+html.dark-mode .post-nav-card h4 {
+  color: var(--text-heading);
+}
+
+html.dark-mode .card-text,
+html.dark-mode .card-excerpt,
+html.dark-mode .card-meta,
+html.dark-mode .related-post-meta,
+html.dark-mode .nav-card-meta {
+  color: var(--text-secondary);
+}
+
+/* Featured hero */
+html.dark-mode .featured-hero .card-body {
+  background-color: var(--bg-card);
+}
+
+/* Post navigation */
+html.dark-mode .post-nav-card .nav-label {
+  background-color: var(--bg-secondary);
+  color: var(--text-secondary);
+}
+
+/* Borders and dividers */
+html.dark-mode hr,
+html.dark-mode .social-share,
+html.dark-mode .related-posts,
+html.dark-mode .post-nav-cards {
+  border-color: var(--border-color);
+}
+
+/* Social share buttons - keep their colors */
+html.dark-mode .share-label {
+  color: var(--text-secondary);
+}
+
+/* Code blocks */
+html.dark-mode pre {
+  background-color: #0d1117;
+  border-color: var(--border-color);
+}
+
+html.dark-mode code {
+  background-color: #2d3748;
+  color: #e2e8f0;
+}
+
+html.dark-mode pre code {
+  background-color: transparent;
+}
+
+/* Tables */
+html.dark-mode table {
+  border-color: var(--border-color);
+}
+
+html.dark-mode th,
+html.dark-mode td {
+  border-color: var(--border-color);
+}
+
+html.dark-mode th {
+  background-color: var(--bg-secondary);
+}
+
+html.dark-mode tr:nth-child(even) {
+  background-color: var(--bg-card);
+}
+
+/* Blockquotes */
+html.dark-mode blockquote {
+  border-left-color: var(--link-color);
+  color: var(--text-secondary);
+  background-color: var(--bg-card);
+}
+
+/* Blog image header */
+html.dark-mode .blog-image {
+  opacity: 0.9;
+}
+
+/* Labels */
+html.dark-mode .label-primary {
+  background-color: #3b82f6;
+}
+
+/* Archive page */
+html.dark-mode .archive-group {
+  border-top-color: var(--border-color);
+}
+
+html.dark-mode .archive-year {
+  color: var(--text-heading);
+}
+
+html.dark-mode .archive-item a {
+  color: var(--link-color);
+}
+
+/* Tags page */
+html.dark-mode .tag-cloud a,
+html.dark-mode .topic-cloud .tag {
+  background-color: var(--bg-card);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+html.dark-mode .tag-cloud a:hover,
+html.dark-mode .topic-cloud .tag:hover {
+  background-color: var(--bg-secondary);
+  border-color: var(--link-color);
+}
+
+/* TOC */
+html.dark-mode #auto-toc {
+  background-color: var(--bg-card);
+  border-color: var(--border-color);
+}
+
+html.dark-mode #auto-toc h4 {
+  color: var(--text-heading);
+}
+
+html.dark-mode #auto-toc a {
+  color: var(--text-secondary);
+}
+
+html.dark-mode #auto-toc a:hover {
+  color: var(--link-color);
+}
+
+/* Footer */
+html.dark-mode footer {
+  background-color: var(--bg-secondary);
+  border-top-color: var(--border-color);
+  color: var(--text-secondary);
+}
+
+/* Buttons */
+html.dark-mode .btn-default {
+  background-color: var(--bg-card);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+html.dark-mode .btn-default:hover {
+  background-color: var(--bg-secondary);
+  border-color: var(--link-color);
+  color: var(--text-heading);
+}
+
+/* Pagination */
+html.dark-mode .posts-pagination .page-btn {
+  background-color: var(--bg-card);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+html.dark-mode .posts-pagination .page-btn:hover:not(:disabled) {
+  background-color: var(--bg-secondary);
+}
+
+html.dark-mode .posts-pagination .page-dot {
+  background-color: var(--border-color);
+}
+
+html.dark-mode .posts-pagination .page-dot.active {
+  background-color: var(--link-color);
+}
+
+/* Images - slightly reduce brightness */
+html.dark-mode .post-content img {
+  opacity: 0.92;
+}
+
+html.dark-mode .post-content img:hover {
+  opacity: 1;
+}
+
+/* Lightbox */
+html.dark-mode #imageLightbox .modal-content {
+  background-color: #000;
+}
+
+/* Back to top button */
+html.dark-mode #back-to-top {
+  background-color: var(--bg-card);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+html.dark-mode #back-to-top:hover {
+  background-color: var(--link-color);
+  color: #fff;
+}
+
+/* Reading progress bar */
+html.dark-mode #reading-progress-bar {
+  background-color: var(--link-color);
+}
+
+/* Nav tabs (About/Research) */
+html.dark-mode .nav-tabs {
+  border-bottom-color: var(--border-color);
+}
+
+html.dark-mode .nav-tabs > li > a {
+  color: var(--text-secondary);
+}
+
+html.dark-mode .nav-tabs > li > a:hover {
+  background-color: var(--bg-card);
+  border-color: var(--border-color);
+}
+
+html.dark-mode .nav-tabs > li.active > a,
+html.dark-mode .nav-tabs > li.active > a:hover {
+  background-color: var(--bg-primary);
+  border-color: var(--border-color);
+  border-bottom-color: var(--bg-primary);
+  color: var(--text-heading);
+}
+
+/* Giscus comments - inject dark theme */
+html.dark-mode .giscus {
+  color-scheme: dark;
+}
+
+/* Landing Page Dark Mode */
+html.dark-mode .container {
+  background-color: transparent;
+}
+
+/* Featured Hero Card */
+html.dark-mode .featured-hero .card {
+  background-color: var(--bg-card);
+  border-color: var(--border-color);
+}
+
+html.dark-mode .featured-hero .card-title a {
+  color: var(--text-heading);
+}
+
+html.dark-mode .featured-hero .card-text {
+  color: var(--text-secondary);
+}
+
+html.dark-mode .featured-hero .card-meta {
+  color: var(--text-secondary);
+}
+
+/* Featured Secondary Cards */
+html.dark-mode .featured-secondary .card {
+  background-color: var(--bg-card);
+  border-color: var(--border-color);
+}
+
+html.dark-mode .featured-secondary .card-title a {
+  color: var(--text-heading);
+}
+
+html.dark-mode .featured-secondary .card-text {
+  color: var(--text-secondary);
+}
+
+html.dark-mode .featured-secondary .card-meta {
+  color: var(--text-secondary);
+}
+
+/* Recent Posts Section */
+html.dark-mode .recent-posts h2,
+html.dark-mode .topic-cloud h2 {
+  color: var(--text-heading);
+}
+
+html.dark-mode .recent-posts h2 i,
+html.dark-mode .topic-cloud h2 i {
+  color: var(--text-secondary);
+}
+
+/* Post Cards in Recent Posts */
+html.dark-mode .post-card {
+  background-color: var(--bg-card);
+  border-color: var(--border-color);
+}
+
+html.dark-mode .post-card .card-title a {
+  color: var(--text-heading);
+}
+
+html.dark-mode .post-card .card-meta {
+  color: var(--text-secondary);
+}
+
+html.dark-mode .post-card .card-excerpt {
+  color: var(--text-secondary);
+}
+
+/* Topic Cloud Tags */
+html.dark-mode .topic-cloud .tag {
+  background-color: var(--bg-card);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+html.dark-mode .topic-cloud .tag:hover {
+  background-color: var(--link-color);
+  border-color: var(--link-color);
+  color: #fff;
+}
+
+html.dark-mode .topic-cloud .tag small {
+  color: var(--text-secondary);
+}
+
+html.dark-mode .topic-cloud .tag:hover small {
+  color: rgba(255,255,255,0.8);
+}
+
+/* Landing Navigation Buttons */
+html.dark-mode .landing-nav .btn-default {
+  background-color: var(--bg-card);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+html.dark-mode .landing-nav .btn-default:hover {
+  background-color: var(--link-color);
+  border-color: var(--link-color);
+  color: #fff;
+}
+
+/* Social Links at Bottom */
+html.dark-mode .fa-stack-2x {
+  color: var(--text-secondary);
+}
+
+html.dark-mode .btn-xs.btn-default {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+html.dark-mode .btn-xs.btn-default:hover .fa-stack-2x {
+  color: var(--link-color);
+}
+
+/* Archive Page */
+html.dark-mode .archives-container {
+  color: var(--text-primary);
+}
+
+html.dark-mode .archive-post {
+  background-color: var(--bg-card);
+  border-color: var(--border-color);
+}
+
+html.dark-mode .archive-post:hover {
+  border-color: var(--link-color);
+}
+
+html.dark-mode .archive-title a {
+  color: var(--text-heading);
+}
+
+html.dark-mode .archive-meta {
+  color: var(--text-secondary);
+}
+
+html.dark-mode .archive-excerpt {
+  color: var(--text-secondary);
+}
+
+/* Wrapper and Page Content */
+html.dark-mode .wrapper {
+  background-color: transparent;
+}
+
+/* Form elements if any */
+html.dark-mode input,
+html.dark-mode textarea,
+html.dark-mode select {
+  background-color: var(--bg-card);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+html.dark-mode input:focus,
+html.dark-mode textarea:focus,
+html.dark-mode select:focus {
+  border-color: var(--link-color);
+}
+
+/* Labels in Dark Mode */
+html.dark-mode .label {
+  color: #fff;
+}
+
+html.dark-mode .label-primary {
+  background-color: #3b82f6;
+}
+
+html.dark-mode .label-default {
+  background-color: #4b5563;
+  color: #e5e7eb;
+}
+
+html.dark-mode .label-success {
+  background-color: #10b981;
+}
+
+html.dark-mode .label-info {
+  background-color: #06b6d4;
+}
+
+html.dark-mode .label-warning {
+  background-color: #f59e0b;
+}
+
+html.dark-mode .label-danger {
+  background-color: #ef4444;
+}
+
+/* Archive Page Title Fix */
+html.dark-mode .archive-post .archive-title,
+html.dark-mode .archive-post .archive-title a,
+html.dark-mode .archive-post h4,
+html.dark-mode .archive-post h4 a {
+  color: #60a5fa !important;
+}
+
+html.dark-mode .archive-post .archive-title a:hover,
+html.dark-mode .archive-post h4 a:hover {
+  color: #93c5fd !important;
+}
+
+html.dark-mode .archive-year,
+html.dark-mode .archive-group h3 {
+  color: var(--text-heading);
+}
+
+html.dark-mode .text-muted {
+  color: var(--text-secondary) !important;
+}
+
+/* Topic Cloud Section Dark Mode Fix */
+html.dark-mode .topic-cloud {
+  background-color: var(--bg-card);
+  border-color: var(--border-color);
+}
+
+html.dark-mode .topic-cloud h2 {
+  color: var(--text-heading);
+}
+
+/* Landing Nav Buttons Dark Mode Fix */
+html.dark-mode .landing-nav .btn {
+  background-color: var(--bg-card) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+html.dark-mode .landing-nav .btn:hover {
+  background-color: var(--link-color) !important;
+  border-color: var(--link-color) !important;
+  color: #fff !important;
+}
+
+html.dark-mode .landing-nav .btn i {
+  color: inherit;
+}
+
+/* Social Links Row Dark Mode Fix */
+html.dark-mode .btn.btn-xs.btn-default {
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
+
+html.dark-mode .btn.btn-xs.btn-default .fa-stack .fa-stack-2x {
+  color: var(--text-secondary);
+}
+
+html.dark-mode .btn.btn-xs.btn-default .fa-stack .fa-stack-1x {
+  color: var(--bg-primary);
+}
+
+html.dark-mode .btn.btn-xs.btn-default:hover .fa-stack .fa-stack-2x {
+  color: var(--link-color);
+}
+
+html.dark-mode .btn.btn-xs.btn-default:hover .fa-stack .fa-stack-1x {
+  color: var(--bg-primary);
+}
+
+/* Force Landing Nav Buttons Dark Mode */
+html.dark-mode .landing-nav a.btn.btn-default.btn-lg {
+  background-color: #1f2940 !important;
+  background-image: none !important;
+  border-color: #2d3748 !important;
+  color: #e0e0e0 !important;
+  text-shadow: none !important;
+}
+
+html.dark-mode .landing-nav a.btn.btn-default.btn-lg:hover,
+html.dark-mode .landing-nav a.btn.btn-default.btn-lg:focus {
+  background-color: #60a5fa !important;
+  border-color: #60a5fa !important;
+  color: #ffffff !important;
+}
+
+html.dark-mode .landing-nav a.btn.btn-default.btn-lg i {
+  color: inherit !important;
+}

@@ -1,0 +1,68 @@
+<!-- Dark Mode Toggle -->
+<script>
+(function() {
+  var STORAGE_KEY = 'dark-mode';
+  var DARK_CLASS = 'dark-mode';
+
+  // Get stored preference or system preference
+  function getPreference() {
+    var stored = localStorage.getItem(STORAGE_KEY);
+    if (stored !== null) {
+      return stored === 'true';
+    }
+    // Check system preference
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
+
+  // Apply dark mode
+  function applyDarkMode(isDark) {
+    if (isDark) {
+      document.documentElement.classList.add(DARK_CLASS);
+    } else {
+      document.documentElement.classList.remove(DARK_CLASS);
+    }
+    updateIcon(isDark);
+  }
+
+  // Update toggle icon
+  function updateIcon(isDark) {
+    var btn = document.getElementById('dark-mode-toggle');
+    if (btn) {
+      var icon = btn.querySelector('i');
+      if (icon) {
+        icon.className = isDark ? 'fa fa-sun-o' : 'fa fa-moon-o';
+      }
+    }
+  }
+
+  // Initialize on page load (run immediately to prevent flash)
+  var isDark = getPreference();
+  applyDarkMode(isDark);
+
+  // Set up toggle button when DOM is ready
+  document.addEventListener('DOMContentLoaded', function() {
+    var btn = document.getElementById('dark-mode-toggle');
+    if (btn) {
+      // Update icon for initial state
+      updateIcon(getPreference());
+
+      btn.addEventListener('click', function() {
+        var currentlyDark = document.documentElement.classList.contains(DARK_CLASS);
+        var newState = !currentlyDark;
+        localStorage.setItem(STORAGE_KEY, newState);
+        applyDarkMode(newState);
+      });
+    }
+
+    // Listen for system preference changes
+    if (window.matchMedia) {
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+        // Only apply if user hasn't set a manual preference
+        if (localStorage.getItem(STORAGE_KEY) === null) {
+          applyDarkMode(e.matches);
+        }
+      });
+    }
+  });
+})();
+</script>
