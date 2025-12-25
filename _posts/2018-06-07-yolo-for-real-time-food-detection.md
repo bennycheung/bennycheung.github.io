@@ -17,6 +17,8 @@ images:
   cover: images/yolo-for-real-time-food-detection/cover.jpg
   header: images/yolo-for-real-time-food-detection/header.jpg
 published: true
+featured: true
+featured_order: 4
 ---
 
 <!--excerpt.start-->
