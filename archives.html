@@ -1,0 +1,44 @@
+---
+layout: page
+title: Archives
+permalink: /archives/
+---
+
+<div class="archives-container">
+  <p class="text-muted">All {{ site.posts | where: "category", "post" | size }} posts, organized by year.</p>
+
+  {% assign postsByYear = site.posts | where: "category", "post" | group_by_exp: "post", "post.date | date: '%Y'" %}
+
+  {% for year in postsByYear %}
+  <h2 class="archive-year">{{ year.name }} <small class="text-muted">({{ year.items | size }} posts)</small></h2>
+
+  {% for post in year.items %}
+  <div class="media archive-post">
+    <a class="media-left" href="{{ post.url }}">
+      {% if post.images.cover %}
+        <img src="{{ post.images.cover }}" class="archive-cover" alt="{{ post.title }}">
+      {% elsif post.image %}
+        <img src="{{ post.image }}" class="archive-cover" alt="{{ post.title }}">
+      {% else %}
+        <img src="{{ site.avatar }}" class="archive-cover-small" alt="{{ post.title }}">
+      {% endif %}
+    </a>
+    <div class="media-body">
+      <p class="archive-date">
+        {{ post.date | date: "%B %d, %Y" }}
+        {% assign words = post.content | number_of_words %}
+        {% assign reading_time = words | divided_by: 200 %}
+        {% if reading_time < 1 %}{% assign reading_time = 1 %}{% endif %}
+        &bull; {{ reading_time }} min read
+      </p>
+      <h4 class="media-heading">
+        <a href="{{ post.url }}">{{ post.title }}</a>
+      </h4>
+      <p class="archive-excerpt">{{ post.excerpt | strip_html | truncate: 200 }}</p>
+      <a href="{{ post.url }}" class="btn btn-xs btn-default">Read more &raquo;</a>
+    </div>
+  </div>
+  {% endfor %}
+
+  {% endfor %}
+</div>

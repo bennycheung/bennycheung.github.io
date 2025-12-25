@@ -18,6 +18,8 @@ images:
   cover: images/game-architecture-card-ai-1/cover.jpg
   header: images/game-architecture-card-ai-1/header.jpg
 published: true
+featured: true
+featured_order: 3
 ---
 
 <!--excerpt.start-->

@@ -7,167 +7,162 @@ layout: default
 <br />
 <br />
 
-<div class="container theme-showcase" role="main" style="font-family: Helvetica;">
+<div class="container" role="main" style="font-family: Helvetica;">
 
-  <div class="row">
-    <div class="col-sm-8 col-lg-8">
-      {% for post in site.posts %}
-      {% if post.category == "post" %}
-      {% if post.date %}
-      <p class="entry-date date published">
-        <time datetime="{{ post.date | date: "%Y-%m-%d" }}" itemprop="datePublished">{{ post.date | date: "%B %d, %Y" }}</time>
-      </p>
-      {% endif %}
-      <div class="media">
-        <a class="media-left" href="{{ post.url | prepend: site.baseurl }}">
-          {% if post.images.cover %}
-          <img src="{{ post.images.cover }}" style="width:200px;">
-          {% else %}
-          <img src="{{ site.avatar }}" style="width:65px;">
+  <!-- Featured Posts Section -->
+  {% assign featured = site.posts | where: "featured", true | sort: "featured_order" %}
+  {% if featured.size > 0 %}
+    {% assign hero = featured | first %}
+
+    <!-- Hero Featured Post -->
+    <div class="featured-hero">
+      <div class="card">
+        <a href="{{ hero.url }}">
+          {% if hero.images.cover %}
+            <img class="card-img" src="{{ hero.images.cover }}" alt="{{ hero.title }}">
+          {% elsif hero.image %}
+            <img class="card-img" src="{{ hero.image }}" alt="{{ hero.title }}">
           {% endif %}
         </a>
-        <div class="media-body">
-          <a href="{{ post.url | prepend: site.baseurl }}">
-            <h4 class="media-heading">{{ post.title }}</h4>
+        <div class="card-body">
+          <span class="label label-primary">Featured</span>
+          <h1 class="card-title">
+            <a href="{{ hero.url }}">{{ hero.title }}</a>
+          </h1>
+          <p class="card-text">{{ hero.excerpt | strip_html | truncate: 250 }}</p>
+          <a href="{{ hero.url }}" class="btn btn-primary">Read Article &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Secondary Featured Posts -->
+    {% if featured.size > 1 %}
+    <div class="row featured-secondary">
+      {% for post in featured offset:1 limit:2 %}
+      <div class="col-sm-6">
+        <div class="card">
+          <a href="{{ post.url }}">
+            {% if post.images.cover %}
+              <img class="card-img" src="{{ post.images.cover }}" alt="{{ post.title }}">
+            {% elsif post.image %}
+              <img class="card-img" src="{{ post.image }}" alt="{{ post.title }}">
+            {% endif %}
           </a>
-          {{ post.excerpt | strip_html | truncate: 320 }}
-          <div style="text-align:right; width:100%;">
-            <a href="{{ post.url | prepend: site.baseurl }}">
-              <button type="button" class="btn btn-xs btn-default">Read more &raquo;</button>
-            </a>
+          <div class="card-body">
+            <h3 class="card-title">
+              <a href="{{ post.url }}">{{ post.title }}</a>
+            </h3>
+            <p class="card-text">{{ post.excerpt | strip_html | truncate: 120 }}</p>
           </div>
         </div>
       </div>
-      {% endif %}
       {% endfor %}
     </div>
+    {% endif %}
+  {% endif %}
 
-
-    <div class="col-sm-4 col-lg-4">
-
-      <div class="row" style="text-align:center;">
-        <a href="{{ "/feed.xml" | prepend: site.baseurl }}" class="btn btn-xs btn-default" role="button">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-square-o fa-stack-2x"></i>
-            <i class="fa fa-rss fa-stack-1x"></i>
-          </span>
-        </a>
-
-        <a href="https://github.com/{{ site.github_username }}" class="btn btn-xs btn-default" role="button">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-square-o fa-stack-2x"></i>
-            <i class="fa fa-github-alt fa-stack-1x"></i>
-          </span>
-        </a>
-
-        <a href="https://twitter.com/{{ site.twitter_username }}" class="btn btn-xs btn-default" role="button">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-square-o fa-stack-2x"></i>
-            <i class="fa fa-twitter fa-stack-1x"></i>
-          </span>
-        </a>
-
-        <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" class="btn btn-xs btn-default" role="button">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-square-o fa-stack-2x"></i>
-            <i class="fa fa-linkedin fa-stack-1x"></i>
-          </span>
-        </a>
-      </div>  <!-- row -->
-
-      <div class="row" style="text-align:center;">
-        <a href="http://facebook.com/{{ site.facebook_username }}" class="btn btn-xs btn-default" role="button">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-square-o fa-stack-2x"></i>
-            <i class="fa fa-facebook fa-stack-1x"></i>
-          </span>
-        </a>
-
-        <a href="http://stackoverflow.com/users/{{ site.stackoverflow_username }}" class="btn btn-xs btn-default" role="button">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-square-o fa-stack-2x"></i>
-            <i class="fa fa-stack-overflow fa-stack-1x"></i>
-          </span>
-        </a>
-
-        <a href="https://www.youtube.com/channel/{{ site.youtube_username }}" class="btn btn-xs btn-default" role="button">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-square-o fa-stack-2x"></i>
-            <i class="fa fa-youtube fa-stack-1x"></i>
-          </span>
-        </a>
-
-        <a href="https://www.reddit.com/user/{{ site.reddit_username }}" class="btn btn-xs btn-default" role="button">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-square-o fa-stack-2x"></i>
-            <i class="fa fa-reddit fa-stack-1x"></i>
-          </span>
-        </a>
-      </div>  <!-- row -->
-
-      <br />
-
-      <div class="row">
-        <ul class="list-group">
-          <!--
-
-          <li class="list-group-item"><h3>Latest News</h3>
-            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="width:100%; margin-left:auto; margin-right:auto;">
-              <ol class="carousel-indicators">
-                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-              </ol>
-            </ol>
-            <div class="carousel-inner" role="listbox">
-              <div class="item active">
-               <h5 style="text-align:center;"><span class="label label-default">Flask-DB-Docker Framework is Open Sourced</span></h5>
-                <a href="https://github.com/bennycheung/Flask-DB-Docker">
-                  <img src="images/news/Flask_DB_Docker.jpg" alt="Flask-DB-Docker Framework is Open Sourced" style="margin-left:auto; margin-right:auto;">
-                </a>
-              </div>
-              <div class="item">
-               <h5 style="text-align:center;"><span class="label label-default">Food100 Python Tools are Open Sourced</span></h5>
-                <a href="https://github.com/bennycheung/Food100_YOLO_Tools">
-                  <img src="images/news/YOLO_Food100_Tools.jpg" alt="Food100 Python Tools are Open Sourced" style="margin-left:auto; margin-right:auto;">
-                </a>
-              </div>
-              <div class="item">
-               <h5 style="text-align:center;"><span class="label label-default">YOLO Food Detection Video</span></h5>
-                <a href="https://www.youtube.com/watch?v=mZ3FlCeDWlU">
-                  <img src="images/news/TheArtOfSushi_YOLO.jpg" alt="YOLO Food Detection Video" style="margin-left:auto; margin-right:auto;">
-                </a>
+  <!-- Recent Posts Section -->
+  <div class="recent-posts">
+    <h2><i class="fa fa-clock-o"></i> Recent Posts</h2>
+    <div class="row">
+      {% assign post_count = 0 %}
+      {% for post in site.posts %}
+        {% if post.category == "post" and post.featured != true %}
+          {% if post_count < 6 %}
+          <div class="col-sm-4">
+            <div class="post-card">
+              <a href="{{ post.url }}">
+                {% if post.images.cover %}
+                  <img class="card-img" src="{{ post.images.cover }}" alt="{{ post.title }}">
+                {% elsif post.image %}
+                  <img class="card-img" src="{{ post.image }}" alt="{{ post.title }}">
+                {% else %}
+                  <img class="card-img" src="{{ site.avatar }}" alt="{{ post.title }}">
+                {% endif %}
+              </a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="{{ post.url }}">{{ post.title }}</a>
+                </h4>
+                <p class="card-meta">
+                  {{ post.date | date: "%b %d, %Y" }}
+                  {% assign words = post.content | number_of_words %}
+                  {% assign reading_time = words | divided_by: 200 %}
+                  {% if reading_time < 1 %}{% assign reading_time = 1 %}{% endif %}
+                  &bull; {{ reading_time }} min read
+                </p>
               </div>
             </div>
-            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-              <span class="glyphicon glyphicon-chevron-left"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-              <span class="glyphicon glyphicon-chevron-right"></span>
-              <span class="sr-only">Next</span>
-            </a>
           </div>
-        </li>
-        -->
-        <li class="list-group-item"><h3>All Posts</h3>
-          <ul>
-            {% for post in site.posts %}
-            {% if post.category == "post" %}
-            <li><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title | truncate: 30 }}</a></li>
-            {% endif %}
-            {% endfor %}
-          </ul>
-        </li>
-      </ul>
-    </div> <!-- row -->
+          {% assign post_count = post_count | plus: 1 %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
 
-  </div> <!-- side column -->
-</div> <!-- row -->
-<script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
+  <!-- Topic Cloud Section -->
+  <div class="topic-cloud">
+    <h2><i class="fa fa-tags"></i> Browse by Topic</h2>
+    {% assign sorted_tags = site.tags | sort %}
+    {% for tag in sorted_tags %}
+      <a href="/tags/#{{ tag[0] | slugify }}" class="tag">
+        {{ tag[0] }} <small>({{ tag[1].size }})</small>
+      </a>
+    {% endfor %}
+  </div>
 
+  <!-- Navigation Buttons -->
+  <div class="landing-nav">
+    <a href="/archives/" class="btn btn-default btn-lg">
+      <i class="fa fa-archive"></i> View All Posts
+    </a>
+    <a href="/tags/" class="btn btn-default btn-lg">
+      <i class="fa fa-tags"></i> Browse by Tag
+    </a>
+  </div>
+
+  <!-- Social Links -->
+  <div class="row" style="text-align:center; margin: 30px 0;">
+    <a href="{{ "/feed.xml" | prepend: site.baseurl }}" class="btn btn-xs btn-default" role="button">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-square-o fa-stack-2x"></i>
+        <i class="fa fa-rss fa-stack-1x"></i>
+      </span>
+    </a>
+    <a href="https://github.com/{{ site.github_username }}" class="btn btn-xs btn-default" role="button">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-square-o fa-stack-2x"></i>
+        <i class="fa fa-github-alt fa-stack-1x"></i>
+      </span>
+    </a>
+    <a href="https://twitter.com/{{ site.twitter_username }}" class="btn btn-xs btn-default" role="button">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-square-o fa-stack-2x"></i>
+        <i class="fa fa-twitter fa-stack-1x"></i>
+      </span>
+    </a>
+    <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" class="btn btn-xs btn-default" role="button">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-square-o fa-stack-2x"></i>
+        <i class="fa fa-linkedin fa-stack-1x"></i>
+      </span>
+    </a>
+    <a href="http://facebook.com/{{ site.facebook_username }}" class="btn btn-xs btn-default" role="button">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-square-o fa-stack-2x"></i>
+        <i class="fa fa-facebook fa-stack-1x"></i>
+      </span>
+    </a>
+    <a href="https://www.youtube.com/channel/{{ site.youtube_username }}" class="btn btn-xs btn-default" role="button">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-square-o fa-stack-2x"></i>
+        <i class="fa fa-youtube fa-stack-1x"></i>
+      </span>
+    </a>
+  </div>
+
+</div>
 
 <script src="/live2dw/lib/L2Dwidget.min.js"></script>
 <script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script>

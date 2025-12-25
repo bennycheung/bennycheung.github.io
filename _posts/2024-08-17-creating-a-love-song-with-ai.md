@@ -18,6 +18,8 @@ images:
   cover: images/creating-a-love-song-with-ai/cover2x.jpg
   header: images/creating-a-love-song-with-ai/header.jpg
 published: true
+featured: true
+featured_order: 2
 ---
 
 <!--excerpt.start-->
