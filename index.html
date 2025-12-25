@@ -19,9 +19,9 @@ layout: default
       <div class="card">
         <a href="{{ hero.url }}">
           {% if hero.images.cover %}
-            <img class="card-img" src="{{ hero.images.cover }}" alt="{{ hero.title }}">
+            <img class="card-img" src="/{{ hero.images.cover }}" alt="{{ hero.title }}">
           {% elsif hero.image %}
-            <img class="card-img" src="{{ hero.image }}" alt="{{ hero.title }}">
+            <img class="card-img" src="/{{ hero.image }}" alt="{{ hero.title }}">
           {% endif %}
         </a>
         <div class="card-body">
@@ -43,9 +43,9 @@ layout: default
         <div class="card">
           <a href="{{ post.url }}">
             {% if post.images.cover %}
-              <img class="card-img" src="{{ post.images.cover }}" alt="{{ post.title }}">
+              <img class="card-img" src="/{{ post.images.cover }}" alt="{{ post.title }}">
             {% elsif post.image %}
-              <img class="card-img" src="{{ post.image }}" alt="{{ post.title }}">
+              <img class="card-img" src="/{{ post.image }}" alt="{{ post.title }}">
             {% endif %}
           </a>
           <div class="card-body">
@@ -73,9 +73,9 @@ layout: default
             <div class="post-card">
               <a href="{{ post.url }}">
                 {% if post.images.cover %}
-                  <img class="card-img" src="{{ post.images.cover }}" alt="{{ post.title }}">
+                  <img class="card-img" src="/{{ post.images.cover }}" alt="{{ post.title }}">
                 {% elsif post.image %}
-                  <img class="card-img" src="{{ post.image }}" alt="{{ post.title }}">
+                  <img class="card-img" src="/{{ post.image }}" alt="{{ post.title }}">
                 {% else %}
                   <img class="card-img" src="{{ site.avatar }}" alt="{{ post.title }}">
                 {% endif %}
