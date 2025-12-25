@@ -1,0 +1,158 @@
+<!-- Heading Anchor Links -->
+<style>
+.post-content h2,
+.post-content h3,
+.post-content h4 {
+  position: relative;
+}
+
+.heading-anchor {
+  position: absolute;
+  left: -1.5em;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.8em;
+  color: #999;
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  padding-right: 0.5em;
+}
+
+.heading-anchor:hover {
+  color: #337ab7;
+  text-decoration: none;
+}
+
+.post-content h2:hover .heading-anchor,
+.post-content h3:hover .heading-anchor,
+.post-content h4:hover .heading-anchor,
+.heading-anchor:focus {
+  opacity: 1;
+}
+
+/* Copied tooltip */
+.heading-anchor.copied::after {
+  content: 'Copied!';
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #333;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  white-space: nowrap;
+  margin-left: 8px;
+}
+
+/* Dark mode support */
+html.dark-mode .heading-anchor {
+  color: #888;
+}
+
+html.dark-mode .heading-anchor:hover {
+  color: #5dade2;
+}
+
+html.dark-mode .heading-anchor.copied::after {
+  background: #555;
+}
+
+/* Mobile: always show anchor links */
+@media (max-width: 768px) {
+  .heading-anchor {
+    position: static;
+    display: inline;
+    opacity: 0.5;
+    margin-left: 0.3em;
+    font-size: 0.7em;
+  }
+
+  .post-content h2:hover .heading-anchor,
+  .post-content h3:hover .heading-anchor,
+  .post-content h4:hover .heading-anchor {
+    opacity: 1;
+  }
+}
+</style>
+
+<script>
+(function() {
+  // Wait for DOM to be ready
+  document.addEventListener('DOMContentLoaded', function() {
+    // Find all headings in post content
+    var headings = document.querySelectorAll('.post-content h2, .post-content h3, .post-content h4');
+
+    headings.forEach(function(heading) {
+      // Get or create ID for the heading
+      var id = heading.id;
+      if (!id) {
+        // Generate ID from heading text
+        id = heading.textContent
+          .toLowerCase()
+          .replace(/[^\w\s-]/g, '')  // Remove special chars
+          .replace(/\s+/g, '-')       // Replace spaces with hyphens
+          .replace(/-+/g, '-')        // Remove multiple hyphens
+          .trim();
+        heading.id = id;
+      }
+
+      // Create anchor link
+      var anchor = document.createElement('a');
+      anchor.className = 'heading-anchor';
+      anchor.href = '#' + id;
+      anchor.innerHTML = '<i class="fa fa-link"></i>';
+      anchor.title = 'Copy link to this section';
+      anchor.setAttribute('aria-label', 'Copy link to section: ' + heading.textContent);
+
+      // Click handler to copy link
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        var url = window.location.href.split('#')[0] + '#' + id;
+
+        // Copy to clipboard
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(url).then(function() {
+            showCopied(anchor);
+          }).catch(function() {
+            fallbackCopy(url, anchor);
+          });
+        } else {
+          fallbackCopy(url, anchor);
+        }
+
+        // Also update URL hash
+        history.pushState(null, null, '#' + id);
+      });
+
+      // Insert anchor at beginning of heading
+      heading.insertBefore(anchor, heading.firstChild);
+    });
+
+    function showCopied(anchor) {
+      anchor.classList.add('copied');
+      setTimeout(function() {
+        anchor.classList.remove('copied');
+      }, 1500);
+    }
+
+    function fallbackCopy(text, anchor) {
+      var textArea = document.createElement('textarea');
+      textArea.value = text;
+      textArea.style.position = 'fixed';
+      textArea.style.left = '-9999px';
+      document.body.appendChild(textArea);
+      textArea.select();
+      try {
+        document.execCommand('copy');
+        showCopied(anchor);
+      } catch (err) {
+        console.error('Failed to copy:', err);
+      }
+      document.body.removeChild(textArea);
+    }
+  });
+})();
+</script>
