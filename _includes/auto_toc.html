@@ -34,7 +34,13 @@ $(document).ready(function() {
 
   // Only show TOC if there are 3+ headings
   if (headingCount >= 3) {
-    $('.post-content').before($toc);
+    // Insert TOC after the first image or first paragraph, inside post-content
+    var $firstImg = $('.post-content > p > img, .post-content > p:has(img)').first();
+    if ($firstImg.length) {
+      $firstImg.closest('p').after($toc);
+    } else {
+      $('.post-content').prepend($toc);
+    }
   }
 });
 </script>
