@@ -1,0 +1,80 @@
+<!-- Social Sharing Buttons -->
+<div class="social-share">
+  <span class="share-label">Share this post:</span>
+  <div class="share-buttons">
+    <a href="#"
+       class="share-btn twitter-btn"
+       data-title="{{ page.title }}"
+       onclick="shareTwitter(this); return false;"
+       title="Share on Twitter">
+      <i class="fa fa-twitter"></i>
+      <span>Twitter</span>
+    </a>
+    <a href="#"
+       class="share-btn linkedin-btn"
+       onclick="shareLinkedIn(); return false;"
+       title="Share on LinkedIn">
+      <i class="fa fa-linkedin"></i>
+      <span>LinkedIn</span>
+    </a>
+    <button class="share-btn copy-btn"
+            onclick="copyLink(this)"
+            title="Copy link to clipboard">
+      <i class="fa fa-link"></i>
+      <span>Copy Link</span>
+    </button>
+  </div>
+</div>
+
+<script>
+function shareTwitter(el) {
+  var title = el.getAttribute('data-title');
+  var url = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(title) + '&url=' + encodeURIComponent(window.location.href);
+  window.open(url, '_blank', 'width=550,height=420');
+}
+
+function shareLinkedIn() {
+  var url = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(window.location.href);
+  window.open(url, '_blank', 'width=550,height=420');
+}
+
+function copyLink(btn) {
+  var shareUrl = window.location.href;
+  var spanEl = btn.querySelector('span');
+
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(shareUrl).then(function() {
+      showCopiedState(btn, spanEl);
+    }).catch(function() {
+      fallbackCopyLink(shareUrl, btn, spanEl);
+    });
+  } else {
+    fallbackCopyLink(shareUrl, btn, spanEl);
+  }
+}
+
+function fallbackCopyLink(text, btn, spanEl) {
+  var textarea = document.createElement('textarea');
+  textarea.value = text;
+  textarea.style.position = 'fixed';
+  textarea.style.left = '-9999px';
+  document.body.appendChild(textarea);
+  textarea.select();
+  try {
+    document.execCommand('copy');
+    showCopiedState(btn, spanEl);
+  } catch (err) {
+    prompt('Copy this URL:', text);
+  }
+  document.body.removeChild(textarea);
+}
+
+function showCopiedState(btn, spanEl) {
+  spanEl.textContent = 'Copied!';
+  btn.classList.add('copied');
+  setTimeout(function() {
+    spanEl.textContent = 'Copy Link';
+    btn.classList.remove('copied');
+  }, 2000);
+}
+</script>
