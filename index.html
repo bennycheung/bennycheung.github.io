@@ -84,44 +84,42 @@ layout: default
       {% assign page_num = 1 %}
       {% for post in site.posts %}
         {% if post.category == "post" and post.featured != true %}
-          {% if post_count < 30 %}
-            {% assign position_in_page = post_count | modulo: 6 %}
-            {% if position_in_page == 0 %}
-              {% if post_count > 0 %}
-                </div></div>
-              {% endif %}
-              <div class="posts-page{% if post_count == 0 %} active{% endif %}" data-page="{{ page_num }}">
-              <div class="row">
-              {% assign page_num = page_num | plus: 1 %}
+          {% assign position_in_page = post_count | modulo: 6 %}
+          {% if position_in_page == 0 %}
+            {% if post_count > 0 %}
+              </div></div>
             {% endif %}
-            <div class="col-sm-4">
-              <div class="post-card">
-                <a href="{{ post.url }}">
-                  {% if post.images.cover %}
-                    <img class="card-img" src="/{{ post.images.cover }}" alt="{{ post.title }}">
-                  {% elsif post.image %}
-                    <img class="card-img" src="/{{ post.image }}" alt="{{ post.title }}">
-                  {% else %}
-                    <img class="card-img" src="{{ site.avatar }}" alt="{{ post.title }}">
-                  {% endif %}
-                </a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="{{ post.url }}">{{ post.title }}</a>
-                  </h4>
-                  <p class="card-meta">
-                    {{ post.date | date: "%b %d, %Y" }}
-                    {% assign words = post.content | number_of_words %}
-                    {% assign reading_time = words | divided_by: 200 %}
-                    {% if reading_time < 1 %}{% assign reading_time = 1 %}{% endif %}
-                    &bull; {{ reading_time }} min read
-                  </p>
-                  <p class="card-excerpt">{{ post.excerpt | strip_html | truncate: 100 }}</p>
-                </div>
+            <div class="posts-page{% if post_count == 0 %} active{% endif %}" data-page="{{ page_num }}">
+            <div class="row">
+            {% assign page_num = page_num | plus: 1 %}
+          {% endif %}
+          <div class="col-sm-4">
+            <div class="post-card">
+              <a href="{{ post.url }}">
+                {% if post.images.cover %}
+                  <img class="card-img" src="/{{ post.images.cover }}" alt="{{ post.title }}">
+                {% elsif post.image %}
+                  <img class="card-img" src="/{{ post.image }}" alt="{{ post.title }}">
+                {% else %}
+                  <img class="card-img" src="{{ site.avatar }}" alt="{{ post.title }}">
+                {% endif %}
+              </a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="{{ post.url }}">{{ post.title }}</a>
+                </h4>
+                <p class="card-meta">
+                  {{ post.date | date: "%b %d, %Y" }}
+                  {% assign words = post.content | number_of_words %}
+                  {% assign reading_time = words | divided_by: 200 %}
+                  {% if reading_time < 1 %}{% assign reading_time = 1 %}{% endif %}
+                  &bull; {{ reading_time }} min read
+                </p>
+                <p class="card-excerpt">{{ post.excerpt | strip_html | truncate: 100 }}</p>
               </div>
             </div>
-            {% assign post_count = post_count | plus: 1 %}
-          {% endif %}
+          </div>
+          {% assign post_count = post_count | plus: 1 %}
         {% endif %}
       {% endfor %}
       {% if post_count > 0 %}
