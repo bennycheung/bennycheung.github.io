@@ -142,14 +142,18 @@ layout: default
     </div>
   </div>
 
-  <!-- Topic Cloud Section -->
+  <!-- Topic Cloud Section - Top 12 Tags -->
   <div class="topic-cloud">
-    <h2><i class="fa fa-tags"></i> Browse by Topic</h2>
-    {% assign sorted_tags = site.tags | sort %}
+    <h2><i class="fa fa-tags"></i> Popular Topics</h2>
+    {% assign sorted_tags = site.tags | sort: 'last' | reverse %}
+    {% assign tag_count = 0 %}
     {% for tag in sorted_tags %}
-      <a href="/tags/#{{ tag[0] | slugify }}" class="tag">
-        {{ tag[0] }} <small>({{ tag[1].size }})</small>
-      </a>
+      {% if tag_count < 12 %}
+        <a href="/tags/#{{ tag[0] | slugify }}" class="tag">
+          {{ tag[0] }} <small>({{ tag[1].size }})</small>
+        </a>
+        {% assign tag_count = tag_count | plus: 1 %}
+      {% endif %}
     {% endfor %}
   </div>
 
