@@ -29,9 +29,28 @@
   pointer-events: none;
 }
 
+#cat-speech-bubble a {
+  color: #007bff;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+#cat-speech-bubble a:hover {
+  color: #0056b3;
+}
+
+html.dark-mode #cat-speech-bubble a {
+  color: #6db3f2;
+}
+
+html.dark-mode #cat-speech-bubble a:hover {
+  color: #9ccfff;
+}
+
 #cat-speech-bubble.visible {
   opacity: 1;
   transform: translateY(0);
+  pointer-events: auto;
 }
 
 /* Speech bubble tail */
@@ -80,19 +99,19 @@ html.dark-mode #cat-speech-bubble::after {
   var catMessages = [
     // Blog facts
     "This blog explores AI, spatial reasoning, and blockchain since 2016! 🧠",
-    "Fun fact: Benny trained custom AI models using Stable Diffusion and Dreambooth!",
-    "The 'Race for the Galaxy' AI used neural networks back in 2009 - before AlphaGo! 🎮",
+    "Fun fact: Benny trained custom AI models using <a href='/dreambooth-training-for-personal-embedding'>Stable Diffusion and Dreambooth</a>!",
+    "The <a href='/game-architecture-card-ai-1'>'Race for the Galaxy' AI</a> used neural networks back in 2009 - before AlphaGo! 🎮",
     "This blog covers 100+ posts on AI, deep learning, and computer vision!",
-    "Benny's master's thesis was on AI expert systems and spatial reasoning! 🎓",
-    "Explore topics from Prolog logic programming to GenAI cost optimization!",
+    "Benny's master's thesis was on AI expert systems and <a href='/spatial-reasoning-explained'>spatial reasoning</a>! 🎓",
+    "Explore topics from <a href='/using-prolog-to-solve-logic-puzzles'>Prolog logic programming</a> to <a href='/lean-ai-reduce-llm-cost'>GenAI cost optimization</a>!",
     "The blog bridges theory and practice - philosophy to hands-on projects! 🔬",
-    "Deep dives into neural style transfer and Deep Dream art! 🎨",
-    "Learn about Attribute-Based Encryption for healthcare blockchains! 🏥",
-    "Discover SingularityNET - decentralized AI services marketplace!",
-    "The Q* proposal explores A* algorithm meets Q-learning! 🤖",
-    "Constraint Logic Programming with Prolog's clp(fd) module! 🧩",
-    "PyFireSQL - SQL-like queries for Cloud Firestore in Python! 🔥",
-    "Marvin Minsky's 1985 insights on universal intelligence explored here!",
+    "Deep dives into neural style transfer and <a href='/deep-dream-on-windows-10'>Deep Dream art</a>! 🎨",
+    "Learn about <a href='/identity-for-attribute-based-encryption'>Attribute-Based Encryption</a> for healthcare blockchains! 🏥",
+    "Discover <a href='/singularitynet-ai-service-integration'>SingularityNET</a> - decentralized AI services marketplace!",
+    "The <a href='/q-star-new-method-in-problem-solving'>Q* proposal</a> explores A* algorithm meets Q-learning! 🤖",
+    "<a href='/solving-puzzles-using-clp'>Constraint Logic Programming</a> with Prolog's clp(fd) module! 🧩",
+    "<a href='/firesql-in-python'>PyFireSQL</a> - SQL-like queries for Cloud Firestore in Python! 🔥",
+    "<a href='/exploring-llms-on-universal-intelligence'>Marvin Minsky's 1985 insights</a> on universal intelligence explored here!",
 
     // Navigation tips
     "Try the dark mode toggle in the header! 🌙",
@@ -105,18 +124,18 @@ html.dark-mode #cat-speech-bubble::after {
     "Click the Previous/Next cards to navigate between posts!",
 
     // Post teasers
-    "Have you read about YOLO for real-time food detection? 🍕",
-    "Explore spatial reasoning - the key to AGI beyond LLMs!",
-    "Learn how to ask questions of a book using LangChain and OpenAI! 📚",
-    "Discover the Dify platform for hands-on GenAI learning!",
-    "Check out the guide on Ethereum mining with GPUs! ⛏️",
-    "Build a Snack Watcher with Raspberry Pi and computer vision! 🍿",
-    "Explore the existential crisis of microservices with Docker! 🐳",
-    "Learn about FHIR servers for patient data ownership! 💊",
-    "Lean AI - managing LLM costs for GenAI startups! 💰",
-    "ChatGPT for Biblical study - AI meets ancient wisdom! ✨",
-    "X.509 and PKI - foundations of digital identity explained! 🔐",
-    "Geospatial data processing with PostGIS and granular computing! 🗺️",
+    "Have you read about <a href='/yolo-for-real-time-food-detection'>YOLO for real-time food detection</a>? 🍕",
+    "Explore <a href='/spatial-reasoning-in-agi'>spatial reasoning</a> - the key to AGI beyond LLMs!",
+    "Learn how to <a href='/ask-a-book-questions-with-langchain-openai'>ask questions of a book</a> using LangChain and OpenAI! 📚",
+    "Discover the <a href='/dify-your-weekend-genai-magics'>Dify platform</a> for hands-on GenAI learning!",
+    "Check out the guide on <a href='/ethereum_mining-on-windows-10'>Ethereum mining with GPUs</a>! ⛏️",
+    "Build a <a href='/snack-watching-with-raspberry-pi'>Snack Watcher</a> with Raspberry Pi and computer vision! 🍿",
+    "Explore the <a href='/existential-hack-with-docker'>existential crisis of microservices</a> with Docker! 🐳",
+    "Learn about <a href='/fhir-server-up-and-running'>FHIR servers</a> for patient data ownership! 💊",
+    "<a href='/lean-ai-reduce-llm-cost'>Lean AI</a> - managing LLM costs for GenAI startups! 💰",
+    "<a href='/enhancing-biblical-study-with-chatgpt'>ChatGPT for Biblical study</a> - AI meets ancient wisdom! ✨",
+    "<a href='/identity-for-attribute-based-encryption'>X.509 and PKI</a> - foundations of digital identity explained! 🔐",
+    "<a href='/geospatial-granular-computing'>Geospatial data processing</a> with PostGIS and granular computing! 🗺️",
 
     // Fun messages
     "Meow! Welcome to Benny's Mind Hack! 🐱",
@@ -146,7 +165,7 @@ html.dark-mode #cat-speech-bubble::after {
   
   function showBubble() {
     clearTimeout(hideTimeout);
-    bubble.textContent = getRandomMessage();
+    bubble.innerHTML = getRandomMessage();
     bubble.classList.add('visible');
   }
   
@@ -181,7 +200,7 @@ html.dark-mode #cat-speech-bubble::after {
   
   // Show initial greeting immediately to invite interaction
   setTimeout(function() {
-    bubble.textContent = "Meow! 🐱 Hover over me for tips!";
+    bubble.innerHTML = "Meow! 🐱 Hover over me for tips!";
     bubble.classList.add('visible');
     setTimeout(hideBubble, 5000);
   }, 1000);
