@@ -2,50 +2,79 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width initial-scale=1">
-	<meta name="description" content="{{ site.description }}">
-	<meta name="author" content="{{ site.author }}">
+
+	<!-- Meta Description - Prioritized -->
+	{% if page.description %}
+		<meta name="description" content="{{ page.description }}">
+	{% elsif page.excerpt %}
+		<meta name="description" content="{{ page.excerpt | strip_html | truncate: 160 }}">
+	{% elsif page.layout == 'post' %}
+		<meta name="description" content="{{ page.content | strip_html | truncate: 160 }}">
+	{% else %}
+		<meta name="description" content="{{ site.description }}">
+	{% endif %}
+
+	<meta name="author" content="{{ page.author | default: 'Benny Cheung' }}">
 	<meta name="google-site-verification" content="Q8ugHabWc9ghHIgttC6uXjdB40F3tpW2ar6lQ-CWTNo" />
 
-	<!-- Twitter card -->
+	<!-- Twitter Card -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:site" content="@Benny_Cheung">
 	<meta name="twitter:creator" content="@Benny_Cheung">
-	<meta name="twitter:title" content="{{ page.title }}">
-
-	<link rel="icon" href="/assets/favicon.ico">
-	<link rel="canonical" href="{{ site.url }}/{{ page.permalink }}" />
-
+	<meta name="twitter:title" content="{{ page.title | default: site.title }}">
 	{% if page.description %}
-		<meta name="twitter:description" content="{{ page.meta_description }}">
-	{% else %}
+		<meta name="twitter:description" content="{{ page.description }}">
+	{% elsif page.layout == 'post' %}
 		<meta name="twitter:description" content="{{ page.content | strip_html | xml_escape | truncate: 200 }}">
-	{% endif %}
-
-	{% if page.image.thumb %}
-		<meta name="twitter:image" content="{{ page.image.thumb }}">
 	{% else %}
+		<meta name="twitter:description" content="{{ site.description }}">
+	{% endif %}
+	{% if page.image %}
 		<meta name="twitter:image" content="{{ site.url }}/{{ page.image }}">
 	{% endif %}
 
-	<!-- Facebook Open Graph share -->
-	<meta property="og:type" content="article" />
-  <meta property="og:title" content="{{ page.title }}" />
-	<meta property="og:description" content="{{ page.content | strip_html | xml_escape | truncate: 200 }}" />
-  <meta property="og:image" content="{{ site.url }}/{{ page.image }}" />
-	{% if page.tags %}
-  {% for tag in page.tags %}
-  	<meta content="{{ tag }}" property="article:tag">
-  {% endfor %}
+	<!-- Open Graph -->
+	<meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}" />
+	<meta property="og:url" content="{{ site.url }}{% if page.permalink %}/{{ page.permalink }}{% else %}{{ page.url }}{% endif %}" />
+	<meta property="og:site_name" content="{{ site.title }}" />
+	<meta property="og:title" content="{{ page.title | default: site.title }}" />
+	<meta property="og:locale" content="en_US" />
+	{% if page.description %}
+		<meta property="og:description" content="{{ page.description }}" />
+	{% elsif page.layout == 'post' %}
+		<meta property="og:description" content="{{ page.content | strip_html | xml_escape | truncate: 200 }}" />
+	{% else %}
+		<meta property="og:description" content="{{ site.description }}" />
+	{% endif %}
+	{% if page.image %}
+		<meta property="og:image" content="{{ site.url }}/{{ page.image }}" />
+	{% endif %}
+	{% if page.layout == 'post' %}
+		<meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}" />
+		<meta property="article:modified_time" content="{{ page.last_modified_at | default: page.date | date_to_xmlschema }}" />
+		<meta property="article:author" content="https://github.com/bennycheung" />
+		{% if page.tags %}
+			{% for tag in page.tags %}
+				<meta property="article:tag" content="{{ tag }}" />
+			{% endfor %}
+		{% endif %}
 	{% endif %}
 
-	<!-- page title -->
-	<title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+	<!-- Canonical & Icons -->
+	<link rel="icon" href="/assets/favicon.ico">
+	<link rel="canonical" href="{{ site.url }}{% if page.permalink %}/{{ page.permalink }}{% else %}{{ page.url }}{% endif %}" />
+
+	<!-- RSS Feed -->
+	<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.url }}/feed.xml" />
+
+	<!-- Page Title -->
+	<title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
 
 	<!-- Bootstrap core CSS -->
 	<link href="/css/bootstrap.css" rel="stylesheet">
 	<!-- Bootstrap theme -->
 	<link href="/css/bootstrap-theme.css" rel="stylesheet">
-	<!-- font awesome -->
+	<!-- Font Awesome -->
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
 
 	<!-- Custom styles for this template -->
