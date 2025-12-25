@@ -477,3 +477,23 @@ pre:hover .code-copy-btn {
     height: 40px;
   }
 }
+
+/*
+ * Reading Progress Bar
+ */
+#reading-progress-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: transparent;
+  z-index: 9999;
+}
+
+#reading-progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(to right, #428bca, #5bc0de);
+  transition: width 0.1s ease-out;
+}

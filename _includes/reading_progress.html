@@ -1,0 +1,39 @@
+<!-- Reading Progress Bar -->
+<div id="reading-progress-container">
+  <div id="reading-progress-bar"></div>
+</div>
+
+<script>
+$(document).ready(function() {
+  var $progressBar = $('#reading-progress-bar');
+  var $window = $(window);
+  var $document = $(document);
+
+  function updateProgress() {
+    var scrollTop = $window.scrollTop();
+    var docHeight = $document.height();
+    var winHeight = $window.height();
+    var scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
+
+    // Clamp between 0 and 100
+    scrollPercent = Math.min(100, Math.max(0, scrollPercent));
+
+    $progressBar.css('width', scrollPercent + '%');
+  }
+
+  // Update on scroll with throttling for performance
+  var ticking = false;
+  $window.scroll(function() {
+    if (!ticking) {
+      window.requestAnimationFrame(function() {
+        updateProgress();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+
+  // Initial update
+  updateProgress();
+});
+</script>
