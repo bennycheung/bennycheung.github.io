@@ -1,0 +1,27 @@
+<!-- Back to Top Button -->
+<button id="backToTop" title="Back to top">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="18 15 12 9 6 15"></polyline>
+  </svg>
+</button>
+
+<script>
+$(document).ready(function() {
+  var $backToTop = $('#backToTop');
+
+  // Show/hide button based on scroll position
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > 300) {
+      $backToTop.addClass('visible');
+    } else {
+      $backToTop.removeClass('visible');
+    }
+  });
+
+  // Smooth scroll to top
+  $backToTop.click(function(e) {
+    e.preventDefault();
+    $('html, body').animate({scrollTop: 0}, 400);
+  });
+});
+</script>
