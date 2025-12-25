@@ -34,10 +34,18 @@ $(document).ready(function() {
 
   // Only show TOC if there are 3+ headings
   if (headingCount >= 3) {
-    // Insert TOC after the first image or first paragraph, inside post-content
-    var $firstImg = $('.post-content > p > img, .post-content > p:has(img)').first();
-    if ($firstImg.length) {
-      $firstImg.closest('p').after($toc);
+    // Insert TOC after the first image and its caption, inside post-content
+    var $firstImgP = $('.post-content > p > img, .post-content > p:has(img)').first().closest('p');
+    if ($firstImgP.length) {
+      // Check if next element is a figure caption (paragraph starting with <em>Figure or just <em>)
+      var $next = $firstImgP.next('p');
+      if ($next.length && $next.children('em').first().length &&
+          ($next.children().first().is('em') || $next.text().trim().match(/^Figure/i))) {
+        // Insert after the caption
+        $next.after($toc);
+      } else {
+        $firstImgP.after($toc);
+      }
     } else {
       $('.post-content').prepend($toc);
     }
