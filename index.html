@@ -144,61 +144,6 @@ layout: default
     </div>
   </div>
 
-  <script>
-  $(document).ready(function() {
-    var currentPage = 1;
-    var totalPages = $('.posts-page').length;
-
-    function showPage(page) {
-      if (page < 1 || page > totalPages) return;
-      currentPage = page;
-
-      $('.posts-page').removeClass('active');
-      $('.posts-page[data-page="' + page + '"]').addClass('active');
-
-      $('.page-dot').removeClass('active');
-      $('.page-dot[data-page="' + page + '"]').addClass('active');
-
-      $('.prev-btn').prop('disabled', page === 1);
-      $('.next-btn').prop('disabled', page === totalPages);
-    }
-
-    $('.prev-btn').on('click', function() {
-      showPage(currentPage - 1);
-    });
-
-    $('.next-btn').on('click', function() {
-      showPage(currentPage + 1);
-    });
-
-    $('.page-dot').on('click', function() {
-      showPage($(this).data('page'));
-    });
-
-    // Swipe support
-    var startX, startY, distX, distY;
-    var carousel = $('.posts-carousel')[0];
-
-    carousel.addEventListener('touchstart', function(e) {
-      startX = e.touches[0].pageX;
-      startY = e.touches[0].pageY;
-    }, false);
-
-    carousel.addEventListener('touchend', function(e) {
-      distX = e.changedTouches[0].pageX - startX;
-      distY = e.changedTouches[0].pageY - startY;
-
-      if (Math.abs(distX) > Math.abs(distY) && Math.abs(distX) > 50) {
-        if (distX > 0) {
-          showPage(currentPage - 1);
-        } else {
-          showPage(currentPage + 1);
-        }
-      }
-    }, false);
-  });
-  </script>
-
   <!-- Topic Cloud Section -->
   <div class="topic-cloud">
     <h2><i class="fa fa-tags"></i> Browse by Topic</h2>
