@@ -1,0 +1,66 @@
+<!-- JSON-LD Structured Data for SEO -->
+{% if page.layout == 'post' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ site.url }}/{{ page.permalink }}"
+  },
+  "headline": {{ page.title | jsonify }},
+  "description": {{ page.content | strip_html | truncate: 160 | jsonify }},
+  "image": "{{ site.url }}/{{ page.image }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ page.author | default: 'Benny Cheung' }}",
+    "url": "{{ site.url }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ site.title }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ site.url }}/assets/avtar.jpg"
+    }
+  },
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
+  "keywords": {{ page.tags | join: ', ' | jsonify }}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "{{ site.url }}"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": {{ page.title | jsonify }},
+      "item": "{{ site.url }}/{{ page.permalink }}"
+    }
+  ]
+}
+</script>
+{% else %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "{{ site.title }}",
+  "url": "{{ site.url }}",
+  "description": {{ site.description | jsonify }},
+  "author": {
+    "@type": "Person",
+    "name": "Benny Cheung"
+  }
+}
+</script>
+{% endif %}

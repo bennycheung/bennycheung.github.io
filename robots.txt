@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://bennycheung.github.io/sitemap.xml
+
+# Disallow build directories
+Disallow: /_site/
+Disallow: /node_modules/
