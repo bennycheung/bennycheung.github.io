@@ -249,3 +249,14 @@ td {
 .MathJax_Display {
   text-align: left !important;
 }
+
+/*
+ * Image Lightbox
+ */
+.post-content img {
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.post-content img:hover {
+  opacity: 0.9;
+}
