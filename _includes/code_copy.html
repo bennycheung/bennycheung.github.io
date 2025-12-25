@@ -1,0 +1,20 @@
+<!-- Code Copy Button -->
+<script>
+$(document).ready(function() {
+  $('pre').each(function() {
+    var $pre = $(this);
+    var $btn = $('<button class="btn btn-xs btn-default code-copy-btn" title="Copy code">')
+      .html('<i class="fa fa-clipboard"></i>')
+      .click(function() {
+        var code = $pre.find('code').text() || $pre.text();
+        navigator.clipboard.writeText(code).then(function() {
+          $btn.html('<i class="fa fa-check"></i>').addClass('copied');
+          setTimeout(function() {
+            $btn.html('<i class="fa fa-clipboard"></i>').removeClass('copied');
+          }, 2000);
+        });
+      });
+    $pre.css('position', 'relative').prepend($btn);
+  });
+});
+</script>

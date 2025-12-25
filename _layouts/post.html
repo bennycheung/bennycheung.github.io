@@ -22,7 +22,10 @@ comments: true
 			{% endif %}
 		</p>
 		<h1 class="post-title">{{ page.title }}</h1>
-		<p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+		{% assign words = content | number_of_words %}
+		{% assign reading_time = words | divided_by: 200 %}
+		{% if reading_time < 1 %}{% assign reading_time = 1 %}{% endif %}
+		<p class="post-meta">{{ page.date | date: "%b %-d, %Y" }} • {{ reading_time }} min read{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
 
 		{% include post-tags.html %}
 	</header>
