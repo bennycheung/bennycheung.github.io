@@ -85,7 +85,15 @@ html.dark-mode #cat-speech-bubble::after {
     "This blog covers 100+ posts on AI, deep learning, and computer vision!",
     "Benny's master's thesis was on AI expert systems and spatial reasoning! 🎓",
     "Explore topics from Prolog logic programming to GenAI cost optimization!",
-    
+    "The blog bridges theory and practice - philosophy to hands-on projects! 🔬",
+    "Deep dives into neural style transfer and Deep Dream art! 🎨",
+    "Learn about Attribute-Based Encryption for healthcare blockchains! 🏥",
+    "Discover SingularityNET - decentralized AI services marketplace!",
+    "The Q* proposal explores A* algorithm meets Q-learning! 🤖",
+    "Constraint Logic Programming with Prolog's clp(fd) module! 🧩",
+    "PyFireSQL - SQL-like queries for Cloud Firestore in Python! 🔥",
+    "Marvin Minsky's 1985 insights on universal intelligence explored here!",
+
     // Navigation tips
     "Try the dark mode toggle in the header! 🌙",
     "Check out Related Posts at the end of each article!",
@@ -93,20 +101,33 @@ html.dark-mode #cat-speech-bubble::after {
     "Click any image to see it full-size! 🔍",
     "Share posts easily with the Twitter and LinkedIn buttons!",
     "Browse by tag to find related content! 🏷️",
-    
+    "The Archives page shows all posts organized by year! 📅",
+    "Click the Previous/Next cards to navigate between posts!",
+
     // Post teasers
     "Have you read about YOLO for real-time food detection? 🍕",
     "Explore spatial reasoning - the key to AGI beyond LLMs!",
     "Learn how to ask questions of a book using LangChain and OpenAI! 📚",
     "Discover the Dify platform for hands-on GenAI learning!",
     "Check out the guide on Ethereum mining with GPUs! ⛏️",
-    
+    "Build a Snack Watcher with Raspberry Pi and computer vision! 🍿",
+    "Explore the existential crisis of microservices with Docker! 🐳",
+    "Learn about FHIR servers for patient data ownership! 💊",
+    "Lean AI - managing LLM costs for GenAI startups! 💰",
+    "ChatGPT for Biblical study - AI meets ancient wisdom! ✨",
+    "X.509 and PKI - foundations of digital identity explained! 🔐",
+    "Geospatial data processing with PostGIS and granular computing! 🗺️",
+
     // Fun messages
     "Meow! Welcome to Benny's Mind Hack! 🐱",
     "*purrs* Thanks for visiting!",
     "I'm Hijiki, your friendly blog guide! 😸",
     "Hover over me anytime for tips and facts!",
-    "Happy reading! Let me know if you need anything! 📖"
+    "Happy reading! Let me know if you need anything! 📖",
+    "*stretches* Another curious reader! Welcome! 🐾",
+    "Did you know cats love AI too? Well, this one does! 😺",
+    "Click me again for another random fact!",
+    "You've discovered the secret cat assistant! 🎉"
   ];
   
   var lastMessageIndex = -1;
@@ -137,9 +158,14 @@ html.dark-mode #cat-speech-bubble::after {
   hoverZone.addEventListener('mouseenter', function() {
     showBubble();
   });
-  
+
   hoverZone.addEventListener('mouseleave', function() {
     hideTimeout = setTimeout(hideBubble, 1500);
+  });
+
+  // Click to show another tip
+  hoverZone.addEventListener('click', function() {
+    showBubble();
   });
   
   // Touch support for mobile
@@ -153,11 +179,11 @@ html.dark-mode #cat-speech-bubble::after {
     }
   });
   
-  // Show initial greeting after 3 seconds
+  // Show initial greeting immediately to invite interaction
   setTimeout(function() {
-    bubble.textContent = "Meow! Hover over me for tips about this blog! 🐱";
+    bubble.textContent = "Meow! 🐱 Hover over me for tips!";
     bubble.classList.add('visible');
-    setTimeout(hideBubble, 4000);
-  }, 3000);
+    setTimeout(hideBubble, 5000);
+  }, 1000);
 })();
 </script>
