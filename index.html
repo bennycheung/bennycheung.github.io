@@ -44,8 +44,8 @@ layout: default
     <!-- Secondary Featured Posts -->
     {% if featured.size > 1 %}
     <div class="row featured-secondary">
-      {% for post in featured offset:1 limit:2 %}
-      <div class="col-sm-6">
+      {% for post in featured offset:1 %}
+      <div class="col-sm-4">
         <div class="card">
           <a href="{{ post.url }}">
             {% if post.images.cover %}
@@ -66,7 +66,7 @@ layout: default
               {% if reading_time < 1 %}{% assign reading_time = 1 %}{% endif %}
               &bull; {{ reading_time }} min read
             </p>
-            <p class="card-text">{{ post.excerpt | strip_html | truncate: 120 }}</p>
+            <p class="card-text">{{ post.excerpt | strip_html | truncate: 280 }}</p>
           </div>
         </div>
       </div>
@@ -142,13 +142,12 @@ layout: default
     </div>
   </div>
 
-  <!-- Topic Cloud Section - Top 12 Tags -->
+  <!-- Topic Cloud Section - Top 12 Tags by Post Count -->
   <div class="topic-cloud">
     <h2><i class="fa fa-tags"></i> Popular Topics</h2>
-    {% assign sorted_tags = site.tags | sort: 'last' | reverse %}
     {% assign tag_count = 0 %}
-    {% for tag in sorted_tags %}
-      {% if tag_count < 12 %}
+    {% for tag in site.tags %}
+      {% if tag[1].size >= 3 and tag_count < 12 %}
         <a href="/tags/#{{ tag[0] | slugify }}" class="tag">
           {{ tag[0] }} <small>({{ tag[1].size }})</small>
         </a>
