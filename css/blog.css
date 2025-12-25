@@ -744,6 +744,14 @@ pre:hover .code-copy-btn {
 .post-card .card-meta {
   font-size: 13px;
   color: #888;
+  margin-bottom: 8px;
+}
+
+.post-card .card-excerpt {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.4;
+  margin: 0;
 }
 
 /*

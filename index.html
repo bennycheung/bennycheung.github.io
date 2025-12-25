@@ -91,6 +91,7 @@ layout: default
                   {% if reading_time < 1 %}{% assign reading_time = 1 %}{% endif %}
                   &bull; {{ reading_time }} min read
                 </p>
+                <p class="card-excerpt">{{ post.excerpt | strip_html | truncate: 100 }}</p>
               </div>
             </div>
           </div>
