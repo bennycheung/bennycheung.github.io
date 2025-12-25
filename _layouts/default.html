@@ -21,5 +21,8 @@
 	<script src="/js/bootstrap.min.js"></script>
 	{% include image_lightbox.html %}
 	{% include code_copy.html %}
+	{% unless page.toc == false %}
+		{% include auto_toc.html %}
+	{% endunless %}
 </body>
 </html>

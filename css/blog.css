@@ -370,3 +370,62 @@ pre:hover .code-copy-btn {
   color: white;
   opacity: 1 !important;
 }
+
+/*
+ * Auto Table of Contents
+ */
+#auto-toc {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-left: 4px solid #428bca;
+  border-radius: 4px;
+  padding: 15px 20px;
+  margin-bottom: 30px;
+}
+
+#auto-toc h4 {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+#auto-toc ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#auto-toc li {
+  margin: 6px 0;
+  line-height: 1.4;
+}
+
+#auto-toc .toc-h2 {
+  font-weight: 500;
+}
+
+#auto-toc .toc-h3 {
+  padding-left: 20px;
+  font-size: 14px;
+}
+
+#auto-toc a {
+  color: #428bca;
+  text-decoration: none;
+}
+
+#auto-toc a:hover {
+  color: #2a6496;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  #auto-toc {
+    padding: 12px 15px;
+  }
+
+  #auto-toc .toc-h3 {
+    padding-left: 15px;
+  }
+}

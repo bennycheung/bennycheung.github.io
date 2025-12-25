@@ -43,21 +43,7 @@ In this article, we shall start with the theoretical knowledge of NLP applied to
 then we shall practice the techniques on the twitter's sentiment analysis problem,
 and apply Deep Learning to model and predict the tweets sentiment.
 
-This is a long article trying to cover,
-
-* In theory, [understanding sentiment analysis with machine learning](#theory)
-    * Types of machine learning techniques in NLP
-    * Mechanics of machine learning on text data
-* In practice, [applying deep learning on twitter's sentiment analysis](#practice)
-    * [Prepare Data](#prepare_data) - download and prepare 1.6 millions tweets dat
-    * [Perform Pre-processing](#text_preprocessing) - use NLP techniques to pre-process the tweets
-    * [Discover Important Words](#discover_word) - use tf-idf and counting to find important words
-    * [Convert Word Representation](#word2vec) - download word2vec and apply to the important word
-    * [Train Model](#train_model) - use keras to build and train a deep neural network model
-    * [Evaluate Model](#eval_model) - measure the accuracy of the predictive model, and suggest further improvements
-
---------------
-# <a name="theory"></a>Sentiment Analysis with Machine Learning
+## Sentiment Analysis with Machine Learning
 
 Sentiment Analysis is a pretty interesting problem in the NLP space.
 Whenever there is an email coming into the customer service inbox,
@@ -175,7 +161,7 @@ algorithms like K-means Clustering or Hierarchical Clustering can be chosen.
 
 
 --------------
-# <a name="practice"></a>Twitter Sentiment Analysis
+## Twitter Sentiment Analysis
 
 Machine Learning is an extremely useful tool to solve the text data problems.
 We can apply the essential ML workflow on text data,
@@ -184,7 +170,7 @@ We can apply the essential ML workflow on text data,
 2. Train Model - using unsupervised clustering, supervised classification ML algorithms.
 3. Evaluate Model - measuring the model performance to continue improving the model.
 
-## <a name="prepare_data"></a>Prepare Data
+### Prepare Data
 The text data is usually run through a series of preprocessing tasks,
 to take a large piece of text and then break it down into smaller and meaningful components.
 The mixture of following tasks are applied depending on the data set requirements,
@@ -253,7 +239,7 @@ for example, starting with displaying the first 10 rows, and more.
 
 ![Tweets Data Frame]({{ site.baseurl }}images/deep-learning-on-text-data/tweets_data_table_head10.jpg)
 
-## <a name="text_preprocessing"></a>Tweet Text Preprocessing
+### Tweet Text Preprocessing
 We want to break each tweet into meaningful words.
 
 The `tokenizer_tweet()` function, calling `tokenizer()`, is for the tweet's *tokenization*, *stopwords* and *punctuation removal*.
@@ -301,7 +287,7 @@ def tokenizer_tweet(tweet):
     return tokens
 ```
 
-## <a name="discover_word"></a>Discover Important Words
+### Discover Important Words
 The exploration never stops after the text pre-processing.
 
 With the tokenized words, we must proceed to answer the question of *what are the important words for the problem domain?*
@@ -456,7 +442,7 @@ index2word = {v:k for k, v in word2index.items()}
 index2word[0] = "_UNK_"
 ```
 
-## <a name="word2vec"></a>Converting Word to Numeric Representation by word2vec
+### Converting Word to Numeric Representation by word2vec
 Only invented recently, the advanced technique of **word2vec** is used to convert word into numeric representation.
 word2vec is a group of Deep Learning models developed by Google with the aim of capturing
 the context of words while at the same time proposing a very efficient way of preprocessing raw text data.
@@ -546,7 +532,7 @@ for word, index in word2index.items():
 For example, if the word `man` is in vocabulary `word2index['man']=123`,
 then the vectorized word `man` is represented by `embbedding_weights[123]`.
 
-## <a name="train_model"></a>Train Model with Keras
+### Train Model with Keras
 
 To keep focus, we shall not divert to explain keras deep learning framework. Interested reader should consult
 the book by Antonio Gulli & Sujit Pal, [Deep Learning with Keras](https://www.packtpub.com/big-data-and-business-intelligence/deep-learning-keras).
@@ -684,7 +670,7 @@ print("Test score: {:.3f}, accuracy: {:.3f}".format(score[0], score[1]))
 Test score: 0.826, accuracy: 0.722
 ```
 
-## <a name="eval_model"></a>Evaluate Model for Further Improvements
+### Evaluate Model for Further Improvements
 The model prediction accuracy is good but not super.
 Since keras can return the prediction vector for each classification,
 in our case there are 2 classes (`0` negative and `1` positive sentiment),

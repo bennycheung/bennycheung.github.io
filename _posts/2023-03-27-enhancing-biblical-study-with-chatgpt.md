@@ -46,29 +46,6 @@ Join us as we delve into the potential of ChatGPT as a tool for biblical study, 
 
 _Figure. Illustrated selecting the GPT-4 used by ChatGPT._
 
-## Table of Content
-- Understand How to Interact with AI
-  - Context, Context, Context
-  - Engaging in Conversations for Accurate Information
-
-- Ways to use ChatGPT for Biblical Study
-  1. Understanding Context
-  2. Translation Comparisons
-  3. Word Studies
-  4. Cross-References
-  5. Interpretation Assistance
-  6. Theological Concepts
-  7. Biblical Themes
-  8. Historical Background
-  9. Exegesis and Hermeneutics
-  10. Commentaries and Resources
-  11. Application
-
-- Concluding Remarks
-  - Advantages
-  - Disadvantages
-  - Final Reminder
-
 ## Understand How to Interact with AI
 
 We start with the understanding of how to interact with AI effectively. By learning how to communicate your needs and inquiries clearly, you can get the most out of your AI-assisted biblical study experience. We will explore tips and strategies for asking questions, providing context, and engaging in meaningful conversations with AI to enhance your understanding of biblical concepts and teachings.

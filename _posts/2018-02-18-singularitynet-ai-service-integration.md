@@ -30,21 +30,13 @@ Today, the only technical information is available through their white paper (De
 
 *Figure. SingularityNET high-level system architecture, which illustrates how the platform supports AI agent to agent interactions and uses Blockchain smart contract to record the transactions.*
 
-This article will go through the following steps to experiment with SinagularityNET's AI agent integration,
-1. [Create a virtual environment](#virtualenv)
-2. [Checkout SingularityNET source code](#sourcecode)
-3. [Run MNIST Tensorflow agent example with a browser](#runagent)
-  * [Docker prerequisite](#docker)
-4. [Explain SingularityNET service adapter development](#serviceadapter)
-  * [ServiceAdapterABC abstract class](#serviceadapterABC)
-  * [TensorflowMNIST agent class](#tensorflowMNIST)
-5. [Show service integration by configuration](#serviceconfig)
+This article will go through the steps to experiment with SingularityNET's AI agent integration: creating a virtual environment, checking out the source code, running the MNIST Tensorflow agent example, explaining service adapter development, and showing service integration by configuration.
 
 Obviously, there are many more SingularityNET topics, which must be explored by other articles.
 
 > <div style="color:red">SingularityNET is moving forward with another alpha release. This article is out-dated as of 2018-05-03; however the information can still be useful to understand the functional and implementational views of cooperating AI agents. For the latest SingularityNET development, reader can refer to Wiki at <https://github.com/singnet/wiki/wiki>.</div>
 
-### <a name="virtualenv"></a>Create a virtual environment
+### Create a virtual environment
 Virtual environments make it easy to separate different projects and avoid problems with different dependencies and version requirements across components. In the terminal client enter the following where `envname` is the name you want to call your environment, and replace `x.x` with the Python version you wish to use.
 
 ```
@@ -63,7 +55,7 @@ To activate or switch into your virtual environment, simply type `singnet` is th
 source activate singnet
 ```
 
-### <a name="sourcecode"></a>SingularityNET Source Code
+### SingularityNET Source Code
 The breeding edge SingularityNET code can be found at <https://github.com/singnet/singnet>
 
 Checking out the code into your local file system,
@@ -94,7 +86,7 @@ Successfully installed Jinja2-2.10 MarkupSafe-1.0 PyYAML-3.12 Pygments-2.2.0 aio
 
 Life seems good that every requirements are installed without hipcup, which is a rare event in a hacking experience.
 
-### <a name="docker"></a>Docker Prerequisites
+### Docker Prerequisites
 According to the SingularityNET official website, SingularityNET runs on Mac OS X, or any Linux which has Python 3 installed and
 Docker or Docker for Mac installed. Their core devs regularly develop on Mac OS X Sierra, Linux Mint Mate 18.2, and Linux Ubuntu 16.04 LTS among others.
 
@@ -102,7 +94,7 @@ Docker and Docker Compose are used heavily, so you must have a recent version of
 
 The current development demo runs from a `dev` docker container which can be launched from your favorite bash terminal using the helper tool shell script: `singnet/tools.sh`.
 
-### <a name="runagent"></a>MNIST Agent Running Example
+### MNIST Agent Running Example
 Brings up the Dev server to demonstrate many agents interaction.
 
 ```
@@ -145,9 +137,9 @@ After clicking on the `[Preform]` button on the UI, the MNIST request is sent wi
 
 The prediction result is a `7` with the perfect confidence of `1` that it believed that a number seven has been seen.
 
-### <a name="serviceadapter"></a>Service Adapter Development
+### Service Adapter Development
 
-#### <a name="serviceadapterABC"></a>ServiceAdapterABC
+#### ServiceAdapterABC
 There are three fairly common methods on the service adapter abstract base class, where you might want `__init__` to initialize member variables, `post_load_initialize` to ensure all of the dependence services have been loaded and finally `perform` to execute the AI business logics to provide result from a request.
 
 ![SingularityNET Chrome Developer Prediction Response]({{ site.baseurl }}images/singularitynet-ai-service-integration/Singularity_Dev_ServiceAdapterABC.jpg)
@@ -258,7 +250,7 @@ The `perform` function is where the bulk of the work gets done. Let's go to take
         pass
 ```
 
-#### <a name="tensorflowMNIST"></a>TensorFlowMNIST
+#### TensorFlowMNIST
 
 ![SingularityNET Chrome Developer Prediction Response]({{ site.baseurl }}images/singularitynet-ai-service-integration/Singularity_Dev_ServiceAdapterTensorFlowMNIST.jpg)
 
@@ -424,7 +416,7 @@ def perform(self, job: JobDescriptor):
         return results
 ```
 
-### <a name="serviceconfig"></a>Service Configuration
+### Service Configuration
 In the `singnet/agent/dev_config.yml` file, we have to define the TensorflowMNIST service with a good unique identifier `deadbeef-aaaa-bbbb-cccc-111111111101` and the module that is loaded `adatper.tensorflow.mnist.TensorflowMNIST` class.
 
 ```yaml

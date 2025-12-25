@@ -1,0 +1,40 @@
+<!-- Auto-generated Table of Contents -->
+<script>
+$(document).ready(function() {
+  var $toc = $('<div id="auto-toc"><h4>Table of Contents</h4><ul></ul></div>');
+  var $tocList = $toc.find('ul');
+  var headingCount = 0;
+
+  $('.post-content h2, .post-content h3').each(function() {
+    var $heading = $(this);
+    var text = $heading.text().trim();
+
+    // Skip empty headings or headings that are just anchors
+    if (!text || text.length < 2) return;
+
+    // Create slug from heading text
+    var id = text.toLowerCase()
+      .replace(/[^\w\s-]/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/-+/g, '-');
+
+    // Ensure unique ID
+    if ($('#' + id).length > 0) {
+      id = id + '-' + headingCount;
+    }
+
+    $heading.attr('id', id);
+
+    var level = this.tagName === 'H2' ? 'toc-h2' : 'toc-h3';
+    $tocList.append(
+      '<li class="' + level + '"><a href="#' + id + '">' + text + '</a></li>'
+    );
+    headingCount++;
+  });
+
+  // Only show TOC if there are 3+ headings
+  if (headingCount >= 3) {
+    $('.post-content').before($toc);
+  }
+});
+</script>

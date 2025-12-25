@@ -49,16 +49,9 @@ Since clp(fd) is not loaded when SWI Prolog started, you can simply import the m
 :- use_module(library(clpfd).
 ```
 
-As a learning exercise, we have converted 3 types of commonly known logic puzzles,
-* [Cryptarithmetic Puzzle](#CryptarithmeticPuzzle)
-* [Logic Puzzle](#LogicPuzzle)
-* [Spatial Logic Puzzle](#SpatialLogicPuzzle)
+As a learning exercise, we have converted 3 types of commonly known logic puzzles: Cryptarithmetic Puzzle, Logic Puzzle, and Spatial Logic Puzzle. These can be elegantly and efficiently solved with Prolog and constraints. The first 2 types of puzzles can be very directly modelled and solved as combinatorial tasks. The third type needs more effort to find a suitable formulation as such tasks. After encoding all of these puzzles as integers, Prolog constraints can search over the different states efficiently.
 
-These can be elegantly and efficiently solved with Prolog and constraints.
-The first 2 types of puzzles (1) *Cryptarithmetic Puzzle* and (2) *Logic Puzzle* can be very directly modelled and solved as combinatorial tasks.
-The third type (3) *Spatial Logic Puzzle* needs more effort to find a suitable formulation as such tasks. After encoding all of these puzzles as integers, Prolog constraints can search over the different states efficiently.
-
-## <a name='CryptarithmeticPuzzle'></a> Cryptarithmetic Puzzle - Summation Problem
+## Cryptarithmetic Puzzle - Summation Problem
 The classical `SEND + MORE = MONEY` cryptarithmetic puzzle constrained the assignment of letters between the digits 0 thru 9. They spell out "SEND MORE MONEY" and when read as base 10 numbers create a true mathematical formula. An additional constraint is the leading letter is not permitted to be zero.
 
 Here is another similar cryptarithmetic puzzle of `FORTY + TEN + TEN = SIXTY` that we shall solve here.
@@ -140,7 +133,7 @@ As expected, the solution should be the same as before.
 X =  ([2, 9, 7, 8, 6]+[8, 5, 0]+[8, 5, 0]=[3, 1, 4, 8, 6]) .
 ```
 
-## <a name='LogicPuzzle'></a> Logic Puzzle - Revisit Zebra Puzzle
+## Logic Puzzle - Revisit Zebra Puzzle
 
 We can also revisit the [Zebra Puzzle](https://en.wikipedia.org/wiki/Zebra_Puzzle) using the constructs of constraint programming.
 Just for convenience, we shall repeat the puzzle and then we can provide a solution by using clp(fd) [[CLPFD-PUZZLE]](#CLPFD-PUZZLE).
@@ -222,7 +215,7 @@ Vs = [3, 5, 1, 2, 4, 3, 4, 2, 1|...] ;
 false.
 ```
 
-## <a name='SpatialLogicPuzzle'></a> Spatial Logic - Revisit House Puzzle
+## Spatial Logic - Revisit House Puzzle
 The previous article on "[Spatial Reasoning Explained](http://bennycheung.github.io/spatial-reasoning-explained)" presented a typical spatial logic puzzle that is often found in the puzzle books. We described a solution using a spatial topological network of houses to support their directional relations (e.g. east, west, north, south).
 Now, we shall revisit the problem by using clp(fd) to solve this house puzzle.
 
@@ -329,7 +322,7 @@ In particular, learning directly from the author of clp(fd) on the subject of Pu
 
 After all, I am totally in love with the Prolog's constraint logic programming! Be warned, there is no turning back. :)
 
-## <a name='References'></a> References
+## References
 * <a name="SWIPROLOG-CLP">[[SWIPROLOG-CLP]](https://www.swi-prolog.org/man/clpfd.html) SWI-Prolog Documentation - library(clpfd)
   * SWI-Prolog implementation of clp(fd), authored by Markus Triska. Markus Triska also has a youtube channel that provides excellent teaching on Prolog programming. 
 

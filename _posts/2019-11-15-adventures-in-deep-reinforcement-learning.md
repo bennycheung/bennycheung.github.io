@@ -43,13 +43,7 @@ Using PySC2 helps to understand the practical aspect of reinforcement learning, 
 
 Games are ideal environments for reinforcement learning research. RL problems on real-time strategy (RTS) games are far more difficult than problems on Go due to complexity of states, diversity of actions, and long time horizon. The following is my practical research notes that capture this learning and doing process. This article is intended to provide a concise experimental roadmap to follow. Each section starts with a list of reference resources and then follows with what can be tried. Some information is excrept from the original sources for reader convenience, in particular being able to learn how to setup and running the experiements. As always, ability to use Python is fundamental to the adventures.
 
-* [PySC2 Installation](#PySC2)
-* [PySC2 Deep RL Agents](#DeepRLAgent)
-* [Understanding PySC2 Deep RL](#UnderstandingDeepRL)
-* [AlphaStar the Next Level?](#NextLevel)
-* [More References](#References)
-
-## <a name='PySC2'></a> PySC2 Installation
+## PySC2 Installation
 * Ref: StarCraft II Learning Environment, <https://github.com/deepmind/pysc2>
 * Ref: StarCraft II Client - protocol definitions used to communicate with StarCraft II <https://github.com/Blizzard/s2client-proto>
 
@@ -86,7 +80,7 @@ This works for any replay as long as the map can be found by the game. The same 
 
 You can save a video of the replay with the `--video` flag
 
-## <a name='DeepRLAgent'></a> PySC2 Deep RL Agents
+## PySC2 Deep RL Agents
 * Ref: Oriol Vinyals et. al., StarCraft II: A New Challenge for Reinforcement Learning, Aug 2017. <https://arxiv.org/abs/1708.04782>
 * Ref: StarCraft II / PySC2 Deep Reinforcement Learning Agents (A2C) <https://github.com/simonmeister/pysc2-rl-agents>
 
@@ -157,7 +151,7 @@ In the following shows the plot for the score over episodes.
 
 ![Score of DQN traning on MoveToBeacon mini-game]({{ site.baseurl }}images/adventures-in-deep-reinforcement-learning/DQN_MoveToBeacon_Minigame_train.jpg)
 
-## <a name='UnderstandingDeepRL'></a> Understanding PySC2 Deep RL
+## Understanding PySC2 Deep RL
 * Ref: Gema Parreño, StarCraft II Learning environment full overview (series of 7 blogs)
     * **(III)** Theory : Deep Reinforcement Learning Overview <https://medium.com/@gema.parreno.piqueras/starcraft-ii-learning-environment-full-overview-iii-f7c2bc8cb4fb>
     * (IV) Theory : pySC2 environment <https://medium.com/@gema.parreno.piqueras/starcraft-ii-learning-environment-full-overview-iv-2fb1a7c2667>
@@ -252,7 +246,7 @@ You can test the new mini-games bot agents from `scripted_agent_test.py` by
 python -m pysc2.bin.agent --map HallucinIce --agent pysc2.agents.scripted_agent_test.HallucinationArchon
 ```
 
-## <a name='NextLevel'></a> AlphaStar the Next Level?
+## AlphaStar the Next Level?
 * Ref: DeepMind's AlphaStar Team, AlphaStar: Mastering the Real-Time Strategy Game StarCraft II, Jan 2019. <https://deepmind.com/blog/article/alphastar-mastering-real-time-strategy-game-starcraft-ii>
 * Ref: Dave Gershgorn, DeepMind’s StarCraft Bot Has a 191-Year Head Start on Humanity, Oct 2019. <https://onezero.medium.com/deepminds-starcraft-bot-has-a-191-year-head-start-on-humanity-4590032b23ab>
 
@@ -272,7 +266,7 @@ Subsequently, these were then used to seed a multi-agent reinforcement learning 
 
 Looks like the new level of AI using deep reinforcement learning is promising!
 
-## <a name='References'></a> More References
+## More References
 * David Silver, Reinforcement Learning, a series of 10 youtube video lectures <https://www.youtube.com/watch?v=2pWv7GOvuf0&list=PLzuuYNsE1EZAXYR4FJ75jcJseBmo4KQ9->
   * This is valuable if you are new to RL and want to understand the mathematical and philosophical background to Reinforcement Learning.
 * Richard Sutton and Andrew Barto, Reinforcement Learning: An Introduction, MIT Press, 2017, ISBN:9780262193986
