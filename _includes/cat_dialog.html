@@ -1,0 +1,163 @@
+<!-- Cat Dialog Bubble -->
+<style>
+#cat-hover-zone {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 150px;
+  height: 300px;
+  z-index: 9998;
+  cursor: pointer;
+}
+
+#cat-speech-bubble {
+  position: fixed;
+  bottom: 200px;
+  right: 10px;
+  max-width: 220px;
+  padding: 12px 15px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  font-size: 13px;
+  line-height: 1.5;
+  color: #333;
+  z-index: 9999;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+#cat-speech-bubble.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Speech bubble tail */
+#cat-speech-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  right: 50px;
+  border: 10px solid transparent;
+  border-top-color: #fff;
+  border-bottom: 0;
+}
+
+/* Dark mode support */
+html.dark-mode #cat-speech-bubble {
+  background: #1f2940;
+  color: #e0e0e0;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+html.dark-mode #cat-speech-bubble::after {
+  border-top-color: #1f2940;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  #cat-hover-zone {
+    width: 75px;
+    height: 150px;
+  }
+  
+  #cat-speech-bubble {
+    bottom: 170px;
+    right: 10px;
+    max-width: 180px;
+    font-size: 12px;
+  }
+}
+</style>
+
+<div id="cat-hover-zone"></div>
+<div id="cat-speech-bubble"></div>
+
+<script>
+(function() {
+  var catMessages = [
+    // Blog facts
+    "This blog explores AI, spatial reasoning, and blockchain since 2016! 🧠",
+    "Fun fact: Benny trained custom AI models using Stable Diffusion and Dreambooth!",
+    "The 'Race for the Galaxy' AI used neural networks back in 2009 - before AlphaGo! 🎮",
+    "This blog covers 100+ posts on AI, deep learning, and computer vision!",
+    "Benny's master's thesis was on AI expert systems and spatial reasoning! 🎓",
+    "Explore topics from Prolog logic programming to GenAI cost optimization!",
+    
+    // Navigation tips
+    "Try the dark mode toggle in the header! 🌙",
+    "Check out Related Posts at the end of each article!",
+    "Use the Table of Contents to jump to sections! 📑",
+    "Click any image to see it full-size! 🔍",
+    "Share posts easily with the Twitter and LinkedIn buttons!",
+    "Browse by tag to find related content! 🏷️",
+    
+    // Post teasers
+    "Have you read about YOLO for real-time food detection? 🍕",
+    "Explore spatial reasoning - the key to AGI beyond LLMs!",
+    "Learn how to ask questions of a book using LangChain and OpenAI! 📚",
+    "Discover the Dify platform for hands-on GenAI learning!",
+    "Check out the guide on Ethereum mining with GPUs! ⛏️",
+    
+    // Fun messages
+    "Meow! Welcome to Benny's Mind Hack! 🐱",
+    "*purrs* Thanks for visiting!",
+    "I'm Hijiki, your friendly blog guide! 😸",
+    "Hover over me anytime for tips and facts!",
+    "Happy reading! Let me know if you need anything! 📖"
+  ];
+  
+  var lastMessageIndex = -1;
+  var hideTimeout;
+  var bubble = document.getElementById('cat-speech-bubble');
+  var hoverZone = document.getElementById('cat-hover-zone');
+  
+  function getRandomMessage() {
+    var index;
+    do {
+      index = Math.floor(Math.random() * catMessages.length);
+    } while (index === lastMessageIndex && catMessages.length > 1);
+    lastMessageIndex = index;
+    return catMessages[index];
+  }
+  
+  function showBubble() {
+    clearTimeout(hideTimeout);
+    bubble.textContent = getRandomMessage();
+    bubble.classList.add('visible');
+  }
+  
+  function hideBubble() {
+    bubble.classList.remove('visible');
+  }
+  
+  // Hover events
+  hoverZone.addEventListener('mouseenter', function() {
+    showBubble();
+  });
+  
+  hoverZone.addEventListener('mouseleave', function() {
+    hideTimeout = setTimeout(hideBubble, 1500);
+  });
+  
+  // Touch support for mobile
+  hoverZone.addEventListener('touchstart', function(e) {
+    e.preventDefault();
+    if (bubble.classList.contains('visible')) {
+      hideBubble();
+    } else {
+      showBubble();
+      hideTimeout = setTimeout(hideBubble, 4000);
+    }
+  });
+  
+  // Show initial greeting after 3 seconds
+  setTimeout(function() {
+    bubble.textContent = "Meow! Hover over me for tips about this blog! 🐱";
+    bubble.classList.add('visible');
+    setTimeout(hideBubble, 4000);
+  }, 3000);
+})();
+</script>
