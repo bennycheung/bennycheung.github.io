@@ -340,12 +340,78 @@ td {
 }
 
 /*
- * Code Copy Button
+ * Code Block Styling
  */
-pre {
+pre,
+.highlight pre {
   position: relative;
+  background: #1e1e1e;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 20px 0;
+  overflow-x: auto;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  border: 1px solid #333;
 }
 
+pre code,
+.highlight pre code {
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+  color: #d4d4d4;
+  white-space: pre;
+  word-wrap: normal;
+}
+
+/* Inline code */
+:not(pre) > code {
+  background: #f0f0f0;
+  color: #c7254e;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+  font-size: 0.9em;
+}
+
+/* Language label */
+pre[data-lang]::before {
+  content: attr(data-lang);
+  position: absolute;
+  top: 0;
+  right: 40px;
+  padding: 4px 10px;
+  font-size: 11px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  color: #888;
+  background: #2d2d2d;
+  border-radius: 0 0 6px 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Scrollbar styling for code blocks */
+pre::-webkit-scrollbar {
+  height: 8px;
+}
+
+pre::-webkit-scrollbar-track {
+  background: #2d2d2d;
+  border-radius: 4px;
+}
+
+pre::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 4px;
+}
+
+pre::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+/* Code Copy Button */
 .code-copy-btn {
   position: absolute;
   top: 8px;
@@ -354,14 +420,21 @@ pre {
   transition: opacity 0.2s;
   z-index: 10;
   padding: 4px 8px;
+  background: #3d3d3d;
+  border: 1px solid #555;
+  color: #ccc;
+  border-radius: 4px;
+  font-size: 12px;
 }
 
 pre:hover .code-copy-btn {
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 .code-copy-btn:hover {
   opacity: 1 !important;
+  background: #4d4d4d;
+  color: #fff;
 }
 
 .code-copy-btn.copied {
@@ -369,6 +442,25 @@ pre:hover .code-copy-btn {
   border-color: #5cb85c;
   color: white;
   opacity: 1 !important;
+}
+
+@media (max-width: 768px) {
+  pre,
+  .highlight pre {
+    padding: 12px;
+    font-size: 13px;
+    border-radius: 6px;
+    margin: 15px -15px;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+  }
+
+  pre[data-lang]::before {
+    right: 35px;
+    padding: 3px 8px;
+    font-size: 10px;
+  }
 }
 
 /*
