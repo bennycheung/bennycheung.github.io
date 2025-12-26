@@ -2,10 +2,10 @@
 <style>
 #cat-hover-zone {
   position: fixed;
-  bottom: 0;
+  bottom: 80px;
   right: 0;
   width: 150px;
-  height: 300px;
+  height: 220px;
   z-index: 9998;
   cursor: pointer;
 }
@@ -78,8 +78,9 @@ html.dark-mode #cat-speech-bubble::after {
 /* Mobile adjustments */
 @media (max-width: 768px) {
   #cat-hover-zone {
+    bottom: 65px;
     width: 75px;
-    height: 150px;
+    height: 120px;
   }
   
   #cat-speech-bubble {
