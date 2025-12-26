@@ -18,7 +18,7 @@ images:
   cover: images/game-architecture-card-ai-3/cover.jpg
   header: images/game-architecture-card-ai-3/header.jpg
 published: true
-series: "Race for the Galaxy AI"
+series: "Games AI"
 series_order: 3
 ---
 

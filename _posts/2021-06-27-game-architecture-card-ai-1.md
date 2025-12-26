@@ -20,7 +20,7 @@ images:
 published: true
 featured: true
 featured_order: 3
-series: "Race for the Galaxy AI"
+series: "Games AI"
 series_order: 1
 ---
 
