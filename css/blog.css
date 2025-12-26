@@ -1916,3 +1916,347 @@ html.dark-mode .landing-nav a.btn.btn-default.btn-lg:focus {
 html.dark-mode .landing-nav a.btn.btn-default.btn-lg i {
   color: inherit !important;
 }
+
+/* ==========================================================================
+   Series Navigation Styles
+   ========================================================================== */
+
+.series-nav {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border: 1px solid #dee2e6;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 30px 0;
+}
+
+.series-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.series-label {
+  background: #428bca;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.series-title {
+  margin: 0;
+  flex: 1;
+  font-size: 18px;
+  color: #333;
+}
+
+.series-progress {
+  background: #6c757d;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.series-posts {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.series-post {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  background: white;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #333;
+  transition: all 0.2s ease;
+}
+
+.series-post:hover {
+  background: #e9ecef;
+  text-decoration: none;
+  color: #428bca;
+}
+
+.series-post.current {
+  background: #428bca;
+  color: white;
+}
+
+.series-post.current:hover {
+  background: #3071a9;
+  color: white;
+}
+
+.series-post-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: #dee2e6;
+  border-radius: 50%;
+  font-weight: 600;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.series-post.current .series-post-number {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.series-post-title {
+  flex: 1;
+  font-size: 14px;
+}
+
+.series-post .fa-arrow-left {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.series-nav-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.series-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: #428bca;
+  color: white;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.series-btn:hover {
+  background: #3071a9;
+  color: white;
+  text-decoration: none;
+}
+
+/* Series Landing Page Styles */
+.series-landing {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.series-card {
+  background: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+.series-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #428bca 0%, #3071a9 100%);
+  color: white;
+}
+
+.series-card-header h2 {
+  margin: 0;
+  font-size: 22px;
+  color: white;
+}
+
+.series-count {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+.series-card-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.series-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.series-card-posts {
+  padding: 10px;
+}
+
+.series-card-post {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #333;
+  transition: background 0.2s ease;
+}
+
+.series-card-post:hover {
+  background: #f8f9fa;
+  text-decoration: none;
+}
+
+.series-card-post .post-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: #428bca;
+  color: white;
+  border-radius: 50%;
+  font-weight: 600;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.series-card-post .post-info {
+  flex: 1;
+}
+
+.series-card-post .post-info h4 {
+  margin: 0 0 4px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.series-card-post:hover .post-info h4 {
+  color: #428bca;
+}
+
+.series-card-post .post-meta {
+  margin: 0;
+  font-size: 13px;
+  color: #6c757d;
+}
+
+/* Dark Mode Series Styles */
+html.dark-mode .series-nav {
+  background: linear-gradient(135deg, #1f2940 0%, #151d2e 100%);
+  border-color: #2d3748;
+}
+
+html.dark-mode .series-header {
+  border-bottom-color: #2d3748;
+}
+
+html.dark-mode .series-title {
+  color: #e0e0e0;
+}
+
+html.dark-mode .series-post {
+  background: #0d1321;
+  color: #e0e0e0;
+}
+
+html.dark-mode .series-post:hover {
+  background: #1f2940;
+  color: #60a5fa;
+}
+
+html.dark-mode .series-post.current {
+  background: #60a5fa;
+  color: #0d1321;
+}
+
+html.dark-mode .series-post-number {
+  background: #2d3748;
+  color: #e0e0e0;
+}
+
+html.dark-mode .series-post.current .series-post-number {
+  background: rgba(0, 0, 0, 0.2);
+  color: #0d1321;
+}
+
+html.dark-mode .series-btn {
+  background: #60a5fa;
+  color: #0d1321;
+}
+
+html.dark-mode .series-btn:hover {
+  background: #93c5fd;
+  color: #0d1321;
+}
+
+html.dark-mode .series-card {
+  background: #1f2940;
+  border-color: #2d3748;
+}
+
+html.dark-mode .series-card-header {
+  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+}
+
+html.dark-mode .series-card-post {
+  color: #e0e0e0;
+}
+
+html.dark-mode .series-card-post:hover {
+  background: #151d2e;
+}
+
+html.dark-mode .series-card-post .post-number {
+  background: #60a5fa;
+  color: #0d1321;
+}
+
+html.dark-mode .series-card-post .post-info h4 {
+  color: #e0e0e0;
+}
+
+html.dark-mode .series-card-post:hover .post-info h4 {
+  color: #60a5fa;
+}
+
+html.dark-mode .series-card-post .post-meta {
+  color: #9ca3af;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .series-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .series-nav-buttons {
+    flex-direction: column;
+  }
+
+  .series-btn {
+    justify-content: center;
+  }
+
+  .series-card-header h2 {
+    font-size: 18px;
+  }
+
+  .series-card-image {
+    height: 150px;
+  }
+}

@@ -16,6 +16,8 @@ images:
   cover: images/model-of-spatial-construction/cover.jpg
   header: images/model-of-spatial-construction/header.jpg
 published: true
+series: "Spatial Reasoning"
+series_order: 2
 ---
 
 <!--excerpt.start-->

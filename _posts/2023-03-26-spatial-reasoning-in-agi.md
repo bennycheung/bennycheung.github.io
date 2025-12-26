@@ -18,6 +18,8 @@ images:
   cover: images/spatial-reasoning-in-agi/cover.jpg
   header: images/spatial-reasoning-in-agi/header.jpg
 published: true
+series: "Spatial Reasoning"
+series_order: 3
 ---
 
 <!--excerpt.start-->

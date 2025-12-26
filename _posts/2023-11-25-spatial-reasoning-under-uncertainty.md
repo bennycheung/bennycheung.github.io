@@ -19,6 +19,8 @@ images:
   cover: images/spatial-reasoning-under-uncertainty/cover.jpg
   header: images/spatial-reasoning-under-uncertainty/header.jpg
 published: true
+series: "Spatial Reasoning"
+series_order: 4
 ---
 
 <!--excerpt.start-->

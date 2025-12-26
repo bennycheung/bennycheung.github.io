@@ -1,0 +1,62 @@
+---
+layout: page
+title: Series
+permalink: /series/
+---
+
+<div class="series-landing">
+  <p class="text-muted">Multi-part article series exploring topics in depth.</p>
+
+  {% assign all_series = "" | split: "" %}
+  {% for post in site.posts %}
+    {% if post.series %}
+      {% unless all_series contains post.series %}
+        {% assign all_series = all_series | push: post.series %}
+      {% endunless %}
+    {% endif %}
+  {% endfor %}
+
+  {% for series_name in all_series %}
+    {% assign series_posts = site.posts | where: "series", series_name | sort: "series_order" %}
+    {% assign first_post = series_posts | first %}
+
+    <div class="series-card">
+      <div class="series-card-header">
+        <h2>{{ series_name }}</h2>
+        <span class="series-count">{{ series_posts.size }} parts</span>
+      </div>
+
+      {% if first_post.images.cover %}
+      <div class="series-card-image">
+        <img src="/{{ first_post.images.cover }}" alt="{{ series_name }}" loading="lazy">
+      </div>
+      {% elsif first_post.image %}
+      <div class="series-card-image">
+        <img src="/{{ first_post.image }}" alt="{{ series_name }}" loading="lazy">
+      </div>
+      {% endif %}
+
+      <div class="series-card-posts">
+        {% for post in series_posts %}
+        <a href="{{ post.url }}" class="series-card-post">
+          <span class="post-number">{{ post.series_order }}</span>
+          <div class="post-info">
+            <h4>{{ post.title }}</h4>
+            <p class="post-meta">
+              {{ post.date | date: "%b %-d, %Y" }}
+              {% assign words = post.content | number_of_words %}
+              {% assign reading_time = words | divided_by: 200 %}
+              {% if reading_time < 1 %}{% assign reading_time = 1 %}{% endif %}
+              &bull; {{ reading_time }} min read
+            </p>
+          </div>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  {% endfor %}
+
+  {% if all_series.size == 0 %}
+  <p class="text-muted">No series found. Series will appear here when posts have <code>series</code> and <code>series_order</code> front matter.</p>
+  {% endif %}
+</div>

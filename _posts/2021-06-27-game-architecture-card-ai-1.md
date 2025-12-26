@@ -20,6 +20,8 @@ images:
 published: true
 featured: true
 featured_order: 3
+series: "Race for the Galaxy AI"
+series_order: 1
 ---
 
 <!--excerpt.start-->

@@ -16,6 +16,8 @@ images:
   cover: images/spatial-reasoning-explained/cover.jpg
   header: images/spatial-reasoning-explained/header.jpg
 published: true
+series: "Spatial Reasoning"
+series_order: 1
 ---
 
 <!--excerpt.start-->

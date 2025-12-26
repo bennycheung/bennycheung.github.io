@@ -19,6 +19,8 @@ images:
   cover: images/attribute-based-encryption-for-healthcare-blockchain/cover.jpg
   header: images/attribute-based-encryption-for-healthcare-blockchain/header.jpg
 published: true
+series: "Blockchain Healthcare"
+series_order: 2
 ---
 
 <!--excerpt.start-->

@@ -19,6 +19,8 @@ images:
   cover: images/fhir-server-up-and-running/cover.jpg
   header: images/fhir-server-up-and-running/header.jpg
 published: true
+series: "Blockchain Healthcare"
+series_order: 1
 ---
 
 <!--excerpt.start-->
