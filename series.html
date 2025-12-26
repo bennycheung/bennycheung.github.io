@@ -7,17 +7,47 @@ permalink: /series/
 <div class="series-landing">
   <p class="text-muted">Multi-part article series exploring topics in depth.</p>
 
+  {% comment %}
+    Collect all unique series names from both old and new formats
+    Old: series: "Series Name"
+    New: series: [{name: "Series A", order: 1}, ...]
+  {% endcomment %}
   {% assign all_series = "" | split: "" %}
   {% for post in site.posts %}
     {% if post.series %}
-      {% unless all_series contains post.series %}
-        {% assign all_series = all_series | push: post.series %}
-      {% endunless %}
+      {% if post.series.first.name %}
+        {% comment %} New format: array of objects {% endcomment %}
+        {% for ps in post.series %}
+          {% unless all_series contains ps.name %}
+            {% assign all_series = all_series | push: ps.name %}
+          {% endunless %}
+        {% endfor %}
+      {% else %}
+        {% comment %} Old format: string {% endcomment %}
+        {% unless all_series contains post.series %}
+          {% assign all_series = all_series | push: post.series %}
+        {% endunless %}
+      {% endif %}
     {% endif %}
   {% endfor %}
 
   {% for series_name in all_series %}
-    {% assign series_posts = site.posts | where: "series", series_name | sort: "series_order" %}
+    {% comment %} Collect all posts in this series (checking both formats) {% endcomment %}
+    {% assign series_posts_unsorted = "" | split: "" %}
+    {% for post in site.posts %}
+      {% if post.series.first.name %}
+        {% for ps in post.series %}
+          {% if ps.name == series_name %}
+            {% assign series_posts_unsorted = series_posts_unsorted | push: post %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+      {% elsif post.series == series_name %}
+        {% assign series_posts_unsorted = series_posts_unsorted | push: post %}
+      {% endif %}
+    {% endfor %}
+
+    {% assign series_posts = series_posts_unsorted | sort: "series_order" %}
     {% assign first_post = series_posts | first %}
 
     <div class="series-card">
@@ -38,8 +68,19 @@ permalink: /series/
 
       <div class="series-card-posts">
         {% for post in series_posts %}
+          {% comment %} Get this post's order in current series {% endcomment %}
+          {% if post.series.first.name %}
+            {% for ps in post.series %}
+              {% if ps.name == series_name %}
+                {% assign post_order = ps.order %}
+                {% break %}
+              {% endif %}
+            {% endfor %}
+          {% else %}
+            {% assign post_order = post.series_order %}
+          {% endif %}
         <a href="{{ post.url }}" class="series-card-post">
-          <span class="post-number">{{ post.series_order }}</span>
+          <span class="post-number">{{ post_order }}</span>
           <div class="post-info">
             <h4>{{ post.title }}</h4>
             <p class="post-meta">
