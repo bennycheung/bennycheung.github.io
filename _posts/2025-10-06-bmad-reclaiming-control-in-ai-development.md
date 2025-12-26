@@ -18,6 +18,8 @@ images:
   cover: images/bmad-reclaiming-control-in-ai-dev/cover2x.jpg
   header: images/bmad-reclaiming-control-in-ai-dev/header.jpg
 published: true
+featured: true
+featured_order: 1
 ---
 
 <!--excerpt.start-->

@@ -18,8 +18,6 @@ images:
   cover: images/bmad-v6-intellectual-ecosystem/cover2x.jpg
   header: images/bmad-v6-intellectual-ecosystem/header.jpg
 published: true
-featured: true
-featured_order: 1
 ---
 
 <!--excerpt.start-->
