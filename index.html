@@ -41,11 +41,11 @@ layout: default
       </div>
     </div>
 
-    <!-- Secondary Featured Posts -->
+    <!-- Secondary Featured Posts (2 columns) -->
     {% if featured.size > 1 %}
     <div class="row featured-secondary">
       {% for post in featured offset:1 %}
-      <div class="col-sm-4">
+      <div class="col-sm-6">
         <div class="card">
           <a href="{{ post.url }}">
             {% if post.images.cover %}

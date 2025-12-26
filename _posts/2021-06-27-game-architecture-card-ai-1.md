@@ -20,8 +20,6 @@ images:
 published: true
 series: "Game Architecture"
 series_order: 1
-featured: true
-featured_order: 4
 ---
 
 <!--excerpt.start-->
