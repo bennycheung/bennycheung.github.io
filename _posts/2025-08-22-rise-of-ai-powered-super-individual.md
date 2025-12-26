@@ -20,6 +20,8 @@ images:
 published: true
 featured: true
 featured_order: 4
+series: "Philosophy of AI"
+series_order: 5
 ---
 
 <!--excerpt.start-->

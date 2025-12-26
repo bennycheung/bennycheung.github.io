@@ -18,6 +18,8 @@ images:
   cover: images/exploring-llms-on-universal-intelligence/cover.jpg
   header: images/exploring-llms-on-universal-intelligence/header.jpg
 published: true
+series: "Philosophy of AI"
+series_order: 2
 ---
 
 <!--excerpt.start-->

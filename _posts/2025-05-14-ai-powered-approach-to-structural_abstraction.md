@@ -18,6 +18,8 @@ images:
   cover: images/ai-powered-approach-to-structural_abstraction/cover2x.jpg
   header: images/ai-powered-approach-to-structural_abstraction/header.jpg
 published: true
+series: "Philosophy of AI"
+series_order: 4
 ---
 
 <!--excerpt.start-->

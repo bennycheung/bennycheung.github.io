@@ -19,6 +19,8 @@ images:
   cover: images/q-star-new-method-in-problem-solving/cover.jpg
   header: images/q-star-new-method-in-problem-solving/header.jpg
 published: true
+series: "Philosophy of AI"
+series_order: 1
 ---
 
 <!--excerpt.start-->
