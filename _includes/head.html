@@ -17,6 +17,23 @@
 	<meta name="author" content="{{ page.author | default: 'Benny Cheung' }}">
 	<meta name="google-site-verification" content="Q8ugHabWc9ghHIgttC6uXjdB40F3tpW2ar6lQ-CWTNo" />
 
+	<!-- Determine best social share image: prefer images.cover > image > site avatar -->
+	{% if page.images.cover %}
+		{% assign share_image = page.images.cover %}
+		{% assign share_image_width = "1200" %}
+		{% assign share_image_height = "630" %}
+	{% elsif page.image %}
+		{% assign share_image = page.image %}
+		{% assign share_image_width = "800" %}
+		{% assign share_image_height = "418" %}
+	{% else %}
+		{% assign share_image = "assets/avtar.jpg" %}
+		{% assign share_image_width = "400" %}
+		{% assign share_image_height = "400" %}
+	{% endif %}
+	{% assign share_image_url = site.url | append: "/" | append: share_image %}
+	{% assign share_image_alt = page.title | default: site.title | append: " - " | append: site.title %}
+
 	<!-- Twitter Card -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:site" content="@Benny_Cheung">
@@ -29,9 +46,8 @@
 	{% else %}
 		<meta name="twitter:description" content="{{ site.description }}">
 	{% endif %}
-	{% if page.image %}
-		<meta name="twitter:image" content="{{ site.url }}/{{ page.image }}">
-	{% endif %}
+	<meta name="twitter:image" content="{{ share_image_url }}">
+	<meta name="twitter:image:alt" content="{{ share_image_alt }}">
 
 	<!-- Open Graph -->
 	<meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}" />
@@ -46,9 +62,10 @@
 	{% else %}
 		<meta property="og:description" content="{{ site.description }}" />
 	{% endif %}
-	{% if page.image %}
-		<meta property="og:image" content="{{ site.url }}/{{ page.image }}" />
-	{% endif %}
+	<meta property="og:image" content="{{ share_image_url }}" />
+	<meta property="og:image:width" content="{{ share_image_width }}" />
+	<meta property="og:image:height" content="{{ share_image_height }}" />
+	<meta property="og:image:alt" content="{{ share_image_alt }}" />
 	{% if page.layout == 'post' %}
 		<meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}" />
 		<meta property="article:modified_time" content="{{ page.last_modified_at | default: page.date | date_to_xmlschema }}" />
