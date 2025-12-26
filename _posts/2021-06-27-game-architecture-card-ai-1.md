@@ -18,10 +18,10 @@ images:
   cover: images/game-architecture-card-ai-1/cover.jpg
   header: images/game-architecture-card-ai-1/header.jpg
 published: true
-featured: true
-featured_order: 3
 series: "Game Architecture"
 series_order: 1
+featured: true
+featured_order: 4
 ---
 
 <!--excerpt.start-->

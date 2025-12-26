@@ -19,7 +19,7 @@ images:
   header: images/dempster-shafer-theory-for-classification/header.jpg
 published: true
 featured: true
-featured_order: 2
+featured_order: 3
 ---
 
 <!--excerpt.start-->

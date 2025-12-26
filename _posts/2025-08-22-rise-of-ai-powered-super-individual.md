@@ -18,8 +18,6 @@ images:
   cover: images/rise-of-the-ai-powered-super-individual/cover2x.jpg
   header: images/rise-of-the-ai-powered-super-individual/header.jpg
 published: true
-featured: true
-featured_order: 4
 series: "Philosophy of AI"
 series_order: 5
 ---

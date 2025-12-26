@@ -1,0 +1,82 @@
+<!-- Reader Mode Toggle -->
+<script>
+(function() {
+  var STORAGE_KEY = 'reader-mode';
+  var READER_CLASS = 'reader-mode';
+
+  // Get stored preference (default off)
+  function getPreference() {
+    return localStorage.getItem(STORAGE_KEY) === 'true';
+  }
+
+  // Apply reader mode
+  function applyReaderMode(isReader) {
+    if (isReader) {
+      document.documentElement.classList.add(READER_CLASS);
+    } else {
+      document.documentElement.classList.remove(READER_CLASS);
+    }
+    updateIcon(isReader);
+    updateAriaLabel(isReader);
+  }
+
+  // Update toggle icon
+  function updateIcon(isReader) {
+    var btn = document.getElementById('reader-mode-toggle');
+    if (btn) {
+      var icon = btn.querySelector('i');
+      if (icon) {
+        icon.className = isReader ? 'fa fa-columns' : 'fa fa-book';
+      }
+    }
+  }
+
+  // Update aria-label for accessibility
+  function updateAriaLabel(isReader) {
+    var btn = document.getElementById('reader-mode-toggle');
+    if (btn) {
+      btn.setAttribute('aria-label', isReader ? 'Exit reader mode' : 'Enter reader mode');
+      btn.setAttribute('title', isReader ? 'Exit reader mode - show full layout' : 'Reader mode - clean view for reading');
+    }
+  }
+
+  // Initialize on page load
+  var isReader = getPreference();
+  applyReaderMode(isReader);
+
+  // Set up toggle button when DOM is ready
+  document.addEventListener('DOMContentLoaded', function() {
+    var btn = document.getElementById('reader-mode-toggle');
+    if (btn) {
+      // Update icon for initial state
+      updateIcon(getPreference());
+      updateAriaLabel(getPreference());
+
+      btn.addEventListener('click', function() {
+        var currentlyReader = document.documentElement.classList.contains(READER_CLASS);
+        var newState = !currentlyReader;
+        localStorage.setItem(STORAGE_KEY, newState);
+        applyReaderMode(newState);
+
+        // Announce mode change for screen readers
+        var message = newState ? 'Reader mode enabled. Showing article content only.' : 'Reader mode disabled. Showing full layout.';
+        announceToScreenReader(message);
+      });
+    }
+  });
+
+  // Announce changes to screen readers
+  function announceToScreenReader(message) {
+    var announcement = document.createElement('div');
+    announcement.setAttribute('role', 'status');
+    announcement.setAttribute('aria-live', 'polite');
+    announcement.setAttribute('aria-atomic', 'true');
+    announcement.className = 'sr-only';
+    announcement.textContent = message;
+    document.body.appendChild(announcement);
+    setTimeout(function() {
+      document.body.removeChild(announcement);
+    }, 1000);
+  }
+})();
+</script>

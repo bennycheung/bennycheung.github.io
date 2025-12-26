@@ -2260,3 +2260,520 @@ html.dark-mode .series-card-post .post-meta {
     height: 150px;
   }
 }
+
+/* ==========================================================================
+   Print Styles
+   Clean printing without navigation, comments, sidebar
+   Proper page breaks and code blocks with borders for clarity
+   ========================================================================== */
+
+@media print {
+  /* Reset colors for print */
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* Hide non-essential elements */
+  .blog-masthead,
+  .navbar,
+  .navbar-inverse,
+  .blog-nav,
+  .sidebar,
+  .blog-sidebar,
+  .social-share,
+  .share-buttons,
+  .related-posts,
+  .post-nav-cards,
+  .giscus,
+  #disqus_thread,
+  .comments,
+  #backToTop,
+  #back-to-top,
+  #reading-progress-container,
+  .reading-progress,
+  .dark-mode-btn,
+  .code-copy-btn,
+  .pager,
+  .pagination,
+  .posts-pagination,
+  .blog-footer,
+  footer,
+  .landing-nav,
+  .topic-cloud,
+  .series-nav-buttons,
+  .lightbox,
+  #imageLightbox,
+  .modal,
+  .modal-backdrop,
+  nav,
+  aside {
+    display: none !important;
+  }
+
+  /* Page setup */
+  @page {
+    margin: 2cm;
+    size: A4;
+  }
+
+  /* Body and container */
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+    font-family: Georgia, "Times New Roman", Times, serif;
+  }
+
+  .container,
+  .post-container,
+  .blog-main {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    float: none !important;
+  }
+
+  /* Typography */
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+    page-break-inside: avoid;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+
+  h1 {
+    font-size: 24pt;
+    margin-bottom: 10pt;
+  }
+
+  h2 {
+    font-size: 18pt;
+    margin-top: 20pt;
+    margin-bottom: 8pt;
+  }
+
+  h3 {
+    font-size: 14pt;
+    margin-top: 16pt;
+    margin-bottom: 6pt;
+  }
+
+  p, li {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* Links - show URL after link text */
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 10pt;
+    color: #666 !important;
+    font-weight: normal;
+  }
+
+  /* Don't show URL for internal links or anchor links */
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after,
+  .post-content a[href*="bennycheung.github.io"]::after {
+    content: "";
+  }
+
+  /* Images */
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+    page-break-before: auto;
+  }
+
+  .post-content img {
+    border: 1px solid #ccc !important;
+    padding: 4px;
+    margin: 15pt auto;
+  }
+
+  /* Code blocks - bordered for clarity */
+  pre,
+  .highlight pre {
+    background: #f8f8f8 !important;
+    border: 2px solid #333 !important;
+    border-radius: 4px;
+    padding: 12pt;
+    margin: 15pt 0;
+    page-break-inside: avoid;
+    overflow-x: visible;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 9pt;
+    line-height: 1.4;
+  }
+
+  pre code,
+  .highlight pre code {
+    background: transparent !important;
+    color: #000 !important;
+    font-size: inherit;
+  }
+
+  /* Language label for code blocks */
+  pre[data-lang]::before {
+    content: attr(data-lang) " code";
+    display: block;
+    margin-bottom: 8pt;
+    padding-bottom: 4pt;
+    border-bottom: 1px solid #999;
+    font-size: 9pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* Inline code */
+  :not(pre) > code {
+    background: #eee !important;
+    border: 1px solid #999 !important;
+    padding: 1pt 3pt;
+    border-radius: 2px;
+    font-size: 10pt;
+  }
+
+  /* Tables */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    page-break-inside: avoid;
+    margin: 15pt 0;
+  }
+
+  th, td {
+    border: 1px solid #333 !important;
+    padding: 6pt 8pt;
+    text-align: left;
+  }
+
+  th {
+    background: #eee !important;
+    font-weight: bold;
+  }
+
+  /* Blockquotes */
+  blockquote {
+    border-left: 3px solid #333 !important;
+    margin: 15pt 0;
+    padding: 10pt 15pt;
+    font-style: italic;
+    page-break-inside: avoid;
+  }
+
+  /* Blog post header */
+  .blog-post-title {
+    font-size: 22pt;
+    margin-bottom: 8pt;
+  }
+
+  .blog-post-meta {
+    font-size: 10pt;
+    margin-bottom: 20pt;
+    padding-bottom: 10pt;
+    border-bottom: 1px solid #ccc;
+  }
+
+  /* Table of Contents */
+  #auto-toc {
+    border: 1px solid #999 !important;
+    padding: 12pt;
+    margin-bottom: 20pt;
+    page-break-inside: avoid;
+  }
+
+  #auto-toc h4 {
+    margin-bottom: 8pt;
+    font-size: 12pt;
+  }
+
+  #auto-toc a::after {
+    content: "";
+  }
+
+  /* Series navigation - simplified for print */
+  .series-nav {
+    border: 1px solid #999 !important;
+    padding: 12pt;
+    margin: 20pt 0;
+    page-break-inside: avoid;
+  }
+
+  .series-label {
+    border: 1px solid #333 !important;
+    background: #eee !important;
+    padding: 2pt 6pt;
+  }
+
+  .series-posts {
+    margin-top: 10pt;
+  }
+
+  .series-post {
+    padding: 4pt 0;
+    border: none !important;
+  }
+
+  .series-post.current {
+    font-weight: bold;
+  }
+
+  .series-post-number {
+    border: 1px solid #333 !important;
+    background: transparent !important;
+  }
+
+  /* Avoid page breaks inside these elements */
+  figure,
+  .blog-image,
+  .highlight,
+  .series-nav,
+  #auto-toc {
+    page-break-inside: avoid;
+  }
+
+  /* Force page break before major sections if needed */
+  .page-break-before {
+    page-break-before: always;
+  }
+
+  /* Print header with page info */
+  .blog-post::before {
+    content: "Printed from bennycheung.github.io";
+    display: block;
+    font-size: 9pt;
+    color: #666 !important;
+    margin-bottom: 10pt;
+    padding-bottom: 5pt;
+    border-bottom: 1px solid #ccc;
+  }
+}
+
+/* ==========================================================================
+   Reader Mode Styles
+   Clean, distraction-free reading view optimized for voice assistants
+   ========================================================================== */
+
+/*
+ * Reader Mode Toggle Button
+ */
+.reader-mode-btn {
+  background: transparent;
+  border: none;
+  color: #9d9d9d;
+  font-size: 18px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.reader-mode-btn:hover {
+  color: #fff;
+}
+
+.reader-mode-btn:focus {
+  outline: none;
+}
+
+/* Active state when reader mode is on */
+html.reader-mode .reader-mode-btn {
+  color: #5cb85c;
+}
+
+html.reader-mode .reader-mode-btn:hover {
+  color: #4cae4c;
+}
+
+/*
+ * Reader Mode - Hide non-essential elements
+ */
+html.reader-mode .blog-sidebar,
+html.reader-mode .sidebar,
+html.reader-mode .social-share,
+html.reader-mode .share-buttons,
+html.reader-mode .related-posts,
+html.reader-mode .post-nav-cards,
+html.reader-mode .giscus,
+html.reader-mode #disqus_thread,
+html.reader-mode .comments,
+html.reader-mode .post-tags,
+html.reader-mode .topic-cloud,
+html.reader-mode .landing-nav,
+html.reader-mode .posts-pagination,
+html.reader-mode .series-nav-buttons,
+html.reader-mode #backToTop,
+html.reader-mode #back-to-top,
+html.reader-mode #reading-progress-container,
+html.reader-mode .code-copy-btn,
+html.reader-mode .artwork-credit {
+  display: none !important;
+}
+
+/*
+ * Reader Mode - Simplified Navigation
+ */
+html.reader-mode .blog-masthead,
+html.reader-mode .navbar {
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+}
+
+html.reader-mode .blog-masthead:hover,
+html.reader-mode .navbar:hover {
+  opacity: 1;
+}
+
+/*
+ * Reader Mode - Expand Content
+ */
+html.reader-mode .blog-main {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  float: none;
+}
+
+html.reader-mode .container {
+  width: 100%;
+  max-width: 850px;
+}
+
+html.reader-mode .row {
+  margin: 0;
+}
+
+html.reader-mode .col-sm-8,
+html.reader-mode .col-md-8 {
+  width: 100%;
+  float: none;
+}
+
+html.reader-mode .col-sm-3.col-sm-offset-1,
+html.reader-mode .col-md-3.col-md-offset-1 {
+  display: none;
+}
+
+/*
+ * Reader Mode - Enhanced Typography
+ */
+html.reader-mode .blog-main {
+  font-size: 19px;
+  line-height: 1.7;
+}
+
+html.reader-mode .blog-post-title {
+  font-size: 36px;
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+
+html.reader-mode .blog-post-meta {
+  font-size: 15px;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+html.reader-mode p {
+  margin-bottom: 1.5em;
+}
+
+html.reader-mode h2 {
+  margin-top: 2em;
+  margin-bottom: 0.8em;
+}
+
+html.reader-mode h3 {
+  margin-top: 1.5em;
+  margin-bottom: 0.6em;
+}
+
+/*
+ * Reader Mode - Clean Footer
+ */
+html.reader-mode .blog-footer,
+html.reader-mode footer {
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+html.reader-mode .blog-footer:hover,
+html.reader-mode footer:hover {
+  opacity: 1;
+}
+
+/*
+ * Reader Mode - Series Navigation (keep but simplify)
+ */
+html.reader-mode .series-nav {
+  margin: 30px 0;
+  padding: 15px;
+}
+
+html.reader-mode .series-nav-buttons {
+  display: none !important;
+}
+
+/*
+ * Reader Mode - TOC stays visible but simplified
+ */
+html.reader-mode #auto-toc {
+  margin-bottom: 40px;
+}
+
+/*
+ * Reader Mode - Indicator Banner
+ */
+html.reader-mode .blog-post::before {
+  content: "Reader Mode";
+  display: inline-block;
+  background: #5cb85c;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+}
+
+/*
+ * Reader Mode + Dark Mode Combined
+ */
+html.reader-mode.dark-mode .blog-post::before {
+  background: #4cae4c;
+}
+
+html.reader-mode.dark-mode .blog-masthead,
+html.reader-mode.dark-mode .navbar {
+  opacity: 0.4;
+}
+
+html.reader-mode.dark-mode .blog-post-meta {
+  border-bottom-color: var(--border-color);
+}
+
+/*
+ * Reader Mode - Mobile Responsive
+ */
+@media (max-width: 768px) {
+  html.reader-mode .blog-main {
+    font-size: 17px;
+    padding: 0 15px;
+  }
+
+  html.reader-mode .blog-post-title {
+    font-size: 28px;
+  }
+
+  html.reader-mode .blog-masthead,
+  html.reader-mode .navbar {
+    opacity: 1;
+  }
+}
