@@ -18,8 +18,11 @@ images:
   cover: images/spatial-reasoning-in-agi/cover.jpg
   header: images/spatial-reasoning-in-agi/header.jpg
 published: true
-series: "Spatial Reasoning"
-series_order: 3
+series:
+  - name: "Spatial Reasoning"
+    order: 3
+  - name: "Philosophy of AI"
+    order: 6
 ---
 
 <!--excerpt.start-->
