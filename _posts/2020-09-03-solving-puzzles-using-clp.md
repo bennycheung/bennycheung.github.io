@@ -17,7 +17,9 @@ image: images/solving-puzzles-using-clp/cover2x.jpg
 images:
   cover: images/solving-puzzles-using-clp/cover.jpg
   header: images/solving-puzzles-using-clp/header.jpg
-published: true 
+published: true
+series: "Logic Puzzles"
+series_order: 2
 ---
 
 <!--excerpt.start-->

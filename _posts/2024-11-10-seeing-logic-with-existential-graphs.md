@@ -17,7 +17,9 @@ image: images/seeing-logic-with-existential-graphs/post_cover.jpg
 images:
   cover: images/seeing-logic-with-existential-graphs/cover2x.jpg
   header: images/seeing-logic-with-existential-graphs/header.jpg
-published: true 
+published: true
+series: "Logic Puzzles"
+series_order: 3
 ---
 
 <!--excerpt.start-->
