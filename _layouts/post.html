@@ -28,6 +28,8 @@ comments: true
 		<p class="post-meta">{{ page.date | date: "%b %-d, %Y" }} • {{ reading_time }} min read{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
 
 		{% include post-tags.html %}
+
+		{%- comment -%} TTS disabled - enable with: {% include text_to_speech.html %} {%- endcomment -%}
 	</header>
 
 	{% include series_nav.html %}

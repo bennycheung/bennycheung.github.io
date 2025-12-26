@@ -1,0 +1,301 @@
+<!-- Text-to-Speech Player using Web Speech API -->
+<div id="tts-container" class="tts-container">
+  <button id="tts-toggle" class="tts-toggle-btn" title="Listen to this article" aria-label="Listen to article">
+    <i class="fa fa-headphones"></i>
+    <span class="tts-label">Listen</span>
+  </button>
+
+  <div id="tts-player" class="tts-player" style="display: none;">
+    <div class="tts-controls">
+      <button id="tts-play" class="tts-btn tts-play-btn" title="Play" aria-label="Play">
+        <i class="fa fa-play"></i>
+      </button>
+      <button id="tts-pause" class="tts-btn tts-pause-btn" title="Pause" aria-label="Pause" style="display: none;">
+        <i class="fa fa-pause"></i>
+      </button>
+      <button id="tts-stop" class="tts-btn tts-stop-btn" title="Stop" aria-label="Stop">
+        <i class="fa fa-stop"></i>
+      </button>
+
+      <div class="tts-progress-container">
+        <div id="tts-progress" class="tts-progress">
+          <div id="tts-progress-bar" class="tts-progress-bar"></div>
+        </div>
+        <span id="tts-time" class="tts-time">0:00</span>
+      </div>
+
+      <div class="tts-speed-container">
+        <label for="tts-speed" class="tts-speed-label">Speed:</label>
+        <select id="tts-speed" class="tts-speed-select" aria-label="Playback speed">
+          <option value="0.5">0.5x</option>
+          <option value="0.75">0.75x</option>
+          <option value="1" selected>1x</option>
+          <option value="1.25">1.25x</option>
+          <option value="1.5">1.5x</option>
+          <option value="2">2x</option>
+        </select>
+      </div>
+
+      <button id="tts-close" class="tts-btn tts-close-btn" title="Close player" aria-label="Close player">
+        <i class="fa fa-times"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  // Check for Web Speech API support
+  if (!('speechSynthesis' in window)) {
+    document.getElementById('tts-container').style.display = 'none';
+    return;
+  }
+
+  const synth = window.speechSynthesis;
+  let utterance = null;
+  let isPaused = false;
+  let isPlaying = false;
+  let textChunks = [];
+  let currentChunkIndex = 0;
+  let startTime = 0;
+  let elapsedTime = 0;
+  let timerInterval = null;
+
+  // DOM elements
+  const container = document.getElementById('tts-container');
+  const toggleBtn = document.getElementById('tts-toggle');
+  const player = document.getElementById('tts-player');
+  const playBtn = document.getElementById('tts-play');
+  const pauseBtn = document.getElementById('tts-pause');
+  const stopBtn = document.getElementById('tts-stop');
+  const closeBtn = document.getElementById('tts-close');
+  const speedSelect = document.getElementById('tts-speed');
+  const progressBar = document.getElementById('tts-progress-bar');
+  const timeDisplay = document.getElementById('tts-time');
+
+  // Get article text content
+  function getArticleText() {
+    const article = document.querySelector('.post-content');
+    if (!article) return '';
+
+    // Clone to avoid modifying the DOM
+    const clone = article.cloneNode(true);
+
+    // Remove code blocks, scripts, and other non-readable elements
+    const removeSelectors = [
+      'pre', 'code', 'script', 'style', 'noscript',
+      '.highlight', '.language-', 'svg', 'math', '.MathJax',
+      'img', 'video', 'audio', 'iframe', 'table'
+    ];
+    removeSelectors.forEach(sel => {
+      clone.querySelectorAll(sel).forEach(el => el.remove());
+    });
+
+    // Get text and clean it up
+    let text = clone.textContent || clone.innerText;
+    text = text.replace(/\s+/g, ' ').trim();
+
+    return text;
+  }
+
+  // Split text into chunks (Web Speech API has limits)
+  function splitIntoChunks(text, maxLength = 200) {
+    const sentences = text.match(/[^.!?]+[.!?]+/g) || [text];
+    const chunks = [];
+    let currentChunk = '';
+
+    sentences.forEach(sentence => {
+      if ((currentChunk + sentence).length < maxLength) {
+        currentChunk += sentence;
+      } else {
+        if (currentChunk) chunks.push(currentChunk.trim());
+        currentChunk = sentence;
+      }
+    });
+
+    if (currentChunk) chunks.push(currentChunk.trim());
+    return chunks;
+  }
+
+  // Format time as M:SS
+  function formatTime(seconds) {
+    const mins = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${mins}:${secs.toString().padStart(2, '0')}`;
+  }
+
+  // Update timer display
+  function updateTimer() {
+    if (isPlaying && !isPaused) {
+      elapsedTime = Math.floor((Date.now() - startTime) / 1000);
+      timeDisplay.textContent = formatTime(elapsedTime);
+    }
+  }
+
+  // Update progress bar
+  function updateProgress() {
+    if (textChunks.length > 0) {
+      const progress = ((currentChunkIndex + 1) / textChunks.length) * 100;
+      progressBar.style.width = `${progress}%`;
+    }
+  }
+
+  // Speak a chunk of text
+  function speakChunk(index) {
+    if (index >= textChunks.length) {
+      stopSpeaking();
+      return;
+    }
+
+    currentChunkIndex = index;
+    utterance = new SpeechSynthesisUtterance(textChunks[index]);
+    utterance.rate = parseFloat(speedSelect.value);
+    utterance.pitch = 1;
+    utterance.volume = 1;
+
+    // Try to use a good English voice
+    const voices = synth.getVoices();
+    const preferredVoice = voices.find(v =>
+      v.lang.startsWith('en') && (v.name.includes('Google') || v.name.includes('Microsoft') || v.name.includes('Samantha'))
+    ) || voices.find(v => v.lang.startsWith('en'));
+
+    if (preferredVoice) {
+      utterance.voice = preferredVoice;
+    }
+
+    utterance.onend = function() {
+      if (isPlaying && !isPaused) {
+        speakChunk(currentChunkIndex + 1);
+      }
+    };
+
+    utterance.onerror = function(e) {
+      if (e.error !== 'interrupted') {
+        console.error('Speech error:', e.error);
+      }
+    };
+
+    synth.speak(utterance);
+    updateProgress();
+  }
+
+  // Start speaking
+  function startSpeaking() {
+    const text = getArticleText();
+    if (!text) {
+      alert('No article content found to read.');
+      return;
+    }
+
+    textChunks = splitIntoChunks(text);
+    currentChunkIndex = 0;
+    isPlaying = true;
+    isPaused = false;
+    startTime = Date.now();
+    elapsedTime = 0;
+
+    playBtn.style.display = 'none';
+    pauseBtn.style.display = 'inline-flex';
+
+    timerInterval = setInterval(updateTimer, 1000);
+    speakChunk(0);
+  }
+
+  // Pause speaking
+  function pauseSpeaking() {
+    if (synth.speaking) {
+      synth.pause();
+      isPaused = true;
+      playBtn.style.display = 'inline-flex';
+      pauseBtn.style.display = 'none';
+    }
+  }
+
+  // Resume speaking
+  function resumeSpeaking() {
+    if (isPaused) {
+      synth.resume();
+      isPaused = false;
+      startTime = Date.now() - (elapsedTime * 1000);
+      playBtn.style.display = 'none';
+      pauseBtn.style.display = 'inline-flex';
+    }
+  }
+
+  // Stop speaking
+  function stopSpeaking() {
+    synth.cancel();
+    isPlaying = false;
+    isPaused = false;
+    currentChunkIndex = 0;
+    elapsedTime = 0;
+
+    playBtn.style.display = 'inline-flex';
+    pauseBtn.style.display = 'none';
+    progressBar.style.width = '0%';
+    timeDisplay.textContent = '0:00';
+
+    if (timerInterval) {
+      clearInterval(timerInterval);
+      timerInterval = null;
+    }
+  }
+
+  // Toggle player visibility
+  toggleBtn.addEventListener('click', function() {
+    const isVisible = player.style.display !== 'none';
+    player.style.display = isVisible ? 'none' : 'flex';
+    toggleBtn.classList.toggle('active', !isVisible);
+  });
+
+  // Play button
+  playBtn.addEventListener('click', function() {
+    if (isPaused) {
+      resumeSpeaking();
+    } else if (!isPlaying) {
+      startSpeaking();
+    }
+  });
+
+  // Pause button
+  pauseBtn.addEventListener('click', pauseSpeaking);
+
+  // Stop button
+  stopBtn.addEventListener('click', stopSpeaking);
+
+  // Close button
+  closeBtn.addEventListener('click', function() {
+    stopSpeaking();
+    player.style.display = 'none';
+    toggleBtn.classList.remove('active');
+  });
+
+  // Speed change
+  speedSelect.addEventListener('change', function() {
+    localStorage.setItem('tts-speed', this.value);
+    if (isPlaying && utterance) {
+      // Restart from current position with new speed
+      const currentIndex = currentChunkIndex;
+      synth.cancel();
+      speakChunk(currentIndex);
+    }
+  });
+
+  // Load saved speed preference
+  const savedSpeed = localStorage.getItem('tts-speed');
+  if (savedSpeed) {
+    speedSelect.value = savedSpeed;
+  }
+
+  // Ensure voices are loaded
+  if (synth.onvoiceschanged !== undefined) {
+    synth.onvoiceschanged = function() {};
+  }
+
+  // Cancel speech when navigating away
+  window.addEventListener('beforeunload', function() {
+    synth.cancel();
+  });
+
+})();
+</script>

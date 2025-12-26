@@ -3291,3 +3291,225 @@ html.dark-mode .search-no-results a {
     font-size: 18px;
   }
 }
+
+/* ==========================================================================
+   Text-to-Speech Player Styles
+   ========================================================================== */
+
+.tts-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+/* Listen toggle button */
+.tts-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.tts-toggle-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.tts-toggle-btn.active {
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+.tts-toggle-btn i {
+  font-size: 14px;
+}
+
+/* TTS Player */
+.tts-player {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: #f8f9fa;
+  border-radius: 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+}
+
+/* Control buttons */
+.tts-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background: white;
+  border: 1px solid #dee2e6;
+  border-radius: 50%;
+  color: #495057;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tts-btn:hover {
+  background: #e9ecef;
+  color: #212529;
+}
+
+.tts-play-btn:hover,
+.tts-pause-btn:hover {
+  background: #667eea;
+  border-color: #667eea;
+  color: white;
+}
+
+.tts-stop-btn:hover {
+  background: #dc3545;
+  border-color: #dc3545;
+  color: white;
+}
+
+.tts-close-btn {
+  width: 24px;
+  height: 24px;
+  font-size: 12px;
+}
+
+.tts-close-btn:hover {
+  background: #dc3545;
+  border-color: #dc3545;
+  color: white;
+}
+
+/* Progress container */
+.tts-progress-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 100px;
+  max-width: 200px;
+}
+
+.tts-progress {
+  flex: 1;
+  height: 4px;
+  background: #dee2e6;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.tts-progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.tts-time {
+  font-size: 12px;
+  color: #6c757d;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  min-width: 35px;
+}
+
+/* Speed selector */
+.tts-speed-container {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.tts-speed-label {
+  font-size: 12px;
+  color: #6c757d;
+  margin: 0;
+}
+
+.tts-speed-select {
+  padding: 4px 8px;
+  font-size: 12px;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  background: white;
+  color: #495057;
+  cursor: pointer;
+}
+
+.tts-speed-select:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+/* Dark mode support */
+[data-theme="dark"] .tts-player {
+  background: #2d3748;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .tts-btn {
+  background: #4a5568;
+  border-color: #4a5568;
+  color: #e2e8f0;
+}
+
+[data-theme="dark"] .tts-btn:hover {
+  background: #718096;
+  color: white;
+}
+
+[data-theme="dark"] .tts-progress {
+  background: #4a5568;
+}
+
+[data-theme="dark"] .tts-time,
+[data-theme="dark"] .tts-speed-label {
+  color: #a0aec0;
+}
+
+[data-theme="dark"] .tts-speed-select {
+  background: #4a5568;
+  border-color: #4a5568;
+  color: #e2e8f0;
+}
+
+/* Mobile responsive */
+@media (max-width: 576px) {
+  .tts-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .tts-player {
+    width: 100%;
+    justify-content: space-between;
+    padding: 10px;
+  }
+
+  .tts-progress-container {
+    order: 10;
+    width: 100%;
+    max-width: none;
+    margin-top: 8px;
+  }
+
+  .tts-speed-container {
+    order: 5;
+  }
+
+  .tts-close-btn {
+    order: 20;
+  }
+}
