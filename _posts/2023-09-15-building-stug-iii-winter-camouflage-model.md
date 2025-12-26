@@ -17,7 +17,9 @@ image: images/building-stug-iii-winter-camouflage-model/post_cover.jpg
 images:
   cover: images/building-stug-iii-winter-camouflage-model/cover2x.jpg
   header: images/building-stug-iii-winter-camouflage-model/header.jpg
-published: false
+published: true
+series: "Building Scale Model"
+series_order: 2
 ---
 
 <!--excerpt.start-->

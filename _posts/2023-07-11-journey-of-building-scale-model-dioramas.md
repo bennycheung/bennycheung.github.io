@@ -18,6 +18,8 @@ images:
   cover: images/journey-of-building-scale-model-dioramas/cover2x.jpg
   header: images/journey-of-building-scale-model-dioramas/header.jpg
 published: true
+series: "Building Scale Model"
+series_order: 1
 ---
 
 <!--excerpt.start-->
