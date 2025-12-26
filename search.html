@@ -1,0 +1,213 @@
+---
+layout: default
+title: Search
+---
+
+<br />
+<br />
+<br />
+<br />
+
+<div class="container" role="main">
+  <div class="search-page">
+    <h1><i class="fa fa-search"></i> Search</h1>
+
+    <div class="search-box">
+      <input type="text" id="page-search-input" class="search-input" placeholder="Search posts..." autofocus>
+      <span class="search-icon"><i class="fa fa-search"></i></span>
+    </div>
+
+    <div class="search-info">
+      <span id="page-search-results-count"></span>
+      <span id="page-search-query"></span>
+    </div>
+
+    <div id="page-search-results" class="search-results"></div>
+
+    <div id="page-search-no-results" class="search-no-results" style="display: none;">
+      <p>No results found. Try different keywords or browse by <a href="/tags/">tags</a>.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  var searchIndex = null;
+  var searchData = null;
+  var searchInput = document.getElementById('page-search-input');
+  var searchResults = document.getElementById('page-search-results');
+  var searchResultsCount = document.getElementById('page-search-results-count');
+  var searchQuery = document.getElementById('page-search-query');
+  var searchNoResults = document.getElementById('page-search-no-results');
+
+  // Fetch the search index (lunr.js already loaded by inline_search.html)
+  fetch('/search.json')
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(data) {
+      searchData = data;
+
+      // Build the Lunr index
+      searchIndex = lunr(function() {
+        this.ref('url');
+        this.field('title', { boost: 10 });
+        this.field('tags', { boost: 5 });
+        this.field('categories', { boost: 3 });
+        this.field('excerpt', { boost: 2 });
+        this.field('content');
+
+        data.forEach(function(doc) {
+          this.add({
+            url: doc.url,
+            title: doc.title,
+            tags: doc.tags ? doc.tags.join(' ') : '',
+            categories: doc.categories ? doc.categories.join(' ') : '',
+            excerpt: doc.excerpt,
+            content: doc.content
+          });
+        }, this);
+      });
+
+      // Check for query parameter
+      var urlParams = new URLSearchParams(window.location.search);
+      var query = urlParams.get('q');
+      if (query) {
+        searchInput.value = query;
+        performSearch(query);
+      }
+    })
+    .catch(function(error) {
+      console.error('Error loading search index:', error);
+    });
+
+  // Search input handler with debounce
+  var debounceTimer;
+  searchInput.addEventListener('input', function() {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(function() {
+      var query = searchInput.value.trim();
+      if (query.length >= 2) {
+        performSearch(query);
+        updateURL(query);
+      } else {
+        clearResults();
+      }
+    }, 300);
+  });
+
+  // Handle Enter key
+  searchInput.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') {
+      clearTimeout(debounceTimer);
+      var query = searchInput.value.trim();
+      if (query.length >= 2) {
+        performSearch(query);
+        updateURL(query);
+      }
+    }
+  });
+
+  function performSearch(query) {
+    if (!searchIndex) return;
+
+    try {
+      // Use wildcard search for partial matches
+      var results = searchIndex.search(query + '*');
+
+      // If no results with wildcard, try fuzzy search
+      if (results.length === 0) {
+        results = searchIndex.search(query + '~1');
+      }
+
+      displayResults(results, query);
+    } catch (e) {
+      // Fallback to simple search if query has special characters
+      try {
+        var results = searchIndex.search(query);
+        displayResults(results, query);
+      } catch (e2) {
+        clearResults();
+      }
+    }
+  }
+
+  function displayResults(results, query) {
+    searchResults.innerHTML = '';
+    searchNoResults.style.display = 'none';
+
+    if (results.length === 0) {
+      searchResultsCount.textContent = '';
+      searchQuery.textContent = '';
+      searchNoResults.style.display = 'block';
+      return;
+    }
+
+    searchResultsCount.textContent = results.length + ' result' + (results.length === 1 ? '' : 's');
+    searchQuery.textContent = ' for "' + query + '"';
+
+    results.forEach(function(result) {
+      var post = searchData.find(function(p) {
+        return p.url === result.ref;
+      });
+
+      if (post) {
+        var resultItem = document.createElement('div');
+        resultItem.className = 'search-result-item';
+
+        var excerpt = post.excerpt || '';
+        // Highlight matching terms in excerpt
+        var highlightedExcerpt = highlightTerms(excerpt, query);
+
+        var tagsHtml = '';
+        if (post.tags && post.tags.length > 0) {
+          tagsHtml = '<div class="search-result-tags">';
+          post.tags.slice(0, 5).forEach(function(tag) {
+            tagsHtml += '<span class="tag-badge">' + tag + '</span>';
+          });
+          tagsHtml += '</div>';
+        }
+
+        resultItem.innerHTML =
+          '<h3 class="search-result-title"><a href="' + post.url + '">' + post.title + '</a></h3>' +
+          '<p class="search-result-meta">' + post.date + '</p>' +
+          '<p class="search-result-excerpt">' + highlightedExcerpt + '</p>' +
+          tagsHtml;
+
+        searchResults.appendChild(resultItem);
+      }
+    });
+  }
+
+  function highlightTerms(text, query) {
+    var terms = query.toLowerCase().split(/\s+/);
+    var result = text;
+
+    terms.forEach(function(term) {
+      if (term.length >= 2) {
+        var regex = new RegExp('(' + escapeRegex(term) + ')', 'gi');
+        result = result.replace(regex, '<mark>$1</mark>');
+      }
+    });
+
+    return result;
+  }
+
+  function escapeRegex(string) {
+    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  }
+
+  function clearResults() {
+    searchResults.innerHTML = '';
+    searchResultsCount.textContent = '';
+    searchQuery.textContent = '';
+    searchNoResults.style.display = 'none';
+  }
+
+  function updateURL(query) {
+    var url = new URL(window.location);
+    url.searchParams.set('q', query);
+    history.replaceState(null, '', url);
+  }
+})();
+</script>

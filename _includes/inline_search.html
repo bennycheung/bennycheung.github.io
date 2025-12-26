@@ -1,0 +1,215 @@
+<!-- Lunr.js from CDN -->
+<script src="https://unpkg.com/lunr/lunr.js"></script>
+
+<script>
+(function() {
+  var searchIndex = null;
+  var searchData = null;
+  var searchToggle = document.getElementById('search-toggle');
+  var searchContainer = document.getElementById('search-container');
+  var searchInput = document.getElementById('search-input');
+  var searchResults = document.getElementById('search-results');
+  var searchClose = document.getElementById('search-close');
+  var isSearchOpen = false;
+
+  // Fetch and build the search index
+  function initSearch() {
+    if (searchIndex) return Promise.resolve();
+
+    return fetch('/search.json')
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(data) {
+        searchData = data;
+
+        searchIndex = lunr(function() {
+          this.ref('url');
+          this.field('title', { boost: 10 });
+          this.field('tags', { boost: 5 });
+          this.field('categories', { boost: 3 });
+          this.field('excerpt', { boost: 2 });
+          this.field('content');
+
+          data.forEach(function(doc) {
+            this.add({
+              url: doc.url,
+              title: doc.title,
+              tags: doc.tags ? doc.tags.join(' ') : '',
+              categories: doc.categories ? doc.categories.join(' ') : '',
+              excerpt: doc.excerpt,
+              content: doc.content
+            });
+          }, this);
+        });
+      })
+      .catch(function(error) {
+        console.error('Error loading search index:', error);
+      });
+  }
+
+  // Toggle search open/close
+  function toggleSearch() {
+    isSearchOpen = !isSearchOpen;
+
+    if (isSearchOpen) {
+      searchContainer.classList.add('active');
+      initSearch().then(function() {
+        searchInput.focus();
+      });
+    } else {
+      closeSearch();
+    }
+  }
+
+  function closeSearch() {
+    isSearchOpen = false;
+    searchContainer.classList.remove('active');
+    searchInput.value = '';
+    searchResults.innerHTML = '';
+    searchResults.classList.remove('active');
+  }
+
+  // Perform search
+  function performSearch(query) {
+    if (!searchIndex || query.length < 2) {
+      searchResults.innerHTML = '';
+      searchResults.classList.remove('active');
+      return;
+    }
+
+    try {
+      var results = searchIndex.search(query + '*');
+
+      if (results.length === 0) {
+        results = searchIndex.search(query + '~1');
+      }
+
+      displayResults(results.slice(0, 8), query);
+    } catch (e) {
+      try {
+        var results = searchIndex.search(query);
+        displayResults(results.slice(0, 8), query);
+      } catch (e2) {
+        searchResults.innerHTML = '';
+        searchResults.classList.remove('active');
+      }
+    }
+  }
+
+  function displayResults(results, query) {
+    searchResults.innerHTML = '';
+
+    if (results.length === 0) {
+      searchResults.innerHTML = '<div class="search-no-result">No results found</div>';
+      searchResults.classList.add('active');
+      return;
+    }
+
+    searchResults.classList.add('active');
+
+    results.forEach(function(result) {
+      var post = searchData.find(function(p) {
+        return p.url === result.ref;
+      });
+
+      if (post) {
+        var resultItem = document.createElement('a');
+        resultItem.href = post.url;
+        resultItem.className = 'search-result-item';
+
+        var tagsHtml = '';
+        if (post.tags && post.tags.length > 0) {
+          tagsHtml = '<span class="search-result-tags">' +
+            post.tags.slice(0, 3).map(function(tag) {
+              return '<span class="tag-pill">' + tag + '</span>';
+            }).join('') + '</span>';
+        }
+
+        resultItem.innerHTML =
+          '<div class="search-result-title">' + highlightTerms(post.title, query) + '</div>' +
+          '<div class="search-result-meta">' + post.date + tagsHtml + '</div>';
+
+        searchResults.appendChild(resultItem);
+      }
+    });
+
+    // Add "View all results" link
+    var viewAll = document.createElement('a');
+    viewAll.href = '/search/?q=' + encodeURIComponent(query);
+    viewAll.className = 'search-view-all';
+    viewAll.innerHTML = 'View all results <i class="fa fa-arrow-right"></i>';
+    searchResults.appendChild(viewAll);
+  }
+
+  function highlightTerms(text, query) {
+    var terms = query.toLowerCase().split(/\s+/);
+    var result = text;
+
+    terms.forEach(function(term) {
+      if (term.length >= 2) {
+        var regex = new RegExp('(' + escapeRegex(term) + ')', 'gi');
+        result = result.replace(regex, '<mark>$1</mark>');
+      }
+    });
+
+    return result;
+  }
+
+  function escapeRegex(string) {
+    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  }
+
+  // Event listeners
+  searchToggle.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    toggleSearch();
+  });
+
+  searchClose.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    closeSearch();
+  });
+
+  // Debounced search input
+  var debounceTimer;
+  searchInput.addEventListener('input', function() {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(function() {
+      performSearch(searchInput.value.trim());
+    }, 200);
+  });
+
+  // Handle Enter key - go to full search page
+  searchInput.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') {
+      var query = searchInput.value.trim();
+      if (query.length >= 2) {
+        window.location.href = '/search/?q=' + encodeURIComponent(query);
+      }
+    }
+    if (e.key === 'Escape') {
+      closeSearch();
+    }
+  });
+
+  // Close search when clicking outside
+  document.addEventListener('click', function(e) {
+    if (isSearchOpen && !e.target.closest('.nav-search')) {
+      closeSearch();
+    }
+  });
+
+  // Keyboard shortcut: / to open search
+  document.addEventListener('keydown', function(e) {
+    if (e.key === '/' && !e.target.matches('input, textarea')) {
+      e.preventDefault();
+      if (!isSearchOpen) {
+        toggleSearch();
+      }
+    }
+  });
+})();
+</script>

@@ -21,6 +21,18 @@
 				<li><a href="/tags/">Tags</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
+				<li class="nav-search">
+					<button id="search-toggle" class="search-nav-btn" title="Search posts" aria-label="Toggle search">
+						<i class="fa fa-search"></i>
+					</button>
+					<div id="search-container" class="search-inline-container">
+						<input type="text" id="search-input" class="search-inline-input" placeholder="Search posts..." aria-label="Search posts">
+						<button id="search-close" class="search-close-btn" aria-label="Close search">
+							<i class="fa fa-times"></i>
+						</button>
+					</div>
+					<div id="search-results" class="search-inline-results"></div>
+				</li>
 				<li>
 					<button id="reader-mode-toggle" class="reader-mode-btn" title="Reader mode - clean view for reading" aria-label="Toggle reader mode">
 						<i class="fa fa-book"></i>
