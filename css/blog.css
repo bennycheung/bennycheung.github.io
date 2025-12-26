@@ -551,6 +551,27 @@ td {
 }
 
 /*
+ * Responsive Video (YouTube, Vimeo, etc.)
+ */
+.video-responsive {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  margin: 20px 0;
+}
+
+.video-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/*
  * Responsive Images
  */
 .post-content img {
