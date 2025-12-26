@@ -11,9 +11,10 @@
 
 <script>
 $(document).ready(function() {
-  // Make all post content images clickable
+  // Make all post content images clickable and enable lazy loading
   $('.post-content img').each(function() {
     var $img = $(this);
+    $img.attr('loading', 'lazy');
     $img.css('cursor', 'pointer');
     $img.on('click', function() {
       $('#lightboxImage').attr('src', this.src);

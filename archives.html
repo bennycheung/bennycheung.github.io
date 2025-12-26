@@ -16,11 +16,11 @@ permalink: /archives/
   <div class="media archive-post">
     <a class="media-left" href="{{ post.url }}">
       {% if post.images.cover %}
-        <img src="/{{ post.images.cover }}" class="archive-cover" alt="{{ post.title }}">
+        <img src="/{{ post.images.cover }}" class="archive-cover" alt="{{ post.title }}" loading="lazy">
       {% elsif post.image %}
-        <img src="/{{ post.image }}" class="archive-cover" alt="{{ post.title }}">
+        <img src="/{{ post.image }}" class="archive-cover" alt="{{ post.title }}" loading="lazy">
       {% else %}
-        <img src="{{ site.avatar }}" class="archive-cover-small" alt="{{ post.title }}">
+        <img src="{{ site.avatar }}" class="archive-cover-small" alt="{{ post.title }}" loading="lazy">
       {% endif %}
     </a>
     <div class="media-body">
