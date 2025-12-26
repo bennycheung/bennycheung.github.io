@@ -18,7 +18,7 @@ images:
   cover: images/unlocking-secrets-of-tabletop-games-ontology/cover2x.jpg
   header: images/unlocking-secrets-of-tabletop-games-ontology/header.jpg
 published: true
-series: "Games AI"
+series: "Game Architecture"
 series_order: 4
 ---
 

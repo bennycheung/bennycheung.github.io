@@ -20,7 +20,7 @@ images:
 published: true
 featured: true
 featured_order: 3
-series: "Games AI"
+series: "Game Architecture"
 series_order: 1
 ---
 

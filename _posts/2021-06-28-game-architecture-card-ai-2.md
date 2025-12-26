@@ -18,7 +18,7 @@ images:
   cover: images/game-architecture-card-ai-2/cover.jpg
   header: images/game-architecture-card-ai-2/header.jpg
 published: true
-series: "Games AI"
+series: "Game Architecture"
 series_order: 2
 ---
 
