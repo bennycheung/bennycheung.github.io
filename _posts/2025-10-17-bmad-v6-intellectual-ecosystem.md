@@ -20,8 +20,6 @@ images:
 published: true
 series: "Applied BMAD"
 series_order: 2
-featured: true
-featured_order: 1
 ---
 
 <!--excerpt.start-->

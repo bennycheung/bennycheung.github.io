@@ -173,23 +173,62 @@ h6, .h6 {
 }
 
 /**
- * table format
+ * Table Format - Modern Readable Style
  */
 table {
-  border-spacing: 5px;
-  border:2px solid #000000;
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 16px;
+  background: #fff;
 }
 
 th {
-  border:2px solid #000000;
-  margin-left:2px;
-  margin-right:2px;
+  background: #f8f9fa;
+  color: #333;
+  font-weight: 600;
+  text-align: left;
+  padding: 12px 16px;
+  border-bottom: 2px solid #dee2e6;
 }
 
 td {
-  border:2px solid #000000;
-  margin-left:2px;
-  margin-right:2px;
+  padding: 12px 16px;
+  border-bottom: 1px solid #e9ecef;
+  color: #555;
+}
+
+/* Alternating row colors for readability */
+tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+/* Remove bottom border from last row */
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Responsive Tables */
+@media (max-width: 768px) {
+  table {
+    font-size: 14px;
+  }
+
+  th, td {
+    padding: 10px 12px;
+  }
+}
+
+/* Horizontal scroll wrapper for wide tables */
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 20px 0;
+}
+
+.table-responsive table {
+  margin: 0;
+  min-width: 600px;
 }
 
 /**
@@ -1477,21 +1516,24 @@ html.dark-mode pre code {
 }
 
 /* Tables */
+/* Tables - Dark Mode */
 html.dark-mode table {
-  border-color: var(--border-color);
-}
-
-html.dark-mode th,
-html.dark-mode td {
-  border-color: var(--border-color);
+  background-color: var(--bg-card);
 }
 
 html.dark-mode th {
   background-color: var(--bg-secondary);
+  color: var(--text-heading);
+  border-bottom-color: var(--border-color);
 }
 
-html.dark-mode tr:nth-child(even) {
-  background-color: var(--bg-card);
+html.dark-mode td {
+  border-bottom-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+html.dark-mode tbody tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.02);
 }
 
 /* Blockquotes */
