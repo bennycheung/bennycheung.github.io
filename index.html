@@ -19,7 +19,13 @@ layout: default
       <div class="card">
         <a href="{{ hero.url }}">
           {% if hero.images.cover %}
-            <img class="card-img" src="/{{ hero.images.cover }}" alt="{{ hero.title }}">
+            {% if hero.images.cover contains '.mp4' or hero.images.cover contains '.webm' %}
+              <video class="card-img" autoplay muted loop playsinline>
+                <source src="/{{ hero.images.cover }}" type="video/{% if hero.images.cover contains '.webm' %}webm{% else %}mp4{% endif %}">
+              </video>
+            {% else %}
+              <img class="card-img" src="/{{ hero.images.cover }}" alt="{{ hero.title }}">
+            {% endif %}
           {% elsif hero.image %}
             <img class="card-img" src="/{{ hero.image }}" alt="{{ hero.title }}">
           {% endif %}
@@ -49,7 +55,13 @@ layout: default
         <div class="card">
           <a href="{{ post.url }}">
             {% if post.images.cover %}
-              <img class="card-img" src="/{{ post.images.cover }}" alt="{{ post.title }}" loading="lazy">
+              {% if post.images.cover contains '.mp4' or post.images.cover contains '.webm' %}
+                <video class="card-img" autoplay muted loop playsinline preload="metadata">
+                  <source src="/{{ post.images.cover }}" type="video/{% if post.images.cover contains '.webm' %}webm{% else %}mp4{% endif %}">
+                </video>
+              {% else %}
+                <img class="card-img" src="/{{ post.images.cover }}" alt="{{ post.title }}" loading="lazy">
+              {% endif %}
             {% elsif post.image %}
               <img class="card-img" src="/{{ post.image }}" alt="{{ post.title }}" loading="lazy">
             {% endif %}
@@ -97,7 +109,13 @@ layout: default
             <div class="post-card">
               <a href="{{ post.url }}">
                 {% if post.images.cover %}
-                  <img class="card-img" src="/{{ post.images.cover }}" alt="{{ post.title }}" loading="lazy">
+                  {% if post.images.cover contains '.mp4' or post.images.cover contains '.webm' %}
+                    <video class="card-img" autoplay muted loop playsinline preload="none">
+                      <source src="/{{ post.images.cover }}" type="video/{% if post.images.cover contains '.webm' %}webm{% else %}mp4{% endif %}">
+                    </video>
+                  {% else %}
+                    <img class="card-img" src="/{{ post.images.cover }}" alt="{{ post.title }}" loading="lazy">
+                  {% endif %}
                 {% elsif post.image %}
                   <img class="card-img" src="/{{ post.image }}" alt="{{ post.title }}" loading="lazy">
                 {% else %}

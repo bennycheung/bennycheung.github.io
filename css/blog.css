@@ -942,6 +942,26 @@ pre:hover .code-copy-btn {
   object-fit: cover;
 }
 
+/* Video covers - same styling as images */
+.featured-hero video.card-img,
+.featured-secondary video.card-img,
+.post-card video.card-img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.featured-hero video.card-img {
+  height: 350px;
+}
+
+.featured-secondary video.card-img {
+  height: 180px;
+}
+
+.post-card video.card-img {
+  height: 140px;
+}
+
 .featured-hero .card-body {
   padding: 25px;
 }
@@ -1369,6 +1389,19 @@ pre:hover .code-copy-btn {
   }
 
   .post-card .card-img {
+    height: 120px;
+  }
+
+  /* Mobile video adjustments */
+  .featured-hero video.card-img {
+    height: 200px;
+  }
+
+  .featured-secondary video.card-img {
+    height: 150px;
+  }
+
+  .post-card video.card-img {
     height: 120px;
   }
 
