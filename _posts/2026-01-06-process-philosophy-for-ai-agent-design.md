@@ -18,9 +18,7 @@ image: images/process-philosophy-for-ai-agent-design/post_cover.jpg
 images:
   cover: images/process-philosophy-for-ai-agent-design/cover2x.jpg
   header: images/process-philosophy-for-ai-agent-design/header.jpg
-published: true
-featured: true
-featured_order: 1
+published: false
 ---
 
 <!--excerpt.start-->
