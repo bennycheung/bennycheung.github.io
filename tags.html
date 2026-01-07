@@ -4,29 +4,388 @@ title: Tags
 date: 2016-04-18 08:31:00
 permalink: /tags/
 main: true
+toc: false
 ---
 
-<ul class="tag-cloud">
-{% for tag in site.tags %}
-  <li style="font-size: {{ tag | last | size | times: 100 | divided_by: site.tags.size | plus: 70  }}%">
-    <a href="#{{ tag | first | slugize }}">
-      {{ tag | first }}
-    </a>
-  </li>
-{% endfor %}
-</ul>
+<style>
+/* Word Cloud Container */
+.word-cloud-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
 
+#word-cloud {
+  width: 100%;
+  min-height: 400px;
+}
+
+#word-cloud text {
+  cursor: pointer;
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Tag Stats */
+.tag-stats {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #666;
+  font-size: 14px;
+}
+
+.tag-stats span {
+  display: inline-block;
+  margin: 0 15px;
+  padding: 5px 12px;
+  background: rgba(0,0,0,0.05);
+  border-radius: 20px;
+}
+
+/* Tooltip */
+.cloud-tooltip {
+  position: fixed;
+  padding: 8px 14px;
+  background: rgba(33, 37, 41, 0.95);
+  color: #fff;
+  border-radius: 6px;
+  font-size: 13px;
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.cloud-tooltip.visible {
+  opacity: 1;
+}
+
+/* Archives Section */
+#archives {
+  padding: 20px 0;
+}
+
+.archives-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.archives-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.archive-group {
+  margin: 0 0 25px 0;
+  padding: 15px 20px;
+  background: #fff;
+  border-radius: 10px;
+  border-left: 4px solid #007bff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.2s ease;
+}
+
+.archive-group:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.archive-group h3 {
+  margin: 0 0 12px 0;
+  font-size: 1.1rem;
+  color: #007bff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.archive-group h3 .post-count {
+  font-size: 0.75rem;
+  background: #007bff;
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-weight: normal;
+}
+
+.archive-item {
+  margin: 8px 0;
+  padding-left: 0;
+}
+
+.archive-item h4 {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: normal;
+}
+
+.archive-item a {
+  color: #495057;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.archive-item a:hover {
+  color: #007bff;
+}
+
+/* Dark Mode */
+html.dark-mode .word-cloud-container {
+  background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+html.dark-mode .tag-stats {
+  color: #a0aec0;
+}
+
+html.dark-mode .tag-stats span {
+  background: rgba(255,255,255,0.1);
+}
+
+html.dark-mode .archives-header {
+  border-bottom-color: #4a5568;
+}
+
+html.dark-mode .archives-header h2 {
+  color: #e2e8f0;
+}
+
+html.dark-mode .archive-group {
+  background: #2d3748;
+  border-left-color: #4299e1;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+html.dark-mode .archive-group:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+html.dark-mode .archive-group h3 {
+  color: #63b3ed;
+}
+
+html.dark-mode .archive-group h3 .post-count {
+  background: #4299e1;
+}
+
+html.dark-mode .archive-item a {
+  color: #cbd5e0;
+}
+
+html.dark-mode .archive-item a:hover {
+  color: #63b3ed;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .word-cloud-container {
+    padding: 15px 10px;
+    border-radius: 12px;
+  }
+
+  #word-cloud {
+    min-height: 300px;
+  }
+
+  .tag-stats span {
+    display: block;
+    margin: 5px auto;
+  }
+
+  .archive-group {
+    padding: 12px 15px;
+  }
+}
+</style>
+
+<!-- Tag Data from Jekyll (auto-updates on build) -->
+<script id="tag-data" type="application/json">
+[{% for tag in site.tags %}{"text":"{{ tag | first | escape }}","size":{{ tag | last | size }}}{% unless forloop.last %},{% endunless %}{% endfor %}]
+</script>
+
+<!-- Word Cloud Visualization -->
+<div class="word-cloud-container">
+  <div class="tag-stats">
+    <span><strong>{{ site.tags.size }}</strong> Tags</span>
+    <span><strong>{{ site.posts.size }}</strong> Posts</span>
+  </div>
+  <div id="word-cloud"></div>
+</div>
+
+<!-- Tooltip -->
+<div class="cloud-tooltip" id="cloud-tooltip"></div>
+
+<!-- Archives Section -->
 <div id="archives">
-{% for tag in site.tags %}
+  <div class="archives-header">
+    <h2>Browse by Tag</h2>
+  </div>
+  {% for tag in site.tags %}
   <div class="archive-group">
     {% capture tag_name %}{{ tag | first }}{% endcapture %}
-    <h3 id="#{{ tag_name | slugize }}">{{ tag_name }}</h3>
-    <a name="{{ tag_name | slugize }}"></a>
+    <h3 id="{{ tag_name | slugify }}">
+      {{ tag_name }}
+      <span class="post-count">{{ tag | last | size }} posts</span>
+    </h3>
+    <a name="{{ tag_name | slugify }}"></a>
     {% for post in site.tags[tag_name] %}
     <article class="archive-item">
-      <h4><a href="{{ root_url }}{{ post.url }}">{{post.title}}</a></h4>
+      <h4><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h4>
     </article>
     {% endfor %}
   </div>
-{% endfor %}
+  {% endfor %}
 </div>
+
+<!-- D3.js and Word Cloud -->
+<script src="/js/d3/d3.v3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-cloud/1.2.5/d3.layout.cloud.min.js"></script>
+
+<script>
+// Wait for page to fully load before initializing word cloud
+window.addEventListener('load', function() {
+  // Parse tag data from Jekyll
+  var tagData = JSON.parse(document.getElementById('tag-data').textContent);
+
+  if (!tagData || tagData.length === 0) {
+    console.error('No tag data found');
+    return;
+  }
+
+  // Calculate size range
+  var maxSize = d3.max(tagData, function(d) { return d.size; });
+  var minSize = d3.min(tagData, function(d) { return d.size; });
+
+  // Color scale - vibrant colors based on frequency
+  var colorScale = d3.scale.linear()
+    .domain([minSize, (minSize + maxSize) / 2, maxSize])
+    .range(['#6c5ce7', '#00b894', '#e17055']);
+
+  // Font size scale
+  var fontScale = d3.scale.linear()
+    .domain([minSize, maxSize])
+    .range([16, 64]);
+
+  // Container dimensions - get actual width or use fallback
+  var container = document.getElementById('word-cloud');
+  var containerParent = container.parentElement;
+  var width = container.offsetWidth || containerParent.offsetWidth || 800;
+  var height = 450;
+
+  // Tooltip
+  var tooltip = document.getElementById('cloud-tooltip');
+
+  function initWordCloud() {
+    // Clear any existing content
+    container.innerHTML = '';
+
+    // Recalculate width
+    width = container.offsetWidth || containerParent.offsetWidth || 800;
+
+    // Create word cloud layout
+    var layout = d3.layout.cloud()
+      .size([width, height])
+      .words(tagData.map(function(d) {
+        return {
+          text: d.text,
+          size: fontScale(d.size),
+          count: d.size,
+          color: colorScale(d.size)
+        };
+      }))
+      .padding(6)
+      .rotate(function() {
+        return ~~(Math.random() * 3) * 30 - 30; // -30, 0, or 30 degrees
+      })
+      .font("'Segoe UI', 'Helvetica Neue', Arial, sans-serif")
+      .fontSize(function(d) { return d.size; })
+      .spiral('archimedean')
+      .on("end", draw);
+
+    layout.start();
+  }
+
+  function draw(words) {
+    if (!words || words.length === 0) {
+      console.error('No words generated for cloud');
+      return;
+    }
+
+    var svg = d3.select("#word-cloud")
+      .append("svg")
+      .attr("width", width)
+      .attr("height", height)
+      .attr("viewBox", "0 0 " + width + " " + height)
+      .attr("preserveAspectRatio", "xMidYMid meet")
+      .append("g")
+      .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+    svg.selectAll("text")
+      .data(words)
+      .enter().append("text")
+      .style("font-size", function(d) { return d.size + "px"; })
+      .style("font-family", "'Segoe UI', 'Helvetica Neue', Arial, sans-serif")
+      .style("font-weight", function(d) { return d.size > 35 ? "600" : "400"; })
+      .style("fill", function(d) { return d.color; })
+      .attr("text-anchor", "middle")
+      .attr("transform", function(d) {
+        return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+      })
+      .text(function(d) { return d.text; })
+      .on("mouseover", function(d) {
+        d3.select(this)
+          .style("opacity", 0.8)
+          .style("filter", "drop-shadow(0 2px 6px rgba(0,0,0,0.4))")
+          .style("cursor", "pointer");
+
+        tooltip.innerHTML = '<strong>' + d.text + '</strong><br>' + d.count + ' post' + (d.count > 1 ? 's' : '');
+        tooltip.classList.add('visible');
+      })
+      .on("mousemove", function() {
+        tooltip.style.left = (d3.event.pageX + 15) + 'px';
+        tooltip.style.top = (d3.event.pageY - 10) + 'px';
+      })
+      .on("mouseout", function(d) {
+        d3.select(this)
+          .style("opacity", 1)
+          .style("filter", "none");
+
+        tooltip.classList.remove('visible');
+      })
+      .on("click", function(d) {
+        var slug = d.text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+        var element = document.getElementById(slug) || document.getElementsByName(slug)[0];
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          var group = element.closest('.archive-group');
+          if (group) {
+            group.style.transition = 'background 0.3s ease';
+            group.style.background = 'rgba(0, 123, 255, 0.15)';
+            setTimeout(function() {
+              group.style.background = '';
+            }, 1500);
+          }
+        }
+      });
+  }
+
+  // Initialize
+  initWordCloud();
+
+  // Responsive resize with debounce
+  var resizeTimeout;
+  window.addEventListener('resize', function() {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(initWordCloud, 300);
+  });
+});
+</script>

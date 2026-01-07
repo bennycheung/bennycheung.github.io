@@ -142,19 +142,18 @@ layout: default
     </div>
   </div>
 
-  <!-- Topic Cloud Section - Top 12 Tags by Post Count -->
-  <div class="topic-cloud">
+  <!-- Topic Cloud Section - D3 Word Cloud -->
+  <div class="topic-cloud-section">
     <h2><i class="fa fa-tags"></i> Popular Topics</h2>
-    {% assign tag_count = 0 %}
-    {% for tag in site.tags %}
-      {% if tag[1].size >= 3 and tag_count < 12 %}
-        <a href="/tags/#{{ tag[0] | slugify }}" class="tag">
-          {{ tag[0] }} <small>({{ tag[1].size }})</small>
-        </a>
-        {% assign tag_count = tag_count | plus: 1 %}
-      {% endif %}
-    {% endfor %}
+    <div class="topic-cloud-container">
+      <div id="topic-word-cloud"></div>
+    </div>
   </div>
+
+  <!-- Tag Data for Word Cloud -->
+  <script id="home-tag-data" type="application/json">
+  [{% assign first_item = true %}{% for tag in site.tags %}{% if tag[1].size >= 2 %}{% unless first_item %},{% endunless %}{"text":"{{ tag[0] | escape }}","size":{{ tag[1].size }}}{% assign first_item = false %}{% endif %}{% endfor %}]
+  </script>
 
   <!-- Navigation Buttons -->
   <div class="landing-nav">
@@ -210,6 +209,162 @@ layout: default
   </div>
 
 </div>
+
+<style>
+/* Topic Word Cloud for Home Page */
+.topic-cloud-section {
+  margin: 40px 0;
+  text-align: center;
+}
+
+.topic-cloud-section h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.topic-cloud-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 16px;
+  padding: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+#topic-word-cloud {
+  width: 100%;
+  min-height: 280px;
+}
+
+#topic-word-cloud text {
+  cursor: pointer;
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Dark Mode */
+html.dark-mode .topic-cloud-section h2 {
+  color: #e2e8f0;
+}
+
+html.dark-mode .topic-cloud-container {
+  background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .topic-cloud-container {
+    padding: 10px;
+    border-radius: 12px;
+  }
+  #topic-word-cloud {
+    min-height: 220px;
+  }
+}
+</style>
+
+<!-- D3.js Word Cloud for Home Page -->
+<script src="/js/d3/d3.v3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-cloud/1.2.5/d3.layout.cloud.min.js"></script>
+<script>
+window.addEventListener('load', function() {
+  var dataEl = document.getElementById('home-tag-data');
+  if (!dataEl) return;
+
+  var tagData = JSON.parse(dataEl.textContent.trim());
+  if (!tagData || tagData.length === 0) return;
+
+  // Filter out any null entries from trailing commas
+  tagData = tagData.filter(function(d) { return d && d.text; });
+
+  var maxSize = d3.max(tagData, function(d) { return d.size; });
+  var minSize = d3.min(tagData, function(d) { return d.size; });
+
+  var colorScale = d3.scale.linear()
+    .domain([minSize, (minSize + maxSize) / 2, maxSize])
+    .range(['#6c5ce7', '#00b894', '#e17055']);
+
+  var fontScale = d3.scale.linear()
+    .domain([minSize, maxSize])
+    .range([14, 48]);
+
+  var container = document.getElementById('topic-word-cloud');
+  var width = container.offsetWidth || 700;
+  var height = 280;
+
+  function initCloud() {
+    container.innerHTML = '';
+    width = container.offsetWidth || 700;
+
+    var layout = d3.layout.cloud()
+      .size([width, height])
+      .words(tagData.map(function(d) {
+        return {
+          text: d.text,
+          size: fontScale(d.size),
+          count: d.size,
+          color: colorScale(d.size)
+        };
+      }))
+      .padding(5)
+      .rotate(function() { return ~~(Math.random() * 3) * 30 - 30; })
+      .font("'Segoe UI', 'Helvetica Neue', Arial, sans-serif")
+      .fontSize(function(d) { return d.size; })
+      .spiral('archimedean')
+      .on("end", draw);
+
+    layout.start();
+  }
+
+  function draw(words) {
+    if (!words || words.length === 0) return;
+
+    var svg = d3.select("#topic-word-cloud")
+      .append("svg")
+      .attr("width", width)
+      .attr("height", height)
+      .attr("viewBox", "0 0 " + width + " " + height)
+      .attr("preserveAspectRatio", "xMidYMid meet")
+      .append("g")
+      .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+    svg.selectAll("text")
+      .data(words)
+      .enter().append("text")
+      .style("font-size", function(d) { return d.size + "px"; })
+      .style("font-family", "'Segoe UI', 'Helvetica Neue', Arial, sans-serif")
+      .style("font-weight", function(d) { return d.size > 30 ? "600" : "400"; })
+      .style("fill", function(d) { return d.color; })
+      .attr("text-anchor", "middle")
+      .attr("transform", function(d) {
+        return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+      })
+      .text(function(d) { return d.text; })
+      .on("mouseover", function(d) {
+        d3.select(this)
+          .style("opacity", 0.7)
+          .style("filter", "drop-shadow(0 2px 6px rgba(0,0,0,0.4))");
+      })
+      .on("mouseout", function(d) {
+        d3.select(this)
+          .style("opacity", 1)
+          .style("filter", "none");
+      })
+      .on("click", function(d) {
+        var slug = d.text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+        window.location.href = '/tags/#' + slug;
+      });
+  }
+
+  initCloud();
+
+  var resizeTimeout;
+  window.addEventListener('resize', function() {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(initCloud, 300);
+  });
+});
+</script>
 
 <script src="/live2dw/lib/L2Dwidget.min.js"></script>
 <script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script>
