@@ -223,9 +223,49 @@ html.dark-mode #cat-speech-bubble::after {
     }
   });
   
-  // Show initial greeting immediately to invite interaction
+  // Time-based greeting function
+  function getTimeBasedGreeting() {
+    var hour = new Date().getHours();
+
+    if (hour >= 5 && hour < 12) {
+      // Morning (5am - 12pm)
+      var morningGreetings = [
+        "Good morning! ☀️ Ready to explore some AI articles?",
+        "Rise and shine! 🌅 Fresh ideas await you today!",
+        "Morning! ☕ Grab your coffee and let's learn something new!"
+      ];
+      return morningGreetings[Math.floor(Math.random() * morningGreetings.length)];
+    } else if (hour >= 12 && hour < 17) {
+      // Afternoon (12pm - 5pm)
+      var afternoonGreetings = [
+        "Good afternoon! 🌤️ Taking a break to read?",
+        "Hey there! 😸 Perfect time for some tech exploration!",
+        "Afternoon! 🐱 Need a brain snack? Try a blog post!"
+      ];
+      return afternoonGreetings[Math.floor(Math.random() * afternoonGreetings.length)];
+    } else if (hour >= 17 && hour < 21) {
+      // Evening (5pm - 9pm)
+      var eveningGreetings = [
+        "Good evening! 🌅 Winding down with some reading?",
+        "Evening! 🌆 Great time to dive into something interesting!",
+        "Hey! 😺 Relaxing with some AI and tech articles?"
+      ];
+      return eveningGreetings[Math.floor(Math.random() * eveningGreetings.length)];
+    } else {
+      // Night (9pm - 5am)
+      var nightGreetings = [
+        "Late night browsing? 🌙 I'm a night owl too!",
+        "Burning the midnight oil? 🦉 Me too! Let's explore!",
+        "Can't sleep? 🌌 Perfect time for some deep reading!",
+        "Night owl mode! 🐱‍👤 The best ideas come after dark!"
+      ];
+      return nightGreetings[Math.floor(Math.random() * nightGreetings.length)];
+    }
+  }
+
+  // Show initial greeting based on time of day
   setTimeout(function() {
-    bubble.innerHTML = "Meow! 🐱 Hover over me for tips!";
+    bubble.innerHTML = getTimeBasedGreeting();
     bubble.classList.add('visible');
     setTimeout(hideBubble, 5000);
   }, 1000);
