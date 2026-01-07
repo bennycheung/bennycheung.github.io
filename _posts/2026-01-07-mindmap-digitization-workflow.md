@@ -14,9 +14,9 @@ tags:
   - Mind Mapping
 category: post
 comments: true
-image: images/mindmap-digitization-workflow/post_cover.jpg
+image: images/mindmap-digitization-workflow/header.jpg
 images:
-  cover: images/mindmap-digitization-workflow/cover2x.jpg
+  cover: images/mindmap-digitization-workflow/header.jpg
   header: images/mindmap-digitization-workflow/header.jpg
 published: true
 featured: true
