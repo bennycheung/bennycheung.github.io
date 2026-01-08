@@ -15,11 +15,13 @@ category: post
 comments: true
 image: images/ontology-the-queryable-brain-of-software-archaeology/post_cover.jpg
 images:
-  cover: images/ontology-the-queryable-brain-of-software-archaeology/cover2x.jpg
+  cover: images/ontology-the-queryable-brain-of-software-archaeology/animated-cover.webp
   header: images/ontology-the-queryable-brain-of-software-archaeology/header.jpg
 published: true
 series: "Applied BMAD"
 series_order: 3
+featured: true
+featured_order: 3
 ---
 
 <!--excerpt.start-->
