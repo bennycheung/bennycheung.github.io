@@ -108,18 +108,11 @@ layout: default
           <div class="col-sm-4">
             <div class="post-card">
               <a href="{{ post.url }}">
-                {% if post.images.cover %}
-                  {% if post.images.cover contains '.mp4' or post.images.cover contains '.webm' %}
-                    <video class="card-img" autoplay muted loop playsinline preload="none">
-                      <source src="/{{ post.images.cover }}" type="video/{% if post.images.cover contains '.webm' %}webm{% else %}mp4{% endif %}">
-                    </video>
-                  {% else %}
-                    <img class="card-img" src="/{{ post.images.cover }}" alt="{{ post.title }}" loading="lazy">
-                  {% endif %}
-                {% elsif post.image %}
+                <!-- Non-featured posts use their image: frontmatter -->
+                {% if post.image %}
                   <img class="card-img" src="/{{ post.image }}" alt="{{ post.title }}" loading="lazy">
                 {% else %}
-                  <img class="card-img" src="{{ site.avatar }}" alt="{{ post.title }}" loading="lazy">
+                  <img class="card-img" src="/images/default-cover.jpg" alt="{{ post.title }}" loading="lazy">
                 {% endif %}
               </a>
               <div class="card-body">

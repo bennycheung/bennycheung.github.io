@@ -15,12 +15,14 @@ permalink: /archives/
   {% for post in year.items %}
   <div class="media archive-post">
     <a class="media-left" href="{{ post.url }}">
-      {% if post.images.cover %}
+      {% if post.featured and post.images.cover %}
+        <!-- Featured posts use images.cover (supports video) -->
         <img src="/{{ post.images.cover }}" class="archive-cover" alt="{{ post.title }}" loading="lazy">
       {% elsif post.image %}
+        <!-- Non-featured posts use image: frontmatter -->
         <img src="/{{ post.image }}" class="archive-cover" alt="{{ post.title }}" loading="lazy">
       {% else %}
-        <img src="{{ site.avatar }}" class="archive-cover-small" alt="{{ post.title }}" loading="lazy">
+        <img src="/images/default-cover.jpg" class="archive-cover" alt="{{ post.title }}" loading="lazy">
       {% endif %}
     </a>
     <div class="media-body">

@@ -48,6 +48,17 @@ email: btscheung@gmail.com
 gems:
   - jekyll-sitemap
 
+# Front Matter Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      image: images/default-cover.jpg
+      images:
+        cover: images/default-cover-2x.jpg
+        header: images/default-header.jpg
+
 # Build settings
 markdown: kramdown
 # markdown: maruku

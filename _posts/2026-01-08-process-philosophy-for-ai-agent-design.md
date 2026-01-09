@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Process Philosophy for AI Agent Design Using a Whiteheadian Framework
-date: 2026-01-06 12:00:00.000000000 -00:00
+date: 2026-01-08 12:00:00.000000000 -00:00
 permalink: process-philosophy-for-ai-agent-design
 author: Benny Cheung
 artwork:
@@ -16,7 +16,7 @@ category: post
 comments: true
 image: images/process-philosophy-for-ai-agent-design/post_cover.jpg
 images:
-  cover: images/process-philosophy-for-ai-agent-design/cover2x.jpg
+  cover: images/process-philosophy-for-ai-agent-design/animated-cover.webp
   header: images/process-philosophy-for-ai-agent-design/header.jpg
 published: false
 ---
