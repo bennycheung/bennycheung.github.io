@@ -16,7 +16,7 @@ category: post
 comments: true
 image: images/harmonizing-two-ai-agent-systems/post_cover.jpg
 images:
-  cover: images/harmonizing-two-ai-agent-systems/cover2x.jpg
+  cover: images/harmonizing-two-ai-agent-systems/animated-cover.webp
   header: images/harmonizing-two-ai-agent-systems/header.jpg
 published: true
 ---
