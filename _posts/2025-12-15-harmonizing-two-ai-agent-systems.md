@@ -19,6 +19,8 @@ images:
   cover: images/harmonizing-two-ai-agent-systems/animated-cover.webp
   header: images/harmonizing-two-ai-agent-systems/header.jpg
 published: true
+series: "Applied BMAD"
+series_order: 4
 ---
 
 <!--excerpt.start-->

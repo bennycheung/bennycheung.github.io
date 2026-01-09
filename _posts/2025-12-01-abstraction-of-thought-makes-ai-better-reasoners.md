@@ -21,8 +21,6 @@ images:
 published: true
 featured: true
 featured_order: 3
-series: "Applied BMAD"
-series_order: 4
 ---
 
 <!--excerpt.start-->
