@@ -5,7 +5,7 @@ date: 2026-01-08 12:00:00.000000000 -00:00
 permalink: process-philosophy-for-ai-agent-design
 author: Benny Cheung
 artwork:
-  author: Gemini 3 Pro
+  author: Gemini 3 Pro (Nano Banana Pro)
 tags:
 - AI
 - Philosophy

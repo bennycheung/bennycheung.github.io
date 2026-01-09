@@ -5,7 +5,7 @@ date: 2025-12-01 12:00:00.000000000 -00:00
 permalink: abstraction-of-thought-makes-ai-better-reasoners
 author: Benny Cheung
 artwork:
-  author: Nano Banana Pro
+  author: Gemini 3 Pro (Nano Banana Pro)
 tags:
 - AI
 - Abstraction
