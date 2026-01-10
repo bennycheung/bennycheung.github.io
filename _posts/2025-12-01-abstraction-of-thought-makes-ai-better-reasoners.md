@@ -55,7 +55,7 @@ This initial abstract identification provides a robust blueprint. The model isn'
 
 Before diving deeper into how abstraction improves AI reasoning, we need to understand what abstraction actually means. Far from being a dusty academic concept, abstraction is a vital, pervasive tool that shapes how we interact with the world, how we think, and how we build intelligent systems.
 
-The word literally means "to draw away," but its meaning has evolved. It's not just about taking things away; it's about *purposeful simplification*. As Goldstone and Barsalou put it, "To abstract is to distill the essence from its superficial trappings." This process is found everywhere, in philosophy, mathematics, natural language, art, and our own cognitive processes. In computer science, it is completely vital; without abstraction, we couldn't possibly manage the sheer scale and intricacy of modern software.
+The word literally means "to draw away," but its meaning has evolved. It's not just about taking things away; it's about *purposeful simplification*. As Goldstone and Barsalou put it, "To abstract is to distill the essence from its superficial trappings" [5]. This process is found everywhere, in philosophy, mathematics, natural language, art, and our own cognitive processes. In computer science, it is completely vital; without abstraction, we couldn't possibly manage the sheer scale and intricacy of modern software.
 
 ### The Modus Operandi of Abstraction
 
@@ -93,11 +93,11 @@ François Chollet's work on the ARC-AGI benchmark [3] reveals a profound distinc
 
 *Figure. Type 1 (Prototype-centric) abstraction represents concepts through typical examples and similarity measures, while Type 2 (Program-centric) abstraction generalizes over operations and behaviors as reusable computational patterns.*
 
-**Type 1: Prototype-centric abstraction** focuses on representing a concept through a set of prototypes, such as typical or average examples, and using a distance function to measure similarity. This is what deep learning excels at: clustering concrete examples around shared values or characteristics.
+**Type 1: Prototype-centric abstraction** focuses on representing a concept through a set of prototypes, such as typical or average examples, and using a distance function to measure similarity [3]. This is what deep learning excels at: clustering concrete examples around shared values or characteristics.
 
-**Type 2: Program-centric abstraction** concerns generalizing over *operations or behaviors*, not values. A sorting function operates regardless of what list it receives because it abstracts over the specific content. This is achieved by merging multiple specialized functions into a single, reusable pattern.
+**Type 2: Program-centric abstraction** concerns generalizing over *operations or behaviors*, not values [3]. A sorting function operates regardless of what list it receives because it abstracts over the specific content. This is achieved by merging multiple specialized functions into a single, reusable pattern.
 
-Understanding both poles is essential for advancing AI systems capable of learning, generalizing, and reasoning across domains.
+Understanding both poles is essential for advancing AI systems capable of learning, generalizing, and reasoning across domains [3][6].
 
 ## The Knowledge Level: Abstraction in AI Systems
 
@@ -156,7 +156,7 @@ Newell also distinguished types of learning relevant to understanding how LLMs i
 - **Deductive Knowledge Level Learning**: Accumulating facts and rules that expand what the system "knows"
 - **Non-Deductive Knowledge Level Learning**: Inductive learning that creates genuinely new knowledge
 
-Current LLMs primarily operate through a form of compiled knowledge, specifically massive pattern matching at the Symbol Level with Knowledge Level behavior emerging implicitly. The AoT approach may help make Knowledge Level reasoning more explicit and systematic, potentially improving the reliability and interpretability of AI reasoning.
+Current LLMs primarily operate through a form of compiled knowledge, specifically massive pattern matching at the Symbol Level with Knowledge Level behavior emerging implicitly [7][8]. The AoT approach may help make Knowledge Level reasoning more explicit and systematic, potentially improving the reliability and interpretability of AI reasoning [1].
 
 This connection between Newell's classic framework and modern prompting techniques reveals a deeper truth: the challenges we face in AI reasoning today are not entirely new. The distinction between knowing *what* to do and knowing *how* to do it has been central to AI since its inception. What AoT offers is a practical method to operationalize this distinction within the transformer architecture.
 
@@ -186,11 +186,11 @@ In both cases, the layering, meaning the visible hierarchy from abstract plan to
 
 ## Teaching Abstraction: Empirical Results
 
-To enable models to reason in this structured way, researchers developed the "AoT Collection," a specialized dataset containing approximately 348,000 examples formatted according to AoT principles. This dataset was generated using powerful LLMs in an automated pipeline, a fascinating instance of AI teaching AI to reason more effectively.
+To enable models to reason in this structured way, researchers developed the "AoT Collection," a specialized dataset containing approximately 348,000 examples formatted according to AoT principles [1]. This dataset was generated using powerful LLMs in an automated pipeline, a fascinating instance of AI teaching AI to reason more effectively.
 
 A key feature of the AoT Collection is its "hybrid" nature, incorporating reasoning examples expressed in both natural language and programming languages (like Python). This allows the model to learn flexibility, choosing the most appropriate modality for the task at hand.
 
-When models fine-tuned on this AoT data were tested against challenging benchmarks like BigBench Hard (BBH), designed to push the boundaries of logical, mathematical, and linguistic reasoning, the results were striking:
+When models fine-tuned on this AoT data were tested against challenging benchmarks like BigBench Hard (BBH), designed to push the boundaries of logical, mathematical, and linguistic reasoning, the results were striking [1]:
 
 | Finding | Details |
 |---------|---------|
@@ -199,11 +199,11 @@ When models fine-tuned on this AoT data were tested against challenging benchmar
 | **Structure is Key** | Models trained on the original AoT format performed better than those trained on AoT content rewritten into linear CoT format, isolating the benefit of hierarchical structure. |
 | **Data Efficiency** | Training with ~10,000 AoT examples yielded better performance than training on 300,000+ CoT examples. Learning the *structure* of abstract reasoning is more data-efficient. |
 
-Perhaps most compellingly, the research indicated that learning the *structure* of abstract reasoning is significantly more data-efficient than simply processing more linear examples, a clear win for quality over quantity.
+Perhaps most compellingly, the research indicated that learning the *structure* of abstract reasoning is significantly more data-efficient than simply processing more linear examples [1], a clear win for quality over quantity.
 
 ## Where LLMs Fall on the AGI Trajectory
 
-Understanding where current AI systems stand helps us appreciate why abstraction matters so much. Chollet's framework provides a conceptual trajectory toward Artificial General Intelligence:
+Understanding where current AI systems stand helps us appreciate why abstraction matters so much. Chollet's framework [3] provides a conceptual trajectory toward Artificial General Intelligence:
 
 ![LLM_on_AGI_Trajectory]({{ site.baseurl }}images/abstraction-of-thought-makes-ai-better-reasoners/Abstract_Where_LLM_Locate_in_the_AGI_Trajectory.jpg)
 
@@ -219,20 +219,20 @@ The path to AGI requires advancing beyond organized knowledge, enabling machines
 
 ## The ARC-AGI Challenge: Abstraction as the Benchmark
 
-The Abstraction and Reasoning Corpus (ARC) provides concrete evidence that abstraction is the key frontier:
+The Abstraction and Reasoning Corpus (ARC) [3][4] provides concrete evidence that abstraction is the key frontier:
 
 ![ARC1_vs_ARC2]({{ site.baseurl }}images/abstraction-of-thought-makes-ai-better-reasoners/Abstraction_ARC1_vs_ARC2.jpg)
 
 *Figure. ARC-AGI-1 (2019) challenged deep learning with tasks requiring novel abstraction. ARC-AGI-2 (2025) pushes further, specifically testing test-time reasoning and on-the-fly model synthesis.*
 
-- **ARC-AGI-1 (2019)**: Challenged deep learning with visual reasoning tasks requiring novel abstraction from limited examples.
-- **ARC-AGI-2 (2025)**: Specifically tests test-time reasoning, which is the ability to construct new mental models during problem-solving, not just apply learned patterns.
+- **ARC-AGI-1 (2019)** [3]: Challenged deep learning with visual reasoning tasks requiring novel abstraction from limited examples.
+- **ARC-AGI-2 (2025)** [4]: Specifically tests test-time reasoning, which is the ability to construct new mental models during problem-solving, not just apply learned patterns.
 
-As Chollet argues, "Solely measuring skill at any given task falls short of measuring intelligence, because skill is heavily modulated by prior knowledge and experience." True intelligence is *skill-acquisition efficiency*, meaning how quickly a system can generalize from minimal examples. Abstraction is the mechanism that enables this generalization.
+As Chollet argues, "Solely measuring skill at any given task falls short of measuring intelligence, because skill is heavily modulated by prior knowledge and experience" [3]. True intelligence is *skill-acquisition efficiency*, meaning how quickly a system can generalize from minimal examples. Abstraction is the mechanism that enables this generalization.
 
 ## Merging Deep Learning and Program Synthesis
 
-The future likely lies in hybrid architectures that combine the best of both paradigms:
+The future likely lies in hybrid architectures that combine the best of both paradigms [2][3]:
 
 ![Merge_DL_and_Program_Synthesis]({{ site.baseurl }}images/abstraction-of-thought-makes-ai-better-reasoners/Abstraction_Merge_DL_and_Program_Synthesis.jpg)
 
@@ -248,7 +248,7 @@ The future likely lies in hybrid architectures that combine the best of both par
 - It helps generate code snippet candidates and program embeddings
 - DL provides heuristic intuition over branching decisions, combating combinatorial explosion
 
-This hybrid approach, where DL handles perception and generalization while program synthesis provides structure and precision, may be the path forward for building more flexible, intelligent, and general-purpose AI systems.
+This hybrid approach, where DL handles perception and generalization while program synthesis provides structure and precision, may be the path forward for building more flexible, intelligent, and general-purpose AI systems [3][6].
 
 ## Practical Implications
 
@@ -263,7 +263,7 @@ When constructing prompts, explicitly encourage abstraction:
 
 ### For Model Training
 
-The data efficiency finding is crucial:
+The data efficiency finding is crucial [1]:
 - Quality of reasoning structure matters more than quantity of examples
 - Training data should explicitly demonstrate abstract-to-concrete reasoning flows
 - Hybrid formats (natural language + code) provide flexibility
@@ -277,11 +277,11 @@ When building AI systems for complex reasoning:
 
 ## Connection to Spatial Reasoning
 
-This work resonates with a 30-year thread connecting spatial reasoning to AI frontiers. My thesis work focused on spatial cognitive processes, specifically how humans represent and manipulate spatial knowledge mentally. The KRA model's concepts of focalization, grouping, and hierarchies are fundamentally spatial operations: zooming in/out, chunking regions, and navigating levels of detail.
+This work resonates with a 30-year thread connecting spatial reasoning to AI frontiers. My thesis work focused on spatial cognitive processes, specifically how humans represent and manipulate spatial knowledge mentally. The KRA model's concepts of focalization, grouping, and hierarchies [2] are fundamentally spatial operations: zooming in/out, chunking regions, and navigating levels of detail.
 
 AoT represents a convergence of these ideas with modern language models. The ability to reason at multiple levels of abstraction is essentially the cognitive equivalent of having multiple "zoom levels" on a problem, seeing both the forest and the trees, and knowing when to switch between views.
 
-The ARC-AGI benchmark explicitly tests this spatial-abstract reasoning capability. Tasks require recognizing patterns, applying transformations, and generalizing from minimal examples, all operations that demand both Type 1 (pattern recognition) and Type 2 (program synthesis) abstraction working in concert.
+The ARC-AGI benchmark [3][4] explicitly tests this spatial-abstract reasoning capability. Tasks require recognizing patterns, applying transformations, and generalizing from minimal examples, all operations that demand both Type 1 (pattern recognition) and Type 2 (program synthesis) abstraction working in concert [3].
 
 ## Concluding Remarks
 
@@ -293,27 +293,27 @@ The journey towards truly intelligent machines may depend on our ability to teac
 
 ## References
 
-- [1] Ruixin Hong, Hongming Zhang, Xiaoman Pan, Dong Yu, Changshui Zhang, [Abstraction-of-Thought Makes Language Models Better Reasoners](https://arxiv.org/abs/2406.12442), arXiv:2406.12442 [cs.CL], June 2024.
+[1] Ruixin Hong, Hongming Zhang, Xiaoman Pan, Dong Yu, Changshui Zhang. [Abstraction-of-Thought Makes Language Models Better Reasoners](https://arxiv.org/abs/2406.12442). arXiv:2406.12442 [cs.CL], June 2024.
   - Introduces the AoT framework and demonstrates significant improvements over Chain-of-Thought reasoning on BigBench Hard benchmarks.
 
-- [2] Lorenza Saitta and Jean-Daniel Zucker, [Abstraction In Artificial Intelligence And Complex Systems](https://www.amazon.ca/Abstraction-Artificial-Intelligence-Complex-Systems/dp/1489988742), Springer, May 2013.
+[2] Lorenza Saitta and Jean-Daniel Zucker. [*Abstraction In Artificial Intelligence And Complex Systems*](https://www.amazon.ca/Abstraction-Artificial-Intelligence-Complex-Systems/dp/1489988742). Springer, May 2013.
   - Presents the KRA (Knowledge Representation & Abstraction) model, providing a unified framework for understanding abstraction operators in AI.
 
-- [3] François Chollet, [On the Measure of Intelligence](https://arxiv.org/abs/1911.01547), arXiv:1911.01547 [cs.AI], November 2019.
+[3] François Chollet. [On the Measure of Intelligence](https://arxiv.org/abs/1911.01547). arXiv:1911.01547 [cs.AI], November 2019.
   - Articulates a formal definition of intelligence based on skill-acquisition efficiency and introduces the ARC benchmark for measuring human-like general fluid intelligence.
 
-- [4] ARC-AGI-2, [GitHub Repository](https://github.com/arcprize/ARC-AGI-2), 2025.
+[4] ARC Prize Foundation. [ARC-AGI-2](https://github.com/arcprize/ARC-AGI-2). GitHub Repository, 2025.
   - The second iteration of the Abstraction and Reasoning Corpus, specifically testing test-time reasoning capabilities.
 
-- [5] Robert Goldstone and Lawrence Barsalou, "Reuniting perception and conception," Cognition 65 (1998) 231–262.
+[5] Robert Goldstone and Lawrence Barsalou. [Reuniting Perception and Conception](https://doi.org/10.1016/S0010-0277(97)00047-4). *Cognition* 65 (1998) 231-262.
   - Illustrates ways in which conceptual processing is grounded in perception, relevant to understanding abstraction's cognitive foundations.
 
-- [6] Ruocheng Wang, Eric Zelikman, Gabriel Poesia, Yewen Pu, Nick Haber, Noah D. Goodman, [Hypothesis Search: Inductive Reasoning with Language Models](https://arxiv.org/abs/2309.05660), arXiv:2309.05660 [cs.LG], May 2024.
+[6] Ruocheng Wang, Eric Zelikman, Gabriel Poesia, Yewen Pu, Nick Haber, Noah D. Goodman. [Hypothesis Search: Inductive Reasoning with Language Models](https://arxiv.org/abs/2309.05660). arXiv:2309.05660 [cs.LG], May 2024.
   - Proposes generating hypotheses at multiple levels of abstraction to improve inductive reasoning on ARC and similar benchmarks.
 
-- [7] Allen Newell, [The Knowledge Level](http://lidecc.cs.uns.edu.ar/~grs/InteligenciaArtificial/Allen%20Newell%20-%20The%20knowledge%20level.pdf), Artificial Intelligence 18(1):87-127, 1982.
-  - Introduces the Knowledge Level as a distinct computer systems level characterized by knowledge as the medium and the principle of rationality as the law of behavior. This work is foundational for understanding abstraction in AI systems.
+[7] Allen Newell. [The Knowledge Level](http://lidecc.cs.uns.edu.ar/~grs/InteligenciaArtificial/Allen%20Newell%20-%20The%20knowledge%20level.pdf). *Artificial Intelligence* 18(1):87-127, 1982.
+  - Introduces the Knowledge Level as a distinct computer systems level characterized by knowledge as the medium and the principle of rationality as the law of behavior.
 
-- [8] B. Chandrasekaran, [Understanding Control at the Knowledge Level](https://cdn.aaai.org/Symposia/Fall/1994/FS-94-03/FS94-03-003.pdf), AAAI Technical Report FS-94-03, 1994.
+[8] B. Chandrasekaran. [Understanding Control at the Knowledge Level](https://cdn.aaai.org/Symposia/Fall/1994/FS-94-03/FS94-03-003.pdf). AAAI Technical Report FS-94-03, 1994.
   - Applies Knowledge Level analysis to control systems, demonstrating how differences in knowledge availability determine solution architectures.
 
