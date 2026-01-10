@@ -2,6 +2,7 @@
 layout: page
 title: Series
 permalink: /series/
+toc: false
 ---
 
 <div class="series-landing">
@@ -65,49 +66,49 @@ permalink: /series/
 
     {% assign first_post = series_posts | first %}
 
-    <div class="series-card">
-      <div class="series-card-header">
-        <h2>{{ series_name }}</h2>
-        <span class="series-count">{{ series_posts.size }} parts</span>
+    <div class="series-card {% if forloop.first %}expanded{% endif %}">
+      <div class="series-card-header" onclick="toggleSeries(this)">
+        <div class="series-header-top">
+          <span class="series-toggle">{% if forloop.first %}▼{% else %}▶{% endif %}</span>
+          <h2>{{ series_name }}</h2>
+          <span class="series-count">{{ series_posts.size }} parts</span>
+        </div>
+        {% if first_post.images.cover %}
+        <img class="series-header-banner" src="/{{ first_post.images.cover }}" alt="{{ series_name }}" loading="lazy">
+        {% elsif first_post.image %}
+        <img class="series-header-banner" src="/{{ first_post.image }}" alt="{{ series_name }}" loading="lazy">
+        {% endif %}
       </div>
 
-      {% if first_post.images.cover %}
-      <div class="series-card-image">
-        <img src="/{{ first_post.images.cover }}" alt="{{ series_name }}" loading="lazy">
-      </div>
-      {% elsif first_post.image %}
-      <div class="series-card-image">
-        <img src="/{{ first_post.image }}" alt="{{ series_name }}" loading="lazy">
-      </div>
-      {% endif %}
-
-      <div class="series-card-posts">
-        {% for post in series_posts %}
-          {% comment %} Get this post's order in current series {% endcomment %}
-          {% if post.series.first.name %}
-            {% for ps in post.series %}
-              {% if ps.name == series_name %}
-                {% assign post_order = ps.order %}
-                {% break %}
-              {% endif %}
-            {% endfor %}
-          {% else %}
-            {% assign post_order = post.series_order %}
-          {% endif %}
-        <a href="{{ post.url }}" class="series-card-post">
-          <span class="post-number">{{ post_order }}</span>
-          <div class="post-info">
-            <h4>{{ post.title }}</h4>
-            <p class="post-meta">
-              {{ post.date | date: "%b %-d, %Y" }}
-              {% assign words = post.content | number_of_words %}
-              {% assign reading_time = words | divided_by: 200 %}
-              {% if reading_time < 1 %}{% assign reading_time = 1 %}{% endif %}
-              &bull; {{ reading_time }} min read
-            </p>
-          </div>
-        </a>
-        {% endfor %}
+      <div class="series-card-content" {% unless forloop.first %}style="display: none;"{% endunless %}>
+        <div class="series-card-posts">
+          {% for post in series_posts %}
+            {% comment %} Get this post's order in current series {% endcomment %}
+            {% if post.series.first.name %}
+              {% for ps in post.series %}
+                {% if ps.name == series_name %}
+                  {% assign post_order = ps.order %}
+                  {% break %}
+                {% endif %}
+              {% endfor %}
+            {% else %}
+              {% assign post_order = post.series_order %}
+            {% endif %}
+          <a href="{{ post.url }}" class="series-card-post">
+            <span class="post-number">{{ post_order }}</span>
+            <div class="post-info">
+              <h4>{{ post.title }}</h4>
+              <p class="post-meta">
+                {{ post.date | date: "%b %-d, %Y" }}
+                {% assign words = post.content | number_of_words %}
+                {% assign reading_time = words | divided_by: 200 %}
+                {% if reading_time < 1 %}{% assign reading_time = 1 %}{% endif %}
+                &bull; {{ reading_time }} min read
+              </p>
+            </div>
+          </a>
+          {% endfor %}
+        </div>
       </div>
     </div>
   {% endfor %}
@@ -116,3 +117,21 @@ permalink: /series/
   <p class="text-muted">No series found. Series will appear here when posts have <code>series</code> and <code>series_order</code> front matter.</p>
   {% endif %}
 </div>
+
+<script>
+function toggleSeries(header) {
+  const card = header.parentElement;
+  const content = card.querySelector('.series-card-content');
+  const toggle = header.querySelector('.series-toggle');
+
+  if (content.style.display === 'none') {
+    content.style.display = 'block';
+    toggle.textContent = '▼';
+    card.classList.add('expanded');
+  } else {
+    content.style.display = 'none';
+    toggle.textContent = '▶';
+    card.classList.remove('expanded');
+  }
+}
+</script>

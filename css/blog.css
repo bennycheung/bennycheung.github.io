@@ -1290,6 +1290,53 @@ pre:hover .code-copy-btn {
 /*
  * Archives Page
  */
+.archive-year-group {
+  margin-bottom: 10px;
+}
+
+.archive-year-header {
+  margin: 20px 0 10px 0;
+  font-size: 28px;
+  color: #333;
+  border-bottom: 2px solid #428bca;
+  padding-bottom: 10px;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.2s ease;
+}
+
+.archive-year-header:hover {
+  color: #428bca;
+}
+
+.archive-year-group:first-of-type .archive-year-header {
+  margin-top: 10px;
+}
+
+.archive-toggle {
+  display: inline-block;
+  width: 24px;
+  font-size: 18px;
+  color: #428bca;
+  transition: transform 0.2s ease;
+}
+
+.archive-year-posts {
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Legacy support */
 .archive-year {
   margin: 40px 0 20px 0;
   font-size: 28px;
@@ -1591,8 +1638,17 @@ html.dark-mode .archive-group {
   border-top-color: var(--border-color);
 }
 
-html.dark-mode .archive-year {
+html.dark-mode .archive-year,
+html.dark-mode .archive-year-header {
   color: var(--text-heading);
+}
+
+html.dark-mode .archive-year-header:hover {
+  color: var(--link-color);
+}
+
+html.dark-mode .archive-toggle {
+  color: var(--link-color);
 }
 
 html.dark-mode .archive-item a {
@@ -2165,17 +2221,48 @@ html.dark-mode .landing-nav a.btn.btn-default.btn-lg i {
 
 .series-card-header {
   display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #428bca 0%, #3071a9 100%);
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  transition: filter 0.2s ease;
+}
+
+.series-card-header:hover {
+  filter: brightness(1.1);
+}
+
+.series-header-top {
+  display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background: linear-gradient(135deg, #428bca 0%, #3071a9 100%);
-  color: white;
+}
+
+.series-header-banner {
+  width: 100%;
+  height: 200px;
+  max-height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.series-toggle {
+  font-size: 16px;
+  margin-right: 12px;
+  opacity: 0.9;
 }
 
 .series-card-header h2 {
   margin: 0;
   font-size: 22px;
   color: white;
+  flex: 1;
+}
+
+.series-card-content {
+  animation: slideDown 0.3s ease;
 }
 
 .series-count {
@@ -2350,6 +2437,11 @@ html.dark-mode .series-card-post .post-meta {
 
   .series-card-header h2 {
     font-size: 18px;
+  }
+
+  .series-header-banner {
+    height: 120px;
+    max-height: 120px;
   }
 
   .series-card-image {
