@@ -35,9 +35,9 @@ _Figure. The challenge of integrating two AI agent systems: BMAD's structured wo
 
 We faced a problem many AI practitioners encounter: two capable systems that each did something well, but could not work together.
 
-**BMAD** (BMad Method) is a structured workflow system with 30 specialized agent personas. Mary the Business Analyst brings systematic requirements elicitation. Winston the Architect provides rigorous system design. Carson the Brainstorming Coach offers 35 creative techniques. Each agent has a rich identity including communication style, principles, and expertise areas. The workflows are deterministic, template-driven, and produce consistent artifacts like PRDs, tech specs, and game design documents.
+**BMAD** (BMad Method) [3][4] is a structured workflow system with 30 specialized agent personas. Mary the Business Analyst brings systematic requirements elicitation. Winston the Architect provides rigorous system design. Carson the Brainstorming Coach offers 35 creative techniques. Each agent has a rich identity including communication style, principles, and expertise areas. The workflows are deterministic, template-driven, and produce consistent artifacts like PRDs, tech specs, and game design documents.
 
-**PAI** (Personal AI Infrastructure) is a personal AI system built around Claude Code. It uses natural language activation, meaning you say "I need a PRD for..." rather than memorizing explicit commands. It excels at parallel agent execution and flexible model selection, sending grunt work to Haiku and complex reasoning to Opus.
+**PAI** (Personal AI Infrastructure) [1][2] is a personal AI system built around Claude Code. It uses natural language activation, meaning you say "I need a PRD for..." rather than memorizing explicit commands. It excels at parallel agent execution and flexible model selection, sending grunt work to Haiku and complex reasoning to Opus.
 
 Both systems worked. Neither talked to the other. Using BMAD meant abandoning PAI's natural invocation. Using PAI meant losing BMAD's rich personas and validated templates.
 
@@ -61,7 +61,7 @@ This is the composition pattern in practice: different systems operating at diff
 
 ## The Implementation: BmadBridge
 
-The integration took shape as a PAI skill called **BmadBridge**. Here is what it does:
+The integration took shape as a PAI skill [5][6] called **BmadBridge**. Here is what it does:
 
 ### 1. Intent-Based Routing
 
@@ -343,20 +343,14 @@ That is the integration in practice: **say what you want, get structured results
 
 ## References
 
-- Daniel Miessler, [Building a Personal AI Infrastructure (PAI)](https://danielmiessler.com/blog/personal-ai-infrastructure), Blog, 26 Jul 2025.
-  - The original PAI concept that inspired our personal AI infrastructure approach.
+[1] Daniel Miessler, [Building a Personal AI Infrastructure (PAI)](https://danielmiessler.com/blog/personal-ai-infrastructure), Blog, 26 Jul 2025.
 
-- Unsupervised Learning, [Building Your Own Unified AI Assistant Using Claude Code](https://www.youtube.com/watch?v=iKwRWwabkEc), video, 4 Sep 2025.
-  - Video walkthrough of building unified AI assistants with Claude Code.
+[2] Unsupervised Learning, [Building Your Own Unified AI Assistant Using Claude Code](https://www.youtube.com/watch?v=iKwRWwabkEc), video, 4 Sep 2025.
 
-- BMad Code, [BMAD Method](https://github.com/bmad-code-org/BMAD-METHOD/tree/main), GitHub.
-  - The Breakthrough Method of Agile AI-Driven Development that provides the structured workflows and agent personas.
+[3] BMad Code, [BMAD Method](https://github.com/bmad-code-org/BMAD-METHOD/tree/main), GitHub.
 
-- BMad Code, [The BMAD Builder is Here - V6 Alpha: 5 Major Features](https://www.youtube.com/watch?v=6LtrJD5Dz40), video, 6 Oct 2025.
-  - Introduction to BMAD V6 with its builder capabilities.
+[4] BMad Code, [The BMAD Builder is Here - V6 Alpha: 5 Major Features](https://www.youtube.com/watch?v=6LtrJD5Dz40), video, 6 Oct 2025.
 
-- Anthropic, [Introducing Claude Skills](https://www.anthropic.com/news/skills), Product Blog, 16 Oct 2025.
-  - Official announcement of Claude Skills that enabled the skill-based integration approach.
+[5] Anthropic, [Introducing Claude Skills](https://www.anthropic.com/news/skills), Product Blog, 16 Oct 2025.
 
-- Simon Willison, [Claude Skills are awesome, maybe a bigger deal than MCP](https://simonwillison.net/2025/Oct/16/claude-skills/), Weblog, 16 Oct 2025.
-  - Analysis of Claude Skills and their significance for AI agent development.
+[6] Simon Willison, [Claude Skills are awesome, maybe a bigger deal than MCP](https://simonwillison.net/2025/Oct/16/claude-skills/), Weblog, 16 Oct 2025.

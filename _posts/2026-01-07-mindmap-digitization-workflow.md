@@ -33,7 +33,7 @@ _Figure. The transformation from hand-drawn sketch to illuminated manuscript sty
 
 ## Why Mind Mapping Matters
 
-Visual thinking activates spatial reasoning in ways that linear note-taking cannot. When we draw a mind map, we engage with ideas differently. The central concept sits at the heart, branches radiate outward, and relationships emerge through proximity and connection. This spatial arrangement mirrors how our minds actually work, making complex topics easier to grasp and remember.
+Visual thinking activates spatial reasoning in ways that linear note-taking cannot [1]. When we draw a mind map, we engage with ideas differently. The central concept sits at the heart, branches radiate outward, and relationships emerge through proximity and connection. This spatial arrangement mirrors how our minds actually work, making complex topics easier to grasp and remember.
 
 For years, we have accumulated hand-drawn mind maps, each one capturing a moment of learning or insight. Philosophy lectures, technical architectures, book summaries, project plans. Over 80 maps spanning topics from temporal logic to blockchain fundamentals. Each one represents genuine understanding, the kind that comes from actively processing information rather than passively recording it.
 
@@ -63,7 +63,7 @@ This style balances classical elegance with modern clarity. The mind maps become
 
 ## Two Workflows for Different Needs
 
-We developed two complementary workflows within our Personal AI Infrastructure (PAI), each addressing a different starting point.
+We developed two complementary workflows within our Personal AI Infrastructure (PAI) [3], each addressing a different starting point.
 
 ### TranslateMindMap: From Hand-Drawn to Digital
 
@@ -85,10 +85,10 @@ The key insight came during development: we analyze the AI-generated "Nano" vers
 
 | Component | Role |
 |-----------|------|
-| Claude Code | Orchestrates the entire workflow |
-| Nano Banana Pro | Advanced image generation model |
+| Claude Code [2] | Orchestrates the entire workflow |
+| Nano Banana Pro [4] | Advanced image generation model |
 | Style Reference | Existing Nano image ensures visual consistency |
-| Obsidian | Final destination for structured markdown notes |
+| Obsidian [5] | Final destination for structured markdown notes |
 
 ### GenerateMindMap: From Content to Visual
 
@@ -253,17 +253,16 @@ The workflow continues to evolve. Recent additions include generating mind maps 
 
 For those interested in building similar workflows, the key is starting with clear intentions. What do you want to preserve? What do you want to enhance? The answers shape every technical decision that follows.
 
-Mind mapping itself remains a powerful technique for learning and thinking. Now, with AI assistance, those maps can transcend their paper origins and become living parts of a connected knowledge system.
+Mind mapping itself remains a powerful technique for learning and thinking [1]. Now, with AI assistance, those maps can transcend their paper origins and become living parts of a connected knowledge system.
 
 ## References
 
-*   Tony Buzan, [The Mind Map Book](https://www.amazon.com/Mind-Map-Book-Thinking-Potential/dp/0452273226), BBC Active, 1991.
-    *   The foundational text on mind mapping techniques and applications
-*   Anthropic, [Claude Code Documentation](https://docs.anthropic.com/en/docs/claude-code), 2025.
-    *   Documentation for Claude Code CLI and agent orchestration
-*   Miessler, D., [Personal AI Infrastructure (PAI)](https://github.com/danielmiessler/Personal_AI_Infrastructure), 2025.
-    *   Reference implementation exhibiting process-like patterns discovered through engineering optimization
-*   Google, [Nano Banana Pro](https://aistudio.google.com/), 2025.
-    *   Advanced image generation model available in Google AI Studio for high-quality visualizations
-*   Obsidian, [Obsidian Help](https://help.obsidian.md/), 2025.
-    *   Documentation for Obsidian knowledge management system
+[1] Tony Buzan, [The Mind Map Book](https://www.amazon.com/Mind-Map-Book-Thinking-Potential/dp/0452273226), BBC Active, 1991.
+
+[2] Anthropic, [Claude Code Documentation](https://docs.anthropic.com/en/docs/claude-code), 2025.
+
+[3] Miessler, D., [Personal AI Infrastructure (PAI)](https://github.com/danielmiessler/Personal_AI_Infrastructure), 2025.
+
+[4] Google, [Nano Banana Pro](https://aistudio.google.com/), 2025.
+
+[5] Obsidian, [Obsidian Help](https://help.obsidian.md/), 2025.
