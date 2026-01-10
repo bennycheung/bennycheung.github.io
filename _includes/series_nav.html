@@ -156,6 +156,8 @@
       {% endfor %}
     </div>
     <div class="series-nav-buttons">
+      {% assign prev_order = page.series_order | minus: 1 %}
+      {% assign next_order = page.series_order | plus: 1 %}
       {% for post in series_posts %}
         {% if post.series.first.name %}
           {% for ps in post.series %}
@@ -167,10 +169,10 @@
         {% else %}
           {% assign post_order = post.series_order %}
         {% endif %}
-        {% if post_order == page.series_order | minus: 1 %}
+        {% if post_order == prev_order %}
           <a href="{{ post.url }}" class="series-btn prev-btn"><i class="fa fa-chevron-left"></i> Previous Part</a>
         {% endif %}
-        {% if post_order == page.series_order | plus: 1 %}
+        {% if post_order == next_order %}
           <a href="{{ post.url }}" class="series-btn next-btn">Next Part <i class="fa fa-chevron-right"></i></a>
         {% endif %}
       {% endfor %}
