@@ -24,7 +24,7 @@
     {% for post in related_posts limit: max_related %}
     <a href="{{ post.url }}" class="related-post-card">
       <div class="related-post-image">
-        {% if post.images.cover %}
+        {% if post.featured and post.images.cover %}
           <img src="/{{ post.images.cover }}" alt="{{ post.title }}" loading="lazy">
         {% elsif post.image %}
           <img src="/{{ post.image }}" alt="{{ post.title }}" loading="lazy">

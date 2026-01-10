@@ -52,7 +52,7 @@ comments: true
 	  <a href="{{page.previous.url}}" class="post-nav-card prev-card">
 	    <span class="nav-label"><i class="fa fa-chevron-left"></i> Previous</span>
 	    <div class="nav-card-content">
-	      {% if page.previous.images.cover %}
+	      {% if page.previous.featured and page.previous.images.cover %}
 	        <img src="/{{ page.previous.images.cover }}" alt="{{ page.previous.title }}" loading="lazy">
 	      {% elsif page.previous.image %}
 	        <img src="/{{ page.previous.image }}" alt="{{ page.previous.title }}" loading="lazy">
@@ -70,7 +70,7 @@ comments: true
 	  <a href="{{page.next.url}}" class="post-nav-card next-card">
 	    <span class="nav-label">Next <i class="fa fa-chevron-right"></i></span>
 	    <div class="nav-card-content">
-	      {% if page.next.images.cover %}
+	      {% if page.next.featured and page.next.images.cover %}
 	        <img src="/{{ page.next.images.cover }}" alt="{{ page.next.title }}" loading="lazy">
 	      {% elsif page.next.image %}
 	        <img src="/{{ page.next.image }}" alt="{{ page.next.title }}" loading="lazy">
