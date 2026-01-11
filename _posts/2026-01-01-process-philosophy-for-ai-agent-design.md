@@ -20,7 +20,7 @@ images:
   header: images/process-philosophy-for-ai-agent-design/header.jpg
 published: true
 featured: true
-featured_order: 2
+featured_order: 3
 ---
 
 <!--excerpt.start-->

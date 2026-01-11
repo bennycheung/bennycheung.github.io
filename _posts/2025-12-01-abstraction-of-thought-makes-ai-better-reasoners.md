@@ -19,8 +19,6 @@ images:
   cover: images/abstraction-of-thought-makes-ai-better-reasoners/animated-cover.webp
   header: images/abstraction-of-thought-makes-ai-better-reasoners/header.jpg
 published: true
-featured: true
-featured_order: 3
 ---
 
 <!--excerpt.start-->

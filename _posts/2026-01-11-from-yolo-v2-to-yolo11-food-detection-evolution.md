@@ -16,9 +16,11 @@ category: post
 comments: true
 image: images/from-yolo-v2-to-yolo11-food-detection-evolution/cover.jpg
 images:
-  cover: images/from-yolo-v2-to-yolo11-food-detection-evolution/cover2x.jpg
+  cover: images/from-yolo-v2-to-yolo11-food-detection-evolution/animated-cover.jpg
   header: images/from-yolo-v2-to-yolo11-food-detection-evolution/header.jpg
 published: true
+featured: true
+featured_order: 1
 ---
 
 <!--excerpt.start-->
