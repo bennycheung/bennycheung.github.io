@@ -1,11 +1,11 @@
 ---
 layout: post
-title: From YOLO v2 to YOLO11 - 8 Years of Food Detection Evolution
+title: "You Only Look Once: 8 Years of Food Detection Evolution"
 date: 2026-01-11 12:00:00.000000000 -05:00
 permalink: from-yolo-v2-to-yolo11-food-detection-evolution
 author: Benny Cheung
 artwork:
-  author: Gemini 3 Pro (Nano Banana)
+  author: Gemini 3 Pro (Nano Banana Pro)
 tags:
   - Deep Neural Network
   - Object Detection
@@ -14,18 +14,18 @@ tags:
   - Machine Learning
 category: post
 comments: true
-image: images/from-yolo-v2-to-yolo11-food-detection-evolution/cover2x.jpg
+image: images/from-yolo-v2-to-yolo11-food-detection-evolution/cover.jpg
 images:
-  cover: images/from-yolo-v2-to-yolo11-food-detection-evolution/cover.jpg
+  cover: images/from-yolo-v2-to-yolo11-food-detection-evolution/cover2x.jpg
   header: images/from-yolo-v2-to-yolo11-food-detection-evolution/header.jpg
-published: false
+published: true
 ---
 
 <!--excerpt.start-->
 Eight years ago, we trained a YOLO v2 model to detect 100 types of Japanese food in real-time. It required compiling C code, writing custom Python scripts, and carefully tuning configuration files. Today, the same task takes three commands and an afternoon. This is the story of how food detection, and deep learning tooling more broadly, has evolved from 2018 to 2026.
 <!--excerpt.end-->
 
-In 2018, we wrote about [YOLO for Real-Time Food Detection]({{ site.baseurl }}yolo-for-real-time-food-detection), documenting our journey to build a "Food Watcher" using Joseph Redmon's Darknet framework [1] and the UEC FOOD 100 dataset [2]. The result was impressive for its time: 70 fps food detection on a GTX TitanX, recognizing everything from sushi to hamburgers.
+In 2018, we wrote about [YOLO for Real-Time Food Detection]({{ site.baseurl }}yolo-for-real-time-food-detection) [6], documenting our journey to build a "Food Watcher" using Joseph Redmon's Darknet framework [1] and the UEC FOOD 100 dataset [2]. The result was impressive for its time: 70 fps food detection on a GTX TitanX, recognizing everything from sushi to hamburgers.
 
 > "The obsession of recognizing snacks and foods has been a fun theme for experimenting the latest machine learning techniques."
 
@@ -33,9 +33,9 @@ That obsession hasn't faded. But the landscape has transformed dramatically. Wha
 
 This post revisits food detection through the lens of YOLO11 [3] and the FoodInsight project [4], showing what's changed, what's stayed the same, and why 2026 is the best time ever to train your own object detection models.
 
-![YOLO Food Detection Results]({{ site.baseurl }}images/from-yolo-v2-to-yolo11-food-detection-evolution/Food100_train_samples_700.jpg)
+![YOLO Food Detection Pipeline]({{ site.baseurl }}images/from-yolo-v2-to-yolo11-food-detection-evolution/YOLO_Food_Detection_Hero.png)
 
-_Figure. Sample food detection results from the UEC FOOD 100 dataset, demonstrating multi-class object detection across diverse Japanese dishes._
+_Figure. YOLO11 food detection pipeline: Input images from the UEC FOOD 100 dataset [2] flow through convolutional layers and a detection head, outputting bounding boxes with class labels and confidence scores for diverse Japanese dishes._
 
 ---
 
@@ -43,18 +43,9 @@ _Figure. Sample food detection results from the UEC FOOD 100 dataset, demonstrat
 
 Before diving into the technical details, it's worth appreciating how far YOLO has come. The original "You Only Look Once" paper from 2015 [5] introduced a radical idea: instead of scanning an image thousands of times looking for objects, process the entire image in a single neural network pass.
 
-| Version | Year | Key Innovation |
-|---------|------|----------------|
-| YOLO v1 | 2015 | Single-pass detection concept |
-| YOLO v2 | 2016 | Batch normalization, anchor boxes |
-| YOLO v3 | 2018 | Multi-scale detection, Darknet-53 |
-| YOLO v4 | 2020 | CSPDarknet, Mish activation |
-| YOLO v5 | 2020 | PyTorch, Ultralytics ecosystem |
-| YOLO v7 | 2022 | E-ELAN architecture |
-| YOLO v8 | 2023 | Anchor-free, decoupled head |
-| YOLO v9 | 2024 | PGI, GELAN |
-| YOLO v10 | 2024 | NMS-free training |
-| YOLO v11 | 2024 | Latest Ultralytics, efficiency focus |
+![The Evolution of YOLO]({{ site.baseurl }}images/from-yolo-v2-to-yolo11-food-detection-evolution/YOLO_Evolution_Timeline.png)
+
+_Figure. The evolution of YOLO from 2015 to 2024: From Joseph Redmon's revolutionary single-pass detection concept through Ultralytics' democratization of object detection, to today's efficiency-focused YOLO11. Orange highlights mark key breakthroughs (v1, v5, v11), while cyan accents indicate major architectural innovations._
 
 The story arc is remarkable. Joseph Redmon's original Darknet implementation was written in pure C, fast but requiring careful compilation and platform-specific tweaks [1]. After Redmon stepped away from computer vision research in 2020, the community forked and evolved the codebase. Ultralytics emerged as the de facto standard, wrapping everything in a clean Python API that just works [3].
 
@@ -66,7 +57,7 @@ From research code to production-ready library. From C compilation to `pip insta
 
 The most striking difference between 2018 and 2026 is not the model architecture. It is the developer experience.
 
-### 2018: The Darknet Way
+### 2018: The Darknet Way [1]
 
 Here's what training YOLO v2 required in 2018:
 
@@ -92,7 +83,7 @@ classes=100
 
 Get this wrong? Silent failures or garbage predictions.
 
-### 2026: The Ultralytics Way
+### 2026: The Ultralytics Way [3]
 
 Here's the modern equivalent:
 
@@ -162,7 +153,7 @@ The `--device mps` flag is the only change needed. Everything else works identic
 | Noise | Jet engine | Silent |
 | Form factor | Desktop tower | Laptop |
 
-Training YOLO11s on UEC FOOD 100 takes approximately 15-18 minutes per epoch on the M4 Pro. A full 150-epoch run completes in about 40 hours, or much faster with early stopping when the model converges.
+Training YOLO11s on UEC FOOD 100 [2] takes approximately 15-18 minutes per epoch on the M4 Pro. A full 150-epoch run completes in about 40 hours, or much faster with early stopping when the model converges.
 
 ---
 
@@ -179,7 +170,7 @@ Some things don't change. The UEC FOOD 100 dataset from the University of Electr
 
 The dataset's strength is its real-world nature: photos taken in actual dining settings, not studio shots. Multiple foods appear in single frames. Lighting varies. Presentations differ.
 
-There's now also UEC FOOD 256 with 31,395 images across 256 classes, adding international foods. However, the original 100-class version trains faster and achieves higher per-class accuracy, making it still the best starting point.
+There's now also UEC FOOD 256 [2] with 31,395 images across 256 classes, adding international foods. However, the original 100-class version trains faster and achieves higher per-class accuracy, making it still the best starting point.
 
 ### Dataset Conversion
 
@@ -236,6 +227,10 @@ epoch,mAP50,mAP50-95,precision,recall,box_loss,cls_loss,dfl_loss
 
 Let us break down what these mean:
 
+![Understanding Detection Metrics]({{ site.baseurl }}images/from-yolo-v2-to-yolo11-food-detection-evolution/Detection_Metrics_Explained.png)
+
+_Figure. Visual explanation of object detection metrics: IoU measures bounding box overlap, Precision tracks false positives, Recall tracks missed detections, and mAP averages precision across IoU thresholds (lenient at 0.50, strict at 0.50-0.95)._
+
 **mAP50-95 (Primary Metric)**: Mean Average Precision averaged across IoU thresholds from 0.50 to 0.95. This is the strictest measure, as high scores require both correct classification AND precise bounding boxes.
 
 **mAP50 (Lenient Metric)**: Precision at IoU=0.50. A detection counts as correct if there's at least 50% overlap with ground truth. Always higher than mAP50-95.
@@ -254,18 +249,16 @@ An IoU of 0.50 means the predicted box overlaps 50% with the ground truth. An Io
 
 ### Current Training Results
 
-Our YOLO11s model on UEC FOOD 100 is achieving:
+Our YOLO11s model on UEC FOOD 100 [2] achieved the following metrics after 80 epochs of training:
 
 | Metric | Value | Interpretation |
 |--------|-------|----------------|
-| mAP50-95 | ~0.60 | Good (target range: 0.55-0.65) |
-| mAP50 | ~0.78 | Strong detection capability |
-| Precision | ~0.74 | Few false positives |
-| Recall | ~0.70 | Finds most foods |
+| mAP50-95 | 0.60 | Good overall detection accuracy |
+| mAP50 | 0.79 | Strong detection at IoU 0.50 |
+| Precision | 0.75 | Few false positives |
+| Recall | 0.71 | Finds most foods in images |
 
-_[TODO: Update with final metrics when training completes]_
-
-For a 100-class food detection problem with visually similar categories such as multiple noodle types and rice dishes, these numbers represent solid performance.
+For a 100-class food detection problem with visually similar categories such as multiple noodle types and rice dishes, these numbers represent solid performance. The model was trained using transfer learning from COCO pretrained weights [9], which helped achieve good results even with the relatively small UEC FOOD 100 dataset.
 
 ---
 
@@ -277,47 +270,47 @@ In the 2018 post, we highlighted several memorable test cases. Let's revisit the
 
 > "Ever since the HBO show Silicon Valley released a real AI app that identifies 'hotdogs, and not hotdogs', recognizing hotdog is the golden test standard for any food detection."
 
-![Hot Dog Detection]({{ site.baseurl }}images/from-yolo-v2-to-yolo11-food-detection-evolution/Food100_YOLO_HotDog_700.jpg)
+![Hot Dog Detection]({{ site.baseurl }}images/from-yolo-v2-to-yolo11-food-detection-evolution/hot_dog_collage.jpg)
 
-_Figure. YOLO detecting hot dogs with high confidence, passing the Silicon Valley "not hot dog" test with flying colors._
+_Figure. YOLO11 detecting hot dogs across various styles: classic with mustard (0.89), sesame bun pair (0.93), loaded with toppings (0.83), and ketchup drizzle (0.95). The Silicon Valley "not hot dog" test? Passed with flying colors._
 
 ### Test 2: The Hamburger Challenge
 
-The original test featured a hamburger with visible ham. Could the model see both the whole burger and the component?
+From fast food classics to gourmet creations, hamburgers vary wildly in presentation. Can the model handle Big Macs, homemade burgers, and everything in between?
 
-![Hamburger Detection]({{ site.baseurl }}images/from-yolo-v2-to-yolo11-food-detection-evolution/Food100_YOLO_Hambruger_700.jpg)
+![Hamburger Detection]({{ site.baseurl }}images/from-yolo-v2-to-yolo11-food-detection-evolution/hamburger_collage.jpg)
 
-_Figure. YOLO detecting hamburger components, recognizing both the assembled burger and visible ingredients._
+_Figure. YOLO11 detecting hamburgers across the spectrum: classic patty (0.84), stacked Big Mac style (0.88), gourmet with fresh tomato (0.72), and McDonald's meal with fries (0.56). Note the multi-class detection catching french fries (0.41) in the same frame._
 
 ### Test 3: Soupy Things
 
 Noodles in broth pose a unique challenge: the food is partially submerged and obscured.
 
-![Ramen Detection]({{ site.baseurl }}images/from-yolo-v2-to-yolo11-food-detection-evolution/Food100_YOLO_Bowl_Noodles_700.jpg)
+![Ramen Detection]({{ site.baseurl }}images/from-yolo-v2-to-yolo11-food-detection-evolution/ramen_noodle_collage.jpg)
 
-_Figure. YOLO detecting noodle dishes in broth, successfully handling partially obscured food items in liquid._
+_Figure. YOLO11 detecting ramen noodle dishes with confidence scores from 0.51 to 0.95, successfully handling partially obscured food items in broth._
 
-### Test 4: Food with a Mask
+### Test 4: Eggs in Many Forms
 
-The original egg sunny-side-up with a smiley face. Can unusual presentations still be recognized?
+Eggs appear in countless preparations: fried, rolled, wrapped, or folded into omelets. Can the model distinguish between visually distinct egg dishes?
 
-![Egg Detection]({{ site.baseurl }}images/from-yolo-v2-to-yolo11-food-detection-evolution/Food100_YOLO_Egg_Smile_and_Cut_up_700.jpg)
+![Egg Detection]({{ site.baseurl }}images/from-yolo-v2-to-yolo11-food-detection-evolution/egg_collage.jpg)
 
-_Figure. YOLO detecting decorated eggs, demonstrating robustness to unusual food presentations like smiley faces._
+_Figure. YOLO11 detecting diverse egg preparations: omurice-style omelet (0.81), Japanese tamagoyaki rolled omelet (0.77), crispy egg roll (0.85), and classic egg sunny-side up (0.56)._
 
-### Test 5: Shape Matters
+### Test 5: Pizza in Every Style
 
-Pizza vs pizza toast: similar ingredients, different forms. Can the model distinguish based on shape?
+From single slices to whole pies, takeout boxes to restaurant plates. Can the model recognize pizza across varied presentations and toppings?
 
-![Pizza Detection]({{ site.baseurl }}images/from-yolo-v2-to-yolo11-food-detection-evolution/Food100_YOLO_Pizza_700.jpg)
+![Pizza Detection]({{ site.baseurl }}images/from-yolo-v2-to-yolo11-food-detection-evolution/pizza_collage.jpg)
 
-_Figure. YOLO detecting pizza, discriminating based on shape characteristics that distinguish it from pizza toast._
+_Figure. YOLO11 detecting pizza across diverse styles: slice on paper plate (0.88), margherita in delivery box (0.87), mushroom pizza (0.62), and shrimp pizza (0.80)._
 
 ---
 
 ## Deployment: Beyond the Desktop
 
-In 2018, deployment meant running Darknet on a machine with an NVIDIA GPU. Period.
+In 2018, deployment meant running Darknet [1] on a machine with an NVIDIA GPU. Period.
 
 ```bash
 ./darknet detector demo data/food100.data cfg/yolov2-food100.cfg weights/final.weights
@@ -331,7 +324,7 @@ YOLO11 exports to virtually any runtime [3]:
 
 | Target | Format | Command |
 |--------|--------|---------|
-| Raspberry Pi | NCNN | `yolo export model=best.pt format=ncnn` |
+| Raspberry Pi | NCNN [8] | `yolo export model=best.pt format=ncnn` |
 | iOS | CoreML | `yolo export model=best.pt format=coreml` |
 | Android | TFLite | `yolo export model=best.pt format=tflite` |
 | Web | ONNX.js | `yolo export model=best.pt format=onnx` |
@@ -341,10 +334,10 @@ YOLO11 exports to virtually any runtime [3]:
 The FoodInsight project targets Raspberry Pi deployment, enabling a $50 computer to run food detection at the edge [4]:
 
 ```bash
-# Export for Raspberry Pi
+# Export for Raspberry Pi (NCNN format) [8]
 yolo export model=runs/detect/food100_best/weights/best.pt format=ncnn
 
-# Deploy the ncnn model folder to Pi
+# Deploy the NCNN model folder to Pi
 # Run inference on-device, no cloud required
 ```
 
@@ -356,7 +349,7 @@ Privacy-preserving, always-available food detection for about the cost of a rest
 
 Let's put numbers to the progress:
 
-| Metric | YOLO v2 (2018) | YOLO11 (2026) |
+| Metric | YOLO v2 (2018) [1] | YOLO11 (2026) [3] |
 |--------|----------------|---------------|
 | Framework | Darknet (C) | Ultralytics (Python) |
 | Base model size | ~200MB | 22MB (yolo11s) |
@@ -372,9 +365,29 @@ The model is smaller, faster, more accurate, and infinitely easier to use.
 
 ## What's Next: The FoodInsight Vision
 
-Food detection is a means to an end. The real goal is automated nutrition tracking: snap a photo of your meal, get calorie and macro estimates, log it to your health app.
+Food detection is a means to an end. We are building **FoodInsight**, a platform that demonstrates two practical applications of YOLO11 food detection.
 
-### The Pipeline
+### Snack Watching: FoodInsight
+
+The first application is a smart snack inventory monitoring system for office break rooms. Picture a Raspberry Pi with a camera mounted above the snack shelf:
+
+![FoodInsight Deployment Scene]({{ site.baseurl }}images/from-yolo-v2-to-yolo11-food-detection-evolution/FoodInsight_Deployment_Scene.png)
+
+_Figure. FoodInsight deployment concept: A Raspberry Pi with camera monitors the snack shelf, detecting items taken or added in real-time. Bounding boxes show detected items with counts, while warning indicators flag low stock._
+
+**The FoodInsight Architecture:**
+
+- **Edge AI detection**: YOLO11n runs directly on the Raspberry Pi using NCNN format [8], achieving 4-6 FPS with no cloud dependency
+- **Privacy-by-design**: Only inventory counts are stored, never images. ROI masking ensures only the snack shelf is processed
+- **Real-time tracking**: ByteTrack [7] maintains object persistence across frames, detecting when items are taken or restocked
+- **Consumer access**: A lightweight PWA lets anyone check current snack availability from their phone
+- **Zero cloud cost**: SQLite database runs locally, making the entire system self-contained
+
+The complete solution costs under $140 in hardware (Raspberry Pi 5 + Camera Module 3) and demonstrates how edge AI transforms simple object detection into practical workplace automation. What once required expensive cloud infrastructure now runs entirely on a credit-card-sized computer.
+
+### Nutrition Tracking Pipeline: FoodInsight
+
+The second application extends food detection toward automated nutrition tracking: snap a photo of your meal, get calorie and macro estimates, log it to your health app.
 
 ![FoodInsight Pipeline]({{ site.baseurl }}images/from-yolo-v2-to-yolo11-food-detection-evolution/FoodInsight_Pipeline_Diagram.png)
 
@@ -386,16 +399,7 @@ YOLO11 handles the first step beautifully. The remaining pieces:
 2. **Nutrition database**: Mapping detected classes to nutritional information
 3. **User interface**: Mobile app or kitchen-mounted display
 
-### Edge AI Kitchen
-
-Imagine a Raspberry Pi mounted in your kitchen:
-
-- Always-on camera watching the dining table
-- On-device inference with no cloud and no privacy concerns
-- Automatic meal logging as you eat
-- Weekly nutrition reports
-
-The hardware exists. The models work. The integration is the remaining challenge.
+The hardware exists. The models work. The snack watching application is complete, and the nutrition tracking pipeline is the next frontier.
 
 ---
 
@@ -480,3 +484,12 @@ That's all. Welcome to 2026.
 
 [6] Benny Cheung. [*YOLO for Real-Time Food Detection*](https://bennycheung.github.io/yolo-for-real-time-food-detection). Benny's Mind Hack, 2018.
   - The original blog post documenting food detection using YOLO v2 and Darknet, serving as the baseline for this 8-year retrospective.
+
+[7] Zhang, Y., Sun, P., Jiang, Y., et al. [*ByteTrack: Multi-Object Tracking by Associating Every Detection Box*](https://arxiv.org/abs/2110.06864). ECCV, 2022.
+  - High-performance multi-object tracking algorithm that associates detection boxes across frames, enabling persistent object identification in video streams.
+
+[8] Tencent. [*NCNN: High-Performance Neural Network Inference Framework*](https://github.com/Tencent/ncnn). GitHub, 2017.
+  - Optimized neural network inference framework for mobile and embedded platforms, enabling efficient CPU-based inference on ARM devices like Raspberry Pi.
+
+[9] Lin, T.Y., Maire, M., Belongie, S., et al. [*Microsoft COCO: Common Objects in Context*](https://arxiv.org/abs/1405.0312). ECCV, 2014.
+  - Large-scale object detection dataset used for pre-training YOLO models, providing transfer learning benefits for domain-specific applications like food detection.
