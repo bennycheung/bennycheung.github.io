@@ -27,7 +27,7 @@ Eight years ago, we trained a YOLO v2 model to detect 100 types of Japanese food
 
 In 2018, we wrote about [YOLO for Real-Time Food Detection]({{ site.baseurl }}yolo-for-real-time-food-detection) [6], documenting our journey to build a "Food Watcher" using Joseph Redmon's Darknet framework [1] and the UEC FOOD 100 dataset [2]. The result was impressive for its time: 70 fps food detection on a GTX TitanX, recognizing everything from sushi to hamburgers.
 
-> "The obsession of recognizing snacks and foods has been a fun theme for experimenting the latest machine learning techniques."
+> "The obsession of recognizing snacks and foods has been a fun theme for experimenting with the latest machine learning techniques."
 
 That obsession hasn't faded. But the landscape has transformed dramatically. What once required a dedicated NVIDIA GPU, manual C compilation, and hours of configuration now runs on a MacBook with Apple Silicon, installs via pip, and trains while you sleep.
 
@@ -57,7 +57,7 @@ From research code to production-ready library. From C compilation to `pip insta
 
 The most striking difference between 2018 and 2026 is not the model architecture. It is the developer experience.
 
-### 2018: The Darknet Way [1]
+### 2018: The Darknet Way
 
 Here's what training YOLO v2 required in 2018:
 
@@ -83,7 +83,7 @@ classes=100
 
 Get this wrong? Silent failures or garbage predictions.
 
-### 2026: The Ultralytics Way [3]
+### 2026: The Ultralytics Way
 
 Here's the modern equivalent:
 
@@ -153,7 +153,7 @@ The `--device mps` flag is the only change needed. Everything else works identic
 | Noise | Jet engine | Silent |
 | Form factor | Desktop tower | Laptop |
 
-Training YOLO11s on UEC FOOD 100 [2] takes approximately 15-18 minutes per epoch on the M4 Pro. A full 150-epoch run completes in about 40 hours, or much faster with early stopping when the model converges.
+Training YOLO11s on UEC FOOD 100 [2] takes approximately 15-18 minutes per epoch on the M4 Pro. Our 80-epoch run completed in about 22 hours, with early stopping available when the model converges.
 
 ---
 
@@ -170,7 +170,7 @@ Some things don't change. The UEC FOOD 100 dataset from the University of Electr
 
 The dataset's strength is its real-world nature: photos taken in actual dining settings, not studio shots. Multiple foods appear in single frames. Lighting varies. Presentations differ.
 
-There's now also UEC FOOD 256 [2] with 31,395 images across 256 classes, adding international foods. However, the original 100-class version trains faster and achieves higher per-class accuracy, making it still the best starting point.
+There's now also UEC FOOD 256 [2] with 31,395 images across 256 classes, adding international foods. However, the original 100-class version trains faster and achieves higher per-class accuracy, so it remains the best starting point.
 
 ### Dataset Conversion
 
@@ -268,7 +268,7 @@ In the 2018 post, we highlighted several memorable test cases. Let's revisit the
 
 ### Test 1: The Hot Dog Test
 
-> "Ever since the HBO show Silicon Valley released a real AI app that identifies 'hotdogs, and not hotdogs', recognizing hotdog is the golden test standard for any food detection."
+> "Ever since the HBO show Silicon Valley released a real AI app that identifies 'hot dogs, and not hot dogs', recognizing hot dog is the golden test standard for any food detection."
 
 ![Hot Dog Detection]({{ site.baseurl }}images/from-yolo-v2-to-yolo11-food-detection-evolution/hot_dog_collage.jpg)
 
@@ -354,7 +354,7 @@ Let's put numbers to the progress:
 | Framework | Darknet (C) | Ultralytics (Python) |
 | Base model size | ~200MB | 22MB (yolo11s) |
 | Inference speed | ~70 fps (TitanX) | 120+ fps (M4 Pro) |
-| mAP50 | ~0.65-0.70 (estimated) | 0.78 |
+| mAP50 | ~0.65-0.70 (estimated) | 0.79 |
 | Setup time | Hours | Minutes |
 | Config lines | 50+ | <10 |
 | Deployment targets | NVIDIA GPU only | Everything |
