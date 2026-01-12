@@ -14,7 +14,7 @@ tags:
   - Local-First Architecture
 category: post
 comments: true
-image: images/foodinsight-edge-ai-food-monitoring/post_cover.jpg
+image: images/foodinsight-edge-ai-food-monitoring/cover2x.jpg
 images:
   cover: images/foodinsight-edge-ai-food-monitoring/cover2x.jpg
   header: images/foodinsight-edge-ai-food-monitoring/header.jpg
