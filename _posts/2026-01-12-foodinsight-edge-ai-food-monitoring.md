@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "FoodInsight: Edge AI Food Monitoring with Local-First Architecture"
-date: 2026-01-12 08:00:00.000000000 -05:00
+date: 2026-01-12 00:00:00.000000000 -05:00
 permalink: foodinsight-edge-ai-food-monitoring
 author: Benny Cheung
 artwork:
