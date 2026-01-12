@@ -19,6 +19,8 @@ images:
   cover: images/from-yolo-v2-to-yolo11-food-detection-evolution/animated-cover.webp
   header: images/from-yolo-v2-to-yolo11-food-detection-evolution/header.jpg
 published: true
+series: "Food Detection"
+series_order: 4
 featured: true
 featured_order: 1
 ---

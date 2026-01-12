@@ -18,6 +18,8 @@ images:
   cover: images/recognizing-snacks-using-simplecv/cover.jpg
   header: images/recognizing-snacks-using-simplecv/header.jpg
 published: true
+series: "Food Detection"
+series_order: 2
 ---
 
 <!--excerpt.start-->

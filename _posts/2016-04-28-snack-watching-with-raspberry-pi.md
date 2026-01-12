@@ -15,6 +15,8 @@ images:
   cover: images/snack-watching-with-raspberry-pi/cover.jpg
   header: images/snack-watching-with-raspberry-pi/header.jpg
 published: true
+series: "Food Detection"
+series_order: 1
 ---
 
 <!--excerpt.start-->
