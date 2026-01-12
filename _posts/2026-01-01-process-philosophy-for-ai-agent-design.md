@@ -19,8 +19,6 @@ images:
   cover: images/process-philosophy-for-ai-agent-design/animated-cover.webp
   header: images/process-philosophy-for-ai-agent-design/header.jpg
 published: true
-featured: true
-featured_order: 3
 ---
 
 <!--excerpt.start-->

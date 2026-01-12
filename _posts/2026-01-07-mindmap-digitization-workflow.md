@@ -20,7 +20,7 @@ images:
   header: images/mindmap-digitization-workflow/header.jpg
 published: true
 featured: true
-featured_order: 2
+featured_order: 3
 ---
 
 <!--excerpt.start-->
