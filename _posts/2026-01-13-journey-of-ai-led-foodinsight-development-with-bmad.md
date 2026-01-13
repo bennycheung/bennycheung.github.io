@@ -27,7 +27,7 @@ featured_order: 1
 ---
 
 <!--excerpt.start-->
-What if a software project's most productive engineer never wrote a single line of code themselves? FoodInsight proves this isn't hypothetical. With 29 stories, 98 story points, and approximately 5000 lines of code delivered in two weeks with only 20 hours of human oversight, this edge AI food monitoring system demonstrates what becomes possible when AI agents drive the entire development lifecycle.
+What if a software project's most productive engineer never wrote a single line of code themselves? FoodInsight proves this isn't hypothetical. With 29 stories, 98 story points, and approximately 5000 lines of code delivered in 3 days with only 20 hours of human oversight, this edge AI food monitoring system demonstrates what becomes possible when AI agents drive the entire development lifecycle.
 <!--excerpt.end-->
 
 ![FoodInsight Hero]({{ site.baseurl }}images/journey-of-ai-led-foodinsight-development-with-bmad/FoodInsight_Hero.jpg)
@@ -361,7 +361,7 @@ AI: Commit and document
 | Story Points | 98 | 98 |
 | Components | 3 (Edge, Backend, PWA) | 3 |
 | Lines of Code | ~5000+ | ~5000+ |
-| Development Duration | ~2 weeks | ~6-8 weeks |
+| Development Duration | ~3 days | ~6-8 weeks |
 | Human Hours | ~20 hours | ~400+ hours |
 | AI Agent Sessions | 50+ | N/A |
 
