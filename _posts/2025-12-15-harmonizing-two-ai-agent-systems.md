@@ -16,8 +16,9 @@ category: post
 comments: true
 image: images/harmonizing-two-ai-agent-systems/post_cover.jpg
 images:
-  cover: images/harmonizing-two-ai-agent-systems/animated-cover.webp
+  cover: images/harmonizing-two-ai-agent-systems/cover2x.jpg
   header: images/harmonizing-two-ai-agent-systems/header.jpg
+  animated-cover: images/harmonizing-two-ai-agent-systems/animated-cover.webp
 published: true
 series: "Applied BMAD"
 series_order: 4

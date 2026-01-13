@@ -16,11 +16,10 @@ category: post
 comments: true
 image: images/process-philosophy-for-ai-agent-design/post_cover.jpg
 images:
-  cover: images/process-philosophy-for-ai-agent-design/animated-cover.webp
+  cover: images/process-philosophy-for-ai-agent-design/cover2x.jpg
   header: images/process-philosophy-for-ai-agent-design/header.jpg
+  animated-cover: images/process-philosophy-for-ai-agent-design/animated-cover.webp
 published: true
-featured: true
-featured_order: 3
 ---
 
 <!--excerpt.start-->

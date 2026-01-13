@@ -18,7 +18,9 @@ layout: default
     <div class="featured-hero">
       <div class="card">
         <a href="{{ hero.url }}">
-          {% if hero.images.cover %}
+          {% if hero.images.animated-cover %}
+            <img class="card-img" src="/{{ hero.images.animated-cover }}" alt="{{ hero.title }}">
+          {% elsif hero.images.cover %}
             {% if hero.images.cover contains '.mp4' or hero.images.cover contains '.webm' %}
               <video class="card-img" autoplay muted loop playsinline>
                 <source src="/{{ hero.images.cover }}" type="video/{% if hero.images.cover contains '.webm' %}webm{% else %}mp4{% endif %}">
@@ -54,7 +56,9 @@ layout: default
       <div class="col-sm-6">
         <div class="card">
           <a href="{{ post.url }}">
-            {% if post.images.cover %}
+            {% if post.images.animated-cover %}
+              <img class="card-img" src="/{{ post.images.animated-cover }}" alt="{{ post.title }}" loading="lazy">
+            {% elsif post.images.cover %}
               {% if post.images.cover contains '.mp4' or post.images.cover contains '.webm' %}
                 <video class="card-img" autoplay muted loop playsinline preload="metadata">
                   <source src="/{{ post.images.cover }}" type="video/{% if post.images.cover contains '.webm' %}webm{% else %}mp4{% endif %}">

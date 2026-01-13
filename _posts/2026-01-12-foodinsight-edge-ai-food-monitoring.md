@@ -16,13 +16,14 @@ category: post
 comments: true
 image: images/foodinsight-edge-ai-food-monitoring/cover2x.jpg
 images:
-  cover: images/foodinsight-edge-ai-food-monitoring/animated-cover.webp
+  cover: images/foodinsight-edge-ai-food-monitoring/cover2x.jpg
   header: images/foodinsight-edge-ai-food-monitoring/header.jpg
+  animated-cover: images/foodinsight-edge-ai-food-monitoring/animated-cover.webp
 published: true
-series: "Food Detection"
-series_order: 5
+series: "FoodInsight"
+series_order: 2
 featured: true
-featured_order: 1
+featured_order: 2
 ---
 
 <!--excerpt.start-->

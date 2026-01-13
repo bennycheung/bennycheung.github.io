@@ -16,8 +16,9 @@ category: post
 comments: true
 image: images/mindmap-digitization-workflow/header.jpg
 images:
-  cover: images/mindmap-digitization-workflow/animated-cover.webp
+  cover: images/mindmap-digitization-workflow/cover2x.jpg
   header: images/mindmap-digitization-workflow/header.jpg
+  animated-cover: images/mindmap-digitization-workflow/animated-cover.webp
 published: true
 ---
 

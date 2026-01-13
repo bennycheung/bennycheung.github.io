@@ -16,13 +16,14 @@ category: post
 comments: true
 image: images/from-yolo-v2-to-yolo11-food-detection-evolution/cover.jpg
 images:
-  cover: images/from-yolo-v2-to-yolo11-food-detection-evolution/animated-cover.webp
+  cover: images/from-yolo-v2-to-yolo11-food-detection-evolution/cover2x.jpg
   header: images/from-yolo-v2-to-yolo11-food-detection-evolution/header.jpg
+  animated-cover: images/from-yolo-v2-to-yolo11-food-detection-evolution/animated-cover.webp
 published: true
-series: "Food Detection"
-series_order: 4
+series: "FoodInsight"
+series_order: 1
 featured: true
-featured_order: 2
+featured_order: 3
 ---
 
 <!--excerpt.start-->

@@ -16,8 +16,9 @@ category: post
 comments: true
 image: images/journey-of-ai-led-foodinsight-development-with-bmad/post_cover.jpg
 images:
-  cover: images/journey-of-ai-led-foodinsight-development-with-bmad/animated-cover.webp
+  cover: images/journey-of-ai-led-foodinsight-development-with-bmad/cover2x.jpg
   header: images/journey-of-ai-led-foodinsight-development-with-bmad/header.jpg
+  animated-cover: images/journey-of-ai-led-foodinsight-development-with-bmad/animated-cover.webp
 published: true
 series: "FoodInsight"
 series_order: 3

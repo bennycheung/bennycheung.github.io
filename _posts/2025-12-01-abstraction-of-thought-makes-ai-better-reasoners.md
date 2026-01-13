@@ -16,8 +16,9 @@ category: post
 comments: true
 image: images/abstraction-of-thought-makes-ai-better-reasoners/post_cover.jpg
 images:
-  cover: images/abstraction-of-thought-makes-ai-better-reasoners/animated-cover.webp
+  cover: images/abstraction-of-thought-makes-ai-better-reasoners/cover2x.jpg
   header: images/abstraction-of-thought-makes-ai-better-reasoners/header.jpg
+  animated-cover: images/abstraction-of-thought-makes-ai-better-reasoners/animated-cover.webp
 published: true
 ---
 
