@@ -19,8 +19,6 @@ images:
   cover: images/mindmap-digitization-workflow/animated-cover.webp
   header: images/mindmap-digitization-workflow/header.jpg
 published: true
-featured: true
-featured_order: 3
 ---
 
 <!--excerpt.start-->
