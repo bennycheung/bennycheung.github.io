@@ -1035,6 +1035,10 @@ pre:hover .code-copy-btn {
   flex-direction: column;
 }
 
+.featured-secondary .card-body .label {
+  align-self: flex-start;
+}
+
 .featured-secondary .card-title {
   font-size: 18px;
   font-weight: 600;
