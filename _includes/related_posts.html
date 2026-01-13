@@ -33,6 +33,7 @@
         {% endif %}
       </div>
       <div class="related-post-info">
+        {% if post.featured %}<span class="label label-primary">Featured</span>{% endif %}
         <h4>{{ post.title }}</h4>
         <p class="related-post-meta">
           {{ post.date | date: "%b %-d, %Y" }}

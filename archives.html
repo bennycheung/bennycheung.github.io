@@ -32,6 +32,7 @@ toc: false
           {% endif %}
         </a>
         <div class="media-body">
+          {% if post.featured %}<span class="label label-primary">Featured</span>{% endif %}
           <p class="archive-date">
             {{ post.date | date: "%B %d, %Y" }}
             {% assign words = post.content | number_of_words %}
