@@ -9,8 +9,9 @@ artwork:
 tags:
 - AI
 - Software Development
-- BMAD Method
+- BMAD
 - Edge Computing
+- Food Detection
 - Claude Code
 category: post
 comments: true
