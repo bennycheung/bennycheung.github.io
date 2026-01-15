@@ -479,8 +479,8 @@ tbody tr:last-child td {
  * Social Follow Buttons
  */
 .social-follow {
-  margin: 30px 0;
-  padding: 25px 0;
+  margin: 40px 0;
+  padding: 30px 0;
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
   text-align: center;
@@ -488,29 +488,29 @@ tbody tr:last-child td {
 
 .social-follow .follow-label {
   display: block;
-  margin-bottom: 18px;
-  font-size: 14px;
+  margin-bottom: 20px;
+  font-size: 16px;
   color: #666;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: 500;
+  letter-spacing: 1.5px;
+  font-weight: 600;
 }
 
 .social-follow .follow-buttons {
   display: flex;
   justify-content: center;
-  gap: 12px;
+  gap: 15px;
   flex-wrap: wrap;
 }
 
 .social-follow .follow-btn {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 10px 18px;
+  gap: 10px;
+  padding: 14px 24px;
   border: none;
-  border-radius: 6px;
-  font-size: 14px;
+  border-radius: 8px;
+  font-size: 16px;
   font-weight: 500;
   text-decoration: none;
   cursor: pointer;
@@ -518,13 +518,13 @@ tbody tr:last-child td {
 }
 
 .social-follow .follow-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
   text-decoration: none;
 }
 
 .social-follow .follow-btn i {
-  font-size: 16px;
+  font-size: 20px;
 }
 
 .social-follow .github-btn {

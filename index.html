@@ -170,19 +170,6 @@ layout: default
   [{% assign first_item = true %}{% for tag in site.tags %}{% if tag[1].size >= 2 %}{% unless first_item %},{% endunless %}{"text":"{{ tag[0] | escape }}","size":{{ tag[1].size }}}{% assign first_item = false %}{% endif %}{% endfor %}]
   </script>
 
-  <!-- Navigation Buttons -->
-  <div class="landing-nav">
-    <a href="/archives/" class="btn btn-default btn-lg">
-      <i class="fa fa-archive"></i> View All Posts
-    </a>
-    <a href="/tags/" class="btn btn-default btn-lg">
-      <i class="fa fa-tags"></i> Browse by Tag
-    </a>
-    <a href="/series/" class="btn btn-default btn-lg">
-      <i class="fa fa-bookmark"></i> View All Series
-    </a>
-  </div>
-
   <!-- Social Follow Links -->
   {% include social_follow.html %}
 
