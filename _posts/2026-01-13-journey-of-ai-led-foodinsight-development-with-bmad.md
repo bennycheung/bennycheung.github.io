@@ -416,7 +416,7 @@ This project serves as a template for future AI-led development initiatives, sho
 
 ## References
 
-[1] Harrison Ainsworth. [*Tractatus Computo Philosophicus*](https://www.hxa.name/notes/note-hxa7241-20240901T153652Z.html). HXA7241, 2024.
+[1] Harrison Ainsworth. [*Tractatus Computo Philosophicus*](https://www.hxa.name/articles/content/tractatus-computo-philosophicus_hxa7241_2010.html). HXA7241, 2010.
   - Philosophical framework on software as logical construction requiring human judgement
 
 [2] BMad Code. [*BMAD Method*](https://github.com/bmad-code-org/BMAD-METHOD/tree/main). GitHub, 2025.
