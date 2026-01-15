@@ -12,7 +12,8 @@ crumbs: false
 	<li role="presentation" class="active"><a href="/research/">Research</a></li>
 </ul>
 
-<br />
+<img src="{{ site.baseurl }}/assets/about-banner.jpg" style="width:100%; max-height:120px; object-fit:cover; border-radius:8px; margin:15px 0 20px 0;" alt="Enjoying the Computational Beauty of AI - Curious to discover the key to intelligence">
+
 
 ## Key Themes and Insights from Benny's Mind Hack
 

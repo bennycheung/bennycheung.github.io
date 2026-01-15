@@ -7,14 +7,13 @@ main: true
 crumbs: false
 ---
 
-<img src="{{ site.baseurl }}/assets/about-banner.jpg" style="width:100%; border-radius:8px; margin-bottom:20px;" alt="Enjoying the Computational Beauty of AI - Curious to discover the key to intelligence">
-
 <ul class="nav nav-tabs" role="tablist">
 	<li role="presentation" class="active"><a href="/about/">About me</a></li>
 	<li role="presentation"><a href="/research/">Research</a></li>
 </ul>
 
-<br />
+<img src="{{ site.baseurl }}/assets/about-banner.jpg" style="width:100%; max-height:120px; object-fit:cover; border-radius:8px; margin:15px 0 20px 0;" alt="Enjoying the Computational Beauty of AI - Curious to discover the key to intelligence">
+
 
 I've spent three decades exploring the space between human creativity and machine intelligence—that liminal zone where logic meets intuition, and where the most interesting problems live.
 
