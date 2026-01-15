@@ -476,6 +476,133 @@ tbody tr:last-child td {
 }
 
 /*
+ * Social Follow Buttons
+ */
+.social-follow {
+  margin: 30px 0;
+  padding: 25px 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+}
+
+.social-follow .follow-label {
+  display: block;
+  margin-bottom: 18px;
+  font-size: 14px;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+.social-follow .follow-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.social-follow .follow-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.social-follow .follow-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  text-decoration: none;
+}
+
+.social-follow .follow-btn i {
+  font-size: 16px;
+}
+
+.social-follow .github-btn {
+  background: #333;
+  color: #fff;
+}
+
+.social-follow .github-btn:hover {
+  background: #24292e;
+  color: #fff;
+}
+
+.social-follow .twitter-btn {
+  background: #1da1f2;
+  color: #fff;
+}
+
+.social-follow .twitter-btn:hover {
+  background: #0d8bd9;
+  color: #fff;
+}
+
+.social-follow .linkedin-btn {
+  background: #0077b5;
+  color: #fff;
+}
+
+.social-follow .linkedin-btn:hover {
+  background: #005e93;
+  color: #fff;
+}
+
+.social-follow .youtube-btn {
+  background: #ff0000;
+  color: #fff;
+}
+
+.social-follow .youtube-btn:hover {
+  background: #cc0000;
+  color: #fff;
+}
+
+.social-follow .rss-btn {
+  background: #f26522;
+  color: #fff;
+}
+
+.social-follow .rss-btn:hover {
+  background: #d9550d;
+  color: #fff;
+}
+
+@media (max-width: 480px) {
+  .social-follow .follow-btn {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+
+  .social-follow .follow-btn span {
+    display: none;
+  }
+
+  .social-follow .follow-btn i {
+    font-size: 18px;
+  }
+}
+
+/* Dark mode for social follow */
+html.dark-mode .social-follow {
+  border-top-color: #4a5568;
+  border-bottom-color: #4a5568;
+}
+
+html.dark-mode .social-follow .follow-label {
+  color: #a0aec0;
+}
+
+/*
  * Related Posts
  */
 .related-posts {

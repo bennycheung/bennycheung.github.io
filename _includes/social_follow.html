@@ -1,0 +1,46 @@
+<!-- Social Follow Buttons -->
+<div class="social-follow">
+  <span class="follow-label">Follow me on:</span>
+  <div class="follow-buttons">
+    <a href="https://github.com/{{ site.github_username }}"
+       class="follow-btn github-btn"
+       target="_blank"
+       rel="noopener"
+       title="Follow on GitHub">
+      <i class="fa fa-github"></i>
+      <span>GitHub</span>
+    </a>
+    <a href="https://twitter.com/{{ site.twitter_username }}"
+       class="follow-btn twitter-btn"
+       target="_blank"
+       rel="noopener"
+       title="Follow on Twitter">
+      <i class="fa fa-twitter"></i>
+      <span>Twitter</span>
+    </a>
+    <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}"
+       class="follow-btn linkedin-btn"
+       target="_blank"
+       rel="noopener"
+       title="Connect on LinkedIn">
+      <i class="fa fa-linkedin"></i>
+      <span>LinkedIn</span>
+    </a>
+    <a href="https://www.youtube.com/channel/{{ site.youtube_username }}"
+       class="follow-btn youtube-btn"
+       target="_blank"
+       rel="noopener"
+       title="Subscribe on YouTube">
+      <i class="fa fa-youtube-play"></i>
+      <span>YouTube</span>
+    </a>
+    <a href="{{ "/feed.xml" | prepend: site.baseurl }}"
+       class="follow-btn rss-btn"
+       target="_blank"
+       rel="noopener"
+       title="Subscribe to RSS Feed">
+      <i class="fa fa-rss"></i>
+      <span>RSS</span>
+    </a>
+  </div>
+</div>

@@ -183,45 +183,8 @@ layout: default
     </a>
   </div>
 
-  <!-- Social Links -->
-  <div class="row" style="text-align:center; margin: 30px 0;">
-    <a href="{{ "/feed.xml" | prepend: site.baseurl }}" class="btn btn-xs btn-default" role="button">
-      <span class="fa-stack fa-lg">
-        <i class="fa fa-square-o fa-stack-2x"></i>
-        <i class="fa fa-rss fa-stack-1x"></i>
-      </span>
-    </a>
-    <a href="https://github.com/{{ site.github_username }}" class="btn btn-xs btn-default" role="button">
-      <span class="fa-stack fa-lg">
-        <i class="fa fa-square-o fa-stack-2x"></i>
-        <i class="fa fa-github-alt fa-stack-1x"></i>
-      </span>
-    </a>
-    <a href="https://twitter.com/{{ site.twitter_username }}" class="btn btn-xs btn-default" role="button">
-      <span class="fa-stack fa-lg">
-        <i class="fa fa-square-o fa-stack-2x"></i>
-        <i class="fa fa-twitter fa-stack-1x"></i>
-      </span>
-    </a>
-    <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" class="btn btn-xs btn-default" role="button">
-      <span class="fa-stack fa-lg">
-        <i class="fa fa-square-o fa-stack-2x"></i>
-        <i class="fa fa-linkedin fa-stack-1x"></i>
-      </span>
-    </a>
-    <a href="http://facebook.com/{{ site.facebook_username }}" class="btn btn-xs btn-default" role="button">
-      <span class="fa-stack fa-lg">
-        <i class="fa fa-square-o fa-stack-2x"></i>
-        <i class="fa fa-facebook fa-stack-1x"></i>
-      </span>
-    </a>
-    <a href="https://www.youtube.com/channel/{{ site.youtube_username }}" class="btn btn-xs btn-default" role="button">
-      <span class="fa-stack fa-lg">
-        <i class="fa fa-square-o fa-stack-2x"></i>
-        <i class="fa fa-youtube fa-stack-1x"></i>
-      </span>
-    </a>
-  </div>
+  <!-- Social Follow Links -->
+  {% include social_follow.html %}
 
 </div>
 
