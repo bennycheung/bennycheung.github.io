@@ -17,9 +17,9 @@ google_analytics: UA-76691604-1
 # Giscus comments (GitHub Discussions)
 giscus:
   repo: bennycheung/bennycheung.github.io
-  repo_id: R_kgDOAcxX0Q
+  repo_id: R_kgDOA12qzg
   category: Comments
-  category_id: DIC_kwDOAcxX0c4ClodK
+  category_id: DIC_kwDOA12qzs4C1A_r
   mapping: pathname
   strict: 0
   reactions_enabled: 1
