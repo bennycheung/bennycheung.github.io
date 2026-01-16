@@ -1,0 +1,112 @@
+<!-- Newsletter Signup Form -->
+<div class="newsletter-signup">
+  <div class="newsletter-content">
+    <h3>Stay in the Loop</h3>
+    <p>Get notified when I publish new articles on AI agents, Claude Code, and building your own AI infrastructure.</p>
+    <form
+      action="https://buttondown.com/api/emails/embed-subscribe/bennycheung"
+      method="post"
+      target="popupwindow"
+      onsubmit="window.open('https://buttondown.com/bennycheung', 'popupwindow')"
+      class="newsletter-form"
+    >
+      <input type="email" name="email" placeholder="your@email.com" required />
+      <button type="submit">Subscribe</button>
+    </form>
+    <p class="newsletter-note">No spam. Unsubscribe anytime.</p>
+  </div>
+</div>
+
+<style>
+.newsletter-signup {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  border: 1px solid #0f3460;
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.newsletter-signup h3 {
+  color: #00d9ff;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
+}
+
+.newsletter-signup p {
+  color: #a0a0a0;
+  margin: 0 0 1rem 0;
+  font-size: 0.95rem;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 0.5rem;
+  max-width: 400px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.newsletter-form input[type="email"] {
+  flex: 1;
+  min-width: 200px;
+  padding: 0.75rem 1rem;
+  border: 1px solid #0f3460;
+  border-radius: 6px;
+  background: #0a0a1a;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.newsletter-form input[type="email"]::placeholder {
+  color: #666;
+}
+
+.newsletter-form input[type="email"]:focus {
+  outline: none;
+  border-color: #00d9ff;
+  box-shadow: 0 0 0 2px rgba(0, 217, 255, 0.2);
+}
+
+.newsletter-form button {
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #00d9ff 0%, #0099ff 100%);
+  color: #000;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.newsletter-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 217, 255, 0.3);
+}
+
+.newsletter-note {
+  font-size: 0.8rem !important;
+  color: #666 !important;
+  margin-top: 0.75rem !important;
+}
+
+/* Dark mode already matches, but ensure consistency */
+@media (prefers-color-scheme: light) {
+  .newsletter-signup {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-color: #dee2e6;
+  }
+  .newsletter-signup h3 {
+    color: #0066cc;
+  }
+  .newsletter-signup p {
+    color: #666;
+  }
+  .newsletter-form input[type="email"] {
+    background: #fff;
+    border-color: #dee2e6;
+    color: #333;
+  }
+}
+</style>

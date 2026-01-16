@@ -1,6 +1,28 @@
 <footer>
 
   <hr/>
+
+  <!-- Newsletter Signup (compact footer version) -->
+  <div class="footer-newsletter" style="text-align: center; margin: 1.5rem 0;">
+    <p style="margin-bottom: 0.5rem;"><strong>Get new posts in your inbox</strong></p>
+    <form
+      action="https://buttondown.com/api/emails/embed-subscribe/bennycheung"
+      method="post"
+      target="popupwindow"
+      onsubmit="window.open('https://buttondown.com/bennycheung', 'popupwindow')"
+      style="display: inline-flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center;"
+    >
+      <input type="email" name="email" placeholder="your@email.com" required
+        style="padding: 0.5rem 1rem; border: 1px solid #ccc; border-radius: 4px; min-width: 200px;" />
+      <button type="submit"
+        style="padding: 0.5rem 1rem; background: #0066cc; color: white; border: none; border-radius: 4px; cursor: pointer;">
+        Subscribe
+      </button>
+    </form>
+  </div>
+
+  <hr/>
+
   <div class="site-footer" style="text-align: center;">
     <p>Content © 2016-2026 Benny Cheung. Subscribe <a href="/feed.xml">via RSS</a>.</p>
     <p>Hosted on <a href="http://pages.github.com">GitHub Pages</a>. Design and code are open source: <a href="https://github.com/bennycheung/bennycheung.github.io">fork me</a>, or <a href="https://github.com/bennycheung/bennycheung.github.io/issues?state=open">open an issue</a>.</p>
