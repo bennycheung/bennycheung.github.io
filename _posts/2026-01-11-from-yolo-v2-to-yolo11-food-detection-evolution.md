@@ -22,8 +22,6 @@ images:
 published: true
 series: "FoodInsight"
 series_order: 1
-featured: true
-featured_order: 3
 ---
 
 <!--excerpt.start-->
