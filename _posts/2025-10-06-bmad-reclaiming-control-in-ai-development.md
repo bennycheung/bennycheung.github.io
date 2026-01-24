@@ -17,6 +17,7 @@ image: images/bmad-reclaiming-control-in-ai-dev/post_cover.jpg
 images:
   cover: images/bmad-reclaiming-control-in-ai-dev/cover2x.jpg
   header: images/bmad-reclaiming-control-in-ai-dev/header.jpg
+  animated-cover: images/bmad-reclaiming-control-in-ai-dev/animated-cover.webp 
 published: true
 series: "Applied BMAD"
 series_order: 1
