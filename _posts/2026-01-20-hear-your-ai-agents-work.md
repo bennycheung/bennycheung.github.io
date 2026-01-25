@@ -37,15 +37,16 @@ When running five AI agents in parallel, how do you know what's happening withou
 
 ## The Problem with Silent Agents
 
-![Safety First: The Danger of Silence]({{ site.baseurl }}images/hear-your-ai-agents-work/Hear_Your_AI_Agents_Work_frame_02.png)
-
-*Figure. The blind spot of silent agents: chaos and disconnection versus calm audio awareness.*
-
 Modern AI development has given us something remarkable: the ability to delegate complex tasks to multiple AI agents working in parallel [4]. Claude Code's Task tool lets us spawn specialized agents: researchers who dig through documentation, engineers who write code, architects who design systems. Agent frameworks like BMAD [6] add even more specialized personas: Mary the analyst who breaks down requirements, Winston the architect who designs solutions.
 
 But there's a problem. All these agents work silently.
 
 Picture the scene: you've asked Claude Code to research three companies, analyze a codebase for security issues, and draft a technical specification, all in parallel. Three agents spin up and get to work. You switch to another task, check email, or grab coffee. When you return, you have no idea which agents finished, which are still working, or if any encountered problems. Your only option is to check each terminal, read through outputs, and piece together the current state.
+
+![Safety First: The Danger of Silence]({{ site.baseurl }}images/hear-your-ai-agents-work/Hear_Your_AI_Agents_Work_frame_02.png)
+
+*Figure. The blind spot of silent agents: chaos and disconnection versus calm audio awareness.*
+
 
 Running parallel AI agents without voice notifications is like having five people working in separate rooms with no way to know when they finish except by checking each room repeatedly.
 
