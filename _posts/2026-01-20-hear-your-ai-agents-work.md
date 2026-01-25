@@ -19,7 +19,10 @@ image: images/hear-your-ai-agents-work/post_cover.jpg
 images:
   cover: images/hear-your-ai-agents-work/cover2x.jpg
   header: images/hear-your-ai-agents-work/header.jpg
+  animated-cover: images/hear-your-ai-agents-work/animated-cover.webp
 published: true
+featured: true
+featured_order: 3
 ---
 
 <!--excerpt.start-->
