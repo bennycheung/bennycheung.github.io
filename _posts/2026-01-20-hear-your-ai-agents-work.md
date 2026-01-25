@@ -1,11 +1,11 @@
 ---
 layout: post
 title: "Hear Your AI Agents Work in Claude Code"
-date: 2026-01-20 12:00:00.000000000 -00:00
+date: 2026-01-25 12:00:00.000000000 -00:00
 permalink: hear-your-ai-agents-work
 author: Benny Cheung
 artwork:
-  author: DALL-E 3
+  author: Gemini 3 Pro
 tags:
 - AI
 - Voice
@@ -19,7 +19,7 @@ image: images/hear-your-ai-agents-work/post_cover.jpg
 images:
   cover: images/hear-your-ai-agents-work/cover2x.jpg
   header: images/hear-your-ai-agents-work/header.jpg
-published: false
+published: true
 ---
 
 <!--excerpt.start-->
@@ -34,7 +34,11 @@ When running five AI agents in parallel, how do you know what's happening withou
 
 ## The Problem with Silent Agents
 
-Modern AI development has given us something remarkable: the ability to delegate complex tasks to multiple AI agents working in parallel. Claude Code's Task tool lets us spawn specialized agents: researchers who dig through documentation, engineers who write code, architects who design systems. Agent frameworks like BMAD add even more specialized personas: Mary the analyst who breaks down requirements, Winston the architect who designs solutions.
+![Safety First: The Danger of Silence]({{ site.baseurl }}images/hear-your-ai-agents-work/Hear_Your_AI_Agents_Work_frame_02.png)
+
+*Figure. The blind spot of silent agents: chaos and disconnection versus calm audio awareness.*
+
+Modern AI development has given us something remarkable: the ability to delegate complex tasks to multiple AI agents working in parallel [4]. Claude Code's Task tool lets us spawn specialized agents: researchers who dig through documentation, engineers who write code, architects who design systems. Agent frameworks like BMAD [6] add even more specialized personas: Mary the analyst who breaks down requirements, Winston the architect who designs solutions.
 
 But there's a problem. All these agents work silently.
 
@@ -46,7 +50,11 @@ The insight that changed everything for us was simple: we have ears. Why not use
 
 ## The Solution: Ambient Voice Notifications
 
-The solution we built transforms Claude Code from a visual-only interface into an ambient, audio-aware experience. When an agent completes its task, you hear about it, literally. Different agents speak with different voices, so you know who finished without looking at the screen.
+![Level Up: Ambient Audio Awareness]({{ site.baseurl }}images/hear-your-ai-agents-work/Hear_Your_AI_Agents_Work_frame_03.png)
+
+*Figure. Transform Claude Code from visual-only to audio-aware. Different sounds for different agents enable passive monitoring.*
+
+The solution we built transforms Claude Code from a visual-only interface into an ambient, audio-aware experience [3]. When an agent completes its task, you hear about it, literally. Different agents speak with different voices, so you know who finished without looking at the screen.
 
 The researcher announces in Domi's analytical tone: "Found 5 papers on AI reasoning techniques."
 
@@ -56,7 +64,7 @@ The architect summarizes in Antoni's strategic cadence: "Designed microservices 
 
 This works with any Claude Code agent system:
 - **Built-in agents**: researcher, engineer, architect (via the Task tool)
-- **BMAD agents**: Mary, Winston, and other workflow personas
+- **BMAD agents** [6]: Mary, Winston, and other workflow personas
 - **Custom agents**: Any agent you build that follows a simple convention
 
 Let's explore how to build this system.
@@ -74,7 +82,7 @@ The voice notification system consists of four components working together:
 
 ![PAI Voice System Architecture]({{ site.baseurl }}images/hear-your-ai-agents-work/pai-voice-system-flowchart.png)
 
-*Figure. The four-component architecture: agents produce COMPLETED lines, hooks detect and parse them, the voice server calls ElevenLabs, and audio plays through system speakers.*
+*Figure. The four-component architecture inspired by the PAI framework [3]: agents produce COMPLETED lines, hooks detect and parse them [1], the voice server calls ElevenLabs [2], and audio plays through system speakers.*
 
 The key design decision is using different voices per agent type. This enables:
 - **Identification without looking**: Know who finished by ear alone
@@ -90,6 +98,10 @@ COMPLETED: Successfully analyzed the codebase and found 3 security issues.
 ```
 
 This single line becomes spoken aloud through your speakers.
+
+![The Code: COMPLETED Line Convention]({{ site.baseurl }}images/hear-your-ai-agents-work/Hear_Your_AI_Agents_Work_frame_05.png)
+
+*Figure. The COMPLETED line convention: 12 words max, outcome-focused, natural language that sounds good when spoken aloud.*
 
 ### Rules for COMPLETED Lines
 
@@ -109,7 +121,7 @@ Always end your response with a COMPLETED line summarizing what you accomplished
 COMPLETED: [12 words max describing the outcome]
 ```
 
-This works for Claude Code Task tool agents, BMAD workflow agents, custom skill-based agents, or any Claude Code subagent that can follow instructions.
+This works for Claude Code Task tool agents, BMAD workflow agents [6], custom skill-based agents, or any Claude Code subagent that can follow instructions.
 
 ### Why a Convention, Not Structured Data?
 
@@ -128,7 +140,11 @@ The first sounds natural when spoken. The second sounds robotic. Since this text
 
 ## The Hook System
 
-Claude Code hooks are scripts that run automatically in response to events. Think of them as triggers: "When X happens, automatically do Y."
+Claude Code hooks are scripts that run automatically in response to events [1]. Think of them as triggers: "When X happens, automatically do Y."
+
+![The Trigger: Claude Code Hooks]({{ site.baseurl }}images/hear-your-ai-agents-work/Hear_Your_AI_Agents_Work_frame_06.png)
+
+*Figure. Hooks trigger on agent completion: read output, extract COMPLETED line, identify agent type, fire to voice server.*
 
 ### Relevant Hook Events
 
@@ -137,7 +153,7 @@ Claude Code hooks are scripts that run automatically in response to events. Thin
 | `stop` | Main agent completes | Parse main response |
 | `subagent_stop` | Sub-agent completes | Parse researcher, engineer, BMAD agents, etc. |
 
-The hooks live in `~/.claude/hooks/` and must be configured in `~/.claude/settings.json`:
+The hooks live in `~/.claude/hooks/` and must be configured in `~/.claude/settings.json` [1]:
 
 ```json
 {
@@ -190,6 +206,10 @@ The detection logic can be as simple or sophisticated as your agent system requi
 
 ## Voice Configuration
 
+![Choose Your Roster: Voice Mapping]({{ site.baseurl }}images/hear-your-ai-agents-work/Hear_Your_AI_Agents_Work_frame_08.png)
+
+*Figure. Assign distinct voices to agent roles for instant auditory identification. Configuration managed in voices.json.*
+
 Each agent type maps to a distinct voice, configured in `~/.claude/agent-voices/voices.json`:
 
 ```json
@@ -213,7 +233,7 @@ Each agent type maps to a distinct voice, configured in `~/.claude/agent-voices/
 
 ### Default Voice Mappings
 
-The AgentVoices repository includes default mappings for common agent types:
+The AgentVoices repository [5] includes default mappings for common agent types:
 
 | Agent | Voice | Characteristics |
 |-------|-------|-----------------|
@@ -245,7 +265,11 @@ After a few days of use, you'll recognize agents by voice alone, like knowing wh
 
 ## The Voice Server
 
-The voice server is a local HTTP service that bridges hooks to the ElevenLabs TTS API.
+The voice server is a local HTTP service that bridges hooks to the ElevenLabs TTS API [2].
+
+![The Relay: Local Voice Server]({{ site.baseurl }}images/hear-your-ai-agents-work/Hear_Your_AI_Agents_Work_frame_07.png)
+
+*Figure. Built on Bun for speed. Bridges hooks to cloud API, manages queues and rate limiting, enables isolated testing.*
 
 ### Why a Local Server?
 
@@ -256,7 +280,7 @@ The voice server is a local HTTP service that bridges hooks to the ElevenLabs TT
 
 ### Repository Structure
 
-The [AgentVoices](https://github.com/bennycheung/AgentVoices) repository is organized as follows:
+The [AgentVoices](https://github.com/bennycheung/AgentVoices) repository [5] is organized as follows:
 
 ```
 AgentVoices/
@@ -315,7 +339,7 @@ This means voice notifications are always available whenever you're logged in.
 
 ## ElevenLabs Integration
 
-ElevenLabs provides the text-to-speech engine that makes voices sound natural rather than robotic.
+ElevenLabs provides the text-to-speech engine that makes voices sound natural rather than robotic [2].
 
 ### Why ElevenLabs?
 
@@ -325,6 +349,8 @@ ElevenLabs provides the text-to-speech engine that makes voices sound natural ra
 - **Reasonable pricing**: Free tier for light usage
 
 ### API Call Structure
+
+The ElevenLabs text-to-speech API [2] uses a simple endpoint structure:
 
 ```typescript
 const response = await fetch(
@@ -370,6 +396,10 @@ Let's trace through complete examples showing how the system works in practice.
 
 ### Example: Claude Code Researcher Agent
 
+![Battle Scenario: The Researcher]({{ site.baseurl }}images/hear-your-ai-agents-work/Hear_Your_AI_Agents_Work_frame_10.png)
+
+*Figure. The researcher scenario: command issued, user steps away, completion announced audibly. Information delivered without screen time.*
+
 ```
 1. USER: "Research the latest AI papers on reasoning"
 
@@ -412,7 +442,7 @@ Let's trace through complete examples showing how the system works in practice.
 
 When you launch multiple agents simultaneously, the voice system handles them naturally:
 
-![Parallel Agents Timeline]({{ site.baseurl }}images/hear-your-ai-agents-work/parallel-agents-timeline.png)
+![Ultimate Combo: Parallel Agents]({{ site.baseurl }}images/hear-your-ai-agents-work/Hear_Your_AI_Agents_Work_frame_11.png)
 
 *Figure. Three researcher agents working in parallel announce their completions at 8s, 10s, and 12s respectively, giving real-time audio awareness of progress.*
 
@@ -431,6 +461,11 @@ Ready to build your own? Here's how to get started.
 
 ### Quick Start
 
+![Initiate Sequence: Setup Guide]({{ site.baseurl }}images/hear-your-ai-agents-work/Hear_Your_AI_Agents_Work_frame_12.png)
+
+*Figure. One install script handles dependencies, hook placement, and service creation. Prerequisites: macOS, Claude Code, Bun, ElevenLabs API key.*
+
+
 ```bash
 # 1. Install Bun (if not already installed)
 curl -fsSL https://bun.sh/install | bash
@@ -439,7 +474,7 @@ curl -fsSL https://bun.sh/install | bash
 # Add to your environment
 echo "ELEVENLABS_API_KEY=your_key_here" >> ~/.env
 
-# 3. Clone the reference implementation
+# 3. Clone the reference implementation [5]
 git clone https://github.com/bennycheung/AgentVoices.git
 cd AgentVoices
 
@@ -469,6 +504,10 @@ curl -X POST http://localhost:8888/notify \
 You should hear "Voice system ready" through your speakers.
 
 ### Adding Your Custom Agents
+
+![Extend the Squad: Custom Agents]({{ site.baseurl }}images/hear-your-ai-agents-work/Hear_Your_AI_Agents_Work_frame_13.png)
+
+*Figure. Three steps to add custom agents: register in voices.json, update hook detection logic, add COMPLETED convention to prompts.*
 
 1. Add agent type to `~/.claude/agent-voices/voices.json` with your chosen voice ID
 2. Update hook logic in `~/.claude/hooks/subagent-stop-hook.ts` to detect your agent type
@@ -535,7 +574,7 @@ Voice notifications transform Claude Code from a visual-only interface into an a
 
 Different voices per agent type means you can identify who finished by ear alone. The researcher speaks differently than the engineer, and both are distinct from the architect. After a few days, this becomes second nature. You hear Domi's voice and know the research is done without looking up from your other work.
 
-The meta-insight is worth noting: we built sophisticated multi-agent AI systems, then realized we needed the most ancient notification mechanism of all, someone calling out "I'm done!" The future of AI interaction might be more human than we expected.
+The meta-insight is worth noting: we built sophisticated multi-agent AI systems [4], then realized we needed the most ancient notification mechanism of all, someone calling out "I'm done!" The future of AI interaction might be more human than we expected.
 
 Try adding voice to one agent completion. The first time you hear your AI assistant announce "Task complete" while you're making coffee, you'll wonder why every AI system doesn't do this.
 
@@ -543,13 +582,13 @@ Try adding voice to one agent completion. The first time you hear your AI assist
 
 ## References
 
-[1] Anthropic. [*Claude Code Hooks Documentation*](https://docs.anthropic.com/en/docs/claude-code/hooks). 2025.
+[1] Anthropic. [*Claude Code Hooks Documentation*](https://docs.anthropic.com/en/docs/claude-code/hooks). Anthropic Docs, 2025.
   - Official documentation for configuring Claude Code hooks
 
-[2] ElevenLabs. [*Text to Speech API Documentation*](https://docs.elevenlabs.io/). 2025.
+[2] ElevenLabs. [*Text to Speech API Documentation*](https://docs.elevenlabs.io/). ElevenLabs Docs, 2025.
   - API reference for voice synthesis
 
-[3] Daniel Miessler. [*Building a Personal AI Infrastructure (PAI)*](https://danielmiessler.com/blog/personal-ai-infrastructure). Blog, Jul 2025.
+[3] Daniel Miessler. [*Building a Personal AI Infrastructure (PAI)*](https://danielmiessler.com/blog/personal-ai-infrastructure). danielmiessler.com, Jul 2025.
   - The PAI architecture that inspired this voice system approach
 
 [4] Benny Cheung. [*Process Philosophy for AI Agent Design*]({{ site.baseurl }}process-philosophy-for-ai-agent-design). Benny's Mind Hack, Jan 2026.
@@ -557,3 +596,7 @@ Try adding voice to one agent completion. The first time you hear your AI assist
 
 [5] Benny Cheung. [*AgentVoices*](https://github.com/bennycheung/AgentVoices). GitHub, Jan 2026.
   - Reference implementation: Voice notification system for Claude Code agents
+
+[6] BMad Code Organization. [*BMAD Method*](https://github.com/bmad-code-org/BMAD-METHOD/tree/main). GitHub, 2025.
+  - Foundations in Agentic Agile Driven Development, known as the Breakthrough Method of Agile AI-Driven Development
+  - See also: [*BMAD Method User Guide*](https://github.com/bmad-code-org/BMAD-METHOD/blob/main/docs/user-guide.md)
