@@ -430,6 +430,7 @@ html.dark-mode .cat-history-user {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           question: question.trim(),
+          site: 'blog',
           context: getPageContext(),
           history: conversationHistory.slice(-MAX_HISTORY)
         })
