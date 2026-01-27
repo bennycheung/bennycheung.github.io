@@ -577,6 +577,16 @@ tbody tr:last-child td {
   color: #fff;
 }
 
+.social-follow .dynamind-btn {
+  background: linear-gradient(135deg, #00D9FF 0%, #8B5CF6 100%);
+  color: #fff;
+}
+
+.social-follow .dynamind-btn:hover {
+  background: linear-gradient(135deg, #00b8d9 0%, #7c3aed 100%);
+  color: #fff;
+}
+
 @media (max-width: 480px) {
   .social-follow .follow-btn {
     padding: 8px 14px;

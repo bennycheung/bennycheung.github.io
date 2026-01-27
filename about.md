@@ -45,8 +45,16 @@ This blog is my laboratory notebook. Since 2016, I've documented experiments in 
 
 Browse the [Research](/research/) page for a map of where my curiosity has wandered.
 
+## Consulting & GameGrammar
+
+Through [Dynamind Research](https://dynamindresearch.com), I help organizations navigate AI strategy, software architecture, and technical problem-solving. Whether you're building AI-powered products, need architectural guidance, or want to understand how generative AI fits your roadmap, I'd love to talk.
+
+I'm also building [GameGrammar](https://gamegrammar.dynamindresearch.com)—an AI-powered board game design tool where 6 specialized agents collaborate to create complete game designs in under 60 seconds. It's my playground for exploring multi-agent systems, creative AI, and the intersection of structured reasoning with generative capabilities.
+
 ## Let's Connect
 
 I love conversations about spatial cognition, the philosophy of machine intelligence, why Prolog deserves more respect, or anything at the intersection of creativity and computation.
+
+**For consulting inquiries:** Visit [dynamindresearch.com](https://dynamindresearch.com) or [contact me directly](https://dynamindresearch.com/#contact).
 
 [Drop me a line](mailto:btscheung@gmail.com) — I read everything.

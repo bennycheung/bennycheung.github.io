@@ -30,6 +30,7 @@ giscus:
 
 # Social settings
 avatar: /assets/avatar.jpg
+dynamind_url: https://dynamindresearch.com
 twitter_username: Benny_Cheung
 github_username: bennycheung
 stackoverflow_username: users/6242759/benny-cheung
