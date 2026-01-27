@@ -1,4 +1,4 @@
-<!-- Cat Dialog Bubble -->
+<!-- Cat Dialog Bubble with Interactive Chat -->
 <style>
 #cat-hover-zone {
   position: fixed;
@@ -14,7 +14,8 @@
   position: fixed;
   bottom: 200px;
   right: 10px;
-  max-width: 220px;
+  max-width: 260px;
+  min-width: 220px;
   padding: 12px 15px;
   background: #fff;
   border-radius: 15px;
@@ -75,6 +76,130 @@ html.dark-mode #cat-speech-bubble::after {
   border-top-color: #1f2940;
 }
 
+/* Chat message area */
+#cat-message {
+  margin-bottom: 10px;
+  min-height: 20px;
+}
+
+/* Chat input container */
+#cat-chat-input-container {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+  border-top: 1px solid rgba(128,128,128,0.2);
+  padding-top: 10px;
+}
+
+#cat-chat-input {
+  flex: 1;
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  font-size: 12px;
+  outline: none;
+  background: #f9f9f9;
+  color: #333;
+}
+
+#cat-chat-input:focus {
+  border-color: #007bff;
+  background: #fff;
+}
+
+#cat-chat-input::placeholder {
+  color: #999;
+}
+
+html.dark-mode #cat-chat-input {
+  background: #2a3654;
+  border-color: #3d4f6f;
+  color: #e0e0e0;
+}
+
+html.dark-mode #cat-chat-input:focus {
+  border-color: #6db3f2;
+  background: #1f2940;
+}
+
+html.dark-mode #cat-chat-input::placeholder {
+  color: #8899aa;
+}
+
+#cat-chat-send {
+  padding: 6px 12px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#cat-chat-send:hover {
+  background: #0056b3;
+}
+
+#cat-chat-send:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+html.dark-mode #cat-chat-send {
+  background: #4a90d9;
+}
+
+html.dark-mode #cat-chat-send:hover {
+  background: #6db3f2;
+}
+
+html.dark-mode #cat-chat-send:disabled {
+  background: #3d4f6f;
+}
+
+/* Loading animation */
+.cat-loading {
+  display: inline-block;
+}
+
+.cat-loading::after {
+  content: '...';
+  animation: catDots 1.5s infinite;
+}
+
+@keyframes catDots {
+  0%, 20% { content: '.'; }
+  40% { content: '..'; }
+  60%, 100% { content: '...'; }
+}
+
+/* Conversation history */
+.cat-history-item {
+  font-size: 11px;
+  color: #666;
+  margin-bottom: 6px;
+  padding-bottom: 6px;
+  border-bottom: 1px dashed rgba(128,128,128,0.2);
+}
+
+.cat-history-item:last-child {
+  border-bottom: none;
+}
+
+.cat-history-user {
+  color: #007bff;
+  font-weight: 500;
+}
+
+html.dark-mode .cat-history-item {
+  color: #aaa;
+}
+
+html.dark-mode .cat-history-user {
+  color: #6db3f2;
+}
+
 /* Mobile adjustments */
 @media (max-width: 768px) {
   #cat-hover-zone {
@@ -82,21 +207,43 @@ html.dark-mode #cat-speech-bubble::after {
     width: 75px;
     height: 120px;
   }
-  
+
   #cat-speech-bubble {
     bottom: 170px;
     right: 10px;
-    max-width: 180px;
+    max-width: 200px;
+    min-width: 180px;
     font-size: 12px;
+  }
+
+  #cat-chat-input {
+    font-size: 11px;
+    padding: 5px 8px;
+  }
+
+  #cat-chat-send {
+    font-size: 11px;
+    padding: 5px 10px;
   }
 }
 </style>
 
 <div id="cat-hover-zone"></div>
-<div id="cat-speech-bubble"></div>
+<div id="cat-speech-bubble" role="status" aria-live="polite" aria-label="Hijiki the cat says">
+  <div id="cat-message"></div>
+  <div id="cat-chat-input-container">
+    <input type="text" id="cat-chat-input" placeholder="Ask me anything..." maxlength="200" autocomplete="off">
+    <button id="cat-chat-send" aria-label="Send message">Ask</button>
+  </div>
+</div>
 
 <script>
 (function() {
+  // Configuration
+  var CAT_API_URL = 'https://blog-cat-api.btscheung.workers.dev/chat';
+  var MAX_HISTORY = 4; // Keep last 2 exchanges
+
+  // Static fallback messages
   var catMessages = [
     // Blog facts
     "This blog explores AI, spatial reasoning, and knowledge systems since 2016! 🧠",
@@ -181,12 +328,44 @@ html.dark-mode #cat-speech-bubble::after {
     "Click me again for another random fact!",
     "You've discovered the secret cat assistant! 🎉"
   ];
-  
+
+  // State
   var lastMessageIndex = -1;
   var hideTimeout;
+  var conversationHistory = [];
+  var isLoading = false;
+  var chatMode = false;
+
+  // DOM elements
   var bubble = document.getElementById('cat-speech-bubble');
   var hoverZone = document.getElementById('cat-hover-zone');
-  
+  var messageEl = document.getElementById('cat-message');
+  var inputEl = document.getElementById('cat-chat-input');
+  var sendBtn = document.getElementById('cat-chat-send');
+
+  // Get current page context for the AI
+  function getPageContext() {
+    var title = document.title || '';
+    var excerpt = '';
+    var url = window.location.pathname;
+
+    // Try to get post excerpt
+    var metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      excerpt = metaDesc.getAttribute('content') || '';
+    }
+
+    // Fallback to first paragraph
+    if (!excerpt) {
+      var firstP = document.querySelector('article p, .post-content p, main p');
+      if (firstP) {
+        excerpt = firstP.textContent.slice(0, 400);
+      }
+    }
+
+    return { title: title, excerpt: excerpt, url: url };
+  }
+
   function getRandomMessage() {
     var index;
     do {
@@ -195,57 +374,184 @@ html.dark-mode #cat-speech-bubble::after {
     lastMessageIndex = index;
     return catMessages[index];
   }
-  
-  function showBubble() {
+
+  function showMessage(html, keepInput) {
+    messageEl.innerHTML = html;
+    if (!keepInput) {
+      chatMode = false;
+    }
+  }
+
+  function showBubble(message) {
     clearTimeout(hideTimeout);
-    bubble.innerHTML = getRandomMessage();
+    if (message) {
+      showMessage(message);
+    } else if (!chatMode) {
+      showMessage(getRandomMessage());
+    }
     bubble.classList.add('visible');
   }
-  
+
   function hideBubble() {
-    bubble.classList.remove('visible');
+    if (!chatMode) {
+      bubble.classList.remove('visible');
+    }
   }
-  
+
+  function showLoading() {
+    isLoading = true;
+    sendBtn.disabled = true;
+    inputEl.disabled = true;
+    showMessage('<span class="cat-loading">Thinking</span>', true);
+  }
+
+  function hideLoading() {
+    isLoading = false;
+    sendBtn.disabled = false;
+    inputEl.disabled = false;
+  }
+
+  function showFallbackTip() {
+    var tip = getRandomMessage();
+    showMessage("😴 *yawns* Here's a tip instead:<br><br>" + tip, true);
+  }
+
+  // Send question to AI API
+  async function askHijiki(question) {
+    if (isLoading || !question.trim()) return;
+
+    chatMode = true;
+    showLoading();
+    clearTimeout(hideTimeout);
+
+    try {
+      var response = await fetch(CAT_API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          question: question.trim(),
+          context: getPageContext(),
+          history: conversationHistory.slice(-MAX_HISTORY)
+        })
+      });
+
+      var data = await response.json();
+
+      hideLoading();
+
+      // Check for fallback flag or error
+      if (data.fallback || data.error || !data.success) {
+        showFallbackTip();
+        return;
+      }
+
+      // Success - show AI response
+      var aiResponse = data.response || "Meow? I didn't quite catch that! 😸";
+
+      // Update conversation history
+      conversationHistory.push({ role: 'user', content: question.trim() });
+      conversationHistory.push({ role: 'model', content: aiResponse });
+
+      // Keep only last MAX_HISTORY messages
+      if (conversationHistory.length > MAX_HISTORY) {
+        conversationHistory = conversationHistory.slice(-MAX_HISTORY);
+      }
+
+      showMessage(aiResponse, true);
+      inputEl.value = '';
+      inputEl.focus();
+
+    } catch (error) {
+      console.error('Hijiki API error:', error);
+      hideLoading();
+      showFallbackTip();
+    }
+  }
+
+  // Event handlers
+  function handleSend() {
+    var question = inputEl.value.trim();
+    if (question) {
+      askHijiki(question);
+    }
+  }
+
+  inputEl.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      handleSend();
+    }
+  });
+
+  sendBtn.addEventListener('click', handleSend);
+
+  // Focus input when clicking on bubble (but not on links)
+  bubble.addEventListener('click', function(e) {
+    if (e.target.tagName !== 'A' && e.target.tagName !== 'BUTTON' && e.target.tagName !== 'INPUT') {
+      inputEl.focus();
+    }
+  });
+
   // Hover events
   hoverZone.addEventListener('mouseenter', function() {
-    showBubble();
+    if (!chatMode) {
+      showBubble();
+    } else {
+      clearTimeout(hideTimeout);
+      bubble.classList.add('visible');
+    }
   });
 
   hoverZone.addEventListener('mouseleave', function() {
-    hideTimeout = setTimeout(hideBubble, 1500);
+    if (!chatMode) {
+      hideTimeout = setTimeout(hideBubble, 1500);
+    }
   });
 
-  // Keep bubble alive when hovering over it (for clicking links)
+  // Keep bubble alive when hovering over it
   bubble.addEventListener('mouseenter', function() {
     clearTimeout(hideTimeout);
   });
 
   bubble.addEventListener('mouseleave', function() {
-    hideTimeout = setTimeout(hideBubble, 1500);
+    if (!chatMode) {
+      hideTimeout = setTimeout(hideBubble, 1500);
+    }
   });
 
-  // Click to show another tip
+  // Click on cat shows bubble and focuses input
   hoverZone.addEventListener('click', function() {
-    showBubble();
+    chatMode = true;
+    showBubble("😸 Ask me anything about the blog!");
+    setTimeout(function() { inputEl.focus(); }, 100);
   });
-  
+
   // Touch support for mobile
   hoverZone.addEventListener('touchstart', function(e) {
     e.preventDefault();
-    if (bubble.classList.contains('visible')) {
+    if (bubble.classList.contains('visible') && !chatMode) {
       hideBubble();
     } else {
-      showBubble();
-      hideTimeout = setTimeout(hideBubble, 4000);
+      chatMode = true;
+      showBubble("😸 Ask me anything about the blog!");
+      setTimeout(function() { inputEl.focus(); }, 100);
     }
   });
-  
+
+  // Close chat mode when clicking outside
+  document.addEventListener('click', function(e) {
+    if (chatMode && !bubble.contains(e.target) && !hoverZone.contains(e.target)) {
+      chatMode = false;
+      conversationHistory = [];
+      hideTimeout = setTimeout(hideBubble, 500);
+    }
+  });
+
   // Time-based greeting function
   function getTimeBasedGreeting() {
     var hour = new Date().getHours();
 
     if (hour >= 5 && hour < 12) {
-      // Morning (5am - 12pm)
       var morningGreetings = [
         "Good morning! ☀️ Ready to explore some AI articles?",
         "Rise and shine! 🌅 Fresh ideas await you today!",
@@ -253,7 +559,6 @@ html.dark-mode #cat-speech-bubble::after {
       ];
       return morningGreetings[Math.floor(Math.random() * morningGreetings.length)];
     } else if (hour >= 12 && hour < 17) {
-      // Afternoon (12pm - 5pm)
       var afternoonGreetings = [
         "Good afternoon! 🌤️ Taking a break to read?",
         "Hey there! 😸 Perfect time for some tech exploration!",
@@ -261,7 +566,6 @@ html.dark-mode #cat-speech-bubble::after {
       ];
       return afternoonGreetings[Math.floor(Math.random() * afternoonGreetings.length)];
     } else if (hour >= 17 && hour < 21) {
-      // Evening (5pm - 9pm)
       var eveningGreetings = [
         "Good evening! 🌅 Winding down with some reading?",
         "Evening! 🌆 Great time to dive into something interesting!",
@@ -269,7 +573,6 @@ html.dark-mode #cat-speech-bubble::after {
       ];
       return eveningGreetings[Math.floor(Math.random() * eveningGreetings.length)];
     } else {
-      // Night (9pm - 5am)
       var nightGreetings = [
         "Late night browsing? 🌙 I'm a night owl too!",
         "Burning the midnight oil? 🦉 Me too! Let's explore!",
@@ -282,8 +585,7 @@ html.dark-mode #cat-speech-bubble::after {
 
   // Show initial greeting based on time of day
   setTimeout(function() {
-    bubble.innerHTML = getTimeBasedGreeting();
-    bubble.classList.add('visible');
+    showBubble(getTimeBasedGreeting());
     setTimeout(hideBubble, 5000);
   }, 1000);
 })();
