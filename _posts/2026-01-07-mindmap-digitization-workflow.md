@@ -20,8 +20,6 @@ images:
   header: images/mindmap-digitization-workflow/header.jpg
   animated-cover: images/mindmap-digitization-workflow/animated-cover.webp
 published: true
-featured: true
-featured_order: 2
 ---
 
 <!--excerpt.start-->
