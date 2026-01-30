@@ -20,7 +20,7 @@ images:
   cover: images/generative-ontology-from-game-knowledge-to-game-creation/cover2x.jpg
   header: images/generative-ontology-from-game-knowledge-to-game-creation/header.jpg
   animated-cover: images/generative-ontology-from-game-knowledge-to-game-creation/animated-cover.webp
-published: true
+published: false
 series: "Game Architecture"
 series_order: 5
 featured: true
