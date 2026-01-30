@@ -3601,6 +3601,34 @@ html.dark-mode .search-no-results a {
 }
 
 /* ==========================================================================
+   Unlisted Post Banner
+   ========================================================================== */
+
+.unlisted-banner {
+  background: linear-gradient(135deg, #ff6b35 0%, #e05520 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 20px;
+  margin: 0 15px 15px;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.3px;
+  box-shadow: 0 3px 12px rgba(255, 107, 53, 0.3);
+}
+
+.unlisted-banner i {
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+html.dark-mode .unlisted-banner {
+  background: linear-gradient(135deg, #e05520 0%, #c44818 100%);
+  box-shadow: 0 3px 12px rgba(224, 85, 32, 0.4);
+}
+
+/* ==========================================================================
    Text-to-Speech Player Styles
    ========================================================================== */
 

@@ -8,6 +8,12 @@ comments: true
 <br />
 <div class="container theme-showcase post-container" role="main">
 
+	{% if page.unlisted %}
+	<div class="unlisted-banner">
+		<i class="fa fa-eye-slash"></i> This post is unlisted — shared privately and not published on the public site.
+	</div>
+	{% endif %}
+
 	<header class="post-header">
 		<div class="blog-image"
 			style="{% if page.images.header %}background-image:url({{page.images.header}}){% endif %}">

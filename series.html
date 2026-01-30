@@ -15,7 +15,7 @@ toc: false
   {% endcomment %}
   {% assign all_series = "" | split: "" %}
   {% for post in site.posts %}
-    {% if post.series %}
+    {% if post.series and post.unlisted != true %}
       {% if post.series.first.name %}
         {% comment %} New format: array of objects {% endcomment %}
         {% for ps in post.series %}

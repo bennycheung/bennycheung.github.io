@@ -10,7 +10,7 @@ layout: default
 <div class="container" role="main" style="font-family: Helvetica;">
 
   <!-- Featured Posts Section -->
-  {% assign featured = site.posts | where: "featured", true | sort: "featured_order" %}
+  {% assign featured = site.posts | where: "featured", true | where_exp: "post", "post.unlisted != true" | sort: "featured_order" %}
   {% if featured.size > 0 %}
     {% assign hero = featured | first %}
 
@@ -99,7 +99,7 @@ layout: default
       {% assign post_count = 0 %}
       {% assign page_num = 1 %}
       {% for post in site.posts %}
-        {% if post.category == "post" and post.featured != true %}
+        {% if post.category == "post" and post.featured != true and post.unlisted != true %}
           {% assign position_in_page = post_count | modulo: 6 %}
           {% if position_in_page == 0 %}
             {% if post_count > 0 %}

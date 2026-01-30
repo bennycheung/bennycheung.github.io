@@ -6,9 +6,10 @@ toc: false
 ---
 
 <div class="archives-container">
-  <p class="text-muted">All {{ site.posts | where: "category", "post" | size }} posts, organized by year. Click a year to expand.</p>
+  {% assign visible_posts = site.posts | where: "category", "post" | where_exp: "post", "post.unlisted != true" %}
+  <p class="text-muted">All {{ visible_posts | size }} posts, organized by year. Click a year to expand.</p>
 
-  {% assign postsByYear = site.posts | where: "category", "post" | group_by_exp: "post", "post.date | date: '%Y'" %}
+  {% assign postsByYear = visible_posts | group_by_exp: "post", "post.date | date: '%Y'" %}
 
   {% for year in postsByYear %}
   <div class="archive-year-group {% if forloop.first %}expanded{% endif %}">

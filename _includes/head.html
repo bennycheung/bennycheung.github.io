@@ -77,6 +77,11 @@
 		{% endif %}
 	{% endif %}
 
+	<!-- Unlisted posts: prevent search engine indexing -->
+	{% if page.unlisted %}
+	<meta name="robots" content="noindex, nofollow">
+	{% endif %}
+
 	<!-- Canonical & Icons -->
 	<link rel="icon" href="/assets/favicon.ico">
 	<link rel="canonical" href="{{ site.url }}{% if page.permalink %}/{{ page.permalink }}{% else %}{{ page.url }}{% endif %}" />
