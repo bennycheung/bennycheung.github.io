@@ -4,7 +4,7 @@
 {% assign related_posts = "" | split: "" %}
 
 {% for post in site.posts %}
-  {% if post.url != page.url %}
+  {% if post.url != page.url and post.unlisted != true %}
     {% assign common_tags = 0 %}
     {% for tag in post.tags %}
       {% if page.tags contains tag %}

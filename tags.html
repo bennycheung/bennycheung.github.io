@@ -207,9 +207,9 @@ html.dark-mode .archive-item a:hover {
 }
 </style>
 
-<!-- Tag Data from Jekyll (auto-updates on build) -->
+<!-- Tag Data from Jekyll (auto-updates on build, excludes unlisted posts) -->
 <script id="tag-data" type="application/json">
-[{% for tag in site.tags %}{"text":"{{ tag | first | escape }}","size":{{ tag | last | size }}}{% unless forloop.last %},{% endunless %}{% endfor %}]
+[{% assign tag_first = true %}{% for tag in site.tags %}{% assign filtered_count = 0 %}{% for post in tag[1] %}{% unless post.unlisted == true %}{% assign filtered_count = filtered_count | plus: 1 %}{% endunless %}{% endfor %}{% if filtered_count > 0 %}{% unless tag_first %},{% endunless %}{"text":"{{ tag | first | escape }}","size":{{ filtered_count }}}{% assign tag_first = false %}{% endif %}{% endfor %}]
 </script>
 
 <!-- Word Cloud Visualization -->
@@ -232,16 +232,17 @@ html.dark-mode .archive-item a:hover {
   {% for tag in site.tags %}
   <div class="archive-group">
     {% capture tag_name %}{{ tag | first }}{% endcapture %}
+    {% assign filtered_tag_count = 0 %}{% for post in site.tags[tag_name] %}{% unless post.unlisted == true %}{% assign filtered_tag_count = filtered_tag_count | plus: 1 %}{% endunless %}{% endfor %}
     <h3 id="{{ tag_name | slugify }}">
       {{ tag_name }}
-      <span class="post-count">{{ tag | last | size }} posts</span>
+      <span class="post-count">{{ filtered_tag_count }} posts</span>
     </h3>
     <a name="{{ tag_name | slugify }}"></a>
-    {% for post in site.tags[tag_name] %}
+    {% for post in site.tags[tag_name] %}{% unless post.unlisted == true %}
     <article class="archive-item">
       <h4><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h4>
     </article>
-    {% endfor %}
+    {% endunless %}{% endfor %}
   </div>
   {% endfor %}
 </div>

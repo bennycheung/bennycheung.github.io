@@ -17,6 +17,7 @@
     {% assign series_posts_unsorted = "" | split: "" %}
     {% assign series_orders = "" | split: "" %}
     {% for post in site.posts %}
+      {% if post.unlisted == true %}{% continue %}{% endif %}
       {% assign this_order = nil %}
       {% if post.series.first.name %}
         {% for ps in post.series %}
@@ -102,6 +103,7 @@
   {% assign series_posts_unsorted = "" | split: "" %}
   {% assign series_orders = "" | split: "" %}
   {% for post in site.posts %}
+    {% if post.unlisted == true %}{% continue %}{% endif %}
     {% assign this_order = nil %}
     {% if post.series.first.name %}
       {% for ps in post.series %}
