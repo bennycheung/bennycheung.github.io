@@ -284,13 +284,43 @@ _Figure. Step-by-step: Architect to Weaver to Critic to Refiner, system self-cor
 
 The **Mechanics Architect** analyzes the theme and identifies that rival AI laboratories suggest parallel development, resource competition, and technological breakthroughs. "Racing to AGI" implies a progress track with a finish line. Given the competitive constraint, players race independently toward a shared victory threshold. It selects action point allocation (secret departmental budgeting), engine building (infrastructure and research synergies), market/auction (competitive talent acquisition), and hidden information (unpublished breakthroughs) as core mechanisms. The turn structure combines simultaneous secret planning with sequential resolution.
 
-The **Theme Weaver** receives these mechanics and integrates narrative. Action point allocation becomes lab budget decisions across Research, Talent, Infrastructure, and Intelligence departments. Hidden information becomes proprietary research breakthroughs held secret until strategically published. The market becomes a talent war where labs bid for top AI researchers. Engine building becomes the pursuit of synergistic breakthroughs across five research fields: Neural Networks, Robotics, Quantum Computing, Ethics & Safety, and Hardware. External events represent global volatility -- regulatory crackdowns, power outages, breakthrough discoveries -- that disrupt all players. The title emerges: **Neural Race**.
+![Neural Race Board Layout]({{ site.baseurl }}images/generative-ontology-from-game-knowledge-to-game-creation/Neural_Race_Board_Layout_Design.png)
+
+_Figure. An imagined board layout for Neural Race -- AGI Progress Track, lab boards, talent market, and research breakthrough cards._
+
+The **Theme Weaver** receives these mechanics and integrates narrative. Action point allocation becomes lab budget decisions across Research, Talent, Infrastructure, and Intelligence departments. Hidden information becomes proprietary research breakthroughs held secret until strategically published. The market becomes a talent war where labs bid for top AI researchers.
+
+![Neural Race Talent Market]({{ site.baseurl }}images/generative-ontology-from-game-knowledge-to-game-creation/Neural_Race_Talent_Market_Design.png)
+
+_Figure. The talent market auction -- researcher cards compete for top specialists, with reputation bonuses creating a rich-get-richer dynamic._
+
+Engine building becomes the pursuit of synergistic breakthroughs across five research fields: Neural Networks, Robotics, Quantum Computing, Ethics & Safety, and Hardware.
+
+![Neural Race Breakthrough Cards]({{ site.baseurl }}images/generative-ontology-from-game-knowledge-to-game-creation/Neural_Race_Breakthrough_Cards_Design.png)
+
+_Figure. Research breakthrough cards with synergy links -- hoard for a massive combo or publish for immediate AGI points and reputation._
+
+External events represent global volatility -- regulatory crackdowns, power outages, breakthrough discoveries -- that disrupt all players.
+
+![Neural Race External Events]({{ site.baseurl }}images/generative-ontology-from-game-knowledge-to-game-creation/Neural_Race_External_Events_Design.png)
+
+_Figure. External event cards introduce global disruptions -- AI ethics regulation, power grid strain, and breakthrough discoveries that affect all players._
+
+The title emerges: **Neural Race**.
 
 The **Component Designer** specifies the physical instantiation: a game board with AGI Progress Track (0-20) and Reputation Track, a 60-card Research Breakthrough deck across five fields, a 32-card Researcher specialist deck, a 24-card External Event deck, Action Point tokens, Reputation markers, and custom wooden robot meeples. Each player gets an allocation mat for secret departmental budgeting.
+
+![Neural Race: Imagined Physical Components]({{ site.baseurl }}images/generative-ontology-from-game-knowledge-to-game-creation/Neural_Race_Components_Design_Imagined.png)
+
+_Figure. An imagined physical component design for Neural Race: 26x30 inch folding board, 116 cards across three decks, 76 tokens, and four custom wooden robot meeples._
 
 ### The Critic's Eye
 
 The **Balance Critic** identifies three issues. First, runaway leader via infrastructure: flat upgrade costs allow leading players to rapidly scale Action Points, creating an insurmountable advantage. Recommendation: cap maximum Action Points at 10 or implement exponentially increasing upgrade costs (3, 5, 8 points). Second, a "rich-get-richer" dynamic in the talent market: reputation bonuses in bidding allow leading labs to acquire the best researchers, cementing their lead. Recommendation: grant bidding bonuses to trailing players or introduce researchers specifically valuable to weaker positions. Third, surprise scoring swings from holding and mass-publishing synergistic breakthroughs. Recommendation: implement stricter hand size limits or mechanics that force partial information reveals.
+
+![Neural Race Design Strengths]({{ site.baseurl }}images/generative-ontology-from-game-knowledge-to-game-creation/Neural_Race_Design_Strengths.png)
+
+_Figure. Design validation -- thematic integration, high tension from hidden information, and replayability through variable powers and event decks. Fun Factor: 8/10._
 
 The refinement agent addresses all moderate-severity issues, and the **Fun Factor Judge** evaluates the refined design at 8/10. Key engagement hooks: the race dynamic as players approach the AGI victory threshold, the uncertainty of opponents' hidden breakthrough cards, and the risk/reward calculation of when to publish. Tension moments come from the simultaneous secret allocation forcing players to anticipate rivals, the competitive talent market bidding, and the constant pressure of resource scarcity demanding difficult trade-offs.
 
@@ -316,10 +346,6 @@ The complete output:
 | **Core Loop** | Plan (allocate), Research (draw), Market (bid), Event (adapt), Evaluate (score), Repeat |
 
 The design includes a full component specification: a game board with AGI Progress and Reputation Tracks, 60 Research Breakthrough cards across five fields, 32 Researcher specialist cards, 24 External Event cards, Action Point tokens, Reputation markers, and custom wooden robot meeples. Every mechanism maps to a thematic action. Every component serves a mechanical purpose.
-
-![Neural Race: Imagined Physical Components]({{ site.baseurl }}images/generative-ontology-from-game-knowledge-to-game-creation/Neural_Race_Components_Design_Imagined.png)
-
-_Figure. An imagined physical component design for Neural Race: 26x30 inch folding board, 116 cards across three decks, 76 tokens, and four custom wooden robot meeples._
 
 ### What Generative Ontology Provided
 
