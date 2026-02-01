@@ -259,22 +259,22 @@ Downstream consumers, whether human designers reviewing output, automated balanc
 
 ---
 
-## Case Study: From Theme to Playable Design
+## Case Study: A Game of AGI
 
 ![Case Study: The Input]({{ site.baseurl }}images/generative-ontology-from-game-knowledge-to-game-creation/Generative-Ontology-Grammar_of_Creation_10.png)
 
-_Figure. A unique, organic theme with no direct analog, can the ontology handle the nuance of cooperative dominance?_
+_Figure. A timely, high-stakes theme with no direct tabletop analog, can the ontology handle the nuance of competitive strategy with hidden information?_
 
-Theory is persuasive; demonstration is convincing. Let us trace a complete generation through our Generative Ontology pipeline, from initial theme to playable game design.
+How about a game of AGI? Theory is persuasive; demonstration is convincing. Let us trace a complete generation through our Generative Ontology pipeline, from initial theme to playable game design.
 
 ### The Input
 
 We provide a theme and constraints:
 
-- **Theme**: "Bioluminescent fungi competing for dominance in a deep cave ecosystem"
-- **Constraints**: 2-4 players, medium complexity, cooperative, 60-90 minutes
+- **Theme**: "Rival AI laboratories racing to develop Artificial General Intelligence"
+- **Constraints**: 2-4 players, medium complexity, competitive, 45-60 minutes
 
-This theme was chosen deliberately: it is unusual enough that no existing games share its exact combination, forcing the system to synthesize rather than imitate.
+This theme was chosen deliberately: it is timely enough to resonate but has no direct tabletop analog, forcing the system to synthesize rather than imitate.
 
 ### The Design Conversation
 
@@ -282,44 +282,48 @@ This theme was chosen deliberately: it is unusual enough that no existing games 
 
 _Figure. Step-by-step: Architect to Weaver to Critic to Refiner, system self-correction through specialized agents._
 
-The **Mechanics Architect** analyzes the theme and identifies that bioluminescent fungi suggest growth, spreading, and light/dark dynamics. "Competing for dominance" could mean area control, but "cave ecosystem" implies environmental pressures affecting everyone. Given the cooperative constraint, players work together against the environment. It selects resource management (spore allocation), area control (territory expansion through cave network), and engine building (specialized fungal structures) as core mechanisms. The turn structure combines simultaneous planning with sequential resolution.
+The **Mechanics Architect** analyzes the theme and identifies that rival AI laboratories suggest parallel development, resource competition, and technological breakthroughs. "Racing to AGI" implies a progress track with a finish line. Given the competitive constraint, players race independently toward a shared victory threshold. It selects action point allocation (secret departmental budgeting), engine building (infrastructure and research synergies), market/auction (competitive talent acquisition), and hidden information (unpublished breakthroughs) as core mechanisms. The turn structure combines simultaneous secret planning with sequential resolution.
 
-The **Theme Weaver** receives these mechanics and integrates narrative. Spore placement becomes reproductive strategy. Area control becomes nutrient access, not military control. Engine building becomes the development of specialized structures, fruiting bodies, rhizomorphs, symbiotic relationships. The antagonist: a rising water table that floods the cave gradually from below. Growth must stay ahead of the water, creating cooperative tension without player-versus-player conflict. The title emerges: **Mycelium: The Deep**.
+The **Theme Weaver** receives these mechanics and integrates narrative. Action point allocation becomes lab budget decisions across Research, Talent, Infrastructure, and Intelligence departments. Hidden information becomes proprietary research breakthroughs held secret until strategically published. The market becomes a talent war where labs bid for top AI researchers. Engine building becomes the pursuit of synergistic breakthroughs across five research fields: Neural Networks, Robotics, Quantum Computing, Ethics & Safety, and Hardware. External events represent global volatility — regulatory crackdowns, power outages, breakthrough discoveries — that disrupt all players. The title emerges: **Neural Race**.
 
-The **Component Designer** specifies the physical instantiation: 30 modular hex cave tiles with nutrient types and light levels, event cards (cave conditions), structure cards (engines), fungal growth cubes for each player, spore tokens, flood markers, and glow markers as VP sources. The tiles arrange vertically so the bottom represents deeper cave levels, with the flood track visible on the side.
+The **Component Designer** specifies the physical instantiation: a game board with AGI Progress Track (0-20) and Reputation Track, a 60-card Research Breakthrough deck across five fields, a 32-card Researcher specialist deck, a 24-card External Event deck, Action Point tokens, Reputation markers, and custom wooden robot meeples. Each player gets an allocation mat for secret departmental budgeting.
 
 ### The Critic's Eye
 
-The **Balance Critic** identifies three issues. First, runaway leader risk: if one player's strain grows faster in a cooperative game, they dominate decisions. Recommendation: add a network synergy rule where connected strains share benefits, making individual dominance a team asset. Second, flood timing feels arbitrary when driven purely by random event cards. Recommendation: make the flood a predictable escalation (rises every round) with event cards as modifiers, so players can plan around a baseline. Third, engine building might be a trap if structures cost growth. Recommendation: each structure should provide an immediate small benefit plus an ongoing ability.
+The **Balance Critic** identifies three issues. First, runaway leader via infrastructure: flat upgrade costs allow leading players to rapidly scale Action Points, creating an insurmountable advantage. Recommendation: cap maximum Action Points at 10 or implement exponentially increasing upgrade costs (3, 5, 8 points). Second, a "rich-get-richer" dynamic in the talent market: reputation bonuses in bidding allow leading labs to acquire the best researchers, cementing their lead. Recommendation: grant bidding bonuses to trailing players or introduce researchers specifically valuable to weaker positions. Third, surprise scoring swings from holding and mass-publishing synergistic breakthroughs. Recommendation: implement stricter hand size limits or mechanics that force partial information reveals.
 
-The refinement agent addresses all moderate-severity issues, and the **Fun Factor Judge** evaluates the refined design at 7/10. Key engagement hooks: "Will we reach the surface in time?" as persistent tension, simultaneous placement creating reveal anticipation, and building structures as tangible achievement. Tension moments come from the visible countdown of rising water, event card reveals, and the painful decision of whether to save endangered colonies or abandon them.
+The refinement agent addresses all moderate-severity issues, and the **Fun Factor Judge** evaluates the refined design at 8/10. Key engagement hooks: the race dynamic as players approach the AGI victory threshold, the uncertainty of opponents' hidden breakthrough cards, and the risk/reward calculation of when to publish. Tension moments come from the simultaneous secret allocation forcing players to anticipate rivals, the competitive talent market bidding, and the constant pressure of resource scarcity demanding difficult trade-offs.
 
 ### The Final Design
 
-![Final Output: Mycelium: The Deep]({{ site.baseurl }}images/generative-ontology-from-game-knowledge-to-game-creation/Generative-Ontology-Grammar_of_Creation_12.png)
+![Final Output: Neural Race]({{ site.baseurl }}images/generative-ontology-from-game-knowledge-to-game-creation/Generative-Ontology-Grammar_of_Creation_12.png)
 
-_Figure. The AI-generated game design: structurally complete, thematically tight, and ready for prototyping. This is not a published game but a complete design produced entirely by the Generative Ontology pipeline. Explore the complete ontology for [Mycelium: The Deep on GameGrammar](https://gamegrammar.dynamindresearch.com/s/04HPtDzsTB5P9r7iTZ4yDKVzzVoCNHvRH0y5hwEDIF0) [11]._
+_Figure. The AI-generated game design: structurally complete, thematically tight, and ready for prototyping. This is not a published game but a complete design produced entirely by the Generative Ontology pipeline. Explore the complete ontology for [Neural Race on GameGrammar](https://gamegrammar.dynamindresearch.com/s/JHEYCWpyE6DvbCnBOVRPr0iuyroWIdZrO1qjvw3EECs) [11]._
 
 The complete output:
 
 | Field | Value |
 |-------|-------|
-| **Title** | Mycelium: The Deep |
-| **Theme** | Bioluminescent fungi escaping rising floodwaters in an ancient cave |
-| **Game Type** | Cooperative |
-| **Goal** | Grow the fungal network from the cave depths to the surface before the flood reaches the highest colony |
-| **End Condition** | Victory: Any growth cube reaches a surface tile. Defeat: Flood markers reach the row containing the highest player cube. |
-| **Mechanisms** | Resource Management, Area Control, Engine Building |
-| **Turn Structure** | 1) Simultaneous spore placement (face-down), 2) Reveal and resolve growth, 3) Event card, 4) Flood rises |
+| **Title** | Neural Race |
+| **Theme** | Rival AI laboratories racing to develop AGI in a high-stakes global competition |
+| **Game Type** | Competitive |
+| **Goal** | Advance on the AGI Progress Track by publishing research breakthroughs; first to 20 progress points wins |
+| **End Condition** | Sprint: First player to 20+ AGI progress triggers immediate victory. Endurance: If no player reaches threshold, highest total of AGI progress + synergy bonuses + reputation wins. |
+| **Mechanisms** | Action Point Allocation, Engine Building, Market/Auction, Hidden Information |
+| **Turn Structure** | 1) Secret allocation of Action Points to departments, 2) Research execution and breakthrough draws, 3) Talent market bidding, 4) External event, 5) Progress evaluation |
 | **Player Count** | 2-4 |
-| **Roles** | Four fungal strains: Spreader (movement), Rooted (defense), Lumens (scoring), Toxic (events) |
-| **Core Loop** | Place spores, Reveal, Grow, Event, Flood rises, Repeat |
+| **Interactions** | Competitive bidding, hidden breakthroughs, reputation race, variable lab specializations |
+| **Core Loop** | Plan (allocate), Research (draw), Market (bid), Event (adapt), Evaluate (score), Repeat |
 
-The design includes a full component specification: 30 modular hex tiles, three card types (Event, Structure, Objective), 60 growth cubes, 12 spore tokens, 20 flood markers, 16 structure tokens, and 8 glow markers. Every mechanism maps to a thematic action. Every component serves a mechanical purpose.
+The design includes a full component specification: a game board with AGI Progress and Reputation Tracks, 60 Research Breakthrough cards across five fields, 32 Researcher specialist cards, 24 External Event cards, Action Point tokens, Reputation markers, and custom wooden robot meeples. Every mechanism maps to a thematic action. Every component serves a mechanical purpose.
+
+![Neural Race: Imagined Physical Components]({{ site.baseurl }}images/generative-ontology-from-game-knowledge-to-game-creation/Neural_Race_Components_Design_Imagined.png)
+
+_Figure. An imagined physical component design for Neural Race: 26x30 inch folding board, 116 cards across three decks, 76 tokens, and four custom wooden robot meeples._
 
 ### What Generative Ontology Provided
 
-Without the ontology schema, an LLM generating "a cooperative game about bioluminescent fungi" would likely produce vague victory conditions ("escape the cave somehow"), inconsistent mechanisms (mentioning deck-building but specifying no cards), missing components (no actual game pieces defined), and disconnected theme (mechanics unrelated to fungi).
+Without the ontology schema, an LLM generating "a competitive game about rival AI labs" would likely produce vague victory conditions ("be the first to develop AGI somehow"), inconsistent mechanisms (mentioning an auction but specifying no bidding currency), missing components (no actual game pieces defined), and disconnected theme (mechanics unrelated to research or competition).
 
 The Generative Ontology framework ensured:
 
@@ -333,7 +337,7 @@ The Generative Ontology framework ensured:
 
 The output is not merely plausible. It is *playable*. A designer could take this output, build a prototype, and begin playtesting. The ontology grammar guaranteed that all the essential elements of a game are present and coherent.
 
-If you want to see Generative Ontology in action, [GameGrammar](https://gamegrammar.com) lets you generate complete tabletop game designs from a theme. Enter a concept, and the system produces a structurally validated game with mechanisms, components, and balance analysis, the same pipeline that created Mycelium: The Deep. We are opening the beta soon.
+If you want to see Generative Ontology in action, [GameGrammar](https://gamegrammar.com) lets you generate complete tabletop game designs from a theme. Enter a concept, and the system produces a structurally validated game with mechanisms, components, and balance analysis, the same pipeline that created Neural Race. We are opening the beta soon.
 
 ---
 
@@ -388,5 +392,5 @@ The ontology that once helped us *understand* now helps us *create*. This is the
 [10] [*GameGrammar*](https://gamegrammar.com). Dynamind Research, 2026.
   - AI-powered tabletop game design platform built on Generative Ontology
 
-[11] [*Mycelium: The Deep on GameGrammar*](https://gamegrammar.dynamindresearch.com/s/04HPtDzsTB5P9r7iTZ4yDKVzzVoCNHvRH0y5hwEDIF0). Dynamind Research, 2026.
+[11] [*Neural Race on GameGrammar*](https://gamegrammar.dynamindresearch.com/s/neural-race). Dynamind Research, 2026.
   - Interactive display of the complete generated game ontology from the case study in this article
