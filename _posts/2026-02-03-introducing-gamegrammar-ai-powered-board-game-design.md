@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Introducing GameGrammar: AI-Powered Board Game Design"
-date: 2026-02-03 12:00:00.000000000 -00:00
+date: 2026-02-03 00:00:00.000000000 -00:00
 permalink: introducing-gamegrammar-ai-powered-board-game-design
 author: Benny Cheung
 artwork:
@@ -20,10 +20,13 @@ image: images/introducing-gamegrammar-ai-powered-board-game-design/post_cover.pn
 images:
   cover: images/introducing-gamegrammar-ai-powered-board-game-design/cover2x.png
   header: images/introducing-gamegrammar-ai-powered-board-game-design/header.png
+  animated-cover: images/introducing-gamegrammar-ai-powered-board-game-design/animated-cover.webp
 published: true
 unlisted: false
 series: "Game Architecture"
 series_order: 5
+featured: true
+featured_order: 1
 ---
 
 <!--excerpt.start-->
