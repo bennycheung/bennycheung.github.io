@@ -166,11 +166,20 @@ Layer 1 is the **blueprints**: foundation and load-bearing walls. You cannot liv
 
 This metaphor also explains what happens when you make a big change. If you move a load-bearing wall (change a core mechanism), the furniture layout becomes outdated: the sofa is now halfway through a wall. GameGrammar tracks these connections automatically.
 
-Say you change your hand limit from seven cards to three. Suddenly your drafting phase description is wrong, your "discard to activate" power needs rebalancing, and your endgame scoring assumes players have cards they can no longer hold. In a traditional design doc, you might not catch these ripple effects for weeks. Layer 3 flags every affected section immediately.
-
 ![Staleness Propagation]({{ site.baseurl }}images/gamegrammar-the-theory-of-generative-board-game-design/Staleness_Propagation.jpg)
 
 _Figure. When you change the blueprints, the interior needs reviewing. The contractor's clipboard is never outdated; it just records that renovation is underway._
+
+Say you change your hand limit from seven cards to three. Suddenly your drafting phase description is wrong, your "discard to activate" power needs rebalancing, and your endgame scoring assumes players have cards they can no longer hold. In a traditional design doc, you might not catch these ripple effects for weeks. Layer 3 flags every affected section immediately.
+
+Here is what happens next. You open GameGrammar and see three sections marked stale: Drafting Phase, Card Powers, and Endgame Scoring. You click Drafting Phase. The AI shows you the problem: "Players draft from a pool of 5, but with a hand limit of 3, they can only keep 3 cards total. The drafting round either ends too early or forces repeated discards." It proposes two options: reduce the draft pool to 3, or let players draft then discard down. You pick the second option because you want the tension of choosing what to keep. You preview the rewritten section, adjust one sentence, and apply.
+
+The card powers section updates next, and the AI flags that "discard to activate" now competes directly with your hand limit. It suggests making activation free for one card per turn. You disagree. That tension is the whole point of your game. You dismiss the suggestion and mark the section as reviewed.
+
+Endgame scoring needs a number change: the bonus for "most cards in hand" no longer makes sense at three cards. You accept the AI's proposal to replace it with "most sets completed."
+
+Three sections, five minutes, done. In your old workflow, you might have caught the drafting issue in your next playtest, the scoring issue two playtests after that, and the card power conflict never.
+
 
 ---
 
