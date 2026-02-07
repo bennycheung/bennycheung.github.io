@@ -130,7 +130,7 @@ Generation is not a single AI prompt. It is a team of six specialized agents, ea
 
 _Figure. Six specialized agents working in sequence. Each agent sees the complete output of all previous agents, building on their work like a relay team of expert consultants._
 
-The **Mechanics Architect** picks mechanisms from a curated library of 35+ game mechanisms drawn from Engelstein and Shalev's taxonomy [3]. The **Theme Weaver** dresses the mechanics in your theme. The **Component Designer** specifies every physical piece with concrete counts. The **Detail Expander** writes out turn phases, card examples, and scoring rules. The **Balance Critic** flags potential issues in the numbers. The **Design Evaluator** scores six dimensions of design quality, maps the emotional arc across game phases, and measures how original your mechanism combination is. You get a creative profile, not just a single rating.
+The **Mechanics Architect** picks mechanisms from a curated library of 35 game mechanisms drawn from Engelstein and Shalev's taxonomy [3]. The **Theme Weaver** dresses the mechanics in your theme. The **Component Designer** specifies every physical piece with concrete counts. The **Detail Expander** writes out turn phases, card examples, and scoring rules. The **Balance Critic** flags potential issues in the numbers. The **Design Evaluator** scores six dimensions of design quality, maps the emotional arc across game phases, and measures how original your mechanism combination is. You get a creative profile, not just a single rating.
 
 ### Grounded in Real Games
 
@@ -383,6 +383,14 @@ GameGrammar is available in public beta at [gamegrammar.dynamindresearch.com](ht
 
 ---
 
+## Series
+
+* [Unlocking the Secrets of Tabletop Games Ontology (Part 4)]({{ site.baseurl }}unlocking-secrets-of-tabletop-games-ontology)
+* [Introducing GameGrammar: AI-Powered Board Game Design (Part 5)]({{ site.baseurl }}introducing-gamegrammar-ai-powered-board-game-design)
+* **>>** [GameGrammar: The Theory of Generative Board Game Design (Part 6)]({{ site.baseurl }}gamegrammar-the-theory-of-generative-board-game-design)
+
+---
+
 ## References
 
 [1] Alfred North Whitehead. [*Process and Reality*](https://archive.org/details/processreality00alfr). Free Press, 1929/1978.
@@ -401,7 +409,7 @@ GameGrammar is available in public beta at [gamegrammar.dynamindresearch.com](ht
   - Where the structured game vocabulary began, analyzing 2,000+ published games
 
 [6] [BoardGameGeek](https://boardgamegeek.com/). The largest board game database and community.
-  - Source for the 870+ game reference library used in generation and originality scoring
+  - Source for the 2,000+ game reference library used in generation and originality scoring
 
 [7] [Dynamind Research](https://www.dynamindresearch.com). AI consulting and product development studio.
   - Creator of GameGrammar
