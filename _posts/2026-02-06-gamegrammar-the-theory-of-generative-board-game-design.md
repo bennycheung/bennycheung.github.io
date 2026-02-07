@@ -243,9 +243,9 @@ These stages are not a rigid sequence. You might be fine-tuning in Stage 3 when 
 
 Early versions of GameGrammar's health system only measured what was *wrong* with a design: contradictions, outdated sections, unresolved suggestions. Those checks are useful, but they answer the wrong question. A game with zero contradictions is *functional*. It is not necessarily *good*.
 
-![The Creative Coach Dashboard]({{ site.baseurl }}images/gamegrammar-the-theory-of-generative-board-game-design/Creative_Coach_Dashboard.jpg)
+![Design Health: Two Levels]({{ site.baseurl }}images/gamegrammar-the-theory-of-generative-board-game-design/Design_Health_Two_Levels.jpg)
 
-_Figure. The Creative Coach dashboard for Stellar Rivals. The radar chart shows six design dimensions at a glance (Strategy 8, Tension 7, Agency 8, Replay 8, Social 6, Elegance 7). To the right: Fun Rating (8.0/10), Novelty (100%), and Theme Cohesion (9/10). Below: the Engagement Arc across game phases, with a suggestion to add peaks. The AI Assist toolbar offers one-click access to Re-Evaluate, Check Consistency, AI Edit, and AI Suggestions._
+_Figure. Level 1 is the clipboard: structural soundness, the checklist that confirms nothing is broken. Level 2 is the radar chart: creative vitality, the profile that shows what makes your design special. The shift is from "What is wrong?" to "What makes this special?"_
 
 The deeper insight: as a designer, you need to know not just whether the blueprint is structurally sound, but whether the game has *soul*. We needed to move from "nothing is broken" to "here is what makes this design special."
 
@@ -266,6 +266,10 @@ The six dimensions turn the vague question "is this fun?" into actionable creati
 
 The **Originality Score** gives you a creative thrill by showing how your mechanism combination compares to published games. A score of 87 means "only 13% of existing games share this combination." It rewards you for venturing into unexplored design space.
 
+![The Engagement Curve]({{ site.baseurl }}images/gamegrammar-the-theory-of-generative-board-game-design/Engagement_Curve.jpg)
+
+_Figure. Mapping the soul of the game. The dramatic curve spikes toward the end. The flowing curve builds steadily. Neither is wrong. The curve shows what your game does emotionally, not what it should do._
+
 The **Engagement Curve** maps the emotional arc of your game across its phases. A flat line suggests a one-note experience; peaks and valleys suggest drama. A horror game *should* spike. A meditative engine-builder *should* flow smoothly. But a flat curve is not automatically a problem. Some of the best engine-building games have a slow, meditative build by design. The curve shows you what your game does emotionally. Whether that matches your intention is your call, not the AI's.
 
 These metrics are not report cards. A low social interaction score is not a failing grade. Your game might not need social interaction. The dashboard answers *"What makes this design special?"* not *"What is wrong?"*
@@ -278,17 +282,13 @@ This is the question every designer asks, and it deserves a straight answer.
 
 ![Can AI Understand Fun?]({{ site.baseurl }}images/gamegrammar-the-theory-of-generative-board-game-design/Can_AI_Understand_Fun.jpg)
 
-_Figure. AI has never felt the tension of a close game. But it can recognize the design choices that create that tension._
+_Figure. AI cannot feel fun, but it can recognize the patterns that cause it. Hidden info creates tension. Multiple options create agency. Escalating stakes create drama._
 
 The short answer: no, AI cannot *experience* fun. It has never felt the excitement of a close finish, the satisfaction of a clever combo, or the social electricity of pulling off a bluff. It has no taste. It has no feelings.
 
 But here is the thing: you do not need to *feel* fun to *recognize the design patterns that produce it*.
 
 Fun in board games is not random magic. It comes from choices you make as a designer:
-
-![The Structural Anatomy of Fun]({{ site.baseurl }}images/gamegrammar-the-theory-of-generative-board-game-design/Structural_Anatomy_of_Fun.jpg)
-
-_Figure. The AI spots the patterns; the players bring the experience._
 
 | What You Design | What Players Feel | Can AI Detect It? |
 |-----------------|-------------------|-------------------|
@@ -315,17 +315,13 @@ A related question: Can AI be genuinely creative, or does it just shuffle existi
 
 ![Is AI Creative?]({{ site.baseurl }}images/gamegrammar-the-theory-of-generative-board-game-design/Is_AI_Creative.jpg)
 
-_Figure. Creativity is not making something from nothing. It is combining known ingredients in ways no one has combined them before._
+_Figure. Existing elements become novel structures through synthesis. The human provides intention (the why). The AI provides recombination (the how)._
 
 The philosopher Whitehead defined creativity not as making something from nothing, but as *the novel combination of existing elements* [1]. Every creative act borrows from what came before but achieves something new in how it brings those pieces together. A poet inherits language, meter, and tradition; the poem is new. An architect inherits materials, engineering, and precedent; the building is new. Creativity is not the absence of inheritance. It is the *fresh synthesis* of what you have inherited.
 
 This is exactly what GameGrammar does. The vocabulary provides the inherited building blocks of game design: worker placement, deck building, area control, set collection, hidden bidding. These patterns have been discovered, tested, and refined across thousands of published games. The AI generates a specific new game that combines those building blocks in a configuration that did not previously exist.
 
 The criticism that "AI just recombines" is fair, but consider: much of human game design works the same way. Catan combined resource trading with hex grids and dice production: three familiar patterns, one landmark game. Dominion combined deck building with card drafting. Root combined area control with asymmetric player powers. A great deal of creativity in game design comes from the novel recombination of known mechanisms [3]. The difference is that human designers bring taste, experience, and intention to the process. GameGrammar makes the recombination step visible and fast, so you can spend more time on the parts that require your judgment.
-
-![The Missing Piece: Intention]({{ site.baseurl }}images/gamegrammar-the-theory-of-generative-board-game-design/Missing_Piece_Intention.jpg)
-
-_Figure. AI has no "why." You provide the vision; the AI provides the structural possibilities._
 
 What AI genuinely lacks is *intention*. When you say "I want to create the feeling of surviving in a harsh wilderness," that vision, that lived experience compressed into a creative direction, is yours alone. The AI has no memories, no desires, no reasons to create *this* game rather than *that* one. This is why the process separates your vision (human) from generation (AI) from refinement (collaborative). You provide the "why." The AI provides the "how." The design that emerges from working together is genuinely new.
 
