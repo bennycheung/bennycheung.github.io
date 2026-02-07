@@ -43,7 +43,7 @@ What came back was **Stellar Rivals: A Race to the Stars**, a 2-4 player competi
 
 I did not design this game. I did not prompt-engineer it into existence through twenty rounds of back-and-forth with ChatGPT. I typed a theme, set some constraints, and hit Generate.
 
-This article is the story of how that works, why it is different from asking an LLM to "design a board game," and what it means for the future of game design. This is also Part 5 of the [Game Architecture series]({{ site.baseurl }}unlocking-secrets-of-tabletop-games-ontology), where we have been building toward this moment since we first mapped the structure of tabletop games in [Part 4]({{ site.baseurl }}unlocking-secrets-of-tabletop-games-ontology) [1].
+This article is the story of how that works, why it is different from asking an LLM to "design a board game," and what it means for the future of game design. This is also Part 5 of the [Game Architecture series]({{ site.baseurl }}unlocking-secrets-of-tabletop-games-ontology), where we have been building toward this moment since we first mapped the structure of tabletop games in [Part 4]({{ site.baseurl }}unlocking-secrets-of-tabletop-games-ontology) [1]. If you want to understand the design theory behind how GameGrammar works, including its philosophical foundations and the co-design relationship between human designers and AI, see [Part 6: The Theory of Generative Board Game Design]({{ site.baseurl }}gamegrammar-the-theory-of-generative-board-game-design).
 
 ---
 
@@ -301,12 +301,15 @@ Twelve words. Seventy-three seconds. A complete game with five scoring paths, a 
 
 The blank page is no longer your enemy. It is your launchpad.
 
+This article showed you the *what*. If you want to understand the *why*, [Part 6: The Theory of Generative Board Game Design]({{ site.baseurl }}gamegrammar-the-theory-of-generative-board-game-design) explores the design theory behind GameGrammar. It covers the three-layer architecture that separates mechanics from theme, the co-design relationship between human designers and AI agents, and the philosophical question of whether AI can understand fun. If you are curious about what makes this approach different at a deeper level, that is where to go next.
+
 ---
 
 ## Series
 
 * [Unlocking the Secrets of Tabletop Games Ontology (Part 4)]({{ site.baseurl }}unlocking-secrets-of-tabletop-games-ontology)
 * **>>** [Introducing GameGrammar: AI-Powered Board Game Design (Part 5)]({{ site.baseurl }}introducing-gamegrammar-ai-powered-board-game-design)
+* [GameGrammar: The Theory of Generative Board Game Design (Part 6)]({{ site.baseurl }}gamegrammar-the-theory-of-generative-board-game-design)
 
 ---
 
@@ -326,3 +329,6 @@ The blank page is no longer your enemy. It is your launchpad.
 
 [5] [Dynamind Research](https://www.dynamindresearch.com). AI consulting and product development studio.
   - Creator of GameGrammar, bridging theoretical AI research with practical product implementation
+
+[6] Benny Cheung. [*Generative Ontology: When Structured Knowledge Learns to Create*](https://arxiv.org/abs/2602.05636). arXiv:2602.05636, Feb 2026.
+  - The formal research paper behind GameGrammar's design theory and generative architecture

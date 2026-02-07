@@ -142,17 +142,17 @@ The same reference library serves a second purpose: **measuring originality**. A
 
 ## Three Layers: Game, Depth, and Process
 
-Your game design in GameGrammar lives on three separate layers, and keeping them separate turned out to be one of the more useful design decisions we made.
+Your game design in GameGrammar lives on three separate layers, and keeping them separate turned out to be one of the more useful design decisions we made. This separation is not just convenient engineering. It follows directly from the distinction between abstract patterns and concrete instances described earlier. The game itself (Layer 1) holds the patterns. The details (Layer 2) hold the concrete instances. The process (Layer 3) holds the history of how one became the other.
 
 ![The 3-Layer Architecture]({{ site.baseurl }}images/gamegrammar-the-theory-of-generative-board-game-design/Three_Layer_Architecture.jpg)
 
 _Figure. Three layers keep generation clean, editing informed, and your design's evolution visible. Most design tools mix the game with the process of making it. GameGrammar separates them._
 
-**Layer 1, Your Game**, captures the building blocks of any tabletop game: mechanisms, components, turn structure, player dynamics, scoring. This is the creative vocabulary itself.
+**Layer 1, Your Game**, captures the building blocks of any tabletop game: mechanisms, components, turn structure, player dynamics, scoring. These are the abstract patterns, the eternal building blocks that exist across all games, whether you are designing a quick party game or a sprawling civilization epic.
 
-**Layer 2, The Details**, adds concrete specifics: what actually happens during each turn phase, example card text, scoring formulas with real numbers. This is the difference between "this game has a drafting phase" and "in the drafting phase, each player picks one card from a shared pool of 5, resolving simultaneously."
+**Layer 2, The Details**, is where patterns become *this specific game*. Concrete specifics: what actually happens during each turn phase, example card text, scoring formulas with real numbers. This is the difference between "this game has a drafting phase" and "in the drafting phase, each player picks one card from a shared pool of 5, resolving simultaneously."
 
-**Layer 3, The Design Process**, tracks everything about *how you are working on the game*, not the game itself: which sections need updating, consistency issues, AI suggestions you have saved, your version history. None of this is about your game. It is about the process of making your game better.
+**Layer 3, The Design Process**, captures something traditional design tools ignore entirely. If you have ever maintained a game design in a shared Google doc, with crossed-out rules, margin notes that contradict each other, and version 14 saved as "final_FINAL_v2"... you know the pain. Layer 3 solves it. It tracks which sections need updating after your changes, flags consistency issues before you discover them in playtesting, holds AI suggestions you have saved for later, and maintains a full version history with comparison and rollback. It is the organized contractor's clipboard that keeps the renovation from becoming chaos.
 
 ### The House Metaphor
 
@@ -165,6 +165,8 @@ _Figure. Layer 1 is the blueprints. Layer 2 is the interior design. Layer 3 is t
 Layer 1 is the **blueprints**: foundation and load-bearing walls. You cannot live in them, but you cannot build without them. Layer 2 is the **interior design**: furniture and paint. You can swap the couch without tearing down walls. Layer 3 is the **contractor's clipboard**: the punch list, renovation history, and building permits. A record of the work being done, not the building itself.
 
 This metaphor also explains what happens when you make a big change. If you move a load-bearing wall (change a core mechanism), the furniture layout becomes outdated: the sofa is now halfway through a wall. GameGrammar tracks these connections automatically.
+
+Say you change your hand limit from seven cards to three. Suddenly your drafting phase description is wrong, your "discard to activate" power needs rebalancing, and your endgame scoring assumes players have cards they can no longer hold. In a traditional design doc, you might not catch these ripple effects for weeks. Layer 3 flags every affected section immediately.
 
 ![Staleness Propagation]({{ site.baseurl }}images/gamegrammar-the-theory-of-generative-board-game-design/Staleness_Propagation.jpg)
 
@@ -182,11 +184,11 @@ _Figure. The co-design loop: you edit, connected sections update, the AI spots e
 
 After your first draft is generated, the design enters a continuous refinement cycle. You make changes. Connected sections get flagged for review. The AI spots contradictions and emerging issues. You choose a path forward. The AI proposes solutions with clear reasoning. You preview everything before it touches your design. You accept, modify, or reject. Your evaluation scores update, showing which dimensions improved and which declined. The cycle continues.
 
-One rule is absolute: **the AI never changes your design without your permission.** Every modification follows a preview-before-apply pattern. The AI shows you what it wants to change and why. You decide. This is not just a convenience feature. It is a philosophical commitment to who owns the design.
+One rule is absolute: **the AI never changes your design without your permission.** Every modification follows a preview-before-apply pattern. The AI shows you what it wants to change and why. You decide. This is not just a convenience feature. It follows from the theory's core claim: generation is not design. If the AI could just change things, it would be designing. The preview step is what keeps the human in the designer's chair.
 
 > **AI proposes. You decide.**
 
-The AI does not understand *why* you chose a particular mechanism or *what feeling* you are trying to create at the table. It can spot that your cooperative game has conflicting competitive elements. But only you know whether that tension is a bug or the whole point.
+Think of it this way: the AI is a mechanic, not a mystic. It can tell you that your engine has a misfire, that your cooperative game has conflicting competitive scoring. But it cannot tell you whether the rumble of that misfire is exactly the tension you intended. It reads the blueprint. You read the room.
 
 ### Five Ways the AI Can Help
 
@@ -255,7 +257,7 @@ The six dimensions turn the vague question "is this fun?" into actionable creati
 
 The **Originality Score** gives you a creative thrill by showing how your mechanism combination compares to published games. A score of 87 means "only 13% of existing games share this combination." It rewards you for venturing into unexplored design space.
 
-The **Engagement Curve** maps the emotional arc of your game across its phases. A flat line suggests a one-note experience; peaks and valleys suggest drama. A horror game *should* spike. A meditative engine-builder *should* flow smoothly. The curve makes your intended emotional experience visible and measurable.
+The **Engagement Curve** maps the emotional arc of your game across its phases. A flat line suggests a one-note experience; peaks and valleys suggest drama. A horror game *should* spike. A meditative engine-builder *should* flow smoothly. But a flat curve is not automatically a problem. Some of the best engine-building games have a slow, meditative build by design. The curve shows you what your game does emotionally. Whether that matches your intention is your call, not the AI's.
 
 These metrics are not report cards. A low social interaction score is not a failing grade. Your game might not need social interaction. The dashboard answers *"What makes this design special?"* not *"What is wrong?"*
 
@@ -289,6 +291,8 @@ _Figure. The AI spots the patterns; the players bring the experience._
 | Unusual mechanism combinations | Novelty, surprise | Yes, by comparison to existing games |
 
 A bridge engineer does not need to "feel beauty" to know the math that makes a bridge elegant. A music teacher can explain why a chord progression creates tension and release without weeping every time they hear it. Analysis and experience operate on different levels.
+
+But here is what the analogy misses: a bridge has one purpose. A board game has as many purposes as it has players. The same mechanic that creates delicious tension for one group might fall flat for another. The AI can analyze the structural ingredients of fun (meaningful choices, hidden information, escalating stakes) but it cannot predict the alchemy that happens when four friends sit down together on a Friday night. That alchemy is yours.
 
 There are parts of fun that stay irreducibly personal: the chemistry of your play group, the cultural resonance of a theme, the satisfying weight of wooden tokens in your hand, the occasional magic that defies explanation. AI cannot evaluate those. This is exactly why the ground rule exists: **AI proposes, you decide.** The AI provides structural analysis. You decide whether it matters for *this* game and *this* group of players.
 
@@ -362,6 +366,8 @@ The three-layer model keeps your game separate from the process of making it. Th
 
 For the design community, this offers a new way of working: not AI replacing designers, not designers ignoring AI, but a structured partnership where each contributes what they do best. The grammar constrains. The AI creates within those constraints. You decide what the game should be.
 
+The AI handles the mechanics. You bring the meaning. That division of labor is the whole theory in one sentence.
+
 The grammar does not write the poem. But without grammar, there is no poem to write.
 
 GameGrammar is available in public beta at [gamegrammar.dynamindresearch.com](https://gamegrammar.dynamindresearch.com). Try it. Generate a game from your favorite theme. Study the radar chart. Make some changes and hit Re-Evaluate. Watch the scores move. Then decide for yourself whether this partnership is worth having.
@@ -390,3 +396,6 @@ GameGrammar is available in public beta at [gamegrammar.dynamindresearch.com](ht
 
 [7] [Dynamind Research](https://www.dynamindresearch.com). AI consulting and product development studio.
   - Creator of GameGrammar
+
+[8] Benny Cheung. [*Generative Ontology: When Structured Knowledge Learns to Create*](https://arxiv.org/abs/2602.05636). arXiv:2602.05636, Feb 2026.
+  - The formal paper describing GameGrammar's generative ontology framework, six-agent pipeline, and evaluation methodology
