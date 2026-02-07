@@ -272,7 +272,7 @@ I want to be clear about what GameGrammar cannot do, because the boundaries matt
 
 It cannot **playtest the game**. No AI can simulate the experience of four people around a table discovering that a mechanic is tedious or that a scoring path is dominant. It cannot **read the room**, the laughter, the frustration, the surprise on a player's face when a combo clicks. It cannot **navigate the publication journey**, the manufacturing economics, the publisher relationships, the convention pitching. And it cannot **make taste judgments**. Is a 45-minute game about Victorian astronomers *interesting*? That is a question for the designer and their audience, not for an algorithm.
 
-GameGrammar is a superpower, not a replacement [2]. It frees designers from blank-page paralysis and gives them structured starting points worth iterating on. Everything that happens after, the playtesting, the polishing, the publishing, remains the designer's craft.
+GameGrammar is a design accelerator, not a replacement [2]. It frees designers from blank-page paralysis and gives them structured starting points worth iterating on. Everything that happens after, the playtesting, the polishing, the publishing, remains the designer's craft.
 
 ---
 
