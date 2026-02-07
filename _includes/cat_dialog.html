@@ -200,30 +200,11 @@ html.dark-mode .cat-history-user {
   color: #6db3f2;
 }
 
-/* Mobile adjustments */
+/* Hide cat dialog on mobile */
 @media (max-width: 768px) {
-  #cat-hover-zone {
-    bottom: 65px;
-    width: 75px;
-    height: 120px;
-  }
-
+  #cat-hover-zone,
   #cat-speech-bubble {
-    bottom: 170px;
-    right: 10px;
-    max-width: 200px;
-    min-width: 180px;
-    font-size: 12px;
-  }
-
-  #cat-chat-input {
-    font-size: 11px;
-    padding: 5px 8px;
-  }
-
-  #cat-chat-send {
-    font-size: 11px;
-    padding: 5px 10px;
+    display: none !important;
   }
 }
 </style>
