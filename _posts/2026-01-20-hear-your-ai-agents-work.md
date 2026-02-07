@@ -21,8 +21,6 @@ images:
   header: images/hear-your-ai-agents-work/header.jpg
   animated-cover: images/hear-your-ai-agents-work/animated-cover.webp
 published: true
-featured: true
-featured_order: 3
 ---
 
 <!--excerpt.start-->

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Generative Ontology: From Game Knowledge to Game Creation"
-date: 2026-01-30 12:00:00.000000000 -00:00
+date: 2026-02-09 12:00:00.000000000 -00:00
 permalink: generative-ontology-from-game-knowledge-to-game-creation
 author: Benny Cheung
 artwork:
