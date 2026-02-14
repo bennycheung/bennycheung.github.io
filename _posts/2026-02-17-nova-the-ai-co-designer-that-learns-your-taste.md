@@ -197,7 +197,7 @@ Nova's power comes from unification, not from new AI capabilities. The same spec
 
 _Figure. Nova sits as a conversational orchestration layer on top of six specialist agents. The designer talks to Nova in natural language. Nova routes to the appropriate agent, collects structured results, and synthesizes them into a conversational response with change proposals and decision options._
 
-Nova uses Claude's native tool-use capability to decide which agent to invoke. The designer's natural language is the input. Nova's system prompt includes tool definitions for all available agents: balance analysis, design intent resolution, consistency checking, section regeneration, design suggestions, and reference game search. Claude decides which tools to call based on the conversation context, the same way it decides which tools to use in any other agentic workflow.
+Nova uses intent capability to decide which agent to invoke. The designer's natural language is the input. Nova's system prompt includes tool definitions for all available agents: balance analysis, design intent resolution, consistency checking, section regeneration, design suggestions, and reference game search. Claude decides which tools to call based on the conversation context, the same way it decides which tools to use in any other agentic workflow.
 
 This architecture has a crucial property: **the AI capabilities are already proven in production.** The BalanceCritic has been analyzing games for months. The DesignIntentResolver has been translating plain-language edits into ontology patches. Nova does not introduce new AI that might hallucinate in novel ways. It wraps trusted agents in a conversational interface with memory.
 
@@ -312,6 +312,3 @@ Nova reconstructs session context from structured sources rather than replaying 
 | Decision log | Last 10 accept/reject/defer decisions | ~500 |
 | Designer profile | Preference model (after 10+ decisions) | ~300 |
 
-**Agent Orchestration**
-
-Nova uses Claude's native tool-use capability to route natural language to six specialist DSPy agents. Profile-weighted prompting (not fine-tuning) shapes proposal generation. All agents receive the full current ontology as input, ensuring deterministic grounding.
