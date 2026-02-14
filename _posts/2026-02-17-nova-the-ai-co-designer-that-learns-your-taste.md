@@ -60,7 +60,7 @@ Donald was describing something specific: the standup meeting that every profess
 
 That collaborator does not exist for solo designers. It does not exist for small teams working evenings and weekends. The talent and vision are there. The time for a second brain is not.
 
-We named it perfectly: Nova. From the Latin *nova stella*, a new star. In astronomy, a nova is a white dwarf that suddenly flares with intense brightness when it accumulates enough material from a companion star. The star is not destroyed. It keeps going. Nova accumulates the designer's intent, taste, and context, and helps them flare with creative energy they would not have reached alone. It is not replacing the star. It is fueling it.
+We named it: Nova. From the Latin *nova stella*, a new star. In astronomy, a nova is a white dwarf that suddenly flares with intense brightness when it accumulates enough material from a companion star. The star is not destroyed. It keeps going. Nova accumulates the designer's intent, taste, and context, and helps them flare with creative energy they would not have reached alone. It is not replacing the star. It is fueling it.
 
 ---
 
