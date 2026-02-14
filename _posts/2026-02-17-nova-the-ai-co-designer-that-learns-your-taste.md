@@ -205,29 +205,6 @@ The agents run as tool calls within Nova's conversation loop. When the designer 
 
 ---
 
-## Memory Without Replay
-
-Nova remembers across sessions, but not by replaying raw conversations. That would be expensive and lossy. Instead, Nova reconstructs context from four structured sources:
-
-| Source | What It Provides | Token Cost |
-|--------|-----------------|------------|
-| **Current ontology** | The game as it stands right now | ~1,500 |
-| **Version history** | How the game got here (last 10 versions with change summaries) | ~300 |
-| **Decision log** | What was accepted, rejected, and deferred (last 10 decisions) | ~500 |
-| **Designer profile** | Who you are as a designer (only after 10+ decisions) | ~300 |
-
-Total context per turn: approximately 3,000 tokens. At current API pricing, that is roughly $0.02 per turn, or $0.66 per 30-turn session.
-
-The key insight is that Nova does not need the full conversation history. It needs: who the designer is (profile), what the game looks like right now (ontology), how it got here (version history), and what decisions were made (decision log). This keeps the context compact, cost-effective, and focused on the information that actually matters for the next response.
-
-When the designer opens a new session, Nova assembles this context and generates a greeting that references the design's evolution:
-
-> "Welcome back. Your game is at v7. Last session we settled on worker placement + deck building as the core loop and tuned the hand limit from 7 to 6. The current balance parameters show combo probability at 28%. You mentioned wanting to explore adding player interaction. Want to pick up there?"
-
-The designer does not re-explain anything. The structured log plus the current ontology state is sufficient to reconstruct relevant context. This is cheaper, more reliable, and more useful than trying to replay and summarize old conversations.
-
----
-
 ## The Hallucination Problem, Solved Structurally
 
 One of the persistent concerns about AI in creative tools is hallucination: the AI inventing facts, numbers, or relationships that do not exist. In a general chatbot, this is a real risk. You ask about your game, and the AI confabulates details.
