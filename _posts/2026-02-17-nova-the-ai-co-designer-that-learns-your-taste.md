@@ -86,7 +86,7 @@ GameGrammar's previous AI assistance was a toolbox: five modes of help (rewrite,
 
 The designer never sees agent names. They never select a mode. They talk to Nova. Nova decides which specialist to invoke, collects the results, and presents them as a coherent conversational response. The orchestration is invisible.
 
-This is not a chatbot. A chatbot is a text interface to a single model. Nova is a conversational layer on top of a multi-agent pipeline [6]. Six specialist agents, a structured game ontology, a reference library of 2,000 published games, and a persistent memory of every decision you have made, all accessible through natural language [5].
+This is not a chatbot. A chatbot is a text interface to a single model. Nova is a conversational layer on top of a multi-agent pipeline: six specialist agents, a structured game ontology, a reference library of 2,000 published games, and a persistent memory of every decision you have made, all accessible through natural language [5]. The shift from toolbox to colleague is the shift Mollick describes in *Co-Intelligence* [6]: treating AI not as a productivity shortcut but as a collaborative partner with its own contributions to the work.
 
 ---
 
@@ -98,7 +98,7 @@ Here is the idea at the center of Nova, the reason it is more than a chat interf
 
 _Figure. The five-stage reinforcement learning cycle at Nova's core. Learn builds a profile from your decisions. Trace captures reasoning chains. Explain presents conclusions with evidence. Reason surfaces intervention options at different levels of abstraction. Track records every decision. The cycle closes: tracked decisions feed the learning profile, and the partnership improves with use._
 
-**Learn.** Nova builds a profile of your design preferences. Not from a form you fill out, but from the pattern of what you accept and reject across sessions. Mechanism affinities, complexity tolerance, theme preferences, interaction style, risk appetite. The profile updates with every decision using an exponential moving average: recent choices weigh more, but old patterns do not vanish overnight.
+**Learn.** Nova builds a profile of your design preferences. Not from a form you fill out, but from the pattern of what you accept and reject across sessions. Mechanism affinities, complexity tolerance, theme preferences, interaction style, risk appetite. Recent choices weigh more, but old patterns do not vanish overnight.
 
 **Trace.** When Nova analyzes your design, it does not just announce conclusions. It traces a reasoning chain: observation (what was measured), data (the specific numbers), mechanism (the game structure causing the pattern), and impact (what breaks downstream). The designer sees not just "this is unbalanced" but the full evidence trail that led there.
 
@@ -117,7 +117,7 @@ The designer chooses which level to operate at. This is the actual lead-designer
 
 The cycle closes. Tracked decisions feed the learning profile. The profile shapes future proposals. Better proposals lead to more informative accept/reject signals. The partnership improves with use.
 
-This is not supervised learning or gradient descent. It is a lightweight reinforcement signal: the designer's accept/reject pattern shapes Nova's proposals through profile-weighted prompting. But the structure is the same as any learning loop. Observe, act, get feedback, adapt.
+This is not machine learning in the traditional sense. It is a conversation that gets smarter with every decision you make.
 
 ---
 
@@ -135,17 +135,15 @@ Nova's designer profile captures *intent and standards*, not *habits*. What you 
 
 _Figure. The designer profile is not a form you fill out. It is the accumulation of accept/reject decisions, updated via exponential moving average so recent choices weigh more._
 
-To prevent convergence on familiar patterns, Nova uses an explore/exploit framework borrowed from recommendation systems:
+To prevent convergence, Nova deliberately introduces creative tension. Most proposals align with your demonstrated preferences. But some push one step outside your comfort zone, combining something familiar with something you have not tried. And occasionally, Nova throws a genuine curveball from a part of the design space you have never touched.
 
-| Strategy | Frequency | Effect |
-|----------|-----------|--------|
-| **Exploit** (aligned) | ~70% | Proposals aligned with your demonstrated preferences |
-| **Explore-adjacent** | ~20% | One step outside your comfort zone: a familiar mechanism combined with something you have not tried |
-| **Explore-novel** | ~10% | Draw from parts of the design space you have never touched |
+If you consistently accept the curveballs, Nova throws more of them. If you consistently reject them, it pulls back. The system learns not just what you like, but how adventurous you are feeling.
 
-The ratios adapt. If you consistently accept novel proposals, Nova increases the explore percentage. If you consistently reject them, it pulls back. The system tracks acceptance rates separately for exploit and explore proposals, creating a feedback loop on the feedback loop.
+The result is a collaborator who gets you but does not become you:
 
-The result is a collaborator who gets you but does not become you. One who says: "I know you usually go for engine building here, but have you considered a negotiation mechanism? It pairs with the worker placement in a way that creates the indirect competition you prefer, but through a mechanism you have not explored." And you think: *huh, that is actually interesting.*
+> "I know you usually go for engine building here, but have you considered a negotiation mechanism? It pairs with the worker placement in a way that creates the indirect competition you prefer, but through a mechanism you have not explored."
+
+And you think: *huh, that is actually interesting.*
 
 ---
 
@@ -156,6 +154,10 @@ The most requested upgrade from experienced designers was not more features. It 
 > "I wish I had more information. Not always knowing HOW or WHY Nova highlighted something. I was in a game jam, I could ask the game developer 'what did you see that led you there?' Some critiques are just obvious because I'm inferring the reasoning, but it's definitely me inferring."
 
 For a casual designer building a game for their nine-year-old, "player count scaling is too punitive at high counts" is enough. For an experienced designer planning a commercial release, the *reasoning* behind the critique is more valuable than the critique itself. The conclusion confirms what they already suspect. The evidence chain is what they need to make the right structural decision.
+
+Compare the two experiences. Without Nova, you hear "this level feels off" and spend an afternoon tracing why. With Nova, you hear "player count scaling is too punitive because CPU costs outpace Focus generation, creating dominant strategies around low-cost cards," and you jump straight to the fix.
+
+Nova acts like a Lead Designer preparing a brief for a Creative Director. The value is not raw data. It is the synthesis of data into strategic insight, so the designer stays at the level where their judgment matters most.
 
 ![Show Your Thinking: Critique Reasoning Chain]({{ site.baseurl }}images/nova-the-ai-co-designer/Nova_Show_Your_Thinking.jpg)
 
@@ -201,29 +203,41 @@ This architecture has a crucial property: **the AI capabilities are already prov
 
 The agents run as tool calls within Nova's conversation loop. When the designer says "make this less punishing at four players," Nova does not try to solve the problem from first principles. It invokes the BalanceCritic to analyze the specific scaling issue, then invokes the DesignIntentResolver to translate the fix into a concrete ontology patch. The result is grounded in the same structural analysis that the button-click interface uses, but presented conversationally with reasoning.
 
-**The zero-write principle still holds.** Nova proposes changes but never writes to the database without explicit designer approval. Every change proposal shows the exact path, old value, new value, and rationale. The designer clicks Apply or Dismiss. Applied changes go through the same version history system as manual edits, creating a traceable record. This is not a convenience feature. It is a constitutional principle: the AI never changes your design without your permission.
+**The zero-write principle still holds.** Nova proposes changes but never writes to the database without explicit designer approval. Every change proposal shows the exact path, old value, new value, and rationale. The designer clicks Apply or Dismiss. Applied changes go through the same version history system as manual edits, creating a traceable record. This is not a safety net. It is a statement of values: Nova suggests, but the designer remains the sole author.
 
 ---
 
-## The Hallucination Problem, Solved Structurally
+## Memory Without Replay
 
-One of the persistent concerns about AI in creative tools is hallucination: the AI inventing facts, numbers, or relationships that do not exist. In a general chatbot, this is a real risk. You ask about your game, and the AI confabulates details.
+Nova remembers across sessions the way a good colleague does. Not by replaying every conversation verbatim, but by holding a mental model of the project: where it stands, how it got here, and what matters to you.
 
-Nova's architecture makes hallucination structurally difficult.
+Nova assembles four things: the current game state, recent version history, your last decisions, and your designer profile. That is enough to pick up where you left off.
 
-![Solving Hallucination Structurally]({{ site.baseurl }}images/nova-the-ai-co-designer/Nova_Hallucination_Shield.jpg)
+When the designer opens a new session, Nova generates a greeting that references the design's evolution:
 
-_Figure. Four interlocking defenses against hallucination: concrete ontology, verifiable proposals, deterministic agents, and the zero-write principle._
+> "Welcome back. Your game is at v7. Last session we settled on worker placement + deck building as the core loop and tuned the hand limit from 7 to 6. The current balance parameters show combo probability at 28%. You mentioned wanting to explore adding player interaction. Want to pick up there?"
 
-First, Nova operates on a **concrete game ontology** [3], not general knowledge. When the designer asks "is my resource economy balanced?", Nova does not reason from general game design principles. It reads the actual ontology: the specific resource types, generation rates, consumption patterns, and player count scaling that exist in this design. The analysis is grounded in data, not guessing.
+The designer does not re-explain anything. Nova already knows.
 
-Second, every change proposal includes **the exact path, old value, and new value**. The designer can verify at a glance whether the AI is operating on real data or hallucinating. `balance_parameters.focus_per_round: "2-3 tokens" → "3-4 tokens"` is immediately checkable against the current design state.
+---
 
-Third, **the agents are deterministic in their inputs**. When Nova invokes BalanceCritic, it passes the full current ontology. The critic analyzes what is actually there, not what it imagines might be there. The reasoning chain traces from observable data to conclusions, creating an audit trail that the designer can verify.
+## Grounded in Your Design
 
-Fourth, the **zero-write principle** means that even if the AI did hallucinate a recommendation, it cannot corrupt the design. The designer must explicitly approve every change. The version history preserves every previous state. Nothing is lost.
+The trust between Nova and the designer rests on a shared source of truth: the game ontology [3]. Nova does not guess about your design. It reads the same structured data you see. This grounding produces four properties that make the partnership reliable.
 
-This is not a perfect guarantee against all forms of AI error. The agents might occasionally flag a non-issue or miss a real one. But the combination of grounded data, verifiable proposals, transparent reasoning, and explicit approval creates multiple layers of protection. The hallucination problem is not solved by making the AI smarter. It is solved by making the system's structure resistant to AI errors.
+![Grounded in Your Design]({{ site.baseurl }}images/nova-the-ai-co-designer/Nova_Hallucination_Shield.jpg)
+
+_Figure. Four interlocking properties that keep Nova grounded: concrete ontology, verifiable proposals, transparent audit trail, and designer authority._
+
+**Grounded analysis.** When the designer asks "is my resource economy balanced?", Nova does not reason from general game design principles. It reads the actual ontology: the specific resource types, generation rates, consumption patterns, and player count scaling that exist in this design. The analysis is grounded in data, not conjecture.
+
+**Verifiable proposals.** Every change proposal includes the exact path, old value, and new value. `balance_parameters.focus_per_round: "2-3 tokens" → "3-4 tokens"` is immediately checkable against the current design state. The designer can verify at a glance that Nova is operating on real data.
+
+**Transparent audit trail.** When Nova invokes BalanceCritic, it passes the full current ontology. The reasoning chain traces from observable data to conclusions, creating version control for ideas. Every step is traceable.
+
+**Designer authority.** Nova suggests, you decide. Every change requires explicit approval. The version history preserves every previous state. Nothing changes without consent.
+
+The result is a system where the designer can trust Nova's analysis because it is grounded in the same data the designer sees, and can trust that nothing changes without their approval.
 
 ---
 
@@ -266,3 +280,38 @@ The grammar does not write the poem [1]. But with Nova, the grammar remembers yo
 
 [6] Ethan Mollick. [*Co-Intelligence: Living and Working with AI*](https://www.amazon.ca/Audible-Co-Intelligence-Living-Working-AI/dp/B0CNFDMSYV). Penguin, 2024.
   - The framework for treating AI as a collaborative partner rather than a tool, central to Nova's design philosophy
+
+---
+
+## Appendix — Under the Hood
+
+For readers interested in the technical details behind Nova's design:
+
+**Designer Profile Learning**
+
+The designer profile updates via exponential moving average (EMA): each accept/reject decision adjusts preference scores, with recent decisions weighted more heavily than older ones. This prevents the profile from locking in early and allows it to track evolving taste.
+
+Nova's proposal strategy follows an explore/exploit framework:
+
+| Strategy | Frequency | Effect |
+|----------|-----------|--------|
+| **Exploit** (aligned) | ~70% | Proposals aligned with demonstrated preferences |
+| **Explore-adjacent** | ~20% | Familiar mechanism + unfamiliar combination |
+| **Explore-novel** | ~10% | Drawn from untouched design space |
+
+The ratios adapt based on per-category acceptance rates. Designers who accept novel proposals see more of them. The system tracks exploit and explore acceptance separately.
+
+**Context Assembly**
+
+Nova reconstructs session context from structured sources rather than replaying raw conversation history:
+
+| Source | What It Provides | Approximate Tokens |
+|--------|------------------|--------------------|
+| Current ontology | The game as it stands | ~1,500 |
+| Version history | Last 10 versions with change summaries | ~300 |
+| Decision log | Last 10 accept/reject/defer decisions | ~500 |
+| Designer profile | Preference model (after 10+ decisions) | ~300 |
+
+**Agent Orchestration**
+
+Nova uses Claude's native tool-use capability to route natural language to six specialist DSPy agents. Profile-weighted prompting (not fine-tuning) shapes proposal generation. All agents receive the full current ontology as input, ensuring deterministic grounding.
