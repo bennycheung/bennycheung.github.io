@@ -181,6 +181,10 @@ The conclusion is for quick scanning. The chain is for deep analysis. The approa
 
 Without the reasoning chain, you get one thing to react to. With it, you see the full decision tree. Do you redesign the round structure? Or do you just tune the draw rate? Those are fundamentally different design decisions at different levels of abstraction, and the lead designer is the one who should choose which level to operate at.
 
+![Nova Change Proposals]({{ site.baseurl }}images/nova-the-ai-co-designer/Nova_Screenshot_Change_Proposals.jpg)
+
+_Figure. Nova (Studio tier) presenting concrete change proposals after a structural intervention. Each proposal shows the exact ontology path, old value, new value, and rationale. The designer clicks Apply or Dismiss on each one individually._
+
 ---
 
 ## The Architecture: Orchestration, Not Invention
