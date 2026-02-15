@@ -29,7 +29,7 @@ featured_order: 1
 ---
 
 <!--excerpt.start-->
-In the previous article, we laid out the theory behind GameGrammar: structure enables generation, generation enables iteration, and the designer stays in the chair. But something was missing. The designer still worked through buttons and forms. The AI was a toolbox, not a colleague. This article introduces Nova, a conversational AI co-designer that remembers your decisions, learns your taste, explains its reasoning, and gets better at helping you the more you work together. It is not a chatbot bolted onto a design tool. It is the closing of a reinforcement learning loop that turns every design session into training data for a better partnership.
+In the previous article, we laid out the theory behind GameGrammar: structure enables generation, generation enables iteration, and the designer stays in control. But there was something missing. As the designer pushes buttons and fills out forms, the AI is reduced to a toolbox, rather than a colleague. Our solution is Nova, a conversational AI co-designer that remembers your decisions, learns your taste, explains its reasoning, and gets better at helping you the more you work together. Every design session becomes training data for improved partnership.
 <!--excerpt.end-->
 
 ![Nova: The AI Co-Designer]({{ site.baseurl }}images/nova-the-ai-co-designer/Nova_Co_Designer_Theme.jpg)
@@ -38,15 +38,9 @@ _Figure. A designer and their AI co-designer, working together on a board game b
 
 ## Where We Left Off
 
-In [The Theory of Generative Board Game Design]({{ site.baseurl }}gamegrammar-the-theory-of-generative-board-game-design) [2], we established a principle: **AI proposes, you decide.** GameGrammar gives you a structured first draft, flags contradictions, rewrites stale sections, and scores your design across six dimensions. The designer stays in the author's chair. The AI stays in the assistant's seat.
-
-That principle holds. But the interaction model had a gap.
+In [The Theory of Generative Board Game Design]({{ site.baseurl }}gamegrammar-the-theory-of-generative-board-game-design) [2], we established a principle: **AI proposes, you decide.** How do we close the interaction gap between the two?
 
 When you used GameGrammar's AI assistance, you clicked buttons. "Fix this inconsistency." "Rewrite this section." "Show me suggestions." Each action was a one-shot transaction. The AI did not remember what you asked last time. It did not know that you had already rejected the auction mechanism because it clashed with your game's tempo. It did not learn that you consistently prefer indirect competition over direct conflict, or that your complexity sweet spot is somewhere between Azul and Terraforming Mars.
-
-Every session started from zero. The AI had the structural intelligence to analyze your game, but no memory of the designer behind it.
-
-That is the gap Nova closes.
 
 ---
 
@@ -56,7 +50,7 @@ The idea for Nova came from a GameGrammar [4] user named Donald, an experienced 
 
 > "Have you thought about having a running chat with an AI about the game holistically, who would know when to kick something to one of the agents? Similar to a morning discussion about yesterday's prototype that would be happening in creator studios."
 
-Donald was describing something specific: the standup meeting that every professional design studio has. You walk in. Your collaborator already knows your game. They remember yesterday's decisions. They have opinions, but they are your opinions filtered through a different perspective. You say "the auction mechanism felt too slow at four players" and they do not ask you to explain what an auction mechanism is or what game you are working on. They trace the ripple effects and present options.
+Donald was describing something specific: the standup meeting that every professional design studio has. From the moment you walk in, your collaborator knows your game and past decisions. They understand your decisions, and do not require any explanation for what “the auction mechanism feels too slow at four players” means. They remember what you tried and why you tried it. Their direction is informed and useful.
 
 That collaborator does not exist for solo designers. It does not exist for small teams working evenings and weekends. The talent and vision are there. The time for a second brain is not.
 
@@ -66,15 +60,12 @@ We named it: Nova. From the Latin *nova stella*, a new star. In astronomy, a nov
 
 ## From Toolbox to Colleague
 
-The difference between a toolbox and a colleague is not intelligence. It is continuity.
-
-A toolbox waits for you to pick it up. You select the right tool, apply it, put it back. Each use is independent. A colleague walks alongside you. They remember what you tried. They know what you care about. They push back when your instincts are leading you in circles, and they propose things you would not have considered but immediately recognize as right.
+GameGrammar's previous AI assistance was a toolbox: five modes of help (rewrite, fix, edit, suggest, evaluate), each powerful on its own, each stateless. Nova unifies those five modes into a single conversation where context accumulates instead of resetting.
 
 ![From Toolbox to Colleague]({{ site.baseurl }}images/nova-the-ai-co-designer/Nova_Toolbox_vs_Colleague.jpg)
 
 _Figure. Left: a workbench with tools laid out neatly, each use independent. Right: two collaborators in conversation, context accumulating between them. The shift from toolbox to colleague is the shift from stateless to stateful._
 
-GameGrammar's previous AI assistance was a toolbox: five modes of help (rewrite, fix, edit, suggest, evaluate), each powerful on its own, each stateless. Nova unifies those five modes into a single conversation where context accumulates instead of resetting.
 
 | Before Nova | With Nova |
 |-------------|-----------|
@@ -86,7 +77,7 @@ GameGrammar's previous AI assistance was a toolbox: five modes of help (rewrite,
 
 The designer never sees agent names. They never select a mode. They talk to Nova. Nova decides which specialist to invoke, collects the results, and presents them as a coherent conversational response. The orchestration is invisible.
 
-This is not a chatbot. A chatbot is a text interface to a single model. Nova is a conversational layer on top of a multi-agent pipeline: six specialist agents, a structured game ontology, a reference library of 2,000 published games, and a persistent memory of every decision you have made, all accessible through natural language [5]. The shift from toolbox to colleague is the shift Mollick describes in *Co-Intelligence* [6]: treating AI not as a productivity shortcut but as a collaborative partner with its own contributions to the work.
+Nova is a conversational layer on top of a multi-agent pipeline: six specialist agents, a structured game ontology, a reference library of 2,000 published games, and a persistent memory of every decision you have made, all accessible through natural language [5]. The shift from toolbox to colleague is the shift Mollick describes in *Co-Intelligence* [6]: treating AI not as a productivity shortcut but as a collaborative partner with its own contributions to the work.
 
 ---
 
@@ -98,13 +89,13 @@ Here is the idea at the center of Nova, the reason it is more than a chat interf
 
 _Figure. The five-stage reinforcement learning cycle at Nova's core. Learn builds a profile from your decisions. Trace captures reasoning chains. Explain presents conclusions with evidence. Reason surfaces intervention options at different levels of abstraction. Track records every decision. The cycle closes: tracked decisions feed the learning profile, and the partnership improves with use._
 
-**Learn.** Nova builds a profile of your design preferences. Not from a form you fill out, but from the pattern of what you accept and reject across sessions. Mechanism affinities, complexity tolerance, theme preferences, interaction style, risk appetite. Recent choices weigh more, but old patterns do not vanish overnight.
+**Learn.** Nova builds a profile of your design preferences from the pattern of what you accept and reject across sessions. Mechanism affinities, complexity tolerance, theme preferences, interaction style, risk appetite. Recent choices weigh more, but old patterns do not vanish overnight.
 
-**Trace.** When Nova analyzes your design, it does not just announce conclusions. It traces a reasoning chain: observation (what was measured), data (the specific numbers), mechanism (the game structure causing the pattern), and impact (what breaks downstream). The designer sees not just "this is unbalanced" but the full evidence trail that led there.
+**Trace.** When Nova analyzes your design, it traces a reasoning chain: observation (what was measured), data (the specific numbers), mechanism (the game structure causing the pattern), and impact (what breaks downstream). The designer sees not just "this is unbalanced" but the full evidence trail that led there.
 
 **Explain.** Nova presents the conclusion first, for quick scanning. The reasoning chain is always available. The designer can ask "Why?" and get the forensic breakdown. This mirrors how a real design partner works: they tell you the problem, and you ask clarifying questions when you need the depth.
 
-**Reason.** After presenting the evidence, Nova surfaces decision levels. Not one fix, but a menu of intervention strategies at different levels of abstraction:
+**Reason.** After presenting the evidence, Nova surfaces decision levels, a menu of intervention strategies at different levels of abstraction:
 
 | Decision Level | What It Means | Example |
 |----------------|---------------|---------|
@@ -113,11 +104,11 @@ _Figure. The five-stage reinforcement learning cycle at Nova's core. Learn build
 
 The designer chooses which level to operate at. This is the actual lead-designer decision: not "fix the problem" but "at what level should I intervene?"
 
-**Track.** Every decision, whether accepted, rejected, or deferred, is recorded in a structured decision log linked to the game's version history. When the designer returns tomorrow, Nova reconstructs context from the current game state plus the decision log, not from replaying raw conversations. The designer picks up where they left off.
+**Track.** Every decision, whether accepted, rejected, or deferred, is recorded in a structured decision log linked to the game's version history. When the designer returns tomorrow, Nova reconstructs context from the current game state plus the decision log. The designer picks up where they left off.
 
 The cycle closes. Tracked decisions feed the learning profile. The profile shapes future proposals. Better proposals lead to more informative accept/reject signals. The partnership improves with use.
 
-This is not machine learning in the traditional sense. It is a conversation that gets smarter with every decision you make.
+The conversation gets smarter with every decision you make.
 
 ---
 
@@ -129,15 +120,15 @@ The first instinct with personalization is to make Nova a mirror. Learn what the
 
 A designer with 30 years of experience has powerful pattern recognition, but also powerful pattern *lock-in*. They reach for familiar solutions because those solutions have worked before. The value of a good collaborator is not "me but faster." It is "me but with fresh eyes." Someone who understands your intent and quality bar but is not constrained by your habitual approaches.
 
-Nova's designer profile captures *intent and standards*, not *habits*. What you care about (theme coherence, elegant mechanisms, tight player interaction), not what you usually do (engine building, indirect competition, medium complexity). The best proposals are the ones you would not have thought of but immediately recognize as right.
+Nova's designer profile captures *intent and standards*, not *habits*. What you care about (theme coherence, elegant mechanisms, tight player interaction), beyond what you usually do (engine building, indirect competition, medium complexity). The best proposals are the ones you would not have thought of but immediately recognize as right.
 
 ![Nova Designer Profile]({{ site.baseurl }}images/nova-the-ai-co-designer/Nova_Designer_Profile.jpg)
 
-_Figure. The designer profile is not a form you fill out. It is the accumulation of accept/reject decisions, updated via exponential moving average so recent choices weigh more._
+_Figure. The designer profile is the accumulation of accept/reject decisions, updated via exponential moving average so recent choices weigh more._
 
 To prevent convergence, Nova deliberately introduces creative tension. Most proposals align with your demonstrated preferences. But some push one step outside your comfort zone, combining something familiar with something you have not tried. And occasionally, Nova throws a genuine curveball from a part of the design space you have never touched.
 
-If you consistently accept the curveballs, Nova throws more of them. If you consistently reject them, it pulls back. The system learns not just what you like, but how adventurous you are feeling.
+If you consistently accept the curveballs, Nova throws more of them. If you consistently reject them, it pulls back. The system learns how adventurous you are feeling.
 
 The result is a collaborator who gets you but does not become you:
 
@@ -247,7 +238,7 @@ Nova transforms GameGrammar (Studio tier) from a design tool into a design partn
 
 The reinforcement learning loop is what makes this different from "we added a chatbot to our product." Every accept/reject decision shapes the profile. The profile shapes future proposals. Better proposals produce more informative signals. The cycle compounds. After 50 decisions, Nova knows things about your design taste that you might not have articulated yourself. After 100, it starts proposing mechanism combinations that you would not have considered but that fit your aesthetic perfectly.
 
-This is the new era of AI assistance. Not AI that generates and walks away. Not AI that waits passively for instructions. AI that works alongside you, session after session, building a shared understanding of what you are trying to create and how to get there.
+This is the new era of AI assistance that works alongside you, session after session, building a shared understanding of what you are trying to create and how to get there.
 
 The grammar does not write the poem [1]. But with Nova, the grammar remembers your voice.
 
