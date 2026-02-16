@@ -166,7 +166,7 @@ Nova's critique reasoning chains follow a structured format:
 
 ![Nova Balance Analysis in GameGrammar]({{ site.baseurl }}images/nova-the-ai-co-designer/Nova_Screenshot_Balance_Analysis.jpg)
 
-_Figure. Nova (Studio tier) analyzing the balance of Neural Race inside GameGrammar. The full reasoning chain, from observation through mechanism to impact, surfaces alongside decision levels and a version history trail of every Nova-applied change._
+_Figure. Nova analyzing the balance of Neural Race inside GameGrammar. The full reasoning chain, from observation through mechanism to impact, surfaces alongside decision levels and a version history trail of every Nova-applied change._
 
 The conclusion is for quick scanning. The chain is for deep analysis. The approach buttons are for action. This mirrors how the best design conversations work in a professional studio: someone identifies the problem, explains why it is a problem, and presents the structural options for resolution. The lead designer chooses which level to intervene at.
 
@@ -174,7 +174,7 @@ Without the reasoning chain, you get one thing to react to. With it, you see the
 
 ![Nova Change Proposals]({{ site.baseurl }}images/nova-the-ai-co-designer/Nova_Screenshot_Change_Proposals.jpg)
 
-_Figure. Nova (Studio tier) presenting concrete change proposals after a structural intervention. Each proposal shows the exact ontology path, old value, new value, and rationale. The designer clicks Apply or Dismiss on each one individually._
+_Figure. Nova presenting concrete change proposals after a structural intervention. Each proposal shows the exact ontology path, old value, new value, and rationale. The designer clicks Apply or Dismiss on each one individually._
 
 ---
 
@@ -186,7 +186,7 @@ Nova's power comes from unification, not from new AI capabilities. The same spec
 
 _Figure. Nova sits as a conversational orchestration layer on top of six specialist agents. The designer talks to Nova in natural language. Nova routes to the appropriate agent, collects structured results, and synthesizes them into a conversational response with change proposals and decision options._
 
-Nova uses intent capability to decide which agent to invoke. The designer's natural language is the input. Nova's system prompt includes tool definitions for all available agents: balance analysis, design intent resolution, consistency checking, section regeneration, design suggestions, and reference game search. Claude decides which tools to call based on the conversation context, the same way it decides which tools to use in any other agentic workflow.
+Nova uses intent capability to decide which agent to invoke. The designer's natural language is the input. Nova's system prompt includes tool definitions for all available agents: balance analysis, design intent resolution, consistency checking, section regeneration, design suggestions, and reference game search. AI model decides which tools to call based on the conversation context, the same way it decides which tools to use in any other agentic workflow.
 
 This architecture has a crucial property: **the AI capabilities are already proven in production.** The BalanceCritic has been analyzing games for months. The DesignIntentResolver has been translating plain-language edits into ontology patches. Nova does not introduce new AI that might hallucinate in novel ways. It wraps trusted agents in a conversational interface with memory.
 
