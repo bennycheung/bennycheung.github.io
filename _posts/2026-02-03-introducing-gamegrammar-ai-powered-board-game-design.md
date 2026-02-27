@@ -43,6 +43,8 @@ What came back was **Stellar Rivals: A Race to the Stars**, a 2-4 player competi
 
 I did not design this game. I did not prompt-engineer it into existence through twenty rounds of back-and-forth with ChatGPT. I typed a theme, set some constraints, and hit Generate.
 
+{% include youtubePlayer.html id="iW6g_1mnyMQ" %}
+
 This article is the story of how that works, why it is different from asking an LLM to "design a board game," and what it means for the future of game design. This is also Part 5 of the [Game Architecture series]({{ site.baseurl }}unlocking-secrets-of-tabletop-games-ontology), where we have been building toward this moment since we first mapped the structure of tabletop games in [Part 4]({{ site.baseurl }}unlocking-secrets-of-tabletop-games-ontology) [1]. If you want to understand the design theory behind how GameGrammar works, including its philosophical foundations and the co-design relationship between human designers and AI, see [Part 6: The Theory of Generative Board Game Design]({{ site.baseurl }}gamegrammar-the-theory-of-generative-board-game-design).
 
 ---
