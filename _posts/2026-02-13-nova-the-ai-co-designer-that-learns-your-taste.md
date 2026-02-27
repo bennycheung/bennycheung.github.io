@@ -42,6 +42,8 @@ In [The Theory of Generative Board Game Design]({{ site.baseurl }}gamegrammar-th
 
 When you used GameGrammar's AI assistance, you clicked buttons. "Fix this inconsistency." "Rewrite this section." "Show me suggestions." Each action was a one-shot transaction. The AI did not remember what you asked last time. It did not know that you had already rejected the auction mechanism because it clashed with your game's tempo. It did not learn that you consistently prefer indirect competition over direct conflict, or that your complexity sweet spot is somewhere between Azul and Terraforming Mars.
 
+{% include youtubePlayer.html id="i8Swu4MhMEY" %}
+
 ---
 
 ## The Morning Standup That Does Not Exist
