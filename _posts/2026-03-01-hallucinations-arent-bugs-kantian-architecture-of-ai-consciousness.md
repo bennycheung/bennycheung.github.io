@@ -18,9 +18,12 @@ image: images/hallucinations-arent-bugs-kantian-architecture-of-ai-consciousness
 images:
   cover: images/hallucinations-arent-bugs-kantian-architecture-of-ai-consciousness/cover2x.jpg
   header: images/hallucinations-arent-bugs-kantian-architecture-of-ai-consciousness/header.jpg
+  animated-cover: images/hallucinations-arent-bugs-kantian-architecture-of-ai-consciousness/animated-cover.webp
 published: true
 series: "AI Philosophy"
 series_order: 1
+featured: true
+featured_order: 3
 ---
 
 <!--excerpt.start-->
