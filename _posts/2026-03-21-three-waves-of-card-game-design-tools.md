@@ -28,10 +28,10 @@ featured_order: 1
 ---
 
 <!--excerpt.start-->
-Have you ever opened a brand new card game, flipped through 200 unique cards with interlocking abilities and perfectly tuned costs, and wondered how someone designed all of that without going completely insane? Behind every elegant piece of cardboard is a staggering web of math, probability, edge case testing, and tedious layout formatting. Over the past 15 years, the tools available to card game designers have undergone three distinct waves of evolution, each one fundamentally changing what it means to create a game. This article traces that arc from the scripting trenches of the mid-2000s to the AI-native pipelines of 2026.
+I am a software engineer, not a game designer. But when I first looked at how card games get made, I recognized the pain immediately. Hundreds of interdependent data fields living in fragile spreadsheets. Manual rendering pipelines where a three-pixel change means recompiling an entire deck. Hours of tedious formatting before you can even test whether the game is fun. As a programmer, this kind of repetitive, error-prone manual process is exactly the thing I have spent my entire career building tools to eliminate. Behind every elegant piece of cardboard is a staggering web of math, probability, edge case testing, and tedious layout formatting. Over the past 15 years, the tools available to card game designers have gone through three distinct waves of evolution. This article traces that arc from the scripting trenches of the mid-2000s to the AI-native pipelines of 2026.
 <!--excerpt.end-->
 
-This is Part 1 of the Card Architecture series. The series explores how the craft of card game creation is being transformed by new tools and AI-native pipelines. In this article, we trace the evolution. Parts 2 through 5 will follow, covering multi-agent card generation, the schema limits exposed by famous games like Wingspan and Terraforming Mars, the export pipeline from data to playable prototype, and the algorithms that draw board game maps.
+This is Part 1 of the Card Architecture series. I have been building AI-native game design tools for the past year. Programmers are lazy in the best possible way: we hate repeating ourselves, and we will spend a week automating a task that takes ten minutes, purely out of principle. That instinct is what pulled me into this space. But the deeper I got, the more I realized that game design is not a simpler version of software design. It is a different medium with its own complexity, its own craft, and its own hard-won expertise. This series is my attempt to make sense of that world. Subsequent articles will cover multi-agent card generation, the schema limits exposed by famous games like Wingspan and Terraforming Mars, the export pipeline from data to playable prototype, and the algorithms that draw board game maps.
 
 ---
 
@@ -41,7 +41,7 @@ When you hold a finished card game in your hands, you are holding a minor miracl
 
 If even one number is off, the whole ecosystem collapses. A card that costs one resource too little warps the meta. A combo that the designer missed creates an unbeatable strategy that players discover on their second game night. A piece of ambiguous text spawns a 200-comment thread on BoardGameGeek about whether "adjacent" includes diagonals.
 
-For decades, the barrier to entry in game design was not having a good idea. Good ideas are everywhere. The barrier was having the sheer clerical stamina to manage the data. Hundreds of cards, each with five to ten interdependent fields, all living in a spreadsheet that grows more fragile with every edit. The history of card game design tools is the history of chipping away at that clerical burden, freeing designers to focus on the part that actually matters: making the game fun.
+For decades, the barrier to entry in game design was not having a good idea. Good ideas are everywhere. The barrier was having the sheer clerical stamina to manage the data. Hundreds of cards, each with five to ten interdependent fields, all living in a spreadsheet that grows more fragile with every edit. In software, we would call this accidental complexity: difficulty that comes from the tools, not from the problem itself. The history of card game design tools is the history of chipping away at that accidental complexity.
 
 That history falls into three clear waves.
 
@@ -55,27 +55,21 @@ That history falls into three clear waves.
 ![The Template Era]({{ site.baseurl }}images/three-waves-of-card-game-design-tools/Three_Waves_Template_Era.jpg)
 *Figure 2. Wave 1: the designer's reality, surrounded by spreadsheets, scripts, and pixel coordinates, wrestling data into cards by brute force.*
 
-The first wave of dedicated card game tools began with nanDECK [1], a free Windows scripting language released in 2006, and matured through the 2010s with tools like Squib [2] (an open-source Ruby framework, 2014) and CardPen [5] (a browser-based HTML/CSS generator). These tools were a real step up from doing everything by hand in Photoshop, but using them felt less like game design and more like software engineering.
+The first wave of dedicated card game tools began with nanDECK [1], a free Windows scripting language released in 2006, and matured through the 2010s with tools like Squib [2] (an open-source Ruby framework, 2014) and CardPen [5] (a browser-based HTML/CSS generator). These tools were a real step up from doing everything by hand in Photoshop, but using them felt less like game design and more like software engineering. As someone who writes code for a living, I can appreciate that. But I also know that forcing non-programmers into a code-first workflow is a classic product design mistake.
 
 In this era, a card game was treated purely as a layout problem. All of your game data lived in a massive Excel spreadsheet or a CSV file. Row one was your basic attack card. Row two was your defense card. Row 150 was your ultimate boss monster. Column A was the name. Column B was the cost. Column C was the rules text. And so on, for as many columns as your game demanded.
 
-The Wave 1 tools acted as mail merge on steroids. You wrote a script that said: take the text from column A and print it in a 24-point font at these exact x and y pixel coordinates on the image canvas. Take the number from column B and render it inside this icon template at position (45, 120). Repeat for every row in the spreadsheet.
+The Wave 1 tools acted as mail merge on steroids. You wrote a script that said: take the text from column A and print it in a 24-point font at these exact x and y pixel coordinates on the image canvas. Take the number from column B and render it inside this icon template at position (45, 120). Repeat for every row in the spreadsheet. If you needed to move a cost icon three pixels to the left, you opened a code editor, changed an x-coordinate from 45 to 42, recompiled the entire 200-card deck, and prayed it looked right. A card with a title slightly too long? You wrote a conditional statement in your code to shrink the font for that one card. Every visual problem required a programming solution.
 
-### The Three-Pixel Problem
-
-If you have ever used one of these tools, you know the friction firsthand. If you decided that the cost icon needed to be moved three pixels to the left because it was crowding the title, you were not dragging an image with your mouse. You were opening a code editor, changing an x-coordinate from 45 to 42, recompiling the entire deck, waiting for it to render all 200 cards, and then praying it looked right.
-
-And if one of your cards happened to have a title that was slightly too long and broke the text wrapping? You had to write a conditional statement in your code just to shrink the font size for that one specific card. A purely visual problem required a programming solution.
-
-This sounds miserable, and in many ways it was. But Wave 1 tools gave designers something valuable: total control. Every pixel was deterministic. Every layout decision was reproducible. If you ran the script twice with the same data, you got the exact same output. For veteran designers who valued precision over convenience, this was worth the pain.
+The tradeoff was total control. Every pixel was deterministic. Every layout decision was reproducible. Run the script twice with the same data, get the exact same output. For veteran designers who valued precision over convenience, this was worth the pain.
 
 ### What Wave 1 Could Not Do
 
 But for all their rendering power, Wave 1 tools were blind to the game itself. nanDECK could not tell you if your cards were fun to play, if your pirate-themed deck builder had a dominant strategy, or if your resource curve was broken. It knew nothing about your game. It just knew how to print a spreadsheet.
 
-The content, the actual game design, lived entirely in the designer's head and in the rows of that spreadsheet. The tool was a printer, not a partner.
+The content, the actual game design, lived entirely in the designer's head and in the rows of that spreadsheet. The tool did not care what you were making. It just printed whatever you told it to print.
 
-What designers needed was not better rendering. They needed less friction. Wave 2 delivered exactly that.
+As a programmer, I actually find Wave 1 tools strangely appealing. Reading through BGG forums, you find nanDECK veterans who swear by the total control it gives them. Squib users on GitHub talk about version-controlling their card data alongside their code, which is something most GUI tools still cannot do cleanly. If you already think in code, this workflow makes perfect sense. But that is exactly the problem: most game designers are not programmers. They are people with brilliant ideas about player interaction, narrative tension, and strategic depth, who should not need to learn Ruby to make a prototype.
 
 By the mid-2020s, the tool landscape had diversified into four distinct quadrants, each solving a different piece of the design-to-table pipeline.
 
@@ -93,11 +87,11 @@ Starting with Component.Studio [3] in 2017 and accelerating through the early 20
 
 For the first time, card game designers could drag and drop text boxes onto a visual canvas instead of calculating x and y coordinates in their heads. They could see the card as they were building it. They could resize elements with a mouse, preview the deck in real time, and iterate on the layout without touching a line of code.
 
-It was basically desktop publishing software, but specifically built for tabletop games. InDesign for nerds.
+It was basically desktop publishing software, but specifically built for tabletop games. InDesign for nerds. Component.Studio's killer feature was its Google Sheets integration, which meant your game data and your visual layout stayed in sync automatically. Dextrous took a different approach, focusing on a polished local editing experience with strong TTS export. Tabletop Creator landed on Steam and attracted designers who wanted an all-in-one desktop app rather than a browser tool. Each had tradeoffs, but all of them eliminated the x-y coordinate problem overnight.
 
 ### Solving the Deployment Problem
 
-Beyond the visual editor, Wave 2 tools solved a second major pain point: deployment. Getting a finished design out of the tool and onto a table had always been awkward. You would export a folder full of raw image files and then spend hours manually importing them into Tabletop Simulator [6], formatting them for print-on-demand services, or arranging them into printable sheets for home prototyping.
+Beyond the visual editor, Wave 2 tools solved a second major pain point: deployment. In software product terms, this is the "last mile" problem, getting the finished work out of the development environment and into the hands of actual users. For card game designers, the last mile had always been awkward. You would export a folder full of raw image files and then spend hours manually importing them into Tabletop Simulator [6], formatting them for print-on-demand services, or arranging them into printable sheets for home prototyping.
 
 Wave 2 tools built direct export pipelines. A single button press could format your deck for Tabletop Simulator, send it to The Game Crafter [7] for physical printing, or generate a PDF laid out for standard card sleeves. The friction between "I finished designing" and "I am playing the game" collapsed from days to minutes.
 
@@ -107,9 +101,7 @@ For the prototyping workflow, this was enormous. The traditional cycle of export
 
 Wave 2 made formatting easier, exporting seamless, and iteration faster. But the content bottleneck was identical to Wave 1. You were still staring at a spreadsheet, hand-typing 200 rows of card data, and trying to balance the math in your own head. The tool could make your cards look professional and get them onto a table fast, but it could not help you figure out what the cards should actually do.
 
-Think of it this way: if Wave 1 gave a writer a clunky printing press, Wave 2 gave them Microsoft Word. The output was prettier, but the writer still had to write the book. The blank page problem, the hard creative and mathematical work of designing the game itself, was completely untouched.
-
-That is the problem Wave 3 was built to solve.
+If Wave 1 gave a writer a clunky printing press, Wave 2 gave them Microsoft Word. The output was prettier, but the writer still had to write the book. One designer on the Board Game Design Lab forum described spending an entire Saturday getting a card layout pixel-perfect in a GUI editor, only to realize the underlying card design was broken because the resource curve was wrong. The tool could not tell him that. Nothing could, except playtesting.
 
 ## Wave 3: The AI-Native Era (2025+)
 
@@ -138,7 +130,7 @@ This shift changes where the competitive advantage lies:
 | **Wave 2** | Late 2010s-2020s | Export breadth: how quickly cards reach TTS or print |
 | **Wave 3** | 2025+ | Content intelligence: the tool understands your game's strategy |
 
-A Wave 1 or Wave 2 tool does not know that your pirate-themed deck builder desperately needs a counter to a dominant "hoard gold" strategy. To those tools, a card is just a string of characters. A Wave 3 tool reads the ontology, recognizes the resource economy, and generates cards that actively participate in balancing the ecosystem. The tool that started as a printer has finally become a partner.
+A Wave 1 or Wave 2 tool does not know that your pirate-themed deck builder desperately needs a counter to a dominant "hoard gold" strategy. To those tools, a card is just a string of characters. A Wave 3 tool reads the ontology, recognizes the resource economy, and generates cards that participate in balancing the ecosystem. Whether it generates *good* cards is a separate question, and one I will be honest about in the next article in this series.
 
 ### What Changed to Make This Possible
 
@@ -150,7 +142,7 @@ Three technical shifts converged to enable Wave 3:
 
 **Automated playtesting became computationally feasible.** Algorithms like Monte Carlo Tree Search, the same family that powered AlphaGo, can now simulate thousands of games in minutes. This means a generated deck can be stress-tested for dominant strategies and balance issues before a human ever touches it. The designer gets a mathematical report on whether the game works, not just a pile of cards and a hope. For a deep dive into how this works, see [AI Playtesting: When Your Board Game Tests Itself]({{ site.baseurl }}ai-playtesting-when-your-game-tests-itself).
 
-Together, these three shifts turned what was once a thought experiment into a working pipeline.
+These three shifts did not arrive as a coherent plan. They converged messily, the way most real technological transitions do.
 
 ## What This Means for Designers
 
@@ -159,13 +151,15 @@ Together, these three shifts turned what was once a thought experiment into a wo
 
 ### From Spreadsheet Manager to Creative Director
 
-For 15 years, being a card game designer meant being a spreadsheet manager first and a creative visionary second. You spent 80% of your time on data entry, layout formatting, and manual balance calculations. The remaining 20% was the actual design work: choosing mechanics, crafting theme, engineering the moments that make a game memorable.
+From what I have gathered talking to designers and reading their forum posts, being a card game designer has meant being a spreadsheet manager first and a creative visionary second. The bulk of the time goes to data entry, layout formatting, and manual balance calculations. The actual design work, choosing mechanics, crafting theme, engineering the moments that make a game memorable, gets squeezed into whatever time is left. Any product designer would recognize this as the same problem we see in enterprise software: users spending most of their time fighting the tool instead of doing their actual job.
 
 Wave 3 inverts that ratio. The machine handles the data entry, the layout, the initial balance pass, and the formatting. The designer gets to focus on what they actually care about: what the game should feel like, what decisions should be agonizing, what moments should make players laugh or groan or slam the table.
 
-The anxiety around AI in creative fields is real and justified. But nobody became a game designer because they love updating spreadsheets. Nobody dreamed of spending a Saturday afternoon adjusting x-coordinates in a scripting language. Those were necessary evils, tolls you paid on the road to the creative work. Wave 3 eliminates the tolls, not the road.
+I want to be honest about the tension here. A lot of designers I have talked to in the community are deeply skeptical of AI in game design, and they have good reasons. There is a real risk that AI-generated content floods the market with mediocre games that technically work but have no soul. I have generated card sets that were mechanically balanced and completely boring to play. Balance is not the same as fun, and I learned that the hard way.
 
-The designer who understands game systems, who can identify a missing counter-strategy, who can feel that the midgame needs a crisis event to prevent stalling, that designer is more important than ever. The machine can generate 200 cards. It cannot decide which 200 cards the game actually needs.
+But as someone who has spent decades in software engineering, I see a pattern I have seen before. Programmers went through the same anxiety when IDEs started auto-completing code, when Stack Overflow made every answer searchable, when GitHub Copilot started writing functions for us. Every time, the fear was that the craft would be devalued. Every time, what actually happened was that the tedious parts got automated and the creative parts became more important. The engineers who understood *why* they were building something became more valuable, not less. The ones who only knew *how* to type the code had a harder time.
+
+I think game design is heading for the same split. The designer who understands game systems, who can sense that the midgame needs a crisis event to prevent stalling, who knows why a mechanic creates tension at the table even though the math says it is balanced, that person's expertise matters more than ever. The machine can generate 200 cards. It has no idea which 200 cards the game actually needs. That is still the designer's call.
 
 ### The New Skill: Describing Constraints
 
@@ -173,9 +167,7 @@ What has changed is the skill the designer needs to bring to the table. In Wave 
 
 The AI's output is only as good as the ontology you feed it. A vague description produces vague cards. A precise, well-structured description of your mechanics, resources, turn phases, and victory conditions produces cards that interlock, synergize, and challenge.
 
-The designer's job is shifting from "fill in the spreadsheet" to "define the universe." From data entry to world building. From typing numbers into cells to articulating the laws of physics that govern your cardboard reality.
-
-That is not a demotion. That is what game design was always supposed to be.
+The designer's job is shifting from "fill in the spreadsheet" to "define the universe." In software, we went through the same transition when we moved from writing assembly code to writing high-level specifications. The abstraction level rose, but the design work got harder, not easier. I suspect game design is heading the same direction.
 
 ## What Comes Next
 
@@ -185,19 +177,13 @@ Engine builders like Wingspan and Terraforming Mars, with their multi-resource c
 
 The tools are evolving to meet these challenges. But the gap between what AI can design today and what the most ambitious designers aspire to create is where the most interesting work is happening.
 
-For now, the takeaway is simple: if you have a game idea sketched on a napkin, the barrier between that napkin and a playable, balanced, exportable prototype has never been lower. You do not need to be a spreadsheet wizard, a programmer, or a graphic designer.
+I should be clear about what I am not arguing. I am not saying every designer should adopt Wave 3 tools, or that earlier approaches are obsolete. Some designers may look at everything described in this article and decide it is too complicated, or that the hands-on process of manually crafting each card is part of what makes designing fun for them. There are designers who resist spreadsheets, designers who resist GUIs, and there will certainly be designers who resist AI. That is completely valid. The act of hand-cutting prototype cards on a Saturday afternoon has a tactile satisfaction that no pipeline can replicate. Not every efficiency gain is a net gain if it removes the part of the process you actually enjoy.
 
-You just need to understand games. The machines are ready to handle the rest.
+My goal with this series is not to convert anyone. It is to show and tell what can be done, so that designers who are curious have a clear picture of the landscape.
 
----
+I know a number of card game designers personally. Several of them have game ideas that have been collecting dust for years, stuck somewhere between a napkin sketch and a playable prototype, for exactly the reasons laid out in this article. The spreadsheet got too big. The layout took too long. The balance math was overwhelming. Life got in the way, and the project never made it to a table. The designers who are open-minded about new tooling, especially the ones with enough technical fluency to understand what AI pipelines can and cannot do, are the ones I have seen light up when they realize their shelved idea might actually be buildable now. Bringing a designer's dormant idea back to life, giving them a path from "I always wanted to make this game" to "here is a playable prototype, let us see if it works," that is the most valuable thing these new tools can offer. Not replacing the designer's vision, but removing the obstacles that buried it.
 
-## Series Navigation
-
-* **>>** [Three Waves of Card Game Design Tools (Part 1)]({{ site.baseurl }}three-waves-of-card-game-design-tools)
-* How AI Actually Designs a Card (Part 2) -- coming soon
-* When the Schema Breaks (Part 3) -- coming soon
-* From Code to Cardboard (Part 4) -- coming soon
-* The Geometry of Strategy (Part 5) -- coming soon
+For now, the practical reality is this: if you have a game idea sketched on a napkin, the barrier between that napkin and a playable prototype has never been lower. Whether the prototype is any good still depends entirely on you. I have spent enough time in both worlds now to know that game design is no less serious, no less complex, and no less creative than software engineering. It is just a different medium. The tools have gotten dramatically better. The hard part has not changed at all.
 
 ---
 
