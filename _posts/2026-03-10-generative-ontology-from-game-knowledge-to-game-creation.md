@@ -25,7 +25,7 @@ unlisted: false
 series: "Game Architecture"
 series_order: 8
 featured: true
-featured_order: 2
+featured_order: 3
 ---
 
 <!--excerpt.start-->

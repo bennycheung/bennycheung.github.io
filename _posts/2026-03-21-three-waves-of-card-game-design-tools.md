@@ -19,9 +19,12 @@ image: images/three-waves-of-card-game-design-tools/post_cover.jpg
 images:
   cover: images/three-waves-of-card-game-design-tools/cover2x.jpg
   header: images/three-waves-of-card-game-design-tools/header.jpg
+  animated-cover: images/three-waves-of-card-game-design-tools/animated-cover.webp
 published: true
 series: "Card Architecture"
 series_order: 1
+featured: true
+featured_order: 1
 ---
 
 <!--excerpt.start-->
