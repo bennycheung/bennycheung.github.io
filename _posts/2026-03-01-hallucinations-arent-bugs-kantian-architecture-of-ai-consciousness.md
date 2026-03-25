@@ -22,6 +22,8 @@ images:
 published: true
 series: "AI Philosophy"
 series_order: 1
+featured: true
+featured_order: 5
 ---
 
 <!--excerpt.start-->
