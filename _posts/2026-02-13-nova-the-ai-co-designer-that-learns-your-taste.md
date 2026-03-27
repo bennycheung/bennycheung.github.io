@@ -7,13 +7,13 @@ author: Benny Cheung
 artwork:
   author: Gemini 3 Pro
 tags:
-- AI
+- Design Tools
 - Game Design
 - Tabletop Games
 - Co-Design
-- Conversational AI
-- Reinforcement Learning
-- Human-AI Collaboration
+- Conversational Design
+- Design Partnership
+- Game Architecture
 category: post
 comments: true
 image: images/nova-the-ai-co-designer/post_cover.jpg
@@ -32,7 +32,7 @@ In the previous article, we laid out the theory behind GameGrammar: structure en
 
 ![Nova: The AI Co-Designer]({{ site.baseurl }}images/nova-the-ai-co-designer/Nova_Co_Designer_Theme.jpg)
 
-_Figure. A designer and their AI co-designer, working together on a board game blueprint. Nova is not a robot. It is a pattern of light, a constellation that accumulates the designer's intent and helps them flare with creative energy._
+_Figure. A designer and their co-designer, working together on a board game blueprint. Nova is not a robot. It is a pattern of light, a constellation that accumulates the designer's intent and helps them flare with creative energy._
 
 ## Where We Left Off
 
@@ -186,9 +186,9 @@ Nova's power comes from unification, not from new AI capabilities. The same spec
 
 _Figure. Nova sits as a conversational orchestration layer on top of six specialist agents. The designer talks to Nova in natural language. Nova routes to the appropriate agent, collects structured results, and synthesizes them into a conversational response with change proposals and decision options._
 
-Nova uses intent capability to decide which agent to invoke. The designer's natural language is the input. Nova's system prompt includes tool definitions for all available agents: balance analysis, design intent resolution, consistency checking, section regeneration, design suggestions, and reference game search. AI model decides which tools to call based on the conversation context, the same way it decides which tools to use in any other agentic workflow.
+Nova uses intent capability to decide which agent to invoke. The designer's natural language is the input. Nova's system prompt includes tool definitions for all available agents: balance analysis, design intent resolution, consistency checking, section regeneration, design suggestions, and reference game search. The model decides which tools to call based on the conversation context, the same way it decides which tools to use in any other agentic workflow.
 
-This architecture has a crucial property: **the AI capabilities are already proven in production.** The BalanceCritic has been analyzing games for months. The DesignIntentResolver has been translating plain-language edits into ontology patches. Nova does not introduce new AI that might hallucinate in novel ways. It wraps trusted agents in a conversational interface with memory.
+This architecture has a crucial property: **the AI capabilities are already proven in production.** The BalanceCritic has been analyzing games for months. The DesignIntentResolver has been translating plain-language edits into ontology patches. Nova does not introduce new capabilities that might hallucinate in novel ways. It wraps trusted agents in a conversational interface with memory.
 
 The agents run as tool calls within Nova's conversation loop. When the designer says "make this less punishing at four players," Nova does not try to solve the problem from first principles. It invokes the BalanceCritic to analyze the specific scaling issue, then invokes the DesignIntentResolver to translate the fix into a concrete ontology patch. The result is grounded in the same structural analysis that the button-click interface uses, but presented conversationally with reasoning.
 
@@ -232,11 +232,11 @@ The result is a system where the designer can trust Nova's analysis because it i
 
 ## Concluding Remarks
 
-Nova transforms GameGrammar (Studio tier) from a design tool into a design partnership. The designer still provides the vision, the taste, the intention. The AI still provides the structural analysis, the mechanism knowledge, the rapid iteration. But the interface between them is no longer a set of buttons and forms. It is a conversation that accumulates context, learns preferences, explains its reasoning, and improves with use.
+Nova transforms GameGrammar (Studio tier) from a design tool into a design partnership. The designer still provides the vision, the taste, the intention. The system still provides the structural analysis, the mechanism knowledge, the rapid iteration. But the interface between them is no longer a set of buttons and forms. It is a conversation that accumulates context, learns preferences, explains its reasoning, and improves with use.
 
 The reinforcement learning loop is what makes this different from "we added a chatbot to our product." Every accept/reject decision shapes the profile. The profile shapes future proposals. Better proposals produce more informative signals. The cycle compounds. After 50 decisions, Nova knows things about your design taste that you might not have articulated yourself. After 100, it starts proposing mechanism combinations that you would not have considered but that fit your aesthetic perfectly.
 
-This is the new era of AI assistance that works alongside you, session after session, building a shared understanding of what you are trying to create and how to get there.
+This is the new era of design assistance that works alongside you, session after session, building a shared understanding of what you are trying to create and how to get there.
 
 The grammar does not write the poem [1]. But with Nova, the grammar remembers your voice.
 
@@ -261,10 +261,10 @@ The grammar does not write the poem [1]. But with Nova, the grammar remembers yo
 [3] Benny Cheung. [*Generative Ontology: When Structured Knowledge Learns to Create*](https://arxiv.org/abs/2602.05636). arXiv:2602.05636, Feb 2026.
   - The formal paper describing GameGrammar's generative ontology framework
 
-[4] [Dynamind Research](https://www.dynamindresearch.com). AI consulting and product development studio.
+[4] [Dynamind Research](https://www.dynamindresearch.com). Research and product development studio.
   - Creator of GameGrammar
 
-[5] [GameGrammar](https://gamegrammar.dynamindresearch.com). AI-powered board game design platform.
+[5] [GameGrammar](https://gamegrammar.dynamindresearch.com). Board game design platform.
   - The product where Nova lives: structured ontology, multi-agent generation, and conversational co-design
 
 [6] Ethan Mollick. [*Co-Intelligence: Living and Working with AI*](https://www.amazon.ca/Audible-Co-Intelligence-Living-Working-AI/dp/B0CNFDMSYV). Penguin, 2024.
