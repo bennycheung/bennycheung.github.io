@@ -9,7 +9,7 @@ artwork:
 tags:
 - Game Design
 - Card Games
-- AI
+- Design Tools
 - Tabletop Games
 - Prototyping
 - Game Architecture
@@ -29,12 +29,12 @@ featured_order: 1
 ---
 
 <!--excerpt.start-->
-In 2021, I spent a month reverse-engineering Race for the Galaxy. I parsed Keldon Jones's C source code, converted the entire card library into Python, and mapped every phase interaction, every card power, every production chain across 114 unique cards. I did this because the game's AI kept destroying me and I wanted to understand why. What I found was that every card in RFTG carries a structured data model far more complex than its printed text suggests: type, cost, VP value, good type, military flags, and a list of phase-specific powers that interact across five distinct game phases. Five years later, when I started building an AI system that generates card games, I realized the pipeline I needed was a mirror of what I had already done by hand. The AI was not replacing the designer's process. It was formalizing it.
+In 2021, I spent a month reverse-engineering Race for the Galaxy. I parsed Keldon Jones's C source code, converted the entire card library into Python, and mapped every phase interaction, every card power, every production chain across 114 unique cards. I did this because the game's AI kept destroying me and I wanted to understand why. What I found was that every card in RFTG carries a structured data model far more complex than its printed text suggests: type, cost, VP value, good type, military flags, and a list of phase-specific powers that interact across five distinct game phases. Five years later, when I started building a system that generates card games, I realized the pipeline I needed was a mirror of what I had already done by hand. The AI was not replacing the designer's process. It was formalizing it.
 <!--excerpt.end-->
 
 ![How AI Actually Designs a Card]({{ site.baseurl }}images/how-ai-actually-designs-a-card/post_cover.jpg)
 
-This is Part 2 of the [Card Architecture series]({{ site.baseurl }}three-waves-of-card-game-design-tools). In Part 1, I traced the evolution of card game tools from scripting to AI-native pipelines. This article goes inside the pipeline itself. But rather than just describing how the AI works, I want to draw a parallel that changed how I think about AI-assisted design: at every stage, the AI is doing a mechanistic version of what a human designer already does. The question is not whether AI can design cards. It is which parts of card design are mechanistic, which parts are not, and what that means for the human designer's role.
+This is Part 2 of the [Card Architecture series]({{ site.baseurl }}three-waves-of-card-game-design-tools). In Part 1, I traced the evolution of card game tools from scripting to AI-native pipelines. This article goes inside the pipeline itself. But rather than just describing how the pipeline works, I want to draw a parallel that changed how I think about tool-assisted design: at every stage, the AI is doing a mechanistic version of what a human designer already does. The question is not whether AI can design cards. It is which parts of card design are mechanistic, which parts are not, and what that means for the human designer's role.
 
 ---
 
@@ -162,7 +162,7 @@ This is exactly the structure I found inside RFTG's card data, generalized to wo
 
 ![Card Grammar Schema]({{ site.baseurl }}images/how-ai-actually-designs-a-card/Card_Grammar_Schema.jpg)
 
-*Figure 4. The Card Grammar extends the five-field schema with typed anatomy fields specific to each game. The same structure I extracted manually from RFTG, the AI now declares and enforces automatically.*
+*Figure 4. The Card Grammar extends the five-field schema with typed anatomy fields specific to each game. The same structure I extracted manually from RFTG, the system now declares and enforces automatically.*
 
 ### Stage 4: The Detail Expander
 
@@ -224,7 +224,7 @@ This is the mechanical side of card design, and the AI handles it well. Cost cur
 
 ![What AI Sees vs What AI Cannot See]({{ site.baseurl }}images/how-ai-actually-designs-a-card/What_AI_Cannot_See.jpg)
 
-*Figure 6. The gap between what AI can measure (structural dimensions, balance metrics, fun scores) and what it cannot see (four friends laughing around a table). The bridge between them is you.*
+*Figure 6. The gap between what the system can measure (structural dimensions, balance metrics, fun scores) and what it cannot see (four friends laughing around a table). The bridge between them is you.*
 
 But it cannot measure fun.
 
@@ -248,7 +248,7 @@ The AI manages the map. The human hikes the territory. The map can tell you whic
 
 ---
 
-*Next in the series: When the Schema Breaks -- where we stress-test the card schema against 13 famous games, find out which ones break it completely, and discover that the gap between a balanced game and a memorable one is the most important problem in AI-assisted design.*
+*Next in the series: When the Schema Breaks -- where we stress-test the card schema against 13 famous games, find out which ones break it completely, and discover that the gap between a balanced game and a memorable one is the most important problem in tool-assisted design.*
 
 ---
 

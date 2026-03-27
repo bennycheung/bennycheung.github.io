@@ -9,7 +9,7 @@ artwork:
 tags:
 - Game Design
 - Card Games
-- AI
+- Design Tools
 - Tabletop Games
 - Prototyping
 - Game Architecture
@@ -110,7 +110,7 @@ If Wave 1 gave a writer a clunky printing press, Wave 2 gave them Microsoft Word
 ### Automating the Invention
 
 ![The AI-Native Era]({{ site.baseurl }}images/three-waves-of-card-game-design-tools/Three_Waves_AI_Native.jpg)
-*Figure 5. Wave 3: the AI reads your game's ontology and generates balanced cards with mechanics, costs, and synergies. The tool becomes a design partner.*
+*Figure 5. Wave 3: the system reads your game's ontology and generates balanced cards with mechanics, costs, and synergies. The tool becomes a design partner.*
 
 Wave 3 breaks the pattern entirely. Tools emerging in 2025 and 2026 are no longer automating the layout or the export. They are automating the invention.
 
@@ -118,7 +118,7 @@ The spreadsheet is removed entirely as the source of truth. Instead, the foundat
 
 An ontology is a machine-readable map of your game's DNA. It defines the core reality of your game: the theme, the primary mechanics, the resources players use, the turn phases, how victory is achieved, and how all those elements interact with each other.
 
-You feed this DNA map into the AI, and the AI generates the spreadsheet for you. It is not just laying out the cards. It is authoring the rules text, the costs, and the specific mechanics based on the laws of the universe you defined.
+You feed this DNA map into the system, and it generates the spreadsheet for you. It is not just laying out the cards. It is authoring the rules text, the costs, and the specific mechanics based on the laws of the universe you defined.
 
 To return to the writer analogy: Wave 3 gives the writer a co-author who deeply understands their genre and can draft chapters for them. The writer still sets the vision and the direction. The co-author handles the labor of turning that vision into pages.
 
@@ -149,7 +149,7 @@ These three shifts did not arrive as a coherent plan. They converged messily, th
 ## What This Means for Designers
 
 ![The Designer's Evolving Role]({{ site.baseurl }}images/three-waves-of-card-game-design-tools/Three_Waves_Designer_Role.jpg)
-*Figure 6. The designer's role evolves: from spreadsheet manager to creative visionary, with AI handling the data while humans define the vision.*
+*Figure 6. The designer's role evolves: from spreadsheet manager to creative visionary, with tools handling the data while humans define the vision.*
 
 ### From Spreadsheet Manager to Creative Director
 
@@ -214,7 +214,7 @@ For now, the practical reality is this: if you have a game idea sketched on a na
   - Three-part series reverse-engineering the architecture and neural network AI of Race for the Galaxy.
 
 [11] Benny Cheung. [*Generative Ontology: From Game Knowledge to Game Creation*](https://bennycheung.github.io/generative-ontology-from-game-knowledge-to-game-creation). bennycheung.github.io, 2026.
-  - Deep dive into the ontology-driven approach to AI game design.
+  - Deep dive into the ontology-driven approach to generative game design.
 
 [12] Danrui Li, Sen Zhang, Samuel S. Sohn, Kaidong Hu, Muhammad Usman, and Mubbasir Kapadia. [*Cardiverse: Harnessing LLMs for Novel Card Game Prototyping*](https://arxiv.org/abs/2502.07128). EMNLP 2025.
   - Academic research on multi-agent LLM pipelines for card game generation, using graph-based mechanic indexing and self-play validation.

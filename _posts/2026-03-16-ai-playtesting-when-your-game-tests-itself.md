@@ -7,7 +7,7 @@ author: Benny Cheung
 artwork:
   author: Gemini 3 Pro
 tags:
-- AI
+- Automated Testing
 - Game Design
 - Tabletop Games
 - Playtesting
@@ -29,14 +29,14 @@ featured_order: 3
 ---
 
 <!--excerpt.start-->
-A designer types "test my game for balance issues" into Nova. Moments later, they receive a structured critique: which player seat has an unfair advantage, whether the game rewards strategic play, and three intervention options. No prototyping, no recruiting playtesters, no spreadsheets. Just a conversation, and a feedback loop that runs every time you change a number. This is the story of how we taught an AI to play board games, what failed spectacularly, and what that failure accidentally invented.
+A designer types "test my game for balance issues" into Nova. Moments later, they receive a structured critique: which player seat has an unfair advantage, whether the game rewards strategic play, and three intervention options. No prototyping, no recruiting playtesters, no spreadsheets. Just a conversation, and a feedback loop that runs every time you change a number. This is the story of how we taught a system to play board games, what failed spectacularly, and what that failure accidentally invented.
 <!--excerpt.end-->
 
 ![AI Playtesting: When Your Game Tests Itself]({{ site.baseurl }}images/ai-playtesting-when-your-game-tests-itself/AI_Playtesting_Overview.png)
 
-_Figure. The AI playtesting pipeline transforms a structured game ontology into automated balance analysis, skill gap measurement, and rule clarity scores, all through a conversation with Nova._
+_Figure. The automated playtesting pipeline transforms a structured game ontology into automated balance analysis, skill gap measurement, and rule clarity scores, all through a conversation with Nova._
 
-This is Part 9 of the Game Architecture series. In [Part 5]({{ site.baseurl }}introducing-gamegrammar-ai-powered-board-game-design), we demonstrated AI-powered game design. In [Part 6]({{ site.baseurl }}gamegrammar-the-theory-of-generative-board-game-design), we explored the theory behind generative ontology. In [Part 7]({{ site.baseurl }}nova-the-ai-co-designer-that-learns-your-taste), we introduced Nova, the conversational AI co-designer. And in [Part 8]({{ site.baseurl }}generative-ontology-from-game-knowledge-to-game-creation), we showed the full pipeline from knowledge to creation.
+This is Part 9 of the Game Architecture series. In [Part 5]({{ site.baseurl }}introducing-gamegrammar-ai-powered-board-game-design), we demonstrated structured game generation. In [Part 6]({{ site.baseurl }}gamegrammar-the-theory-of-generative-board-game-design), we explored the theory behind generative ontology. In [Part 7]({{ site.baseurl }}nova-the-ai-co-designer-that-learns-your-taste), we introduced Nova, the conversational AI co-designer. And in [Part 8]({{ site.baseurl }}generative-ontology-from-game-knowledge-to-game-creation), we showed the full pipeline from knowledge to creation.
 
 But there was a gap. GameGrammar could generate a structurally valid game in minutes. Nova could help you refine it over sessions. Yet between "a design exists on paper" and "we know if it works at the table" sat the same wall every designer faces: prototype it, recruit friends, schedule sessions, track results by hand, and repeat the whole process after every change.
 
@@ -62,7 +62,7 @@ The data was there. The question was whether it could be made executable. It tur
 
 ## How Designers Use It: A Conversation with Nova
 
-The entire playtesting pipeline surfaces through Nova, the conversational AI co-designer we introduced in [Part 7]({{ site.baseurl }}nova-the-ai-co-designer-that-learns-your-taste). The designer never sees parsers, agents, or metrics directly. They see a conversation.
+The entire playtesting pipeline surfaces through Nova, the conversational co-designer we introduced in [Part 7]({{ site.baseurl }}nova-the-ai-co-designer-that-learns-your-taste). The designer never sees parsers, agents, or metrics directly. They see a conversation.
 
 {% include youtubePlayer.html id="8KCOMVEytK0" %}
 
@@ -223,7 +223,7 @@ These gaps represent genuine architectural breaks: complex triggers require an e
 
 ## Honest Challenges
 
-No system is without limitations, and we think being transparent about ours strengthens rather than weakens the case for AI playtesting.
+No system is without limitations, and we think being transparent about ours strengthens rather than weakens the case for automated playtesting.
 
 **LLM parsing is non-deterministic.** Two independent parses of the same game produce slightly different rule interpretations. The fix is pragmatic: parse once, cache the result, and reuse it for all subsequent simulations. Same cache plus same seed equals identical results. But designers should know that the initial parse defines the game the simulator plays, and it may not perfectly match their intent.
 
@@ -249,7 +249,7 @@ When we started this research, the question was simple: can AI learn to play a b
 
 The goal was never to replace human playtesters. Human playtesting reveals social dynamics, emotional arcs, and "feel" that no simulator captures. The goal was to compress the iteration cycle. Instead of weeks between design changes and feedback, the loop now fits inside a single conversation with Nova. Change a parameter, re-run the analysis, see the impact, iterate again. For Tier 1-5 games, that continuous feedback loop transforms playtesting from a project into a conversation.
 
-If you would like to try AI playtesting on your own designs, [GameGrammar](https://gamegrammar.dynamindresearch.com) is in public beta with a free tier that includes balance analysis via Nova.
+If you would like to try automated playtesting on your own designs, [GameGrammar](https://gamegrammar.dynamindresearch.com) is in public beta with a free tier that includes balance analysis via Nova. Already have a game? You do not need to generate from scratch — describe your existing design to Nova and run balance analysis on the game you built.
 
 ---
 
@@ -291,4 +291,4 @@ If you would like to try AI playtesting on your own designs, [GameGrammar](https
   - Formal paper on the Generative Ontology framework with ablation study
 
 [9] [*GameGrammar*](https://gamegrammar.dynamindresearch.com). Dynamind Research, 2026.
-  - AI-powered tabletop game design platform with integrated AI playtesting
+  - Board game design platform with integrated automated playtesting
