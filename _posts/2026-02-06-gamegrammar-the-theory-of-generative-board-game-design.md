@@ -7,13 +7,13 @@ author: Benny Cheung
 artwork:
   author: Gemini 3 Pro
 tags:
-- AI
 - Game Design
 - Tabletop Games
-- Generative AI
+- Design Tools
 - Ontology
 - Process Philosophy
-- Human-AI Collaboration
+- Co-Design
+- Design Theory
 category: post
 comments: true
 image: images/gamegrammar-the-theory-of-generative-board-game-design/post_cover.jpg
@@ -27,16 +27,16 @@ series_order: 6
 ---
 
 <!--excerpt.start-->
-A poet needs grammar. A game designer needs structure. This article lays out the design theory behind GameGrammar, a theory born from one practical question: Can AI help create playable board games? The answer turned out to require more than clever prompting. It required a shared vocabulary for what games are, a way to generate what games could be, and a collaborative process for refining what games should become. What follows is that theory, and a direct answer to two questions every designer asks: Can AI really understand "fun"? And can AI be genuinely creative?
+A poet needs grammar. A game designer needs structure. This article lays out the design theory behind GameGrammar, a theory born from one practical question: Can structured tools help create playable board games? The answer turned out to require more than clever prompting. It required a shared vocabulary for what games are, a way to generate what games could be, and a collaborative process for refining what games should become. What follows is that theory, and a direct answer to two questions every designer asks: Can AI really understand "fun"? And can AI be genuinely creative?
 <!--excerpt.end-->
 
 ![GameGrammar: Structured Generative Play]({{ site.baseurl }}images/gamegrammar-the-theory-of-generative-board-game-design/GameGrammar_Theme.jpg)
 
 _Figure. Structure meets imagination. The left half shows the blueprint, the right half shows the finished piece. GameGrammar bridges both worlds._
 
-GameGrammar did not begin as a theory. It began as a practical experiment at [Dynamind Research](https://www.dynamindresearch.com) [7]: type a theme into a box, let six AI agents build a complete board game, and see what comes out. What came out, after months of iteration, was not just a tool but a set of ideas about how design works, why AI can be a trustworthy creative partner, and what that means for human designers.
+GameGrammar did not begin as a theory. It began as a practical experiment at [Dynamind Research](https://www.dynamindresearch.com) [7]: type a theme into a box, let six specialized agents generate a structured first draft, and see what comes out. What came out, after months of iteration, was not just a tool but a set of ideas about how design works, why AI can be a trustworthy creative partner, and what that means for human designers.
 
-In a [previous article]({{ site.baseurl }}introducing-gamegrammar-ai-powered-board-game-design), we showed what GameGrammar produces: twelve words in, a complete game out in 73 seconds. This article goes deeper. It explains the *why* behind the *what*, the design thinking that makes human-AI game design not just possible, but genuinely new.
+In a [previous article]({{ site.baseurl }}introducing-gamegrammar-ai-powered-board-game-design), we showed what GameGrammar produces: twelve words in, a structured first draft out in 73 seconds. This article goes deeper. It explains the *why* behind the *what*, the design thinking that makes human-AI game design not just possible, but genuinely new.
 
 ---
 
@@ -59,9 +59,9 @@ _Figure. GameGrammar sits between Concept and Testing, providing rapid variant g
 **GameGrammar lives at Stages 1 and 2.** It is a design workbench for the earliest and most uncertain phases of game creation:
 
 - **Stage 1**: Generate structured first drafts from a theme and constraints. Beat blank-page paralysis. Explore mechanism combinations drawn from real published games.
-- **Stage 2**: Iterate rapidly with AI-assisted consistency checking, balance analysis, section-by-section rewriting, and plain-language editing. Catch issues that would normally take weeks of playtesting to surface.
+- **Stage 2**: Iterate rapidly with automated consistency checking, balance analysis, section-by-section rewriting, and plain-language editing. Catch issues that would normally take weeks of playtesting to surface.
 
-GameGrammar does not touch Stages 3 through 9. It will not lock your design, pitch to publishers, produce art, or manage manufacturing. It sits precisely where you need the most help and where AI can do the most good: turning a theme into a testable design, and helping you refine that design through structured iteration.
+GameGrammar does not touch Stages 3 through 9. It will not lock your design, pitch to publishers, produce art, or manage manufacturing. It sits precisely where you need the most help and where computational tools can do the most good: turning a theme into a testable design, and helping you refine that design through structured iteration.
 
 The positioning matters. GameGrammar is a **design accelerator** that helps you move faster through the early pipeline. It is not a replacement for your craft. You remain the designer. The AI is your instrument.
 
@@ -122,7 +122,7 @@ GameGrammar combines both. The structured vocabulary provides the constraints; t
 
 ### The Six-Agent Pipeline
 
-Generation is not a single AI prompt. It is a team of six specialized agents, each focused on one area of game design [7]:
+Generation is not a single prompt. It is a pipeline of six specialized agents, each focused on one area of game design [7]:
 
 ![The Generative Pipeline: Multi-Agent Synthesis]({{ site.baseurl }}images/gamegrammar-the-theory-of-generative-board-game-design/Multi_Agent_Pipeline.jpg)
 
@@ -209,8 +209,8 @@ _Figure. From precise fixes to open-ended creative guidance. You choose which mo
 |------|-------------------|-----------|
 | **Rewrite Section** | Rewrites one outdated section using your current full design as context | Review and accept or reject |
 | **Fix Contradiction** | Proposes a targeted fix for a specific inconsistency | Preview the change, confirm or skip |
-| **AI Edit** | Translates your plain-language instruction into concrete design changes | Review what it changed, pick which parts to keep |
-| **AI Suggestions** | Generates 3-7 improvement ideas with priorities and reasoning | Apply now, save for later, or dismiss |
+| **Smart Edit** | Translates your plain-language instruction into concrete design changes | Review what it changed, pick which parts to keep |
+| **Smart Suggestions** | Generates 3-7 improvement ideas with priorities and reasoning | Apply now, save for later, or dismiss |
 | **Re-Evaluate** | Scores 6 design dimensions, maps the emotional arc, measures originality | Study the profile, find weak spots, decide what to improve |
 
 Re-evaluation is especially powerful because it closes the feedback loop. After making changes through any of the other modes, you can re-score your design and see what moved. Dimensions that improved flash green; those that declined flash amber. This turns the cycle from "edit and hope" into "edit, measure, and iterate with direction."
@@ -313,7 +313,7 @@ A related question: Can AI be genuinely creative, or does it just shuffle existi
 
 ![Is AI Creative?]({{ site.baseurl }}images/gamegrammar-the-theory-of-generative-board-game-design/Is_AI_Creative.jpg)
 
-_Figure. Existing elements become novel structures through synthesis. The human provides intention (the why). The AI provides recombination (the how)._
+_Figure. Existing elements become novel structures through synthesis. The human provides intention (the why). The system provides recombination (the how)._
 
 The philosopher Whitehead defined creativity not as making something from nothing, but as *the novel combination of existing elements* [1]. Every creative act borrows from what came before but achieves something new in how it brings those pieces together. A poet inherits language, meter, and tradition; the poem is new. An architect inherits materials, engineering, and precedent; the building is new. Creativity is not the absence of inheritance. It is the *fresh synthesis* of what you have inherited.
 
@@ -369,11 +369,11 @@ The three-layer model keeps your game separate from the process of making it. Th
 
 For the design community, this offers a new way of working: not AI replacing designers, not designers ignoring AI, but a structured partnership where each contributes what they do best. The grammar constrains. The AI creates within those constraints. You decide what the game should be.
 
-The AI handles the mechanics. You bring the meaning. That division of labor is the whole theory in one sentence.
+The platform handles the mechanics. You bring the meaning. That division of labor is the whole theory in one sentence.
 
 The grammar does not write the poem. But without grammar, there is no poem to write.
 
-GameGrammar is available in public beta at [gamegrammar.dynamindresearch.com](https://gamegrammar.dynamindresearch.com). Try it. Generate a game from your favorite theme. Study the radar chart. Make some changes and hit Re-Evaluate. Watch the scores move. Then decide for yourself whether this partnership is worth having.
+GameGrammar is available in public beta at [gamegrammar.dynamindresearch.com](https://gamegrammar.dynamindresearch.com). Already have a game in progress? You do not need to start from generation. Describe your existing design to Nova, and the platform will structure it for balance analysis and strategy testing — starting from the work you have already done. Try it. Generate a game from your favorite theme. Study the radar chart. Make some changes and hit Re-Evaluate. Watch the scores move. Then decide for yourself whether this partnership is worth having.
 
 ---
 
@@ -405,7 +405,7 @@ GameGrammar is available in public beta at [gamegrammar.dynamindresearch.com](ht
 [6] [BoardGameGeek](https://boardgamegeek.com/). The largest board game database and community.
   - Source for the 2,000+ game reference library used in generation and originality scoring
 
-[7] [Dynamind Research](https://www.dynamindresearch.com). AI consulting and product development studio.
+[7] [Dynamind Research](https://www.dynamindresearch.com). Research and product development studio.
   - Creator of GameGrammar
 
 [8] Benny Cheung. [*Generative Ontology: When Structured Knowledge Learns to Create*](https://arxiv.org/abs/2602.05636). arXiv:2602.05636, Feb 2026.

@@ -7,13 +7,13 @@ author: Benny Cheung
 artwork:
   author: Gemini 3 Pro
 tags:
-- AI
 - Game Design
 - Tabletop Games
-- Generative AI
+- Design Tools
 - Game Architecture
 - Board Games
-- Multi-Agent Systems
+- Co-Design
+- Game Analysis
 category: post
 comments: true
 image: images/introducing-gamegrammar-ai-powered-board-game-design/post_cover.png
@@ -28,12 +28,12 @@ series_order: 5
 ---
 
 <!--excerpt.start-->
-I typed twelve words into a text box and got back a complete board game. Mechanics, components, scoring tables, a hex map, a four-phase turn structure, and a critic that told me the game was broken. The whole thing took 73 seconds. This is what happens when you give a structured game taxonomy to six AI agents and let them argue about your design.
+I typed twelve words into a text box and got back a structured first draft of a board game. Mechanics, components, scoring tables, a hex map, a four-phase turn structure, and a critic that told me the game was broken. The whole thing took 73 seconds. This is what happens when you give a structured game taxonomy to six specialized design agents and let them critique your design.
 <!--excerpt.end-->
 
 ![GameGrammar Landing Page]({{ site.baseurl }}images/introducing-gamegrammar-ai-powered-board-game-design/GameGrammar_Landing_Hero.png)
 
-_Figure. GameGrammar transforms a theme and constraints into a complete board game design through six specialized AI agents._
+_Figure. GameGrammar transforms a theme and constraints into a structured board game design through six specialized design agents._
 
 The twelve words were: *"Rival astronomers racing to name celestial objects before their competitors claim the glory."*
 
@@ -71,7 +71,7 @@ The blank page is the first enemy. Before a designer can even begin the playtest
 
 _Figure. The nine-stage board game production pipeline. GameGrammar accelerates Stages 1 and 2, where designers spend the most time and where promising ideas most often die._
 
-I built GameGrammar at [Dynamind Research](https://www.dynamindresearch.com) [5], an AI consulting and product studio that bridges theoretical AI research with practical enterprise implementation, to attack this specific problem. Not to replace game designers, not to automate the creative process, but to eliminate blank-page paralysis and give designers structured starting points worth iterating on. It operates at Stages 1 and 2, where the designer's challenge is generating enough viable concepts to find the gem worth polishing.
+I built GameGrammar at [Dynamind Research](https://www.dynamindresearch.com) [5], a research and product studio that bridges computational design research with practical implementation, to attack this specific problem. Not to replace game designers, not to automate the creative process, but to eliminate blank-page paralysis and give designers structured starting points worth iterating on. It operates at Stages 1 and 2, where the designer's challenge is generating enough viable concepts to find the gem worth polishing.
 
 ---
 
@@ -85,12 +85,12 @@ _Figure. The input: a theme, constraints, and optionally pre-selected mechanisms
 
 The theme can be anything: *"Medieval merchants trading spices along the Silk Road,"* *"Deep sea explorers discovering lost civilizations,"* or in our case, *"Rival astronomers racing to name celestial objects"* with constraints *"2-4 players, competitive, medium complexity, 45-60 minutes."*
 
-Then you choose a generation mode. I picked Multi-Agent because it reveals what makes GameGrammar fundamentally different from a single-prompt approach: six specialized AI agents working in sequence, each reading the complete output of every agent before it.
+Then you choose a generation mode. I picked Multi-Agent because it reveals what makes GameGrammar fundamentally different from a single-prompt approach: six specialized agents working in sequence, each reading the complete output of every agent before it.
 
 | Mode | Speed | What Happens |
 |------|-------|--------------|
 | **Quick** | ~15 seconds | A single powerful model generates the complete design in one pass |
-| **Multi-Agent** | 45-90 seconds | Six specialized AI agents collaborate sequentially, each building on the last |
+| **Multi-Agent** | 45-90 seconds | Six specialized agents collaborate sequentially, each building on the last |
 | **RAG-Enhanced** | ~30 seconds | Generation grounded in data from 2,000+ published BoardGameGeek games [4] |
 
 ![GameGrammar Generate Page]({{ site.baseurl }}images/introducing-gamegrammar-ai-powered-board-game-design/GameGrammar_Generate_Page.png)
@@ -101,7 +101,7 @@ Seventy-three seconds later:
 
 ![Stellar Rivals Title]({{ site.baseurl }}images/introducing-gamegrammar-ai-powered-board-game-design/Stellar_Rivals_Title.png)
 
-_Figure. Stellar Rivals: A Race to the Stars. A complete game design from twelve words and four constraints._
+_Figure. Stellar Rivals: A Race to the Stars. A structured first draft from twelve words and four constraints._
 
 ![Stellar Rivals Overview]({{ site.baseurl }}images/introducing-gamegrammar-ai-powered-board-game-design/Stellar_Rivals_Overview.png)
 
@@ -270,9 +270,11 @@ This mirrors the real design workflow: prototype, test, iterate. GameGrammar com
 
 I want to be clear about what GameGrammar cannot do, because the boundaries matter more than the capabilities.
 
-It cannot **playtest the game**. No AI can simulate the experience of four people around a table discovering that a mechanic is tedious or that a scoring path is dominant. It cannot **read the room**, the laughter, the frustration, the surprise on a player's face when a combo clicks. It cannot **navigate the publication journey**, the manufacturing economics, the publisher relationships, the convention pitching. And it cannot **make taste judgments**. Is a 45-minute game about Victorian astronomers *interesting*? That is a question for the designer and their audience, not for an algorithm.
+It cannot **playtest the game**. No algorithm can simulate the experience of four people around a table discovering that a mechanic is tedious or that a scoring path is dominant. It cannot **read the room**, the laughter, the frustration, the surprise on a player's face when a combo clicks. It cannot **navigate the publication journey**, the manufacturing economics, the publisher relationships, the convention pitching. And it cannot **make taste judgments**. Is a 45-minute game about Victorian astronomers *interesting*? That is a question for the designer and their audience, not for an algorithm.
 
-GameGrammar is a design accelerator, not a replacement [2]. It frees designers from blank-page paralysis and gives them structured starting points worth iterating on. Everything that happens after, the playtesting, the polishing, the publishing, remains the designer's craft.
+GameGrammar is a design accelerator, not a replacement [2]. It frees designers from blank-page paralysis and gives them structured starting points worth iterating on. Everything that happens after — the playtesting, the polishing, the publishing — remains the designer's craft.
+
+Already have a game? You do not need to generate from scratch. Describe your existing design to Nova, and the platform will structure it into the ontology format so you can run balance analysis and strategy testing on the game *you* designed.
 
 ---
 
@@ -297,11 +299,11 @@ The Explore section offers a Mechanism Browser with all 35 mechanisms, a compati
 
 This is Part 5 of the [Game Architecture series]({{ site.baseurl }}unlocking-secrets-of-tabletop-games-ontology). In Part 4, we built a structured vocabulary for understanding tabletop games [1]. Now, that vocabulary has become a creative engine with a name, an interface, and a generate button.
 
-Twelve words. Seventy-three seconds. A complete game with five scoring paths, a hex grid, equipment upgrades, constellation bonuses, and a critic that tells you where it breaks.
+Twelve words. Seventy-three seconds. Not a finished game — a structured first draft with five scoring paths, a hex grid, equipment upgrades, constellation bonuses, and a critic that tells you where it breaks.
 
-The blank page is no longer your enemy. It is your launchpad.
+The blank page is no longer your enemy. It is your launchpad. And if you have already filled the page yourself, the platform is ready to help you test what you built.
 
-This article showed you the *what*. If you want to understand the *why*, [Part 6: The Theory of Generative Board Game Design]({{ site.baseurl }}gamegrammar-the-theory-of-generative-board-game-design) explores the design theory behind GameGrammar. It covers the three-layer architecture that separates mechanics from theme, the co-design relationship between human designers and AI agents, and the philosophical question of whether AI can understand fun. If you are curious about what makes this approach different at a deeper level, that is where to go next.
+This article showed you the *what*. If you want to understand the *why*, [Part 6: The Theory of Generative Board Game Design]({{ site.baseurl }}gamegrammar-the-theory-of-generative-board-game-design) explores the design theory behind GameGrammar. It covers the three-layer architecture that separates mechanics from theme, the co-design relationship between human designers and computational agents, and the philosophical question of whether algorithms can understand fun. If you are curious about what makes this approach different at a deeper level, that is where to go next.
 
 ---
 
@@ -327,8 +329,8 @@ This article showed you the *what*. If you want to understand the *why*, [Part 6
 [4] [BoardGameGeek](https://boardgamegeek.com/). The largest board game database and community.
   - Source for the 2,000+ game index used in RAG-enhanced generation
 
-[5] [Dynamind Research](https://www.dynamindresearch.com). AI consulting and product development studio.
-  - Creator of GameGrammar, bridging theoretical AI research with practical product implementation
+[5] [Dynamind Research](https://www.dynamindresearch.com). Research and product development studio.
+  - Creator of GameGrammar, bridging computational design research with practical product implementation
 
 [6] Benny Cheung. [*Generative Ontology: When Structured Knowledge Learns to Create*](https://arxiv.org/abs/2602.05636). arXiv:2602.05636, Feb 2026.
   - The formal research paper behind GameGrammar's design theory and generative architecture
