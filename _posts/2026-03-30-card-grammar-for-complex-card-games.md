@@ -49,35 +49,7 @@ That schema, to refresh, is a rigid card template with five fields: card name, c
 
 The question is: what happens when a game's cards need more than five lines?
 
-The results sorted themselves into four distinct coverage tiers. This is the classification system we use internally to track where the platform's simulation capabilities begin and end:
-
-| Tier | Schema Fit | What Happens | Games |
-|------|-----------|-------------|-------|
-| **Full (Tier A)** | Near-perfect | Cards map perfectly. Every mechanical detail survives compression. Balance testing reflects the actual game. | Dominion, Star Realms, Sushi Go! |
-
-![Tier A Games]({{ site.baseurl }}images/card-grammar-for-complex-card-games/CardGame_Tier_A_Games.jpg)
-
-| Tier | Schema Fit | What Happens | Games |
-|------|-----------|-------------|-------|
-| **Partial (Tier B)** | Directionally correct | Core mechanics work but secondary systems are lost. Balance testing misses cross-system interactions. | 7 Wonders, Blood Rage, Res Arcana, Everdell |
-
-![Tier B Games]({{ site.baseurl }}images/card-grammar-for-complex-card-games/CardGame_Tier_B_Games.jpg)
-
-| Tier | Schema Fit | What Happens | Games |
-|------|-----------|-------------|-------|
-| **Insufficient (Tier C)** | ~60-70% data loss | The schema captures a card's name and a flattened cost. The economic engine, the tag system, and the trigger timing all evaporate. | Wingspan, Terraforming Mars, Race for the Galaxy |
-
-![Tier C Games]({{ site.baseurl }}images/card-grammar-for-complex-card-games/CardGame_Tier_C_Games.jpg)
-
-| Tier | Schema Fit | What Happens | Games |
-|------|-----------|-------------|-------|
-| **Breaks Down (Tier D)** | ~75-85% data loss | The schema is structurally incompatible with the game's card model. Not a matter of missing fields, but a fundamental architectural mismatch. | KeyForge, Spirit Island, Gloomhaven |
-
-![Tier D Games]({{ site.baseurl }}images/card-grammar-for-complex-card-games/CardGame_Tier_D_Games.jpg)
-
-The uncomfortable pattern: the most commercially important card games, the engine builders that dominate BoardGameGeek's top 100 and the living card games with dedicated player communities, cluster in Tiers C and D. The schema works beautifully on Tier A games that are already simple enough that designers do not need computational help balancing them.
-
----
+The results sorted themselves into four distinct coverage tiers, from perfect fit to total structural mismatch.
 
 ![The Edge of the Current Engine]({{ site.baseurl }}images/card-grammar-for-complex-card-games/Schema_Coverage_Tiers.jpg)
 
@@ -85,21 +57,37 @@ _Figure. The coverage cliff from Tier A to Tier D, where the market opportunity 
 
 ## Tier A (Full): Five Lines Is Enough
 
+| Tier | Schema Fit | What Happens | Games |
+|------|-----------|-------------|-------|
+| **Full (Tier A)** | Near-perfect | Cards map perfectly. Every mechanical detail survives compression. Balance testing reflects the actual game. | Dominion, Star Realms, Sushi Go! |
+
+![Tier A Games]({{ site.baseurl }}images/card-grammar-for-complex-card-games/CardGame_Tier_A_Games.jpg)
+
 Deck builders and simple drafting games are the schema's sweet spot. A Dominion card has a name (Village), a type (Action), a cost (3 coins), and an effect ("Draw 1 card, +2 Actions"). Five lines on the index card, nothing left out. Star Realms, Sushi Go, Ascension: all near-perfect fits.
 
 But these games represent the shallow end of the complexity pool.
 
 ## Tier B (Partial): Squinting at the Rules
 
-Games like 7 Wonders and Blood Rage introduce mechanics the schema cannot cleanly express: era-based card phasing, prerequisite chains across ages, conditional scoring triggers tied to specific board positions. You can cram this information into the effect text string, but the simulator ends up squinting to understand the rules. The schema does not crash. It degrades gracefully, going blind to the parts of the game it cannot see. Balance testing is directionally correct but misses the cross-system interactions that make these games strategically interesting.
+| Tier | Schema Fit | What Happens | Games |
+|------|-----------|-------------|-------|
+| **Partial (Tier B)** | Directionally correct | Core mechanics work but secondary systems are lost. Balance testing misses cross-system interactions. | 7 Wonders, Blood Rage, Res Arcana, Everdell |
+
+![Tier B Games]({{ site.baseurl }}images/card-grammar-for-complex-card-games/CardGame_Tier_B_Games.jpg)
+
+Games like 7 Wonders and Blood Rage introduce mechanics the schema cannot cleanly express: era-based card phasing, prerequisite chains across ages, conditional scoring triggers tied to specific board positions. You can cram this information into the effect text string, but the simulator ends up squinting to understand the rules. The schema does not crash. It degrades gracefully, going blind to the parts of the game it cannot see.
 
 ## Tier C (Insufficient): The Template Overflows
+
+| Tier | Schema Fit | What Happens | Games |
+|------|-----------|-------------|-------|
+| **Insufficient (Tier C)** | ~60-70% data loss | The schema captures a card's name and a flattened cost. The economic engine, the tag system, and the trigger timing all evaporate. | Wingspan, Terraforming Mars, Race for the Galaxy |
+
+![Tier C Games]({{ site.baseurl }}images/card-grammar-for-complex-card-games/CardGame_Tier_C_Games.jpg)
 
 Engine builders are where the schema genuinely breaks. Five lines on an index card is nowhere near enough.
 
 ![The Schema Compression Crisis]({{ site.baseurl }}images/card-grammar-for-complex-card-games/Schema_Compression_Crisis.jpg)
-
-_Figure. Rich structured data goes in. A flat text string comes out._
 
 Try writing a Wingspan bird card on that index card. You need food cost (1 invertebrate + 1 seed, or 2 wild), habitat restriction (wetland only), egg capacity (2), power trigger timing (when activated, not when played), power text, nest type, wingspan measurement, and bonus traits for end-of-round scoring. That is at least eight structured fields. You start writing smaller, cramming text into margins, abbreviating until the card is unreadable. The simulator faces the same problem: a single bird card carries at least eight structured data fields that cannot be collapsed into the effect text string without losing approximately 60% of the card's actual mechanical data.
 
@@ -109,9 +97,15 @@ In heavy engine builders, cards are social. They talk to each other. The basic s
 
 ## Tier D (Breaks Down): Structural Mismatch
 
-![Tier D Structural Mismatch]({{ site.baseurl }}images/card-grammar-for-complex-card-games/Tier_D_Structural_Mismatch.jpg)
+| Tier | Schema Fit | What Happens | Games |
+|------|-----------|-------------|-------|
+| **Breaks Down (Tier D)** | ~75-85% data loss | The schema is structurally incompatible with the game's card model. Not a matter of missing fields, but a fundamental architectural mismatch. | KeyForge, Spirit Island, Gloomhaven |
+
+![Tier D Games]({{ site.baseurl }}images/card-grammar-for-complex-card-games/CardGame_Tier_D_Games.jpg)
 
 At the bottom tier, the schema is not just missing fields. It is structurally incompatible with the game's card model.
+
+![Tier D Structural Mismatch]({{ site.baseurl }}images/card-grammar-for-complex-card-games/Tier_D_Structural_Mismatch.jpg)
 
 Spirit Island breaks on a different axis entirely: cross-card accumulation. Each power card carries element symbols (Fire, Air, Water) that accumulate across all cards played in a turn, unlocking threshold-gated innate abilities on the Spirit board. You do not play a card just for its printed effect. You play it partly for its element icons, which may unlock a completely different, more powerful ability elsewhere. The schema has no concept of this per-turn element economy that resets every round.
 
