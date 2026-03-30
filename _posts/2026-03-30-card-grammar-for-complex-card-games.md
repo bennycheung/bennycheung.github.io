@@ -81,11 +81,11 @@ The uncomfortable pattern: the most commercially important card games, the engin
 
 ![The Edge of the Current Engine]({{ site.baseurl }}images/card-grammar-for-complex-card-games/Schema_Coverage_Tiers.jpg)
 
-_Figure. The coverage cliff. Tier A games fit the schema perfectly, but the games designers actually need help with cluster in Tiers C and D, where the market opportunity lives._
+_Figure. The coverage cliff from Tier A to Tier D, where the market opportunity lives._
 
 ## Tier A (Full): Five Lines Is Enough
 
-Deck builders and simple drafting games are the schema's sweet spot. A Dominion card has a name (Village), a type (Action), a cost (3 coins), and an effect ("Draw 1 card, +2 Actions"). That is the entire card. Five lines on the index card, nothing left out. Star Realms, Sushi Go, Ascension: all near-perfect fits. This is where automated card design tools genuinely deliver on their promise.
+Deck builders and simple drafting games are the schema's sweet spot. A Dominion card has a name (Village), a type (Action), a cost (3 coins), and an effect ("Draw 1 card, +2 Actions"). Five lines on the index card, nothing left out. Star Realms, Sushi Go, Ascension: all near-perfect fits.
 
 But these games represent the shallow end of the complexity pool.
 
@@ -99,7 +99,7 @@ Engine builders are where the schema genuinely breaks. Five lines on an index ca
 
 ![The Schema Compression Crisis]({{ site.baseurl }}images/card-grammar-for-complex-card-games/Schema_Compression_Crisis.jpg)
 
-_Figure. The compression funnel. Wingspan's 170 bird cards and Terraforming Mars's 208 project cards each carry rich structured data that the five-field schema crushes into flat text, losing 60-70% of the mechanical information._
+_Figure. Rich structured data goes in. A flat text string comes out._
 
 Try writing a Wingspan bird card on that index card. You need food cost (1 invertebrate + 1 seed, or 2 wild), habitat restriction (wetland only), egg capacity (2), power trigger timing (when activated, not when played), power text, nest type, wingspan measurement, and bonus traits for end-of-round scoring. That is at least eight structured fields. You start writing smaller, cramming text into margins, abbreviating until the card is unreadable. The simulator faces the same problem: a single bird card carries at least eight structured data fields that cannot be collapsed into the effect text string without losing approximately 60% of the card's actual mechanical data.
 
@@ -110,8 +110,6 @@ In heavy engine builders, cards are social. They talk to each other. The basic s
 ## Tier D (Breaks Down): Structural Mismatch
 
 ![Tier D Structural Mismatch]({{ site.baseurl }}images/card-grammar-for-complex-card-games/Tier_D_Structural_Mismatch.jpg)
-
-_Figure. Two distinct failure modes at Tier D. Spirit Island accumulates element symbols across cards to unlock threshold-gated powers, a cross-card system with no schema representation. KeyForge packs four timing triggers into one text block, destroying the sequencing the simulator needs._
 
 At the bottom tier, the schema is not just missing fields. It is structurally incompatible with the game's card model.
 
@@ -143,7 +141,7 @@ A card grammar has three layers, each solving a specific failure mode from the s
 
 ![The Card Grammar Architecture]({{ site.baseurl }}images/card-grammar-for-complex-card-games/Card_Grammar_Three_Layers.jpg)
 
-_Figure. The Card Grammar is a three-layered optional extension. Anatomy defines what fields exist. Lifecycle defines when effects trigger. Synergies define how cards reference each other. Basic games skip it entirely with zero regression._
+_Figure. A three-layered optional extension. Basic games skip it entirely with zero regression._
 
 **Anatomy** defines the strict physical fields that are allowed to exist in a given game. A Terraforming Mars card grammar declares fields for tags, card color, requirements, and production effects. A Wingspan grammar declares fields for food cost, habitat, egg capacity, and power trigger type. The fields are mathematically typed. A tag is exclusively a tag. A cost is exclusively a cost. The system never has to guess what a piece of data means from context.
 
@@ -157,13 +155,11 @@ The philosopher Nelson Goodman, writing in 1968, formalized a distinction that t
 
 ![The Goodman Connection]({{ site.baseurl }}images/card-grammar-for-complex-card-games/Goodman_Paradigm_Shift.jpg)
 
-_Figure. The paradigm shift. The old architecture (left) treats cards as generic components inside a game ontology, creating semantic density where the parser must guess what text means from context. The new architecture (right) declares typed fields per game, so the compiler always knows exactly what each field means._
+_Figure. Score (left) versus performance (right). The grammar is the strict notation. The generated card is the lived execution._
 
 The card grammar definition (the anatomy, the lifecycle, the synergy rules) is the score. Any card generated conforming to that grammar is a compliant performance. Different games have completely different sheet music. The score for Wingspan looks nothing like the score for Terraforming Mars. But the underlying system, the musician, can read all of it. As long as you provide logically sound sheet music, the engine can perform any game.
 
-This is what Goodman called **finite differentiation**: every element in the notation is distinctly separate and mathematically defined, impossible to confuse. A cost is exclusively a cost. A tag is exclusively a tag. The old failing schema suffered from what Goodman called **semantic density**: the boundary between a tag, a cost, and a requirement was all mushed together in one dense paragraph of prose, and a machine does not have the lived human experience required to unravel that density.
-
-The card grammar enforces the clean edges that formal systems need to compute.
+Goodman called this **finite differentiation**: every element in the notation is distinctly separate, mathematically defined, impossible to confuse. The old failing schema suffered from the opposite, what Goodman called **semantic density**: the boundary between a tag, a cost, and a requirement was all mushed together in one dense paragraph of prose, and a machine does not have the lived human experience required to unravel that density. The card grammar enforces the clean edges that formal systems need to compute.
 
 ### What This Means for Designers
 
@@ -176,14 +172,11 @@ No other tool on the market can generate, simulate, balance-test, and export at 
 
 ### How We Actually Learn Games
 
-What makes this architecture compelling is that it mirrors how human brains actually process complex board games. When you sit down to learn Terraforming Mars, you do not memorize the text on all 208 cards before playing. The cognitive load would be impossible. Instead, you spend the first 20 minutes learning the specific *grammar* of that game's universe. The person teaching you explains that these icons mean production, those borders mean a one-time event, and this phase happens before that phase.
+What makes this architecture compelling is that it mirrors how human brains actually process complex board games. When you sit down to learn Terraforming Mars, you do not memorize the text on all 208 cards before playing. Instead, you spend the first 20 minutes learning the specific *grammar* of that game's universe: these icons mean production, those borders mean a one-time event, this phase happens before that phase.
 
 ![Mirroring Human Cognition at the Table]({{ site.baseurl }}images/card-grammar-for-complex-card-games/Human_Cognition.jpg)
 
-_Figure. You do not memorize 208 cards before playing. You spend 20 minutes learning the grammar: what icons mean, what borders do, what phase follows what. The platform formalizes this same cognitive process._
-
-
-Once your brain internalizes the grammar, someone can hand you a card you have never seen before and you instantly know how to process it. You are running a mental card grammar simulator. The platform is formally writing the code for what our brains do naturally at the game table.
+Once your brain internalizes the grammar, someone can hand you a card you have never seen before and you instantly know how to process it. You are running a mental card grammar simulator. The platform formalizes the same cognitive process.
 
 ---
 
@@ -192,8 +185,6 @@ Once your brain internalizes the grammar, someone can hand you a card you have n
 With the card grammar solving the data structure problem, the balance-testing engine can finally do meaningful work on complex games. Running hundreds of simulated games with Monte Carlo Tree Search (MCTS), the same algorithm family behind AlphaGo, produces results that would take a human playtest group months to discover.
 
 ![The Power of Automated MCTS Playtesting]({{ site.baseurl }}images/card-grammar-for-complex-card-games/MCTS_Playtesting.jpg)
-
-_Figure. With the grammar fixed, Monte Carlo Tree Search can simulate hundreds of games in minutes. The skill gap gauge measures economic depth: 50/50 means no meaningful decisions, 90% means the game rewards mastery._
 
 A 30-card engine builder prototype tested with MCTS showed a 90% skill gap: the strategic agent beat the random agent nine times out of ten. That number is a signal of economic depth. It means the production chains, resource conversions, and scoring paths create genuinely learnable strategy, not just lucky draws. A poorly designed prototype shows a 50-50 split between strategic and random play: the game has no meaningful decisions. The gap between 50% and 90% is the difference between a game that feels arbitrary and one that rewards mastery.
 
@@ -209,15 +200,11 @@ The platform manages the articulate map. The designer navigates the replete terr
 
 ## Concluding Remarks
 
-Here is the uncomfortable truth that the stress test revealed: the most commercially important card games, the engine builders, the living card games, the multi-trigger systems, are exactly the games that basic schemas cannot represent. If the design platform cannot follow designers into that deep end of complexity, it loses its primary value for the industry.
+The card grammar solves the structural problem. Automated playtesting solves the iteration speed problem. But a designer who has already sketched 50 cards, playtested twice, and refined the core loop does not want the platform to *generate* the game. They want the platform to *analyze* the game. Import the rules, run 200 simulated games, and tell them which 12 cards are never played. That is the valuable work.
 
 ![The New Symbiosis]({{ site.baseurl }}images/card-grammar-for-complex-card-games/New_Symbiosis.jpg)
 
-_Figure. The platform ensures the game works. The designer ensures the game matters._
-
-The card grammar solves the structural problem. Automated playtesting solves the iteration speed problem. But a designer who has already sketched 50 cards, playtested twice, and refined the core loop does not want the platform to *generate* the game. They want the platform to *analyze* the game. Import the rules, run 200 simulated games, and tell them which 12 cards are never played. That is the valuable work.
-
-This is a clarification of roles, not a limitation to lament. The platform handles the staggering computational labor of balance testing, strategy validation, and rule clarity analysis. The designer provides the vision, the taste, and the judgment about what makes a game worth playing. The platform ensures the game works. The designer ensures the game matters.
+The platform handles the computational labor of balance testing, strategy validation, and rule clarity analysis. The designer provides the vision, the taste, and the judgment about what makes a game worth playing.
 
 The spreadsheet era is over. The technology to structurally understand, simulate, and balance complex card games is here. And the designers who thrive will be the ones who understand the difference between a game that is balanced and a game that is alive.
 
