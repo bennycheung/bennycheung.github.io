@@ -214,7 +214,7 @@ The spreadsheet era is over. The technology to structurally understand, simulate
 
 ---
 
-## Appendix: The 13 Games in the Stress Test
+## Appendix: The 12 Games in the Stress Test
 
 These are the card games we tested against the five-field schema, grouped by the coverage tier they fell into. If you are unfamiliar with any of them, the links lead to their BoardGameGeek pages, the definitive community resource for tabletop games.
 
