@@ -170,7 +170,7 @@ What makes this architecture compelling is that it mirrors how human brains actu
 
 ![Mirroring Human Cognition at the Table]({{ site.baseurl }}images/card-grammar-for-complex-card-games/Human_Cognition.jpg)
 
-Once your brain internalizes the grammar, someone can hand you a card you have never seen before and you instantly know how to process it. You are running a mental card grammar simulator. The platform formalizes the same cognitive process.
+Once your brain internalizes the grammar, someone can hand you a card you have never seen before. You would instantly know how to process it. You are running a mental card grammar simulator. The platform formalizes the same cognitive process.
 
 ---
 
