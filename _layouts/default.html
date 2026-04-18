@@ -29,8 +29,10 @@
 	{% include reading_progress.html %}
 	{% include inline_search.html %}
 
-	<!-- Hijiki Cat Assistant - Remove these two lines to disable -->
+	<!-- Hijiki Cat Assistant - controlled by show_cat frontmatter flag -->
+	{% unless page.show_cat == false %}
 	{% include cat_widget.html %}
 	{% include cat_dialog.html %}
+	{% endunless %}
 </body>
 </html>
