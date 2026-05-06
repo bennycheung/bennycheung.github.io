@@ -18,9 +18,7 @@ images:
   cover: images/ontology-the-queryable-brain-of-software-archaeology/cover2x.jpg
   header: images/ontology-the-queryable-brain-of-software-archaeology/header.jpg
   animated-cover: images/ontology-the-queryable-brain-of-software-archaeology/animated-cover.webp
-published: true
-series: "Applied BMAD"
-series_order: 3
+published: false
 ---
 
 <!--excerpt.start-->
