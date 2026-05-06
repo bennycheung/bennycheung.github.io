@@ -18,8 +18,6 @@ images:
   cover: images/bmad-v6-intellectual-ecosystem/cover2x.jpg
   header: images/bmad-v6-intellectual-ecosystem/header.jpg
 published: false
-series: "Applied BMAD"
-series_order: 2
 ---
 
 <!--excerpt.start-->
