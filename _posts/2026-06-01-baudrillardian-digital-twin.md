@@ -85,6 +85,15 @@ Readers familiar with Omniverse, Isaac, Metropolis, and cuOPT can skip to the ne
 
 Together the four constitute what NVIDIA calls the *AI Gym*: a single environment in which robots, agents, and routing strategies are trained and evaluated before anything touches the physical floor. The AI Gym is, structurally, a Baudrillardian object of unusual purity, and most of the engineering analysis below turns on how it slips through the four orders. The framework applies to any industrial digital twin with sensor fusion and downstream actuation; we use NVIDIA's stack because it is the most-documented public demonstration.
 
+The Order sections that follow can be previewed as a single table. Each row is the territory of one section.
+
+| Order | Philosophical mode | NVIDIA-stack manifestation |
+|-------|--------------------|----------------------------|
+| **1: Faithful reflection** | Sign points truthfully at its referent | 100 ceiling cameras feed Metropolis MTMC; each AMR runs Isaac Perceptor; the twin renders what the floor just showed |
+| **2: Distortion and masking** | Sign points at something real but renders it more cleanly than the data warrants | MTMC confidence drops in sparsely covered zones; the Metropolis occupancy map renders smoothly anyway |
+| **3: Masking the absence** | Sign asserts a state for which no current evidence exists | A ceiling camera drops; Metropolis fills aisle 7 from a schedule prior and a stale MTMC track |
+| **4: Pure simulation** | Sign refers only to other signs in a closed loop | The AI Gym: cuOPT routing agents trained inside Omniverse, then deployed against the physical floor as a downstream rollout |
+
 ----
 
 ## Order One: Faithful Reflection
@@ -144,6 +153,8 @@ def render_weight(zone):
 The decision rule embedded here is mathematical, not advisory. A zone whose fusion confidence falls below 0.7, whose data is older than 500 ms, or whose contributing-sensor count falls below threshold is rendered translucent, full stop. There is no judgement call by the operator. The system makes the call structurally, in the same place every time.
 
 A sharper test of Order-2 behaviour is what happens during route planning. A route through a zone with degraded fusion confidence should be flagged differently than a route through a fully-tracked zone, and the operator should be allowed to require a higher confidence floor before the route is committed to the fleet controller. A twin that lets the route planner work from a smoothed map without exposing the underlying confidence is, at the routing layer, already slipping toward Order 2.
+
+The technical rule above is the easy half. The hard half is that operators tend to trust the smoothed render even when a drift number is rising on the same screen. Why that happens, and what to do about it in the rendering itself, is the subject of *seduction* in a later section.
 
 > **NVIDIA instantiation.** Inside a deployed Omniverse warehouse twin, Order 2 arrives when the polite assumption of 100 calibrated ceiling cameras meets a deployment that has fewer, occluded, or differently positioned ones. MTMC confidence drops when a worker walks behind a tall rack. The fused Metropolis occupancy map continues to render smoothly anyway. The render-weight rule above specialises here to threshold on Metropolis MTMC `track.confidence` and fusion freshness. The Order-2 routing test specialises to: a cuOPT route through a low-MTMC-confidence zone should be flagged differently than one through a fully-tracked zone, and the operator should be allowed to require a higher MTMC floor before the route is committed to Isaac Mission Control.
 
@@ -216,6 +227,8 @@ def validate_routing_plan(plan, physical_footprint):
 The realizability layer is the part that catches what we might call *Penrose ontologies*: configurations whose every pairwise constraint is locally satisfiable but whose global geometry has no realisation in physical space. Escher's impossible staircases are the canonical example. Inside an industrial twin, a routing plan can be locally legal at every node and still impossible to lay down on the actual physical footprint. A typical instance: the routing graph has a permanent obstacle in the physical world (a structural pillar, a fixed conveyor) that the simulator's scene did not encode, and the proposed path goes straight through it. The twin should not be allowed to issue the plan to the physical fleet before the realizability layer has signed off on the embedding.
 
 The deeper failure mode to instrument for is *simulator-to-physical drift*. The agent has been trained inside the simulator, but the simulator's friction parameters, lighting, sensor noise model, and obstacle layout have all drifted from the physical site over time. The agent has learned the simulator. When it is deployed, its behaviour assumes a world that no longer matches the floor. Realizability checking at deployment time is the last layer that catches this. The check is not optional; it is the rule that prevents the AI gym from being deployed as if it were the world.
+
+The technical defence above protects the deployment, but does nothing about the operator. What happens when a natural-language interface inside the AI Gym produces more confident sentences per minute than the operator can audit, is the subject of *the implosion of meaning* in a later section.
 
 ![Evolution matrix reading down each Baudrillardian order]({{ site.baseurl }}images/baudrillardian-digital-twin/evolution_matrix.png)
 
@@ -321,11 +334,11 @@ The checklist runs from the data layer (1, 2) through the model layer (3, 4) to 
 
 ## Concluding Remarks
 
-A fair reader will notice the six-item checklist can be derived from observability engineering, MLOps, and human-factors engineering without invoking Baudrillard at all. Provenance is data lineage. Explicit ignorance is uncertainty quantification. Realizability checking is constraint satisfaction. Each item has its own literature. What the philosophical framing adds is not the practices but a *unifying diagnostic* that names what the practices defend against, and a *shared vocabulary* the team can use across disciplines. Treating a Metropolis camera drop as an *Order-3 sign* is a category that travels between rooms; "MTMC fusion-set membership change" is not. The framework is an interpretive layer over engineering work that already exists.
-
 We started with wooden pallets repainted in neon green to suit the dashboard. We can now read that story honestly: the factory has been modified to fit its representation. The map is dictating the territory. The neon-green paint is Baudrillard's precession of simulacra rendered in literal pigment.
 
 That is the small version of the story. The large version is the one that should keep us awake. As highly optimised digital twins like NVIDIA's Omniverse warehouse demo become the primary surface for industrial, civic, and personal decisions, how long until physical reality is rebuilt at scale to make itself easier for the dashboards to render? Warehouses arranged to suit the camera placements that feed Metropolis rather than to suit the workflow. Cities laid out for the model rather than for the people who live in them. Personal lives shaped for the curated digital footprint rather than for the moments that footprint represents. If the filter requires a smoother surface to render properly, the long-run option available to the system is to sand down reality.
+
+A fair reader will notice the six-item checklist can be derived from observability engineering, MLOps, and human-factors engineering without invoking Baudrillard at all. Provenance is data lineage. Explicit ignorance is uncertainty quantification. Realizability checking is constraint satisfaction. Each item has its own literature. What the philosophical framing adds is not the practices but a *unifying diagnostic* that names what the practices defend against, and a *shared vocabulary* the team can use across disciplines. Treating a Metropolis camera drop as an *Order-3 sign* is a category that travels between rooms; "MTMC fusion-set membership change" is not. The framework is an interpretive layer over engineering work that already exists.
 
 The engineering checklist we walked through is the defence against this. It is not an aesthetic preference. It is an architectural commitment to render the twin honestly, to make explicit ignorance a structural property of the system rather than a UX afterthought, and to refuse to ship configurations that are locally legal but globally impossible on the actual floor. The discipline is what keeps the twin a representation, rather than a quiet replacement of the reality it was meant to describe.
 
