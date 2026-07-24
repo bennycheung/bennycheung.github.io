@@ -24,8 +24,6 @@ images:
 published: true
 series: "Card Architecture"
 series_order: 2
-featured: true
-featured_order: 3
 ---
 
 <!--excerpt.start-->

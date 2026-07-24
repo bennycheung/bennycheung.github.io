@@ -19,7 +19,7 @@ images:
   header: images/baudrillardian-digital-twin/Nvidia_Isaac_Sim_in_Omniverse_Digital_Twin_Global_Routing.png
 published: true
 featured: true
-featured_order: 1
+featured_order: 2
 ---
 
 <!--excerpt.start-->
